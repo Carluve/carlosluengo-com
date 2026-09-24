@@ -1,0 +1,111 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Projects from '~/components/widgets/Projects.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Developer',
+  description:
+    'Proyectos y demos de Carlos Luengo: Cloudflare Workers, Agents, MCP y building in public.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Developer"
+    title="Building in public"
+    subtitle="Workers, Agents y demos en la edge. Placeholders listos para sustituir por repos reales."
+    callToAction={{
+      variant: 'primary',
+      text: 'GitHub @Carluve',
+      href: 'https://github.com/Carluve',
+      target: '_blank',
+      icon: 'tabler:brand-github',
+    }}
+  />
+
+  <Projects
+    id="proyectos"
+    tagline="Proyectos"
+    title="Demos y experimentos"
+    subtitle="Tarjetas semilla — enlaza repos o demos cuando existan."
+    columns={3}
+    items={[
+      {
+        title: 'Workers starter',
+        description: 'Plantilla mínima de Cloudflare Worker con rutas y observabilidad básica.',
+        tags: ['Workers', 'TypeScript'],
+        href: 'https://github.com/Carluve',
+        linkText: 'Ver en GitHub',
+      },
+      {
+        title: 'AI Agent on Workers',
+        description: 'Agente con herramientas y memoria ligera desplegado en la edge.',
+        tags: ['AI', 'Agents', 'Workers'],
+        href: 'https://github.com/Carluve',
+        linkText: 'Placeholder',
+      },
+      {
+        title: 'MCP server demo',
+        description: 'Servidor MCP de ejemplo para conectar agentes a datos y APIs.',
+        tags: ['MCP', 'AI'],
+        href: 'https://github.com/Carluve',
+        linkText: 'Placeholder',
+      },
+      {
+        title: 'carlosluengo.com',
+        description: 'Este sitio: AstroWind estático en Cloudflare Pages.',
+        tags: ['Astro', 'Pages'],
+        href: 'https://github.com/Carluve/carlosluengo-com',
+        linkText: 'Repo (próximamente)',
+      },
+      {
+        title: 'Turnstile + form',
+        description: 'Formulario de contacto con Turnstile y Worker backend (pendiente).',
+        tags: ['Turnstile', 'Workers'],
+        href: getPermalink('/contact'),
+        linkText: 'Ver Contact',
+      },
+      {
+        title: 'Open experiments',
+        description: 'Espacio para notebooks, prompts y prototipos de IA aplicada.',
+        tags: ['AI', 'R&D'],
+        href: 'https://github.com/Carluve',
+        linkText: 'Explorar',
+      },
+    ]}
+  />
+
+  <Features
+    tagline="Stack"
+    title="Con qué construyo"
+    columns={4}
+    items={[
+      { title: 'Cloudflare Workers', icon: 'tabler:cloud-code' },
+      { title: 'Agents & AI', icon: 'tabler:robot' },
+      { title: 'MCP', icon: 'tabler:plug' },
+      { title: 'Astro / Pages', icon: 'tabler:rocket' },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'GitHub',
+        href: 'https://github.com/Carluve',
+        target: '_blank',
+      },
+      {
+        text: 'Contacto',
+        href: getPermalink('/contact'),
+      },
+    ]}
+  >
+    <Fragment slot="title">¿Quieres colaborar en un build?</Fragment>
+    <Fragment slot="subtitle">Ideas, demos o OSS. Escríbeme.</Fragment>
+  </CallToAction>
+</Layout>

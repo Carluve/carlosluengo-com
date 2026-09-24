@@ -1,0 +1,140 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Timeline from '~/components/widgets/Timeline.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'About',
+  description:
+    'Bio de Carlos Luengo: trayectoria enterprise (Microsoft → Cloudflare), doctorado en IA & Management y aspiración académica en España.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="About"
+    title="Industria, academia y build"
+    subtitle="Perfil corto: vendedor enterprise, investigador y docente. Sin CV interminable."
+  />
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Hoy',
+        description:
+          'Sr. Enterprise Account Executive en Cloudflare, enfocado en Digital Natives, Startups e ISVs.',
+      },
+      {
+        title: 'Academia',
+        description:
+          'Doctorando en IA &amp; Management en la Universidad de Alcalá. Docente. Meta: catedrático en España.',
+      },
+      {
+        title: 'Build',
+        description: 'Workers, Agents y demos en la edge — aprender haciendo y compartir en público.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Quién soy</h2>
+      <p>
+        Combino go-to-market en cloud con investigación aplicada en inteligencia artificial y management. Me interesa
+        el puente entre startups, empresas grandes y la universidad: cómo la IA cambia productos, equipos y docencia.
+      </p>
+      <br />
+      <p>
+        Prefiero claridad a marketing vacío: trayectoria real, papers abiertos y proyectos que se puedan tocar.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Timeline
+    id="carrera"
+    tagline="Trayectoria"
+    title="Carrera en industria"
+    subtitle="De evangelismo Microsoft a Cloudflare, pasando por partners y hyperscalers."
+    layout="vertical"
+    items={[
+      {
+        date: 'Ahora',
+        title: 'Cloudflare',
+        description: 'Sr. Enterprise AE — Digital Natives / Startups / ISVs.',
+        icon: 'tabler:cloud',
+        highlight: true,
+      },
+      {
+        date: 'Anterior',
+        title: 'AWS',
+        description: 'Account Executive / soluciones cloud para clientes enterprise y partners.',
+        icon: 'tabler:brand-aws',
+      },
+      {
+        date: 'Anterior',
+        title: 'Lenovo',
+        description: 'Roles comerciales y de ecosistema en infra y dispositivos.',
+        icon: 'tabler:device-desktop',
+      },
+      {
+        date: 'Anterior',
+        title: 'Telefónica',
+        description: 'Go-to-market y relación con clientes en telecomunicaciones y cloud.',
+        icon: 'tabler:antenna',
+      },
+      {
+        date: 'Anterior',
+        title: 'Insight',
+        description: 'Partner / soluciones IT para empresas.',
+        icon: 'tabler:building',
+      },
+      {
+        date: 'Inicio',
+        title: 'Microsoft',
+        description: 'Evangelismo y early career en ecosistema Microsoft.',
+        icon: 'tabler:brand-windows',
+      },
+    ]}
+  />
+
+  <Features
+    id="academia-path"
+    tagline="Academia"
+    title="Camino académico"
+    subtitle="Investigación + docencia con foco en IA aplicada y gestión."
+    columns={2}
+    items={[
+      {
+        title: 'Doctorado',
+        description: 'IA &amp; Management — Universidad de Alcalá. Publicaciones abiertas (arXiv, Scholar).',
+        icon: 'tabler:book-2',
+      },
+      {
+        title: 'Aspiración',
+        description:
+          'Consolidar perfil de profesor / catedrático en España: investigación rigurosa y transferencia a industria.',
+        icon: 'tabler:target-arrow',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Ver Academia',
+        href: getPermalink('/academia'),
+      },
+      {
+        text: 'Contacto',
+        href: getPermalink('/contact'),
+      },
+    ]}
+  >
+    <Fragment slot="title">Más detalle</Fragment>
+    <Fragment slot="subtitle">Publicaciones y docencia en Academia · proyectos en Developer.</Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,130 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Academia',
+  description:
+    'Publicaciones, docencia y actividad investigadora de Carlos Luengo. IA, management y evaluación de LLMs.',
+};
+
+const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Academia"
+    title="Investigación y docencia"
+    subtitle="Publicaciones · Docencia · Actividad. Perfil en Google Scholar."
+    callToAction={{
+      variant: 'primary',
+      text: 'Google Scholar',
+      href: scholarUrl,
+      target: '_blank',
+      icon: 'tabler:external-link',
+    }}
+  />
+
+  <Features2
+    id="publicaciones"
+    tagline="Publicaciones"
+    title="Papers y preprints"
+    subtitle="Entradas semilla; la lista completa está en Scholar."
+    columns={2}
+    items={[
+      {
+        title: 'Evaluating Large Language Models on the Spanish MIR Examination 2024/2025',
+        description:
+          'Análisis comparativo de razonamiento clínico y aplicación de conocimiento en LLMs frente al MIR español. arXiv:2503.00025.',
+        icon: 'tabler:file-text',
+        href: 'https://arxiv.org/abs/2503.00025',
+      },
+      {
+        title: 'IA generativa en el lugar de trabajo (placeholder)',
+        description:
+          'Línea de trabajo sobre adopción, productividad y gobernanza de IA generativa en organizaciones. En preparación / actualización.',
+        icon: 'tabler:building-factory-2',
+      },
+      {
+        title: 'Bibliometría e IA (placeholder)',
+        description:
+          'Estudios bibliométricos sobre IA, management e impacto académico. Placeholder hasta publicar DOI/arXiv.',
+        icon: 'tabler:chart-dots-3',
+      },
+      {
+        title: 'Más en Google Scholar',
+        description: 'Citas, coautores y listado actualizado de publicaciones.',
+        icon: 'tabler:school',
+        href: scholarUrl,
+      },
+    ]}
+  />
+
+  <Features
+    id="docencia"
+    tagline="Docencia"
+    title="Enseñanza"
+    subtitle="Transferir investigación y práctica de industria al aula."
+    columns={2}
+    items={[
+      {
+        title: 'Docencia universitaria',
+        description:
+          'Clases y materiales en torno a IA, management y tecnología aplicada. Detalle de asignaturas: próximamente.',
+        icon: 'tabler:chalkboard',
+      },
+      {
+        title: 'Mentoría',
+        description:
+          'Acompañamiento a estudiantes y founders en cloud, IA y go-to-market — cuando el tiempo lo permite.',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <Features
+    id="actividad"
+    tagline="Actividad"
+    title="Actividad académica"
+    columns={3}
+    items={[
+      {
+        title: 'Universidad de Alcalá',
+        description: 'Doctorado en IA &amp; Management.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Open science',
+        description: 'Preferencia por preprints (arXiv) y perfiles públicos (Scholar).',
+        icon: 'tabler:lock-open',
+      },
+      {
+        title: 'Industria ↔ academia',
+        description: 'Casos reales de cloud e IA como input de investigación y docencia.',
+        icon: 'tabler:arrows-exchange',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Abrir Scholar',
+        href: scholarUrl,
+        target: '_blank',
+      },
+      {
+        text: 'Contacto',
+        href: getPermalink('/contact'),
+      },
+    ]}
+  >
+    <Fragment slot="title">¿Colaboración académica?</Fragment>
+    <Fragment slot="subtitle">Papers, docencia o transferencia industria–universidad.</Fragment>
+  </CallToAction>
+</Layout>

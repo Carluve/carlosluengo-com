@@ -1,0 +1,162 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { SITE, I18N } from 'astrowind:config';
+import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
+import favIconSvg from '~/assets/favicons/favicon.svg';
+
+const metadata = {
+  title: 'Carlos Luengo — Investigación, docencia e industria',
+  ignoreTitleTemplate: true,
+  description:
+    'Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Docente universitario. Sr. Enterprise Account Executive en Cloudflare (Digital Natives, Startups e ISVs).',
+};
+
+const personId = `${SITE?.site}/#person`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE?.site}/#website`,
+    name: SITE?.name,
+    url: SITE?.site,
+    inLanguage: I18N?.language,
+    publisher: { '@id': personId },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': personId,
+    name: 'Carlos Luengo',
+    url: SITE?.site,
+    jobTitle: 'Sr. Enterprise Account Executive',
+    worksFor: { '@type': 'Organization', name: 'Cloudflare' },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Alcalá' },
+    sameAs: [
+      'https://www.linkedin.com/in/carlosluengo',
+      'https://github.com/Carluve',
+      'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
+    ],
+    logo: new URL(favIconSvg.src, SITE?.site).toString(),
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={structuredData} />
+
+  <Hero
+    tagline="Investigación · Docencia · Industria"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contacto',
+        href: getPermalink('/contact'),
+        icon: 'tabler:mail',
+      },
+      {
+        text: 'Google Scholar',
+        href: 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
+        target: '_blank',
+        icon: 'tabler:school',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Carlos Luengo Vera
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Profesor en programas de posgrado y ejecutivos.
+      Sr. Enterprise Account Executive en Cloudflare, donde acompaña a empresas digitales nativas, startups e ISVs.
+      Su trabajo sitúa la investigación aplicada en el cruce entre adopción de IA, organización empresarial e infraestructura cloud.
+    </Fragment>
+  </Hero>
+
+  <Features
+    id="pilares"
+    tagline="Ámbitos de trabajo"
+    title="Líneas que articulan esta web"
+    subtitle="Tres ámbitos complementarios: la práctica profesional en la industria tecnológica, la actividad académica y la experimentación técnica documentada."
+    columns={3}
+    items={[
+      {
+        title: 'Industria',
+        description:
+          'Responsable de cuentas enterprise en Cloudflare (Digital Natives, Startups e ISVs). Experiencia previa en Microsoft, Insight, Telefónica, Lenovo y AWS.',
+        icon: 'tabler:building-skyscraper',
+      },
+      {
+        title: 'Academia',
+        description:
+          'Investigación doctoral sobre el impacto económico y organizativo de los LLMs. Publicaciones, docencia universitaria y trayectoria hacia la acreditación académica en España.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Desarrollo',
+        description:
+          'Prototipos y demos sobre Cloudflare Workers, agentes y herramientas MCP. Documentación abierta de experimentos técnicos con fines formativos y de transferencia.',
+        icon: 'tabler:code',
+      },
+    ]}
+  />
+
+  <Features2
+    id="explorar"
+    tagline="Secciones"
+    title="Contenido disponible"
+    subtitle="Publicaciones, notas y proyectos, organizados por ámbito."
+    columns={3}
+    items={[
+      {
+        title: 'Blog',
+        description: 'Ensayos y notas sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre industria y universidad.',
+        icon: 'tabler:notebook',
+        href: getBlogPermalink(),
+      },
+      {
+        title: 'Academia',
+        description: 'Artículos científicos, actividad docente e investigadora. Perfil en Google Scholar.',
+        icon: 'tabler:certificate',
+        href: getPermalink('/academia'),
+      },
+      {
+        title: 'Developer',
+        description: 'Proyectos técnicos, demos en la edge y material de apoyo para builders.',
+        icon: 'tabler:terminal-2',
+        href: getPermalink('/developer'),
+      },
+    ]}
+  />
+
+  <BlogLatestPosts
+    title="Publicaciones recientes en el blog"
+    information="Textos en español. Selección editorial de temas cloud, IA y academia."
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contactar',
+        href: getPermalink('/contact'),
+        icon: 'tabler:send',
+      },
+      {
+        text: 'Perfil en LinkedIn',
+        href: 'https://www.linkedin.com/in/carlosluengo',
+        target: '_blank',
+      },
+    ]}
+  >
+    <Fragment slot="title">Colaboración e intercambio</Fragment>
+    <Fragment slot="subtitle">
+      Para consultas académicas, colaboraciones o asuntos profesionales relacionados con Cloudflare, puede utilizar la página de contacto o LinkedIn.
+    </Fragment>
+  </CallToAction>
+</Layout>

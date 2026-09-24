@@ -1,0 +1,49 @@
+---
+// Thin bar above the header. Defaults branded for carlosluengo.com.
+export interface Props {
+  badge?: string;
+  text?: string;
+  href?: string;
+  showStars?: boolean;
+}
+
+const {
+  badge = 'CL',
+  text = 'Industria · Academia · Build — LinkedIn »',
+  href = 'https://www.linkedin.com/in/carlosluengo',
+  showStars = false,
+} = Astro.props;
+---
+
+<div
+  class="text-sm bg-slate-900 text-slate-300 dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 hidden lg:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
+>
+  {
+    badge && (
+      <span class="bg-white/20 dark:bg-slate-700 text-slate-100 dark:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
+        {badge}
+      </span>
+    )
+  }
+  {
+    text &&
+      (href ? (
+        <a href={href} class="text-slate-300 hover:underline dark:text-slate-400 font-medium" set:html={text} />
+      ) : (
+        <span class="text-slate-300 dark:text-slate-400 font-medium" set:html={text} />
+      ))
+  }
+  {
+    showStars && (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ltr:ml-auto rtl:mr-auto w-[5.6rem] h-[1.25rem] ml-auto bg-contain bg-right bg-no-repeat inline-block bg-[url(https://img.shields.io/github/stars/Carluve/carlosluengo-com.svg?style=social&label=Stars&maxAge=86400)]"
+        title="GitHub"
+        href="https://github.com/Carluve/carlosluengo-com"
+      >
+        <span class="sr-only">GitHub stars</span>
+      </a>
+    )
+  }
+</div>

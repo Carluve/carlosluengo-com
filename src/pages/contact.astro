@@ -1,0 +1,67 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Contact',
+  description: 'Contacta con Carlos Luengo vía LinkedIn o el sitio carlosluengo.com.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Contact"
+    title="Hablemos"
+    subtitle="Preferible LinkedIn. El formulario con Cloudflare Turnstile / Workers llegará más adelante."
+  />
+
+  <Features2
+    title="Cómo contactar"
+    columns={2}
+    items={[
+      {
+        title: 'LinkedIn',
+        description: 'Mensaje directo — la vía más fiable y rápida.',
+        icon: 'tabler:brand-linkedin',
+        href: 'https://www.linkedin.com/in/carlosluengo',
+      },
+      {
+        title: 'Sitio',
+        description: 'carlosluengo.com — este sitio personal.',
+        icon: 'tabler:world',
+        href: 'https://carlosluengo.com',
+      },
+      {
+        title: 'GitHub',
+        description: 'Código y demos: @Carluve.',
+        icon: 'tabler:brand-github',
+        href: 'https://github.com/Carluve',
+      },
+      {
+        title: 'Google Scholar',
+        description: 'Publicaciones y citas académicas.',
+        icon: 'tabler:school',
+        href: 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Abrir LinkedIn',
+        href: 'https://www.linkedin.com/in/carlosluengo',
+        target: '_blank',
+        icon: 'tabler:brand-linkedin',
+      },
+    ]}
+  >
+    <Fragment slot="title">Formulario próximamente</Fragment>
+    <Fragment slot="subtitle">
+      Se añadirá un formulario protegido con Cloudflare Turnstile y un Worker. Mientras tanto, usa LinkedIn.
+    </Fragment>
+  </CallToAction>
+</Layout>
