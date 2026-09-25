@@ -4,14 +4,14 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: ""
+  googleSiteVerificationId: ''
 
 # Default SEO metadata
 metadata:
   title:
     default: Carlos Luengo
     template: '%s — Carlos Luengo'
-  description: "Sr. Enterprise AE en Cloudflare (Digital Natives / Startups / ISVs). Doctorando en IA & Management (Universidad de Alcalá). Docente. Industria · Academia · Build."
+  description: 'Sr. Enterprise Account Executive en Cloudflare (empresas digitales nativas, startups e ISVs). Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Docente de posgrado.'
   robots:
     index: true
     follow: true

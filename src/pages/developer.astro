@@ -7,87 +7,91 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Developer',
+  title: 'Desarrollo',
   description:
-    'Proyectos y demos de Carlos Luengo: Cloudflare Workers, Agents, MCP y building in public.',
+    'Repositorios públicos de Carlos Luengo Vera: el sitio personal, un prototipo experimental sobre procedencia de IA y un experimento de blog estático.',
 };
+
+const githubProfile = 'https://github.com/Carluve';
 ---
 
 <Layout metadata={metadata}>
   <HeroText
-    tagline="Developer"
-    title="Building in public"
-    subtitle="Workers, Agents y demos en la edge. Placeholders listos para sustituir por repos reales."
+    tagline="Desarrollo"
+    title="Experimentación técnica"
+    subtitle="Selección de repositorios públicos. El trabajo técnico de docencia e investigación que no es público no se enlaza."
     callToAction={{
       variant: 'primary',
-      text: 'GitHub @Carluve',
-      href: 'https://github.com/Carluve',
+      text: 'Perfil en GitHub',
+      href: githubProfile,
       target: '_blank',
       icon: 'tabler:brand-github',
     }}
   />
 
   <Projects
-    id="proyectos"
-    tagline="Proyectos"
-    title="Demos y experimentos"
-    subtitle="Tarjetas semilla — enlaza repos o demos cuando existan."
+    id="repositorios"
+    tagline="Repositorios"
+    title="Código público"
+    subtitle="Tres repositorios que pueden citarse con precisión. El perfil de GitHub reúne el resto del código público."
     columns={3}
     items={[
       {
-        title: 'Workers starter',
-        description: 'Plantilla mínima de Cloudflare Worker con rutas y observabilidad básica.',
-        tags: ['Workers', 'TypeScript'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Ver en GitHub',
-      },
-      {
-        title: 'AI Agent on Workers',
-        description: 'Agente con herramientas y memoria ligera desplegado en la edge.',
-        tags: ['AI', 'Agents', 'Workers'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Placeholder',
-      },
-      {
-        title: 'MCP server demo',
-        description: 'Servidor MCP de ejemplo para conectar agentes a datos y APIs.',
-        tags: ['MCP', 'AI'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Placeholder',
-      },
-      {
         title: 'carlosluengo.com',
-        description: 'Este sitio: AstroWind estático en Cloudflare Pages.',
-        tags: ['Astro', 'Pages'],
+        description: 'Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Pages.',
+        tags: ['Astro', 'Cloudflare Pages'],
         href: 'https://github.com/Carluve/carlosluengo-com',
-        linkText: 'Repo (próximamente)',
+        linkText: 'Ver el repositorio',
       },
       {
-        title: 'Turnstile + form',
-        description: 'Formulario de contacto con Turnstile y Worker backend (pendiente).',
-        tags: ['Turnstile', 'Workers'],
-        href: getPermalink('/contact'),
-        linkText: 'Ver Contact',
+        title: 'FocAIRemover',
+        description:
+          'Prototipo experimental en Cloudflare Workers para retirar marcas de procedencia de IA que pueden verificarse, como Unicode invisible y metadatos cuando hay un limpiador configurado. El repositorio lo presenta como investigación, no como producto.',
+        tags: ['Cloudflare Workers', 'TypeScript'],
+        href: 'https://github.com/Carluve/FocAIRemover',
+        linkText: 'Ver el repositorio',
       },
       {
-        title: 'Open experiments',
-        description: 'Espacio para notebooks, prompts y prototipos de IA aplicada.',
-        tags: ['AI', 'R&D'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Explorar',
+        title: 'Astro Nano',
+        description:
+          'Bifurcación del tema Astro Nano: un blog y portafolio estático. Es un experimento de presentación; el sitio principal es este.',
+        tags: ['Astro', 'Experimento'],
+        href: 'https://github.com/Carluve/blog-astronano',
+        linkText: 'Ver el repositorio',
       },
     ]}
   />
 
   <Features
-    tagline="Stack"
-    title="Con qué construyo"
-    columns={4}
+    id="no-publico"
+    tagline="Alcance"
+    title="Qué queda fuera de esta selección"
+    columns={2}
     items={[
+      {
+        title: 'Otros repositorios públicos',
+        description:
+          'El perfil de GitHub incluye otros experimentos públicos. Esta página solo destaca los que pueden describirse con precisión.',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: 'Trabajo interno',
+        description:
+          'El material de cátedra, una demostración universitaria y las herramientas de apoyo a la acreditación académica permanecen en repositorios privados. No tienen enlace público.',
+        icon: 'tabler:lock',
+      },
+    ]}
+  />
+
+  <Features
+    tagline="Entorno"
+    title="Herramientas de los prototipos públicos"
+    subtitle="Medios que aparecen en los repositorios citados, no un catálogo de productos."
+    columns={3}
+    items={[
+      { title: 'Astro', icon: 'tabler:rocket' },
+      { title: 'Cloudflare Pages', icon: 'tabler:cloud' },
       { title: 'Cloudflare Workers', icon: 'tabler:cloud-code' },
-      { title: 'Agents & AI', icon: 'tabler:robot' },
-      { title: 'MCP', icon: 'tabler:plug' },
-      { title: 'Astro / Pages', icon: 'tabler:rocket' },
     ]}
   />
 
@@ -96,7 +100,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'GitHub',
-        href: 'https://github.com/Carluve',
+        href: githubProfile,
         target: '_blank',
       },
       {
@@ -105,7 +109,9 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">¿Quieres colaborar en un build?</Fragment>
-    <Fragment slot="subtitle">Ideas, demos o OSS. Escríbeme.</Fragment>
+    <Fragment slot="title">Consultas técnicas</Fragment>
+    <Fragment slot="subtitle">
+      Las preguntas sobre estos repositorios pueden dirigirse por LinkedIn, desde la página de contacto.
+    </Fragment>
   </CallToAction>
 </Layout>

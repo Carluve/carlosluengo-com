@@ -25,4 +25,4 @@ En el rol de Enterprise AE para Digital Natives / Startups / ISVs, el patrón se
 
 ## Siguiente paso
 
-Si estás construyendo en la edge, mira la sección [Developer](/developer) de este sitio. Si vienes desde academia o investigación en IA, la sección [Academia](/academia) enlaza publicaciones abiertas.
+La sección [Desarrollo](/developer) reúne los repositorios públicos. La sección [Academia](/academia) enlaza las publicaciones que ya pueden citarse.

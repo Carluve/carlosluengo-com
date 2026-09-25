@@ -2,66 +2,93 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Contact',
-  description: 'Contacta con Carlos Luengo vía LinkedIn o el sitio carlosluengo.com.',
+  title: 'Contacto',
+  description:
+    'Contacto con Carlos Luengo Vera: LinkedIn para consultas académicas y profesionales, GitHub y Google Scholar.',
 };
+
+const linkedIn = 'https://www.linkedin.com/in/carlosluengo';
+const github = 'https://github.com/Carluve';
+const scholar = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
 ---
 
 <Layout metadata={metadata}>
   <HeroText
-    tagline="Contact"
-    title="Hablemos"
-    subtitle="Preferible LinkedIn. El formulario con Cloudflare Turnstile / Workers llegará más adelante."
+    tagline="Contacto"
+    title="Correspondencia"
+    subtitle="Las consultas académicas, las colaboraciones docentes y los asuntos profesionales se atienden por LinkedIn."
   />
 
   <Features2
-    title="Cómo contactar"
-    columns={2}
+    title="Vías de contacto"
+    subtitle="LinkedIn es el canal principal. GitHub y Google Scholar permiten consultar el código público y las publicaciones."
+    columns={3}
     items={[
       {
         title: 'LinkedIn',
-        description: 'Mensaje directo — la vía más fiable y rápida.',
+        description: 'Canal preferente para un mensaje directo, ya sea de carácter académico, docente o profesional.',
         icon: 'tabler:brand-linkedin',
-        href: 'https://www.linkedin.com/in/carlosluengo',
-      },
-      {
-        title: 'Sitio',
-        description: 'carlosluengo.com — este sitio personal.',
-        icon: 'tabler:world',
-        href: 'https://carlosluengo.com',
+        href: linkedIn,
       },
       {
         title: 'GitHub',
-        description: 'Código y demos: @Carluve.',
+        description: 'Repositorios públicos, bajo el usuario Carluve.',
         icon: 'tabler:brand-github',
-        href: 'https://github.com/Carluve',
+        href: github,
       },
       {
         title: 'Google Scholar',
-        description: 'Publicaciones y citas académicas.',
+        description: 'Publicaciones, citas y coautores.',
         icon: 'tabler:school',
-        href: 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
+        href: scholar,
       },
     ]}
   />
+
+  <Content
+    items={[
+      {
+        title: 'Universidad',
+        description: 'Investigación doctoral, docencia de posgrado y posibles colaboraciones académicas.',
+      },
+      {
+        title: 'Industria',
+        description:
+          'Asuntos profesionales relacionados con Cloudflare, en el ámbito de empresas digitales nativas, startups e ISVs.',
+      },
+      {
+        title: 'Código',
+        description: 'Preguntas sobre los repositorios públicos enlazados en la sección de desarrollo.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ámbito de las consultas</h2>
+      <p>
+        Este sitio presenta una trayectoria personal. No sustituye a los canales institucionales de Cloudflare ni a los
+        de la Universidad de Alcalá.
+      </p>
+    </Fragment>
+  </Content>
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Abrir LinkedIn',
-        href: 'https://www.linkedin.com/in/carlosluengo',
+        text: 'Escribir por LinkedIn',
+        href: linkedIn,
         target: '_blank',
         icon: 'tabler:brand-linkedin',
       },
     ]}
   >
-    <Fragment slot="title">Formulario próximamente</Fragment>
+    <Fragment slot="title">LinkedIn</Fragment>
     <Fragment slot="subtitle">
-      Se añadirá un formulario protegido con Cloudflare Turnstile y un Worker. Mientras tanto, usa LinkedIn.
+      Es la vía adecuada para una respuesta directa. El perfil público está a nombre de Carlos Luengo.
     </Fragment>
   </CallToAction>
 </Layout>

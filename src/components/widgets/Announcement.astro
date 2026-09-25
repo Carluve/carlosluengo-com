@@ -7,12 +7,7 @@ export interface Props {
   showStars?: boolean;
 }
 
-const {
-  badge = 'CL',
-  text = 'Industria · Academia · Build — LinkedIn »',
-  href = 'https://www.linkedin.com/in/carlosluengo',
-  showStars = false,
-} = Astro.props;
+const { badge, text = 'Investigación, docencia e industria', href, showStars = false } = Astro.props;
 ---
 
 <div

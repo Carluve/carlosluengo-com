@@ -62,8 +62,8 @@ const aspectSize = {
     }}
   />
   <div class="mx-auto max-w-7xl px-0 py-4 md:px-2">
-    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
-      <div class="md:basis-1/2 self-center">
+    <div class:list={['md:flex', image && isReversed && 'md:flex-row-reverse', image && 'md:gap-16']}>
+      <div class:list={[image ? 'md:basis-1/2' : 'w-full max-w-3xl mx-auto', 'self-center']}>
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
@@ -116,9 +116,9 @@ const aspectSize = {
           )
         }
       </div>
-      <div class="mt-10 md:mt-0 md:basis-1/2">
-        {
-          image && (
+      {
+        image && (
+          <div class="mt-10 md:mt-0 md:basis-1/2">
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
@@ -135,9 +135,9 @@ const aspectSize = {
                 />
               )}
             </div>
-          )
-        }
-      </div>
+          </div>
+        )
+      }
     </div>
   </div>
 </WidgetWrapper>

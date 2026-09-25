@@ -9,17 +9,18 @@ import { getPermalink } from '~/utils/permalinks';
 const metadata = {
   title: 'Academia',
   description:
-    'Publicaciones, docencia y actividad investigadora de Carlos Luengo. IA, management y evaluación de LLMs.',
+    'Publicación, docencia e investigación doctoral de Carlos Luengo Vera. Inteligencia artificial, management y evaluación de modelos de lenguaje.',
 };
 
 const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
+const paperUrl = 'https://arxiv.org/abs/2503.00025';
 ---
 
 <Layout metadata={metadata}>
   <HeroText
     tagline="Academia"
     title="Investigación y docencia"
-    subtitle="Publicaciones · Docencia · Actividad. Perfil en Google Scholar."
+    subtitle="Doctorado en Inteligencia Artificial y Management en la Universidad de Alcalá. Docencia de posgrado y de formación ejecutiva. El listado bibliográfico completo está en Google Scholar."
     callToAction={{
       variant: 'primary',
       text: 'Google Scholar',
@@ -27,39 +28,56 @@ const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
       target: '_blank',
       icon: 'tabler:external-link',
     }}
+    callToAction2={{
+      text: 'Preprint en arXiv',
+      href: paperUrl,
+      target: '_blank',
+      icon: 'tabler:file-text',
+    }}
   />
 
   <Features2
     id="publicaciones"
     tagline="Publicaciones"
-    title="Papers y preprints"
-    subtitle="Entradas semilla; la lista completa está en Scholar."
+    title="Trabajo disponible"
+    subtitle="Se cita únicamente el preprint con identificador público. El resto del registro bibliográfico está en Google Scholar."
     columns={2}
     items={[
       {
-        title: 'Evaluating Large Language Models on the Spanish MIR Examination 2024/2025',
+        title: 'Evaluating Large Language Models on the Spanish Medical Intern Resident (MIR) Examination 2024/2025',
         description:
-          'Análisis comparativo de razonamiento clínico y aplicación de conocimiento en LLMs frente al MIR español. arXiv:2503.00025.',
+          'Análisis comparativo del razonamiento clínico y de la aplicación de conocimiento. Preprint, arXiv:2503.00025. Carlos Luengo Vera figura como primer autor.',
         icon: 'tabler:file-text',
-        href: 'https://arxiv.org/abs/2503.00025',
+        href: paperUrl,
       },
       {
-        title: 'IA generativa en el lugar de trabajo (placeholder)',
+        title: 'Google Scholar',
         description:
-          'Línea de trabajo sobre adopción, productividad y gobernanza de IA generativa en organizaciones. En preparación / actualización.',
-        icon: 'tabler:building-factory-2',
-      },
-      {
-        title: 'Bibliometría e IA (placeholder)',
-        description:
-          'Estudios bibliométricos sobre IA, management e impacto académico. Placeholder hasta publicar DOI/arXiv.',
-        icon: 'tabler:chart-dots-3',
-      },
-      {
-        title: 'Más en Google Scholar',
-        description: 'Citas, coautores y listado actualizado de publicaciones.',
+          'Perfil público con el listado de publicaciones, citas y coautores. Es la referencia para consultar el conjunto de la producción, más allá de esta página.',
         icon: 'tabler:school',
         href: scholarUrl,
+      },
+    ]}
+  />
+
+  <Features
+    id="en-preparacion"
+    tagline="Trabajo en curso"
+    title="Manuscritos en preparación"
+    subtitle="No se anticipan títulos ni resultados que aún no tengan preprint o identificador permanente."
+    columns={2}
+    items={[
+      {
+        title: 'Tesis doctoral',
+        description:
+          'Inteligencia Artificial y Management, Universidad de Alcalá. Línea de trabajo sobre el impacto económico y organizativo de los modelos de lenguaje.',
+        icon: 'tabler:writing',
+      },
+      {
+        title: 'Nuevas publicaciones',
+        description:
+          'Los manuscritos en preparación se incorporarán a esta página cuando exista un preprint o un DOI. Hasta entonces, Google Scholar es el listado de referencia.',
+        icon: 'tabler:hourglass',
       },
     ]}
   />
@@ -68,43 +86,44 @@ const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
     id="docencia"
     tagline="Docencia"
     title="Enseñanza"
-    subtitle="Transferir investigación y práctica de industria al aula."
+    subtitle="La docencia traslada al aula la investigación y la práctica profesional, sin inventariar aquí asignaturas concretas."
     columns={2}
     items={[
       {
-        title: 'Docencia universitaria',
+        title: 'Posgrado y formación ejecutiva',
         description:
-          'Clases y materiales en torno a IA, management y tecnología aplicada. Detalle de asignaturas: próximamente.',
+          'Clases en programas de posgrado y de formación ejecutiva, en torno a la inteligencia artificial, el management y la tecnología aplicada.',
         icon: 'tabler:chalkboard',
       },
       {
-        title: 'Mentoría',
+        title: 'Universidad de Alcalá',
         description:
-          'Acompañamiento a estudiantes y founders en cloud, IA y go-to-market — cuando el tiempo lo permite.',
-        icon: 'tabler:users',
+          'Adscripción doctoral en Inteligencia Artificial y Management. La universidad es el marco institucional de la investigación.',
+        icon: 'tabler:building',
       },
     ]}
   />
 
   <Features
     id="actividad"
-    tagline="Actividad"
-    title="Actividad académica"
+    tagline="Criterios"
+    title="Cómo se presenta la actividad académica"
     columns={3}
     items={[
       {
-        title: 'Universidad de Alcalá',
-        description: 'Doctorado en IA &amp; Management.',
-        icon: 'tabler:building',
-      },
-      {
-        title: 'Open science',
-        description: 'Preferencia por preprints (arXiv) y perfiles públicos (Scholar).',
+        title: 'Acceso abierto',
+        description: 'Preferencia por el depósito en arXiv y por un perfil público en Google Scholar.',
         icon: 'tabler:lock-open',
       },
       {
-        title: 'Industria ↔ academia',
-        description: 'Casos reales de cloud e IA como input de investigación y docencia.',
+        title: 'Prudencia bibliográfica',
+        description: 'Esta página no lista como publicación un texto que todavía no pueda citarse.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Industria y universidad',
+        description:
+          'La práctica en la industria tecnológica informa la investigación y la docencia. No las sustituye.',
         icon: 'tabler:arrows-exchange',
       },
     ]}
@@ -114,7 +133,7 @@ const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
     actions={[
       {
         variant: 'primary',
-        text: 'Abrir Scholar',
+        text: 'Abrir Google Scholar',
         href: scholarUrl,
         target: '_blank',
       },
@@ -124,7 +143,10 @@ const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
       },
     ]}
   >
-    <Fragment slot="title">¿Colaboración académica?</Fragment>
-    <Fragment slot="subtitle">Papers, docencia o transferencia industria–universidad.</Fragment>
+    <Fragment slot="title">Colaboración académica</Fragment>
+    <Fragment slot="subtitle">
+      Para propuestas de investigación, docencia o transferencia entre universidad e industria, utilice la página de
+      contacto.
+    </Fragment>
   </CallToAction>
 </Layout>

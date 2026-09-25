@@ -11,12 +11,12 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
 ---
 
 <aw-social-share class={className}>
-  <span class="align-super font-bold text-slate-500 dark:text-slate-400">Share:</span>
+  <span class="align-super font-bold text-slate-500 dark:text-slate-400">Compartir:</span>
   <button
     type="button"
     class="ml-2 rtl:ml-0 rtl:mr-2"
-    title="Twitter Share"
-    aria-label="Twitter Share"
+    title="Compartir en X"
+    aria-label="Compartir en X"
     data-aw-social-share="twitter"
     data-aw-url={url}
     data-aw-text={text}
@@ -28,8 +28,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
   <button
     type="button"
     class="ml-2 rtl:ml-0 rtl:mr-2"
-    title="Facebook Share"
-    aria-label="Facebook Share"
+    title="Compartir en Facebook"
+    aria-label="Compartir en Facebook"
     data-aw-social-share="facebook"
     data-aw-url={url}
     ><Icon
@@ -40,8 +40,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
   <button
     type="button"
     class="ml-2 rtl:ml-0 rtl:mr-2"
-    title="Linkedin Share"
-    aria-label="Linkedin Share"
+    title="Compartir en LinkedIn"
+    aria-label="Compartir en LinkedIn"
     data-aw-social-share="linkedin"
     data-aw-url={url}
     data-aw-text={text}
@@ -53,8 +53,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
   <button
     type="button"
     class="ml-2 rtl:ml-0 rtl:mr-2"
-    title="Whatsapp Share"
-    aria-label="Whatsapp Share"
+    title="Compartir en WhatsApp"
+    aria-label="Compartir en WhatsApp"
     data-aw-social-share="whatsapp"
     data-aw-url={url}
     data-aw-text={text}
@@ -66,8 +66,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
   <button
     type="button"
     class="ml-2 rtl:ml-0 rtl:mr-2"
-    title="Email Share"
-    aria-label="Email Share"
+    title="Compartir por correo"
+    aria-label="Compartir por correo"
     data-aw-social-share="mail"
     data-aw-url={url}
     data-aw-text={text}
