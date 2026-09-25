@@ -7,87 +7,71 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Developer',
+  title: 'Desarrollo',
   description:
-    'Proyectos y demos de Carlos Luengo: Cloudflare Workers, Agents, MCP y building in public.',
+    'Repositorios públicos de Carlos Luengo Vera: el sitio personal y un índice comunitario de recursos de Cloudflare en español.',
 };
+
+const githubProfile = 'https://github.com/Carluve';
 ---
 
 <Layout metadata={metadata}>
   <HeroText
-    tagline="Developer"
-    title="Building in public"
-    subtitle="Workers, Agents y demos en la edge. Placeholders listos para sustituir por repos reales."
+    tagline="Desarrollo"
+    title="Experimentación técnica"
+    subtitle="Prototipos y documentación publicados cuando el repositorio es público. Esta página no presenta proyectos ficticios."
     callToAction={{
       variant: 'primary',
-      text: 'GitHub @Carluve',
-      href: 'https://github.com/Carluve',
+      text: 'Perfil en GitHub',
+      href: githubProfile,
       target: '_blank',
       icon: 'tabler:brand-github',
     }}
   />
 
   <Projects
-    id="proyectos"
-    tagline="Proyectos"
-    title="Demos y experimentos"
-    subtitle="Tarjetas semilla — enlaza repos o demos cuando existan."
+    id="repositorios"
+    tagline="Repositorios"
+    title="Código público"
+    subtitle="Selección breve. El perfil de GitHub reúne el resto de repositorios públicos."
     columns={3}
     items={[
       {
-        title: 'Workers starter',
-        description: 'Plantilla mínima de Cloudflare Worker con rutas y observabilidad básica.',
-        tags: ['Workers', 'TypeScript'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Ver en GitHub',
-      },
-      {
-        title: 'AI Agent on Workers',
-        description: 'Agente con herramientas y memoria ligera desplegado en la edge.',
-        tags: ['AI', 'Agents', 'Workers'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Placeholder',
-      },
-      {
-        title: 'MCP server demo',
-        description: 'Servidor MCP de ejemplo para conectar agentes a datos y APIs.',
-        tags: ['MCP', 'AI'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Placeholder',
-      },
-      {
         title: 'carlosluengo.com',
-        description: 'Este sitio: AstroWind estático en Cloudflare Pages.',
-        tags: ['Astro', 'Pages'],
+        description: 'Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Pages.',
+        tags: ['Astro', 'Cloudflare Pages'],
         href: 'https://github.com/Carluve/carlosluengo-com',
-        linkText: 'Repo (próximamente)',
+        linkText: 'Ver el repositorio',
       },
       {
-        title: 'Turnstile + form',
-        description: 'Formulario de contacto con Turnstile y Worker backend (pendiente).',
-        tags: ['Turnstile', 'Workers'],
-        href: getPermalink('/contact'),
-        linkText: 'Ver Contact',
+        title: 'Cloudflare en español',
+        description:
+          'Índice comunitario e independiente de documentación y ejemplos de Cloudflare en español. No es un repositorio oficial de la compañía.',
+        tags: ['Documentación', 'Cloudflare'],
+        href: 'https://github.com/Carluve/vibe-coding-spanish',
+        linkText: 'Ver el repositorio',
       },
       {
-        title: 'Open experiments',
-        description: 'Espacio para notebooks, prompts y prototipos de IA aplicada.',
-        tags: ['AI', 'R&D'],
-        href: 'https://github.com/Carluve',
-        linkText: 'Explorar',
+        title: 'Perfil de GitHub',
+        description:
+          'Conjunto de repositorios públicos bajo el usuario Carluve, incluidos experimentos que no se destacan en esta página.',
+        tags: ['GitHub'],
+        href: githubProfile,
+        linkText: 'Abrir el perfil',
       },
     ]}
   />
 
   <Features
-    tagline="Stack"
-    title="Con qué construyo"
+    tagline="Entorno"
+    title="Herramientas de los prototipos"
+    subtitle="Medios con los que se documenta la experimentación técnica y este sitio."
     columns={4}
     items={[
       { title: 'Cloudflare Workers', icon: 'tabler:cloud-code' },
-      { title: 'Agents & AI', icon: 'tabler:robot' },
+      { title: 'Agentes e inteligencia artificial', icon: 'tabler:robot' },
       { title: 'MCP', icon: 'tabler:plug' },
-      { title: 'Astro / Pages', icon: 'tabler:rocket' },
+      { title: 'Astro y Cloudflare Pages', icon: 'tabler:rocket' },
     ]}
   />
 
@@ -96,7 +80,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'GitHub',
-        href: 'https://github.com/Carluve',
+        href: githubProfile,
         target: '_blank',
       },
       {
@@ -105,7 +89,9 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">¿Quieres colaborar en un build?</Fragment>
-    <Fragment slot="subtitle">Ideas, demos o OSS. Escríbeme.</Fragment>
+    <Fragment slot="title">Consultas técnicas</Fragment>
+    <Fragment slot="subtitle">
+      Las preguntas sobre estos repositorios pueden dirigirse por LinkedIn, desde la página de contacto.
+    </Fragment>
   </CallToAction>
 </Layout>

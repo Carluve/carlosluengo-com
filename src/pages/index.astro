@@ -67,14 +67,13 @@ const structuredData = [
       },
     ]}
   >
-    <Fragment slot="title">
-      Carlos Luengo Vera
-    </Fragment>
+    <Fragment slot="title"> Carlos Luengo Vera </Fragment>
 
     <Fragment slot="subtitle">
-      Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Profesor en programas de posgrado y ejecutivos.
-      Sr. Enterprise Account Executive en Cloudflare, donde acompaña a empresas digitales nativas, startups e ISVs.
-      Su trabajo sitúa la investigación aplicada en el cruce entre adopción de IA, organización empresarial e infraestructura cloud.
+      Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Profesor en programas de posgrado
+      y ejecutivos. Sr. Enterprise Account Executive en Cloudflare, donde acompaña a empresas digitales nativas,
+      startups e ISVs. Su trabajo sitúa la investigación aplicada en el cruce entre adopción de IA, organización
+      empresarial e infraestructura cloud.
     </Fragment>
   </Hero>
 
@@ -100,7 +99,7 @@ const structuredData = [
       {
         title: 'Desarrollo',
         description:
-          'Prototipos y demos sobre Cloudflare Workers, agentes y herramientas MCP. Documentación abierta de experimentos técnicos con fines formativos y de transferencia.',
+          'Prototipos y notas técnicas sobre Cloudflare Workers, agentes y herramientas MCP, publicados cuando el código es público.',
         icon: 'tabler:code',
       },
     ]}
@@ -115,7 +114,8 @@ const structuredData = [
     items={[
       {
         title: 'Blog',
-        description: 'Ensayos y notas sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre industria y universidad.',
+        description:
+          'Ensayos y notas sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre industria y universidad.',
         icon: 'tabler:notebook',
         href: getBlogPermalink(),
       },
@@ -126,8 +126,8 @@ const structuredData = [
         href: getPermalink('/academia'),
       },
       {
-        title: 'Developer',
-        description: 'Proyectos técnicos, demos en la edge y material de apoyo para builders.',
+        title: 'Desarrollo',
+        description: 'Repositorios públicos, prototipos y documentación técnica.',
         icon: 'tabler:terminal-2',
         href: getPermalink('/developer'),
       },
@@ -136,7 +136,8 @@ const structuredData = [
 
   <BlogLatestPosts
     title="Publicaciones recientes en el blog"
-    information="Textos en español. Selección editorial de temas cloud, IA y academia."
+    linkText="Ver todas las entradas"
+    information="Textos en español sobre infraestructura cloud, inteligencia artificial aplicada y universidad."
   />
 
   <CallToAction
@@ -156,7 +157,8 @@ const structuredData = [
   >
     <Fragment slot="title">Colaboración e intercambio</Fragment>
     <Fragment slot="subtitle">
-      Para consultas académicas, colaboraciones o asuntos profesionales relacionados con Cloudflare, puede utilizar la página de contacto o LinkedIn.
+      Para consultas académicas, colaboraciones o asuntos profesionales relacionados con Cloudflare, puede utilizar la
+      página de contacto o LinkedIn.
     </Fragment>
   </CallToAction>
 </Layout>

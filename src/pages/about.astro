@@ -2,99 +2,95 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
-import Timeline from '~/components/widgets/Timeline.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'About',
+  title: 'Sobre mí',
   description:
-    'Bio de Carlos Luengo: trayectoria enterprise (Microsoft → Cloudflare), doctorado en IA & Management y aspiración académica en España.',
+    'Trayectoria profesional y académica de Carlos Luengo Vera: dirección de cuentas enterprise en Cloudflare, doctorado en Inteligencia Artificial y Management en la Universidad de Alcalá y docencia de posgrado.',
 };
 ---
 
 <Layout metadata={metadata}>
   <HeroText
-    tagline="About"
-    title="Industria, academia y build"
-    subtitle="Perfil corto: vendedor enterprise, investigador y docente. Sin CV interminable."
+    tagline="Sobre mí"
+    title="Trayectoria profesional y académica"
+    subtitle="Carlos Luengo Vera trabaja en la industria tecnológica y, en paralelo, en la investigación y la docencia universitarias."
   />
 
   <Content
     isReversed
     items={[
       {
-        title: 'Hoy',
+        title: 'Industria',
         description:
-          'Sr. Enterprise Account Executive en Cloudflare, enfocado en Digital Natives, Startups e ISVs.',
+          'Sr. Enterprise Account Executive en Cloudflare, con responsabilidad sobre empresas digitales nativas, startups e ISVs.',
       },
       {
-        title: 'Academia',
+        title: 'Investigación',
         description:
-          'Doctorando en IA &amp; Management en la Universidad de Alcalá. Docente. Meta: catedrático en España.',
+          'Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. La tesis aborda el impacto económico y organizativo de los modelos de lenguaje.',
       },
       {
-        title: 'Build',
-        description: 'Workers, Agents y demos en la edge — aprender haciendo y compartir en público.',
+        title: 'Docencia',
+        description:
+          'Imparte clase en programas de posgrado y de formación ejecutiva, con la intención de consolidar una carrera académica en España.',
       },
     ]}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Quién soy</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Presentación</h2>
       <p>
-        Combino go-to-market en cloud con investigación aplicada en inteligencia artificial y management. Me interesa
-        el puente entre startups, empresas grandes y la universidad: cómo la IA cambia productos, equipos y docencia.
+        La actividad profesional se ha desarrollado en la dirección de cuentas y en el ecosistema tecnológico. La
+        responsabilidad actual está en Cloudflare. Con anterioridad ha trabajado en Amazon Web Services, Lenovo,
+        Telefónica, Insight y Microsoft.
       </p>
       <br />
       <p>
-        Prefiero claridad a marketing vacío: trayectoria real, papers abiertos y proyectos que se puedan tocar.
+        Esa práctica informa la investigación doctoral y la docencia, sin sustituirlas. El objetivo académico es la
+        acreditación en el sistema universitario español y, a más largo plazo, una cátedra.
       </p>
     </Fragment>
   </Content>
 
-  <Timeline
+  <Features
     id="carrera"
-    tagline="Trayectoria"
-    title="Carrera en industria"
-    subtitle="De evangelismo Microsoft a Cloudflare, pasando por partners y hyperscalers."
-    layout="vertical"
+    tagline="Industria"
+    title="Experiencia profesional"
+    subtitle="Organizaciones en las que ha desempeñado funciones comerciales, de ecosistema o de dirección de cuentas, de la etapa actual a los inicios."
+    columns={3}
     items={[
       {
-        date: 'Ahora',
         title: 'Cloudflare',
-        description: 'Sr. Enterprise AE — Digital Natives / Startups / ISVs.',
+        description:
+          'Sr. Enterprise Account Executive. Cuentas de empresas digitales nativas, startups e ISVs. Etapa actual.',
         icon: 'tabler:cloud',
-        highlight: true,
       },
       {
-        date: 'Anterior',
-        title: 'AWS',
-        description: 'Account Executive / soluciones cloud para clientes enterprise y partners.',
+        title: 'Amazon Web Services',
+        description: 'Dirección de cuentas y soluciones cloud para clientes de empresa y del canal de partners.',
         icon: 'tabler:brand-aws',
       },
       {
-        date: 'Anterior',
         title: 'Lenovo',
-        description: 'Roles comerciales y de ecosistema en infra y dispositivos.',
+        description: 'Funciones comerciales y de ecosistema en infraestructura y dispositivos.',
         icon: 'tabler:device-desktop',
       },
       {
-        date: 'Anterior',
         title: 'Telefónica',
-        description: 'Go-to-market y relación con clientes en telecomunicaciones y cloud.',
+        description: 'Relación con clientes en telecomunicaciones y servicios cloud.',
         icon: 'tabler:antenna',
       },
       {
-        date: 'Anterior',
         title: 'Insight',
-        description: 'Partner / soluciones IT para empresas.',
+        description: 'Soluciones tecnológicas para empresas.',
         icon: 'tabler:building',
       },
       {
-        date: 'Inicio',
         title: 'Microsoft',
-        description: 'Evangelismo y early career en ecosistema Microsoft.',
+        description: 'Inicios de la carrera, en evangelismo técnico del ecosistema Microsoft.',
         icon: 'tabler:brand-windows',
       },
     ]}
@@ -102,21 +98,22 @@ const metadata = {
 
   <Features
     id="academia-path"
-    tagline="Academia"
-    title="Camino académico"
-    subtitle="Investigación + docencia con foco en IA aplicada y gestión."
+    tagline="Universidad"
+    title="Proyección académica"
+    subtitle="Investigación y docencia orientadas a una carrera estable en la universidad española."
     columns={2}
     items={[
       {
         title: 'Doctorado',
-        description: 'IA &amp; Management — Universidad de Alcalá. Publicaciones abiertas (arXiv, Scholar).',
+        description:
+          'Inteligencia Artificial y Management en la Universidad de Alcalá. Las publicaciones disponibles se recogen en Academia y en Google Scholar.',
         icon: 'tabler:book-2',
       },
       {
-        title: 'Aspiración',
+        title: 'Acreditación',
         description:
-          'Consolidar perfil de profesor / catedrático en España: investigación rigurosa y transferencia a industria.',
-        icon: 'tabler:target-arrow',
+          'La trayectoria se orienta a la acreditación docente e investigadora y, en su momento, a una cátedra en España.',
+        icon: 'tabler:school',
       },
     ]}
   />
@@ -125,7 +122,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Ver Academia',
+        text: 'Academia',
         href: getPermalink('/academia'),
       },
       {
@@ -134,7 +131,9 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">Más detalle</Fragment>
-    <Fragment slot="subtitle">Publicaciones y docencia en Academia · proyectos en Developer.</Fragment>
+    <Fragment slot="title">Publicaciones y correspondencia</Fragment>
+    <Fragment slot="subtitle">
+      La actividad investigadora y docente se detalla en Academia. Las consultas pueden dirigirse desde Contacto.
+    </Fragment>
   </CallToAction>
 </Layout>

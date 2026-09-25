@@ -24,23 +24,23 @@ npm run dev
 
 Useful scripts:
 
-| Command           | Purpose                |
-| ----------------- | ---------------------- |
-| `npm run dev`     | Dev server             |
-| `npm run build`   | Static build → `dist/` |
-| `npm run preview` | Preview `dist/` locally|
+| Command           | Purpose                 |
+| ----------------- | ----------------------- |
+| `npm run dev`     | Dev server              |
+| `npm run build`   | Static build → `dist/`  |
+| `npm run preview` | Preview `dist/` locally |
 
 ## Cloudflare Pages build settings
 
 Create a Pages project connected to the GitHub repo (see next section). Suggested settings:
 
-| Setting            | Value            |
-| ------------------ | ---------------- |
-| Framework preset   | Astro (or None)  |
-| Build command      | `npm run build`  |
-| Build output dir   | `dist`           |
-| Root directory     | `/` (repo root)  |
-| Node.js version    | `22` (or `22.x`) |
+| Setting          | Value            |
+| ---------------- | ---------------- |
+| Framework preset | Astro (or None)  |
+| Build command    | `npm run build`  |
+| Build output dir | `dist`           |
+| Root directory   | `/` (repo root)  |
+| Node.js version  | `22` (or `22.x`) |
 
 The project already sets `output: 'static'` in `astro.config.ts`. Optional: `wrangler.jsonc` names the project `carlosluengo-com` and points assets at `./dist` for Workers static assets / local `wrangler` previews.
 
@@ -67,18 +67,19 @@ git push -u origin main
 
 ## Site map
 
-- `/` — Home  
-- `/about` — About / trayectoria  
-- `/blog` — Blog  
-- `/academia` — Publicaciones · Docencia · Actividad  
-- `/developer` — Proyectos / Workers & Agents  
-- `/contact` — Contacto (LinkedIn; form + Turnstile later)
+- `/` — Inicio
+- `/about` — Sobre mí
+- `/blog` — Blog
+- `/academia` — Investigación y docencia
+- `/developer` — Experimentación técnica
+- `/contact` — Contacto (LinkedIn, GitHub y Google Scholar)
+- `/privacy` — Política de privacidad
+- `/terms` — Aviso legal
 
 Config: `src/config.yaml`, menus: `src/navigation.ts`.
 
 ## Next product steps (optional)
 
-- Wire contact form → Worker + Turnstile  
-- Replace Developer placeholders with real repos  
-- Add author photo / OG image  
-- Expand Academia from Google Scholar  
+- Add an author photograph and a dedicated Open Graph image
+- Expand Academia only when a new preprint or DOI exists
+- Do not point DNS for carlosluengo.com here until the intentional cutover
