@@ -150,3 +150,14 @@
   color: var(--shiki-dark) !important;
   background-color: var(--shiki-dark-bg) !important;
 }
+
+/* Reveal-on-scroll starts at opacity 0 and only finishes if
+   IntersectionObserver runs. The copy has to stay readable without it. */
+@media (width >= 48rem) {
+  @media (prefers-reduced-motion: no-preference) {
+    .motion-safe\:md\:opacity-0 {
+      opacity: 1 !important;
+      animation: none !important;
+    }
+  }
+}
