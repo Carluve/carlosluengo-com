@@ -9,7 +9,7 @@ import { getPermalink } from '~/utils/permalinks';
 const metadata = {
   title: 'Desarrollo',
   description:
-    'Repositorios públicos de Carlos Luengo Vera: el sitio personal y un índice comunitario de recursos de Cloudflare en español.',
+    'Repositorios públicos de Carlos Luengo Vera: el sitio personal, un prototipo experimental sobre procedencia de IA y un experimento de blog estático.',
 };
 
 const githubProfile = 'https://github.com/Carluve';
@@ -19,7 +19,7 @@ const githubProfile = 'https://github.com/Carluve';
   <HeroText
     tagline="Desarrollo"
     title="Experimentación técnica"
-    subtitle="Prototipos y documentación publicados cuando el repositorio es público. Esta página no presenta proyectos ficticios."
+    subtitle="Selección de repositorios públicos. El trabajo técnico de docencia e investigación que no es público no se enlaza."
     callToAction={{
       variant: 'primary',
       text: 'Perfil en GitHub',
@@ -33,7 +33,7 @@ const githubProfile = 'https://github.com/Carluve';
     id="repositorios"
     tagline="Repositorios"
     title="Código público"
-    subtitle="Selección breve. El perfil de GitHub reúne el resto de repositorios públicos."
+    subtitle="Tres repositorios que pueden citarse con precisión. El perfil de GitHub reúne el resto del código público."
     columns={3}
     items={[
       {
@@ -44,34 +44,54 @@ const githubProfile = 'https://github.com/Carluve';
         linkText: 'Ver el repositorio',
       },
       {
-        title: 'Cloudflare en español',
+        title: 'FocAIRemover',
         description:
-          'Índice comunitario e independiente de documentación y ejemplos de Cloudflare en español. No es un repositorio oficial de la compañía.',
-        tags: ['Documentación', 'Cloudflare'],
-        href: 'https://github.com/Carluve/vibe-coding-spanish',
+          'Prototipo experimental en Cloudflare Workers para retirar marcas de procedencia de IA que pueden verificarse, como Unicode invisible y metadatos cuando hay un limpiador configurado. El repositorio lo presenta como investigación, no como producto.',
+        tags: ['Cloudflare Workers', 'TypeScript'],
+        href: 'https://github.com/Carluve/FocAIRemover',
         linkText: 'Ver el repositorio',
       },
       {
-        title: 'Perfil de GitHub',
+        title: 'Astro Nano',
         description:
-          'Conjunto de repositorios públicos bajo el usuario Carluve, incluidos experimentos que no se destacan en esta página.',
-        tags: ['GitHub'],
-        href: githubProfile,
-        linkText: 'Abrir el perfil',
+          'Bifurcación del tema Astro Nano: un blog y portafolio estático. Es un experimento de presentación; el sitio principal es este.',
+        tags: ['Astro', 'Experimento'],
+        href: 'https://github.com/Carluve/blog-astronano',
+        linkText: 'Ver el repositorio',
+      },
+    ]}
+  />
+
+  <Features
+    id="no-publico"
+    tagline="Alcance"
+    title="Qué queda fuera de esta selección"
+    columns={2}
+    items={[
+      {
+        title: 'Otros repositorios públicos',
+        description:
+          'El perfil de GitHub incluye otros experimentos públicos. Esta página solo destaca los que pueden describirse con precisión.',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: 'Trabajo interno',
+        description:
+          'El material de cátedra, una demostración universitaria y las herramientas de apoyo a la acreditación académica permanecen en repositorios privados. No tienen enlace público.',
+        icon: 'tabler:lock',
       },
     ]}
   />
 
   <Features
     tagline="Entorno"
-    title="Herramientas de los prototipos"
-    subtitle="Medios con los que se documenta la experimentación técnica y este sitio."
-    columns={4}
+    title="Herramientas de los prototipos públicos"
+    subtitle="Medios que aparecen en los repositorios citados, no un catálogo de productos."
+    columns={3}
     items={[
+      { title: 'Astro', icon: 'tabler:rocket' },
+      { title: 'Cloudflare Pages', icon: 'tabler:cloud' },
       { title: 'Cloudflare Workers', icon: 'tabler:cloud-code' },
-      { title: 'Agentes e inteligencia artificial', icon: 'tabler:robot' },
-      { title: 'MCP', icon: 'tabler:plug' },
-      { title: 'Astro y Cloudflare Pages', icon: 'tabler:rocket' },
     ]}
   />
 
