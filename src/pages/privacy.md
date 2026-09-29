@@ -1,4 +1,5 @@
 ---
+layout: ~/layouts/MarkdownLayout.astro
 title: 'Política de privacidad'
 description: 'Información sobre el tratamiento de datos en el sitio personal de Carlos Luengo Vera.'
 ---
