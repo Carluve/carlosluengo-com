@@ -32,26 +32,33 @@ const cardClass =
   {
     items.length > 0 && (
       <div class:list={['grid gap-4 md:gap-6 gap-x-12', columnsClass]}>
-        {items.map(({ title: itemTitle, description, icon, callToAction, href }) => {
-          // Items with `href` render as a link: the whole card is clickable.
-          const Card = href ? 'a' : 'div';
-          const external = typeof href === 'string' && /^https?:\/\//.test(href);
+        {items.map(({ title: itemTitle, description, icon, callToAction, actions, eyebrow, href }) => {
+          const actionList = actions?.length ? actions : !href && callToAction ? [callToAction] : [];
+          // A single `href` makes the whole card a link. Several actions stay
+          // separate links, so the card itself is not clickable.
+          const cardHref = actionList.length > 0 ? undefined : href;
+          const Card = cardHref ? 'a' : 'div';
+          const external = typeof cardHref === 'string' && /^https?:\/\//.test(cardHref);
           return (
             <Card
-              href={href}
+              href={cardHref}
               {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               class:list={[
                 cardClass,
-                href &&
+                'h-full',
+                cardHref &&
                   'transition hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:border-primary/40',
               ]}
             >
               {(icon || defaultIcon) && <Icon name={icon || defaultIcon} class="mb-6 w-12 h-12 text-primary" />}
-              <h3 class="text-xl font-bold">{itemTitle}</h3>
-              {description && <p class="text-muted mt-2" set:html={description} />}
-              {callToAction && !href && (
-                <div class="mt-2">
-                  <Button {...callToAction} />
+              {eyebrow && <p class="mb-3 text-sm font-semibold tracking-wide text-primary">{eyebrow}</p>}
+              <h3 class="text-xl font-bold leading-snug text-pretty">{itemTitle}</h3>
+              {description && <div class="text-muted mt-2" set:html={description} />}
+              {actionList.length > 0 && (
+                <div class="mt-auto flex flex-wrap gap-3 pt-5">
+                  {actionList.map((action) => (
+                    <Button {...action} />
+                  ))}
                 </div>
               )}
             </Card>

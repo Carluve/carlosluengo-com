@@ -121,6 +121,13 @@ export interface Item {
   icon?: string;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
+  /**
+   * Button row inside a Features2 card. When present, the card stays a
+   * container so each action can be its own link.
+   */
+  actions?: CallToAction[];
+  /** Short line above the title, e.g. typology, year and identifier. */
+  eyebrow?: string;
   image?: Image;
   /** Makes the whole item a link (used by Features2 cards). */
   href?: string;
