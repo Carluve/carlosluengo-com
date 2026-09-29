@@ -1,4 +1,5 @@
 ---
+layout: ~/layouts/MarkdownLayout.astro
 title: 'Aviso legal'
 description: 'Condiciones de uso del sitio personal de Carlos Luengo Vera.'
 ---
