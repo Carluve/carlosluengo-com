@@ -14,6 +14,12 @@ const metadata = {
 
 const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
 const paperUrl = 'https://arxiv.org/abs/2503.00025';
+const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
+const paperTitle =
+  'Evaluating Large Language Models on the Spanish Medical Intern Resident (MIR) Examination 2024/2025: A Comparative Analysis of Clinical Reasoning and Knowledge Application';
+const paperAuthors =
+  'Carlos Luengo Vera, Ignacio Ferro Picón, M. Teresa del Val Nuñez, José Andrés Gómez Gandía, Antonio de Lucas Ancillo, Víctor Ramos Arroyo y Carlos Milán Figueredo.';
+const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
 ---
 
 <Layout metadata={metadata}>
@@ -29,7 +35,13 @@ const paperUrl = 'https://arxiv.org/abs/2503.00025';
       icon: 'tabler:external-link',
     }}
     callToAction2={{
-      text: 'Preprint en arXiv',
+      text: 'PDF en arXiv',
+      href: paperPdfUrl,
+      target: '_blank',
+      icon: 'tabler:file-type-pdf',
+    }}
+    callToAction3={{
+      text: 'Resumen en arXiv',
       href: paperUrl,
       target: '_blank',
       icon: 'tabler:file-text',
@@ -44,11 +56,27 @@ const paperUrl = 'https://arxiv.org/abs/2503.00025';
     columns={2}
     items={[
       {
-        title: 'Evaluating Large Language Models on the Spanish Medical Intern Resident (MIR) Examination 2024/2025',
-        description:
-          'Análisis comparativo del razonamiento clínico y de la aplicación de conocimiento. Preprint, arXiv:2503.00025. Carlos Luengo Vera figura como primer autor.',
+        eyebrow: 'Preprint · 2025 · arXiv:2503.00025',
+        title: paperTitle,
+        description: `<span class="block text-page dark:text-slate-200">${paperAuthors}</span><span class="mt-2 block">Análisis comparativo del razonamiento clínico y de la aplicación de conocimiento. Carlos Luengo Vera figura como primer autor.</span>`,
         icon: 'tabler:file-text',
-        href: paperUrl,
+        actions: [
+          {
+            variant: 'primary',
+            text: 'PDF en arXiv',
+            href: paperPdfUrl,
+            target: '_blank',
+            icon: 'tabler:file-type-pdf',
+            class: cardActionClass,
+          },
+          {
+            text: 'Resumen en arXiv',
+            href: paperUrl,
+            target: '_blank',
+            icon: 'tabler:file-text',
+            class: cardActionClass,
+          },
+        ],
       },
       {
         title: 'Google Scholar',

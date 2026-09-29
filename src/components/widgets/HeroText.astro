@@ -11,6 +11,7 @@ export interface Props {
   content?: string;
   callToAction?: string | CallToAction;
   callToAction2?: string | CallToAction;
+  callToAction3?: string | CallToAction;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   content = await Astro.slots.render('content'),
   callToAction = await Astro.slots.render('callToAction'),
   callToAction2 = await Astro.slots.render('callToAction2'),
+  callToAction3 = await Astro.slots.render('callToAction3'),
 } = Astro.props;
 ---
 
@@ -62,7 +64,10 @@ const {
             )
           }
           <div
-            class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+            class:list={[
+              'm-auto flex flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+              callToAction3 ? 'max-w-4xl sm:flex-wrap' : 'max-w-xs sm:max-w-md flex-nowrap',
+            ]}
           >
             {
               callToAction && (
@@ -82,6 +87,17 @@ const {
                     <Fragment set:html={callToAction2} />
                   ) : (
                     <Button {...callToAction2} />
+                  )}
+                </div>
+              )
+            }
+            {
+              callToAction3 && (
+                <div class="flex w-full sm:w-auto">
+                  {typeof callToAction3 === 'string' ? (
+                    <Fragment set:html={callToAction3} />
+                  ) : (
+                    <Button {...callToAction3} />
                   )}
                 </div>
               )
