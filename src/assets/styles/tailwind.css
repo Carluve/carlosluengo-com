@@ -565,3 +565,10 @@ html[data-theme-transition]::view-transition-new(root) {
   opacity: 1;
   transform: translate(-50%, calc(-100% - 10px));
 }
+
+/* Ortica Light for display headings: page and post titles read as editorial,
+   while smaller headings keep the Regular cut (font-medium resolves to 400). */
+h1.font-heading {
+  font-weight: 300;
+  letter-spacing: -0.015em;
+}
