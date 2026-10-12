@@ -1,4 +1,5 @@
 ---
+import { getLang, useTranslations } from '~/i18n/utils';
 import { Icon } from 'astro-icon/components';
 
 export interface Props {
@@ -8,15 +9,17 @@ export interface Props {
 }
 
 const { text, url, class: className = 'inline-block' } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
 ---
 
 <aw-social-share class={className}>
-  <span class="mr-1 text-sm font-medium text-muted">Compartir:</span>
+  <span class="mr-1 text-sm font-medium text-muted">{t('blog.share')}</span>
   <button
     type="button"
     class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
-    title="Compartir en X"
-    aria-label="Compartir en X"
+    title={lang === 'en' ? 'Share on X' : 'Compartir en X'}
+    aria-label={lang === 'en' ? 'Share on X' : 'Compartir en X'}
     data-aw-social-share="twitter"
     data-aw-url={url}
     data-aw-text={text}
@@ -25,8 +28,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
   <button
     type="button"
     class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
-    title="Compartir en LinkedIn"
-    aria-label="Compartir en LinkedIn"
+    title={lang === 'en' ? 'Share on LinkedIn' : 'Compartir en LinkedIn'}
+    aria-label={lang === 'en' ? 'Share on LinkedIn' : 'Compartir en LinkedIn'}
     data-aw-social-share="linkedin"
     data-aw-url={url}
     data-aw-text={text}
@@ -35,8 +38,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
   <button
     type="button"
     class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
-    title="Compartir en WhatsApp"
-    aria-label="Compartir en WhatsApp"
+    title={lang === 'en' ? 'Share on WhatsApp' : 'Compartir en WhatsApp'}
+    aria-label={lang === 'en' ? 'Share on WhatsApp' : 'Compartir en WhatsApp'}
     data-aw-social-share="whatsapp"
     data-aw-url={url}
     data-aw-text={text}
@@ -45,8 +48,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
   <button
     type="button"
     class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
-    title="Compartir por correo"
-    aria-label="Compartir por correo"
+    title={lang === 'en' ? 'Share by email' : 'Compartir por correo'}
+    aria-label={lang === 'en' ? 'Share by email' : 'Compartir por correo'}
     data-aw-social-share="mail"
     data-aw-url={url}
     data-aw-text={text}

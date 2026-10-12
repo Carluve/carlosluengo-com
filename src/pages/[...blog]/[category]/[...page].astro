@@ -8,7 +8,8 @@ import Headline from '~/components/blog/Headline.astro';
 import BlogOverview from '~/components/blog/BlogOverview.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
-import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
+import { getPermalink as basePermalink, getBlogPermalink as baseBlogPermalink } from '~/utils/permalinks';
+import { getLang, localizePath, useTranslations, categoryLabel, categoryDescription } from '~/i18n/utils';
 
 export const prerender = true;
 
@@ -16,32 +17,30 @@ export const getStaticPaths = (async ({ paginate }) => {
   return await getStaticPathsBlogCategory({ paginate });
 }) satisfies GetStaticPaths;
 
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+const getPermalink = (slug: string, type?: string) =>
+  localizePath(basePermalink(slug, type as Parameters<typeof basePermalink>[1]), lang);
+const getBlogPermalink = () => localizePath(baseBlogPermalink(), lang);
+
 type Props = InferGetStaticPropsType<typeof getStaticPaths> & { category: Record<string, string> };
 
 const { page, category } = Astro.props as Props;
 
 const currentPage = page.currentPage ?? 1;
+const label = categoryLabel(category.slug, category.title, lang);
 
 const breadcrumbs = [
-  { text: 'Inicio', href: getPermalink('/') },
+  { text: t('nav.home'), href: getPermalink('/') },
   { text: 'Blog', href: getBlogPermalink() },
   ...(currentPage > 1
-    ? [{ text: category.title, href: getPermalink(category.slug, 'category') }, { text: `Página ${currentPage}` }]
-    : [{ text: category.title }]),
+    ? [{ text: label, href: getPermalink(category.slug, 'category') }, { text: `${t('blog.page')} ${currentPage}` }]
+    : [{ text: label }]),
 ];
 
-const descriptions: Record<string, string> = {
-  ia: 'Inteligencia artificial aplicada: modelos de lenguaje, asistentes de código y adopción de IA en empresas y universidades.',
-  cloudflare: 'Cloudflare en la práctica: Workers, Zero Trust, R2 y casos reales de despliegue en el borde.',
-  proyectos: 'Proyectos propios explicados paso a paso: juegos educativos, herramientas y demos sobre Workers.',
-  academia: 'Investigación y vida académica: evaluación de LLMs, publicación científica y acceso abierto.',
-  herramientas: 'Herramientas que uso y pruebo: navegadores con IA, editores y utilidades para el día a día.',
-  charlas: 'Charlas y comunicaciones en congresos y jornadas sobre IA y educación.',
-};
-
 const metadata = {
-  title: `${category.title}${currentPage > 1 ? ` — Página ${currentPage}` : ''}`,
-  description: descriptions[category.slug] ?? `Entradas de la categoría ${category.title}.`,
+  title: `${label}${currentPage > 1 ? ` — ${t('blog.page')} ${currentPage}` : ''}`,
+  description: categoryDescription(category.slug, `${label}`, lang),
   robots: {
     index: blogCategoryRobots?.index,
     follow: blogCategoryRobots?.follow,
@@ -52,7 +51,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <Breadcrumbs bar items={breadcrumbs} />
   <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline>{category.title}</Headline>
+    <Headline>{label}</Headline>
     <BlogOverview active={category.slug} />
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />

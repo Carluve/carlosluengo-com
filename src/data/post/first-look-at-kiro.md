@@ -12,6 +12,7 @@ tags:
   - 'tools'
   - 'kiro'
   - 'spec-driven development'
+lang: 'en'
 ---
 
 ## 🚀 Introduction: What is Kiro?

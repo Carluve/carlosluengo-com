@@ -6,6 +6,7 @@ category: 'Cloudflare'
 tags:
   - 'cloudflare'
   - 'infraestructura'
+lang: 'en'
 ---
 
 ## Overview

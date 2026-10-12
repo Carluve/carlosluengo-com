@@ -1,4 +1,5 @@
 ---
+import { getLang, localizePath, useTranslations } from '~/i18n/utils';
 /**
  * Project gallery for /developer, fed by src/data/projects.ts.
  * Featured projects get wide cards; the rest sit in a three-column grid.
@@ -15,24 +16,45 @@ export interface Props {
   subtitle?: string;
 }
 
-const { id = 'proyectos', title = 'Proyectos', subtitle } = Astro.props;
+const { id = 'proyectos', title, subtitle } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+const heading = title ?? t('projects.title');
+const tagsEn: Record<string, string> = {
+  Juegos: 'Games',
+  Educación: 'Education',
+  Investigación: 'Research',
+  Formación: 'Training',
+  Eventos: 'Events',
+  Comunidad: 'Community',
+  Seguridad: 'Security',
+  Formularios: 'Forms',
+  'IA generativa': 'Generative AI',
+};
+const tagLabel = (tag: string) => (lang === 'en' ? (tagsEn[tag] ?? tag) : tag);
+const name = (p: Project) => (lang === 'en' ? (p.titleEn ?? p.title) : p.title);
 
 const featured = projects.filter((p) => p.featured);
 const rest = projects.filter((p) => !p.featured).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
 const links = (p: Project) =>
   [
-    p.demo && { href: p.demo, text: 'Demo', icon: 'tabler:external-link', external: true },
-    p.repo && { href: p.repo, text: 'Código', icon: 'tabler:brand-github', external: true },
-    p.post && { href: p.post, text: 'Artículo', icon: 'tabler:article', external: false },
-    p.pdf && { href: resolveMediaUrl(p.pdf), text: 'Material (PDF)', icon: 'tabler:file-type-pdf', external: true },
+    p.demo && { href: p.demo, text: t('projects.demo'), icon: 'tabler:external-link', external: true },
+    p.repo && { href: p.repo, text: t('projects.code'), icon: 'tabler:brand-github', external: true },
+    p.post && {
+      href: localizePath(p.post, lang),
+      text: t('projects.article'),
+      icon: 'tabler:article',
+      external: false,
+    },
+    p.pdf && { href: resolveMediaUrl(p.pdf), text: t('projects.pdf'), icon: 'tabler:file-type-pdf', external: true },
   ].filter(Boolean) as Array<{ href: string; text: string; icon: string; external: boolean }>;
 ---
 
 <section id={id} class="scroll-mt-24">
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-16">
-    <p class="aw-eyebrow">Demos y código</p>
-    <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">{title}</h2>
+    <p class="aw-eyebrow">{t('projects.eyebrow')}</p>
+    <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">{heading}</h2>
     {subtitle && <p class="mt-3 max-w-2xl leading-relaxed text-muted">{subtitle}</p>}
 
     {
@@ -61,24 +83,26 @@ const links = (p: Project) =>
                     style="--cover-x1:20%;--cover-y1:20%;--cover-x2:80%;--cover-y2:90%;--cover-hue:216"
                   >
                     <span class="font-heading text-3xl font-medium tracking-tight text-primary/70 dark:text-sky-200/80">
-                      {p.title}
+                      {name(p)}
                     </span>
                   </div>
                 )}
                 <div class="flex flex-1 flex-col p-5">
                   <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-heading text-xl font-medium leading-snug text-heading">{p.title}</h3>
+                    <h3 class="font-heading text-xl font-medium leading-snug text-heading">{name(p)}</h3>
                     {p.year && <span class="text-xs tabular-nums text-muted">{p.year}</span>}
                   </div>
-                  <p class="mt-2 text-sm leading-relaxed text-muted">{p.description}</p>
-                  <ul class="mt-3 flex flex-wrap gap-1.5" aria-label="Tecnologías">
+                  <p class="mt-2 text-sm leading-relaxed text-muted">
+                    {lang === 'en' ? (p.descriptionEn ?? p.description) : p.description}
+                  </p>
+                  <ul class="mt-3 flex flex-wrap gap-1.5" aria-label={t('projects.tech')}>
                     {p.tags.map((tag) => (
-                      <li class="rounded-full border border-line px-2 py-0.5 text-xs text-muted">{tag}</li>
+                      <li class="rounded-full border border-line px-2 py-0.5 text-xs text-muted">{tagLabel(tag)}</li>
                     ))}
                   </ul>
                   {p.basedOn && (
                     <p class="mt-3 text-xs text-muted">
-                      Basado en{' '}
+                      {t('projects.basedOn')}{' '}
                       <a
                         class="underline decoration-line underline-offset-2 hover:text-link"
                         href={p.basedOn.url}
@@ -98,7 +122,7 @@ const links = (p: Project) =>
                       >
                         <Icon name={l.icon} class="h-4 w-4" />
                         {l.text}
-                        {l.external && <span class="sr-only">(se abre en otra pestaña)</span>}
+                        {l.external && <span class="sr-only">{t('projects.newTab')}</span>}
                       </a>
                     ))}
                   </div>

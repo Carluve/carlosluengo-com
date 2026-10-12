@@ -1,4 +1,5 @@
 ---
+import { getLang, localizePath, useTranslations, categoryLabel } from '~/i18n/utils';
 import { Icon } from 'astro-icon/components';
 
 import Image from '~/components/common/Image.astro';
@@ -17,6 +18,8 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
 ---
 
 <div class="aw-read-progress" aria-hidden="true"></div>
@@ -27,14 +30,15 @@ const { post, url } = Astro.props;
         <p class="flex flex-wrap items-center gap-x-1.5 gap-y-1">
           <span class="inline-flex items-center gap-1">
             <Icon name="tabler:clock" class="h-4 w-4 shrink-0" aria-hidden="true" />
-            <time datetime={post.publishDate.toISOString()}>{getFormattedDate(post.publishDate)}</time>
+            <time datetime={post.publishDate.toISOString()}>{getFormattedDate(post.publishDate, lang)}</time>
           </span>
           {
             post.updateDate && post.updateDate.getTime() !== post.publishDate.getTime() && (
               <>
                 <span aria-hidden="true">·</span>
                 <span>
-                  Actualizado <time datetime={post.updateDate.toISOString()}>{getFormattedDate(post.updateDate)}</time>
+                  {t('blog.updated')}{' '}
+                  <time datetime={post.updateDate.toISOString()}>{getFormattedDate(post.updateDate, lang)}</time>
                 </span>
               </>
             )
@@ -54,8 +58,11 @@ const { post, url } = Astro.props;
             post.category && (
               <>
                 <span aria-hidden="true">·</span>
-                <a class="hover:text-link hover:underline" href={getPermalink(post.category.slug, 'category')}>
-                  {post.category.title}
+                <a
+                  class="hover:text-link hover:underline"
+                  href={localizePath(getPermalink(post.category.slug, 'category'), lang)}
+                >
+                  {categoryLabel(post.category.slug, post.category.title, lang)}
                 </a>
               </>
             )
@@ -64,7 +71,9 @@ const { post, url } = Astro.props;
             post.readingTime && (
               <>
                 <span aria-hidden="true">·</span>
-                <span>{post.readingTime} min de lectura</span>
+                <span>
+                  {post.readingTime} {t('blog.readingTime')}
+                </span>
               </>
             )
           }
@@ -147,18 +156,21 @@ const { post, url } = Astro.props;
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'aw-copy';
-      button.innerHTML =
-        '<span class="aw-swap" data-state="idle"><span>Copiar</span><span aria-hidden="true">Copiado</span></span>';
-      button.setAttribute('aria-label', 'Copiar el código');
+      const en = document.documentElement.lang === 'en';
+      const labels = en
+        ? { copy: 'Copy', copied: 'Copied', copyLabel: 'Copy code', copiedLabel: 'Code copied' }
+        : { copy: 'Copiar', copied: 'Copiado', copyLabel: 'Copiar el código', copiedLabel: 'Código copiado' };
+      button.innerHTML = `<span class="aw-swap" data-state="idle"><span>${labels.copy}</span><span aria-hidden="true">${labels.copied}</span></span>`;
+      button.setAttribute('aria-label', labels.copyLabel);
       button.addEventListener('click', async () => {
         const swap = button.querySelector<HTMLElement>('.aw-swap')!;
         try {
           await navigator.clipboard.writeText(pre.querySelector('code')?.innerText ?? pre.innerText);
           swap.dataset.state = 'done';
-          button.setAttribute('aria-label', 'Código copiado');
+          button.setAttribute('aria-label', labels.copiedLabel);
           setTimeout(() => {
             swap.dataset.state = 'idle';
-            button.setAttribute('aria-label', 'Copiar el código');
+            button.setAttribute('aria-label', labels.copyLabel);
           }, 1600);
         } catch {
           // Clipboard unavailable (insecure context or denied): keep the label.

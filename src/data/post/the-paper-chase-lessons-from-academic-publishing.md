@@ -12,6 +12,7 @@ tags:
   - 'phd life'
   - 'academic writing'
   - 'publishing'
+lang: 'en'
 ---
 
 I hadn’t written about this before, but I really felt like sharing some thoughts. Over the past few months, I’ve been fully immersed in writing and revising academic papers, and the experience — far from being just technical — has actually turned out to be **surprisingly fun**. It’s also given me the chance to **connect with a wide range of people**, both inside and outside the university, and that has made all the difference.

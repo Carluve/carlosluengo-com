@@ -1,4 +1,5 @@
 ---
+import { getLang, useTranslations, categoryLabel } from '~/i18n/utils';
 import { APP_BLOG } from 'astrowind:config';
 import type { Post } from '~/types';
 
@@ -14,6 +15,8 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
 const image = await findImage(post.image);
 
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
@@ -48,7 +51,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   </a>
 
   <div class="flex flex-1 flex-col p-5">
-    {post.category && <p class="aw-eyebrow">{post.category.title}</p>}
+    {post.category && <p class="aw-eyebrow">{categoryLabel(post.category.slug, post.category.title, lang)}</p>}
     <h3 class="mt-2 font-heading text-xl font-medium leading-snug text-heading">
       {
         link ? (
@@ -63,8 +66,15 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 
     {post.excerpt && <p class="mt-2 text-sm leading-relaxed text-muted">{post.excerpt}</p>}
     <p class="mt-auto pt-4 text-xs text-muted">
-      <time datetime={post.publishDate.toISOString()}>{getFormattedDate(post.publishDate)}</time>
-      {post.readingTime && <span> · {post.readingTime} min de lectura</span>}
+      <time datetime={post.publishDate.toISOString()}>{getFormattedDate(post.publishDate, lang)}</time>
+      {
+        post.readingTime && (
+          <span>
+            {' '}
+            · {post.readingTime} {t('blog.readingTime')}
+          </span>
+        )
+      }
     </p>
   </div>
 </article>

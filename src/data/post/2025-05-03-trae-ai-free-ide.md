@@ -12,6 +12,7 @@ tags:
   - 'bytedance'
   - 'code automation'
   - 'free software'
+lang: 'en'
 ---
 
 - Built on a customized version of **VS Code**.

@@ -1,4 +1,5 @@
 ---
+import { getLang, useTranslations } from '~/i18n/utils';
 import { Icon } from 'astro-icon/components';
 import Button from '~/components/ui/Button.astro';
 
@@ -12,7 +13,11 @@ export interface Props {
 // `prevUrl`/`nextUrl` come from Astro's `page.url` and already include `base`
 // and honour `trailingSlash`, so they must not go through `getPermalink()`
 // (that would prefix `base` a second time, see #629).
-const { prevUrl, nextUrl, prevText = 'Entradas más recientes', nextText = 'Entradas anteriores' } = Astro.props;
+const { prevUrl, nextUrl, prevText, nextText } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+const prevLabel = prevText ?? t('blog.newer');
+const nextLabel = nextText ?? t('blog.older');
 ---
 
 {
@@ -21,11 +26,11 @@ const { prevUrl, nextUrl, prevText = 'Entradas más recientes', nextText = 'Entr
       <div class="flex flex-row mx-auto container justify-between">
         <Button variant="tertiary" class={`mr-2 ${!prevUrl ? 'invisible' : ''}`} href={prevUrl}>
           <Icon name="tabler:chevron-left" class="w-6 h-6" />
-          <p class="ml-2">{prevText}</p>
+          <p class="ml-2">{prevLabel}</p>
         </Button>
 
         <Button variant="tertiary" class={`${!nextUrl ? 'invisible' : ''}`} href={nextUrl}>
-          <span class="mr-2">{nextText}</span>
+          <span class="mr-2">{nextLabel}</span>
           <Icon name="tabler:chevron-right" class="w-6 h-6" />
         </Button>
       </div>

@@ -7,7 +7,8 @@ import Headline from '~/components/blog/Headline.astro';
 import BlogOverview from '~/components/blog/BlogOverview.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
-import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
+import { getPermalink as basePermalink, getBlogPermalink as baseBlogPermalink } from '~/utils/permalinks';
+import { getLang, localizePath, useTranslations } from '~/i18n/utils';
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
@@ -17,22 +18,30 @@ export const getStaticPaths = (async ({ paginate }) => {
   return await getStaticPathsBlogList({ paginate });
 }) satisfies GetStaticPaths;
 
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+const getPermalink = (slug: string, type?: string) =>
+  localizePath(basePermalink(slug, type as Parameters<typeof basePermalink>[1]), lang);
+const getBlogPermalink = () => localizePath(baseBlogPermalink(), lang);
+
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
 const breadcrumbs = [
-  { text: 'Inicio', href: getPermalink('/') },
+  { text: t('nav.home'), href: getPermalink('/') },
   ...(currentPage > 1
-    ? [{ text: 'Blog', href: getBlogPermalink() }, { text: `Página ${currentPage}` }]
+    ? [{ text: 'Blog', href: getBlogPermalink() }, { text: `${t('blog.page')} ${currentPage}` }]
     : [{ text: 'Blog' }]),
 ];
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — Página ${currentPage}` : ''}`,
+  title: `Blog${currentPage > 1 ? ` — ${t('blog.page')} ${currentPage}` : ''}`,
   description:
-    'Notas en español sobre infraestructura cloud, inteligencia artificial aplicada y la relación entre industria y universidad.',
+    lang === 'en'
+      ? 'Posts on cloud infrastructure, applied artificial intelligence and the link between industry and academia.'
+      : 'Notas sobre infraestructura cloud, inteligencia artificial aplicada y la relación entre industria y universidad.',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -50,11 +59,7 @@ const metadata = {
   </Fragment>
   <Breadcrumbs bar items={breadcrumbs} />
   <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline
-      subtitle="Notas sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre la industria y la universidad."
-    >
-      Blog
-    </Headline>
+    <Headline subtitle={t('blog.subtitle')}> Blog </Headline>
     <BlogOverview />
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />

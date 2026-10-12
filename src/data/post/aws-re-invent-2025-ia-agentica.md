@@ -10,6 +10,7 @@ tags:
   - 'cloud computing'
   - 'enterprise'
   - 're:invent'
+lang: 'en'
 ---
 
 Each year, re:Invent marks a milestone for cloud and AI. This 2025 edition goes beyond incremental updates: AWS is clearly positioning cloud + AI as a business-transformation lever. Through new chips, services and enterprise-ready tools, AWS aims to give organisations full control and ownership of their AI stack.

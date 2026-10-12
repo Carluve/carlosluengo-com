@@ -12,6 +12,7 @@ tags:
   - 'ios'
   - 'cloudflare'
   - 'warp'
+lang: 'en'
 ---
 
 ## 1. What Is WARP?

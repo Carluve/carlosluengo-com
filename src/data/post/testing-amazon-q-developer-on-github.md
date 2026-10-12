@@ -12,6 +12,7 @@ tags:
   - 'aws'
   - 'amazon q'
   - 'github'
+lang: 'en'
 ---
 
 ## Introduction

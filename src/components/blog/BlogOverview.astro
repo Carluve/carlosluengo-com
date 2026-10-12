@@ -1,4 +1,5 @@
 ---
+import { getLang, localizePath, useTranslations, categoryLabel } from '~/i18n/utils';
 /**
  * Category filter and a small "posts per year" chart for the blog index.
  * The bars follow EvilCharts (MIT): rounded tops, a vertical gradient, a
@@ -14,6 +15,8 @@ export interface Props {
 }
 
 const { active } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
 const posts = await fetchPosts();
 
 const categories = new Map<string, { title: string; count: number }>();
@@ -39,41 +42,60 @@ const PAD = 18;
 const bar = Math.min(34, (W - 8) / Math.max(years.length, 1) - 10);
 const step = (W - 8) / Math.max(years.length, 1);
 const activeTitle = active ? categories.get(active)?.title : undefined;
+// The active pill keeps one transition name across pages, so client-side
+// navigation slides it to the new chip (EasyUI Animated Tabs, MIT).
 const chipClass =
-  'inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary';
+  'relative isolate inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary';
 ---
 
 <div class="-mt-4 mb-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
-  <nav aria-label="Categorías del blog">
+  <nav aria-label={t('blog.categories')}>
     <ul class="flex flex-wrap gap-2">
       <li>
         <a
-          href={getBlogPermalink()}
+          href={localizePath(getBlogPermalink(), lang)}
           aria-current={!active ? 'page' : undefined}
           class:list={[
             chipClass,
             !active
-              ? 'border-primary bg-primary text-white'
+              ? 'border-primary text-white'
               : 'border-line bg-surface text-default hover:border-primary/40 hover:text-link',
           ]}
         >
-          Todas <span class="tabular-nums opacity-70">{posts.length}</span>
+          {
+            !active && (
+              <span
+                class="absolute -inset-px -z-10 rounded-full bg-primary"
+                transition:name="aw-chip-pill"
+                aria-hidden="true"
+              />
+            )
+          }
+          {t('blog.all')}
+          <span class="tabular-nums opacity-70">{posts.length}</span>
         </a>
       </li>
       {
         chips.map(([slug, { title, count }]) => (
           <li>
             <a
-              href={getPermalink(slug, 'category')}
+              href={localizePath(getPermalink(slug, 'category'), lang)}
               aria-current={active === slug ? 'page' : undefined}
               class:list={[
                 chipClass,
                 active === slug
-                  ? 'border-primary bg-primary text-white'
+                  ? 'border-primary text-white'
                   : 'border-line bg-surface text-default hover:border-primary/40 hover:text-link',
               ]}
             >
-              {title} <span class="tabular-nums opacity-70">{count}</span>
+              {active === slug && (
+                <span
+                  class="absolute -inset-px -z-10 rounded-full bg-primary"
+                  transition:name="aw-chip-pill"
+                  aria-hidden="true"
+                />
+              )}
+              {categoryLabel(slug, title, lang)} <span class="tabular-nums opacity-70">{count}</span>
             </a>
           </li>
         ))
@@ -91,7 +113,7 @@ const chipClass =
       class="aw-bars overflow-visible"
     >
       <title id="blog-years-title">
-        {activeTitle ? `Publicaciones de ${activeTitle} por año` : 'Publicaciones por año'}: {
+        {activeTitle ? `${t('blog.perYear')} · ${activeTitle}` : t('blog.perYear')}: {
           years.map(([y, n]) => `${y}, ${n}`).join('; ')
         }
       </title>
@@ -117,7 +139,7 @@ const chipClass =
           return (
             <g
               class="aw-bar"
-              data-tip={`${year}: ${count} ${count === 1 ? 'entrada' : 'entradas'}${active ? ' en esta categoría' : ''}`}
+              data-tip={`${year}: ${count} ${count === 1 ? t('blog.entry') : t('blog.entries')}${active ? ` ${t('blog.inCategory')}` : ''}`}
             >
               <rect x={x} y={H - h} width={bar} height={h} rx="5" fill="url(#blog-years-bar)" />
               <text x={x + bar / 2} y={H - h - 5} text-anchor="middle" class="fill-heading text-[10px] tabular-nums">

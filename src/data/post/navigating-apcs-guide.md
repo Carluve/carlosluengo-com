@@ -12,6 +12,7 @@ tags:
   - 'open access'
   - 'apcs'
   - 'academic publishing'
+lang: 'en'
 ---
 
 ## What Are APCs and Why Do They Matter?

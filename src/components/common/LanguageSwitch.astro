@@ -1,0 +1,108 @@
+---
+/**
+ * ES / EN switch with a sliding pill (EasyUI Pill Navigation, MIT, ported to CSS).
+ * The header persists across client-side navigations, so the hrefs and the
+ * active side are recomputed by the script on every page load. Choosing a
+ * language stores it in the `lang` cookie, which the Worker honours on /.
+ */
+import { alternatePath, getLang } from '~/i18n/utils';
+
+const lang = getLang(Astro);
+const alt = alternatePath(Astro.url.pathname);
+const es = lang === 'es' ? Astro.url.pathname : alt.href;
+const en = lang === 'en' ? Astro.url.pathname : alt.href;
+---
+
+<aw-lang-switch>
+  <div class="aw-lang" data-active={lang} role="group" aria-label="Idioma / Language">
+    <span class="aw-lang-pill" aria-hidden="true"></span>
+    <a href={es} hreflang="es" lang="es" data-lang="es" aria-current={lang === 'es' ? 'true' : undefined}>ES</a>
+    <a href={en} hreflang="en" lang="en" data-lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+  </div>
+</aw-lang-switch>
+
+<style>
+  aw-lang-switch {
+    display: contents;
+  }
+  .aw-lang {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border: 1px solid var(--aw-color-border);
+    border-radius: 999px;
+    padding: 2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .aw-lang a {
+    position: relative;
+    z-index: 1;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+    color: var(--aw-color-text-muted);
+    text-align: center;
+    transition: color 200ms ease-out;
+  }
+  .aw-lang a[aria-current] {
+    color: #fff;
+  }
+  .aw-lang a:not([aria-current]):hover {
+    color: var(--aw-color-text-heading);
+  }
+  .aw-lang a:focus-visible {
+    outline: 2px solid var(--aw-color-primary);
+    outline-offset: 2px;
+  }
+  .aw-lang-pill {
+    position: absolute;
+    inset: 2px auto 2px 2px;
+    width: calc(50% - 2px);
+    border-radius: 999px;
+    background: var(--aw-color-primary);
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .aw-lang[data-active='en'] .aw-lang-pill {
+    transform: translateX(100%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aw-lang-pill {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const TRANSLATED = ['/', '/about', '/academia', '/developer', '/contact', '/privacy', '/terms', '/blog'];
+  const strip = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
+  const isTranslated = (p: string) =>
+    TRANSLATED.includes(p) || p.startsWith('/category/') || p.startsWith('/tag/') || /^\/blog\/\d+$/.test(p);
+
+  const update = () => {
+    const path = strip(location.pathname);
+    const onEn = path === '/en' || path.startsWith('/en/');
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
+    const esPath = onEn ? strip(path.replace(/^\/en/, '')) || '/' : path;
+    const hrefs = {
+      es: onEn ? esPath : isTranslated(path) ? path : lang === 'es' ? path : '/',
+      en: onEn ? path : isTranslated(path) ? (path === '/' ? '/en' : `/en${path}`) : lang === 'en' ? path : '/en',
+    };
+    for (const box of document.querySelectorAll<HTMLElement>('.aw-lang')) {
+      box.dataset.active = lang;
+      for (const a of box.querySelectorAll<HTMLAnchorElement>('a[data-lang]')) {
+        const l = a.dataset.lang as 'es' | 'en';
+        a.href = hrefs[l];
+        if (l === lang) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      }
+    }
+  };
+
+  document.addEventListener('astro:page-load', update);
+  document.addEventListener('click', (event) => {
+    const a = (event.target as Element | null)?.closest?.<HTMLAnchorElement>('.aw-lang a[data-lang]');
+    if (a) document.cookie = `lang=${a.dataset.lang}; Path=/; Max-Age=31536000; SameSite=Lax`;
+  });
+</script>

@@ -3,3 +3,10 @@
 /// <reference types="astro/client" />
 /// <reference types="vite/client" />
 /// <reference types="../vendor/integration/types.d.ts" />
+
+declare namespace App {
+  interface Locals {
+    /** Set by a page to force the interface language (blog posts use their own). */
+    lang?: 'es' | 'en';
+  }
+}

@@ -12,6 +12,7 @@ tags:
   - 'project'
   - 'finanzsim'
   - 'simulation'
+lang: 'en'
 ---
 
 Meet FinanzSim: My Educational Financial Management Simulator

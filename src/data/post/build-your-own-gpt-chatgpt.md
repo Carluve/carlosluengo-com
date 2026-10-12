@@ -12,6 +12,7 @@ tags:
   - 'chatgpt'
   - 'custom gpts'
   - 'tutorial'
+lang: 'en'
 ---
 
 ---

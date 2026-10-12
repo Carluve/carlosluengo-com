@@ -1,0 +1,78 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { xUrl } from '~/navigation';
+
+const metadata = {
+  title: 'Contact',
+  description:
+    'Get in touch with Carlos Luengo Vera about academic collaborations, talks, teaching and Cloudflare projects: LinkedIn, X, GitHub and Google Scholar.',
+};
+
+const linkedIn = 'https://www.linkedin.com/in/carlosluengo';
+const github = 'https://github.com/Carluve';
+const scholar = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Contact"
+    title="Let’s talk"
+    subtitle="Academic collaborations, talks, teaching or Cloudflare projects. A direct message on LinkedIn is the quickest way to reach me."
+    callToAction={{
+      variant: 'primary',
+      text: 'Message me on LinkedIn',
+      href: linkedIn,
+      target: '_blank',
+      icon: 'tabler:brand-linkedin',
+    }}
+  />
+
+  <Features2
+    title="Where to find me"
+    columns={2}
+    items={[
+      {
+        title: 'LinkedIn',
+        description: 'Direct messages about university work, teaching or professional matters.',
+        icon: 'tabler:brand-linkedin',
+        callToAction: { text: 'Send a message', href: linkedIn, target: '_blank' },
+      },
+      {
+        title: 'X',
+        description: 'Short notes on AI, Cloudflare and whatever I’m trying out. @carluve.',
+        icon: 'tabler:brand-x',
+        callToAction: { text: 'Follow on X', href: xUrl, target: '_blank' },
+      },
+      {
+        title: 'GitHub',
+        description: 'The code for the demos and projects in the development section.',
+        icon: 'tabler:brand-github',
+        callToAction: { text: 'View repositories', href: github, target: '_blank' },
+      },
+      {
+        title: 'Google Scholar',
+        description: 'Publications, citations and co-authors.',
+        icon: 'tabler:school',
+        callToAction: { text: 'View publications', href: scholar, target: '_blank' },
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Message me on LinkedIn',
+        href: linkedIn,
+        target: '_blank',
+        icon: 'tabler:brand-linkedin',
+      },
+    ]}
+  >
+    <Fragment slot="title">A talk or a collaboration?</Fragment>
+    <Fragment slot="subtitle">Tell me the context and the date, and I’ll get back to you.</Fragment>
+  </CallToAction>
+</Layout>

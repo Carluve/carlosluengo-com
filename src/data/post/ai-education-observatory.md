@@ -12,6 +12,7 @@ tags:
   - 'phd'
   - 'ai in education'
   - 'edtech'
+lang: 'en'
 ---
 
 In this post, I want to share this personal project, how it connects to my academic path, and how a powerful AI agent named **Manus** has become essential to my workflow.

@@ -1,4 +1,5 @@
 ---
+import { getLang, localizePath, useTranslations } from '~/i18n/utils';
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
@@ -24,6 +25,8 @@ export interface Props {
 }
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-line bg-surface/80 not-prose']}>
@@ -31,10 +34,11 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-3">
-          <a class="inline-block font-heading text-xl font-medium tracking-tight text-heading" href={getHomePermalink()}
-            >{SITE?.name}</a
+          <a
+            class="inline-block font-heading text-xl font-medium tracking-tight text-heading"
+            href={localizePath(getHomePermalink(), lang)}>{SITE?.name}</a
           >
-          <p class="mt-2 max-w-xs text-sm leading-relaxed text-muted">Investigación, docencia e industria.</p>
+          <p class="mt-2 max-w-xs text-sm leading-relaxed text-muted">{t('footer.tagline')}</p>
         </div>
         <div class="text-sm text-muted flex gap-1">
           {

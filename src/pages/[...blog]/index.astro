@@ -17,6 +17,7 @@ import {
 } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import { isMediaRef, resolveMediaUrl } from '~/utils/media';
+import { categoryLabel, localizePath, useTranslations } from '~/i18n/utils';
 import { truncateAtWord } from '~/utils/utils';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
@@ -34,6 +35,8 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { post } = Astro.props as Props;
+// The post interface (dates, labels, header) follows the language of the post.
+Astro.locals.lang = post.lang ?? 'es';
 
 // fetchPosts() is newest first: the next (newer) post sits before this one.
 const allPosts = await fetchPosts();
@@ -76,6 +79,7 @@ const imageUrl = isMediaRef(image) ? resolveMediaUrl(image) : typeof image === '
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
+  inLanguage: post.lang ?? 'es',
   headline: post.title,
   description: post.excerpt,
   datePublished: post.publishDate.toISOString(),
@@ -88,11 +92,19 @@ const articleSchema = {
   mainEntityOfPage: String(url),
 };
 
+const lang = Astro.locals.lang ?? 'es';
+const t = useTranslations(lang);
+const here = (path: string) => localizePath(path, lang);
 const breadcrumbs = [
-  { text: 'Inicio', href: getPermalink('/') },
-  ...(isBlogListRouteEnabled ? [{ text: 'Blog', href: getBlogPermalink() }] : []),
+  { text: t('nav.home'), href: here(getPermalink('/')) },
+  ...(isBlogListRouteEnabled ? [{ text: 'Blog', href: here(getBlogPermalink()) }] : []),
   ...(post.category && isBlogCategoryRouteEnabled
-    ? [{ text: post.category.title, href: getPermalink(post.category.slug, 'category') }]
+    ? [
+        {
+          text: categoryLabel(post.category.slug, post.category.title, lang),
+          href: here(getPermalink(post.category.slug, 'category')),
+        },
+      ]
     : []),
   { text: post.title },
 ];

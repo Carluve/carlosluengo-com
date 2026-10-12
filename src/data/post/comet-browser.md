@@ -8,6 +8,7 @@ tags:
   - 'productivity'
   - 'ai'
   - 'technology'
+lang: 'en'
 ---
 
 ## Overview

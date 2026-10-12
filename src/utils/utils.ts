@@ -7,7 +7,18 @@ export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.lang
   timeZone: 'UTC',
 });
 
-export const getFormattedDate = (date: Date): string => (date ? formatter.format(date) : '');
+const formatters: Record<string, Intl.DateTimeFormat> = {};
+export const getFormattedDate = (date: Date, lang?: 'es' | 'en'): string => {
+  if (!date) return '';
+  if (!lang) return formatter.format(date);
+  formatters[lang] ??= new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : 'es-ES', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+  return formatters[lang].format(date);
+};
 
 /**
  * Shortens text at a word boundary so it fits a limit (meta descriptions are

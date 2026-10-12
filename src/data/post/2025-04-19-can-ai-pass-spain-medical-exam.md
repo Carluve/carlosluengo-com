@@ -8,6 +8,7 @@ tags:
   - 'llms'
   - 'mir'
   - 'medical education'
+lang: 'en'
 ---
 
 That’s exactly what a group of researchers from the University of Alcalá and Binpar set out to explore. Their recent study compared the performance of 22 large language models (LLMs) — including GPT-4, Claude, Deepseek, and fine-tuned models like _Miri Pro_ — on the MIR exams from 2024 and 2025.

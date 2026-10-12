@@ -12,6 +12,7 @@ tags:
   - 'workers'
   - 'serverless'
   - 'edge computing'
+lang: 'en'
 ---
 
 > **Update:** the demo at `cloudflare.carlosluengo.es` is no longer online. The walkthrough below still applies.

@@ -4,6 +4,8 @@ import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
+import LanguageSwitch from '~/components/common/LanguageSwitch.astro';
+import { getLang, localizePath } from '~/i18n/utils';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
@@ -44,6 +46,7 @@ const {
   position = 'center',
 } = Astro.props;
 
+const lang = getLang(Astro);
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 // Compare paths without trailing slashes so the active link is detected
@@ -88,7 +91,7 @@ const persistKey = `header-${Array.from(
       ]}
     >
       <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-        <a class="flex items-center" href={getHomePermalink()}>
+        <a class="flex items-center" href={localizePath(getHomePermalink(), lang)}>
           <Logo />
         </a>
         <div class="flex items-center lg:hidden">
@@ -98,11 +101,12 @@ const persistKey = `header-${Array.from(
       <nav
         id="header-nav"
         class="items-center w-full lg:w-auto hidden lg:flex lg:mx-5 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
-        aria-label="Navegación principal"
+        aria-label={lang === 'en' ? 'Main navigation' : 'Navegación principal'}
       >
         <ul
-          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-lg lg:text-sm tracking-normal font-medium lg:justify-center"
+          class="aw-nav-pills relative flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-lg lg:text-sm tracking-normal font-medium lg:justify-center"
         >
+          <li class="aw-nav-pill hidden lg:block" aria-hidden="true"></li>
           {
             links.map(({ text, href, links }) => (
               <li class={links?.length ? 'dropdown' : ''}>
@@ -158,13 +162,14 @@ const persistKey = `header-${Array.from(
         ]}
       >
         <div class="items-center flex justify-between w-full lg:w-auto">
-          <div class="flex">
+          <div class="flex items-center gap-1">
+            <span class="mr-1"><LanguageSwitch /></span>
             {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 lg:w-5 lg:h-5 lg:inline-block" />}
             {
               showRssFeed && (
                 <a
                   class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                  aria-label="Canal RSS"
+                  aria-label={lang === 'en' ? 'RSS feed' : 'Canal RSS'}
                   href={getAsset('/rss.xml')}
                 >
                   <Icon name="tabler:rss" class="w-5 h-5" />
@@ -193,7 +198,51 @@ const persistKey = `header-${Array.from(
   aw-header {
     display: contents;
   }
+  /* Hover pill that glides between menu items (EasyUI Pill Navigation, MIT). */
+  .aw-nav-pill {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2.25rem;
+    width: var(--pill-w, 0);
+    translate: var(--pill-x, 0) -50%;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--aw-color-primary) 9%, transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      translate 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      width 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 160ms ease-out;
+  }
+  .aw-nav-pills[data-pill] .aw-nav-pill {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aw-nav-pill {
+      transition: opacity 160ms ease-out;
+    }
+  }
 </style>
+
+<script>
+  // Move the hover pill under the pointer's menu item (desktop only).
+  document.addEventListener('pointerover', (event) => {
+    if (!matchMedia('(min-width: 1024px)').matches) return;
+    const list = document.querySelector<HTMLElement>('.aw-nav-pills');
+    if (!list) return;
+    const link = (event.target as Element | null)?.closest?.<HTMLElement>('.aw-nav-pills > li > a');
+    if (!link || !list.contains(link)) {
+      delete list.dataset.pill;
+      return;
+    }
+    const box = list.getBoundingClientRect();
+    const r = link.getBoundingClientRect();
+    list.style.setProperty('--pill-x', `${r.left - box.left}px`);
+    list.style.setProperty('--pill-w', `${r.width}px`);
+    list.dataset.pill = '';
+  });
+</script>
 
 <script>
   class AwHeader extends HTMLElement {
@@ -221,7 +270,7 @@ const persistKey = `header-${Array.from(
       const closeMenu = () => {
         toggle?.classList.remove('expanded');
         toggle?.setAttribute('aria-expanded', 'false');
-        toggle?.setAttribute('aria-label', 'Abrir el menú');
+        toggle?.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Open menu' : 'Abrir el menú');
         document.body.classList.remove('overflow-hidden');
         header?.classList.remove('h-screen', 'expanded', 'bg-page');
         nav?.classList.add('hidden');
@@ -232,7 +281,11 @@ const persistKey = `header-${Array.from(
       toggle?.addEventListener('click', () => {
         const expanded = toggle.classList.toggle('expanded');
         toggle.setAttribute('aria-expanded', String(expanded));
-        toggle.setAttribute('aria-label', expanded ? 'Cerrar el menú' : 'Abrir el menú');
+        const en = document.documentElement.lang === 'en';
+        toggle.setAttribute(
+          'aria-label',
+          expanded ? (en ? 'Close menu' : 'Cerrar el menú') : en ? 'Open menu' : 'Abrir el menú'
+        );
         document.body.classList.toggle('overflow-hidden');
         header?.classList.toggle('h-screen');
         header?.classList.toggle('expanded');
