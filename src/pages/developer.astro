@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Projects from '~/components/widgets/Projects.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import GithubActivity from '~/components/widgets/GithubActivity.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -61,6 +62,8 @@ const githubProfile = 'https://github.com/Carluve';
       },
     ]}
   />
+
+  <GithubActivity />
 
   <Features
     id="no-publico"

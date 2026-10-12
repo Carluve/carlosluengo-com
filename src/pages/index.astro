@@ -5,6 +5,7 @@ import Features from '~/components/widgets/Features.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Button from '~/components/ui/Button.astro';
+import GithubActivity from '~/components/widgets/GithubActivity.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { SITE, I18N } from 'astrowind:config';
 import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
@@ -226,6 +227,7 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
           </a>
         </li>
       </ul>
+      <GithubActivity compact />
       <div class="mt-6">
         <Button variant="tertiary" class="px-0" text="Toda la sección de desarrollo" href={getPermalink('/developer')} />
       </div>
