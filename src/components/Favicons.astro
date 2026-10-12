@@ -4,7 +4,10 @@ import favIconSvg from '~/assets/favicons/favicon.svg';
 import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
 ---
 
-<link rel="shortcut icon" href={favIcon} />
+<link rel="icon" href={favIcon} sizes="48x48" />
 <link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
 <link rel="mask-icon" href={favIconSvg.src} color="#0161EF" />
 <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#F4F6F8" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)" />
