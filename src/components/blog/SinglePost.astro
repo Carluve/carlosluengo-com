@@ -81,7 +81,7 @@ const t = useTranslations(lang);
       </div>
 
       <h1
-        class="aw-title-reveal mx-auto max-w-3xl px-4 font-heading text-4xl font-medium leading-tight tracking-tight text-balance text-heading sm:px-6 md:text-5xl"
+        class="mx-auto max-w-3xl px-4 font-heading text-4xl font-medium leading-tight tracking-tight text-balance text-heading sm:px-6 md:text-5xl"
       >
         {
           post.title.split(' ').map((word, i) => (
@@ -132,7 +132,7 @@ const t = useTranslations(lang);
       </div>
       {
         post.headings && post.headings.length >= 3 && (
-          <aside class="absolute left-full top-0 hidden h-full w-60 pl-8 2xl:block">
+          <aside class="absolute left-full top-0 hidden h-full w-52 pl-6 xl:block 2xl:w-60 2xl:pl-8">
             <div class="sticky top-24">
               <TableOfContents headings={post.headings} />
             </div>

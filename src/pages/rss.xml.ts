@@ -1,6 +1,6 @@
 import { getRssString } from '@astrojs/rss';
 
-import { SITE, METADATA, APP_BLOG, I18N } from 'astrowind:config';
+import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
 import { fetchPosts } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -19,7 +19,7 @@ export const GET = async () => {
   const posts = await fetchPosts();
 
   const rss = await getRssString({
-    title: `Blog de ${SITE.name}`,
+    title: `${SITE.name} — Blog`,
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
 
@@ -35,7 +35,8 @@ export const GET = async () => {
     trailingSlash: SITE.trailingSlash,
     xmlns: { atom: 'http://www.w3.org/2005/Atom' },
     customData: [
-      `<language>${I18N?.language || 'en'}</language>`,
+      // Every post is written in English, whatever the interface language.
+      '<language>en</language>',
       `<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>`,
       `<atom:link href="${new URL(getPermalink('rss.xml', 'asset'), import.meta.env.SITE)}" rel="self" type="application/rss+xml" />`,
     ].join(''),

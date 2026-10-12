@@ -22,5 +22,5 @@
     <path d="M18.9 9.6v12.6h4.6"/>
   </g>
   <circle cx="24.2" cy="9.4" r="4.2" fill="url(#cl-glow)" opacity=".7"/>
-  <circle cx="24.2" cy="9.4" r="2.4" fill="#E0F2FE"/>
+  <circle cx="24.2" cy="9.4" r="2.9" fill="#E0F2FE" stroke="#062A78" stroke-width=".9"/>
 </svg>

@@ -538,3 +538,18 @@
 /year-archive/ /blog 301
 /feed.xml /rss.xml 301
 /atom.xml /rss.xml 301
+# Section names people may type, in either language.
+/research /en/academia 301
+/research/ /en/academia 301
+/en/research /en/academia 301
+/en/research/ /en/academia 301
+/projects /en/developer 301
+/projects/ /en/developer 301
+/en/projects /en/developer 301
+/en/projects/ /en/developer 301
+/proyectos /developer 301
+/proyectos/ /developer 301
+/investigacion /academia 301
+/investigacion/ /academia 301
+/contacto /contact 301
+/contacto/ /contact 301

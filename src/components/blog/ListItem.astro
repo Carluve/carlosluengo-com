@@ -25,6 +25,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
+  lang={post.lang && post.lang !== lang ? post.lang : undefined}
   class="aw-card aw-spotlight aw-reveal group h-full overflow-hidden motion-safe:transition motion-safe:duration-200 hover:border-primary/40 motion-reduce:transition-none"
 >
   <div class="grid h-full md:grid-cols-[16rem_1fr]">
@@ -39,7 +40,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         image ? (
           <Image
             src={image}
-            class="aspect-[16/10] h-full w-full object-cover md:aspect-auto md:min-h-full motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-[1.03]"
+            class="aspect-[16/10] h-full w-full object-cover md:aspect-auto md:min-h-full"
             widths={[400, 640]}
             width={640}
             height={400}
@@ -92,6 +93,16 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             </a>
           ) : (
             post.title
+          )
+        }
+        {
+          post.lang && post.lang !== lang && (
+            <span
+              class="ml-2 inline-block rounded border border-line px-1.5 py-px align-middle text-[0.65rem] font-semibold uppercase tracking-wider text-muted"
+              title={lang === 'es' ? 'Artículo en inglés' : 'Post in Spanish'}
+            >
+              {post.lang}
+            </span>
           )
         }
       </h2>
