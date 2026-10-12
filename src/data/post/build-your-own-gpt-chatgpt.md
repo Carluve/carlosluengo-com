@@ -14,10 +14,6 @@ tags:
   - 'tutorial'
 ---
 
-## How to Build Your Own GPT in ChatGPT
-
-_Step-by-step guide & why the instructions matter_
-
 ---
 
 ---

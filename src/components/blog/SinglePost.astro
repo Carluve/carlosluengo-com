@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
+import TableOfContents from '~/components/blog/TableOfContents.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 
 import { getPermalink } from '~/utils/permalinks';
@@ -71,9 +72,15 @@ const { post, url } = Astro.props;
       </div>
 
       <h1
-        class="mx-auto max-w-3xl px-4 font-heading text-4xl font-medium leading-tight tracking-tight text-balance text-heading sm:px-6 md:text-5xl"
+        class="aw-title-reveal mx-auto max-w-3xl px-4 font-heading text-4xl font-medium leading-tight tracking-tight text-balance text-heading sm:px-6 md:text-5xl"
       >
-        {post.title}
+        {
+          post.title.split(' ').map((word, i) => (
+            <>
+              <span style={`--i:${i}`}>{word}</span>{' '}
+            </>
+          ))
+        }
       </h1>
       <p class="mx-auto mb-8 mt-4 max-w-3xl px-4 text-lg leading-relaxed text-pretty text-muted sm:px-6 md:text-xl">
         {post.excerpt}
@@ -110,10 +117,19 @@ const { post, url } = Astro.props;
     </header>
     <!-- The width lives on a wrapper: .aw-prose is unlayered CSS with max-width:none,
          which would beat a max-w-* utility on the same element. -->
-    <div class="mx-auto mt-8 max-w-3xl px-4 sm:px-6">
+    <div class="relative mx-auto mt-8 max-w-3xl px-4 sm:px-6">
       <div class="aw-prose">
         <slot />
       </div>
+      {
+        post.headings && post.headings.length >= 3 && (
+          <aside class="absolute left-full top-0 hidden h-full w-60 pl-8 2xl:block">
+            <div class="sticky top-24">
+              <TableOfContents headings={post.headings} />
+            </div>
+          </aside>
+        )
+      }
     </div>
     <div class="mx-auto mt-8 flex max-w-3xl flex-col justify-between px-4 sm:flex-row sm:px-6">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
@@ -121,3 +137,35 @@ const { post, url } = Astro.props;
     </div>
   </article>
 </section>
+
+<script>
+  // "Copiar" button on code blocks; the label swaps to "Copiado" with the
+  // Text Swap transition from transitions.dev (MIT), see tailwind.css.
+  const addCopyButtons = () => {
+    for (const pre of document.querySelectorAll<HTMLPreElement>('.aw-prose pre:not([data-copy])')) {
+      pre.dataset.copy = '';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'aw-copy';
+      button.innerHTML =
+        '<span class="aw-swap" data-state="idle"><span>Copiar</span><span aria-hidden="true">Copiado</span></span>';
+      button.setAttribute('aria-label', 'Copiar el código');
+      button.addEventListener('click', async () => {
+        const swap = button.querySelector<HTMLElement>('.aw-swap')!;
+        try {
+          await navigator.clipboard.writeText(pre.querySelector('code')?.innerText ?? pre.innerText);
+          swap.dataset.state = 'done';
+          button.setAttribute('aria-label', 'Código copiado');
+          setTimeout(() => {
+            swap.dataset.state = 'idle';
+            button.setAttribute('aria-label', 'Copiar el código');
+          }, 1600);
+        } catch {
+          // Clipboard unavailable (insecure context or denied): keep the label.
+        }
+      });
+      pre.append(button);
+    }
+  };
+  document.addEventListener('astro:page-load', addCopyButtons);
+</script>

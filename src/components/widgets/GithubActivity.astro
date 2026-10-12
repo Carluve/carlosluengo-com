@@ -164,15 +164,14 @@ const Root = compact ? 'div' : 'section';
                   day && (
                     <rect
                       class={`gh-${day.level}`}
+                      data-tip={day.tip}
                       x={labelWidth + column * step}
                       y={labelHeight + row * step}
                       width={cell}
                       height={cell}
                       rx={Math.round(cell * 0.28 * 10) / 10}
                       style={`--wave:${Math.round(((column + row) * 420) / (weeks.length + 7))}ms`}
-                    >
-                      <title>{day.tip}</title>
-                    </rect>
+                    />
                   )
               )
             )}

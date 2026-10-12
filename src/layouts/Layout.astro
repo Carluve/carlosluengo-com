@@ -70,6 +70,32 @@ const { language, textDirection } = I18N;
           },
           { passive: true }
         );
+
+        // Frosted tooltip for chart marks with `data-tip` (EvilCharts, MIT).
+        let tip: HTMLDivElement | undefined;
+        document.addEventListener(
+          'pointerover',
+          (event) => {
+            const mark = (event.target as Element | null)?.closest?.<HTMLElement | SVGElement>('[data-tip]');
+            if (!mark) {
+              tip?.removeAttribute('data-show');
+              return;
+            }
+            if (!tip || !tip.isConnected) {
+              tip = document.createElement('div');
+              tip.className = 'aw-tip';
+              tip.setAttribute('role', 'tooltip');
+              document.body.append(tip);
+            }
+            const rect = mark.getBoundingClientRect();
+            tip.textContent = mark.dataset.tip ?? '';
+            tip.style.left = `${rect.left + rect.width / 2}px`;
+            tip.style.top = `${rect.top}px`;
+            tip.setAttribute('data-show', '');
+          },
+          { passive: true }
+        );
+        document.addEventListener('scroll', () => tip?.removeAttribute('data-show'), { passive: true });
       }
     </script>
   </body>
