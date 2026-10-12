@@ -523,3 +523,18 @@
 /blog/cloudflare-para-startups/ /category/cloudflare 301
 /blog/llms-mir-y-academia /blog/2025-04-19-can-ai-pass-spain-medical-exam 301
 /blog/llms-mir-y-academia/ /blog/2025-04-19-can-ai-pass-spain-medical-exam 301
+# Old Jekyll section pages and feeds.
+/publications /academia 301
+/publications/ /academia 301
+/teaching /academia 301
+/teaching/ /academia 301
+/talks /academia 301
+/talks/ /academia 301
+/portfolio /developer 301
+/portfolio/ /developer 301
+/cv /about 301
+/cv/ /about 301
+/year-archive /blog 301
+/year-archive/ /blog 301
+/feed.xml /rss.xml 301
+/atom.xml /rss.xml 301

@@ -1,0 +1,12 @@
+// Redirect Worker for www.carlosluengo.com (see index.ts).
+// Deploy from this folder: npx wrangler deploy
+// The custom domain makes Cloudflare create the proxied DNS record for www.
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "carlosluengo-www-redirect",
+  "account_id": "39f8ea10b94ad38470fc3c20c260efdc",
+  "main": "index.ts",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": false,
+  "routes": [{ "pattern": "www.carlosluengo.com", "custom_domain": true }],
+}

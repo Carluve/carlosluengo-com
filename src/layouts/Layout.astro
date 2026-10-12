@@ -36,7 +36,8 @@ const hreflang = alternate.translated
     ? { es: here, en: alternate.href }
     : { es: alternate.href, en: here }
   : undefined;
-const absolute = (path: string) => new URL(path, Astro.site).toString();
+// No trailing slash, like the canonical URL (the home is https://carlosluengo.com).
+const absolute = (path: string) => new URL(path, Astro.site).toString().replace(/\/$/, '');
 ---
 
 <!doctype html>
