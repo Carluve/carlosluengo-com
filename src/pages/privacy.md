@@ -18,7 +18,7 @@ El selector de tema claro u oscuro puede guardar la elección en el almacenamien
 
 ## Alojamiento
 
-La publicación estática se realiza en Cloudflare Pages. El proveedor puede tratar datos técnicos de conexión (por ejemplo, dirección IP o agente de usuario) para entregar el sitio y proteger la red. Ese tratamiento se rige por la [política de privacidad de Cloudflare](https://www.cloudflare.com/privacypolicy/).
+La publicación estática se realiza en Cloudflare Workers, y las imágenes, vídeos y PDF de los artículos se sirven desde Cloudflare R2 (media.carlosluengo.com). El proveedor puede tratar datos técnicos de conexión (por ejemplo, dirección IP o agente de usuario) para entregar el sitio y proteger la red. Ese tratamiento se rige por la [política de privacidad de Cloudflare](https://www.cloudflare.com/privacypolicy/).
 
 ## Enlaces externos
 

@@ -1,14 +1,17 @@
 ---
+import { Picture } from 'astro:assets';
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Button from '~/components/ui/Button.astro';
+import GithubActivity from '~/components/widgets/GithubActivity.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { SITE, I18N } from 'astrowind:config';
 import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
 import favIconSvg from '~/assets/favicons/favicon.svg';
+import skyline from '~/assets/images/hero/skyline-network.jpg';
+import district from '~/assets/images/hero/district-light.jpg';
 
 const metadata = {
   title: 'Carlos Luengo — Investigación, docencia e industria',
@@ -39,49 +42,85 @@ const structuredData = [
     alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Alcalá' },
     sameAs: [
       'https://www.linkedin.com/in/carlosluengo',
+      'https://x.com/carluve',
       'https://github.com/Carluve',
       'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
+      'https://orcid.org/0009-0008-2591-1210',
     ],
     logo: new URL(favIconSvg.src, SITE?.site).toString(),
   },
 ];
+
+const paperUrl = 'https://arxiv.org/abs/2503.00025';
+const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
 ---
 
 <Layout metadata={metadata}>
   <StructuredData slot="head" schema={structuredData} />
 
-  <Hero
-    tagline="Investigación · Docencia · Industria"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contacto',
-        href: getPermalink('/contact'),
-        icon: 'tabler:mail',
-      },
-      {
-        text: 'Google Scholar',
-        href: 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
-        target: '_blank',
-        icon: 'tabler:school',
-      },
-    ]}
-  >
-    <Fragment slot="title"> Carlos Luengo Vera </Fragment>
+  <section class="relative not-prose">
+    <div
+      class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12 lg:pb-10 lg:pt-16"
+    >
+      <div>
+        <p class="aw-eyebrow">Investigación · Docencia · Industria</p>
+        <h1
+          class="mt-3 font-heading text-[2.65rem] font-medium leading-[1.08] tracking-tight text-balance text-heading sm:text-5xl lg:text-[3.4rem]"
+        >
+          Carlos Luengo Vera
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-pretty text-muted">
+          Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Profesor en programas de
+          posgrado y ejecutivos. Sr. Enterprise Account Executive en Cloudflare, donde acompaña a empresas digitales
+          nativas, startups e ISVs. Su trabajo sitúa la investigación aplicada en el cruce entre adopción de IA,
+          organización empresarial e infraestructura cloud.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button variant="primary" text="Contacto" href={getPermalink('/contact')} icon="tabler:mail" />
+          <Button
+            text="Google Scholar"
+            href="https://scholar.google.es/citations?user=ikUrqYkAAAAJ"
+            target="_blank"
+            icon="tabler:school"
+          />
+        </div>
+      </div>
 
-    <Fragment slot="subtitle">
-      Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Profesor en programas de posgrado
-      y ejecutivos. Sr. Enterprise Account Executive en Cloudflare, donde acompaña a empresas digitales nativas,
-      startups e ISVs. Su trabajo sitúa la investigación aplicada en el cruce entre adopción de IA, organización
-      empresarial e infraestructura cloud.
-    </Fragment>
-  </Hero>
+      <figure class="relative">
+        <Picture
+          src={skyline}
+          formats={['avif', 'webp']}
+          fallbackFormat="jpg"
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 1024px) 54vw, 100vw"
+          alt="Vista aérea de un horizonte de torres unidas por una red de líneas azules, con cielo despejado a la izquierda."
+          loading="eager"
+          fetchpriority="high"
+          class="aspect-[16/9] w-full rounded-2xl border border-line object-cover object-[72%_center]"
+        />
+        <div
+          class="absolute bottom-3 left-3 w-[46%] overflow-hidden rounded-xl border-4 border-surface shadow-[0_12px_40px_rgb(15_23_42/0.18)] sm:bottom-5 sm:left-5 sm:w-[42%]"
+        >
+          <Picture
+            src={district}
+            formats={['avif', 'webp']}
+            fallbackFormat="jpg"
+            widths={[320, 480, 720]}
+            sizes="(min-width: 1024px) 22vw, 42vw"
+            alt="Avenida entre edificios de oficinas, con estelas de luz azul sobre el pavimento."
+            loading="eager"
+            class="aspect-[16/10] w-full object-cover"
+          />
+        </div>
+      </figure>
+    </div>
+  </section>
 
   <Features
-    id="pilares"
-    tagline="Ámbitos de trabajo"
-    title="Líneas que articulan esta web"
-    subtitle="Tres ámbitos complementarios: la práctica profesional en la industria tecnológica, la actividad académica y la experimentación técnica documentada."
+    id="ambitos"
+    tagline="Ámbitos"
+    title="Tres líneas de trabajo"
+    subtitle="La práctica en la industria, la actividad académica y la experimentación técnica publicada."
     columns={3}
     items={[
       {
@@ -89,56 +128,121 @@ const structuredData = [
         description:
           'Responsable de cuentas enterprise en Cloudflare (Digital Natives, Startups e ISVs). Experiencia previa en Microsoft, Insight, Telefónica, Lenovo y AWS.',
         icon: 'tabler:building-skyscraper',
+        callToAction: { text: 'Trayectoria', href: getPermalink('/about') },
       },
       {
         title: 'Academia',
         description:
           'Investigación doctoral sobre el impacto económico y organizativo de los LLMs. Publicaciones, docencia universitaria y trayectoria hacia la acreditación académica en España.',
         icon: 'tabler:school',
+        callToAction: { text: 'Investigación y docencia', href: getPermalink('/academia') },
       },
       {
         title: 'Desarrollo',
         description:
           'Prototipos en Astro y Cloudflare Workers, publicados cuando el repositorio es público. El trabajo interno de docencia no se enlaza.',
         icon: 'tabler:code',
+        callToAction: { text: 'Repositorios', href: getPermalink('/developer') },
       },
     ]}
   />
 
-  <Features2
-    id="explorar"
-    tagline="Secciones"
-    title="Contenido disponible"
-    subtitle="Publicaciones, notas y proyectos, organizados por ámbito."
-    columns={3}
-    items={[
-      {
-        title: 'Blog',
-        description:
-          'Ensayos y notas sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre industria y universidad.',
-        icon: 'tabler:notebook',
-        href: getBlogPermalink(),
-      },
-      {
-        title: 'Academia',
-        description: 'Artículos científicos, actividad docente e investigadora. Perfil en Google Scholar.',
-        icon: 'tabler:certificate',
-        href: getPermalink('/academia'),
-      },
-      {
-        title: 'Desarrollo',
-        description: 'Repositorios públicos, prototipos y documentación técnica.',
-        icon: 'tabler:terminal-2',
-        href: getPermalink('/developer'),
-      },
-    ]}
-  />
+  <section id="publicacion" class="relative not-prose scroll-mt-[72px]">
+    <div class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16 lg:py-20">
+      <p class="aw-eyebrow">Publicación destacada</p>
+      <h2 class="mt-2 max-w-3xl font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">
+        Preprint MIR 2024/2025
+      </h2>
+      <article class="aw-card mt-8 p-6 md:p-8">
+        <p class="aw-eyebrow">Preprint · 2025 · arXiv:2503.00025</p>
+        <h3 class="mt-3 max-w-4xl font-heading text-2xl font-medium leading-snug text-heading md:text-3xl">
+          Evaluating Large Language Models on the Spanish Medical Intern Resident (MIR) Examination 2024/2025: A
+          Comparative Analysis of Clinical Reasoning and Knowledge Application
+        </h3>
+        <p class="mt-4 max-w-3xl leading-relaxed text-muted">
+          Análisis comparativo del razonamiento clínico y de la aplicación de conocimiento. Carlos Luengo Vera figura
+          como primer autor. El listado completo de coautores está en Academia.
+        </p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button variant="primary" text="Ver en Academia" href={getPermalink('/academia')} icon="tabler:arrow-right" />
+          <Button text="PDF en arXiv" href={paperPdfUrl} target="_blank" icon="tabler:file-type-pdf" />
+          <Button text="Resumen en arXiv" href={paperUrl} target="_blank" icon="tabler:file-text" />
+        </div>
+      </article>
+    </div>
+  </section>
 
   <BlogLatestPosts
-    title="Publicaciones recientes en el blog"
-    linkText="Ver todas las entradas"
-    information="Textos en español sobre infraestructura cloud, inteligencia artificial aplicada y universidad."
+    title="Últimas notas"
+    information="Textos sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre industria y universidad."
+    linkText="Archivo del blog"
+    linkUrl={getBlogPermalink()}
+    count={3}
+    excludeCategory="proyectos"
   />
+
+  <section id="desarrollo" class="relative not-prose scroll-mt-[72px]">
+    <div class="mx-auto max-w-6xl px-4 py-4 md:px-6 md:pb-8">
+      <p class="aw-eyebrow">Código público</p>
+      <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">Desarrollo</h2>
+      <p class="mt-3 max-w-2xl leading-relaxed text-muted">
+        Tres repositorios que pueden citarse con precisión. El resto del código público está en GitHub; el trabajo
+        interno no se enlaza.
+      </p>
+      <ul class="mt-8 grid gap-4 md:grid-cols-3">
+        <li>
+          <a
+            class="aw-card flex h-full flex-col p-6 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            href="https://github.com/Carluve/carlosluengo-com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="font-heading text-xl font-medium text-heading">carlosluengo.com</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">
+              Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Workers; la media se sirve
+              desde R2.
+            </p>
+          </a>
+        </li>
+        <li>
+          <a
+            class="aw-card flex h-full flex-col p-6 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            href="https://github.com/Carluve/FocAIRemover"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="font-heading text-xl font-medium text-heading">FocAIRemover</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">
+              Prototipo experimental en Cloudflare Workers para marcas de procedencia de IA que pueden verificarse. El
+              repositorio lo presenta como investigación, no como producto.
+            </p>
+          </a>
+        </li>
+        <li>
+          <a
+            class="aw-card flex h-full flex-col p-6 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            href="https://github.com/Carluve/blog-astronano"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3 class="font-heading text-xl font-medium text-heading">Astro Nano</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">
+              Bifurcación del tema Astro Nano. Es un experimento de presentación; el sitio principal es este.
+            </p>
+          </a>
+        </li>
+      </ul>
+      <GithubActivity compact />
+      <div class="mt-6">
+        <Button
+          variant="tertiary"
+          class="px-0"
+          text="Toda la sección de desarrollo"
+          href={getPermalink('/developer')}
+        />
+      </div>
+    </div>
+  </section>
 
   <CallToAction
     actions={[
@@ -155,10 +259,10 @@ const structuredData = [
       },
     ]}
   >
-    <Fragment slot="title">Colaboración e intercambio</Fragment>
+    <Fragment slot="title">Correspondencia</Fragment>
     <Fragment slot="subtitle">
-      Para consultas académicas, colaboraciones o asuntos profesionales relacionados con Cloudflare, puede utilizar la
-      página de contacto o LinkedIn.
+      Para consultas académicas, colaboraciones o asuntos profesionales relacionados con Cloudflare, la vía es la página
+      de contacto o LinkedIn. Este sitio no sustituye a los canales institucionales.
     </Fragment>
   </CallToAction>
 </Layout>

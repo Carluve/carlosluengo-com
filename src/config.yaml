@@ -23,8 +23,8 @@ metadata:
         height: 630
     type: website
   twitter:
-    handle: ''
-    site: ''
+    handle: '@carluve'
+    site: '@carluve'
     cardType: summary_large_image
 
 i18n:
@@ -34,11 +34,11 @@ i18n:
 apps:
   blog:
     isEnabled: true
-    postsPerPage: 8
+    postsPerPage: 12
 
     post:
       isEnabled: true
-      permalink: '/%slug%'
+      permalink: 'blog/%slug%'
       robots:
         index: true
 

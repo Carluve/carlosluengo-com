@@ -28,29 +28,24 @@ const columnsClass = getColumnsClass(columns);
 
   {
     items.length > 0 && (
-      <div class:list={['grid mx-auto gap-8 md:gap-y-12', columnsClass]}>
+      <div class:list={['grid gap-4 md:gap-5', columnsClass]}>
         {items.map(({ title: itemTitle, description, icon, callToAction }) => (
-          <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-            <div class="flex flex-row max-w-md">
-              {(icon || defaultIcon) && (
-                <div class="flex justify-center">
-                  <Icon
-                    name={icon || defaultIcon}
-                    class="w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2 text-white bg-primary rounded-full md:w-12 md:h-12 md:p-3 p-2 mr-4 rtl:ml-4 rtl:mr-0"
-                  />
-                </div>
-              )}
-              <div class="mt-0.5">
-                {itemTitle && <h3 class="text-xl md:text-[1.3rem] font-bold">{itemTitle}</h3>}
-                {description && <p class:list={[{ 'mt-3': itemTitle }, 'text-muted']} set:html={description} />}
-                {callToAction && (
-                  <div class:list={[{ 'mt-3': itemTitle || description }]}>
-                    <Button variant="link" {...callToAction} />
-                  </div>
-                )}
+          <article class="aw-card flex h-full flex-col p-6">
+            {(icon || defaultIcon) && (
+              <div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary">
+                <Icon name={icon || defaultIcon} class="h-5 w-5" />
               </div>
-            </div>
-          </div>
+            )}
+            {itemTitle && <h3 class="font-heading text-xl font-medium leading-snug text-heading">{itemTitle}</h3>}
+            {description && (
+              <p class:list={[{ 'mt-2': itemTitle }, 'text-sm leading-relaxed text-muted']} set:html={description} />
+            )}
+            {callToAction && (
+              <div class:list={[{ 'mt-3': itemTitle || description }]}>
+                <Button variant="link" {...callToAction} />
+              </div>
+            )}
+          </article>
         ))}
       </div>
     )

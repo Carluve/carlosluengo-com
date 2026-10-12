@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Projects from '~/components/widgets/Projects.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import GithubActivity from '~/components/widgets/GithubActivity.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -38,8 +39,9 @@ const githubProfile = 'https://github.com/Carluve';
     items={[
       {
         title: 'carlosluengo.com',
-        description: 'Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Pages.',
-        tags: ['Astro', 'Cloudflare Pages'],
+        description:
+          'Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Workers; la media se sirve desde R2.',
+        tags: ['Astro', 'Cloudflare Workers'],
         href: 'https://github.com/Carluve/carlosluengo-com',
         linkText: 'Ver el repositorio',
       },
@@ -61,6 +63,8 @@ const githubProfile = 'https://github.com/Carluve';
       },
     ]}
   />
+
+  <GithubActivity />
 
   <Features
     id="no-publico"
@@ -90,7 +94,7 @@ const githubProfile = 'https://github.com/Carluve';
     columns={3}
     items={[
       { title: 'Astro', icon: 'tabler:rocket' },
-      { title: 'Cloudflare Pages', icon: 'tabler:cloud' },
+      { title: 'Cloudflare Workers', icon: 'tabler:cloud' },
       { title: 'Cloudflare Workers', icon: 'tabler:cloud-code' },
     ]}
   />

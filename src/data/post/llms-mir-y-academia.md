@@ -15,7 +15,7 @@ Evaluar LLMs en un examen de alto riesgo como el MIR no es un ranking de marketi
 
 ## El paper
 
-En *Evaluating Large Language Models on the Spanish MIR Examination 2024/2025* ([arXiv:2503.00025](https://arxiv.org/abs/2503.00025)) comparamos modelos generalistas y especializados. La lección práctica: el dominio importa; los sistemas afinados al contexto sanitario español destacan frente a baselines genéricos.
+En _Evaluating Large Language Models on the Spanish MIR Examination 2024/2025_ ([arXiv:2503.00025](https://arxiv.org/abs/2503.00025)) comparamos modelos generalistas y especializados. La lección práctica: el dominio importa; los sistemas afinados al contexto sanitario español destacan frente a baselines genéricos.
 
 ## Por qué importa fuera de medicina
 

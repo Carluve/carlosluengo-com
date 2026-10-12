@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+const href = 'https://orcid.org/0009-0008-2591-1210';
+---
+
+<a
+  class:list={[
+    'inline-flex max-w-full items-center gap-2.5 rounded-lg border border-line bg-surface px-3 py-2 text-sm text-heading transition duration-150 ease-in-out hover:border-primary/40 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+    className,
+  ]}
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="ORCID iD 0009-0008-2591-1210"
+>
+  <Icon name="orcid" class="h-5 w-5 shrink-0" aria-hidden="true" />
+  <span class="min-w-0">
+    <span class="font-medium">ORCID iD</span>
+    <span class="ml-2 font-mono text-[0.8125rem] tracking-tight text-muted">0009-0008-2591-1210</span>
+  </span>
+</a>

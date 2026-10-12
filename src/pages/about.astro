@@ -4,6 +4,9 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
+import OrcidBadge from '~/components/common/OrcidBadge.astro';
+import { xUrl } from '~/navigation';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -18,7 +21,20 @@ const metadata = {
     tagline="Sobre mí"
     title="Trayectoria profesional y académica"
     subtitle="Carlos Luengo Vera trabaja en la industria tecnológica y, en paralelo, en la investigación y la docencia universitarias."
-  />
+  >
+    <div slot="content" class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+      <OrcidBadge />
+      <a
+        class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium text-heading transition duration-150 ease-in-out hover:border-primary/40 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        href={xUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="tabler:brand-x" class="h-5 w-5 shrink-0" aria-hidden="true" />
+        @carluve
+      </a>
+    </div>
+  </HeroText>
 
   <Content
     items={[
@@ -51,6 +67,18 @@ const metadata = {
         Esa práctica informa la investigación doctoral y la docencia, sin sustituirlas. El objetivo académico es la
         acreditación en el sistema universitario español y, a más largo plazo, una cátedra.
       </p>
+      <div class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        <OrcidBadge />
+        <a
+          class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium text-heading transition duration-150 ease-in-out hover:border-primary/40 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          href={xUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="tabler:brand-x" class="h-5 w-5 shrink-0" aria-hidden="true" />
+          @carluve
+        </a>
+      </div>
     </Fragment>
   </Content>
 

@@ -17,6 +17,8 @@
   --color-default: var(--aw-color-text-default);
   --color-muted: var(--aw-color-text-muted);
   --color-link: var(--aw-color-link, var(--aw-color-primary));
+  --color-surface: var(--aw-color-surface);
+  --color-line: var(--aw-color-border);
 
   --font-sans:
     var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
@@ -55,11 +57,11 @@
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+  @apply inline-flex cursor-pointer items-center justify-center rounded-lg border border-line bg-surface px-5 py-3 text-center text-[0.9375rem] font-medium leading-none text-heading transition-colors duration-200 hover:border-primary/40 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 motion-reduce:transition-none;
 }
 
 @utility btn-primary {
-  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+  @apply btn border-primary bg-primary font-semibold text-white hover:border-secondary hover:bg-secondary hover:text-white;
 }
 
 @utility btn-secondary {
@@ -67,23 +69,73 @@
 }
 
 @utility btn-tertiary {
-  @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+  @apply btn border-transparent bg-transparent text-muted shadow-none hover:border-transparent hover:bg-transparent hover:text-heading;
 }
 
-/* Sticky header: solid page background on phones, translucent page background with blur on desktop. */
+@utility aw-eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.16em] text-link;
+}
+
+@utility aw-card {
+  @apply rounded-xl border border-line bg-surface shadow-[0_1px_2px_rgb(15_23_42/0.04)];
+}
+
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+.aw-canvas {
+  background-image:
+    radial-gradient(
+      900px 420px at 100% -10%,
+      color-mix(in srgb, var(--aw-color-primary) 12%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      720px 360px at -10% 0%,
+      color-mix(in srgb, var(--aw-color-primary) 7%, transparent),
+      transparent 55%
+    );
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  border-radius: 0.5rem;
+  background: var(--aw-color-primary);
+  color: #fff;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  transform: none;
+  outline: 2px solid var(--aw-color-text-heading);
+  outline-offset: 2px;
+}
+
+/* Sticky header stays readable before and after it sticks. The scroll class
+   only deepens the surface; the default already has a solid-enough veil. */
+#header > div:first-child {
+  background-color: color-mix(in srgb, var(--aw-color-bg-page) 88%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--aw-color-border) 90%, transparent);
+  backdrop-filter: saturate(1.2) blur(16px);
+}
+
 #header.scroll > div:first-child {
-  @apply bg-page lg:backdrop-blur-md;
-  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+  background-color: color-mix(in srgb, var(--aw-color-bg-page) 94%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--aw-color-border) 80%, transparent);
 }
-@media (width >= 64rem) {
-  #header.scroll > div:first-child {
-    background-color: color-mix(in srgb, var(--aw-color-bg-page) 90%, transparent);
+
+@media (prefers-reduced-transparency: reduce) {
+  #header > div:first-child {
+    background-color: var(--aw-color-bg-page);
+    backdrop-filter: none;
   }
-}
-.dark #header.scroll > div:first-child,
-#header.scroll.dark > div:first-child {
-  @apply border-b border-gray-500/20;
-  box-shadow: none;
 }
 
 #header.expanded nav {
@@ -123,7 +175,37 @@
    kept in sync on client-side navigations). Override --aw-color-link in
    CustomStyles.astro to change the colour. */
 #header nav .aw-link-active {
-  @apply text-link;
+  color: var(--aw-color-link);
+  font-weight: 600;
+}
+
+@media (width >= 64rem) {
+  #header nav .aw-link-active::after {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--aw-color-primary);
+  }
+}
+
+.aw-prose {
+  @apply prose prose-lg max-w-none text-default prose-headings:scroll-mt-24 prose-headings:font-heading prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-heading prose-p:leading-relaxed prose-li:text-default prose-a:font-medium prose-a:text-link prose-a:underline prose-a:decoration-primary/30 prose-a:underline-offset-4 hover:prose-a:decoration-primary prose-strong:text-heading dark:prose-invert;
+}
+
+.aw-prose :where(img) {
+  border-radius: 0.75rem;
+  border: 1px solid var(--aw-color-border);
+}
+
+.aw-prose :where(video) {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--aw-color-border);
 }
 
 .dd *:first-child {
@@ -160,4 +242,173 @@
       animation: none !important;
     }
   }
+}
+
+/* Generated post cover (src/components/blog/PostCover.astro). */
+.aw-cover {
+  background-color: hsl(var(--cover-hue) 60% 96%);
+  background-image:
+    radial-gradient(60% 80% at var(--cover-x1) var(--cover-y1), hsl(var(--cover-hue) 95% 72% / 0.55), transparent 70%),
+    radial-gradient(
+      55% 70% at var(--cover-x2) var(--cover-y2),
+      hsl(calc(var(--cover-hue) - 12) 90% 78% / 0.55),
+      transparent 70%
+    ),
+    linear-gradient(135deg, hsl(var(--cover-hue) 70% 97%), hsl(var(--cover-hue) 55% 90%));
+}
+.dark .aw-cover {
+  background-color: hsl(var(--cover-hue) 45% 12%);
+  background-image:
+    radial-gradient(60% 80% at var(--cover-x1) var(--cover-y1), hsl(var(--cover-hue) 90% 45% / 0.45), transparent 70%),
+    radial-gradient(
+      55% 70% at var(--cover-x2) var(--cover-y2),
+      hsl(calc(var(--cover-hue) - 12) 80% 40% / 0.35),
+      transparent 70%
+    ),
+    linear-gradient(135deg, hsl(var(--cover-hue) 40% 14%), hsl(var(--cover-hue) 45% 9%));
+}
+.aw-cover-grid {
+  background-image:
+    linear-gradient(to right, hsl(var(--cover-hue) 60% 40% / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--cover-hue) 60% 40% / 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
+}
+
+/* Card hover adapted from uiarc.dev Card (MIT): no scale, a 2px lift, a
+   stronger border and a soft two-layer shadow, only on fine pointers.
+   On top, a radial highlight follows the pointer along the 1px border; the
+   pointer position comes from the small script in src/layouts/Layout.astro. */
+.aw-spotlight {
+  position: relative;
+  transition:
+    border-color 160ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    translate 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .aw-spotlight:hover {
+    translate: 0 -2px;
+    border-color: color-mix(in oklab, var(--aw-color-primary) 35%, var(--aw-color-border));
+    box-shadow:
+      0 6px 18px rgb(0 0 0 / 0.065),
+      0 1px 3px rgb(0 0 0 / 0.035);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aw-spotlight {
+    transition: none;
+  }
+  .aw-spotlight:hover {
+    translate: none;
+  }
+}
+.aw-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    280px circle at var(--aw-mx, 50%) var(--aw-my, 50%),
+    color-mix(in srgb, var(--aw-color-primary) 70%, transparent),
+    transparent 65%
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .aw-spotlight:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Scroll reveal: fade up out of a blur (affectUI Text Reveal, MIT), driven by the
+   scroll position itself: no observer, no hidden content without CSS support. */
+@keyframes aw-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .aw-reveal {
+      animation: aw-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+/* Reading progress on posts (beUI Scroll Progress, MIT), in plain CSS. */
+.aw-read-progress {
+  display: none;
+}
+@keyframes aw-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .aw-read-progress {
+    display: block;
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 60;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--aw-color-primary) 55%, #7dd3fc),
+      var(--aw-color-primary)
+    );
+    animation: aw-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* Cover morph between the blog list and the post (Astro view transitions). */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(*) {
+    animation-duration: 420ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Theme switch as a circle growing from the toggle (beUI Theme Toggle, MIT).
+   Scoped to [data-theme-transition] so page navigations keep their own transition. */
+@keyframes aw-theme-reveal {
+  from {
+    clip-path: circle(0% at var(--aw-theme-x, 100%) var(--aw-theme-y, 0%));
+  }
+  to {
+    clip-path: circle(150% at var(--aw-theme-x, 100%) var(--aw-theme-y, 0%));
+  }
+}
+html[data-theme-transition]::view-transition-old(root) {
+  animation: none;
+}
+html[data-theme-transition]::view-transition-new(root) {
+  animation: aw-theme-reveal 650ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* EvilCharts (MIT) hover: the other bars fade to 30%. */
+.aw-bars .aw-bar {
+  transition: opacity 150ms ease-out;
+}
+.aw-bars:hover .aw-bar:not(:hover) {
+  opacity: 0.3;
 }

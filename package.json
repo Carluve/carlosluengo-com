@@ -1,7 +1,7 @@
 {
   "name": "carlosluengo-com",
   "version": "1.0.0-beta.66",
-  "description": "Carlos Luengo personal site (AstroWind) \u2014 carlosluengo.com",
+  "description": "Carlos Luengo personal site (AstroWind) — carlosluengo.com",
   "type": "module",
   "engines": {
     "node": ">=22.22.3"
@@ -9,16 +9,22 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/media.mjs check && node scripts/redirects.mjs generate && node --test scripts/redirects.test.mjs && node scripts/redirects.mjs check public/_redirects && astro build && node scripts/redirects.mjs check-dist dist",
+    "check:redirects": "node scripts/redirects.mjs check public/_redirects",
+    "media:sync": "node scripts/media.mjs sync",
+    "media:pull": "node scripts/media.mjs pull",
+    "media:check": "node scripts/media.mjs check",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
+    "check": "npm run check:astro && npm run check:eslint && npm run check:prettier && npm run check:redirects && npm run media:check",
     "check:astro": "astro check",
     "check:eslint": "eslint .",
     "check:prettier": "prettier --check .",
     "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w ."
+    "fix:prettier": "prettier -w .",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:preview": "npm run build && wrangler versions upload"
   },
   "dependencies": {
     "@astro-community/astro-embed-twitter": "^0.5.11",
@@ -62,7 +68,8 @@
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.66.0"
+    "typescript-eslint": "^8.66.0",
+    "wrangler": "^4.149.0"
   },
   "overrides": {
     "yaml": ">=2.8.3",

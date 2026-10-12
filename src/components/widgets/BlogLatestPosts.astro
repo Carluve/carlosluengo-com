@@ -4,7 +4,7 @@ import { APP_BLOG } from 'astrowind:config';
 import Grid from '~/components/blog/Grid.astro';
 
 import { getBlogPermalink } from '~/utils/permalinks';
-import { findLatestPosts } from '~/utils/blog';
+import { fetchPosts } from '~/utils/blog';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 import Button from '~/components/ui/Button.astro';
@@ -15,6 +15,8 @@ export interface Props extends Widget {
   linkUrl?: string | URL;
   information?: string;
   count?: number;
+  /** Omit posts whose category slug matches, so the home page can feature essays. */
+  excludeCategory?: string;
 }
 
 const {
@@ -23,6 +25,7 @@ const {
   linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
   count = 4,
+  excludeCategory,
 
   id,
   isDark = false,
@@ -30,29 +33,26 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
+const posts = APP_BLOG.isEnabled
+  ? (await fetchPosts()).filter((post) => !excludeCategory || post.category?.slug !== excludeCategory).slice(0, count)
+  : [];
 ---
 
 {
   APP_BLOG.isEnabled ? (
     <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
-      <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
-        {title && (
-          <div class="md:max-w-sm">
-            <h2
-              class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
-              set:html={title}
-            />
-            {APP_BLOG.list.isEnabled && linkText && linkUrl && (
-              <Button variant="link" href={linkUrl}>
-                {' '}
-                {linkText} »
-              </Button>
-            )}
-          </div>
+      <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div class="max-w-2xl">
+          {title && (
+            <h2 class="font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl" set:html={title} />
+          )}
+          {information && <p class="mt-3 leading-relaxed text-muted" set:html={information} />}
+        </div>
+        {APP_BLOG.list.isEnabled && linkText && linkUrl && (
+          <Button variant="tertiary" class="px-0 md:px-0" href={linkUrl}>
+            {linkText}
+          </Button>
         )}
-
-        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
       <Grid posts={posts} />

@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import OrcidBadge from '~/components/common/OrcidBadge.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -34,31 +35,24 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
       target: '_blank',
       icon: 'tabler:external-link',
     }}
-    callToAction2={{
-      text: 'PDF en arXiv',
-      href: paperPdfUrl,
-      target: '_blank',
-      icon: 'tabler:file-type-pdf',
-    }}
-    callToAction3={{
-      text: 'Resumen en arXiv',
-      href: paperUrl,
-      target: '_blank',
-      icon: 'tabler:file-text',
-    }}
-  />
+  >
+    <div slot="content" class="mt-6">
+      <OrcidBadge />
+    </div>
+  </HeroText>
 
   <Features2
     id="publicaciones"
     tagline="Publicaciones"
     title="Trabajo disponible"
-    subtitle="Se cita únicamente el preprint con identificador público. El resto del registro bibliográfico está en Google Scholar."
+    subtitle="Ocho fichas del registro de publicaciones. El enlace y el estado son los que trae cada ficha."
+    classes={{ headline: { container: 'max-w-3xl mb-5' } }}
     columns={2}
     items={[
       {
-        eyebrow: 'Preprint · 2025 · arXiv:2503.00025',
+        eyebrow: 'Preprint · 2025-03-16 · arXiv',
         title: paperTitle,
-        description: `<span class="block text-page dark:text-slate-200">${paperAuthors}</span><span class="mt-2 block">Análisis comparativo del razonamiento clínico y de la aplicación de conocimiento. Carlos Luengo Vera figura como primer autor.</span>`,
+        description: `<span class="block text-page dark:text-slate-200">${paperAuthors}</span><span class="mt-2 block">Comparative analysis of 22 generative AI models in clinical reasoning and performance across the MIR 2024/2025 medical exams. DOI: 10.48550/arXiv.2503.00025.</span>`,
         icon: 'tabler:file-text',
         actions: [
           {
@@ -79,14 +73,98 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
         ],
       },
       {
+        eyebrow: '2025-12-26 · Journal of Open Innovation',
+        title:
+          'Generative AI and the Algorithmic Workplace: A Bibliometric and Conceptual Analysis of Its Impact on Organisational Decision-Making and Work Design',
+        description:
+          'Carlos Luengo Vera, Alnoor Bhimani, José Andrés Gómez Gandía y Antonio de Lucas (2025). Journal of Open Innovation: Technology, Market, and Complexity, 100710. Elsevier.',
+        icon: 'tabler:file-text',
+      },
+      {
+        eyebrow: '2025-11-15 · Springer Proceedings in Business and Economics',
+        title:
+          'Economic Resilience and Sustainability—Vol. 1: 8th International Scientific Conference on Business and Economics (ISCBE), Tetovo, North Macedonia, May 2025',
+        description:
+          'Ramadani, V., Bexheti, A., Abazi-Alili, H., Theodoraki, C., Rexhepi, G. y Krasniqi, B. A. (Eds.) (2025). Springer Nature Switzerland AG. El volumen incluye el capítulo sobre el análisis coste-beneficio de modelos de lenguaje en el MIR.',
+        icon: 'tabler:book',
+        actions: [
+          {
+            text: 'Springer',
+            href: 'https://link.springer.com/book/9783032042170',
+            target: '_blank',
+            icon: 'tabler:external-link',
+            class: cardActionClass,
+          },
+        ],
+      },
+      {
+        eyebrow: '2025-11-10 · International Journal of Environment, Workplace and Employment',
+        title: 'Geopolitical crises and the transformation of work models: a bibliometric analysis (2000-2025)',
+        description:
+          'Carlos Luengo Vera, José Andrés Gómez Gandía, Antonio Javier De Lucas López y Ma. Teresa de Val Núñez (2025). Vol. 9, No. 3, pp. 270-297.',
+        icon: 'tabler:file-text',
+        actions: [
+          {
+            text: 'Inderscience',
+            href: 'https://www.inderscienceonline.com/doi/abs/10.1504/IJEWE.2025.149704',
+            target: '_blank',
+            icon: 'tabler:external-link',
+            class: cardActionClass,
+          },
+        ],
+      },
+      {
+        eyebrow: '2025-09-21',
+        title: 'Innovation and Circular Economy: New Findings on How Innovation Drives the Circular Economy',
+        description:
+          'Reseña del artículo “Innovation and Circular Economy within the Sustainable …” (Elsevier, 2025) sobre cómo la innovación sostiene las prácticas de economía circular. La ficha no incluye un enlace ni una cita bibliográfica completa.',
+        icon: 'tabler:file-text',
+      },
+      {
+        eyebrow: '2025-09-11 · JOINETECH',
+        title:
+          'The Synergy between Green Marketing, Innovation, and Sustainability-Enhancing Green Brand Equity and Corporate Social Responsibility',
+        description:
+          'José Andrés Gómez Gandía, Carlos Luengo Vera y Antonio Javier De Lucas López (2025). JOINETECH (International Journal of Economic and Technological Studies), Vol. 1, Issue 01, pp. 76-89.',
+        icon: 'tabler:file-text',
+        actions: [
+          {
+            text: 'Google Scholar',
+            href: 'https://scholar.google.es/citations?view_op=view_citation&hl=en&user=ikUrqYkAAAAJ&citation_for_view=ikUrqYkAAAAJ:IjCSPb-OGe4C',
+            target: '_blank',
+            icon: 'tabler:external-link',
+            class: cardActionClass,
+          },
+        ],
+      },
+      {
+        eyebrow: '2025-05-08 · 8th ISCBE, Tetovo',
+        title:
+          'Optimising AI in Medical Education: Cost-Benefit Analysis of Large Language Models in the MIR Examination',
+        description:
+          'Carlos Luengo Vera, Antonio J. de Lucas López, Víctor Ramos Arroyo y M. Teresa de Val Núñez (2025). Comunicación en el 8th ISCBE (Tetovo, 08–09 May 2025). La ficha lo registra como manuscrito en revisión para las actas de Springer.',
+        icon: 'tabler:file-text',
+      },
+      {
+        eyebrow: '2024-11-22 · Congreso de la Felicidad, Málaga',
+        title: 'Impact of Generative AI on Workplace Productivity and Employee Well-being',
+        description:
+          'Carlos Luengo Vera, Antonio J. de Lucas López, Arturo Orea Rocha y María Teresa del Val Núñez (2024). Comunicación en el 8th International Academic and Professional Congress on Happiness (Málaga, 21–22 Nov 2024). La ficha lo registra como manuscrito en revisión.',
+        icon: 'tabler:file-text',
+      },
+      {
         title: 'Google Scholar',
         description:
-          'Perfil público con el listado de publicaciones, citas y coautores. Es la referencia para consultar el conjunto de la producción, más allá de esta página.',
+          'Perfil público con el listado de publicaciones, citas y coautores. Es la referencia para consultar el conjunto de la producción, más allá de estas fichas.',
         icon: 'tabler:school',
         href: scholarUrl,
       },
     ]}
-  />
+  >
+    <div slot="after-headline" class="mb-8 md:mb-10">
+      <OrcidBadge />
+    </div>
+  </Features2>
 
   <Features
     id="en-preparacion"
@@ -104,7 +182,7 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
       {
         title: 'Nuevas publicaciones',
         description:
-          'Los manuscritos en preparación se incorporarán a esta página cuando exista un preprint o un DOI. Hasta entonces, Google Scholar es el listado de referencia.',
+          'Lo que todavía no está en las fichas anteriores no se anticipa aquí. Google Scholar sigue siendo el listado para el conjunto de la producción.',
         icon: 'tabler:hourglass',
       },
     ]}
@@ -145,7 +223,8 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
       },
       {
         title: 'Prudencia bibliográfica',
-        description: 'Esta página no lista como publicación un texto que todavía no pueda citarse.',
+        description:
+          'Cada ficha conserva el enlace y el estado que trae el registro, incluida la fórmula de manuscrito en revisión.',
         icon: 'tabler:scale',
       },
       {

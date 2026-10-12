@@ -2,7 +2,6 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
-import Announcement from '~/components/widgets/Announcement.astro';
 
 import { headerData, footerData } from '~/navigation';
 
@@ -17,6 +16,7 @@ const { metadata } = Astro.props;
 
 <Layout metadata={metadata}>
   <slot name="head" slot="head" />
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   {
     /*
     Slot fallbacks are rendered explicitly. With `<slot name="x">fallback</slot>`
@@ -26,9 +26,9 @@ const { metadata } = Astro.props;
     goes missing on that page.
   */
   }
-  {Astro.slots.has('announcement') ? <slot name="announcement" /> : <Announcement />}
+  {Astro.slots.has('announcement') && <slot name="announcement" />}
   {Astro.slots.has('header') ? <slot name="header" /> : <Header {...headerData} isSticky showRssFeed showToggleTheme />}
-  <main class="flex-1">
+  <main id="contenido" class="flex-1">
     <slot />
   </main>
   {Astro.slots.has('footer') ? <slot name="footer" /> : <Footer {...footerData} />}

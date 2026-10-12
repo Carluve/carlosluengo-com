@@ -15,6 +15,7 @@ import {
   isBlogCategoryRouteEnabled,
 } from '~/utils/blog';
 import { findImage } from '~/utils/images';
+import { isMediaRef, resolveMediaUrl } from '~/utils/media';
 import { truncateAtWord } from '~/utils/utils';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
@@ -61,7 +62,7 @@ const metadata = merge(
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 ) as MetaData;
 
-const imageUrl = typeof image === 'string' ? image : image?.src;
+const imageUrl = isMediaRef(image) ? resolveMediaUrl(image) : typeof image === 'string' ? image : image?.src;
 
 // Article structured data. The breadcrumb trail below carries its own BreadcrumbList.
 const articleSchema = {

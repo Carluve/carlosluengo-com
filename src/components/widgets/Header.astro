@@ -75,7 +75,7 @@ const persistKey = `header-${Array.from(
     <div class="absolute inset-0"></div>
     <div
       class:list={[
-        'relative text-default py-3 px-3 lg:px-6 mx-auto w-full',
+        'relative text-default py-2.5 px-3 lg:px-6 mx-auto w-full',
         {
           'lg:flex lg:justify-between': position !== 'center',
         },
@@ -100,7 +100,7 @@ const persistKey = `header-${Array.from(
         aria-label="Navegación principal"
       >
         <ul
-          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium lg:justify-center"
+          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-lg lg:text-sm tracking-normal font-medium lg:justify-center"
         >
           {
             links.map(({ text, href, links }) => (
@@ -109,7 +109,7 @@ const persistKey = `header-${Array.from(
                   <>
                     <button
                       type="button"
-                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                      class="hover:text-link px-3 py-2.5 lg:py-2 flex items-center whitespace-nowrap rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                     >
                       {text}{' '}
                       <Icon
@@ -136,10 +136,11 @@ const persistKey = `header-${Array.from(
                 ) : (
                   <a
                     class:list={[
-                      'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                      'relative hover:text-link px-3 py-2.5 lg:py-2 flex items-center whitespace-nowrap rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
                       { 'aw-link-active': isActive(href) },
                     ]}
                     href={href}
+                    aria-current={isActive(href) ? 'page' : undefined}
                   >
                     {text}
                   </a>

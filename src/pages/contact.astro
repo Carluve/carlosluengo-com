@@ -4,11 +4,12 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { xUrl } from '~/navigation';
 
 const metadata = {
   title: 'Contacto',
   description:
-    'Contacto con Carlos Luengo Vera: LinkedIn para consultas académicas y profesionales, GitHub y Google Scholar.',
+    'Contacto con Carlos Luengo Vera: LinkedIn para consultas académicas y profesionales, y los perfiles públicos de GitHub, Google Scholar y X (@carluve).',
 };
 
 const linkedIn = 'https://www.linkedin.com/in/carlosluengo';
@@ -25,14 +26,20 @@ const scholar = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
 
   <Features2
     title="Vías de contacto"
-    subtitle="LinkedIn es el canal principal. GitHub y Google Scholar permiten consultar el código público y las publicaciones."
-    columns={3}
+    subtitle="LinkedIn es el canal principal. GitHub, Google Scholar y X (@carluve) son perfiles públicos."
+    columns={2}
     items={[
       {
         title: 'LinkedIn',
         description: 'Canal preferente para un mensaje directo, ya sea de carácter académico, docente o profesional.',
         icon: 'tabler:brand-linkedin',
         href: linkedIn,
+      },
+      {
+        title: 'X',
+        description: 'Perfil público @carluve.',
+        icon: 'tabler:brand-x',
+        href: xUrl,
       },
       {
         title: 'GitHub',
@@ -84,11 +91,17 @@ const scholar = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
         target: '_blank',
         icon: 'tabler:brand-linkedin',
       },
+      {
+        text: 'X',
+        href: xUrl,
+        target: '_blank',
+        icon: 'tabler:brand-x',
+      },
     ]}
   >
     <Fragment slot="title">LinkedIn</Fragment>
     <Fragment slot="subtitle">
-      Es la vía adecuada para una respuesta directa. El perfil público está a nombre de Carlos Luengo.
+      Es la vía adecuada para una respuesta directa. El perfil público en X es @carluve.
     </Fragment>
   </CallToAction>
 </Layout>

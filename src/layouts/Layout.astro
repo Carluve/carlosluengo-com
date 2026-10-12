@@ -28,11 +28,12 @@ const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={language} dir={textDirection}>
   <head>
     <CommonMeta />
     <Favicons />
     <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-source-serif" preload />
     <CustomStyles />
     <ApplyColorMode />
     <Metadata {...metadata} />
@@ -40,6 +41,7 @@ const { language, textDirection } = I18N;
     <Analytics />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://media.carlosluengo.com" />
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
@@ -48,9 +50,27 @@ const { language, textDirection } = I18N;
     <slot name="head" />
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight min-h-screen flex flex-col">
+  <body class="aw-canvas antialiased text-default bg-page min-h-screen flex flex-col">
     <slot />
 
     <Intersect />
+
+    <script>
+      // Feed the pointer position to `.aw-spotlight` cards (see tailwind.css).
+      // One delegated listener survives client-side navigations.
+      if (matchMedia('(hover: hover)').matches) {
+        document.addEventListener(
+          'pointermove',
+          (event) => {
+            const card = (event.target as Element | null)?.closest?.<HTMLElement>('.aw-spotlight');
+            if (!card) return;
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--aw-mx', `${event.clientX - rect.left}px`);
+            card.style.setProperty('--aw-my', `${event.clientY - rect.top}px`);
+          },
+          { passive: true }
+        );
+      }
+    </script>
   </body>
 </html>
