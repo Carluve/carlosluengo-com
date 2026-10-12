@@ -2,7 +2,7 @@
 publishDate: 2025-05-16T00:00:00Z
 title: "Exploring the Free Tier of Cursor: AI-Powered Coding for Everyone"
 excerpt: "Recently, I explored the free tier of Cursor, an AI-powered code editor designed to boost productivity and streamline software development. Cursor offers a modern, VSCode-based experience with integrated AI features…"
-image: "~/assets/images/blog/cursor-free-tier/2025_05_15_cursor.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/cursor-free-tier/2025_05_15_cursor.webp"
 imageAlt: "Exploring the Free Tier of Cursor: AI-Powered Coding for Everyone"
 category: "tools"
 tags:
@@ -36,7 +36,7 @@ The free tier is a great way to try out Cursor's capabilities. For students, hob
 #### More Information
 You can learn more or sign up for the free tier at [Cursor's official website](https://www.cursor.so/).
 
-![Screenshot: Cursor Free Tier Experience](../../assets/images/blog/cursor-free-tier/2025_05_15_cursor.png)
+![Screenshot: Cursor Free Tier Experience](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/cursor-free-tier/2025_05_15_cursor.webp)
 
 #### Student Offer: One Year of Cursor Pro Free
 If you are a verified university student, you can get **one year of Cursor Pro for free**. Just register and verify your student status using your university email. This unlocks all Pro features, including 500 fast premium requests per month and unlimited slow premium requests, for a full year.

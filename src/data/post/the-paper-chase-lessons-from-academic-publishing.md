@@ -2,7 +2,7 @@
 publishDate: 2025-08-15T00:00:00Z
 title: "The Paper Chase: Lessons from the Trenches of Academic Publishing"
 excerpt: "_PhD life isn't just data and deadlines — it’s also teamwork, trial-and-error, and the occasional existential crisis over tracked changes._"
-image: "~/assets/images/blog/the-paper-chase-lessons-from-academic-publishing/papers25.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/the-paper-chase-lessons-from-academic-publishing/papers25.webp"
 imageAlt: "The Paper Chase: Lessons from the Trenches of Academic Publishing"
 category: "Academia"
 tags:
@@ -19,7 +19,7 @@ _PhD life isn't just data and deadlines — it’s also teamwork, trial-and-erro
 
 I hadn’t written about this before, but I really felt like sharing some thoughts. Over the past few months, I’ve been fully immersed in writing and revising academic papers, and the experience — far from being just technical — has actually turned out to be **surprisingly fun**. It’s also given me the chance to **connect with a wide range of people**, both inside and outside the university, and that has made all the difference.
 
-![Research papers illustration](../../assets/images/blog/the-paper-chase-lessons-from-academic-publishing/papers25.png)
+![Research papers illustration](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/the-paper-chase-lessons-from-academic-publishing/papers25.webp)
 
 Over coffee, shared Google Docs, and endless rounds of reviewer comments, we've laughed, learned, and occasionally cried (academically, of course). This post is my attempt to capture some of those lessons and moments — from the frustrating to the uplifting.
 

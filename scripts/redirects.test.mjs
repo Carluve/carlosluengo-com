@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
@@ -149,10 +149,11 @@ test('check-dist fails on a duplicate redirect and on a file over 20 MiB', () =>
 test('the Comet recording is video, not the GIF', () => {
   const post = readFileSync(new URL('../src/data/post/migrating-playlists-with-comet.md', import.meta.url), 'utf8');
   assert.equal(post.includes('Comet_v3_GIF.gif'), false);
-  assert.match(
-    post,
-    /<video autoplay muted loop playsinline poster="\/images\/blog\/migrating-playlists-with-comet\/Comet_v3_poster\.jpg"/
-  );
-  assert.match(post, /Comet_v3\.webm/);
-  assert.match(post, /Comet_v3\.mp4/);
+  const media = 'https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/migrating-playlists-with-comet';
+  assert.match(post, new RegExp(`poster="${media}/Comet_v3_poster\\.webp"`));
+  assert.match(post, new RegExp(`${media}/Comet_v3\\.webm`));
+  assert.match(post, new RegExp(`${media}/Comet_v3\\.mp4`));
+  assert.equal(existsSync(new URL('../src/assets/images/blog', import.meta.url)), false);
+  assert.equal(existsSync(new URL('../public/images', import.meta.url)), false);
+  assert.equal(existsSync(new URL('../media/blog/migrating-playlists-with-comet/Comet_v3.mp4', import.meta.url)), true);
 });

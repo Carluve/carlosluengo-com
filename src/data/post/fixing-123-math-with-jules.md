@@ -2,7 +2,7 @@
 publishDate: 2025-05-25T00:00:00Z
 title: "Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App"
 excerpt: "In this post, I share how I used Jules, Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, 1-2-3 Math, had various issues—broken buttons, language-switching…"
-image: "~/assets/images/blog/fixing-123-math-with-jules/202505_02jules.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/fixing-123-math-with-jules/202505_02jules.webp"
 imageAlt: "Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App"
 category: "AI"
 tags:
@@ -21,7 +21,7 @@ In this post, I share how I used [Jules](https://jules.google), Google’s async
 Jules is an experimental tool from Google Labs. Think of it as a GPT-based developer agent that understands your repo, can reason through issues asynchronously, and even make pull requests with real code suggestions. You just describe your problem in natural language, and Jules builds a step-by-step plan, implements the changes, and pushes commits back.
 
 #### 📸 Screenshot of Jules plan and code fix
-![Jules plan and code fix](../../assets/images/blog/fixing-123-math-with-jules/202505_02jules.png)
+![Jules plan and code fix](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/fixing-123-math-with-jules/202505_02jules.webp)
 
 ## 💡 Why I Used Jules
 
@@ -51,7 +51,7 @@ Each step was tracked, executed, and documented. In the final commit, Jules:
 - Recalibrated the level threshold logic to 70% dynamically.
 
 #### 📸 Screenshot of merged Pull Request on GitHub
-![Merged Pull Request on GitHub](../../assets/images/blog/fixing-123-math-with-jules/202505_04jules.png)
+![Merged Pull Request on GitHub](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/fixing-123-math-with-jules/202505_04jules.webp)
 
 ## ✅ Benefits of Using Jules
 
@@ -69,4 +69,4 @@ I’ll definitely keep experimenting with Jules—especially for prototype-level
 ---
 
 #### 📸 Screenshot of Jules homepage
-![Jules homepage](../../assets/images/blog/fixing-123-math-with-jules/202505_03jules.png)
+![Jules homepage](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/fixing-123-math-with-jules/202505_03jules.webp)

@@ -2,7 +2,7 @@
 publishDate: 2025-08-27T00:00:00Z
 title: "Migrating Playlists Between Spotify and Apple Music with Comet"
 excerpt: "Managing playlists across different music platforms can be frustrating. If you use Spotify but want to try Apple Music (or vice versa), you often lose your carefully curated playlists. In this post, I’ll explain how…"
-image: "~/assets/images/blog/migrating-playlists-with-comet/Comet_v1.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/migrating-playlists-with-comet/Comet_v1.webp"
 imageAlt: "Migrating Playlists Between Spotify and Apple Music with Comet"
 category: "Tools"
 tags:
@@ -18,7 +18,7 @@ tags:
 ---
 Managing playlists across different music platforms can be frustrating. If you use Spotify but want to try Apple Music (or vice versa), you often lose your carefully curated playlists. In this post, I’ll explain how **Comet**, a browser-based assistant, helps seamlessly migrate your music collections between platforms.
 
-![Comet interface main view](../../assets/images/blog/migrating-playlists-with-comet/Comet_v1.png)
+![Comet interface main view](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/migrating-playlists-with-comet/Comet_v1.webp)
 
 ---
 
@@ -46,7 +46,7 @@ The process is surprisingly simple:
 2. **Activate Comet Assistant**  
    Comet appears as a sidebar on the right side of your browser. It can read the songs currently displayed on the page.
 
-   ![Comet reading songs from Spotify](../../assets/images/blog/migrating-playlists-with-comet/Comet_v2.png)
+   ![Comet reading songs from Spotify](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/migrating-playlists-with-comet/Comet_v2.webp)
 
 3. **Ask Comet to List Songs**  
    You can type a command like *“Give me the first 100 songs from this list”*.  
@@ -58,9 +58,9 @@ The process is surprisingly simple:
 5. **Paste or Ask Comet to Add the Songs**  
    Comet will take the extracted list from Spotify and start adding them into your new Apple Music playlist automatically.  
 
-   <video autoplay muted loop playsinline poster="/images/blog/migrating-playlists-with-comet/Comet_v3_poster.jpg" aria-label="Comet migrating playlists into Apple Music">
-     <source src="/images/blog/migrating-playlists-with-comet/Comet_v3.webm" type="video/webm" />
-     <source src="/images/blog/migrating-playlists-with-comet/Comet_v3.mp4" type="video/mp4" />
+   <video autoplay muted loop playsinline poster="https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/migrating-playlists-with-comet/Comet_v3_poster.webp" aria-label="Comet migrating playlists into Apple Music">
+     <source src="https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/migrating-playlists-with-comet/Comet_v3.webm" type="video/webm" />
+     <source src="https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/migrating-playlists-with-comet/Comet_v3.mp4" type="video/mp4" />
    </video>
 
 ---

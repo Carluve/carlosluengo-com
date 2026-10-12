@@ -2,7 +2,7 @@
 publishDate: 2026-07-27T00:00:00Z
 title: "Catálogo de demos"
 excerpt: "Inventario de demos y aplicaciones desplegadas."
-image: "~/assets/images/blog/catalogo-de-demos/emdash-blog.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/emdash-blog.webp"
 imageAlt: "Catálogo de demos"
 category: "Proyectos"
 tags:
@@ -16,7 +16,7 @@ Inventario migrado desde [carlosluengo.com/pages/projects](https://carlosluengo.
 
 ## Carlos Luengo Blog
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/emdash-blog.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/emdash-blog.webp)
 
 abr 2026 · Mi blog personal migrado a EmDash sobre IA, Cloudflare, educación y proyectos.
 
@@ -30,7 +30,7 @@ Etiquetas: EmDash, Blog, Workers
 
 ## Cloudflare Demos ES
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/cloudflare-demos-es.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/cloudflare-demos-es.webp)
 
 oct 2025 · Recopilación de demos y ejemplos en español para explicar casos de uso en Cloudflare.
 
@@ -40,7 +40,7 @@ Etiquetas: Demos, Cloudflare
 
 ## UrbanCart Agent Gateway
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/urbancart-agent-gateway.svg)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/urbancart-agent-gateway.svg)
 
 oct 2025 · Gateway para un experimento de agente aplicado a e-commerce o flujos UrbanCart.
 
@@ -50,7 +50,7 @@ Etiquetas: Agents, Gateway
 
 ## Startups Cloudflare
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/startups-cloudflare.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/startups-cloudflare.webp)
 
 sept 2025 · Demo orientada a startups para enseñar rápido qué se puede lanzar sobre la plataforma.
 
@@ -60,7 +60,7 @@ Etiquetas: Startups, Demo
 
 ## Frosty Boat NLWeb
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/frosty-boat-36a8-nlweb.svg)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/frosty-boat-36a8-nlweb.svg)
 
 sept 2025 · Prototipo NLWeb para probar navegación, respuestas o indexación web en Workers.
 
@@ -70,7 +70,7 @@ Etiquetas: NLWeb, Prototype
 
 ## DNS Discovery
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/dns-discovery.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/dns-discovery.webp)
 
 sept 2025 · Herramienta de exploración DNS expuesta con dominio propio y fallback en workers.dev.
 
@@ -82,7 +82,7 @@ Etiquetas: DNS, Tooling
 
 ## HR Agent Worker
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/hr-agent-worker.svg)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/hr-agent-worker.svg)
 
 ago 2025 · Agente orientado a casos de RRHH y automatización de consultas o flujos internos.
 
@@ -92,7 +92,7 @@ Etiquetas: Agents, HR
 
 ## IDP Cloudflare
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/idp-cloudflare.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/idp-cloudflare.webp)
 
 ago 2025 · Experimento de identidad y acceso publicado en dominio propio bajo carluve.dev.
 
@@ -102,7 +102,7 @@ Etiquetas: Identity, Access
 
 ## MCP Policies
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/mcp-policies.svg)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/mcp-policies.svg)
 
 jun 2025 · Demo centrada en políticas, control y comportamiento de flujos MCP sobre Workers.
 
@@ -112,7 +112,7 @@ Etiquetas: MCP, Policies
 
 ## ANECA V3
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/aneca-v3-cf.svg)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/aneca-v3-cf.svg)
 
 may 2025 · Aplicación en Workers para apoyar análisis, revisión o workflows relacionados con ANECA.
 
@@ -122,7 +122,7 @@ Etiquetas: Workflow, Docs
 
 ## Cloudflare RAG
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/cloudflare-rag.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/cloudflare-rag.webp)
 
 abr 2025 · Demo de RAG sobre Workers para explorar búsqueda y respuestas sobre contenido.
 
@@ -132,7 +132,7 @@ Etiquetas: RAG, AI
 
 ## RetroWorkers Arkanoid
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/retroworkers-arkanoid.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/retroworkers-arkanoid.webp)
 
 abr 2025 · Versión Arkanoid del catálogo RetroWorkers con acceso directo por subdominio.
 
@@ -142,7 +142,7 @@ Etiquetas: Game, Retro
 
 ## RetroWorkers Minesweeper
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/retroworkers-minesweeper.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/retroworkers-minesweeper.webp)
 
 abr 2025 · Buscaminas dentro de RetroWorkers servido desde un Worker dedicado.
 
@@ -152,7 +152,7 @@ Etiquetas: Game, Retro
 
 ## RetroWorkers Snake
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/retroworkers-snake.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/retroworkers-snake.webp)
 
 abr 2025 · Snake clásico dentro del pack RetroWorkers, publicado en subdominio propio.
 
@@ -162,7 +162,7 @@ Etiquetas: Game, Retro
 
 ## RetroWorkers Tetris
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/retroworkers-tetris.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/retroworkers-tetris.webp)
 
 abr 2025 · Tetris en RetroWorkers con despliegue independiente y acceso directo.
 
@@ -172,7 +172,7 @@ Etiquetas: Game, Retro
 
 ## RetroWorkers
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/retroworkers-home.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/retroworkers-home.webp)
 
 mar 2025 · Landing de RetroWorkers, con acceso a juegos clásicos servidos en Cloudflare.
 
@@ -184,7 +184,7 @@ Etiquetas: Retro, Landing
 
 ## FOCA Web
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/foca-web.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/foca-web.webp)
 
 feb 2025 · Proyecto web relacionado con FOCA publicado como aplicación serverless.
 
@@ -194,7 +194,7 @@ Etiquetas: App, Security
 
 ## Space Shooter
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/space-shooter.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/space-shooter.webp)
 
 feb 2025 · Juego arcade desplegado en Workers, ideal para demos visuales y retro gaming.
 
@@ -204,7 +204,7 @@ Etiquetas: Game, Arcade
 
 ## Millonario
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/millonario.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/millonario.webp)
 
 ene 2025 · Versión estilo quiz de ¿Quién quiere ser millonario? desplegada en Workers.
 
@@ -214,7 +214,7 @@ Etiquetas: Quiz, Game
 
 ## Memory Animales
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/memory-animales.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/memory-animales.webp)
 
 ene 2025 · Juego tipo memory con temática de animales para practicar y entretener.
 
@@ -224,7 +224,7 @@ Etiquetas: Game, Education
 
 ## Form Event
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/form-event.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/form-event.webp)
 
 nov 2024 · Formulario/evento serverless para recoger registros o respuestas de una demo.
 
@@ -234,7 +234,7 @@ Etiquetas: Forms, Events
 
 ## Provincias y Capitales
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/provincias-capitales.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/provincias-capitales.webp)
 
 nov 2024 · Juego educativo para practicar provincias y capitales en una app ligera.
 
@@ -244,7 +244,7 @@ Etiquetas: Education, Game
 
 ## TimerCF
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/timercf.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/timercf.webp)
 
 oct 2024 · Temporizador y cuenta atrás en Workers para eventos, clase o demos rápidas.
 
@@ -254,7 +254,7 @@ Etiquetas: Timer, Events
 
 ## TimerCF Clase
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/timercf-clase.png)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/timercf-clase.webp)
 
 oct 2024 · Variante de TimerCF pensada para sesiones de clase o dinámicas de formación.
 
@@ -264,7 +264,7 @@ Etiquetas: Timer, Education
 
 ## Duck Marines
 
-![Catálogo de demos](../../assets/images/blog/catalogo-de-demos/duckmarines-worker.svg)
+![Catálogo de demos](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/catalogo-de-demos/duckmarines-worker.svg)
 
 ago 2024 · Worker con experimento Duck Marines para demo visual o prototipo interactivo.
 

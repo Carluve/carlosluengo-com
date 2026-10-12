@@ -6,6 +6,8 @@
  *   • Detectable CDN URL (Unsplash, Cloudinary, Imgix…) → rewritten with
  *     CDN-side parameters via `transformUrl` from `unpic` and emitted as a
  *     plain <img> served straight from the source. No download, no Sharp.
+ *   • Other remote URL (Cloudflare R2 media) → plain <img>. Astro must not
+ *     download it into `dist/`.
  *   • Local image (ESM import or `~/assets/...` path) → delegated to Astro's
  *     native <Image /> from `astro:assets`, which optimizes through Sharp and
  *     emits responsive `srcset` + styles for the chosen `layout` (enabled by
@@ -26,6 +28,7 @@ import type { ImageMetadata } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
 import { transformUrl, parseUrl } from 'unpic';
 import { findImage } from '~/utils/images';
+import { dimensionsForUrl } from '~/utils/media';
 
 type Layout = 'constrained' | 'full-width' | 'fixed' | 'cover' | 'none';
 type Format = 'avif' | 'jpeg' | 'jpg' | 'png' | 'webp';
@@ -61,10 +64,9 @@ rest.decoding ??= 'async';
 // --- Resolve src (handles `~/assets/...` paths) ----------------------------
 const resolved = await findImage(src);
 
-const isCdnUrl =
-  typeof resolved === 'string' &&
-  (resolved.startsWith('http://') || resolved.startsWith('https://')) &&
-  parseUrl(resolved) !== undefined;
+const isRemoteUrl = typeof resolved === 'string' && (resolved.startsWith('http://') || resolved.startsWith('https://'));
+const isCdnUrl = isRemoteUrl && parseUrl(resolved) !== undefined;
+const isPlainRemote = isRemoteUrl && !isCdnUrl;
 
 // Infer missing dimension(s) from ESM-imported ImageMetadata. If only one of
 // width/height is provided, derive the other from the source aspect ratio.
@@ -77,6 +79,20 @@ if (resolved && typeof resolved === 'object' && 'width' in resolved && 'height' 
     h = Math.round((w * srcH) / srcW);
   } else if (h && !w) {
     w = Math.round((h * srcW) / srcH);
+  }
+}
+
+if (isPlainRemote && typeof resolved === 'string' && (!w || !h)) {
+  const dims = dimensionsForUrl(resolved);
+  if (dims) {
+    if (!w && !h) {
+      w = dims.width;
+      h = dims.height;
+    } else if (w && !h) {
+      h = Math.round((w * dims.height) / dims.width);
+    } else if (h && !w) {
+      w = Math.round((h * dims.width) / dims.height);
+    }
   }
 }
 
@@ -118,7 +134,7 @@ const cdnLayoutStyle = (): string => {
   }
   return decls.join(';');
 };
-const cdnStyle = isCdnUrl ? [cdnLayoutStyle(), rest.style].filter(Boolean).join(';') || undefined : undefined;
+const remoteStyle = isRemoteUrl ? [cdnLayoutStyle(), rest.style].filter(Boolean).join(';') || undefined : undefined;
 
 // --- CDN-side srcset -------------------------------------------------------
 const buildCdnUrl = (variantWidth?: number, variantHeight?: number): string | undefined =>
@@ -165,8 +181,10 @@ const cdnSrcSet =
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       {...rest}
-      style={cdnStyle}
+      style={remoteStyle}
     />
+  ) : isPlainRemote ? (
+    <img src={resolved} width={w} height={h} alt={alt} {...rest} style={remoteStyle} />
   ) : (
     /* The native <Image /> typing is overly strict for our forwarding wrapper;
        we cast through `unknown` once so each call site keeps clean types. */

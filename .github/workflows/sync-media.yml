@@ -1,0 +1,32 @@
+name: Sync media to R2
+
+on:
+  push:
+    paths:
+      - 'media/**'
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    name: Upload media
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Upload changed objects
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          MEDIA_DIFF_BASE: ${{ github.event.before }}
+          MEDIA_DIFF_HEAD: ${{ github.sha }}
+        run: node scripts/upload-media.mjs --changed

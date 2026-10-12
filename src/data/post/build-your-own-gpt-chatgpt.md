@@ -2,7 +2,7 @@
 publishDate: 2025-05-22T00:00:00Z
 title: "How to Build Your Own GPT in ChatGPT: Step-by-Step Guide & Why Instructions Matter"
 excerpt: "Building your own custom GPT in ChatGPT unlocks a world of possibilities: automate tasks, deliver consistent expertise, and create assistants tailored to your needs or your team's. In this guide, you'll learn step by…"
-image: "~/assets/images/blog/build-your-own-gpt-chatgpt/202505_01chatcom.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_01chatcom.webp"
 imageAlt: "How to Build Your Own GPT in ChatGPT: Step-by-Step Guide & Why Instructions Matter"
 category: "AI"
 tags:
@@ -20,7 +20,7 @@ Building your own custom GPT in ChatGPT unlocks a world of possibilities: automa
 *Step-by-step guide & why the instructions matter*
 
 ***
-![Image 1 – "My GPTs" dashboard with the Create a GPT button highlighted.](../../assets/images/blog/build-your-own-gpt-chatgpt/202505_01chatcom.png)
+![Image 1 – "My GPTs" dashboard with the Create a GPT button highlighted.](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_01chatcom.webp)
 ***
 
 ## 1. Why create a custom GPT?
@@ -43,7 +43,7 @@ Creating a GPT lets you bottle up expertise, tone and tooling into a reusable as
 3. Press **Create a GPT**.
 
 ***
-![Image 2 – Modal showing "Create" and "Configure" tabs after pressing Create a GPT.](../../assets/images/blog/build-your-own-gpt-chatgpt/202505_02mygpt.png)
+![Image 2 – Modal showing "Create" and "Configure" tabs after pressing Create a GPT.](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_02mygpt.webp)
 ***
 
 You're now in the two-pane builder:
@@ -64,7 +64,7 @@ Stay in **Configure** for the rest of this tutorial; it exposes every setting.
 | **Description** | One-sentence elevator pitch | Keep it under 200 chars; appears in searches |
 
 ***
-![Image 3 – Editing the name, icon and description fields.](../../assets/images/blog/build-your-own-gpt-chatgpt/202505_03gpt.png)
+![Image 3 – Editing the name, icon and description fields.](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_03gpt.webp)
 ***
 
 ---
@@ -107,7 +107,7 @@ Respond with…
 
 ⸻
 
-![Image 4 – Expanded Instructions pane showing Markdown structure.](../../assets/images/blog/build-your-own-gpt-chatgpt/202505_04promptgpt.png)
+![Image 4 – Expanded Instructions pane showing Markdown structure.](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_04promptgpt.webp)
 
 ⸻
 
@@ -125,7 +125,7 @@ Toggle only what's genuinely useful – fewer tools = less room for mistakes.
 
 ⸻
 
-![Image 5 – Capabilities tick-boxes with "Canvas" enabled.](../../assets/images/blog/build-your-own-gpt-chatgpt/202505_06gpt.png)
+![Image 5 – Capabilities tick-boxes with "Canvas" enabled.](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_06gpt.webp)
 
 ⸻
 
@@ -154,7 +154,7 @@ The right-hand pane is a live sandbox:
 
 ⸻
 
-![Image 6 – "Share GPT" modal with visibility options: Only me, Anyone with link, GPT Store.](../../assets/images/blog/build-your-own-gpt-chatgpt/202505_07gpt.png)
+![Image 6 – "Share GPT" modal with visibility options: Only me, Anyone with link, GPT Store.](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_07gpt.webp)
 
 ⸻
 
@@ -175,7 +175,7 @@ Treat your GPT like software: patch bugs, refine UX, and keep content current.
 
 ⸻
 
-![Image 7 – Final published GPT landing page with description centred.](../../assets/images/blog/build-your-own-gpt-chatgpt/202505_8gpt.png)
+![Image 7 – Final published GPT landing page with description centred.](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/build-your-own-gpt-chatgpt/202505_8gpt.webp)
 
 ⸻
 

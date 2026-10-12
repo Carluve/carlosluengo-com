@@ -1,6 +1,7 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import type { MetaDataOpenGraph } from '~/types';
+import { dimensionsForUrl, resolveMediaUrl } from '~/utils/media';
 
 // Lazy-loaded glob of local images. The glob runs once and is cached.
 let _localImages: Record<string, () => Promise<unknown>> | undefined;
@@ -29,8 +30,8 @@ export const findImage = async (
   imagePath?: string | ImageMetadata | null
 ): Promise<string | ImageMetadata | undefined | null> => {
   if (typeof imagePath !== 'string') return imagePath;
-  if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/'))
-    return imagePath;
+  if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) return resolveMediaUrl(imagePath);
+  if (imagePath.startsWith('/')) return imagePath;
   if (!imagePath.startsWith('~/assets/images')) return imagePath;
 
   const images = loadLocalImages();
@@ -60,6 +61,15 @@ export const adaptOpenGraphImages = async (
 
       const resolved = await findImage(image.url);
       if (!resolved) return { url: '' };
+
+      // Remote media stays on R2. Sharp must not download it into dist/.
+      if (typeof resolved === 'string' && /^https?:\/\//.test(resolved)) {
+        const size = dimensionsForUrl(resolved);
+        return {
+          url: String(new URL(resolved, astroSite)),
+          ...(size ? { width: size.width, height: size.height } : {}),
+        };
+      }
 
       // Generate an optimized JPG via Astro's image service (Sharp by default).
       const optimized = await getImage({

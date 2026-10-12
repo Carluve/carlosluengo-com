@@ -1,0 +1,414 @@
+{
+  "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart.webp": {
+    "width": 1600,
+    "height": 933
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/team-structure.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "blog/2025-05-03-trae-ai-free-ide/20250503-trae.webp": {
+    "width": 1600,
+    "height": 1166
+  },
+  "blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.webp": {
+    "width": 473,
+    "height": 589
+  },
+  "blog/ai-education-observatory/manus_v1.webp": {
+    "width": 1600,
+    "height": 1442
+  },
+  "blog/ai-education-observatory/manus_v2.webp": {
+    "width": 1600,
+    "height": 1442
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt.webp": {
+    "width": 1536,
+    "height": 1024
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_01chatcom.webp": {
+    "width": 1600,
+    "height": 1024
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_02mygpt.webp": {
+    "width": 1600,
+    "height": 1140
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_03gpt.webp": {
+    "width": 1600,
+    "height": 1037
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_04promptgpt.webp": {
+    "width": 1600,
+    "height": 1024
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_06gpt.webp": {
+    "width": 1600,
+    "height": 1024
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_07gpt.webp": {
+    "width": 900,
+    "height": 996
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_8gpt.webp": {
+    "width": 1600,
+    "height": 1024
+  },
+  "blog/catalogo-de-demos/aneca-v3-cf.svg": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/cloudflare-demos-es.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/cloudflare-rag.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/dns-discovery.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/duckmarines-worker.svg": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/emdash-blog.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/foca-web.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/form-event.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/frosty-boat-36a8-nlweb.svg": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/hr-agent-worker.svg": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/idp-cloudflare.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/mcp-policies.svg": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/memory-animales.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/millonario.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/provincias-capitales.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/retroworkers-arkanoid.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/retroworkers-home.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/retroworkers-minesweeper.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/retroworkers-snake.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/retroworkers-tetris.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/space-shooter.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/startups-cloudflare.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/timercf-clase.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/timercf.webp": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/urbancart-agent-gateway.svg": {
+    "width": 1440,
+    "height": 900
+  },
+  "blog/chatgpt-gpt4o-overview/202505_chatgpt.webp": {
+    "width": 1600,
+    "height": 985
+  },
+  "blog/chatgpt-gpt4o-overview/202505_gpt.webp": {
+    "width": 1600,
+    "height": 1140
+  },
+  "blog/chatgpt-gpt4o-overview/202505_personalization.webp": {
+    "width": 1494,
+    "height": 1398
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare1.webp": {
+    "width": 1281,
+    "height": 721
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare2.webp": {
+    "width": 1281,
+    "height": 721
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare3.webp": {
+    "width": 1279,
+    "height": 722
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare4.webp": {
+    "width": 1287,
+    "height": 721
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare5.webp": {
+    "width": 1287,
+    "height": 728
+  },
+  "blog/cloudflare-warp-ipad/cloudflare_01.webp": {
+    "width": 516,
+    "height": 360
+  },
+  "blog/cloudflare-warp-ipad/cloudflare_02.webp": {
+    "width": 516,
+    "height": 360
+  },
+  "blog/cloudflare-warp-ipad/cloudflare_03.webp": {
+    "width": 516,
+    "height": 360
+  },
+  "blog/cloudflare-warp-ipad/cloudflare-04.webp": {
+    "width": 516,
+    "height": 360
+  },
+  "blog/configuring-cloudflare-for-families-asus/cloudflare_asus.webp": {
+    "width": 1600,
+    "height": 1352
+  },
+  "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.webp": {
+    "width": 1600,
+    "height": 1193
+  },
+  "blog/cursor-free-tier/2025_05_15_cursor.webp": {
+    "width": 1600,
+    "height": 1024
+  },
+  "blog/deep-research-chatgpt-guide/202505_01deepresearch.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "blog/deep-research-chatgpt-guide/202505_02deepreserach.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "blog/deep-research-chatgpt-guide/202505_03deepreseearch.webp": {
+    "width": 1600,
+    "height": 1039
+  },
+  "blog/deep-research-chatgpt-guide/202505_04deepresearch.webp": {
+    "width": 1600,
+    "height": 1039
+  },
+  "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.webp": {
+    "width": 1600,
+    "height": 1177
+  },
+  "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8.webp": {
+    "width": 1600,
+    "height": 697
+  },
+  "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9.webp": {
+    "width": 1600,
+    "height": 870
+  },
+  "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN.webp": {
+    "width": 1600,
+    "height": 1230
+  },
+  "blog/finanzsim/finanzsim2026_01.webp": {
+    "width": 1564,
+    "height": 1134
+  },
+  "blog/finanzsim/finanzsim2026_02.webp": {
+    "width": 1564,
+    "height": 1134
+  },
+  "blog/finanzsim/finanzsim2026_03.webp": {
+    "width": 1564,
+    "height": 1134
+  },
+  "blog/finanzsim/finanzsim2026_04.webp": {
+    "width": 1564,
+    "height": 1134
+  },
+  "blog/first-look-at-kiro/kiro_v1.webp": {
+    "width": 1600,
+    "height": 1221
+  },
+  "blog/first-look-at-kiro/kiro_V2.webp": {
+    "width": 1600,
+    "height": 1251
+  },
+  "blog/first-look-at-kiro/kiro_v3.webp": {
+    "width": 1600,
+    "height": 1251
+  },
+  "blog/fixing-123-math-with-jules/202505_02jules.webp": {
+    "width": 1600,
+    "height": 1082
+  },
+  "blog/fixing-123-math-with-jules/202505_03jules.webp": {
+    "width": 1600,
+    "height": 1094
+  },
+  "blog/fixing-123-math-with-jules/202505_04jules.webp": {
+    "width": 1600,
+    "height": 1094
+  },
+  "blog/migrating-playlists-with-comet/Comet_v1.webp": {
+    "width": 1600,
+    "height": 1196
+  },
+  "blog/migrating-playlists-with-comet/Comet_v2.webp": {
+    "width": 1600,
+    "height": 1196
+  },
+  "blog/migrating-playlists-with-comet/Comet_v3_poster.webp": {
+    "width": 640,
+    "height": 452
+  },
+  "blog/migrating-playlists-with-comet/Comet_v3.mp4": {
+    "width": 640,
+    "height": 452
+  },
+  "blog/migrating-playlists-with-comet/Comet_v3.webm": {
+    "width": 640,
+    "height": 452
+  },
+  "blog/navigating-apcs-guide/papersv2_2025.webp": {
+    "width": 474,
+    "height": 291
+  },
+  "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.webp": {
+    "width": 1600,
+    "height": 1195
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_01amazonq.webp": {
+    "width": 1600,
+    "height": 1264
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_02amazonq.webp": {
+    "width": 1600,
+    "height": 1264
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_03amazonq.webp": {
+    "width": 948,
+    "height": 796
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_04amazonq.webp": {
+    "width": 986,
+    "height": 682
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_05amazonq.webp": {
+    "width": 1600,
+    "height": 1438
+  },
+  "blog/the-paper-chase-lessons-from-academic-publishing/papers25.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "blog/timercf/01KND1JCANRGYJP34FD39WRM3P.webp": {
+    "width": 1600,
+    "height": 920
+  },
+  "blog/uae-free-chatgpt-plus-for-all/202505_01uae.webp": {
+    "width": 1024,
+    "height": 1536
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks01.webp": {
+    "width": 1600,
+    "height": 1301
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks02.webp": {
+    "width": 1600,
+    "height": 1182
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks03.webp": {
+    "width": 1600,
+    "height": 1182
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks04.webp": {
+    "width": 1600,
+    "height": 1182
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks05.webp": {
+    "width": 1600,
+    "height": 1101
+  },
+  "hero/district-light.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "hero/skyline-network.webp": {
+    "width": 1280,
+    "height": 720
+  }
+}

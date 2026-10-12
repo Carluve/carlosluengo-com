@@ -2,8 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: 'src/assets/images'
-public_folder: '/_astro'
+# Files committed under media/ are published to R2 by .github/workflows/sync-media.yml.
+media_folder: 'media'
+public_folder: 'https://pub-27745be1d92d4677b679da82c54861cb.r2.dev'
 
 collections:
   - name: 'post'

@@ -16,6 +16,7 @@ import type { AstroIntegration } from 'astro';
 import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
+import { mediaImgRehypePlugin, mediaUrlRemarkPlugin } from './src/utils/media';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -115,10 +116,11 @@ export default defineConfig({
     // URL with CDN-side query parameters and serves it straight from the
     // provider — Astro never downloads it, so they don't need to be listed.
     //
-    // `domains` only matters for remote URLs that fall through to Astro's
-    // native <Image /> (i.e. providers Unpic can't detect, like Pixabay).
-    // Listed entries are authorized to be processed by Sharp.
-    // Unsplash is listed so post covers can be rendered as real 1200×626 Open Graph images.
+    // `domains` authorizes remote URLs for Astro's native <Image />.
+    // The R2 host is intentionally absent: allowing it makes the markdown
+    // pipeline download every post image into dist/, which is the opposite
+    // of serving media from the bucket. Covers and markdown images are plain
+    // <img> tags. Unsplash stays listed for Open Graph covers that do use <Image>.
     domains: ['cdn.pixabay.com', 'images.unsplash.com'],
 
     // Emit responsive styles for the native <Image layout=…> used by
@@ -129,8 +131,8 @@ export default defineConfig({
 
   markdown: {
     processor: unified({
-      remarkPlugins: [readingTimeRemarkPlugin],
-      rehypePlugins: [responsiveTablesRehypePlugin],
+      remarkPlugins: [readingTimeRemarkPlugin, mediaUrlRemarkPlugin],
+      rehypePlugins: [mediaImgRehypePlugin, responsiveTablesRehypePlugin],
     }),
     shikiConfig: {
       // Code blocks follow the site theme; see the `.astro-code` rules in tailwind.css.

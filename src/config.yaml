@@ -70,3 +70,7 @@ analytics:
 
 ui:
   theme: 'system'
+
+# Imágenes, vídeos y PDF del sitio. PUBLIC_MEDIA_BASE_URL sustituye esta base en el build.
+media:
+  baseUrl: 'https://pub-27745be1d92d4677b679da82c54861cb.r2.dev'

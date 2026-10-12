@@ -2,7 +2,7 @@
 publishDate: 2025-05-03T00:00:00Z
 title: "Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity"
 excerpt: "Trae.ai is a free, AI-powered integrated development environment (IDE) created by ByteDance (the company behind TikTok). Its goal is to act as a real-time AI coding assistant built into the editor, helping developers…"
-image: "~/assets/images/blog/2025-05-03-trae-ai-free-ide/20250503-trae.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/2025-05-03-trae-ai-free-ide/20250503-trae.webp"
 imageAlt: "Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity"
 category: "AI Development"
 tags:
@@ -22,7 +22,7 @@ tags:
 - Available for **Windows and macOS** (Linux support not yet available).
 - Interface in English and Simplified Chinese.
 
-![Trae.AI](../../assets/images/blog/2025-05-03-trae-ai-free-ide/20250503-trae.png) *[TRAE AI]*
+![Trae.AI](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/2025-05-03-trae-ai-free-ide/20250503-trae.webp) *[TRAE AI]*
 
 
 ## Why was it launched?
@@ -34,7 +34,7 @@ Trae.ai addresses two key problems:
 
 ByteDance launched Trae as a **completely free and unlimited tool**, aiming to democratize AI-assisted coding and compete in this fast-growing space.
 
-![Pricing](../../assets/images/blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.png)
+![Pricing](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.webp)
 ---
 
 ## Differences from *Vibe Coding*
@@ -49,7 +49,7 @@ ByteDance launched Trae as a **completely free and unlimited tool**, aiming to d
 
 Trae.ai takes *vibe coding* to the next level by embedding the AI assistant directly into the coding workflow, with full contextual awareness and smart editing capabilities.
 
-![DiagramVibeCoding](../../assets/images/blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.png)
+![DiagramVibeCoding](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.webp)
 
 ---
 
@@ -69,7 +69,7 @@ All of this is available **without API setup or extra costs**. The AI can:
 - Provide inline help and explanations.
 
 
-![DiagramVibeCoding](../../assets/images/blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.png)
+![DiagramVibeCoding](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.webp)
 ---
 
 ## How is it free?

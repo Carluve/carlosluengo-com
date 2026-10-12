@@ -2,7 +2,7 @@
 publishDate: 2025-08-29T00:00:00Z
 title: "Configuring Cloudflare for Families on an ASUS Router"
 excerpt: "In this post I’ll walk through how I configured Cloudflare for Families on my ASUS router, why I think it’s a good idea, and what each parameter really means. Setting this up is simple, but the benefits for security,…"
-image: "~/assets/images/blog/configuring-cloudflare-for-families-asus/cloudflare_asus.png"
+image: "https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/configuring-cloudflare-for-families-asus/cloudflare_asus.webp"
 imageAlt: "Configuring Cloudflare for Families on an ASUS Router"
 category: "Networking"
 tags:
@@ -37,7 +37,7 @@ By setting this up at router level, every device connected to your Wi-Fi automat
 #### How to Configure on an ASUS Router
 Here’s the configuration I applied (screenshot below):  
 
-![Cloudflare for Families ASUS Router config](../../assets/images/blog/configuring-cloudflare-for-families-asus/cloudflare_asus.png)  
+![Cloudflare for Families ASUS Router config](https://pub-27745be1d92d4677b679da82c54861cb.r2.dev/blog/configuring-cloudflare-for-families-asus/cloudflare_asus.webp)  
 
 1. **WAN DNS Setting**  
    - Set **DNS Server** manually to `1.1.1.3` and `1.0.0.3`.  
