@@ -9,10 +9,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/redirects.mjs generate && node --test scripts/redirects.test.mjs && node scripts/redirects.mjs check public/_redirects && astro build && node scripts/redirects.mjs check dist/_redirects",
+    "check:redirects": "node scripts/redirects.mjs check public/_redirects",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
+    "check": "npm run check:astro && npm run check:eslint && npm run check:prettier && npm run check:redirects",
     "check:astro": "astro check",
     "check:eslint": "eslint .",
     "check:prettier": "prettier --check .",
