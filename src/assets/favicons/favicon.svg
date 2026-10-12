@@ -1,20 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="cl-bg" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2F7BFF"/>
-      <stop offset=".55" stop-color="#0161EF"/>
-      <stop offset="1" stop-color="#0A2A6B"/>
+    <linearGradient id="cl-bg" x1="6" y1="0" x2="26" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3D8BFF"/>
+      <stop offset=".5" stop-color="#0161EF"/>
+      <stop offset="1" stop-color="#062A78"/>
     </linearGradient>
-    <radialGradient id="cl-hl" cx="9" cy="5" r="18" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+    <linearGradient id="cl-hl" x1="16" y1="0" x2="16" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".28"/>
       <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cl-glow" cx="24.2" cy="9.4" r="4.2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BAE6FD"/>
+      <stop offset=".55" stop-color="#7DD3FC"/>
+      <stop offset="1" stop-color="#7DD3FC" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect width="32" height="32" rx="8" fill="url(#cl-bg)"/>
-  <rect width="32" height="32" rx="8" fill="url(#cl-hl)"/>
-  <rect x=".5" y=".5" width="31" height="31" rx="7.5" fill="none" stroke="#fff" stroke-opacity=".18"/>
-  <g fill="none">
-  <path d="M14.9 10.3a6.5 6.5 0 1 0 0 11.4" stroke="#fff" stroke-width="3.3" stroke-linecap="round"/>
-  <path d="M18.9 9.3v12.8h4.7" stroke="#fff" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="24" cy="9.5" r="2.5" fill="#7DD3FC"/></g>
+  <path d="M16 0C27.6 0 32 4.4 32 16S27.6 32 16 32 0 27.6 0 16 4.4 0 16 0Z" fill="url(#cl-bg)"/>
+  <path d="M16 0C27.6 0 32 4.4 32 16S27.6 32 16 32 0 27.6 0 16 4.4 0 16 0Z" fill="url(#cl-hl)"/>
+  <g fill="none" stroke="#fff" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.7 10.6a6.2 6.2 0 1 0 0 10.8"/>
+    <path d="M18.9 9.6v12.6h4.6"/>
+  </g>
+  <circle cx="24.2" cy="9.4" r="4.2" fill="url(#cl-glow)" opacity=".7"/>
+  <circle cx="24.2" cy="9.4" r="2.4" fill="#E0F2FE"/>
 </svg>
