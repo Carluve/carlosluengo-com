@@ -5,12 +5,10 @@
  * active side are recomputed by the script on every page load. Choosing a
  * language stores it in the `lang` cookie, which the Worker honours on /.
  */
-import { alternatePath, getLang } from '~/i18n/utils';
+import { getLang, switchHrefs } from '~/i18n/utils';
 
 const lang = getLang(Astro);
-const alt = alternatePath(Astro.url.pathname);
-const es = lang === 'es' ? Astro.url.pathname : alt.href;
-const en = lang === 'en' ? Astro.url.pathname : alt.href;
+const { es, en } = switchHrefs(Astro.url.pathname, lang);
 ---
 
 <aw-lang-switch>
@@ -75,20 +73,11 @@ const en = lang === 'en' ? Astro.url.pathname : alt.href;
 </style>
 
 <script>
-  const TRANSLATED = ['/', '/about', '/academia', '/developer', '/contact', '/privacy', '/terms', '/blog'];
-  const strip = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
-  const isTranslated = (p: string) =>
-    TRANSLATED.includes(p) || p.startsWith('/category/') || p.startsWith('/tag/') || /^\/blog\/\d+$/.test(p);
+  import { switchHrefs } from '~/i18n/utils';
 
   const update = () => {
-    const path = strip(location.pathname);
-    const onEn = path === '/en' || path.startsWith('/en/');
     const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
-    const esPath = onEn ? strip(path.replace(/^\/en/, '')) || '/' : path;
-    const hrefs = {
-      es: onEn ? esPath : isTranslated(path) ? path : lang === 'es' ? path : '/',
-      en: onEn ? path : isTranslated(path) ? (path === '/' ? '/en' : `/en${path}`) : lang === 'en' ? path : '/en',
-    };
+    const hrefs = switchHrefs(location.pathname, lang);
     for (const box of document.querySelectorAll<HTMLElement>('.aw-lang')) {
       box.dataset.active = lang;
       for (const a of box.querySelectorAll<HTMLAnchorElement>('a[data-lang]')) {

@@ -3,7 +3,7 @@ publishDate: 2026-01-01T00:00:00Z
 title: 'Meet FinanzSim: An Educational Financial Management Simulator'
 excerpt: 'An AI-powered web app built to help business students master financial concepts through hands-on simulation.'
 image: 'media:blog/finanzsim/finanzsim2026_01.png'
-imageAlt: 'Meet FinanzSim: An Educational Financial Management Simulator'
+imageAlt: 'FinanzSim start screen in a browser, asking for the number of simulation years'
 category: 'IA'
 tags:
   - 'ai'
@@ -66,7 +66,7 @@ For each simulated year, you'll make key business decisions:
 | **Collection Days** | How long customers take to pay you                 |
 | **Payment Days**    | How long you take to pay suppliers                 |
 
-![Panel de decisiones anuales](media:blog/finanzsim/finanzsim2026_03.png)
+![FinanzSim annual decisions panel](media:blog/finanzsim/finanzsim2026_03.png)
 
 ### Real-Time Financial Analysis
 
@@ -79,7 +79,7 @@ After submitting your decisions for each year, FinanzSim calculates and displays
 - **Cash Flow** — For NPV calculations
 - **Working Capital Cycle (PMM)** — Storage, manufacturing, sales, and collection periods
 
-![Análisis financiero en tiempo real](media:blog/finanzsim/finanzsim2026_04.png)
+![FinanzSim real-time financial analysis view](media:blog/finanzsim/finanzsim2026_04.png)
 
 ### AI-Powered Professor Feedback
 

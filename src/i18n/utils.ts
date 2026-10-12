@@ -46,6 +46,24 @@ export const alternatePath = (pathname: string): { lang: Lang; href: string; tra
 
 export const dateLocale = (lang: Lang) => (lang === 'en' ? 'en-GB' : 'es-ES');
 
+/**
+ * Targets of the ES / EN switch for a page. Translated pages point to their
+ * twin; a blog post (one URL, one language) points to the blog list in each
+ * language; anything else falls back to the home of each language.
+ */
+export const switchHrefs = (pathname: string, pageLang: Lang): Record<Lang, string> => {
+  const path = strip(pathname);
+  const onEn = path === '/en' || path.startsWith('/en/');
+  if (onEn) return { es: strip(path.replace(/^\/en/, '')) || '/', en: path };
+  const en = localizePath(path, 'en');
+  if (en !== path) return { es: path, en };
+  const isPost = path.startsWith('/blog/');
+  return {
+    es: pageLang === 'es' ? path : isPost ? '/blog' : '/',
+    en: pageLang === 'en' ? path : isPost ? '/en/blog' : '/en',
+  };
+};
+
 /** Blog categories are stored in Spanish; this is their label and description in each language. */
 const categories: Record<string, Record<Lang, { label: string; description: string }>> = {
   ia: {

@@ -2,8 +2,6 @@
 publishDate: 2025-05-20T00:00:00Z
 title: 'ChatGPT with GPT-4o: Features, Use Cases, and Custom GPTs'
 excerpt: "ChatGPT is more than just a chatbot—it's a powerful AI assistant that can help you brainstorm, code, learn, and automate tasks. In this overview, discover its main features, practical use cases, and how to unlock…"
-image: 'media:blog/chatgpt-gpt4o-overview/202505_chatgpt.png'
-imageAlt: 'ChatGPT with GPT-4o: Features, Use Cases, and Custom GPTs'
 category: 'IA'
 tags:
   - 'ai'
@@ -33,7 +31,7 @@ ChatGPT is an artificial intelligence assistant powered by OpenAI's GPT-4o model
 | **File handling**                         | Summarises PDFs, converts tables, extracts text from images.         | Makes handling long or scanned documents easier.         |
 | **Customisation and memory**              | Adjusts tone, language, and remembers preferences if enabled.        | Personalised experience without repeating instructions.  |
 
-![Screenshot: Settings Panel](media:blog/chatgpt-gpt4o-overview/202505_personalization.png)
+![ChatGPT desktop Settings window with Personalization, Data Controls and app options](media:blog/chatgpt-gpt4o-overview/202505_personalization.png)
 
 ---
 
@@ -64,7 +62,7 @@ Since late 2023, you can create and share your own GPTs—specialised versions o
 - Try public GPTs or duplicate one to customise it for your own needs.
 - Add your own data (e.g., an internal guide) so your GPT can respond with tailored expertise.
 
-![Screenshot: Explore GPTs Window](media:blog/chatgpt-gpt4o-overview/202505_gpt.png)
+![Explore GPTs window with featured and trending GPTs grouped by category](media:blog/chatgpt-gpt4o-overview/202505_gpt.png)
 
 ### When to build your own GPT
 

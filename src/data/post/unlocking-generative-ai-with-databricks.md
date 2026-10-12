@@ -2,8 +2,8 @@
 publishDate: 2025-09-22T00:00:00Z
 title: "Unlocking the Power of Generative AI with Databricks: Turning Data into 'New Oil'"
 excerpt: 'Every company today is talking about Generative AI. The promise is clear: unlock hidden value, reduce costs, and create new opportunities.'
-image: 'media:blog/unlocking-generative-ai-with-databricks/cover-databricks01.jpg'
-imageAlt: "Unlocking the Power of Generative AI with Databricks: Turning Data into 'New Oil'"
+image: 'media:blog/unlocking-generative-ai-with-databricks/databricks05.png'
+imageAlt: 'Databricks notebook in dark mode with PySpark code on the left and the Databricks Assistant suggesting a fix on the right'
 category: 'IA'
 tags:
   - 'ai'
@@ -40,25 +40,25 @@ In other words: if data is the new oil, then **Databricks is the refinery**.
 
 With Databricks, you can easily bring in data from files, databases, or cloud sources.
 
-![Databricks Data Ingestion – Uploading datasets into the platform](media:blog/unlocking-generative-ai-with-databricks/databricks01.png)
+![Databricks workspace home page with the left navigation menu and recent items](media:blog/unlocking-generative-ai-with-databricks/databricks01.png)
 
 ### 2. Cleaning and preparing
 
 Once inside, Databricks notebooks allow you to **clean and standardise** messy real-world data so that it’s ready for downstream AI.
 
-![Databricks Notebooks – Cleaning and preparing raw data](media:blog/unlocking-generative-ai-with-databricks/databricks02.png)
+![BindingDB download page listing the full dataset files in TSV, SDF and SQL formats](media:blog/unlocking-generative-ai-with-databricks/databricks02.png)
 
 ### 3. Exploring and querying
 
 Data can then be explored with **SQL, Python, or even natural language**. You get full visibility into volumes, patterns, and structures.
 
-![Databricks SQL Editor – Exploring data at scale](media:blog/unlocking-generative-ai-with-databricks/databricks03.png)
+![Databricks “Add data” page with connectors while a BindingDB zip file uploads](media:blog/unlocking-generative-ai-with-databricks/databricks03.png)
 
 ### 4. Enabling AI & Generative AI
 
 With data in place, Databricks connects seamlessly with machine learning and Generative AI frameworks — making it possible to move from raw datasets to **scalable AI use cases**.
 
-![Databricks Workflow – From cleaned data to AI readiness](media:blog/unlocking-generative-ai-with-databricks/databricks04.png)
+![Databricks notebook cell that unzips the BindingDB file and saves it as a table with PySpark](media:blog/unlocking-generative-ai-with-databricks/databricks04.png)
 
 ---
 
@@ -68,7 +68,7 @@ Most organisations spend millions managing their data — but very few manage to
 
 Without Databricks, the journey is fragmented and error-prone. With Databricks, it becomes **clean, scalable, and collaborative**.
 
-![Databricks Dashboard – Unified view of data and AI workloads](media:blog/unlocking-generative-ai-with-databricks/databricks05.png)
+![Databricks notebook with PySpark code and the Databricks Assistant proposing how to clean column names](media:blog/unlocking-generative-ai-with-databricks/databricks05.png)
 
 ---
 

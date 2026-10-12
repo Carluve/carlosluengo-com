@@ -2,8 +2,6 @@
 publishDate: 2025-05-24T00:00:00Z
 title: 'Deep Research with ChatGPT: A Practical Guide'
 excerpt: "Deep research is more than just skimming search results: it's a disciplined, multi-stage approach to finding, evaluating and synthesising information."
-image: 'media:blog/deep-research-chatgpt-guide/cover-202505_deepresearch.png'
-imageAlt: 'Deep Research with ChatGPT: A Practical Guide'
 category: 'IA'
 tags:
   - 'ai'
@@ -100,10 +98,6 @@ Alternate between **divergent searching** (broadening) and **convergent summaris
 
 ---
 
-![A circular flow diagram illustrating the iterate-search-evaluate-synthesise loop.](media:blog/deep-research-chatgpt-guide/202505_03deepreseearch.png)
-
----
-
 ## A Step-by-Step Workflow with ChatGPT
 
 1. **Clarify the Objective**  
@@ -134,7 +128,7 @@ Alternate between **divergent searching** (broadening) and **convergent summaris
 8. **Produce Final Artefacts**  
    Convert notes into reports, slide decks, or knowledge-base articles.
 
-![Screenshot of ChatGPT analysing two sources side-by-side and annotating discrepancies.](media:blog/deep-research-chatgpt-guide/202505_04deepresearch.png)
+![ChatGPT desktop app running a Deep research task, with the activity panel listing the searches and sources it is reading](media:blog/deep-research-chatgpt-guide/202505_04deepresearch.png)
 
 ---
 

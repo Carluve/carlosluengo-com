@@ -1,9 +1,7 @@
 ---
 publishDate: 2025-08-20T00:00:00Z
 title: 'Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide'
-excerpt: '_Diving into the world of Article Processing Charges (APCs), why publishing in high‑impact journals matters, how institutional deals can help — and what to watch out for._'
-image: 'media:blog/navigating-apcs-guide/papersv2_2025.png'
-imageAlt: 'Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide'
+excerpt: 'Diving into the world of Article Processing Charges (APCs), why publishing in high‑impact journals matters, how institutional deals can help — and what to watch out for.'
 category: 'Academia'
 tags:
   - 'academia'

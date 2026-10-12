@@ -1,9 +1,9 @@
 ---
 publishDate: 2025-08-15T00:00:00Z
 title: 'The Paper Chase: Lessons from the Trenches of Academic Publishing'
-excerpt: "_PhD life isn't just data and deadlines — it’s also teamwork, trial-and-error, and the occasional existential crisis over tracked changes._"
+excerpt: "PhD life isn't just data and deadlines — it’s also teamwork, trial-and-error, and the occasional existential crisis over tracked changes."
 image: 'media:blog/the-paper-chase-lessons-from-academic-publishing/papers25.png'
-imageAlt: 'The Paper Chase: Lessons from the Trenches of Academic Publishing'
+imageAlt: 'Illustration of four researchers at a table with laptops, a draft paper and a page of revisions'
 category: 'Academia'
 tags:
   - 'academia'

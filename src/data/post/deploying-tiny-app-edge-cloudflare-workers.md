@@ -3,7 +3,7 @@ publishDate: 2025-11-26T00:00:00Z
 title: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
 excerpt: 'I deployed a small demo app on Cloudflare Workers, and it reminded me why I enjoy building on this platform: it’s fast, global, minimalistic and opinionated in the right ways.'
 image: 'media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png'
-imageAlt: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
+imageAlt: 'Cloudflare dashboard overview of the nationalbank Worker with request metrics, an R2 binding and its custom domain'
 category: 'Cloudflare'
 tags:
   - 'technology'

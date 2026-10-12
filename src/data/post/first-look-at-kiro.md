@@ -2,8 +2,8 @@
 publishDate: 2025-08-03T00:00:00Z
 title: 'First look at Kiro: the AI IDE for structured coding'
 excerpt: 'In this post, I share my first impressions using Kiro, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it brings over traditional editors, and why it could matter for AI-assisted coding at scale.'
-image: 'media:blog/first-look-at-kiro/kiro_v1.png'
-imageAlt: 'First look at Kiro: the AI IDE for structured coding'
+image: 'media:blog/first-look-at-kiro/kiro_V2.png'
+imageAlt: 'Kiro landing page in a browser: “The AI IDE for prototype to production”'
 category: 'IA'
 tags:
   - 'ai'
@@ -58,7 +58,7 @@ Kiro offers a freemium pricing model with several tiers depending on your usage:
 - **Kiro Pro+**: $40/month, double the previous plan.
 - **Kiro Power**: $200/month, for power users with high demand.
 
-![Pricing tiers available on Kiro](media:blog/first-look-at-kiro/kiro_v3.png)
+![Kiro pricing page with four plans: Free, Pro, Pro+ and Power](media:blog/first-look-at-kiro/kiro_v3.png)
 _Kiro’s pricing plans as of August 2025_
 
 ---

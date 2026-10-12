@@ -1,7 +1,6 @@
 ---
 publishDate: 2025-05-10T00:00:00Z
 title: 'Participation at DigEduCLM 2025: Congreso de Digitalización Educativa de Castilla-La Mancha'
-image: 'media:blog/digeduclm-albacete/cover-digeduclm2025.jpg'
 excerpt: 'Participation at DigEduCLM 2025 in Albacete: key insights on educational digitalization in Castilla-La Mancha.'
 category: 'Charlas'
 tags:

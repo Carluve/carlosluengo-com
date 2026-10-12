@@ -1,4 +1,6 @@
 ---
+import StructuredData from '~/components/common/StructuredData.astro';
+import { PERSON_ID, SITE_URL } from '~/data/identity';
 import CareerTimeline from '~/components/widgets/CareerTimeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
@@ -19,10 +21,20 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    slot="head"
+    schema={{
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      url: `${SITE_URL}/en/about`,
+      inLanguage: 'en',
+      mainEntity: { '@id': PERSON_ID },
+    }}
+  />
   <HeroText
     tagline="About"
     title="Professional and academic background"
-    subtitle="Carlos Luengo Vera works in the technology industry and, alongside it, in university research and teaching."
+    subtitle="I work in the technology industry and, alongside it, do research and teach at university."
   >
     <div slot="content" class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
       <OrcidBadge />
@@ -44,30 +56,30 @@ const metadata = {
       {
         title: 'Industry',
         description:
-          'Sr. Enterprise Account Executive at Cloudflare, responsible for digital natives, startups and ISVs.',
+          'I am a Sr. Enterprise Account Executive at Cloudflare, working with digital natives, startups and ISVs.',
       },
       {
         title: 'Research',
         description:
-          'PhD candidate in Artificial Intelligence and Management at Universidad de Alcalá. The thesis addresses the economic and organisational impact of language models.',
+          'I am a PhD candidate in Artificial Intelligence and Management at Universidad de Alcalá. My thesis looks at the economic and organisational impact of language models.',
       },
       {
         title: 'Teaching',
         description:
-          'Teaches on postgraduate and executive education programmes covering AI, cloud and digital transformation.',
+          'I teach on postgraduate and executive education programmes covering AI, cloud and digital transformation.',
       },
     ]}
   >
     <Fragment slot="content">
       <h2 class="mb-3 font-heading text-3xl font-medium tracking-tight text-heading">Introduction</h2>
       <p>
-        His professional career has been built in account management and the technology ecosystem. In order, from the
-        start to the present day: Microsoft, Insight, Telefónica, Lenovo, Amazon Web Services and Cloudflare.
+        I have spent my whole career in account management in the technology sector. I started at Microsoft, then worked
+        at Insight, Telefónica, Lenovo and Amazon Web Services before joining Cloudflare.
       </p>
       <br />
       <p>
-        That experience with customers adopting AI and cloud is the raw material for his doctoral research and his
-        teaching: how organisations change when they bring in language models.
+        Working every day with customers who are adopting AI and cloud feeds directly into my doctoral research and my
+        teaching. The question I care about is how organisations change when they bring in language models.
       </p>
     </Fragment>
   </Content>
@@ -78,18 +90,18 @@ const metadata = {
     id="academia-path"
     tagline="University"
     title="Academic path"
-    subtitle="PhD, publications and university teaching."
+    subtitle="My PhD, my publications and my university teaching."
     columns={2}
     items={[
       {
         title: 'PhD',
         description:
-          'Artificial Intelligence and Management at Universidad de Alcalá. Available publications are listed in Academia and on Google Scholar.',
+          'I am doing my PhD in Artificial Intelligence and Management at Universidad de Alcalá. You can find my publications on the Research page and on Google Scholar.',
         icon: 'tabler:book-2',
       },
       {
         title: 'Accreditation',
-        description: 'Working towards teaching and research accreditation in the Spanish university system.',
+        description: 'I am working towards teaching and research accreditation in the Spanish university system.',
         icon: 'tabler:school',
       },
     ]}
@@ -99,7 +111,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Academia',
+        text: 'Research',
         href: getPermalink('/en/academia'),
       },
       {
@@ -109,6 +121,6 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">Research and teaching</Fragment>
-    <Fragment slot="subtitle">Publications, talks and classes, gathered in Academia.</Fragment>
+    <Fragment slot="subtitle">My publications, talks and classes, all on the Research page.</Fragment>
   </CallToAction>
 </Layout>

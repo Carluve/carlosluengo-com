@@ -7,10 +7,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Button from '~/components/ui/Button.astro';
 import GithubActivity from '~/components/widgets/GithubActivity.astro';
-import StructuredData from '~/components/common/StructuredData.astro';
-import { SITE } from 'astrowind:config';
 import { getPermalink } from '~/utils/permalinks';
-import favIconSvg from '~/assets/favicons/favicon.svg';
 import portrait from '~/assets/images/carlos-luengo.jpg';
 import Image from '~/components/common/Image.astro';
 import { projects } from '~/data/projects';
@@ -24,44 +21,11 @@ const metadata = {
     'PhD candidate in Artificial Intelligence and Management at Universidad de Alcalá. University lecturer. Sr. Enterprise Account Executive at Cloudflare (Digital Natives, Startups and ISVs).',
 };
 
-const personId = `${SITE?.site}/#person`;
-const structuredData = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    '@id': `${SITE?.site}/#website`,
-    name: SITE?.name,
-    url: SITE?.site,
-    inLanguage: 'en',
-    publisher: { '@id': personId },
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    '@id': personId,
-    name: 'Carlos Luengo',
-    url: SITE?.site,
-    jobTitle: 'Sr. Enterprise Account Executive',
-    worksFor: { '@type': 'Organization', name: 'Cloudflare' },
-    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Alcalá' },
-    sameAs: [
-      'https://www.linkedin.com/in/carlosluengo',
-      'https://x.com/carluve',
-      'https://github.com/Carluve',
-      'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
-      'https://orcid.org/0009-0008-2591-1210',
-    ],
-    logo: new URL(favIconSvg.src, SITE?.site).toString(),
-  },
-];
-
 const paperUrl = 'https://arxiv.org/abs/2503.00025';
 const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
 ---
 
 <Layout metadata={metadata}>
-  <StructuredData slot="head" schema={structuredData} />
-
   <section class="relative not-prose">
     <div
       class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-16 lg:pb-10 lg:pt-16"
@@ -125,14 +89,14 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
         callToAction: { text: 'Career', href: getPermalink('/en/about') },
       },
       {
-        title: 'Academia',
+        title: 'Research',
         description:
           'Doctoral research on the economic and organisational impact of LLMs, publications and postgraduate university teaching.',
         icon: 'tabler:school',
         callToAction: { text: 'Research and teaching', href: getPermalink('/en/academia') },
       },
       {
-        title: 'Development',
+        title: 'Projects',
         description:
           'Demos and prototypes on Cloudflare Workers: games, educational tools and AI experiments, all open source.',
         icon: 'tabler:code',
@@ -162,7 +126,7 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
         <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button
             variant="primary"
-            text="View in Academia"
+            text="See all research"
             href={getPermalink('/en/academia')}
             icon="tabler:arrow-right"
           />

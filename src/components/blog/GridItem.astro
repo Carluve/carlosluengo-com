@@ -22,7 +22,10 @@ const image = await findImage(post.image);
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class="aw-card aw-spotlight aw-reveal group flex h-full flex-col overflow-hidden">
+<article
+  lang={post.lang && post.lang !== lang ? post.lang : undefined}
+  class="aw-card aw-spotlight aw-reveal group flex h-full flex-col overflow-hidden"
+>
   <a
     class="block overflow-hidden bg-primary/5"
     href={link || undefined}
@@ -34,7 +37,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       image ? (
         <Image
           src={image}
-          class="aspect-[16/10] w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-[1.03]"
+          class="aspect-[16/10] w-full object-cover"
           widths={[400, 900]}
           width={900}
           height={506}
@@ -60,6 +63,16 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           </a>
         ) : (
           post.title
+        )
+      }
+      {
+        post.lang && post.lang !== lang && (
+          <span
+            class="ml-2 inline-block rounded border border-line px-1.5 py-px align-middle text-[0.65rem] font-semibold uppercase tracking-wider text-muted"
+            title={lang === 'es' ? 'Artículo en inglés' : 'Post in Spanish'}
+          >
+            {post.lang}
+          </span>
         )
       }
     </h3>
