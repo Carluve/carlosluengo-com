@@ -1,6 +1,7 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const orcidUrl = 'https://orcid.org/0009-0008-2591-1210';
+export const xUrl = 'https://x.com/carluve';
 
 export const headerData = {
   links: [
@@ -43,6 +44,7 @@ export const footerData = {
       title: 'Perfiles',
       links: [
         { text: 'LinkedIn', href: 'https://www.linkedin.com/in/carlosluengo' },
+        { text: 'X', href: xUrl },
         { text: 'GitHub', href: 'https://github.com/Carluve' },
         {
           text: 'Google Scholar',
@@ -63,6 +65,7 @@ export const footerData = {
       icon: 'tabler:brand-linkedin',
       href: 'https://www.linkedin.com/in/carlosluengo',
     },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: xUrl },
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/Carluve' },
     { ariaLabel: 'ORCID iD', icon: 'orcid', href: orcidUrl },
   ],

@@ -23,8 +23,8 @@ metadata:
         height: 630
     type: website
   twitter:
-    handle: ''
-    site: ''
+    handle: '@carluve'
+    site: '@carluve'
     cardType: summary_large_image
 
 i18n:
