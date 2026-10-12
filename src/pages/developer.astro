@@ -1,121 +1,101 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Projects from '~/components/widgets/Projects.astro';
-import Features from '~/components/widgets/Features.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import GithubActivity from '~/components/widgets/GithubActivity.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Desarrollo',
+  title: 'Developer',
   description:
     'Repositorios públicos de Carlos Luengo Vera: el sitio personal, un prototipo experimental sobre procedencia de IA y un experimento de blog estático.',
 };
 
 const githubProfile = 'https://github.com/Carluve';
+
+const repos = [
+  {
+    title: 'carlosluengo.com',
+    description:
+      'Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Workers; la media se sirve desde R2.',
+    tags: ['Astro', 'Cloudflare Workers', 'R2'],
+    href: 'https://github.com/Carluve/carlosluengo-com',
+  },
+  {
+    title: 'FocAIRemover',
+    description:
+      'Prototipo experimental en Cloudflare Workers para retirar marcas de procedencia de IA que pueden verificarse, como Unicode invisible y metadatos cuando hay un limpiador configurado. El repositorio lo presenta como investigación, no como producto.',
+    tags: ['Cloudflare Workers', 'TypeScript'],
+    href: 'https://github.com/Carluve/FocAIRemover',
+  },
+  {
+    title: 'Astro Nano',
+    description:
+      'Bifurcación del tema Astro Nano: un blog y portafolio estático. Es un experimento de presentación; el sitio principal es este.',
+    tags: ['Astro', 'Experimento'],
+    href: 'https://github.com/Carluve/blog-astronano',
+  },
+];
 ---
 
-<Layout metadata={metadata}>
-  <HeroText
-    tagline="Desarrollo"
-    title="Experimentación técnica"
-    subtitle="Selección de repositorios públicos. El trabajo técnico de docencia e investigación que no es público no se enlaza."
-    callToAction={{
-      variant: 'primary',
-      text: 'Perfil en GitHub',
-      href: githubProfile,
-      target: '_blank',
-      icon: 'tabler:brand-github',
-    }}
-  />
+<Layout metadata={metadata} shellTitle="Developer">
+  <section class="panel">
+    <p class="max-w-2xl leading-relaxed text-muted">
+      Selección de repositorios públicos. El trabajo técnico de docencia e investigación que no es público no se enlaza.
+      El perfil de GitHub reúne el resto del código público.
+    </p>
+    <p class="mt-4">
+      <a class="dash-btn dash-btn-primary" href={githubProfile} target="_blank" rel="noopener noreferrer">
+        Perfil en GitHub
+      </a>
+    </p>
+  </section>
 
-  <Projects
-    id="repositorios"
-    tagline="Repositorios"
-    title="Código público"
-    subtitle="Tres repositorios que pueden citarse con precisión. El perfil de GitHub reúne el resto del código público."
-    columns={3}
-    items={[
+  <section class="mt-4" aria-labelledby="repositorios">
+    <h2 id="repositorios" class="sr-only">Repositorios</h2>
+    <div class="stack">
       {
-        title: 'carlosluengo.com',
-        description:
-          'Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Workers; la media se sirve desde R2.',
-        tags: ['Astro', 'Cloudflare Workers'],
-        href: 'https://github.com/Carluve/carlosluengo-com',
-        linkText: 'Ver el repositorio',
-      },
-      {
-        title: 'FocAIRemover',
-        description:
-          'Prototipo experimental en Cloudflare Workers para retirar marcas de procedencia de IA que pueden verificarse, como Unicode invisible y metadatos cuando hay un limpiador configurado. El repositorio lo presenta como investigación, no como producto.',
-        tags: ['Cloudflare Workers', 'TypeScript'],
-        href: 'https://github.com/Carluve/FocAIRemover',
-        linkText: 'Ver el repositorio',
-      },
-      {
-        title: 'Astro Nano',
-        description:
-          'Bifurcación del tema Astro Nano: un blog y portafolio estático. Es un experimento de presentación; el sitio principal es este.',
-        tags: ['Astro', 'Experimento'],
-        href: 'https://github.com/Carluve/blog-astronano',
-        linkText: 'Ver el repositorio',
-      },
-    ]}
-  />
+        repos.map((repo) => (
+          <a class="panel block hover:border-primary/40" href={repo.href} target="_blank" rel="noopener noreferrer">
+            <h3 class="text-[15px] font-semibold text-heading">{repo.title}</h3>
+            <p class="mt-1">{repo.description}</p>
+            <p class="mt-2 text-xs font-semibold text-muted">{repo.tags.join(' · ')}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
 
-  <GithubActivity />
+  <section class="panel mt-4" id="github-activity">
+    <GithubActivity embedded />
+  </section>
 
-  <Features
-    id="no-publico"
-    tagline="Alcance"
-    title="Qué queda fuera de esta selección"
-    columns={2}
-    items={[
-      {
-        title: 'Otros repositorios públicos',
-        description:
-          'El perfil de GitHub incluye otros experimentos públicos. Esta página solo destaca los que pueden describirse con precisión.',
-        icon: 'tabler:brand-github',
-      },
-      {
-        title: 'Trabajo interno',
-        description:
-          'El material de cátedra, una demostración universitaria y las herramientas de apoyo a la acreditación académica permanecen en repositorios privados. No tienen enlace público.',
-        icon: 'tabler:lock',
-      },
-    ]}
-  />
+  <div class="stack-2 mt-4">
+    <section class="panel">
+      <h2>Otros repositorios públicos</h2>
+      <p>
+        El perfil de GitHub incluye otros experimentos públicos. Esta página solo destaca los que pueden describirse
+        con precisión.
+      </p>
+    </section>
+    <section class="panel">
+      <h2>Trabajo interno</h2>
+      <p>
+        El material de cátedra, una demostración universitaria y las herramientas de apoyo a la acreditación académica
+        permanecen en repositorios privados. No tienen enlace público.
+      </p>
+    </section>
+  </div>
 
-  <Features
-    tagline="Entorno"
-    title="Herramientas de los prototipos públicos"
-    subtitle="Medios que aparecen en los repositorios citados, no un catálogo de productos."
-    columns={3}
-    items={[
-      { title: 'Astro', icon: 'tabler:rocket' },
-      { title: 'Cloudflare Workers', icon: 'tabler:cloud' },
-      { title: 'Cloudflare Workers', icon: 'tabler:cloud-code' },
-    ]}
-  />
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'GitHub',
-        href: githubProfile,
-        target: '_blank',
-      },
-      {
-        text: 'Contacto',
-        href: getPermalink('/contact'),
-      },
-    ]}
-  >
-    <Fragment slot="title">Consultas técnicas</Fragment>
-    <Fragment slot="subtitle">
-      Las preguntas sobre estos repositorios pueden dirigirse por LinkedIn, desde la página de contacto.
-    </Fragment>
-  </CallToAction>
+  <section class="panel mt-4">
+    <h2>Herramientas de los prototipos públicos</h2>
+    <p>Medios que aparecen en los repositorios citados, no un catálogo de productos.</p>
+    <ul class="mt-3 flex flex-wrap gap-2 text-sm font-semibold text-heading">
+      <li class="rounded-full border border-line px-3 py-1">Astro</li>
+      <li class="rounded-full border border-line px-3 py-1">Cloudflare Workers</li>
+      <li class="rounded-full border border-line px-3 py-1">R2</li>
+    </ul>
+    <p class="mt-4">
+      Las preguntas sobre estos repositorios pueden dirigirse por LinkedIn, desde la
+      <a class="font-semibold text-link hover:underline" href={getPermalink('/contact')}>página de contacto</a>.
+    </p>
+  </section>
 </Layout>

@@ -1,0 +1,211 @@
+---
+import { Icon } from 'astro-icon/components';
+import { publications, type PublicationStatus } from '~/data/publications';
+import { getFormattedDate } from '~/utils/utils';
+
+const tone: Record<PublicationStatus, string> = {
+  Publicado: 'green',
+  Preprint: 'blue',
+  'En revisión': 'amber',
+  Reseña: 'gray',
+};
+
+const groupId: Record<PublicationStatus, string> = {
+  Publicado: 'publicado',
+  Preprint: 'preprint',
+  'En revisión': 'revision',
+  Reseña: 'resena',
+};
+
+const rows = [...publications].sort((a, b) => b.date.localeCompare(a.date));
+const years: number[] = [];
+for (const row of rows) {
+  const year = Number(row.date.slice(0, 4));
+  if (!years.includes(year)) years.push(year);
+}
+
+const grouped: Array<{ year: number; rows: typeof rows }> = [];
+for (const row of rows) {
+  const year = Number(row.date.slice(0, 4));
+  const last = grouped[grouped.length - 1];
+  if (!last || last.year !== year) grouped.push({ year, rows: [row] });
+  else last.rows.push(row);
+}
+
+const statuses: PublicationStatus[] = ['Publicado', 'Preprint', 'En revisión', 'Reseña'];
+const tabs = [
+  { id: 'all', label: 'Todas', count: rows.length },
+  ...statuses
+    .filter((status) => rows.some((row) => row.status === status))
+    .map((status) => ({
+      id: groupId[status],
+      label: status,
+      count: rows.filter((row) => row.status === status).length,
+    })),
+];
+
+const pageSize = 10;
+const shown = Math.min(pageSize, rows.length);
+---
+
+<aw-data-table class="dash-card" data-page-size={String(pageSize)}>
+  <div class="dash-card-head">
+    <div class="dash-card-title">
+      <h2>Publicaciones</h2>
+      <span class="count-badge" data-total>{rows.length}</span>
+    </div>
+    <div class="dash-card-tools">
+      <label class="dash-search dash-search-compact">
+        <span class="sr-only">Buscar publicaciones</span>
+        <Icon name="tabler:search" class="h-4 w-4" aria-hidden="true" />
+        <input data-query type="search" placeholder="Buscar" autocomplete="off" />
+      </label>
+      <details class="dash-pop" data-year-filter>
+        <summary>
+          <Icon name="tabler:filter" class="h-4 w-4" aria-hidden="true" />
+          Filtro
+        </summary>
+        <fieldset>
+          <legend>Año</legend>
+          {
+            years.map((year) => (
+              <label>
+                <input type="checkbox" value={String(year)} data-year-option checked />
+                {year}
+              </label>
+            ))
+          }
+        </fieldset>
+      </details>
+      <details class="dash-pop">
+        <summary>
+          <Icon name="tabler:columns-3" class="h-4 w-4" aria-hidden="true" />
+          Columnas
+        </summary>
+        <fieldset>
+          <legend>Columnas visibles</legend>
+          <label><input type="checkbox" data-column="estado" checked /> Estado</label>
+          <label><input type="checkbox" data-column="medio" checked /> Medio</label>
+          <label><input type="checkbox" data-column="fecha" checked /> Fecha</label>
+        </fieldset>
+      </details>
+    </div>
+  </div>
+
+  <div class="dash-tabs" role="group" aria-label="Estado">
+    {
+      tabs.map((tab) => (
+        <button type="button" data-group={tab.id} aria-pressed={tab.id === 'all' ? 'true' : 'false'}>
+          {tab.label}
+          <span data-group-count={tab.id}>{tab.count}</span>
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Tabla de publicaciones, desplazable en horizontal">
+    <table>
+      <caption class="sr-only">Publicaciones académicas</caption>
+      <thead>
+        <tr>
+          <th scope="col">Publicación</th>
+          <th scope="col" data-col="estado">Estado</th>
+          <th scope="col" data-col="medio">Medio</th>
+          <th scope="col" data-col="fecha">Fecha</th>
+          <th scope="col"><span class="sr-only">Acciones</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          grouped.map((group) => (
+            <>
+              <tr data-year-header={group.year}>
+                <th scope="rowgroup" colspan="5">
+                  <span>{group.year}</span>
+                  <span class="count-badge" data-year-count>
+                    {group.rows.length}
+                  </span>
+                </th>
+              </tr>
+              {group.rows.map((row) => {
+                const date = new Date(`${row.date}T00:00:00Z`);
+                const primary = row.links?.[0];
+                return (
+                  <tr
+                    data-row
+                    data-year={group.year}
+                    data-group={groupId[row.status]}
+                    data-status={row.status}
+                    data-search={`${row.title} ${row.detail} ${row.venue} ${row.status}`}
+                  >
+                    <td>
+                      <div class="record">
+                        <span class="thumb" aria-hidden="true">
+                          <Icon name="tabler:file-text" class="h-4 w-4" />
+                        </span>
+                        <span class="min-w-0">
+                          {primary ? (
+                            <a class="record-title" href={primary.href} target="_blank" rel="noopener noreferrer">
+                              {row.title}
+                            </a>
+                          ) : (
+                            <span class="record-title">{row.title}</span>
+                          )}
+                          <span class="record-meta">{row.detail}</span>
+                        </span>
+                      </div>
+                    </td>
+                    <td data-col="estado">
+                      <span class:list={['status', `tone-${tone[row.status]}`]}>
+                        <span class="status-dot" aria-hidden="true" />
+                        {row.status}
+                      </span>
+                    </td>
+                    <td data-col="medio">{row.venue}</td>
+                    <td data-col="fecha">
+                      <time datetime={row.date}>{getFormattedDate(date)}</time>
+                    </td>
+                    <td>
+                      <details class="row-menu">
+                        <summary aria-label={`Acciones de ${row.title}`}>
+                          <Icon name="tabler:dots" class="h-4 w-4" aria-hidden="true" />
+                        </summary>
+                        <div>
+                          {row.links?.map((link) => (
+                            <a href={link.href} target="_blank" rel="noopener noreferrer">
+                              {link.label}
+                            </a>
+                          ))}
+                          {primary ? (
+                            <button type="button" data-copy={primary.href}>
+                              Copiar enlace
+                            </button>
+                          ) : (
+                            <p>La ficha no incluye un enlace.</p>
+                          )}
+                        </div>
+                      </details>
+                    </td>
+                  </tr>
+                );
+              })}
+            </>
+          ))
+        }
+        <tr data-empty hidden>
+          <td colspan="5">Ninguna publicación coincide con la búsqueda.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dash-pager">
+    <p data-range>
+      Mostrando {rows.length === 0 ? 0 : 1}–{shown} de {rows.length}
+    </p>
+    <div>
+      <button type="button" data-page="prev" disabled>Anterior</button>
+      <button type="button" data-page="next" disabled={rows.length <= pageSize}>Siguiente</button>
+    </div>
+  </div>
+</aw-data-table>

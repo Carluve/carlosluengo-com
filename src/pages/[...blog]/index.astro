@@ -90,9 +90,9 @@ const breadcrumbs = [
 ];
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} shellTitle="Blog" shellHeading={false}>
   <StructuredData slot="head" schema={articleSchema} />
-  <Breadcrumbs bar hideCurrent items={breadcrumbs} />
+  <Breadcrumbs class="mb-4" hideCurrent items={breadcrumbs} />
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content && <post.Content />}
   </SinglePost>

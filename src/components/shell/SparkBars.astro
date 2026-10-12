@@ -1,0 +1,37 @@
+---
+interface Props {
+  values: number[];
+  label: string;
+}
+
+const { values, label } = Astro.props;
+const series = values.length > 0 ? values : [];
+const max = Math.max(...series, 1);
+const width = 76;
+const height = 36;
+const gap = 3;
+const barWidth = series.length > 0 ? (width - gap * (series.length - 1)) / series.length : 0;
+---
+
+{
+  series.length > 0 && (
+    <svg class="spark" width={width} height={height} viewBox={`0 0 ${width} ${height}`} role="img" aria-label={label}>
+      {series.map((value, index) => {
+        const barHeight = Math.max(3, (value / max) * (height - 2));
+        const x = index * (barWidth + gap);
+        const y = height - barHeight;
+        const last = index === series.length - 1;
+        return (
+          <rect
+            x={x}
+            y={y}
+            width={Math.max(barWidth, 2)}
+            height={barHeight}
+            rx="1.5"
+            class={last ? 'spark-last' : 'spark-bar'}
+          />
+        );
+      })}
+    </svg>
+  )
+}

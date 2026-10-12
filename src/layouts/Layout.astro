@@ -45,6 +45,14 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      try {
+        if (localStorage.getItem('dash-collapsed') === '1') document.documentElement.classList.add('dash-collapsed');
+      } catch (error) {
+        /* Preference stays expanded when storage is unavailable. */
+      }
+    </script>
 
     <!-- Extra head content from pages: structured data, rel=prev/next, … -->
     <slot name="head" />
