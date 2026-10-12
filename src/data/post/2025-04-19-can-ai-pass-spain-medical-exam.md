@@ -1,16 +1,14 @@
 ---
 publishDate: 2025-04-19T00:00:00Z
 title: 'Can AI Pass Spain’s Toughest Medical Exam?'
-excerpt: "The Spanish MIR (Médico Interno Residente) exam is one of the most rigorous medical licensing tests in Europe. It determines who gets into residency programs in Spain, and it's known for its complex clinical…"
+excerpt: "The Spanish MIR (Médico Interno Residente) exam is one of the most rigorous medical licensing tests in Europe. It determines who gets into residency programs in Spain, and it's known for its complex clinical scenarios, image-based questions, and country-specific epidemiological knowledge. But what happens when you ask an AI to take the MIR?"
 category: 'Academia'
 tags:
-  - 'AI in Healthcare'
-  - 'LLMs'
-  - 'MIR'
-  - 'Medical Education'
+  - 'ai in healthcare'
+  - 'llms'
+  - 'mir'
+  - 'medical education'
 ---
-
-The Spanish MIR (Médico Interno Residente) exam is one of the most rigorous medical licensing tests in Europe. It determines who gets into residency programs in Spain, and it's known for its complex clinical scenarios, image-based questions, and country-specific epidemiological knowledge. But what happens when you ask an AI to take the MIR?
 
 That’s exactly what a group of researchers from the University of Alcalá and Binpar set out to explore. Their recent study compared the performance of 22 large language models (LLMs) — including GPT-4, Claude, Deepseek, and fine-tuned models like _Miri Pro_ — on the MIR exams from 2024 and 2025.
 

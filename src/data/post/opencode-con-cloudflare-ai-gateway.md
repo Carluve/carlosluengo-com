@@ -10,8 +10,6 @@ tags:
   - 'infraestructura'
 ---
 
-![OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers](media:blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png)
-
 ## Why this pairing works
 
 OpenCode excels at developer workflow, while Cloudflare AI Gateway adds a policy and observability layer. Together they enable:

@@ -1,26 +1,27 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Projects from '~/components/widgets/Projects.astro';
-import Features from '~/components/widgets/Features.astro';
+import ProjectGallery from '~/components/widgets/ProjectGallery.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import GithubActivity from '~/components/widgets/GithubActivity.astro';
 import { getPermalink } from '~/utils/permalinks';
+import { projects } from '~/data/projects';
 
 const metadata = {
-  title: 'Desarrollo',
+  title: 'Proyectos y desarrollo',
   description:
-    'Repositorios públicos de Carlos Luengo Vera: el sitio personal, un prototipo experimental sobre procedencia de IA y un experimento de blog estático.',
+    'Demos y repositorios públicos de Carlos Luengo Vera: juegos y herramientas sobre Cloudflare Workers, aplicaciones educativas y experimentos con IA.',
 };
 
 const githubProfile = 'https://github.com/Carluve';
+const live = projects.filter((p) => p.demo).length;
 ---
 
 <Layout metadata={metadata}>
   <HeroText
     tagline="Desarrollo"
-    title="Experimentación técnica"
-    subtitle="Selección de repositorios públicos. El trabajo técnico de docencia e investigación que no es público no se enlaza."
+    title="Proyectos y experimentos"
+    subtitle={`Demos en producción y código abierto: juegos, herramientas educativas y prototipos sobre Cloudflare Workers. ${live} demos se pueden probar ahora mismo.`}
     callToAction={{
       variant: 'primary',
       text: 'Perfil en GitHub',
@@ -30,92 +31,25 @@ const githubProfile = 'https://github.com/Carluve';
     }}
   />
 
-  <Projects
-    id="repositorios"
-    tagline="Repositorios"
-    title="Código público"
-    subtitle="Tres repositorios que pueden citarse con precisión. El perfil de GitHub reúne el resto del código público."
-    columns={3}
-    items={[
-      {
-        title: 'carlosluengo.com',
-        description:
-          'Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Workers; la media se sirve desde R2.',
-        tags: ['Astro', 'Cloudflare Workers'],
-        href: 'https://github.com/Carluve/carlosluengo-com',
-        linkText: 'Ver el repositorio',
-      },
-      {
-        title: 'FocAIRemover',
-        description:
-          'Prototipo experimental en Cloudflare Workers para retirar marcas de procedencia de IA que pueden verificarse, como Unicode invisible y metadatos cuando hay un limpiador configurado. El repositorio lo presenta como investigación, no como producto.',
-        tags: ['Cloudflare Workers', 'TypeScript'],
-        href: 'https://github.com/Carluve/FocAIRemover',
-        linkText: 'Ver el repositorio',
-      },
-      {
-        title: 'Astro Nano',
-        description:
-          'Bifurcación del tema Astro Nano: un blog y portafolio estático. Es un experimento de presentación; el sitio principal es este.',
-        tags: ['Astro', 'Experimento'],
-        href: 'https://github.com/Carluve/blog-astronano',
-        linkText: 'Ver el repositorio',
-      },
-    ]}
-  />
+  <ProjectGallery title="Proyectos" />
 
   <GithubActivity />
-
-  <Features
-    id="no-publico"
-    tagline="Alcance"
-    title="Qué queda fuera de esta selección"
-    columns={2}
-    items={[
-      {
-        title: 'Otros repositorios públicos',
-        description:
-          'El perfil de GitHub incluye otros experimentos públicos. Esta página solo destaca los que pueden describirse con precisión.',
-        icon: 'tabler:brand-github',
-      },
-      {
-        title: 'Trabajo interno',
-        description:
-          'El material de cátedra, una demostración universitaria y las herramientas de apoyo a la acreditación académica permanecen en repositorios privados. No tienen enlace público.',
-        icon: 'tabler:lock',
-      },
-    ]}
-  />
-
-  <Features
-    tagline="Entorno"
-    title="Herramientas de los prototipos públicos"
-    subtitle="Medios que aparecen en los repositorios citados, no un catálogo de productos."
-    columns={3}
-    items={[
-      { title: 'Astro', icon: 'tabler:rocket' },
-      { title: 'Cloudflare Workers', icon: 'tabler:cloud' },
-      { title: 'Cloudflare Workers', icon: 'tabler:cloud-code' },
-    ]}
-  />
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
+        text: 'Contactar',
+        href: getPermalink('/contact'),
+      },
+      {
         text: 'GitHub',
         href: githubProfile,
         target: '_blank',
       },
-      {
-        text: 'Contacto',
-        href: getPermalink('/contact'),
-      },
     ]}
   >
-    <Fragment slot="title">Consultas técnicas</Fragment>
-    <Fragment slot="subtitle">
-      Las preguntas sobre estos repositorios pueden dirigirse por LinkedIn, desde la página de contacto.
-    </Fragment>
+    <Fragment slot="title">¿Hablamos de algún proyecto?</Fragment>
+    <Fragment slot="subtitle">Para colaboraciones, charlas o preguntas sobre estas demos.</Fragment>
   </CallToAction>
 </Layout>

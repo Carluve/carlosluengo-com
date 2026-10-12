@@ -6,23 +6,17 @@ image: 'media:blog/chatgpt-gpt4o-overview/202505_chatgpt.png'
 imageAlt: 'ChatGPT with GPT-4o: Features, Use Cases, and Custom GPTs'
 category: 'IA'
 tags:
-  - 'AI'
+  - 'ai'
   - 'tools'
   - 'productivity'
-  - 'ChatGPT'
-  - 'GPT-4o'
-  - 'AI Assistant'
-  - 'Productivity'
-  - 'Custom GPTs'
+  - 'chatgpt'
+  - 'gpt-4o'
+  - 'ai assistant'
 ---
 
-ChatGPT is more than just a chatbot—it's a powerful AI assistant that can help you brainstorm, code, learn, and automate tasks. In this overview, discover its main features, practical use cases, and how to unlock even more value with custom GPTs.
-
-# Introduction
+## Introduction
 
 ChatGPT is an artificial intelligence assistant powered by OpenAI's GPT-4o model. It communicates in natural language, understands context, and generates meaningful responses in seconds. Whether you need inspiration, technical help, or simply a pleasant conversation, ChatGPT can become an indispensable tool in your daily routine.
-
-![Screenshot: Main ChatGPT Window](media:blog/chatgpt-gpt4o-overview/202505_chatgpt.png)
 
 ---
 

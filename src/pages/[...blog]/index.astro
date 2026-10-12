@@ -13,12 +13,14 @@ import {
   blogPostRobots,
   isBlogListRouteEnabled,
   isBlogCategoryRouteEnabled,
+  fetchPosts,
 } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import { isMediaRef, resolveMediaUrl } from '~/utils/media';
 import { truncateAtWord } from '~/utils/utils';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import PostNavigation from '~/components/blog/PostNavigation.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import { SITE } from 'astrowind:config';
@@ -32,6 +34,12 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { post } = Astro.props as Props;
+
+// fetchPosts() is newest first: the next (newer) post sits before this one.
+const allPosts = await fetchPosts();
+const index = allPosts.findIndex((p) => p.id === post.id);
+const newer = index > 0 ? allPosts[index - 1] : undefined;
+const older = index >= 0 ? allPosts[index + 1] : undefined;
 
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
@@ -96,6 +104,7 @@ const breadcrumbs = [
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content && <post.Content />}
   </SinglePost>
+  <PostNavigation prev={older} next={newer} />
   <ToBlogLink />
   <RelatedPosts post={post} />
 </Layout>

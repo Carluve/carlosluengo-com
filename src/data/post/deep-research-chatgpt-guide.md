@@ -1,20 +1,17 @@
 ---
 publishDate: 2025-05-24T00:00:00Z
 title: 'Deep Research with ChatGPT: A Practical Guide'
-excerpt: "Deep research is more than just skimming search results—it's a disciplined, multi-stage approach to finding, evaluating, and synthesising information. In an era where AI generates vast amounts of content and…"
-image: 'media:blog/deep-research-chatgpt-guide/202505_01deepresearch.png'
+excerpt: "Deep research is more than just skimming search results: it's a disciplined, multi-stage approach to finding, evaluating and synthesising information."
+image: 'media:blog/deep-research-chatgpt-guide/cover-202505_deepresearch.png'
 imageAlt: 'Deep Research with ChatGPT: A Practical Guide'
 category: 'IA'
 tags:
-  - 'AI'
+  - 'ai'
   - 'research'
   - 'productivity'
   - 'guide'
-  - 'Deep Research'
-  - 'ChatGPT'
-  - 'Information Literacy'
-  - 'AI Tools'
-  - 'Workflow'
+  - 'deep research'
+  - 'chatgpt'
 ---
 
 Deep research is more than just skimming search results—it's a disciplined, multi-stage approach to finding, evaluating, and synthesising information. In an era where AI generates vast amounts of content and misinformation is rife, mastering deep research is essential for anyone who wants to make well-informed decisions, uncover real insights, and maintain intellectual integrity. This guide shows you how to use ChatGPT and OpenAI tools to bring depth and rigour to your research process.
@@ -137,6 +134,7 @@ Alternate between **divergent searching** (broadening) and **convergent summaris
    Convert notes into reports, slide decks, or knowledge-base articles.
 
 ![Screenshot of ChatGPT analysing two sources side-by-side and annotating discrepancies.](media:blog/deep-research-chatgpt-guide/202505_04deepresearch.png)
+
 ---
 
 ## Advanced Techniques

@@ -1,21 +1,17 @@
 ---
 publishDate: 2025-08-03T00:00:00Z
 title: 'First look at Kiro: the AI IDE for structured coding'
-excerpt: 'In this post, I share my first impressions using Kiro, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it…'
+excerpt: 'In this post, I share my first impressions using Kiro, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it brings over traditional editors, and why it could matter for AI-assisted coding at scale.'
 image: 'media:blog/first-look-at-kiro/kiro_v1.png'
 imageAlt: 'First look at Kiro: the AI IDE for structured coding'
 category: 'IA'
 tags:
-  - 'AI'
-  - 'Development'
-  - 'IDE'
-  - 'Tools'
-  - 'Kiro'
-  - 'Spec-driven development'
----
-
-In this post, I share my first impressions using **Kiro**, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it brings over traditional editors, and why it could matter for AI-assisted coding at scale.
-
+  - 'ai'
+  - 'development'
+  - 'ide'
+  - 'tools'
+  - 'kiro'
+  - 'spec-driven development'
 ---
 
 ## 🚀 Introduction: What is Kiro?
@@ -23,9 +19,6 @@ In this post, I share my first impressions using **Kiro**, an AI-native IDE buil
 Kiro is a spec-driven, AI-native IDE that integrates a structured development model into your coding flow. Unlike traditional editors that focus on raw code editing, Kiro introduces an environment where specs, chat prompts and AI agents collaborate with you to build software.
 
 Its promise is simple: **bring discipline to the chaotic creative process** of building software with AI — from idea to implementation.
-
-![Kiro IDE running inside VSCode](media:blog/first-look-at-kiro/kiro_v1.png)
-_Screenshot of Kiro’s plugin version running in VSCode_
 
 ---
 

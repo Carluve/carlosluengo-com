@@ -30,6 +30,8 @@ export interface Post {
 
   /** Rendered Astro component factory for the post body. */
   Content?: AstroComponentFactory;
+  /** Second- and third-level headings of the body, for the table of contents. */
+  headings?: Array<{ depth: number; slug: string; text: string }>;
 
   /** Estimated reading time in minutes. */
   readingTime?: number;
@@ -89,7 +91,7 @@ export interface MetaDataTwitter {
 }
 
 export interface Image {
-  src: string;
+  src: string | ImageMetadata;
   alt?: string;
   /** Optional link (used by Brands logos). */
   href?: string;

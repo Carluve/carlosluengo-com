@@ -1,21 +1,18 @@
 ---
 publishDate: 2025-11-26T00:00:00Z
 title: 'Cloudflare: Why a Simpler, Faster and Safer Internet Actually Matters'
-excerpt: 'The more time I spend working with Cloudflare, the more obvious it becomes: the Internet, as we know it, isn’t something that just exists—it’s something that has to be constantly rebuilt, protected, and optimized.…'
-image: 'media:blog/cloudflare-simpler-faster-safer-internet/cloudflare1.png'
+excerpt: 'The more time I spend working with Cloudflare, the more obvious it becomes: the Internet, as we know it, isn’t something that just exists—it’s something that has to be constantly rebuilt, protected, and optimized. And Cloudflare is one of the few companies doing that work at global scale, while keeping a surprisingly simple experience on the surface.'
+image: 'media:blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare.jpg'
 imageAlt: 'Cloudflare: Why a Simpler, Faster and Safer Internet Actually Matters'
 category: 'Cloudflare'
 tags:
-  - 'Technology'
-  - 'Web'
-  - 'Cloudflare'
-  - 'Internet'
-  - 'Security'
-  - 'Performance'
-  - 'Web Development'
+  - 'technology'
+  - 'web'
+  - 'cloudflare'
+  - 'internet'
+  - 'security'
+  - 'performance'
 ---
-
-The more time I spend working with Cloudflare, the more obvious it becomes: the Internet, as we know it, isn’t something that just exists—it’s something that has to be **constantly rebuilt, protected, and optimized**. And Cloudflare is one of the few companies doing that work at global scale, while keeping a surprisingly simple experience on the surface.
 
 That mission—**help build a better Internet**—sounds big and aspirational, but when you start looking at the platform from the inside, it becomes very concrete. Cloudflare isn’t just adding more products; it’s removing layers of friction that used to slow down teams, complicate architectures, and expand attack surfaces.
 

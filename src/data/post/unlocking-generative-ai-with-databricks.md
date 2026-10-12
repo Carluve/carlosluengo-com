@@ -2,19 +2,17 @@
 publishDate: 2025-09-22T00:00:00Z
 title: "Unlocking the Power of Generative AI with Databricks: Turning Data into 'New Oil'"
 excerpt: 'Every company today is talking about Generative AI. The promise is clear: unlock hidden value, reduce costs, and create new opportunities.'
-image: 'media:blog/unlocking-generative-ai-with-databricks/databricks01.png'
+image: 'media:blog/unlocking-generative-ai-with-databricks/cover-databricks01.jpg'
 imageAlt: "Unlocking the Power of Generative AI with Databricks: Turning Data into 'New Oil'"
 category: 'IA'
 tags:
-  - 'AI'
-  - 'Technology'
-  - 'Generative AI'
-  - 'Databricks'
-  - 'Data Lakehouse'
-  - 'AI Readiness'
+  - 'ai'
+  - 'technology'
+  - 'generative ai'
+  - 'databricks'
+  - 'data lakehouse'
+  - 'ai readiness'
 ---
-
-Every company today is talking about **Generative AI**. The promise is clear: unlock hidden value, reduce costs, and create new opportunities.
 
 But here’s the challenge: without a **solid data foundation**, it’s almost impossible to realise this promise. Generative AI models need high-quality, structured, and accessible data. If your information is scattered across silos, poorly cleaned, or hard to query, you’ll struggle to make AI work at scale.
 

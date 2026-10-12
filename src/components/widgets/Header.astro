@@ -75,7 +75,7 @@ const persistKey = `header-${Array.from(
     <div class="absolute inset-0"></div>
     <div
       class:list={[
-        'relative text-default py-2.5 px-3 lg:px-6 mx-auto w-full',
+        'relative text-default py-2.5 px-4 sm:px-6 mx-auto w-full',
         {
           'lg:flex lg:justify-between': position !== 'center',
         },
@@ -83,7 +83,7 @@ const persistKey = `header-${Array.from(
           'lg:grid lg:grid-cols-3 lg:items-center': position === 'center',
         },
         {
-          'max-w-7xl': !isFullWidth,
+          'max-w-6xl': !isFullWidth,
         },
       ]}
     >
@@ -92,10 +92,11 @@ const persistKey = `header-${Array.from(
           <Logo />
         </a>
         <div class="flex items-center lg:hidden">
-          <ToggleMenu />
+          <ToggleMenu controls="header-nav" />
         </div>
       </div>
       <nav
+        id="header-nav"
         class="items-center w-full lg:w-auto hidden lg:flex lg:mx-5 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
         aria-label="Navegación principal"
       >
@@ -199,6 +200,7 @@ const persistKey = `header-${Array.from(
     private onScroll?: () => void;
     private mql?: MediaQueryList;
     private onMqlChange?: () => void;
+    private onKeydown?: (e: KeyboardEvent) => void;
     private onPageLoad = () => {
       this.updateActiveLinks();
       this.closeOpenDropdown();
@@ -219,6 +221,7 @@ const persistKey = `header-${Array.from(
       const closeMenu = () => {
         toggle?.classList.remove('expanded');
         toggle?.setAttribute('aria-expanded', 'false');
+        toggle?.setAttribute('aria-label', 'Abrir el menú');
         document.body.classList.remove('overflow-hidden');
         header?.classList.remove('h-screen', 'expanded', 'bg-page');
         nav?.classList.add('hidden');
@@ -229,6 +232,7 @@ const persistKey = `header-${Array.from(
       toggle?.addEventListener('click', () => {
         const expanded = toggle.classList.toggle('expanded');
         toggle.setAttribute('aria-expanded', String(expanded));
+        toggle.setAttribute('aria-label', expanded ? 'Cerrar el menú' : 'Abrir el menú');
         document.body.classList.toggle('overflow-hidden');
         header?.classList.toggle('h-screen');
         header?.classList.toggle('expanded');
@@ -239,6 +243,14 @@ const persistKey = `header-${Array.from(
 
       // Close the mobile menu when a nav link is clicked.
       nav?.addEventListener('click', closeMenu);
+
+      // Escape closes the open mobile menu and hands focus back to the toggle.
+      this.onKeydown = (e: KeyboardEvent) => {
+        if (e.key !== 'Escape' || !toggle?.classList.contains('expanded')) return;
+        closeMenu();
+        toggle.focus();
+      };
+      document.addEventListener('keydown', this.onKeydown);
 
       // Desktop dropdowns open on hover/`:focus-within`. When a dropdown link is
       // clicked it keeps focus, and because the header uses `transition:persist`
@@ -280,6 +292,7 @@ const persistKey = `header-${Array.from(
       if (this.onScroll) document.removeEventListener('scroll', this.onScroll);
       if (this.mql && this.onMqlChange) this.mql.removeEventListener('change', this.onMqlChange);
       document.removeEventListener('astro:page-load', this.onPageLoad);
+      if (this.onKeydown) document.removeEventListener('keydown', this.onKeydown);
     }
 
     // With `transition:persist` the header (and its focus) survives client-side

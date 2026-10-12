@@ -1,0 +1,77 @@
+---
+/**
+ * Sticky table of contents for long posts, shown in the right margin on wide
+ * screens. The active section is highlighted while reading, following the
+ * section-index pattern of uiarc.dev (MIT).
+ */
+export interface Props {
+  headings: Array<{ depth: number; slug: string; text: string }>;
+}
+
+const { headings } = Astro.props;
+const clean = (text: string) => text.replace(/^[\p{Extended_Pictographic}️\s]+/u, '').trim();
+---
+
+{
+  headings.length >= 3 && (
+    <nav class="aw-toc" aria-label="En esta entrada">
+      <p class="aw-eyebrow">En esta entrada</p>
+      <ol class="mt-3 space-y-1 border-l border-line text-sm">
+        {headings.map((h) => (
+          <li>
+            <a
+              href={`#${h.slug}`}
+              data-toc-link={h.slug}
+              class:list={[
+                '-ml-px block border-l border-transparent py-1 pr-2 leading-snug text-muted transition-colors duration-150 hover:border-primary/50 hover:text-heading',
+                h.depth === 3 ? 'pl-6' : 'pl-3',
+              ]}
+            >
+              {clean(h.text)}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+<script>
+  // Mark the heading being read. One observer per page, rebuilt after each
+  // client-side navigation.
+  let observer: IntersectionObserver | undefined;
+  const setup = () => {
+    observer?.disconnect();
+    const links = new Map(
+      [...document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]')].map((a) => [a.dataset.tocLink!, a])
+    );
+    if (!links.size) return;
+    const visible = new Set<string>();
+    const mark = () => {
+      const order = [...links.keys()];
+      const current = order.find((slug) => visible.has(slug));
+      if (!current) return;
+      for (const [slug, a] of links) {
+        const active = slug === current;
+        a.classList.toggle('aw-toc-active', active);
+        if (active) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      }
+    };
+    observer = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) visible.add(e.target.id);
+          else visible.delete(e.target.id);
+        }
+        mark();
+      },
+      { rootMargin: '-80px 0px -60% 0px' }
+    );
+    for (const slug of links.keys()) {
+      const el = document.getElementById(slug);
+      if (el) observer.observe(el);
+    }
+  };
+  document.addEventListener('astro:page-load', setup);
+</script>

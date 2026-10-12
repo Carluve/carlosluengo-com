@@ -12,5 +12,9 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
+    // Astro builds with trailingSlash 'never' (src/config.yaml): pages and
+    // canonical tags are /blog/post. Serve them there and redirect /blog/post/
+    // to it, instead of the default 307 from /blog/post to /blog/post/.
+    "html_handling": "drop-trailing-slash",
   },
 }

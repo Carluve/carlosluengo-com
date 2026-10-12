@@ -10,8 +10,11 @@ import StructuredData from '~/components/common/StructuredData.astro';
 import { SITE, I18N } from 'astrowind:config';
 import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
 import favIconSvg from '~/assets/favicons/favicon.svg';
-import skyline from '~/assets/images/hero/skyline-network.jpg';
-import district from '~/assets/images/hero/district-light.jpg';
+import portrait from '~/assets/images/carlos-luengo.jpg';
+import Image from '~/components/common/Image.astro';
+import { projects } from '~/data/projects';
+
+const featured = projects.filter((p) => p.featured).slice(0, 3);
 
 const metadata = {
   title: 'Carlos Luengo — Investigación, docencia e industria',
@@ -60,7 +63,7 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
 
   <section class="relative not-prose">
     <div
-      class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12 lg:pb-10 lg:pt-16"
+      class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-16 lg:pb-10 lg:pt-16"
     >
       <div>
         <p class="aw-eyebrow">Investigación · Docencia · Industria</p>
@@ -86,32 +89,23 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
         </div>
       </div>
 
-      <figure class="relative">
+      <figure class="relative order-first w-36 sm:w-44 lg:order-none lg:mx-auto lg:w-full lg:max-w-none">
+        <div
+          class="absolute -inset-3 -z-10 rounded-[1.75rem] bg-gradient-to-br from-primary/20 via-sky-200/30 to-transparent blur-2xl dark:from-primary/25 dark:via-sky-500/10"
+          aria-hidden="true"
+        >
+        </div>
         <Picture
-          src={skyline}
+          src={portrait}
           formats={['avif', 'webp']}
           fallbackFormat="jpg"
-          widths={[640, 960, 1280]}
-          sizes="(min-width: 1024px) 54vw, 100vw"
-          alt="Vista aérea de un horizonte de torres unidas por una red de líneas azules, con cielo despejado a la izquierda."
+          widths={[360, 540, 720, 960]}
+          sizes="(min-width: 1024px) 30vw, 11rem"
+          alt="Retrato de Carlos Luengo Vera con americana azul marino y camisa blanca, en una oficina."
           loading="eager"
           fetchpriority="high"
-          class="aspect-[16/9] w-full rounded-2xl border border-line object-cover object-[72%_center]"
+          class="aspect-square w-full rounded-2xl border border-line object-cover object-[50%_30%] shadow-[0_18px_50px_rgb(15_23_42/0.14)]"
         />
-        <div
-          class="absolute bottom-3 left-3 w-[46%] overflow-hidden rounded-xl border-4 border-surface shadow-[0_12px_40px_rgb(15_23_42/0.18)] sm:bottom-5 sm:left-5 sm:w-[42%]"
-        >
-          <Picture
-            src={district}
-            formats={['avif', 'webp']}
-            fallbackFormat="jpg"
-            widths={[320, 480, 720]}
-            sizes="(min-width: 1024px) 22vw, 42vw"
-            alt="Avenida entre edificios de oficinas, con estelas de luz azul sobre el pavimento."
-            loading="eager"
-            class="aspect-[16/10] w-full object-cover"
-          />
-        </div>
       </figure>
     </div>
   </section>
@@ -133,16 +127,16 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
       {
         title: 'Academia',
         description:
-          'Investigación doctoral sobre el impacto económico y organizativo de los LLMs. Publicaciones, docencia universitaria y trayectoria hacia la acreditación académica en España.',
+          'Investigación doctoral sobre el impacto económico y organizativo de los LLMs, publicaciones y docencia universitaria de posgrado.',
         icon: 'tabler:school',
         callToAction: { text: 'Investigación y docencia', href: getPermalink('/academia') },
       },
       {
         title: 'Desarrollo',
         description:
-          'Prototipos en Astro y Cloudflare Workers, publicados cuando el repositorio es público. El trabajo interno de docencia no se enlaza.',
+          'Demos y prototipos sobre Cloudflare Workers: juegos, herramientas educativas y experimentos con IA, con el código abierto.',
         icon: 'tabler:code',
-        callToAction: { text: 'Repositorios', href: getPermalink('/developer') },
+        callToAction: { text: 'Ver proyectos', href: getPermalink('/developer') },
       },
     ]}
   />
@@ -160,8 +154,8 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
           Comparative Analysis of Clinical Reasoning and Knowledge Application
         </h3>
         <p class="mt-4 max-w-3xl leading-relaxed text-muted">
-          Análisis comparativo del razonamiento clínico y de la aplicación de conocimiento. Carlos Luengo Vera figura
-          como primer autor. El listado completo de coautores está en Academia.
+          Comparativa de 22 modelos de IA generativa en el examen MIR 2024/2025: razonamiento clínico, preguntas con
+          imagen y aplicación del conocimiento. Carlos Luengo Vera es el primer autor.
         </p>
         <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button variant="primary" text="Ver en Academia" href={getPermalink('/academia')} icon="tabler:arrow-right" />
@@ -173,73 +167,65 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
   </section>
 
   <BlogLatestPosts
-    title="Últimas notas"
-    information="Textos sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre industria y universidad."
-    linkText="Archivo del blog"
+    title="Últimas entradas del blog"
+    information="Inteligencia artificial aplicada, infraestructura cloud y lo que ocurre entre la industria y la universidad."
+    linkText="Ver todas las entradas"
     linkUrl={getBlogPermalink()}
     count={3}
     excludeCategory="proyectos"
   />
 
   <section id="desarrollo" class="relative not-prose scroll-mt-[72px]">
-    <div class="mx-auto max-w-6xl px-4 py-4 md:px-6 md:pb-8">
-      <p class="aw-eyebrow">Código público</p>
-      <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">Desarrollo</h2>
+    <div class="mx-auto max-w-6xl px-4 py-4 sm:px-6 md:pb-8">
+      <p class="aw-eyebrow">Proyectos</p>
+      <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">
+        Demos en producción
+      </h2>
       <p class="mt-3 max-w-2xl leading-relaxed text-muted">
-        Tres repositorios que pueden citarse con precisión. El resto del código público está en GitHub; el trabajo
-        interno no se enlaza.
+        Juegos, herramientas y prototipos desplegados en Cloudflare Workers, con el código en GitHub.
       </p>
-      <ul class="mt-8 grid gap-4 md:grid-cols-3">
-        <li>
-          <a
-            class="aw-card flex h-full flex-col p-6 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            href="https://github.com/Carluve/carlosluengo-com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h3 class="font-heading text-xl font-medium text-heading">carlosluengo.com</h3>
-            <p class="mt-2 text-sm leading-relaxed text-muted">
-              Este sitio: páginas estáticas con Astro y Tailwind, publicadas en Cloudflare Workers; la media se sirve
-              desde R2.
-            </p>
-          </a>
-        </li>
-        <li>
-          <a
-            class="aw-card flex h-full flex-col p-6 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            href="https://github.com/Carluve/FocAIRemover"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h3 class="font-heading text-xl font-medium text-heading">FocAIRemover</h3>
-            <p class="mt-2 text-sm leading-relaxed text-muted">
-              Prototipo experimental en Cloudflare Workers para marcas de procedencia de IA que pueden verificarse. El
-              repositorio lo presenta como investigación, no como producto.
-            </p>
-          </a>
-        </li>
-        <li>
-          <a
-            class="aw-card flex h-full flex-col p-6 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            href="https://github.com/Carluve/blog-astronano"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h3 class="font-heading text-xl font-medium text-heading">Astro Nano</h3>
-            <p class="mt-2 text-sm leading-relaxed text-muted">
-              Bifurcación del tema Astro Nano. Es un experimento de presentación; el sitio principal es este.
-            </p>
-          </a>
-        </li>
+      <ul class="mt-8 grid gap-5 md:grid-cols-3">
+        {
+          featured.map((p) => (
+            <li>
+              <a
+                class="aw-card aw-spotlight aw-reveal group flex h-full flex-col overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                href={`${getPermalink('/developer')}#${p.slug}`}
+              >
+                {p.image ? (
+                  <Image
+                    src={p.image}
+                    alt=""
+                    class="aspect-[16/10] w-full border-b border-line object-cover object-top"
+                    widths={[400, 800]}
+                    width={800}
+                    height={500}
+                    sizes="(min-width: 768px) 360px, 100vw"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div
+                    class="aw-cover flex aspect-[16/10] items-center justify-center border-b border-line"
+                    style="--cover-x1:20%;--cover-y1:20%;--cover-x2:80%;--cover-y2:90%;--cover-hue:216"
+                  >
+                    <span class="font-heading text-2xl font-medium text-primary/70 dark:text-sky-200/80">
+                      {p.title}
+                    </span>
+                  </div>
+                )}
+                <div class="flex flex-1 flex-col p-5">
+                  <h3 class="font-heading text-xl font-medium text-heading group-hover:text-link">{p.title}</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-muted">{p.description}</p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <GithubActivity compact />
       <div class="mt-6">
-        <Button
-          variant="tertiary"
-          class="px-0"
-          text="Toda la sección de desarrollo"
-          href={getPermalink('/developer')}
-        />
+        <Button variant="tertiary" text="Ver todos los proyectos" href={getPermalink('/developer')} />
       </div>
     </div>
   </section>
@@ -259,10 +245,9 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
       },
     ]}
   >
-    <Fragment slot="title">Correspondencia</Fragment>
+    <Fragment slot="title">Hablemos</Fragment>
     <Fragment slot="subtitle">
-      Para consultas académicas, colaboraciones o asuntos profesionales relacionados con Cloudflare, la vía es la página
-      de contacto o LinkedIn. Este sitio no sustituye a los canales institucionales.
+      Colaboraciones académicas, charlas, docencia o proyectos con Cloudflare: escríbeme y te respondo.
     </Fragment>
   </CallToAction>
 </Layout>

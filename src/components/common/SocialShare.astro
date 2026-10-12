@@ -11,76 +11,51 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
 ---
 
 <aw-social-share class={className}>
-  <span class="align-super font-bold text-slate-500 dark:text-slate-400">Compartir:</span>
+  <span class="mr-1 text-sm font-medium text-muted">Compartir:</span>
   <button
     type="button"
-    class="ml-2 rtl:ml-0 rtl:mr-2"
+    class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
     title="Compartir en X"
     aria-label="Compartir en X"
     data-aw-social-share="twitter"
     data-aw-url={url}
     data-aw-text={text}
-    ><Icon
-      name="tabler:brand-x"
-      class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-    />
+    ><Icon name="tabler:brand-x" class="h-5 w-5" aria-hidden="true" />
   </button>
   <button
     type="button"
-    class="ml-2 rtl:ml-0 rtl:mr-2"
-    title="Compartir en Facebook"
-    aria-label="Compartir en Facebook"
-    data-aw-social-share="facebook"
-    data-aw-url={url}
-    ><Icon
-      name="tabler:brand-facebook"
-      class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-    />
-  </button>
-  <button
-    type="button"
-    class="ml-2 rtl:ml-0 rtl:mr-2"
+    class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
     title="Compartir en LinkedIn"
     aria-label="Compartir en LinkedIn"
     data-aw-social-share="linkedin"
     data-aw-url={url}
     data-aw-text={text}
-    ><Icon
-      name="tabler:brand-linkedin"
-      class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-    />
+    ><Icon name="tabler:brand-linkedin" class="h-5 w-5" aria-hidden="true" />
   </button>
   <button
     type="button"
-    class="ml-2 rtl:ml-0 rtl:mr-2"
+    class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
     title="Compartir en WhatsApp"
     aria-label="Compartir en WhatsApp"
     data-aw-social-share="whatsapp"
     data-aw-url={url}
     data-aw-text={text}
-    ><Icon
-      name="tabler:brand-whatsapp"
-      class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-    />
+    ><Icon name="tabler:brand-whatsapp" class="h-5 w-5" aria-hidden="true" />
   </button>
   <button
     type="button"
-    class="ml-2 rtl:ml-0 rtl:mr-2"
+    class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
     title="Compartir por correo"
     aria-label="Compartir por correo"
     data-aw-social-share="mail"
     data-aw-url={url}
     data-aw-text={text}
-    ><Icon
-      name="tabler:mail"
-      class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
-    />
+    ><Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
   </button>
 </aw-social-share>
 
 <script>
   const SHARE_URLS: Record<string, (url: string, text: string) => string> = {
-    facebook: (url) => `https://www.facebook.com/sharer.php?u=${url}`,
     twitter: (url, text) => `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
     linkedin: (url, text) => `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`,
     whatsapp: (_url, text) => `https://wa.me/?text=${text}%20${_url}`,
@@ -114,6 +89,8 @@ const { text, url, class: className = 'inline-block' } = Astro.props;
 
 <style>
   aw-social-share {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
 </style>

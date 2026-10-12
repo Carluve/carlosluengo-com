@@ -1,23 +1,22 @@
 ---
 publishDate: 2025-11-26T00:00:00Z
 title: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
-excerpt: 'I recently deployed a small demo app using Cloudflare Workers at 👉 https://cloudflare.carlosluengo.es and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and…'
+excerpt: 'I deployed a small demo app on Cloudflare Workers, and it reminded me why I enjoy building on this platform: it’s fast, global, minimalistic and opinionated in the right ways.'
 image: 'media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png'
 imageAlt: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
 category: 'Cloudflare'
 tags:
-  - 'Technology'
-  - 'Web'
-  - 'Cloudflare'
-  - 'Workers'
-  - 'Serverless'
-  - 'Edge Computing'
-  - 'Web Development'
+  - 'technology'
+  - 'web'
+  - 'cloudflare'
+  - 'workers'
+  - 'serverless'
+  - 'edge computing'
 ---
 
-I recently deployed a small demo app using **Cloudflare Workers** at  
-👉 **[https://cloudflare.carlosluengo.es](https://cloudflare.carlosluengo.es)**  
-and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and opinionated in the right ways.
+> **Update:** the demo at `cloudflare.carlosluengo.es` is no longer online. The walkthrough below still applies.
+
+I recently deployed a small demo app using **Cloudflare Workers**, and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and opinionated in the right ways.
 
 Here’s my personal take on what Workers are, how they work, how to use them, and where they shine (or don’t).
 
@@ -44,9 +43,7 @@ In short:
 
 ## My Demo App (Deployed on Workers)
 
-I built a tiny interactive demo hosted here:
-
-👉 **[https://cloudflare.carlosluengo.es](https://cloudflare.carlosluengo.es)**
+I built a tiny interactive demo, hosted at `cloudflare.carlosluengo.es` while it was online.
 
 It’s powered entirely by:
 
@@ -208,5 +205,3 @@ For heavy compute or ecosystem-specific libraries, it’s not the right tool—a
 If you want to experience “global-first development” for yourself, deploy a 20-line Worker, point a domain at it, and watch it go live everywhere instantly.
 
 That moment—the first request hitting a Worker running close to you—is what sold me.
-
-👉 **[https://cloudflare.carlosluengo.es](https://cloudflare.carlosluengo.es)**

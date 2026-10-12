@@ -6,14 +6,12 @@ image: 'media:blog/finanzsim/finanzsim2026_01.png'
 imageAlt: 'Meet FinanzSim: An Educational Financial Management Simulator'
 category: 'IA'
 tags:
-  - 'AI'
+  - 'ai'
   - 'education'
   - 'finance'
   - 'project'
-  - 'FinanzSim'
-  - 'Simulation'
-  - 'EdTech'
-  - 'Finance'
+  - 'finanzsim'
+  - 'simulation'
 ---
 
 Meet FinanzSim: My Educational Financial Management Simulator
@@ -27,8 +25,6 @@ _An AI-powered web app I built to help business students master financial concep
 **FinanzSim** is an interactive web-based simulator designed specifically for first-year Business Studies students. The application allows learners to experience the complexities of managing a company's finances across multiple years, making strategic decisions and observing their real-time impact on key financial indicators.
 
 Think of it as a sandbox where students can safely experiment with financial strategies, learn from their mistakes, and receive instant AI-generated feedback without any real-world consequences.
-
-![Pantalla inicial de FinanzSim](media:blog/finanzsim/finanzsim2026_01.png)
 
 ---
 

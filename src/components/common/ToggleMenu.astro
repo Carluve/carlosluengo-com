@@ -2,15 +2,25 @@
 export interface Props {
   label?: string;
   class?: string;
+  /** id of the menu this button shows and hides (aria-controls). */
+  controls?: string;
 }
 
 const {
   label = 'Abrir el menú',
+  controls,
   class: className = 'flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group',
 } = Astro.props;
 ---
 
-<button type="button" class={className} aria-label={label} aria-expanded="false" data-aw-toggle-menu>
+<button
+  type="button"
+  class={className}
+  aria-label={label}
+  aria-expanded="false"
+  aria-controls={controls}
+  data-aw-toggle-menu
+>
   <span class="sr-only">{label}</span>
   <slot>
     <span

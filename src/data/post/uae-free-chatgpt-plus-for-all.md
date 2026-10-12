@@ -1,23 +1,18 @@
 ---
 publishDate: 2025-05-27T00:00:00Z
 title: "UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
-excerpt: "🇦🇪 UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
-image: 'media:blog/uae-free-chatgpt-plus-for-all/202505_01uae.png'
+excerpt: 'The UAE is set to become the first country to give its whole population free access to ChatGPT Plus, through a partnership between the government and OpenAI. What it includes, why it matters and what it means for national AI access.'
+image: 'media:blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt.png'
 imageAlt: "UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
 category: 'IA'
 tags:
-  - 'AI'
+  - 'ai'
   - 'policy'
   - 'innovation'
   - 'technology'
-  - 'ChatGPT Plus'
-  - 'UAE'
-  - 'AI Access'
-  - 'Digital Literacy'
-  - 'Stargate UAE'
+  - 'chatgpt plus'
+  - 'uae'
 ---
-
-🇦🇪 UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access
 
 The United Arab Emirates (UAE) is set to become the first country to provide its entire population with free access to ChatGPT Plus, OpenAI's premium AI chatbot service. This initiative is part of a broader partnership between the UAE government and OpenAI, aiming to enhance digital literacy and innovation across the nation.
 

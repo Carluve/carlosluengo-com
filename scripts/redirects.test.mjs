@@ -35,24 +35,31 @@ test('fragment and trailing slash collapse to one encoded path', () => {
 test('encoded and unencoded spaces and accents share one key', () => {
   const encoded = redirectKey('/Blog/2025/IA%20ag%C3%A9ntica');
   const decoded = redirectKey('/Blog/2025/IA agéntica');
-  const lowerHex = redirectKey('/Blog/2025/IA%20ag%c3%a9ntica/');
+  const lowerHex = redirectKey('/Blog/2025/IA%20ag%c3%a9ntica');
   const composed = redirectKey('/blog/2025/ia age\u0301ntica');
   assert.equal(encoded, decoded);
   assert.equal(encoded, lowerHex);
   assert.equal(encoded, composed);
-  assert.equal(canonicalSource('/Blog/2025/IA agéntica/'), '/Blog/2025/IA%20ag%C3%A9ntica');
+  assert.equal(canonicalSource('/Blog/2025/IA agéntica/'), '/Blog/2025/IA%20ag%C3%A9ntica/');
 });
 
-test('case and trailing slash collapse, keeping the first rule', () => {
-  const input = ['/Blog/Post /blog/post 301', '/blog/post/ /blog/post 301', ''].join('\n');
+test('case collapses, keeping the first rule', () => {
+  const input = ['/Blog/Post /blog/post/ 301', '/blog/post /blog/post/ 301', ''].join('\n');
   const result = analyzeRedirects(input);
-  assert.equal(result.text, '/Blog/Post /blog/post 301\n');
+  assert.equal(result.text, '/Blog/Post /blog/post/ 301\n');
   assert.equal(checkRedirects(input).length, 1);
   assert.match(checkRedirects(input)[0].message, /Duplicate rule for path \/Blog\/Post/);
 });
 
+test('a trailing slash is a separate path, so both forms are kept', () => {
+  const input = ['/posts/x /blog/x/ 301', '/posts/x/ /blog/x/ 301', ''].join('\n');
+  const result = analyzeRedirects(input);
+  assert.equal(result.kept.length, 2);
+  assert.deepEqual(checkRedirects(input), []);
+});
+
 test('a repeated path with a different target is a conflict', () => {
-  const input = ['/old /blog/a 301', '/old/ /blog/b 302', ''].join('\n');
+  const input = ['/old /blog/a 301', '/OLD /blog/b 302', ''].join('\n');
   const result = analyzeRedirects(input);
   assert.equal(result.fatal.length, 1);
   assert.match(result.fatal[0].message, /line 1 points to \/blog\/a 301/);
@@ -97,7 +104,8 @@ test('plus signs stay literal and comments are preserved', () => {
     '',
   ].join('\n');
   const result = analyzeRedirects(input);
-  assert.equal(result.text, '# header\n/Proyectos/Arkanoid%20C++%20a%20TypeScript /blog/arkanoid-c-a-typescript 301\n');
+  assert.equal(result.text, input);
+  assert.equal(result.kept[0].canonical, '/Proyectos/Arkanoid%20C++%20a%20TypeScript');
   assert.deepEqual(checkRedirects(result.text), []);
 });
 
@@ -126,7 +134,7 @@ test('check-dist fails on a duplicate redirect and on a file over 20 MiB', () =>
   assert.equal(MAX_ASSET_BYTES, 20 * 1024 * 1024);
   const root = mkdtempSync(join(tmpdir(), 'redirects-'));
   try {
-    writeFileSync(join(root, '_redirects'), '/old /blog/a 301\n/old/ /blog/a 301\n');
+    writeFileSync(join(root, '_redirects'), '/old /blog/a 301\n/OLD /blog/a 301\n');
     writeFileSync(join(root, 'big.bin'), Buffer.alloc(200));
     const errors = checkDist(root, { maxAssetBytes: 100 });
     assert.equal(

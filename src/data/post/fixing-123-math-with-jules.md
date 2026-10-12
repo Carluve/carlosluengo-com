@@ -2,20 +2,19 @@
 publishDate: 2025-05-25T00:00:00Z
 title: 'Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App'
 excerpt: 'In this post, I share how I used Jules, Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, 1-2-3 Math, had various issues—broken buttons, language-switching…'
-image: 'media:blog/fixing-123-math-with-jules/202505_02jules.png'
+image: 'media:blog/fixing-123-math-with-jules/cover-202505_01jules.png'
 imageAlt: 'Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App'
 category: 'IA'
 tags:
-  - 'AI'
+  - 'ai'
   - 'development'
-  - 'Google'
-  - 'JavaScript'
-  - 'Jules'
-  - 'AI Coding'
-  - 'Debugging'
+  - 'google'
+  - 'javascript'
+  - 'jules'
+  - 'ai coding'
 ---
 
-In this post, I share how I used [Jules](https://jules.google), Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, [1-2-3 Math](https://www.carlosluengo.com/portfolio/2025-05-123math/), had various issues—broken buttons, language-switching bugs, and general logic problems. I decided to test Jules as a dev assistant and was positively surprised.
+In this post, I share how I used [Jules](https://jules.google), Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, [1-2-3 Math](/blog/123-math/), had various issues—broken buttons, language-switching bugs, and general logic problems. I decided to test Jules as a dev assistant and was positively surprised.
 
 ## 🤖 What is Jules?
 
@@ -68,7 +67,7 @@ Each step was tracked, executed, and documented. In the final commit, Jules:
 
 ## 🔚 Conclusion
 
-Jules isn’t just a toy; it’s a powerful productivity multiplier for developers. For projects that are small, experimental, or stuck in debugging limbo, it feels like having a reliable junior dev always available. For me, it helped bring [1-2-3 Math](https://www.carlosluengo.com/portfolio/2025-05-123math/) back to life.
+Jules isn’t just a toy; it’s a powerful productivity multiplier for developers. For projects that are small, experimental, or stuck in debugging limbo, it feels like having a reliable junior dev always available. For me, it helped bring [1-2-3 Math](/blog/123-math/) back to life.
 
 I’ll definitely keep experimenting with Jules—especially for prototype-level work or legacy bugs.
 

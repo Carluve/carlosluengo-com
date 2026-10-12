@@ -7,6 +7,7 @@ import PostCover from '~/components/blog/PostCover.astro';
 
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
+import { getFormattedDate } from '~/utils/utils';
 
 export interface Props {
   post: Post;
@@ -60,6 +61,10 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       }
     </h3>
 
-    <p class="mt-2 text-sm leading-relaxed text-muted">{post.excerpt}</p>
+    {post.excerpt && <p class="mt-2 text-sm leading-relaxed text-muted">{post.excerpt}</p>}
+    <p class="mt-auto pt-4 text-xs text-muted">
+      <time datetime={post.publishDate.toISOString()}>{getFormattedDate(post.publishDate)}</time>
+      {post.readingTime && <span> · {post.readingTime} min de lectura</span>}
+    </p>
   </div>
 </article>

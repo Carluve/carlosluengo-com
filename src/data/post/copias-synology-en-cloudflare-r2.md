@@ -10,8 +10,6 @@ tags:
   - 'infraestructura'
 ---
 
-![Backing Up Synology to Cloudflare R2: A Practical Guide for Developers](media:blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png)
-
 ## Why Cloudflare R2 is a strong target for Synology backups
 
 From a developer and operator perspective, R2 offers several concrete benefits:

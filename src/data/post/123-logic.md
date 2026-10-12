@@ -2,14 +2,14 @@
 publishDate: 2025-05-18T00:00:00Z
 title: '1-2-3 Logic: Visual Puzzles for Early Learners'
 excerpt: 'An educational web game that builds logical thinking and visual reasoning with short, emoji-based pattern puzzles.'
-image: 'media:blog/123-logic/1-2-3-logic-promo.png'
-imageAlt: '1-2-3 Logic promotional artwork'
+image: 'media:blog/123-logic/202505_logic.png'
+imageAlt: '1-2-3 Logic home screen'
 category: 'Proyectos'
 tags:
   - 'education'
   - 'react'
   - 'game'
-  - '1-2-3 EDU'
+  - '1-2-3 edu'
 ---
 
 **Project type:** Educational logic game
@@ -35,7 +35,7 @@ The interface is clean and the challenges get harder step by step. Children comp
 
 ## Screenshots
 
-![Home screen with access to the game and to progress](media:blog/123-logic/202505_logic.png)
+![1-2-3 Logic promotional artwork](media:blog/123-logic/1-2-3-logic-promo.png)
 
 ![A pattern recognition question](media:blog/123-logic/202505_01logic.png)
 
@@ -48,6 +48,6 @@ The interface is clean and the challenges get harder step by step. Children comp
 
 ## Try it
 
-[Play at logic.carluve.com](https://logic.carluve.com)
+[Play at 1-2-3-logic.vercel.app](https://1-2-3-logic.vercel.app)
 
 1-2-3 Logic is part of **1-2-3 EDU**, together with [1-2-3 Math](/blog/123-math).

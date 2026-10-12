@@ -12,6 +12,10 @@ export interface Props {
 }
 
 const { tags, class: className = 'text-sm', title = undefined, isCategory = false } = Astro.props;
+
+// Same pill as the category chips in BlogOverview, one size down.
+const chipClass =
+  'inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted';
 ---
 
 {
@@ -22,15 +26,18 @@ const { tags, class: className = 'text-sm', title = undefined, isCategory = fals
           {title}
         </span>
       )}
-      <ul class={className}>
+      <ul class:list={['flex list-none flex-wrap gap-2', className]}>
         {tags.map((tag) => (
-          <li class="mb-2 mr-2 inline-block rounded-full border border-line bg-surface px-2.5 py-0.5 text-xs font-medium rtl:ml-2 rtl:mr-0">
+          <li>
             {!APP_BLOG?.tag?.isEnabled ? (
-              tag.title
+              <span class={chipClass}>{tag.title}</span>
             ) : (
               <a
                 href={getPermalink(tag.slug, isCategory ? 'category' : 'tag')}
-                class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200"
+                class:list={[
+                  chipClass,
+                  'transition-colors duration-200 hover:border-primary/40 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none',
+                ]}
               >
                 {tag.title}
               </a>

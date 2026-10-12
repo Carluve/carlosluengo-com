@@ -30,9 +30,18 @@ const breadcrumbs = [
     : [{ text: category.title }]),
 ];
 
+const descriptions: Record<string, string> = {
+  ia: 'Inteligencia artificial aplicada: modelos de lenguaje, asistentes de código y adopción de IA en empresas y universidades.',
+  cloudflare: 'Cloudflare en la práctica: Workers, Zero Trust, R2 y casos reales de despliegue en el borde.',
+  proyectos: 'Proyectos propios explicados paso a paso: juegos educativos, herramientas y demos sobre Workers.',
+  academia: 'Investigación y vida académica: evaluación de LLMs, publicación científica y acceso abierto.',
+  herramientas: 'Herramientas que uso y pruebo: navegadores con IA, editores y utilidades para el día a día.',
+  charlas: 'Charlas y comunicaciones en congresos y jornadas sobre IA y educación.',
+};
+
 const metadata = {
   title: `${category.title}${currentPage > 1 ? ` — Página ${currentPage}` : ''}`,
-  description: `Textos de la categoría ${category.title}.`,
+  description: descriptions[category.slug] ?? `Entradas de la categoría ${category.title}.`,
   robots: {
     index: blogCategoryRobots?.index,
     follow: blogCategoryRobots?.follow,
@@ -42,7 +51,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Breadcrumbs bar items={breadcrumbs} />
-  <section class="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+  <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
     <Headline>{category.title}</Headline>
     <BlogOverview active={category.slug} />
     <BlogList posts={page.data} />
