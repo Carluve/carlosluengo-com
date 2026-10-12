@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "EmDash"
-excerpt: "CMS full-stack en TypeScript con Astro y Cloudflare, diseñado con una arquitectura de plugins aislados."
-category: "Proyectos"
+title: 'EmDash'
+excerpt: 'CMS full-stack en TypeScript con Astro y Cloudflare, diseñado con una arquitectura de plugins aislados.'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "cms"
+  - 'proyectos'
+  - 'cms'
 ---
 
 CMS full-stack en TypeScript construido con Astro y Cloudflare.

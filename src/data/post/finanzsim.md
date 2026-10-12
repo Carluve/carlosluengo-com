@@ -1,23 +1,24 @@
 ---
 publishDate: 2026-01-01T00:00:00Z
-title: "Meet FinanzSim: An Educational Financial Management Simulator"
-excerpt: "An AI-powered web app built to help business students master financial concepts through hands-on simulation."
-image: "media:blog/finanzsim/finanzsim2026_01.png"
-imageAlt: "Meet FinanzSim: An Educational Financial Management Simulator"
-category: "AI"
+title: 'Meet FinanzSim: An Educational Financial Management Simulator'
+excerpt: 'An AI-powered web app built to help business students master financial concepts through hands-on simulation.'
+image: 'media:blog/finanzsim/finanzsim2026_01.png'
+imageAlt: 'Meet FinanzSim: An Educational Financial Management Simulator'
+category: 'AI'
 tags:
-  - "AI"
-  - "education"
-  - "finance"
-  - "project"
-  - "FinanzSim"
-  - "Simulation"
-  - "EdTech"
-  - "Finance"
+  - 'AI'
+  - 'education'
+  - 'finance'
+  - 'project'
+  - 'FinanzSim'
+  - 'Simulation'
+  - 'EdTech'
+  - 'Finance'
 ---
+
 Meet FinanzSim: My Educational Financial Management Simulator
 
-*An AI-powered web app I built to help business students master financial concepts through hands-on simulation.*
+_An AI-powered web app I built to help business students master financial concepts through hands-on simulation._
 
 ---
 
@@ -56,17 +57,17 @@ I built FinanzSim with several clear goals in mind:
 
 For each simulated year, you'll make key business decisions:
 
-| Decision | Description |
-|----------|-------------|
-| **Units Sold** | How many units of product you expect to sell |
-| **Unit Price** | Your selling price per unit |
-| **Variable Costs** | Cost per unit produced |
-| **Fixed Costs** | Overheads that don't change with production volume |
-| **New Investment** | Capital expenditure on assets |
-| **New Loans** | Additional debt financing |
-| **New Equity** | Fresh capital injection |
-| **Collection Days** | How long customers take to pay you |
-| **Payment Days** | How long you take to pay suppliers |
+| Decision            | Description                                        |
+| ------------------- | -------------------------------------------------- |
+| **Units Sold**      | How many units of product you expect to sell       |
+| **Unit Price**      | Your selling price per unit                        |
+| **Variable Costs**  | Cost per unit produced                             |
+| **Fixed Costs**     | Overheads that don't change with production volume |
+| **New Investment**  | Capital expenditure on assets                      |
+| **New Loans**       | Additional debt financing                          |
+| **New Equity**      | Fresh capital injection                            |
+| **Collection Days** | How long customers take to pay you                 |
+| **Payment Days**    | How long you take to pay suppliers                 |
 
 ![Panel de decisiones anuales](media:blog/finanzsim/finanzsim2026_03.png)
 
@@ -110,31 +111,34 @@ Once you complete all simulation years, you can generate a **comprehensive execu
 I built FinanzSim using a modern, performant tech stack:
 
 ### Frontend
-| Technology | Purpose |
-|------------|---------|
-| **React 19** | UI component library with hooks for state management |
-| **TypeScript** | Type-safe development with enhanced IDE support |
-| **Recharts** | Beautiful, responsive charts for data visualisation |
-| **Vite** | Lightning-fast development server and build tool |
+
+| Technology     | Purpose                                              |
+| -------------- | ---------------------------------------------------- |
+| **React 19**   | UI component library with hooks for state management |
+| **TypeScript** | Type-safe development with enhanced IDE support      |
+| **Recharts**   | Beautiful, responsive charts for data visualisation  |
+| **Vite**       | Lightning-fast development server and build tool     |
 
 ### Backend & AI
-| Technology | Purpose |
-|------------|---------|
-| **Cloudflare Workers** | Serverless edge computing for the API |
-| **Cloudflare Pages** | Global CDN deployment |
-| **Google Gemini API** | AI-powered financial analysis and feedback generation |
+
+| Technology             | Purpose                                               |
+| ---------------------- | ----------------------------------------------------- |
+| **Cloudflare Workers** | Serverless edge computing for the API                 |
+| **Cloudflare Pages**   | Global CDN deployment                                 |
+| **Google Gemini API**  | AI-powered financial analysis and feedback generation |
 
 ### Deployment
-| Technology | Purpose |
-|------------|---------|
+
+| Technology   | Purpose                                         |
+| ------------ | ----------------------------------------------- |
 | **Wrangler** | Cloudflare's CLI for managing Workers and Pages |
-| **Git** | Version control |
+| **Git**      | Version control                                 |
 
 ---
 
 ## About the Project
 
-FinanzSim is a **research pet project** developed in collaboration with the *Faculty of Economics, Business and Tourism* at the **University of Alcalá (UAH)** in Spain.
+FinanzSim is a **research pet project** developed in collaboration with the _Faculty of Economics, Business and Tourism_ at the **University of Alcalá (UAH)** in Spain.
 
 The aim is to explore how AI-enhanced interactive simulations can improve financial literacy amongst university students, making complex concepts more approachable and engaging.
 

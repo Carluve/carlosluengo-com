@@ -1,13 +1,13 @@
 ---
 publishDate: 2026-02-22T00:00:00Z
-title: "Backing Up Synology to Cloudflare R2: A Practical Guide for Developers"
-excerpt: "Configuring Synology Hyper Backup against Cloudflare R2 for cheap, egress-free, testable backups."
-image: "media:blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png"
-imageAlt: "Backing Up Synology to Cloudflare R2: A Practical Guide for Developers"
-category: "Cloudflare"
+title: 'Backing Up Synology to Cloudflare R2: A Practical Guide for Developers'
+excerpt: 'Configuring Synology Hyper Backup against Cloudflare R2 for cheap, egress-free, testable backups.'
+image: 'media:blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png'
+imageAlt: 'Backing Up Synology to Cloudflare R2: A Practical Guide for Developers'
+category: 'Cloudflare'
 tags:
-  - "cloudflare"
-  - "infraestructura"
+  - 'cloudflare'
+  - 'infraestructura'
 ---
 
 ![Backing Up Synology to Cloudflare R2: A Practical Guide for Developers](media:blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png)
@@ -130,7 +130,6 @@ This setup encourages a healthier model:
 Setup is quick, S3 compatibility keeps tooling familiar, and no egress fees remove barriers to proper recovery testing. Start with one critical folder set, run the first backup, then perform a real restore test within the same week. Once successful, scale gradually across remaining NAS workloads.
 
 A backup is only real when restore is boring. This setup gets you much closer to that outcome.
-
 
 ## También te puede interesar
 

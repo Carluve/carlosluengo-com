@@ -1,16 +1,17 @@
 ---
 publishDate: 2025-05-08T00:00:00Z
-title: "Participation at the 8th ISCBE Macedonia: Optimizing AI in Medical Education"
-excerpt: "On May 8, 2025, I had the honor of participating in the 8th International Scientific Conference on Business and Economics (ISCBE), held in Macedonia. The conference brought together experts and researchers from…"
-category: "conference"
+title: 'Participation at the 8th ISCBE Macedonia: Optimizing AI in Medical Education'
+excerpt: 'On May 8, 2025, I had the honor of participating in the 8th International Scientific Conference on Business and Economics (ISCBE), held in Macedonia. The conference brought together experts and researchers from…'
+category: 'conference'
 tags:
-  - "conference"
-  - "AI"
-  - "education"
-  - "Conference"
-  - "Medical Education"
-  - "Large Language Models"
+  - 'conference'
+  - 'AI'
+  - 'education'
+  - 'Conference'
+  - 'Medical Education'
+  - 'Large Language Models'
 ---
+
 On May 8, 2025, I had the honor of participating in the **8th International Scientific Conference on Business and Economics (ISCBE)**, held in Macedonia. The conference brought together experts and researchers from around the world to discuss the latest advances in information systems, data science, and artificial intelligence.
 
 ### Track: Information Systems, Data Science and Artificial Intelligence
@@ -23,6 +24,7 @@ I presented my work in the session dedicated to AI and education, specifically:
 **Technologies:** Artificial Intelligence, Large Language Models, Medical Education
 
 #### Abstract
+
 In this talk, I analyzed the optimization of artificial intelligence in medical education, focusing on the impact and cost-benefit analysis of large language models in the MIR examination. The session covered results, challenges, and opportunities for integrating AI into medical training, as well as recommendations for effective implementation.
 
 #### Certificate of Participation
@@ -31,4 +33,4 @@ In this talk, I analyzed the optimization of artificial intelligence in medical 
   <p>Your browser does not support PDF viewing. You can download the certificate <a href="media:files/iscbe-2025-certificate.pdf">here</a>.</p>
 </object>
 
-It was a great experience to share knowledge and connect with professionals passionate about the future of AI and education! 
+It was a great experience to share knowledge and connect with professionals passionate about the future of AI and education!

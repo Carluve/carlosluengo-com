@@ -73,9 +73,7 @@ const { post, url } = Astro.props;
       >
         {post.title}
       </h1>
-      <p
-        class="mx-auto mb-8 mt-4 max-w-3xl px-4 text-lg leading-relaxed text-pretty text-muted sm:px-6 md:text-xl"
-      >
+      <p class="mx-auto mb-8 mt-4 max-w-3xl px-4 text-lg leading-relaxed text-pretty text-muted sm:px-6 md:text-xl">
         {post.excerpt}
       </p>
 
@@ -100,9 +98,7 @@ const { post, url } = Astro.props;
         )
       }
     </header>
-    <div
-      class="aw-prose mx-auto mt-8 max-w-3xl px-6"
-    >
+    <div class="aw-prose mx-auto mt-8 max-w-3xl px-6">
       <slot />
     </div>
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">

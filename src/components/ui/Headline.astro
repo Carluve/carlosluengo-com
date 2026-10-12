@@ -31,7 +31,10 @@ const {
       )}
 
       {subtitle && (
-        <p class={twMerge('mt-3 max-w-2xl text-pretty leading-relaxed text-muted', subtitleClass)} set:html={subtitle} />
+        <p
+          class={twMerge('mt-3 max-w-2xl text-pretty leading-relaxed text-muted', subtitleClass)}
+          set:html={subtitle}
+        />
       )}
     </div>
   )

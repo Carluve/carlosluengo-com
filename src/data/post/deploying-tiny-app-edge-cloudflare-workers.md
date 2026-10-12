@@ -1,19 +1,20 @@
 ---
 publishDate: 2025-11-26T00:00:00Z
-title: "Deploying a Tiny App at the Edge with Cloudflare Workers: My Take"
-excerpt: "I recently deployed a small demo app using Cloudflare Workers at 👉 https://cloudflare.carlosluengo.es and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and…"
-image: "media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png"
-imageAlt: "Deploying a Tiny App at the Edge with Cloudflare Workers: My Take"
-category: "Technology"
+title: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
+excerpt: 'I recently deployed a small demo app using Cloudflare Workers at 👉 https://cloudflare.carlosluengo.es and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and…'
+image: 'media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png'
+imageAlt: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
+category: 'Technology'
 tags:
-  - "Technology"
-  - "Web"
-  - "Cloudflare"
-  - "Workers"
-  - "Serverless"
-  - "Edge Computing"
-  - "Web Development"
+  - 'Technology'
+  - 'Web'
+  - 'Cloudflare'
+  - 'Workers'
+  - 'Serverless'
+  - 'Edge Computing'
+  - 'Web Development'
 ---
+
 I recently deployed a small demo app using **Cloudflare Workers** at  
 👉 **[https://cloudflare.carlosluengo.es](https://cloudflare.carlosluengo.es)**  
 and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and opinionated in the right ways.
@@ -26,9 +27,9 @@ Here’s my personal take on what Workers are, how they work, how to use them, a
 
 Cloudflare Workers let you deploy serverless code that runs **directly on Cloudflare’s global edge network**—not in a central region. They run inside **V8 isolates**, meaning:
 
-- very low cold-start times  
-- tight resource constraints  
-- high performance for I/O-heavy workloads  
+- very low cold-start times
+- tight resource constraints
+- high performance for I/O-heavy workloads
 - strong sandboxing
 
 Instead of provisioning containers or servers, you ship a tiny script and Cloudflare distributes it globally within seconds.
@@ -64,13 +65,13 @@ This small project is enough to showcase the full lifecycle: development, storag
 
 When a request hits your domain:
 
-1. Cloudflare routes it to the *nearest* data center.  
-2. The Worker executes inside a V8 isolate.  
+1. Cloudflare routes it to the _nearest_ data center.
+2. The Worker executes inside a V8 isolate.
 3. Your code can:
-   - inspect the request  
-   - run logic  
-   - fetch external APIs  
-   - read/write storage (KV, R2, Durable Objects)  
+   - inspect the request
+   - run logic
+   - fetch external APIs
+   - read/write storage (KV, R2, Durable Objects)
 4. You return a `Response()` object, just like the Web Fetch API.
 
 No containers, no cold Alpine images downloading, no region selection.
@@ -96,26 +97,27 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname === "/api/hello") {
+    if (url.pathname === '/api/hello') {
       return Response.json({
-        message: "Hello from the edge 👋",
+        message: 'Hello from the edge 👋',
         url: request.url,
         timestamp: new Date().toISOString(),
       });
     }
 
-    if (url.pathname === "/logo") {
-      const file = await env.MY_BUCKET.get("small_logo.png");
-      if (!file) return new Response("Not found", { status: 404 });
-      return new Response(file.body, { headers: { "Content-Type": "image/png" } });
+    if (url.pathname === '/logo') {
+      const file = await env.MY_BUCKET.get('small_logo.png');
+      if (!file) return new Response('Not found', { status: 404 });
+      return new Response(file.body, { headers: { 'Content-Type': 'image/png' } });
     }
 
-    return new Response("Demo running on Cloudflare Workers 🚀", { status: 200 });
+    return new Response('Demo running on Cloudflare Workers 🚀', { status: 200 });
   },
 };
 ```
 
 This illustrates three patterns I use often:
+
 - simple routing
 - JSON APIs
 - static asset delivery from R2
@@ -189,6 +191,7 @@ Workers force you to write small, fast, global-first applications.
 This constraint is actually liberating.
 
 You stop thinking in terms of regions, clusters, or scaling groups. You focus on:
+
 - handling requests
 - composing APIs
 - stitching edge logic

@@ -109,12 +109,16 @@ const Root = compact ? 'div' : 'section';
       ) : (
         <>
           <p class="aw-eyebrow">Perfil público</p>
-          <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">GitHub Activity</h2>
+          <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">
+            GitHub Activity
+          </h2>
           <p class="mt-3 max-w-2xl leading-relaxed text-muted">
             Calendario de contribuciones públicas del perfil Carluve durante el último año.
           </p>
           {activity && (
-            <p class="mt-4 font-heading text-2xl font-medium text-heading">{totalLabel} contribuciones en el último año</p>
+            <p class="mt-4 font-heading text-2xl font-medium text-heading">
+              {totalLabel} contribuciones en el último año
+            </p>
           )}
         </>
       )
@@ -136,51 +140,41 @@ const Root = compact ? 'div' : 'section';
             role="img"
             aria-label={summary}
           >
-            {
-              weeks.map(
-                (week, column) =>
-                  week.month && (
-                    <text
-                      class="gh-label"
+            {weeks.map(
+              (week, column) =>
+                week.month && (
+                  <text class="gh-label" x={labelWidth + column * step} y={12}>
+                    {week.month}
+                  </text>
+                )
+            )}
+            {!compact &&
+              [
+                { row: 1, text: 'L' },
+                { row: 3, text: 'X' },
+                { row: 5, text: 'V' },
+              ].map(({ row, text }) => (
+                <text class="gh-label" x={0} y={labelHeight + row * step + cell - 2}>
+                  {text}
+                </text>
+              ))}
+            {weeks.map((week, column) =>
+              week.days.map(
+                (day, row) =>
+                  day && (
+                    <rect
+                      class={`gh-${day.level}`}
                       x={labelWidth + column * step}
-                      y={12}
+                      y={labelHeight + row * step}
+                      width={cell}
+                      height={cell}
+                      rx="2"
                     >
-                      {week.month}
-                    </text>
+                      <title>{day.tip}</title>
+                    </rect>
                   )
               )
-            }
-            {
-              !compact &&
-                [
-                  { row: 1, text: 'L' },
-                  { row: 3, text: 'X' },
-                  { row: 5, text: 'V' },
-                ].map(({ row, text }) => (
-                  <text class="gh-label" x={0} y={labelHeight + row * step + cell - 2}>
-                    {text}
-                  </text>
-                ))
-            }
-            {
-              weeks.map((week, column) =>
-                week.days.map(
-                  (day, row) =>
-                    day && (
-                      <rect
-                        class={`gh-${day.level}`}
-                        x={labelWidth + column * step}
-                        y={labelHeight + row * step}
-                        width={cell}
-                        height={cell}
-                        rx="2"
-                      >
-                        <title>{day.tip}</title>
-                      </rect>
-                    )
-                )
-              )
-            }
+            )}
           </svg>
         ) : (
           <img
@@ -209,7 +203,12 @@ const Root = compact ? 'div' : 'section';
     }
 
     <p class:list={[compact ? 'mt-3' : 'mt-5']}>
-      <a class="text-sm font-medium text-link hover:underline" href={profileUrl} target="_blank" rel="noopener noreferrer">
+      <a
+        class="text-sm font-medium text-link hover:underline"
+        href={profileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         github.com/Carluve
       </a>
     </p>

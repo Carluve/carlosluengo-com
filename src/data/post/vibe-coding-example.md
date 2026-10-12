@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "Vibe Coding Example"
-excerpt: "Colección de proyectos web: tres en raya online, Snake retro y otros ejercicios de desarrollo."
-category: "Proyectos"
+title: 'Vibe Coding Example'
+excerpt: 'Colección de proyectos web: tres en raya online, Snake retro y otros ejercicios de desarrollo.'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "web"
+  - 'proyectos'
+  - 'web'
 ---
 
 Colección de proyectos web independientes.

@@ -20,7 +20,9 @@ const image = (await findImage(post.image)) as ImageMetadata | string | undefine
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class="aw-card h-full overflow-hidden motion-safe:transition motion-safe:duration-200 hover:border-primary/40 motion-reduce:transition-none">
+<article
+  class="aw-card h-full overflow-hidden motion-safe:transition motion-safe:duration-200 hover:border-primary/40 motion-reduce:transition-none"
+>
   <div class:list={['grid h-full', image ? 'md:grid-cols-[16rem_1fr]' : '']}>
     {
       image &&
@@ -57,25 +59,32 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     <div class="flex flex-col p-5 sm:p-6">
       <p class="text-sm text-muted">
         <time datetime={post.publishDate.toISOString()}>{getFormattedDate(post.publishDate)}</time>
-        {post.category && (
-          <>
-            <span aria-hidden="true"> · </span>
-            <a class="hover:text-link hover:underline" href={getPermalink(post.category.slug, 'category')}>
-              {post.category.title}
-            </a>
-          </>
-        )}
-        {post.readingTime && (
-          <>
-            <span aria-hidden="true"> · </span>
-            <span>{post.readingTime} min de lectura</span>
-          </>
-        )}
+        {
+          post.category && (
+            <>
+              <span aria-hidden="true"> · </span>
+              <a class="hover:text-link hover:underline" href={getPermalink(post.category.slug, 'category')}>
+                {post.category.title}
+              </a>
+            </>
+          )
+        }
+        {
+          post.readingTime && (
+            <>
+              <span aria-hidden="true"> · </span>
+              <span>{post.readingTime} min de lectura</span>
+            </>
+          )
+        }
       </p>
       <h2 class="mt-2 font-heading text-2xl font-medium leading-snug tracking-tight text-heading">
         {
           link ? (
-            <a class="hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" href={link}>
+            <a
+              class="hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              href={link}
+            >
               {post.title}
             </a>
           ) : (

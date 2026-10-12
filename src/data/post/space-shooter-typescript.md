@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "Space Shooter TypeScript"
-excerpt: "Juego arcade de naves implementado en TypeScript y publicado como experimento de retro gaming."
-category: "Proyectos"
+title: 'Space Shooter TypeScript'
+excerpt: 'Juego arcade de naves implementado en TypeScript y publicado como experimento de retro gaming.'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "juegos"
+  - 'proyectos'
+  - 'juegos'
 ---
 
 Juego arcade de naves implementado en TypeScript.

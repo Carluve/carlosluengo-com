@@ -1,31 +1,32 @@
 ---
 publishDate: 2025-08-20T00:00:00Z
-title: "Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide"
-excerpt: "_Diving into the world of Article Processing Charges (APCs), why publishing in high‑impact journals matters, how institutional deals can help — and what to watch out for._"
-image: "media:blog/navigating-apcs-guide/papersv2_2025.png"
-imageAlt: "Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide"
-category: "Academia"
+title: 'Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide'
+excerpt: '_Diving into the world of Article Processing Charges (APCs), why publishing in high‑impact journals matters, how institutional deals can help — and what to watch out for._'
+image: 'media:blog/navigating-apcs-guide/papersv2_2025.png'
+imageAlt: 'Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide'
+category: 'Academia'
 tags:
-  - "Academia"
-  - "PhD"
-  - "Publishing"
-  - "Open Access"
-  - "APCs"
-  - "Academic Publishing"
-  - "UAH"
-  - "Research"
+  - 'Academia'
+  - 'PhD'
+  - 'Publishing'
+  - 'Open Access'
+  - 'APCs'
+  - 'Academic Publishing'
+  - 'UAH'
+  - 'Research'
 ---
+
 _Diving into the world of Article Processing Charges (APCs), why publishing in high‑impact journals matters, how institutional deals can help — and what to watch out for._
 
-##  What Are APCs and Why Do They Matter?
+## What Are APCs and Why Do They Matter?
 
-APCs (Article Processing Charges) are fees that authors — or their institutions or funders — pay to make research articles openly accessible, either in fully open access journals or hybrid ones. While they enable public access, these costs can be quite substantial, especially for high‑prestige journals, potentially ranging from under USD 100 to over USD 3,500  [Cargo APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
+APCs (Article Processing Charges) are fees that authors — or their institutions or funders — pay to make research articles openly accessible, either in fully open access journals or hybrid ones. While they enable public access, these costs can be quite substantial, especially for high‑prestige journals, potentially ranging from under USD 100 to over USD 3,500 [Cargo APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
 
 ![Research papers illustration](media:blog/navigating-apcs-guide/papersv2_2025.png)
 
-APCs are a common funding model in professional open access publishing, but they may pose financial pressure, especially on researchers in less well‑funded contexts  [APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
+APCs are a common funding model in professional open access publishing, but they may pose financial pressure, especially on researchers in less well‑funded contexts [APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
 
-##  Why Publishing in High‑Tier Journals Is Worth It
+## Why Publishing in High‑Tier Journals Is Worth It
 
 Publishing in reputable, high‑impact journals:
 
@@ -35,18 +36,19 @@ Publishing in reputable, high‑impact journals:
 
 However, these most prestigious venues often come with steeper APCs, making **institutional agreements** and APC waivers or discounts essential tools.
 
-##  Institutional Agreements and Transformative Deals at UAH
+## Institutional Agreements and Transformative Deals at UAH
 
-The University of Alcalá (UAH) has signed **transformative agreements** with publishers, covering APCs for its researchers — a significant financial relief and support for open access publication  [oai_citation:2‡uah-es.libguides.com](https://uah-es.libguides.com/acceso_abierto/pagoapcs).
+The University of Alcalá (UAH) has signed **transformative agreements** with publishers, covering APCs for its researchers — a significant financial relief and support for open access publication [oai_citation:2‡uah-es.libguides.com](https://uah-es.libguides.com/acceso_abierto/pagoapcs).
 
-UAH also adheres to **national and European open access mandates** (e.g., LCTI 14/2011, the Berlin Declaration), emphasising repository deposit within 6–12 months post-publication  [oai_citation:3‡biblioteca.uah.es](https://biblioteca.uah.es/export/sites/biblioteca/.galleries/Galeria-Documentos-Biblioteca/Politica_institucional_acceso_abierto_UAH.pdf.
+UAH also adheres to **national and European open access mandates** (e.g., LCTI 14/2011, the Berlin Declaration), emphasising repository deposit within 6–12 months post-publication [oai_citation:3‡biblioteca.uah.es](https://biblioteca.uah.es/export/sites/biblioteca/.galleries/Galeria-Documentos-Biblioteca/Politica_institucional_acceso_abierto_UAH.pdf.
 
 ### Key Benefits for UAH Researchers:
+
 - **No out‑of‑pocket cost** for APCs under specific agreements.
 - Supports publication in prestigious hybrid or Gold‑OA journals.
 - Ensures compliance with open access laws and funder mandates.
 
-##  What to Keep in Mind When Using APC Agreements
+## What to Keep in Mind When Using APC Agreements
 
 1. **Verify your eligibility** — usually you must be affiliated with UAH (e.g., researcher, doctoral candidate).
 2. **Check the type of journal**:
@@ -57,15 +59,15 @@ UAH also adheres to **national and European open access mandates** (e.g., LCTI 1
 5. **Editorial conditions vary** — publishers may include or exclude certain journals (e.g., fully OA titles may fall outside the agreement).
 6. **Always read the fine print** — eligibility, submission periods, and specific procedures may differ across publisher deals.
 
-##  Best Practices for Doctoral Students
+## Best Practices for Doctoral Students
 
-| Tip | Why It Matters |
-|-----|----------------|
-| **Plan ahead** | Submit early if APC quotas are limited. |
-| **Use institutional tools** | UAH’s library can help identify eligible journals and guide submission. |
-| **Match prestige with mission** | Choose journals that balance impact, open access, and fit with your research goals. |
-| **Document your process** | Keep records for grant compliance or future reporting. |
-| **Deposit in repositories** | Even when APCs are covered, deposits are often mandatory for open access mandates [Biblioteca UAH](https://biblioteca.uah.es/export/sites/biblioteca/.galleries/Galeria-Documentos-Biblioteca/Politica_institucional_acceso_abierto_UAH.pdf?utm_source=chatgpt.com). |
+| Tip                             | Why It Matters                                                                                                                                                                                                                                                       |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Plan ahead**                  | Submit early if APC quotas are limited.                                                                                                                                                                                                                              |
+| **Use institutional tools**     | UAH’s library can help identify eligible journals and guide submission.                                                                                                                                                                                              |
+| **Match prestige with mission** | Choose journals that balance impact, open access, and fit with your research goals.                                                                                                                                                                                  |
+| **Document your process**       | Keep records for grant compliance or future reporting.                                                                                                                                                                                                               |
+| **Deposit in repositories**     | Even when APCs are covered, deposits are often mandatory for open access mandates [Biblioteca UAH](https://biblioteca.uah.es/export/sites/biblioteca/.galleries/Galeria-Documentos-Biblioteca/Politica_institucional_acceso_abierto_UAH.pdf?utm_source=chatgpt.com). |
 
 ---
 

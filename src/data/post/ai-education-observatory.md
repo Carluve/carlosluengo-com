@@ -1,21 +1,22 @@
 ---
 publishDate: 2025-08-28T00:00:00Z
-title: "Building a Global AI-in-Education Observatory with Manus"
-excerpt: "As a PhD student and a proud collaborator with the University of Alcalá, my academic journey has led me down a fascinating path: establishing a global observatory of Artificial Intelligence tools in education. This…"
-image: "media:blog/ai-education-observatory/manus_v1.png"
-imageAlt: "Building a Global AI-in-Education Observatory with Manus"
-category: "AI"
+title: 'Building a Global AI-in-Education Observatory with Manus'
+excerpt: 'As a PhD student and a proud collaborator with the University of Alcalá, my academic journey has led me down a fascinating path: establishing a global observatory of Artificial Intelligence tools in education. This…'
+image: 'media:blog/ai-education-observatory/manus_v1.png'
+imageAlt: 'Building a Global AI-in-Education Observatory with Manus'
+category: 'AI'
 tags:
-  - "AI"
-  - "Education"
-  - "Research"
-  - "PhD"
-  - "AI in Education"
-  - "EdTech"
-  - "Manus"
-  - "PhD Life"
-  - "UAH"
+  - 'AI'
+  - 'Education'
+  - 'Research'
+  - 'PhD'
+  - 'AI in Education'
+  - 'EdTech'
+  - 'Manus'
+  - 'PhD Life'
+  - 'UAH'
 ---
+
 As a PhD student and a proud collaborator with the University of Alcalá, my academic journey has led me down a fascinating path: establishing a global observatory of Artificial Intelligence tools in education. This isn't just another research project; it's a deep dive into how AI is reshaping learning worldwide, with a particular focus on understanding the immense potential emanating from China.
 
 In this post, I want to share this personal project, how it connects to my academic path, and how a powerful AI agent named **Manus** has become essential to my workflow.
@@ -28,7 +29,7 @@ Artificial Intelligence is rapidly reshaping education. From student-facing appl
 
 However, much of the global conversation tends to focus on the US or Europe, leaving aside the **massive innovation ecosystem in China**. I believe a true observatory must not be selective or biased—it should reflect the **global scale of transformation**. My ambition is to compile a comprehensive, categorised list of the most impactful AI tools, providing insights into their functionality, cost, and origin, with a dedicated effort to uncover cutting-edge Chinese AI solutions.
 
-![Using Manus to research](media:blog/ai-education-observatory/manus_v1.png) 
+![Using Manus to research](media:blog/ai-education-observatory/manus_v1.png)
 ---
 
 ### Manus: My Indispensable AI Collaborator
@@ -37,10 +38,10 @@ In this ambitious endeavour, I've found an invaluable partner in **Manus**. This
 
 Here's how Manus has been a game-changer:
 
--   **Automated Data Collection**: Manus efficiently navigates countless web pages, extracting crucial information about AI tools, their categories, countries of origin, and pricing, saving me hundreds of hours.
--   **Intelligent Categorisation**: Beyond collection, Manus helps in the initial categorisation of these diverse tools, bringing order to a vast amount of information.
--   **Seamless Data Management**: The ability to process and output data directly into a structured CSV format has been incredibly useful for further analysis.
--   **Web Development at My Fingertips**: Perhaps most impressively, Manus handled the technical heavy lifting of building and deploying a functional web application to visualise the data, from the Flask backend to the HTML frontend.
+- **Automated Data Collection**: Manus efficiently navigates countless web pages, extracting crucial information about AI tools, their categories, countries of origin, and pricing, saving me hundreds of hours.
+- **Intelligent Categorisation**: Beyond collection, Manus helps in the initial categorisation of these diverse tools, bringing order to a vast amount of information.
+- **Seamless Data Management**: The ability to process and output data directly into a structured CSV format has been incredibly useful for further analysis.
+- **Web Development at My Fingertips**: Perhaps most impressively, Manus handled the technical heavy lifting of building and deploying a functional web application to visualise the data, from the Flask backend to the HTML frontend.
 
 ![Screenshot of Manus dashboard showing AI tools analysis](media:blog/ai-education-observatory/manus_v2.png)
 

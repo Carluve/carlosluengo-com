@@ -1,22 +1,23 @@
 ---
 publishDate: 2025-04-19T00:00:00Z
-title: "Generative AI, Productivity, and the Future of Happiness at Work"
-excerpt: "What if the secret to workplace happiness wasn’t longer vacations or fancier coffee machines—but an AI?"
-category: "Workplace AI"
+title: 'Generative AI, Productivity, and the Future of Happiness at Work'
+excerpt: 'What if the secret to workplace happiness wasn’t longer vacations or fancier coffee machines—but an AI?'
+category: 'Workplace AI'
 tags:
-  - "Workplace AI"
-  - "Employee Well-being"
-  - "Generative AI"
-  - "Productivity"
-  - "Awards"
+  - 'Workplace AI'
+  - 'Employee Well-being'
+  - 'Generative AI'
+  - 'Productivity'
+  - 'Awards'
 ---
+
 What if the secret to workplace happiness wasn’t longer vacations or fancier coffee machines—but an AI?
 
-That’s the provocative idea behind the paper *“Impact of Generative AI on Workplace Productivity and Employee Well-being”* by researchers at the Universidad de Alcalá. This in-depth study explores how large-scale AI adoption is reshaping not only productivity but also emotional health and job satisfaction in organizations.
+That’s the provocative idea behind the paper _“Impact of Generative AI on Workplace Productivity and Employee Well-being”_ by researchers at the Universidad de Alcalá. This in-depth study explores how large-scale AI adoption is reshaping not only productivity but also emotional health and job satisfaction in organizations.
 
 🏆 [Best Presentation Award certificate (PDF)](media:files/2024-12-happiness-malaga.pdf), 8th International Academic & Professional Congress on Happiness, Málaga, 2024.
 
-## TL;DR – AI Can Boost Productivity *and* Happiness (But It’s Complicated)
+## TL;DR – AI Can Boost Productivity _and_ Happiness (But It’s Complicated)
 
 The research identifies a three-stage evolution in AI integration:
 
@@ -26,7 +27,7 @@ The research identifies a three-stage evolution in AI integration:
 
 ## Key Findings
 
-- Most workers report *higher productivity* when using AI.
+- Most workers report _higher productivity_ when using AI.
 - **Burnout drops** when AI automates boring tasks.
 - **Flexibility** and remote work coordination get easier.
 - But… there’s a real concern about **job obsolescence** and **emotional stress**.
@@ -42,7 +43,7 @@ The paper dives deep into how AI affects job satisfaction, stress, creativity, a
 
 ## My Take
 
-What I loved about this study is how it connects tech to something as human as *happiness*. It moves the conversation beyond "AI will take our jobs" to "How can AI make work more meaningful?"
+What I loved about this study is how it connects tech to something as human as _happiness_. It moves the conversation beyond "AI will take our jobs" to "How can AI make work more meaningful?"
 
 Oh—and it won **Best Presentation** at a major academic event in Málaga. So it’s not just me who thought it rocked.
 

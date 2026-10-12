@@ -55,18 +55,18 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   }
 
   <div class="flex flex-1 flex-col p-5">
-  <h3 class="font-heading text-xl font-medium leading-snug text-heading">
-    {
-      link ? (
-        <a class="inline-block hover:text-link" href={link}>
-          {post.title}
-        </a>
-      ) : (
-        post.title
-      )
-    }
-  </h3>
+    <h3 class="font-heading text-xl font-medium leading-snug text-heading">
+      {
+        link ? (
+          <a class="inline-block hover:text-link" href={link}>
+            {post.title}
+          </a>
+        ) : (
+          post.title
+        )
+      }
+    </h3>
 
-  <p class="mt-2 text-sm leading-relaxed text-muted">{post.excerpt}</p>
+    <p class="mt-2 text-sm leading-relaxed text-muted">{post.excerpt}</p>
   </div>
 </article>

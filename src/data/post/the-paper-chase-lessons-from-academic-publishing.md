@@ -1,20 +1,21 @@
 ---
 publishDate: 2025-08-15T00:00:00Z
-title: "The Paper Chase: Lessons from the Trenches of Academic Publishing"
+title: 'The Paper Chase: Lessons from the Trenches of Academic Publishing'
 excerpt: "_PhD life isn't just data and deadlines — it’s also teamwork, trial-and-error, and the occasional existential crisis over tracked changes._"
-image: "media:blog/the-paper-chase-lessons-from-academic-publishing/papers25.png"
-imageAlt: "The Paper Chase: Lessons from the Trenches of Academic Publishing"
-category: "Academia"
+image: 'media:blog/the-paper-chase-lessons-from-academic-publishing/papers25.png'
+imageAlt: 'The Paper Chase: Lessons from the Trenches of Academic Publishing'
+category: 'Academia'
 tags:
-  - "Academia"
-  - "PhD"
-  - "Writing"
-  - "PhD Life"
-  - "Academic Writing"
-  - "Publishing"
-  - "Research"
-  - "Productivity"
+  - 'Academia'
+  - 'PhD'
+  - 'Writing'
+  - 'PhD Life'
+  - 'Academic Writing'
+  - 'Publishing'
+  - 'Research'
+  - 'Productivity'
 ---
+
 _PhD life isn't just data and deadlines — it’s also teamwork, trial-and-error, and the occasional existential crisis over tracked changes._
 
 I hadn’t written about this before, but I really felt like sharing some thoughts. Over the past few months, I’ve been fully immersed in writing and revising academic papers, and the experience — far from being just technical — has actually turned out to be **surprisingly fun**. It’s also given me the chance to **connect with a wide range of people**, both inside and outside the university, and that has made all the difference.
@@ -22,7 +23,6 @@ I hadn’t written about this before, but I really felt like sharing some though
 ![Research papers illustration](media:blog/the-paper-chase-lessons-from-academic-publishing/papers25.png)
 
 Over coffee, shared Google Docs, and endless rounds of reviewer comments, we've laughed, learned, and occasionally cried (academically, of course). This post is my attempt to capture some of those lessons and moments — from the frustrating to the uplifting.
-
 
 ## 🎯 Tip #1: Writing a Paper is Not the Hard Part — Rewriting It Is
 

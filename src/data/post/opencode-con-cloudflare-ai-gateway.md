@@ -1,13 +1,13 @@
 ---
 publishDate: 2026-02-22T00:00:00Z
-title: "OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers"
-excerpt: "Pairing OpenCode with Cloudflare AI Gateway for centralized policy, observability, and billing across model providers."
-image: "media:blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png"
-imageAlt: "OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers"
-category: "Cloudflare"
+title: 'OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers'
+excerpt: 'Pairing OpenCode with Cloudflare AI Gateway for centralized policy, observability, and billing across model providers.'
+image: 'media:blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png'
+imageAlt: 'OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers'
+category: 'Cloudflare'
 tags:
-  - "cloudflare"
-  - "infraestructura"
+  - 'cloudflare'
+  - 'infraestructura'
 ---
 
 ![OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers](media:blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png)
@@ -44,18 +44,18 @@ The basic flow requires:
 Example implementation:
 
 ```ts
-import OpenAI from "openai";
+import OpenAI from 'openai';
 
 const client = new OpenAI({
   apiKey: process.env.CLOUDFLARE_API_TOKEN,
-  baseURL: "https://gateway.ai.cloudflare.com/v1/<account-id>/<gateway-name>/openai",
+  baseURL: 'https://gateway.ai.cloudflare.com/v1/<account-id>/<gateway-name>/openai',
 });
 
 const response = await client.chat.completions.create({
-  model: "openai/gpt-5",
+  model: 'openai/gpt-5',
   messages: [
-    { role: "system", content: "You are a helpful coding assistant." },
-    { role: "user", content: "Explain the trade-offs of edge inference routing." }
+    { role: 'system', content: 'You are a helpful coding assistant.' },
+    { role: 'user', content: 'Explain the trade-offs of edge inference routing.' },
   ],
 });
 
@@ -85,7 +85,6 @@ These trade-offs are acceptable for most product teams, especially when consiste
 ## Why this matters
 
 This approach balances developer velocity with operational control through incremental implementation rather than wholesale architecture redesign. It's particularly valuable for teams prioritizing standardization and spend visibility across AI model usage.
-
 
 ## También te puede interesar
 

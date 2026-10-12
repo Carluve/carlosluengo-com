@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "Duck Marines TypeScript"
-excerpt: "Adaptación en TypeScript de un juego arcade como parte de una colección de juegos retro."
-category: "Proyectos"
+title: 'Duck Marines TypeScript'
+excerpt: 'Adaptación en TypeScript de un juego arcade como parte de una colección de juegos retro.'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "juegos"
+  - 'proyectos'
+  - 'juegos'
 ---
 
 Adaptación en TypeScript de un juego arcade.

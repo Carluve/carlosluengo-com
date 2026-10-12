@@ -1,22 +1,23 @@
 ---
 publishDate: 2025-08-02T00:00:00Z
-title: "My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad"
+title: 'My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad'
 excerpt: "I've always cared about having a fast and private internet connection, especially when using public Wi-Fi or mobile networks. That's why I decided to try Cloudflare's 1.1.1.1 app with WARP. Below I'll share how the…"
-image: "media:blog/cloudflare-warp-ipad/cloudflare_01.jpeg"
-imageAlt: "My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad"
-category: "privacy"
+image: 'media:blog/cloudflare-warp-ipad/cloudflare_01.jpeg'
+imageAlt: 'My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad'
+category: 'privacy'
 tags:
-  - "privacy"
-  - "security"
-  - "networking"
-  - "iOS"
-  - "Cloudflare"
-  - "WARP"
-  - "VPN"
-  - "Privacy"
-  - "Security"
-  - "iPad"
+  - 'privacy'
+  - 'security'
+  - 'networking'
+  - 'iOS'
+  - 'Cloudflare'
+  - 'WARP'
+  - 'VPN'
+  - 'Privacy'
+  - 'Security'
+  - 'iPad'
 ---
+
 I've always cared about having a fast and private internet connection, especially when using public Wi-Fi or mobile networks. That's why I decided to try Cloudflare's 1.1.1.1 app with WARP. Below I'll share how the setup looks on iOS, what each option means, and why I personally keep it installed.
 
 ![Cloudflare WARP app interface](media:blog/cloudflare-warp-ipad/cloudflare_01.jpeg)
@@ -26,6 +27,7 @@ I've always cared about having a fast and private internet connection, especiall
 When the internet was created, no one imagined phones, tablets or laptops constantly online. That's why the browsing model still feels old, slow and insecure.
 
 Cloudflare created WARP to fix that:
+
 - It encrypts traffic from your device
 - It replaces outdated protocols with something modern and safer
 
@@ -66,29 +68,33 @@ Inside Settings, you can choose between:
 
 ## 5. Comparison of Options
 
-| Feature | 1.1.1.1 (DNS only) | 1.1.1.1 for Families | WARP | WARP+ |
-|---------|---------------------|----------------------|------|-------|
-| **Encrypts DNS** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Encrypts all traffic** | ❌ No | ❌ No | ✅ Yes | ✅ Yes |
-| **Privacy-friendly logging** | ✅ Logs purged in 24h | ✅ Logs purged in 24h | ✅ Minimal | ✅ Minimal |
-| **Malware/adult blocking** | ❌ No | ✅ Yes | ❌ No | ❌ No |
-| **Speed optimisation** | ✅ Fast lookups | ✅ Fast lookups | ✅ Optimised routing | 🚀 Argo backbone |
-| **Good for...** | Everyday private DNS | Families/children | Safer browsing anywhere | Best speed + security |
+| Feature                      | 1.1.1.1 (DNS only)    | 1.1.1.1 for Families  | WARP                    | WARP+                 |
+| ---------------------------- | --------------------- | --------------------- | ----------------------- | --------------------- |
+| **Encrypts DNS**             | ✅ Yes                | ✅ Yes                | ✅ Yes                  | ✅ Yes                |
+| **Encrypts all traffic**     | ❌ No                 | ❌ No                 | ✅ Yes                  | ✅ Yes                |
+| **Privacy-friendly logging** | ✅ Logs purged in 24h | ✅ Logs purged in 24h | ✅ Minimal              | ✅ Minimal            |
+| **Malware/adult blocking**   | ❌ No                 | ✅ Yes                | ❌ No                   | ❌ No                 |
+| **Speed optimisation**       | ✅ Fast lookups       | ✅ Fast lookups       | ✅ Optimised routing    | 🚀 Argo backbone      |
+| **Good for...**              | Everyday private DNS  | Families/children     | Safer browsing anywhere | Best speed + security |
 
 👉 **Personally, I started with plain 1.1.1.1.** But on mobile, WARP makes more sense because it secures everything, not just DNS.
 
 ## 6. Why I Keep It Installed
 
 ### 🔒 Security on public Wi-Fi
+
 I don't worry if I'm in an airport or a hotel.
 
 ### ⚡ Better speed
+
 Even with the free version, pages often load faster.
 
 ### 👨‍👩‍👧 Option for families
+
 If I ever set up a device for kids, I can switch to 1.1.1.1 Families.
 
 ### 🧘 Simplicity
+
 Unlike traditional VPNs, there's no complex setup. Just a switch.
 
 ## Key Benefits I've Experienced
@@ -102,12 +108,14 @@ Unlike traditional VPNs, there's no complex setup. Just a switch.
 ## Technical Details
 
 ### How WARP Works
+
 - Creates an encrypted tunnel from your device to Cloudflare's network
 - Routes traffic through Cloudflare's global network for optimisation
 - Uses modern protocols like WireGuard for efficiency
 - Maintains connection even when switching between Wi-Fi and cellular
 
 ### Privacy Considerations
+
 - Cloudflare doesn't log browsing activity
 - DNS queries are purged within 24 hours
 - No personal information is sold to third parties
@@ -116,6 +124,7 @@ Unlike traditional VPNs, there's no complex setup. Just a switch.
 ## Performance Impact
 
 In my testing on iPad:
+
 - **Minimal battery drain** - Less than 2% additional usage per day
 - **Faster DNS resolution** - 20-30ms improvement on average
 - **Better streaming** - More consistent video quality on mobile networks
@@ -132,12 +141,14 @@ For me, it's become a default app on my devices: lightweight, trustworthy, and e
 ### Should You Try It?
 
 **Yes, if you:**
+
 - Use public Wi-Fi regularly
 - Want better privacy without complexity
 - Experience slow DNS resolution
 - Value transparency in privacy tools
 
 **Maybe not if you:**
+
 - Already use a comprehensive VPN solution
 - Have very limited data plans (though WARP is quite efficient)
 - Need specific geographic IP locations
@@ -146,4 +157,4 @@ The free tier is generous enough for most users, and the setup process is genuin
 
 ---
 
-*Have you tried Cloudflare WARP? Share your experience in the comments or reach out through my public inbox!*
+_Have you tried Cloudflare WARP? Share your experience in the comments or reach out through my public inbox!_

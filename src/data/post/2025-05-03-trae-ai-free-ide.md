@@ -1,18 +1,19 @@
 ---
 publishDate: 2025-05-03T00:00:00Z
-title: "Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity"
-excerpt: "Trae.ai is a free, AI-powered integrated development environment (IDE) created by ByteDance (the company behind TikTok). Its goal is to act as a real-time AI coding assistant built into the editor, helping developers…"
-image: "media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png"
-imageAlt: "Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity"
-category: "AI Development"
+title: 'Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity'
+excerpt: 'Trae.ai is a free, AI-powered integrated development environment (IDE) created by ByteDance (the company behind TikTok). Its goal is to act as a real-time AI coding assistant built into the editor, helping developers…'
+image: 'media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png'
+imageAlt: 'Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity'
+category: 'AI Development'
 tags:
-  - "AI Development"
-  - "IDE"
-  - "Developer Tools"
-  - "ByteDance"
-  - "Code Automation"
-  - "Free Software"
+  - 'AI Development'
+  - 'IDE'
+  - 'Developer Tools'
+  - 'ByteDance'
+  - 'Code Automation'
+  - 'Free Software'
 ---
+
 **Trae.ai** is a free, AI-powered integrated development environment (IDE) created by **ByteDance** (the company behind TikTok). Its goal is to act as a real-time **AI coding assistant** built into the editor, helping developers write, understand, and automate code.
 
 - Built on a customized version of **VS Code**.
@@ -22,8 +23,7 @@ tags:
 - Available for **Windows and macOS** (Linux support not yet available).
 - Interface in English and Simplified Chinese.
 
-![Trae.AI](media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png) *[TRAE AI]*
-
+![Trae.AI](media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png) _[TRAE AI]_
 
 ## Why was it launched?
 
@@ -37,17 +37,17 @@ ByteDance launched Trae as a **completely free and unlimited tool**, aiming to d
 ![Pricing](media:blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.png)
 ---
 
-## Differences from *Vibe Coding*
+## Differences from _Vibe Coding_
 
-| Aspect               | Vibe Coding                                     | Trae.ai                                          |
-|----------------------|--------------------------------------------------|--------------------------------------------------|
-| What is it?          | A method of coding by idea                      | A real tool implementing that method             |
-| Usage mode           | Chatbot (e.g., ChatGPT, Claude)                 | Full IDE with built-in AI                        |
-| Integration          | External to code editor                         | Internal, part of the IDE                        |
-| Automation           | Manual, iterative                               | Can build full projects instantly                |
-| Code awareness       | Context must be provided manually               | AI sees and understands full project context     |
+| Aspect         | Vibe Coding                       | Trae.ai                                      |
+| -------------- | --------------------------------- | -------------------------------------------- |
+| What is it?    | A method of coding by idea        | A real tool implementing that method         |
+| Usage mode     | Chatbot (e.g., ChatGPT, Claude)   | Full IDE with built-in AI                    |
+| Integration    | External to code editor           | Internal, part of the IDE                    |
+| Automation     | Manual, iterative                 | Can build full projects instantly            |
+| Code awareness | Context must be provided manually | AI sees and understands full project context |
 
-Trae.ai takes *vibe coding* to the next level by embedding the AI assistant directly into the coding workflow, with full contextual awareness and smart editing capabilities.
+Trae.ai takes _vibe coding_ to the next level by embedding the AI assistant directly into the coding workflow, with full contextual awareness and smart editing capabilities.
 
 ![DiagramVibeCoding](media:blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.png)
 
@@ -67,7 +67,6 @@ All of this is available **without API setup or extra costs**. The AI can:
 - Analyze and generate high-quality code.
 - Refactor functions or entire files.
 - Provide inline help and explanations.
-
 
 ![DiagramVibeCoding](media:blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.png)
 ---
@@ -90,13 +89,12 @@ Currently, Trae.ai is:
 
 ## Comparison: Trae.ai vs. Other Tools
 
-| Tool             | Main Purpose                     | AI Used                            | Key Features                                                  | Pricing                  | Ease of Use                                |
-|------------------|----------------------------------|-------------------------------------|----------------------------------------------------------------|---------------------------|---------------------------------------------|
-| **Trae.ai**      | Full IDE with integrated AI      | Claude 3.5/3.7, GPT-4, DeepSeek     | Context-aware chat, autocomplete, Builder mode, Git, agents    | **Free & unlimited**     | High – familiar for VS Code users           |
-| **ChatGPT**      | General-purpose AI chatbot       | GPT-3.5 (Free), GPT-4 (Plus)        | Code generation via chat, no direct project integration        | Freemium ($20/mo for GPT-4) | High – very accessible, but outside IDE      |
-| **Notion AI**    | Writing/productivity assistant   | GPT-4, Claude                       | Writing, summaries, brainstorming (not code-focused)           | $10/mo AI add-on         | High for Notion users                       |
-| **Vibe Coding**  | Development *method* (not a tool)| Varies (GPT-4, Claude, etc.)        | Conversational code generation, manual integration             | Depends on tools used     | Medium – flexible but requires manual setup |
-
+| Tool            | Main Purpose                      | AI Used                         | Key Features                                                | Pricing                     | Ease of Use                                 |
+| --------------- | --------------------------------- | ------------------------------- | ----------------------------------------------------------- | --------------------------- | ------------------------------------------- |
+| **Trae.ai**     | Full IDE with integrated AI       | Claude 3.5/3.7, GPT-4, DeepSeek | Context-aware chat, autocomplete, Builder mode, Git, agents | **Free & unlimited**        | High – familiar for VS Code users           |
+| **ChatGPT**     | General-purpose AI chatbot        | GPT-3.5 (Free), GPT-4 (Plus)    | Code generation via chat, no direct project integration     | Freemium ($20/mo for GPT-4) | High – very accessible, but outside IDE     |
+| **Notion AI**   | Writing/productivity assistant    | GPT-4, Claude                   | Writing, summaries, brainstorming (not code-focused)        | $10/mo AI add-on            | High for Notion users                       |
+| **Vibe Coding** | Development _method_ (not a tool) | Varies (GPT-4, Claude, etc.)    | Conversational code generation, manual integration          | Depends on tools used       | Medium – flexible but requires manual setup |
 
 ---
 

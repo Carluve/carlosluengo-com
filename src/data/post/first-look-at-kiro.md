@@ -1,18 +1,19 @@
 ---
 publishDate: 2025-08-03T00:00:00Z
-title: "First look at Kiro: the AI IDE for structured coding"
-excerpt: "In this post, I share my first impressions using Kiro, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it…"
-image: "media:blog/first-look-at-kiro/kiro_v1.png"
-imageAlt: "First look at Kiro: the AI IDE for structured coding"
-category: "AI"
+title: 'First look at Kiro: the AI IDE for structured coding'
+excerpt: 'In this post, I share my first impressions using Kiro, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it…'
+image: 'media:blog/first-look-at-kiro/kiro_v1.png'
+imageAlt: 'First look at Kiro: the AI IDE for structured coding'
+category: 'AI'
 tags:
-  - "AI"
-  - "Development"
-  - "IDE"
-  - "Tools"
-  - "Kiro"
-  - "Spec-driven development"
+  - 'AI'
+  - 'Development'
+  - 'IDE'
+  - 'Tools'
+  - 'Kiro'
+  - 'Spec-driven development'
 ---
+
 In this post, I share my first impressions using **Kiro**, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it brings over traditional editors, and why it could matter for AI-assisted coding at scale.
 
 ---
@@ -24,7 +25,7 @@ Kiro is a spec-driven, AI-native IDE that integrates a structured development mo
 Its promise is simple: **bring discipline to the chaotic creative process** of building software with AI — from idea to implementation.
 
 ![Kiro IDE running inside VSCode](media:blog/first-look-at-kiro/kiro_v1.png)
-*Screenshot of Kiro’s plugin version running in VSCode*
+_Screenshot of Kiro’s plugin version running in VSCode_
 
 ---
 
@@ -50,7 +51,7 @@ You interact with Kiro in multiple ways:
 The environment is sleek, minimal, and clearly targeted at developers used to working in tools like VSCode or web IDEs.
 
 ![Kiro’s landing page explaining its value proposition](media:blog/first-look-at-kiro/kiro_V2.png)
-*Official landing page for Kiro: “From prototype to production”*
+_Official landing page for Kiro: “From prototype to production”_
 
 ---
 
@@ -64,7 +65,7 @@ Kiro offers a freemium pricing model with several tiers depending on your usage:
 - **Kiro Power**: $200/month, for power users with high demand.
 
 ![Pricing tiers available on Kiro](media:blog/first-look-at-kiro/kiro_v3.png)
-*Kiro’s pricing plans as of August 2025*
+_Kiro’s pricing plans as of August 2025_
 
 ---
 

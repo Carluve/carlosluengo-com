@@ -1,13 +1,13 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "Catálogo de demos"
-excerpt: "Inventario de demos y aplicaciones desplegadas."
-image: "media:blog/catalogo-de-demos/emdash-blog.png"
-imageAlt: "Catálogo de demos"
-category: "Proyectos"
+title: 'Catálogo de demos'
+excerpt: 'Inventario de demos y aplicaciones desplegadas.'
+image: 'media:blog/catalogo-de-demos/emdash-blog.png'
+imageAlt: 'Catálogo de demos'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "demos"
+  - 'proyectos'
+  - 'demos'
 ---
 
 # Proyectos del sitio

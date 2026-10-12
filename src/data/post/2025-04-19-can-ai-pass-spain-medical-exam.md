@@ -1,37 +1,38 @@
 ---
 publishDate: 2025-04-19T00:00:00Z
-title: "Can AI Pass Spain’s Toughest Medical Exam?"
+title: 'Can AI Pass Spain’s Toughest Medical Exam?'
 excerpt: "The Spanish MIR (Médico Interno Residente) exam is one of the most rigorous medical licensing tests in Europe. It determines who gets into residency programs in Spain, and it's known for its complex clinical…"
-category: "AI in Healthcare"
+category: 'AI in Healthcare'
 tags:
-  - "AI in Healthcare"
-  - "LLMs"
-  - "MIR"
-  - "Medical Education"
+  - 'AI in Healthcare'
+  - 'LLMs'
+  - 'MIR'
+  - 'Medical Education'
 ---
+
 The Spanish MIR (Médico Interno Residente) exam is one of the most rigorous medical licensing tests in Europe. It determines who gets into residency programs in Spain, and it's known for its complex clinical scenarios, image-based questions, and country-specific epidemiological knowledge. But what happens when you ask an AI to take the MIR?
 
-That’s exactly what a group of researchers from the University of Alcalá and Binpar set out to explore. Their recent study compared the performance of 22 large language models (LLMs) — including GPT-4, Claude, Deepseek, and fine-tuned models like *Miri Pro* — on the MIR exams from 2024 and 2025.
+That’s exactly what a group of researchers from the University of Alcalá and Binpar set out to explore. Their recent study compared the performance of 22 large language models (LLMs) — including GPT-4, Claude, Deepseek, and fine-tuned models like _Miri Pro_ — on the MIR exams from 2024 and 2025.
 
 And the results are... impressive. And a little unsettling.
 
 ## TL;DR: Some AIs Outperformed Humans
 
-One of the standout performers was *Miri Pro*, a domain-specific model fine-tuned on Spanish medical content. It scored 195 out of 210 on the 2025 MIR — that's better than the top human candidate, who scored 186. Even general-purpose models like GPT-4 scored in the top 10% of human participants.
+One of the standout performers was _Miri Pro_, a domain-specific model fine-tuned on Spanish medical content. It scored 195 out of 210 on the 2025 MIR — that's better than the top human candidate, who scored 186. Even general-purpose models like GPT-4 scored in the top 10% of human participants.
 
 So yes, AI can pass the MIR. In some cases, it can even ace it.
 
 ## But Is It Real Understanding?
 
-The real test wasn’t just about getting the answers right — it was about *how* the models got there. The MIR isn’t trivia night; it’s full of case-based questions, lab data interpretation, and image analysis.
+The real test wasn’t just about getting the answers right — it was about _how_ the models got there. The MIR isn’t trivia night; it’s full of case-based questions, lab data interpretation, and image analysis.
 
-To see whether the models were reasoning or just regurgitating memorized facts, the researchers modified two questions in the 2025 exam to prevent data leakage. The result? Fine-tuned models like *Miri Pro* handled them well, while general-purpose models struggled — a sign that real reasoning, not just memorization, is in play.
+To see whether the models were reasoning or just regurgitating memorized facts, the researchers modified two questions in the 2025 exam to prevent data leakage. The result? Fine-tuned models like _Miri Pro_ handled them well, while general-purpose models struggled — a sign that real reasoning, not just memorization, is in play.
 
 ## Multimodal Power: Vision Models Shine
 
-About 25 questions in each exam required analyzing images — think X-rays, histology slides, or ECGs. Unsurprisingly, models with visual capabilities like *Grok Vision Beta* and *Gemini Vision Pro* did significantly better on these.
+About 25 questions in each exam required analyzing images — think X-rays, histology slides, or ECGs. Unsurprisingly, models with visual capabilities like _Grok Vision Beta_ and _Gemini Vision Pro_ did significantly better on these.
 
-For example, *Grok Vision Beta* scored 85.3% on image-based questions in 2025 — outperforming both humans and text-only models.
+For example, _Grok Vision Beta_ scored 85.3% on image-based questions in 2025 — outperforming both humans and text-only models.
 
 ## So, Are Doctors Replaceable?
 

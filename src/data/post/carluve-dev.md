@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "carluve.dev"
-excerpt: "Código fuente del sitio personal de Carlos Luengo, construido con Astro y desplegado en Cloudflare Pages."
-category: "Proyectos"
+title: 'carluve.dev'
+excerpt: 'Código fuente del sitio personal de Carlos Luengo, construido con Astro y desplegado en Cloudflare Pages.'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "web"
+  - 'proyectos'
+  - 'web'
 ---
 
 Código fuente del sitio personal. Reúne el blog y la información sobre mi trabajo.

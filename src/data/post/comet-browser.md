@@ -1,14 +1,15 @@
 ---
 publishDate: 2024-12-27T00:00:00Z
 title: "Why Comet Is the Browser You'll Want in 2025"
-excerpt: "Comet is a next-generation AI-enhanced browser that streamlines research, automation, and focus for productivity in 2025."
-category: "browser"
+excerpt: 'Comet is a next-generation AI-enhanced browser that streamlines research, automation, and focus for productivity in 2025.'
+category: 'browser'
 tags:
-  - "browser"
-  - "productivity"
-  - "AI"
-  - "technology"
+  - 'browser'
+  - 'productivity'
+  - 'AI'
+  - 'technology'
 ---
+
 # Overview
 
 In an era where productivity is key and distractions are everywhere, **Comet** emerges as the browser that truly thinks with you. From efficient browsing to AI-powered assistance, Comet sets a new standard for what web browsing can be.
@@ -18,15 +19,19 @@ In an era where productivity is key and distractions are everywhere, **Comet** e
 ## What Makes Comet Different?
 
 ### Unified AI Search
+
 Instantly summarise or contextualise any website, so you never waste time searching for key details. Comet's AI understands the content and provides relevant insights without leaving the page.
 
 ### Automated Tasks
+
 Let Comet shop, book, research, and even fill in forms automatically. The browser handles repetitive tasks whilst you focus on what matters most.
 
 ### Personalised Workflow
+
 Comet adapts to your working style, learns your habits, and keeps everything organised for you. It's like having a personal assistant built into your browser.
 
 ### Integrated Communication
+
 Manage your email and calendar directly from the browser interface—schedule, brief, and respond with a click. No more switching between applications.
 
 ## Stay Focused, Cut Distractions
@@ -34,8 +39,9 @@ Manage your email and calendar directly from the browser interface—schedule, b
 Thanks to Comet's automation and contextual tools, you're rarely derailed by distractions. Need to compare, summarise, or action something? It happens right where you are—no more switching between tabs or apps.
 
 The browser's intelligent context switching means you can:
+
 - **Summarise lengthy articles** in seconds
-- **Compare products** across multiple sites instantly  
+- **Compare products** across multiple sites instantly
 - **Extract key information** without manual searching
 - **Automate form filling** with learned preferences
 

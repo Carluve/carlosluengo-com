@@ -86,8 +86,16 @@ html {
 
 .aw-canvas {
   background-image:
-    radial-gradient(900px 420px at 100% -10%, color-mix(in srgb, var(--aw-color-primary) 12%, transparent), transparent 60%),
-    radial-gradient(720px 360px at -10% 0%, color-mix(in srgb, var(--aw-color-primary) 7%, transparent), transparent 55%);
+    radial-gradient(
+      900px 420px at 100% -10%,
+      color-mix(in srgb, var(--aw-color-primary) 12%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      720px 360px at -10% 0%,
+      color-mix(in srgb, var(--aw-color-primary) 7%, transparent),
+      transparent 55%
+    );
 }
 
 .skip-link {

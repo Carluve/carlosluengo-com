@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-01-31T00:00:00Z
-title: "Securely Publishing Docker Services with Cloudflare Tunnel + Portainer (Zero Trust Without Opening Ports)"
-excerpt: "Integrating Cloudflare Tunnel into a Portainer-managed Docker stack to expose services without opening router ports."
-category: "Cloudflare"
+title: 'Securely Publishing Docker Services with Cloudflare Tunnel + Portainer (Zero Trust Without Opening Ports)'
+excerpt: 'Integrating Cloudflare Tunnel into a Portainer-managed Docker stack to expose services without opening router ports.'
+category: 'Cloudflare'
 tags:
-  - "cloudflare"
-  - "infraestructura"
+  - 'cloudflare'
+  - 'infraestructura'
 ---
 
 ## Overview
@@ -32,7 +32,7 @@ Navigate to one.dash.cloudflare.com, create a tunnel named (e.g., "homelab-tunne
 Deploy a containerized cloudflared instance:
 
 ```yaml
-version: "3.9"
+version: '3.9'
 services:
   cloudflared:
     image: cloudflare/cloudflared:latest
@@ -66,7 +66,6 @@ Restrict access via email, device posture, or one-time PINs.
 - End-to-end encryption
 - Free for personal use
 - IP-agnostic (works across ISP changes)
-
 
 ## También te puede interesar
 

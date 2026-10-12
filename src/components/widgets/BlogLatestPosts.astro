@@ -34,9 +34,7 @@ const {
 } = Astro.props;
 
 const posts = APP_BLOG.isEnabled
-  ? (await fetchPosts())
-      .filter((post) => !excludeCategory || post.category?.slug !== excludeCategory)
-      .slice(0, count)
+  ? (await fetchPosts()).filter((post) => !excludeCategory || post.category?.slug !== excludeCategory).slice(0, count)
   : [];
 ---
 

@@ -1,19 +1,20 @@
 ---
 publishDate: 2025-05-25T00:00:00Z
-title: "Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App"
-excerpt: "In this post, I share how I used Jules, Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, 1-2-3 Math, had various issues—broken buttons, language-switching…"
-image: "media:blog/fixing-123-math-with-jules/202505_02jules.png"
-imageAlt: "Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App"
-category: "AI"
+title: 'Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App'
+excerpt: 'In this post, I share how I used Jules, Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, 1-2-3 Math, had various issues—broken buttons, language-switching…'
+image: 'media:blog/fixing-123-math-with-jules/202505_02jules.png'
+imageAlt: 'Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App'
+category: 'AI'
 tags:
-  - "AI"
-  - "development"
-  - "Google"
-  - "JavaScript"
-  - "Jules"
-  - "AI Coding"
-  - "Debugging"
+  - 'AI'
+  - 'development'
+  - 'Google'
+  - 'JavaScript'
+  - 'Jules'
+  - 'AI Coding'
+  - 'Debugging'
 ---
+
 In this post, I share how I used [Jules](https://jules.google), Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, [1-2-3 Math](https://www.carlosluengo.com/portfolio/2025-05-123math/), had various issues—broken buttons, language-switching bugs, and general logic problems. I decided to test Jules as a dev assistant and was positively surprised.
 
 ## 🤖 What is Jules?
@@ -21,11 +22,13 @@ In this post, I share how I used [Jules](https://jules.google), Google’s async
 Jules is an experimental tool from Google Labs. Think of it as a GPT-based developer agent that understands your repo, can reason through issues asynchronously, and even make pull requests with real code suggestions. You just describe your problem in natural language, and Jules builds a step-by-step plan, implements the changes, and pushes commits back.
 
 #### 📸 Screenshot of Jules plan and code fix
+
 ![Jules plan and code fix](media:blog/fixing-123-math-with-jules/202505_02jules.png)
 
 ## 💡 Why I Used Jules
 
 The app was failing in several critical ways:
+
 - Navigation buttons didn’t work.
 - Levels weren’t loading properly.
 - Language toggling between Spanish and English was broken.
@@ -36,6 +39,7 @@ I didn’t want to spend hours debugging the front-end logic, so I gave Jules a 
 ## ⚙️ How Jules Helped
 
 Jules broke the task into a detailed checklist:
+
 - Fix JavaScript structural issues.
 - Repair menu button (`btn-jugar`) navigation.
 - Rebuild level rendering logic.
@@ -44,6 +48,7 @@ Jules broke the task into a detailed checklist:
 - Ensure correct flow: name > level > play.
 
 Each step was tracked, executed, and documented. In the final commit, Jules:
+
 - Removed duplicate functions.
 - Rewrote navigation and menu logic.
 - Fixed level visibility CSS bugs.
@@ -51,6 +56,7 @@ Each step was tracked, executed, and documented. In the final commit, Jules:
 - Recalibrated the level threshold logic to 70% dynamically.
 
 #### 📸 Screenshot of merged Pull Request on GitHub
+
 ![Merged Pull Request on GitHub](media:blog/fixing-123-math-with-jules/202505_04jules.png)
 
 ## ✅ Benefits of Using Jules
@@ -69,4 +75,5 @@ I’ll definitely keep experimenting with Jules—especially for prototype-level
 ---
 
 #### 📸 Screenshot of Jules homepage
+
 ![Jules homepage](media:blog/fixing-123-math-with-jules/202505_03jules.png)

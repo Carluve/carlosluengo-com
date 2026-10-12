@@ -1,21 +1,22 @@
 ---
 publishDate: 2025-05-26T00:00:00Z
-title: "Testing Amazon Q Developer on GitHub"
-excerpt: "In this post, I share my hands-on experience using Amazon Q Developer on GitHub.com. I tested how Q can handle code generation, review, and transformation workflows directly within GitHub Issues and Pull Requests.…"
-image: "media:blog/testing-amazon-q-developer-on-github/202505_01amazonq.png"
-imageAlt: "Testing Amazon Q Developer on GitHub"
-category: "AI"
+title: 'Testing Amazon Q Developer on GitHub'
+excerpt: 'In this post, I share my hands-on experience using Amazon Q Developer on GitHub.com. I tested how Q can handle code generation, review, and transformation workflows directly within GitHub Issues and Pull Requests.…'
+image: 'media:blog/testing-amazon-q-developer-on-github/202505_01amazonq.png'
+imageAlt: 'Testing Amazon Q Developer on GitHub'
+category: 'AI'
 tags:
-  - "AI"
-  - "cloud"
-  - "development"
-  - "AWS"
-  - "Amazon Q"
-  - "GitHub"
-  - "AI Developer Tools"
-  - "Code Generation"
-  - "Code Review"
+  - 'AI'
+  - 'cloud'
+  - 'development'
+  - 'AWS'
+  - 'Amazon Q'
+  - 'GitHub'
+  - 'AI Developer Tools'
+  - 'Code Generation'
+  - 'Code Review'
 ---
+
 In this post, I share my hands-on experience using Amazon Q Developer on GitHub.com. I tested how Q can handle code generation, review, and transformation workflows directly within GitHub Issues and Pull Requests. The goal? Streamlining feature development in modern development teams.
 
 ---
@@ -48,34 +49,45 @@ From my tests, the Amazon Q Developer app offers three powerful use cases:
 Here’s the flow I tested:
 
 ### Step 1: Create a GitHub Issue
+
 I created a new issue on GitHub with the title "Security test" and the description:
+
 > “Please check all errors in the code. This product is for kids.”
 
 #### 📸 GitHub issue being created and assigned to Amazon Q
+
 ![GitHub issue being created and assigned to Amazon Q](media:blog/testing-amazon-q-developer-on-github/202505_01amazonq.png)
 
 ### Step 2: Assign the Issue to Amazon Q
+
 With one click on the "Assign to Amazon Q" button, the task is queued for processing. Q instantly comments to say it's working on generating the code.
 
 #### 📸 Q Developer's first response in the issue
+
 ![Q Developer's first response in the issue](media:blog/testing-amazon-q-developer-on-github/202505_02amazonq.png)
 
 ### Step 3: Code Review Automation
+
 Once a pull request is created, Q automatically runs a code review. It flags risky code patterns (like undefined access in JS), suggests improvements, and adds severity tags.
 
 #### 📸 Inline review with warning, severity level, and description
+
 ![Inline review with warning, severity level, and description](media:blog/testing-amazon-q-developer-on-github/202505_03amazonq.png)
 
 ### Step 4: Fix Suggestions & Pull Request Creation
+
 After the review, Q posts final comments and creates a PR with structured commits. You can review, merge or request improvements as usual.
 
 #### 📸 Summary of the pull request and deployment success
+
 ![Summary of the pull request and deployment success](media:blog/testing-amazon-q-developer-on-github/202505_04amazonq.png)
 
 ### Bonus: JSON Error Handling Fix
+
 I tested how Q handles specific bugs. I logged a known issue in JSON parsing. Q created a custom utility for structured logging (`logJsonError`), documented its reasoning, and opened the PR.
 
 #### 📸 Full context of the JSON fix pull request
+
 ![Full context of the JSON fix pull request](media:blog/testing-amazon-q-developer-on-github/202505_05amazonq.png)
 
 ---
@@ -85,12 +97,14 @@ I tested how Q handles specific bugs. I logged a known issue in JSON parsing. Q 
 Amazon Q Developer exceeded my expectations in some areas and revealed limitations in others:
 
 **👍 What impressed me:**
+
 - Seamless GitHub integration (no context switching)
 - Code reviews are genuinely helpful for catching risky patterns
 - Auto-PR generation works well for cleanly defined tasks
 - Security and severity tagging in code comments
 
 **👎 What could be improved:**
+
 - Fix suggestions are sometimes missing or vague
 - Works best with clearly worded issues (prompting matters!)
 - Currently focused mostly on Java and JS — limited tech stack support

@@ -59,17 +59,21 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
   <StructuredData slot="head" schema={structuredData} />
 
   <section class="relative not-prose">
-    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12 lg:pb-10 lg:pt-16">
+    <div
+      class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12 lg:pb-10 lg:pt-16"
+    >
       <div>
         <p class="aw-eyebrow">Investigación · Docencia · Industria</p>
-        <h1 class="mt-3 font-heading text-[2.65rem] font-medium leading-[1.08] tracking-tight text-balance text-heading sm:text-5xl lg:text-[3.4rem]">
+        <h1
+          class="mt-3 font-heading text-[2.65rem] font-medium leading-[1.08] tracking-tight text-balance text-heading sm:text-5xl lg:text-[3.4rem]"
+        >
           Carlos Luengo Vera
         </h1>
         <p class="mt-5 max-w-xl text-lg leading-relaxed text-pretty text-muted">
-          Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Profesor en programas de posgrado
-          y ejecutivos. Sr. Enterprise Account Executive en Cloudflare, donde acompaña a empresas digitales nativas,
-          startups e ISVs. Su trabajo sitúa la investigación aplicada en el cruce entre adopción de IA, organización
-          empresarial e infraestructura cloud.
+          Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. Profesor en programas de
+          posgrado y ejecutivos. Sr. Enterprise Account Executive en Cloudflare, donde acompaña a empresas digitales
+          nativas, startups e ISVs. Su trabajo sitúa la investigación aplicada en el cruce entre adopción de IA,
+          organización empresarial e infraestructura cloud.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button variant="primary" text="Contacto" href={getPermalink('/contact')} icon="tabler:mail" />
@@ -229,7 +233,12 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
       </ul>
       <GithubActivity compact />
       <div class="mt-6">
-        <Button variant="tertiary" class="px-0" text="Toda la sección de desarrollo" href={getPermalink('/developer')} />
+        <Button
+          variant="tertiary"
+          class="px-0"
+          text="Toda la sección de desarrollo"
+          href={getPermalink('/developer')}
+        />
       </div>
     </div>
   </section>

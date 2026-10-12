@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "Cloudflare en Español"
-excerpt: "Índice de recursos, guías, ejemplos y herramientas de Cloudflare para la comunidad hispanohablante."
-category: "Proyectos"
+title: 'Cloudflare en Español'
+excerpt: 'Índice de recursos, guías, ejemplos y herramientas de Cloudflare para la comunidad hispanohablante.'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "cloudflare"
+  - 'proyectos'
+  - 'cloudflare'
 ---
 
 Índice de recursos para la comunidad hispanohablante de Cloudflare.

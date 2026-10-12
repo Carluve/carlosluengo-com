@@ -1,11 +1,11 @@
 ---
 publishDate: 2026-07-27T00:00:00Z
-title: "RetroGames de C++ a TypeScript"
-excerpt: "Implementaciones de juegos retro en C++ con SFML y experimentos de migración a TypeScript."
-category: "Proyectos"
+title: 'RetroGames de C++ a TypeScript'
+excerpt: 'Implementaciones de juegos retro en C++ con SFML y experimentos de migración a TypeScript.'
+category: 'Proyectos'
 tags:
-  - "proyectos"
-  - "juegos"
+  - 'proyectos'
+  - 'juegos'
 ---
 
 Implementaciones de juegos retro en C++ con la librería gráfica SFML.
