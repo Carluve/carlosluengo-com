@@ -58,7 +58,12 @@ export default defineConfig({
   ],
 
   integrations: [
-    sitemap(),
+    sitemap({
+      // Spanish at /, English under /en: each URL lists its translation (xhtml:link).
+      i18n: { defaultLocale: 'es', locales: { es: 'es-ES', en: 'en-GB' } },
+      // Markdown and llms.txt twins are for answer engines, not for the sitemap.
+      filter: (page) => !/\.(md|txt)$/.test(page),
+    }),
     mdx(),
     icon({
       // Local SVG icons (used as <Icon name="file-name" />) live next to the other assets.

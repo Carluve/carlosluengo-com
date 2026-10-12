@@ -1,4 +1,6 @@
 ---
+import StructuredData from '~/components/common/StructuredData.astro';
+import { publications, publicationSchema, SITE_URL } from '~/data/identity';
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -24,6 +26,23 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    slot="head"
+    schema={{
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      url: `${SITE_URL}/academia`,
+      inLanguage: 'es',
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: publications.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: publicationSchema(p),
+        })),
+      },
+    }}
+  />
   <HeroText
     tagline="Academia"
     title="Investigación y docencia"

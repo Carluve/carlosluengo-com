@@ -7,6 +7,7 @@ import { I18N } from 'astrowind:config';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
+import SiteSchema from '~/components/common/SiteSchema.astro';
 import CustomStyles from '~/components/CustomStyles.astro';
 import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
 import Metadata from '~/components/common/Metadata.astro';
@@ -36,6 +37,15 @@ const hreflang = alternate.translated
     ? { es: here, en: alternate.href }
     : { es: alternate.href, en: here }
   : undefined;
+// Markdown twin of this page, for answer engines (src/utils/markdown.ts).
+const mainPages = ['/', '/about', '/academia', '/developer', '/contact'];
+const basePath = lang === 'en' ? here.replace(/^\/en/, '') || '/' : here;
+const markdownHref = mainPages.includes(basePath)
+  ? `${lang === 'en' ? '/en' : ''}${basePath === '/' ? '/index' : basePath}.md`
+  : /^\/blog\/(?!\d+$)[^/]+$/.test(here)
+    ? `${here}.md`
+    : undefined;
+
 // No trailing slash, like the canonical URL (the home is https://carlosluengo.com).
 const absolute = (path: string) => new URL(path, Astro.site).toString().replace(/\/$/, '');
 ---
@@ -44,6 +54,10 @@ const absolute = (path: string) => new URL(path, Astro.site).toString().replace(
 <html lang={lang} dir={textDirection}>
   <head>
     <CommonMeta />
+    <meta name="author" content="Carlos Luengo Vera" />
+    <SiteSchema />
+    {markdownHref && <link rel="alternate" type="text/markdown" href={markdownHref} />}
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
     {
       hreflang && (
         <>

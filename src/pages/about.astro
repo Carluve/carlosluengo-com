@@ -1,4 +1,6 @@
 ---
+import StructuredData from '~/components/common/StructuredData.astro';
+import { PERSON_ID, SITE_URL } from '~/data/identity';
 import CareerTimeline from '~/components/widgets/CareerTimeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
@@ -19,6 +21,16 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    slot="head"
+    schema={{
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      url: `${SITE_URL}/about`,
+      inLanguage: 'es',
+      mainEntity: { '@id': PERSON_ID },
+    }}
+  />
   <HeroText
     tagline="Sobre mí"
     title="Trayectoria profesional y académica"

@@ -1,0 +1,31 @@
+---
+/**
+ * Site-wide JSON-LD graph: the WebSite and the Person behind it. Pages add
+ * their own nodes (BlogPosting, ProfilePage, ScholarlyArticle…) and point to
+ * these by @id, so search and answer engines resolve one entity everywhere.
+ */
+import { getImage } from 'astro:assets';
+import portrait from '~/assets/images/carlos-luengo.jpg';
+import { PERSON_ID, SITE_URL, WEBSITE_ID, person, personSchema } from '~/data/identity';
+
+const photo = await getImage({ src: portrait, width: 600, height: 600, format: 'jpg' });
+const image = new URL(photo.src, SITE_URL).toString();
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': WEBSITE_ID,
+      name: person.name,
+      url: SITE_URL,
+      inLanguage: ['es', 'en'],
+      publisher: { '@id': PERSON_ID },
+      author: { '@id': PERSON_ID },
+    },
+    personSchema(image),
+  ],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(graph)} />
