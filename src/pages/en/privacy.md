@@ -14,9 +14,17 @@ There is no contact form, newsletter or user area. No analytics tools or trackin
 
 Correspondence is handled via [LinkedIn](https://www.linkedin.com/in/carlosluengo), outside this site.
 
-## Theme preference
+## Cookies and local storage
 
-The light/dark theme switcher may store your choice in the browser’s local storage (`localStorage`). That preference is not sent to this site’s server and can be deleted from the browser itself.
+This site uses no analytics, advertising or tracking cookies, which is why it shows no consent banner. It only stores in your browser what it needs to work and what you choose:
+
+| Name      | Type              | Set by                                  | Purpose                                          | Lifetime           |
+| --------- | ----------------- | --------------------------------------- | ------------------------------------------------ | ------------------ |
+| `__cf_bm` | Technical cookie  | Cloudflare                              | Telling people from bots and protecting the site | 30 minutes         |
+| `lang`    | Preference cookie | This site, only if you click ES/EN      | Remembering the language you chose               | 1 year             |
+| `theme`   | `localStorage`    | This site, only if you change the theme | Remembering light or dark mode                   | Until you clear it |
+
+These are technical cookies or preferences you asked for, exempt from consent under article 22.2 of the Spanish LSSI. None of them identifies you or is shared with third parties, and you can delete them at any time from your browser settings.
 
 ## Hosting
 
