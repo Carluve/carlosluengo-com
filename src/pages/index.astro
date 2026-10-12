@@ -10,8 +10,7 @@ import StructuredData from '~/components/common/StructuredData.astro';
 import { SITE, I18N } from 'astrowind:config';
 import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
 import favIconSvg from '~/assets/favicons/favicon.svg';
-import skyline from '~/assets/images/hero/skyline-network.jpg';
-import district from '~/assets/images/hero/district-light.jpg';
+import portrait from '~/assets/images/carlos-luengo.jpg';
 
 const metadata = {
   title: 'Carlos Luengo — Investigación, docencia e industria',
@@ -60,7 +59,7 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
 
   <section class="relative not-prose">
     <div
-      class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-12 lg:pb-10 lg:pt-16"
+      class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-6 pt-10 sm:px-6 md:pt-14 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-16 lg:pb-10 lg:pt-16"
     >
       <div>
         <p class="aw-eyebrow">Investigación · Docencia · Industria</p>
@@ -86,32 +85,23 @@ const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
         </div>
       </div>
 
-      <figure class="relative">
+      <figure class="relative order-first w-36 sm:w-44 lg:order-none lg:mx-auto lg:w-full lg:max-w-none">
+        <div
+          class="absolute -inset-3 -z-10 rounded-[1.75rem] bg-gradient-to-br from-primary/20 via-sky-200/30 to-transparent blur-2xl dark:from-primary/25 dark:via-sky-500/10"
+          aria-hidden="true"
+        >
+        </div>
         <Picture
-          src={skyline}
+          src={portrait}
           formats={['avif', 'webp']}
           fallbackFormat="jpg"
-          widths={[640, 960, 1280]}
-          sizes="(min-width: 1024px) 54vw, 100vw"
-          alt="Vista aérea de un horizonte de torres unidas por una red de líneas azules, con cielo despejado a la izquierda."
+          widths={[360, 540, 720, 960]}
+          sizes="(min-width: 1024px) 30vw, 11rem"
+          alt="Retrato de Carlos Luengo Vera con americana azul marino y camisa blanca, en una oficina."
           loading="eager"
           fetchpriority="high"
-          class="aspect-[16/9] w-full rounded-2xl border border-line object-cover object-[72%_center]"
+          class="aspect-square w-full rounded-2xl border border-line object-cover object-[50%_30%] shadow-[0_18px_50px_rgb(15_23_42/0.14)]"
         />
-        <div
-          class="absolute bottom-3 left-3 w-[46%] overflow-hidden rounded-xl border-4 border-surface shadow-[0_12px_40px_rgb(15_23_42/0.18)] sm:bottom-5 sm:left-5 sm:w-[42%]"
-        >
-          <Picture
-            src={district}
-            formats={['avif', 'webp']}
-            fallbackFormat="jpg"
-            widths={[320, 480, 720]}
-            sizes="(min-width: 1024px) 22vw, 42vw"
-            alt="Avenida entre edificios de oficinas, con estelas de luz azul sobre el pavimento."
-            loading="eager"
-            class="aspect-[16/10] w-full object-cover"
-          />
-        </div>
       </figure>
     </div>
   </section>
