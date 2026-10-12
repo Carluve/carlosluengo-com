@@ -34,11 +34,11 @@ i18n:
 apps:
   blog:
     isEnabled: true
-    postsPerPage: 8
+    postsPerPage: 12
 
     post:
       isEnabled: true
-      permalink: '/%slug%'
+      permalink: 'blog/%slug%'
       robots:
         index: true
 

@@ -41,8 +41,10 @@ const columnsClass = getColumnsClass(columns, '');
               href={href}
               {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               class:list={[
-                'group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-slate-700 dark:bg-slate-900 shadow-sm',
-                href ? 'transition hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/40' : '',
+                'aw-card group flex h-full flex-col overflow-hidden',
+                href
+                  ? 'motion-safe:transition motion-safe:duration-200 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 motion-reduce:transition-none'
+                  : '',
               ]}
             >
               {image &&
@@ -67,13 +69,13 @@ const columnsClass = getColumnsClass(columns, '');
                 {tags && tags.length > 0 && (
                   <ul class="mb-3 flex flex-wrap gap-1.5 list-none">
                     {tags.map((tag) => (
-                      <li class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted dark:bg-slate-800">
+                      <li class="rounded-full border border-line bg-primary/5 px-2.5 py-0.5 text-xs font-medium text-link">
                         {tag}
                       </li>
                     ))}
                   </ul>
                 )}
-                {itemTitle && <h3 class="text-xl font-bold text-heading">{itemTitle}</h3>}
+                {itemTitle && <h3 class="font-heading text-xl font-medium text-heading">{itemTitle}</h3>}
                 {description && <p class="mt-2 text-muted text-pretty" set:html={description} />}
                 {result && (
                   <p class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">

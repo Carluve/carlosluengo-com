@@ -1,24 +1,19 @@
 ---
-import Layout from '~/layouts/Layout.astro';
+import Layout from '~/layouts/PageLayout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 
 const title = `Página no encontrada`;
 ---
 
 <Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">La página solicitada no está publicada.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          La dirección no corresponde a ninguna sección de este sitio. Puede continuar desde el inicio.
-        </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Volver al inicio</a>
-      </div>
-    </div>
+  <section class="mx-auto flex max-w-xl flex-col items-start px-4 py-20 sm:px-6">
+    <p class="aw-eyebrow">Error 404</p>
+    <h1 class="mt-3 font-heading text-4xl font-medium tracking-tight text-heading md:text-5xl">
+      La página solicitada no está publicada.
+    </h1>
+    <p class="mt-4 text-lg leading-relaxed text-muted">
+      La dirección no corresponde a ninguna sección de este sitio. Puede continuar desde el inicio.
+    </p>
+    <a class="btn-primary mt-8" href={getHomePermalink()}>Volver al inicio</a>
   </section>
 </Layout>

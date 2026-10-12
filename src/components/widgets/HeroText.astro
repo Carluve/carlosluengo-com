@@ -24,86 +24,50 @@ const {
   callToAction2 = await Astro.slots.render('callToAction2'),
   callToAction3 = await Astro.slots.render('callToAction3'),
 } = Astro.props;
+
+const actions = [callToAction, callToAction2, callToAction3].filter(Boolean);
 ---
 
-<section class="relative md:-mt-[76px] not-prose">
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="pt-12 md:pt-20 pb-4 md:pb-6">
-      <div class="text-center max-w-5xl mx-auto">
+<section class="relative not-prose">
+  <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="border-b border-line pb-10 pt-10 md:pb-14 md:pt-16">
+      <div class="max-w-3xl">
         {
           badge && (
-            <span class="inline-block mb-4 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary dark:bg-primary/25 dark:text-blue-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+            <span class="mb-4 inline-block rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-link">
               {badge}
             </span>
           )
         }
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={tagline}
-            />
-          )
-        }
+        {tagline && <p class="aw-eyebrow" set:html={tagline} />}
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-heading intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              class="mt-3 font-heading text-4xl font-medium leading-[1.12] tracking-tight text-balance text-heading md:text-5xl"
               set:html={title}
             />
           )
         }
-        <div class="max-w-3xl mx-auto">
-          {
-            subtitle && (
-              <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-                set:html={subtitle}
-              />
-            )
-          }
-          <div
-            class:list={[
-              'm-auto flex flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
-              callToAction3 ? 'max-w-4xl sm:flex-wrap' : 'max-w-xs sm:max-w-md flex-nowrap',
-            ]}
-          >
-            {
-              callToAction && (
+        {
+          subtitle && (
+            <p class="mt-4 max-w-2xl text-lg leading-relaxed text-pretty text-muted md:text-xl" set:html={subtitle} />
+          )
+        }
+        {
+          actions.length > 0 && (
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {actions.map((action, index) => (
                 <div class="flex w-full sm:w-auto">
-                  {typeof callToAction === 'string' ? (
-                    <Fragment set:html={callToAction} />
+                  {typeof action === 'string' ? (
+                    <Fragment set:html={action} />
                   ) : (
-                    <Button variant="primary" {...callToAction} />
+                    <Button variant={index === 0 ? 'primary' : 'secondary'} {...action} />
                   )}
                 </div>
-              )
-            }
-            {
-              callToAction2 && (
-                <div class="flex w-full sm:w-auto">
-                  {typeof callToAction2 === 'string' ? (
-                    <Fragment set:html={callToAction2} />
-                  ) : (
-                    <Button {...callToAction2} />
-                  )}
-                </div>
-              )
-            }
-            {
-              callToAction3 && (
-                <div class="flex w-full sm:w-auto">
-                  {typeof callToAction3 === 'string' ? (
-                    <Fragment set:html={callToAction3} />
-                  ) : (
-                    <Button {...callToAction3} />
-                  )}
-                </div>
-              )
-            }
-          </div>
-        </div>
+              ))}
+            </div>
+          )
+        }
         {content && <Fragment set:html={content} />}
       </div>
     </div>

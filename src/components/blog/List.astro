@@ -13,9 +13,9 @@ const { posts } = Astro.props;
   posts.length === 0 ? (
     <p class="text-center text-muted dark:text-slate-400">No hay entradas en esta sección.</p>
   ) : (
-    <ul>
+    <ul class="flex flex-col gap-5">
       {posts.map((post) => (
-        <li class="mb-12 md:mb-20">
+        <li>
           <Item post={post} />
         </li>
       ))}

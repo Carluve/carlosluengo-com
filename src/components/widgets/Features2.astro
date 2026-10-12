@@ -23,7 +23,7 @@ const {
 const columnsClass = getColumnsClass(columns);
 
 const cardClass =
-  'relative flex flex-col rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade';
+  'aw-card relative flex flex-col p-6 motion-safe:transition motion-safe:duration-200 motion-reduce:transition-none';
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -47,12 +47,16 @@ const cardClass =
                 cardClass,
                 'h-full',
                 cardHref &&
-                  'transition hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:border-primary/40',
+                  'hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 motion-safe:hover:-translate-y-px',
               ]}
             >
-              {(icon || defaultIcon) && <Icon name={icon || defaultIcon} class="mb-6 w-12 h-12 text-primary" />}
-              {eyebrow && <p class="mb-3 text-sm font-semibold tracking-wide text-primary">{eyebrow}</p>}
-              <h3 class="text-xl font-bold leading-snug text-pretty">{itemTitle}</h3>
+              {(icon || defaultIcon) && (
+                <div class="mb-5 grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary">
+                  <Icon name={icon || defaultIcon} class="h-5 w-5" />
+                </div>
+              )}
+              {eyebrow && <p class="aw-eyebrow mb-3">{eyebrow}</p>}
+              <h3 class="font-heading text-xl font-medium leading-snug text-pretty text-heading">{itemTitle}</h3>
               {description && <div class="text-muted mt-2" set:html={description} />}
               {actionList.length > 0 && (
                 <div class="mt-auto flex flex-wrap gap-3 pt-5">

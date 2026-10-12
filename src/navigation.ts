@@ -63,6 +63,6 @@ export const footerData = {
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/Carluve' },
   ],
   footNote: `
-    © ${new Date().getFullYear()} <a class="text-blue-600 underline dark:text-muted" href="https://carlosluengo.com">Carlos Luengo Vera</a> · Investigación · Docencia · Industria
+    © ${new Date().getFullYear()} <a class="text-link hover:underline" href="https://carlosluengo.com">Carlos Luengo Vera</a> · Investigación · Docencia · Industria
   `,
 };
