@@ -1,0 +1,211 @@
+---
+import { Icon } from 'astro-icon/components';
+import ToggleTheme from '~/components/common/ToggleTheme.astro';
+import { orcidUrl, xUrl } from '~/navigation';
+import { getAsset, getBlogPermalink, getPermalink, trimSlash } from '~/utils/permalinks';
+
+interface Segment {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  /** When false, the top bar title is not the page h1. */
+  heading?: boolean;
+  segments?: Segment[];
+  filterLabel?: string;
+  filterHref?: string;
+}
+
+const { title, heading = true, segments = [], filterLabel, filterHref } = Astro.props;
+
+const current = trimSlash(Astro.url.pathname);
+const site = [
+  { text: 'Inicio', href: getPermalink('/'), icon: 'tabler:home' },
+  { text: 'Blog', href: getBlogPermalink(), icon: 'tabler:news' },
+  { text: 'Academia', href: getPermalink('/academia'), icon: 'tabler:school' },
+  { text: 'Developer', href: getPermalink('/developer'), icon: 'tabler:code' },
+  { text: 'Sobre mí', href: getPermalink('/about'), icon: 'tabler:user' },
+  { text: 'Contacto', href: getPermalink('/contact'), icon: 'tabler:mail' },
+];
+const external = [
+  { text: 'ORCID', href: orcidUrl, icon: 'orcid' },
+  { text: 'GitHub', href: 'https://github.com/Carluve', icon: 'tabler:brand-github' },
+  { text: 'X', href: xUrl, icon: 'tabler:brand-x' },
+];
+
+const isCurrent = (href: string) => {
+  const path = trimSlash(href);
+  if (path === '') return current === '';
+  if (path === 'blog') {
+    return (
+      current === 'blog' ||
+      current.startsWith('blog/') ||
+      current.startsWith('category/') ||
+      current.startsWith('tag/')
+    );
+  }
+  return current === path || current.startsWith(`${path}/`);
+};
+
+const TitleTag = heading ? 'h1' : 'p';
+---
+
+<aw-app-shell class="dash">
+  <button class="dash-backdrop" type="button" data-close hidden>
+    <span class="sr-only">Cerrar el menú</span>
+  </button>
+
+  <aside id="navegacion" class="dash-side">
+    <div class="dash-brand">
+      <button class="dash-icon-btn dash-drawer-close" type="button" data-close>
+        <Icon name="tabler:x" class="h-[18px] w-[18px]" aria-hidden="true" />
+        <span class="sr-only">Cerrar el menú</span>
+      </button>
+      <a class="dash-brand-link" href={getPermalink('/')} aria-label="Carlos Luengo, inicio">
+        <span class="avatar" aria-hidden="true">CL</span>
+        <span class="dash-hide dash-brand-name">Carlos Luengo</span>
+      </a>
+      <button class="dash-icon-btn dash-collapse" type="button" data-collapse aria-pressed="false" aria-label="Contraer la barra lateral">
+        <Icon name="tabler:layout-sidebar-left-collapse" class="h-[18px] w-[18px]" aria-hidden="true" />
+      </button>
+    </div>
+
+    <a class="dash-profile" href={getPermalink('/about')}>
+      <span class="avatar avatar-sm" aria-hidden="true">CL</span>
+      <span class="dash-hide min-w-0">
+        <span class="dash-profile-name">Carlos Luengo</span>
+        <span class="dash-profile-meta">Cloudflare · UAH</span>
+      </span>
+    </a>
+
+    <nav class="dash-nav" aria-label="Sitio">
+      <p class="dash-section-label dash-hide">Sitio</p>
+      <ul>
+        {
+          site.map((item) => {
+            const active = isCurrent(item.href);
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={[{ 'is-active': active }]}
+                  aria-current={active ? 'page' : undefined}
+                  title={item.text}
+                >
+                  <Icon name={item.icon} class="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
+                  <span class="dash-hide">{item.text}</span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+
+    <nav class="dash-nav" aria-label="Enlaces">
+      <p class="dash-section-label dash-hide">Enlaces</p>
+      <ul>
+        {
+          external.map((item) => (
+            <li>
+              <a href={item.href} target="_blank" rel="noopener noreferrer" title={item.text}>
+                <Icon name={item.icon} class="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
+                <span class="dash-hide min-w-0 flex-1">{item.text}</span>
+                <Icon name="tabler:external-link" class="dash-ext dash-hide h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="dash-side-foot">
+      <nav class="dash-docs" aria-label="Documentación">
+        <a class="dash-hide" href={getPermalink('/privacy')}>Privacidad</a>
+        <a class="dash-hide" href={getPermalink('/terms')}>Términos</a>
+      </nav>
+      <div class="dash-user">
+        <span class="avatar avatar-sm" aria-hidden="true">CL</span>
+        <span class="dash-hide min-w-0 flex-1">
+          <span class="dash-profile-name">@carluve</span>
+          <span class="dash-profile-meta">Cloudflare · UAH</span>
+        </span>
+        <ToggleTheme
+          class="dash-icon-btn"
+          iconClass="h-[18px] w-[18px]"
+          label="Cambiar entre tema claro y oscuro"
+        />
+      </div>
+    </div>
+  </aside>
+
+  <div class="dash-frame">
+    <main id="contenido">
+    <header class="dash-top">
+      <div class="dash-top-title">
+        <button
+          class="dash-icon-btn dash-menu"
+          type="button"
+          data-menu
+          aria-controls="navegacion"
+          aria-expanded="false"
+        >
+          <Icon name="tabler:menu-2" class="h-[18px] w-[18px]" aria-hidden="true" />
+          <span class="sr-only">Abrir el menú</span>
+        </button>
+        <TitleTag class="dash-title">{title}</TitleTag>
+      </div>
+
+      <div class="dash-top-actions">
+        {
+          segments.length > 0 && (
+            <div class="dash-segment" role="group" aria-label="Filtro">
+              {segments.map((segment, index) => (
+                <button type="button" data-shell-segment={segment.id} aria-pressed={index === 0 ? 'true' : 'false'}>
+                  {segment.label}
+                </button>
+              ))}
+            </div>
+          )
+        }
+        {
+          filterLabel && filterHref && (
+            <a class="dash-pill" href={filterHref}>
+              <Icon name="tabler:calendar" class="h-3.5 w-3.5" aria-hidden="true" />
+              {filterLabel}
+            </a>
+          )
+        }
+        {
+          filterLabel && !filterHref && (
+            <button class="dash-pill" type="button" data-shell-filter>
+              <Icon name="tabler:calendar" class="h-3.5 w-3.5" aria-hidden="true" />
+              {filterLabel}
+            </button>
+          )
+        }
+        <form id="shell-search" class="dash-search" action={getBlogPermalink()} method="get" role="search">
+          <label class="sr-only" for="shell-q">Buscar artículos</label>
+          <Icon name="tabler:search" class="h-4 w-4" aria-hidden="true" />
+          <input id="shell-q" name="q" type="search" placeholder="Buscar" autocomplete="off" />
+        </form>
+        <a class="dash-btn" href={getAsset('/rss.xml')}>
+          <Icon name="tabler:rss" class="h-4 w-4" aria-hidden="true" />
+          RSS
+        </a>
+        <a class="dash-btn dash-btn-primary" href={getPermalink('/contact')}>Contactar</a>
+      </div>
+    </header>
+
+    <div class="dash-main">
+      <slot />
+    </div>
+    </main>
+  </div>
+</aw-app-shell>
+
+<script>
+  import './dashboard';
+</script>

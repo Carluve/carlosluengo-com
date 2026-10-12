@@ -1,9 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import { Icon } from 'astro-icon/components';
 import OrcidBadge from '~/components/common/OrcidBadge.astro';
 import { xUrl } from '~/navigation';
@@ -14,153 +10,103 @@ const metadata = {
   description:
     'Trayectoria profesional y académica de Carlos Luengo Vera: dirección de cuentas enterprise en Cloudflare, doctorado en Inteligencia Artificial y Management en la Universidad de Alcalá y docencia de posgrado.',
 };
+
+const career = [
+  {
+    title: 'Cloudflare',
+    description:
+      'Sr. Enterprise Account Executive. Cuentas de empresas digitales nativas, startups e ISVs. Etapa actual.',
+  },
+  {
+    title: 'Amazon Web Services',
+    description: 'Dirección de cuentas y soluciones cloud para clientes de empresa y del canal de partners.',
+  },
+  {
+    title: 'Lenovo',
+    description: 'Funciones comerciales y de ecosistema en infraestructura y dispositivos.',
+  },
+  {
+    title: 'Telefónica',
+    description: 'Relación con clientes en telecomunicaciones y servicios cloud.',
+  },
+  {
+    title: 'Insight',
+    description: 'Soluciones tecnológicas para empresas.',
+  },
+  {
+    title: 'Microsoft',
+    description: 'Inicios de la carrera, en evangelismo técnico del ecosistema Microsoft.',
+  },
+];
 ---
 
-<Layout metadata={metadata}>
-  <HeroText
-    tagline="Sobre mí"
-    title="Trayectoria profesional y académica"
-    subtitle="Carlos Luengo Vera trabaja en la industria tecnológica y, en paralelo, en la investigación y la docencia universitarias."
-  >
-    <div slot="content" class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+<Layout metadata={metadata} shellTitle="Sobre mí">
+  <section class="panel">
+    <p class="max-w-3xl leading-relaxed text-muted">
+      Carlos Luengo Vera trabaja en la industria tecnológica y, en paralelo, en la investigación y la docencia
+      universitarias. La actividad profesional se ha desarrollado en la dirección de cuentas y en el ecosistema
+      tecnológico. La secuencia, de los inicios a la etapa actual, es Microsoft, Insight, Telefónica, Lenovo, Amazon Web
+      Services y Cloudflare.
+    </p>
+    <p class="mt-3 max-w-3xl leading-relaxed text-muted">
+      Esa práctica informa la investigación doctoral y la docencia, sin sustituirlas. El objetivo académico es la
+      acreditación en el sistema universitario español y, a más largo plazo, una cátedra.
+    </p>
+    <div class="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
       <OrcidBadge />
-      <a
-        class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium text-heading transition duration-150 ease-in-out hover:border-primary/40 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-        href={xUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon name="tabler:brand-x" class="h-5 w-5 shrink-0" aria-hidden="true" />
+      <a class="dash-btn" href={xUrl} target="_blank" rel="noopener noreferrer">
+        <Icon name="tabler:brand-x" class="h-4 w-4" aria-hidden="true" />
         @carluve
       </a>
     </div>
-  </HeroText>
+  </section>
 
-  <Content
-    items={[
-      {
-        title: 'Industria',
-        description:
-          'Sr. Enterprise Account Executive en Cloudflare, con responsabilidad sobre empresas digitales nativas, startups e ISVs.',
-      },
-      {
-        title: 'Investigación',
-        description:
-          'Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. La tesis aborda el impacto económico y organizativo de los modelos de lenguaje.',
-      },
-      {
-        title: 'Docencia',
-        description:
-          'Imparte clase en programas de posgrado y de formación ejecutiva, con la intención de consolidar una carrera académica en España.',
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Presentación</h2>
+  <section class="panel mt-4">
+    <h2>Experiencia profesional</h2>
+    <p class="mb-2">
+      Organizaciones en las que ha desempeñado funciones comerciales, de ecosistema o de dirección de cuentas, de la
+      etapa actual a los inicios. No hay un año de comienzo publicado.
+    </p>
+    <table class="org-table">
+      <caption class="sr-only">Organizaciones, de la etapa actual a los inicios</caption>
+      <thead>
+        <tr>
+          <th scope="col">Organización</th>
+          <th scope="col">Función documentada</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          career.map((item) => (
+            <tr>
+              <th scope="row">{item.title}</th>
+              <td>{item.description}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </section>
+
+  <div class="stack-2 mt-4">
+    <section class="panel">
+      <h2>Investigación</h2>
       <p>
-        La actividad profesional se ha desarrollado en la dirección de cuentas y en el ecosistema tecnológico. La
-        secuencia, de los inicios a la etapa actual, es Microsoft, Insight, Telefónica, Lenovo, Amazon Web Services y
-        Cloudflare.
+        Doctorando en Inteligencia Artificial y Management en la Universidad de Alcalá. La tesis aborda el impacto
+        económico y organizativo de los modelos de lenguaje. Las publicaciones disponibles se recogen en Academia y en
+        Google Scholar.
       </p>
-      <br />
+      <p class="mt-3">
+        <a class="font-semibold text-link hover:underline" href={getPermalink('/academia')}>Ver Academia</a>
+      </p>
+    </section>
+    <section class="panel">
+      <h2>Docencia</h2>
       <p>
-        Esa práctica informa la investigación doctoral y la docencia, sin sustituirlas. El objetivo académico es la
-        acreditación en el sistema universitario español y, a más largo plazo, una cátedra.
+        Imparte clase en programas de posgrado y de formación ejecutiva, con la intención de consolidar una carrera
+        académica en España. La trayectoria se orienta a la acreditación docente e investigadora y, en su momento, a
+        una cátedra.
       </p>
-      <div class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-        <OrcidBadge />
-        <a
-          class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium text-heading transition duration-150 ease-in-out hover:border-primary/40 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-          href={xUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon name="tabler:brand-x" class="h-5 w-5 shrink-0" aria-hidden="true" />
-          @carluve
-        </a>
-      </div>
-    </Fragment>
-  </Content>
-
-  <Features
-    id="carrera"
-    tagline="Industria"
-    title="Experiencia profesional"
-    subtitle="Organizaciones en las que ha desempeñado funciones comerciales, de ecosistema o de dirección de cuentas, de la etapa actual a los inicios."
-    columns={3}
-    items={[
-      {
-        title: 'Cloudflare',
-        description:
-          'Sr. Enterprise Account Executive. Cuentas de empresas digitales nativas, startups e ISVs. Etapa actual.',
-        icon: 'tabler:cloud',
-      },
-      {
-        title: 'Amazon Web Services',
-        description: 'Dirección de cuentas y soluciones cloud para clientes de empresa y del canal de partners.',
-        icon: 'tabler:brand-aws',
-      },
-      {
-        title: 'Lenovo',
-        description: 'Funciones comerciales y de ecosistema en infraestructura y dispositivos.',
-        icon: 'tabler:device-desktop',
-      },
-      {
-        title: 'Telefónica',
-        description: 'Relación con clientes en telecomunicaciones y servicios cloud.',
-        icon: 'tabler:antenna',
-      },
-      {
-        title: 'Insight',
-        description: 'Soluciones tecnológicas para empresas.',
-        icon: 'tabler:building',
-      },
-      {
-        title: 'Microsoft',
-        description: 'Inicios de la carrera, en evangelismo técnico del ecosistema Microsoft.',
-        icon: 'tabler:brand-windows',
-      },
-    ]}
-  />
-
-  <Features
-    id="academia-path"
-    tagline="Universidad"
-    title="Proyección académica"
-    subtitle="Investigación y docencia orientadas a una carrera estable en la universidad española."
-    columns={2}
-    items={[
-      {
-        title: 'Doctorado',
-        description:
-          'Inteligencia Artificial y Management en la Universidad de Alcalá. Las publicaciones disponibles se recogen en Academia y en Google Scholar.',
-        icon: 'tabler:book-2',
-      },
-      {
-        title: 'Acreditación',
-        description:
-          'La trayectoria se orienta a la acreditación docente e investigadora y, en su momento, a una cátedra en España.',
-        icon: 'tabler:school',
-      },
-    ]}
-  />
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Academia',
-        href: getPermalink('/academia'),
-      },
-      {
-        text: 'Contacto',
-        href: getPermalink('/contact'),
-      },
-    ]}
-  >
-    <Fragment slot="title">Publicaciones y correspondencia</Fragment>
-    <Fragment slot="subtitle">
-      La actividad investigadora y docente se detalla en Academia. Las consultas pueden dirigirse desde Contacto.
-    </Fragment>
-  </CallToAction>
+    </section>
+  </div>
 </Layout>

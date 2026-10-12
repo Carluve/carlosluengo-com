@@ -1,14 +1,12 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { blogCategoryRobots, getStaticPathsBlogCategory } from '~/utils/blog';
+import { blogCategoryRobots, fetchPosts, getStaticPathsBlogCategory } from '~/utils/blog';
 
 import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
-import BlogOverview from '~/components/blog/BlogOverview.astro';
-import Pagination from '~/components/blog/Pagination.astro';
+import PostTable from '~/components/shell/PostTable.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
+import { yearSpan } from '~/data/site-metrics';
 
 export const prerender = true;
 
@@ -19,8 +17,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths> & { category: Record<string, string> };
 
 const { page, category } = Astro.props as Props;
-
 const currentPage = page.currentPage ?? 1;
+const posts = (await fetchPosts()).filter((post) => post.category?.slug === category.slug);
+const span = yearSpan(posts.map((post) => post.publishDate));
 
 const breadcrumbs = [
   { text: 'Inicio', href: getPermalink('/') },
@@ -40,12 +39,17 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
-  <Breadcrumbs bar items={breadcrumbs} />
-  <section class="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline>{category.title}</Headline>
-    <BlogOverview active={category.slug} />
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </section>
+<Layout
+  metadata={metadata}
+  shellTitle={category.title}
+  shellHeading={false}
+  segments={[
+    { id: 'all', label: 'Todos' },
+    { id: 'cover', label: 'Con portada' },
+  ]}
+  filterLabel={span}
+>
+  <h1 class="mb-3 text-lg font-semibold text-heading">{category.title}</h1>
+  <Breadcrumbs class="mb-4" items={breadcrumbs} />
+  <PostTable posts={posts} heading={category.title} />
 </Layout>

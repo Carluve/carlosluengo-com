@@ -1,13 +1,12 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { blogTagRobots, getStaticPathsBlogTag } from '~/utils/blog';
+import { blogTagRobots, fetchPosts, getStaticPathsBlogTag } from '~/utils/blog';
 
 import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
-import Pagination from '~/components/blog/Pagination.astro';
+import PostTable from '~/components/shell/PostTable.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
+import { yearSpan } from '~/data/site-metrics';
 
 export const prerender = true;
 
@@ -18,8 +17,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page, tag } = Astro.props as Props;
-
 const currentPage = page.currentPage ?? 1;
+const posts = (await fetchPosts()).filter((post) => post.tags?.some((item) => item.slug === tag.slug));
+const span = yearSpan(posts.map((post) => post.publishDate));
 
 const breadcrumbs = [
   { text: 'Inicio', href: getPermalink('/') },
@@ -39,11 +39,13 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
-  <Breadcrumbs bar items={breadcrumbs} />
-  <section class="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline>Etiqueta: {tag.title}</Headline>
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </section>
+<Layout
+  metadata={metadata}
+  shellTitle={tag.title}
+  shellHeading={false}
+  filterLabel={span}
+>
+  <h1 class="mb-3 text-lg font-semibold text-heading">Etiqueta: {tag.title}</h1>
+  <Breadcrumbs class="mb-4" items={breadcrumbs} />
+  <PostTable posts={posts} heading={tag.title} />
 </Layout>

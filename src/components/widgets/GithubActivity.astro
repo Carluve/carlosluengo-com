@@ -4,9 +4,11 @@ import { getGithubActivity, type ContributionDay } from '~/data/github-contribut
 interface Props {
   /** Smaller graph for the home page. The developer page uses the full section. */
   compact?: boolean;
+  /** Drop the page-level padding when the graph sits in a dashboard card. */
+  embedded?: boolean;
 }
 
-const { compact = false } = Astro.props;
+const { compact = false, embedded = false } = Astro.props;
 const activity = await getGithubActivity();
 const profileUrl = 'https://github.com/Carluve';
 const fallbackChart = 'https://ghchart.rshah.org/0161EF/Carluve';
@@ -92,14 +94,14 @@ const totalLabel = activity ? activity.totalLastYear.toLocaleString('es') : '';
 const summary = activity
   ? `${totalLabel} contribuciones en el último año en el perfil de GitHub de Carluve`
   : 'Calendario de contribuciones de Carluve en GitHub';
-const Root = compact ? 'div' : 'section';
+const Root = compact || embedded ? 'div' : 'section';
 ---
 
 <Root
-  class:list={['gh-root', compact ? 'mt-8' : 'relative not-prose scroll-mt-[72px]']}
-  {...compact ? {} : { id: 'github-activity' }}
+  class:list={[compact || embedded ? '' : 'relative not-prose scroll-mt-[72px]']}
+  {...compact || embedded ? {} : { id: 'github-activity' }}
 >
-  <div class:list={[compact ? '' : 'mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16 lg:py-20']}>
+  <div class:list={[compact || embedded ? '' : 'mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16 lg:py-20']}>
     {
       compact ? (
         <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -227,8 +229,8 @@ const Root = compact ? 'div' : 'section';
     font-family: var(--aw-font-sans, ui-sans-serif), system-ui, sans-serif;
   }
   .gh-0 {
-    fill: rgb(226 232 240);
-    background-color: rgb(226 232 240);
+    fill: rgb(231 229 228);
+    background-color: rgb(231 229 228);
   }
   .gh-1 {
     fill: rgb(191 214 252);

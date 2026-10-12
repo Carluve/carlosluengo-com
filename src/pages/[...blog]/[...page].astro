@@ -2,14 +2,10 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
-import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
-import BlogOverview from '~/components/blog/BlogOverview.astro';
-import Pagination from '~/components/blog/Pagination.astro';
-import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
-import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
-
-import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
+import KpiStrip from '~/components/shell/KpiStrip.astro';
+import PostTable from '~/components/shell/PostTable.astro';
+import { blogListRobots, fetchPosts, getStaticPathsBlogList } from '~/utils/blog';
+import { yearSpan } from '~/data/site-metrics';
 
 export const prerender = true;
 
@@ -21,13 +17,8 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
-
-const breadcrumbs = [
-  { text: 'Inicio', href: getPermalink('/') },
-  ...(currentPage > 1
-    ? [{ text: 'Blog', href: getBlogPermalink() }, { text: `Página ${currentPage}` }]
-    : [{ text: 'Blog' }]),
-];
+const posts = await fetchPosts();
+const span = yearSpan(posts.map((post) => post.publishDate));
 
 const metadata = {
   title: `Blog${currentPage > 1 ? ` — Página ${currentPage}` : ''}`,
@@ -43,20 +34,21 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout
+  metadata={metadata}
+  shellTitle="Blog"
+  segments={[
+    { id: 'all', label: 'Todos' },
+    { id: 'cover', label: 'Con portada' },
+  ]}
+  filterLabel={span}
+>
   <Fragment slot="head">
     {page.url.prev && <link rel="prev" href={page.url.prev} />}
     {page.url.next && <link rel="next" href={page.url.next} />}
   </Fragment>
-  <Breadcrumbs bar items={breadcrumbs} />
-  <section class="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline
-      subtitle="Notas sobre infraestructura cloud, inteligencia artificial aplicada y el vínculo entre la industria y la universidad."
-    >
-      Blog
-    </Headline>
-    <BlogOverview />
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-  </section>
+  <KpiStrip />
+  <div class="mt-4">
+    <PostTable posts={posts} />
+  </div>
 </Layout>

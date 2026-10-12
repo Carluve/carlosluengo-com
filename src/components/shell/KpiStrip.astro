@@ -1,0 +1,101 @@
+---
+import { Icon } from 'astro-icon/components';
+import SparkBars from '~/components/shell/SparkBars.astro';
+import { getGithubActivity } from '~/data/github-contributions';
+import { publications } from '~/data/publications';
+import { countsByYear, monthlyTotals, organizations, roseVersusPreviousYear } from '~/data/site-metrics';
+import { fetchPosts } from '~/utils/blog';
+
+const posts = await fetchPosts();
+const activity = await getGithubActivity();
+
+const postSeries = countsByYear(posts.map((post) => post.publishDate));
+const publicationSeries = countsByYear(publications.map((item) => new Date(`${item.date}T00:00:00Z`)));
+const githubSeries = activity ? monthlyTotals(activity.contributions) : [];
+
+const latestPosts = postSeries[postSeries.length - 1];
+const latestPublications = publicationSeries[publicationSeries.length - 1];
+
+const items = [
+  {
+    icon: 'tabler:news',
+    label: 'Posts publicados',
+    value: posts.length.toLocaleString('es'),
+    caption: latestPosts ? `${latestPosts.count.toLocaleString('es')} en ${latestPosts.year}` : 'Sin artículos',
+    up: roseVersusPreviousYear(postSeries),
+    pill: latestPosts ? String(latestPosts.year) : undefined,
+    bars: postSeries.map((item) => item.count),
+    barsLabel: postSeries.map((item) => `${item.year}: ${item.count}`).join(', ') || 'Sin artículos por año',
+  },
+  {
+    icon: 'tabler:book',
+    label: 'Publicaciones académicas',
+    value: publications.length.toLocaleString('es'),
+    caption: latestPublications
+      ? `${latestPublications.count.toLocaleString('es')} en ${latestPublications.year}`
+      : 'Sin fichas',
+    up: roseVersusPreviousYear(publicationSeries),
+    pill: latestPublications ? String(latestPublications.year) : undefined,
+    bars: publicationSeries.map((item) => item.count),
+    barsLabel:
+      publicationSeries.map((item) => `${item.year}: ${item.count}`).join(', ') || 'Sin publicaciones por año',
+  },
+  {
+    icon: 'tabler:brand-github',
+    label: 'Contribuciones GitHub',
+    value: activity ? activity.totalLastYear.toLocaleString('es') : '—',
+    caption: activity ? 'último año' : 'sin datos en este build',
+    up: false,
+    pill: activity ? '12 meses' : undefined,
+    bars: githubSeries,
+    barsLabel: activity
+      ? `Contribuciones mensuales del último año. Total ${activity.totalLastYear.toLocaleString('es')}`
+      : 'Sin calendario de contribuciones en este build',
+  },
+  {
+    icon: 'tabler:building',
+    label: 'Organizaciones',
+    value: organizations.length.toLocaleString('es'),
+    caption: organizations.join(', '),
+    up: false,
+    pill: 'Cloudflare',
+    bars: organizations.map(() => 1),
+    barsLabel: `Seis organizaciones, de los inicios a la etapa actual: ${organizations.join(', ')}`,
+  },
+];
+---
+
+<section class="kpi-strip" aria-label="Indicadores">
+  {
+    items.map((item) => (
+      <article class="kpi">
+        <div class="kpi-top">
+          <span class="kpi-chip" aria-hidden="true">
+            <Icon name={item.icon} class="h-4 w-4" />
+          </span>
+          <p class="kpi-label">{item.label}</p>
+          {item.pill && (
+            <span class:list={['delta', { 'delta-up': item.up }]}>
+              {item.up ? (
+                <>
+                  <span aria-hidden="true">↑</span>
+                  <span class="sr-only">Más que el año anterior. </span>
+                  {item.pill}
+                </>
+              ) : (
+                item.pill
+              )}
+            </span>
+          )}
+        </div>
+        <div class="kpi-body">
+          <div class="min-w-0">
+            <p class="kpi-value">{item.value}</p>
+            <p class="kpi-caption">{item.caption}</p>
+          </div>
+          <SparkBars values={item.bars} label={item.barsLabel} />
+        </div>
+      </article>
+    ))
+  }
+</section>
