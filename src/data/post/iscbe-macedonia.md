@@ -2,7 +2,7 @@
 publishDate: 2025-05-08T00:00:00Z
 title: 'Participation at the 8th ISCBE Macedonia: Optimizing AI in Medical Education'
 excerpt: 'On May 8, 2025, I had the honor of participating in the 8th International Scientific Conference on Business and Economics (ISCBE), held in Macedonia. The conference brought together experts and researchers from…'
-category: 'conference'
+category: 'Charlas'
 tags:
   - 'conference'
   - 'AI'

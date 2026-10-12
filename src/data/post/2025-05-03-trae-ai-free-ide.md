@@ -4,7 +4,7 @@ title: 'Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity'
 excerpt: 'Trae.ai is a free, AI-powered integrated development environment (IDE) created by ByteDance (the company behind TikTok). Its goal is to act as a real-time AI coding assistant built into the editor, helping developers…'
 image: 'media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png'
 imageAlt: 'Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity'
-category: 'AI Development'
+category: 'IA'
 tags:
   - 'AI Development'
   - 'IDE'

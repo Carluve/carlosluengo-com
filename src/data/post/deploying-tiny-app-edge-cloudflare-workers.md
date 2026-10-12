@@ -4,7 +4,7 @@ title: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
 excerpt: 'I recently deployed a small demo app using Cloudflare Workers at 👉 https://cloudflare.carlosluengo.es and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and…'
 image: 'media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png'
 imageAlt: 'Deploying a Tiny App at the Edge with Cloudflare Workers: My Take'
-category: 'Technology'
+category: 'Cloudflare'
 tags:
   - 'Technology'
   - 'Web'

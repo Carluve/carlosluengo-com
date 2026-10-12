@@ -4,7 +4,7 @@ title: 'How to Build Your Own GPT in ChatGPT: Step-by-Step Guide & Why Instructi
 excerpt: "Building your own custom GPT in ChatGPT unlocks a world of possibilities: automate tasks, deliver consistent expertise, and create assistants tailored to your needs or your team's. In this guide, you'll learn step by…"
 image: 'media:blog/build-your-own-gpt-chatgpt/202505_01chatcom.png'
 imageAlt: 'How to Build Your Own GPT in ChatGPT: Step-by-Step Guide & Why Instructions Matter'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'tools'

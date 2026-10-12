@@ -4,7 +4,7 @@ title: 'Vibe Coding: The New Software Culture Fueling Unprecedented Productivity
 excerpt: 'What if writing code felt less like debugging and more like a jam session? A new wave in software development called vibe coding is making that a reality. Startups are reaching massive milestones with tiny teams,…'
 image: 'media:blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart.png'
 imageAlt: 'Vibe Coding: The New Software Culture Fueling Unprecedented Productivity'
-category: 'Vibe Coding'
+category: 'IA'
 tags:
   - 'Vibe Coding'
   - 'AI'

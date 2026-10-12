@@ -2,7 +2,7 @@
 publishDate: 2025-04-19T00:00:00Z
 title: 'Generative AI, Productivity, and the Future of Happiness at Work'
 excerpt: 'What if the secret to workplace happiness wasn’t longer vacations or fancier coffee machines—but an AI?'
-category: 'Workplace AI'
+category: 'Academia'
 tags:
   - 'Workplace AI'
   - 'Employee Well-being'

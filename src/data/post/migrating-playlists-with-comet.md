@@ -4,7 +4,7 @@ title: 'Migrating Playlists Between Spotify and Apple Music with Comet'
 excerpt: 'Managing playlists across different music platforms can be frustrating. If you use Spotify but want to try Apple Music (or vice versa), you often lose your carefully curated playlists. In this post, I’ll explain how…'
 image: 'media:blog/migrating-playlists-with-comet/Comet_v1.png'
 imageAlt: 'Migrating Playlists Between Spotify and Apple Music with Comet'
-category: 'Tools'
+category: 'Herramientas'
 tags:
   - 'Tools'
   - 'Music'

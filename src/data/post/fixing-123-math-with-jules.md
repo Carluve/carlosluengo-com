@@ -4,7 +4,7 @@ title: 'Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My 
 excerpt: 'In this post, I share how I used Jules, Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, 1-2-3 Math, had various issues—broken buttons, language-switching…'
 image: 'media:blog/fixing-123-math-with-jules/202505_02jules.png'
 imageAlt: 'Fixing 1-2-3 Math with Jules: How Google’s AI Coding Agent Revived My Broken App'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'development'

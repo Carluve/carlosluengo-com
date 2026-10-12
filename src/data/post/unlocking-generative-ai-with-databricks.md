@@ -4,7 +4,7 @@ title: "Unlocking the Power of Generative AI with Databricks: Turning Data into 
 excerpt: 'Every company today is talking about Generative AI. The promise is clear: unlock hidden value, reduce costs, and create new opportunities.'
 image: 'media:blog/unlocking-generative-ai-with-databricks/databricks01.png'
 imageAlt: "Unlocking the Power of Generative AI with Databricks: Turning Data into 'New Oil'"
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'Technology'

@@ -2,7 +2,7 @@
 publishDate: 2025-12-07T00:00:00Z
 title: 'AWS re:Invent 2025: Agentic AI, Custom Models & The Enterprise Cloud'
 excerpt: 'AWS re:Invent 2025 confirms the company doubles down on agentic AI: new foundation models, custom-training via its own service, and next-gen chips & infra. This rounds up into a strong proposition for enterprises…'
-category: 'Technology'
+category: 'IA'
 tags:
   - 'Technology'
   - 'AI'

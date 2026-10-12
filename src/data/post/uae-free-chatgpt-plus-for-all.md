@@ -4,7 +4,7 @@ title: "UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future
 excerpt: "🇦🇪 UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
 image: 'media:blog/uae-free-chatgpt-plus-for-all/202505_01uae.png'
 imageAlt: "UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'policy'

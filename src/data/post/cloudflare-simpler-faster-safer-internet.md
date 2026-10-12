@@ -4,7 +4,7 @@ title: 'Cloudflare: Why a Simpler, Faster and Safer Internet Actually Matters'
 excerpt: 'The more time I spend working with Cloudflare, the more obvious it becomes: the Internet, as we know it, isn’t something that just exists—it’s something that has to be constantly rebuilt, protected, and optimized.…'
 image: 'media:blog/cloudflare-simpler-faster-safer-internet/cloudflare1.png'
 imageAlt: 'Cloudflare: Why a Simpler, Faster and Safer Internet Actually Matters'
-category: 'Technology'
+category: 'Cloudflare'
 tags:
   - 'Technology'
   - 'Web'

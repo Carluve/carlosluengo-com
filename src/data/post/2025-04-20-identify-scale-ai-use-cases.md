@@ -4,7 +4,7 @@ title: 'How to Identify and Scale High-Impact AI Use Cases'
 excerpt: 'What if the fastest way to create value with AI isn’t by chasing a single killer app—but by spotting dozens of everyday moments where AI can quietly make life easier?'
 image: 'media:blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia.png'
 imageAlt: 'How to Identify and Scale High-Impact AI Use Cases'
-category: 'Generative AI'
+category: 'IA'
 tags:
   - 'Generative AI'
   - 'Workplace AI'

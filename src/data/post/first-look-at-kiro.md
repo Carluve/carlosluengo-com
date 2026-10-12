@@ -4,7 +4,7 @@ title: 'First look at Kiro: the AI IDE for structured coding'
 excerpt: 'In this post, I share my first impressions using Kiro, an AI-native IDE built to guide software development with structure, specs and intent. I explore how it integrates into my daily dev workflow, what benefits it…'
 image: 'media:blog/first-look-at-kiro/kiro_v1.png'
 imageAlt: 'First look at Kiro: the AI IDE for structured coding'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'Development'

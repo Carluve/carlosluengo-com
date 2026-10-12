@@ -4,7 +4,7 @@ title: 'Testing Amazon Q Developer on GitHub'
 excerpt: 'In this post, I share my hands-on experience using Amazon Q Developer on GitHub.com. I tested how Q can handle code generation, review, and transformation workflows directly within GitHub Issues and Pull Requests.…'
 image: 'media:blog/testing-amazon-q-developer-on-github/202505_01amazonq.png'
 imageAlt: 'Testing Amazon Q Developer on GitHub'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'cloud'

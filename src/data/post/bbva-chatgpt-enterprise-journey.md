@@ -4,7 +4,7 @@ title: 'How BBVA Scaled ChatGPT Enterprise: Lessons for Spanish Corporates'
 excerpt: "Spanish corporates are moving fast from pilots to industrial-scale use of ChatGPT Enterprise. BBVA's leap from 3,300 to 11,000 licences in a single year saved staff almost three hours a week on routine tasks and…"
 image: 'media:blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt.png'
 imageAlt: 'How BBVA Scaled ChatGPT Enterprise: Lessons for Spanish Corporates'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'enterprise'

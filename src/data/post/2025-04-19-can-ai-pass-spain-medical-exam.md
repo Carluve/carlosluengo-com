@@ -2,7 +2,7 @@
 publishDate: 2025-04-19T00:00:00Z
 title: 'Can AI Pass Spain’s Toughest Medical Exam?'
 excerpt: "The Spanish MIR (Médico Interno Residente) exam is one of the most rigorous medical licensing tests in Europe. It determines who gets into residency programs in Spain, and it's known for its complex clinical…"
-category: 'AI in Healthcare'
+category: 'Academia'
 tags:
   - 'AI in Healthcare'
   - 'LLMs'

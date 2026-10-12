@@ -4,7 +4,7 @@ title: 'Deep Research with ChatGPT: A Practical Guide'
 excerpt: "Deep research is more than just skimming search results—it's a disciplined, multi-stage approach to finding, evaluating, and synthesising information. In an era where AI generates vast amounts of content and…"
 image: 'media:blog/deep-research-chatgpt-guide/202505_01deepresearch.png'
 imageAlt: 'Deep Research with ChatGPT: A Practical Guide'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'research'

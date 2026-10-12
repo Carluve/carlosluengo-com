@@ -4,7 +4,7 @@ title: 'Building a Global AI-in-Education Observatory with Manus'
 excerpt: 'As a PhD student and a proud collaborator with the University of Alcalá, my academic journey has led me down a fascinating path: establishing a global observatory of Artificial Intelligence tools in education. This…'
 image: 'media:blog/ai-education-observatory/manus_v1.png'
 imageAlt: 'Building a Global AI-in-Education Observatory with Manus'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'Education'

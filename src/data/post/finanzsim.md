@@ -4,7 +4,7 @@ title: 'Meet FinanzSim: An Educational Financial Management Simulator'
 excerpt: 'An AI-powered web app built to help business students master financial concepts through hands-on simulation.'
 image: 'media:blog/finanzsim/finanzsim2026_01.png'
 imageAlt: 'Meet FinanzSim: An Educational Financial Management Simulator'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'education'

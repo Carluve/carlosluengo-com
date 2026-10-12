@@ -2,7 +2,7 @@
 publishDate: 2024-12-27T00:00:00Z
 title: "Why Comet Is the Browser You'll Want in 2025"
 excerpt: 'Comet is a next-generation AI-enhanced browser that streamlines research, automation, and focus for productivity in 2025.'
-category: 'browser'
+category: 'Herramientas'
 tags:
   - 'browser'
   - 'productivity'

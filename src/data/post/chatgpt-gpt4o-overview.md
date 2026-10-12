@@ -4,7 +4,7 @@ title: 'ChatGPT with GPT-4o: Features, Use Cases, and Custom GPTs'
 excerpt: "ChatGPT is more than just a chatbot—it's a powerful AI assistant that can help you brainstorm, code, learn, and automate tasks. In this overview, discover its main features, practical use cases, and how to unlock…"
 image: 'media:blog/chatgpt-gpt4o-overview/202505_chatgpt.png'
 imageAlt: 'ChatGPT with GPT-4o: Features, Use Cases, and Custom GPTs'
-category: 'AI'
+category: 'IA'
 tags:
   - 'AI'
   - 'tools'
