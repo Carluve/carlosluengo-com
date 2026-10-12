@@ -3,7 +3,6 @@ import { Icon } from 'astro-icon/components';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
-import PostCover from '~/components/blog/PostCover.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 
 import { getPermalink } from '~/utils/permalinks';
@@ -23,18 +22,17 @@ const { post, url } = Astro.props;
 <section class="mx-auto py-10 sm:py-14 lg:py-16">
   <article>
     <header>
-      <div class="mx-auto mb-4 mt-0 flex max-w-3xl flex-col px-4 text-sm text-muted sm:px-6">
-        <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={post.publishDate.toISOString()} class="inline-block"
-            >{getFormattedDate(post.publishDate)}</time
-          >
+      <div class="mx-auto mb-4 mt-0 max-w-3xl px-4 text-sm text-muted sm:px-6">
+        <p class="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+          <span class="inline-flex items-center gap-1">
+            <Icon name="tabler:clock" class="h-4 w-4 shrink-0" aria-hidden="true" />
+            <time datetime={post.publishDate.toISOString()}>{getFormattedDate(post.publishDate)}</time>
+          </span>
           {
             post.updateDate && post.updateDate.getTime() !== post.publishDate.getTime() && (
               <>
-                {' '}
-                ·{' '}
-                <span class="inline-block">
+                <span aria-hidden="true">·</span>
+                <span>
                   Actualizado <time datetime={post.updateDate.toISOString()}>{getFormattedDate(post.updateDate)}</time>
                 </span>
               </>
@@ -43,18 +41,19 @@ const { post, url } = Astro.props;
           {
             post.author && (
               <>
-                {' '}
-                · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="inline-block">{post.author}</span>
+                <span aria-hidden="true">·</span>
+                <span class="inline-flex items-center gap-1">
+                  <Icon name="tabler:user" class="h-4 w-4 shrink-0" aria-hidden="true" />
+                  {post.author}
+                </span>
               </>
             )
           }
           {
             post.category && (
               <>
-                {' '}
-                ·{' '}
-                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
+                <span aria-hidden="true">·</span>
+                <a class="hover:text-link hover:underline" href={getPermalink(post.category.slug, 'category')}>
                   {post.category.title}
                 </a>
               </>
@@ -63,7 +62,8 @@ const { post, url } = Astro.props;
           {
             post.readingTime && (
               <>
-                &nbsp;· <span>{post.readingTime}</span> min de lectura
+                <span aria-hidden="true">·</span>
+                <span>{post.readingTime} min de lectura</span>
               </>
             )
           }
@@ -79,6 +79,8 @@ const { post, url } = Astro.props;
         {post.excerpt}
       </p>
 
+      <!-- Without a real image the post gets a thin rule, not the generated
+           cover: that one is meant for the cards in the lists. -->
       {
         post.image ? (
           <div
@@ -100,11 +102,8 @@ const { post, url } = Astro.props;
             />
           </div>
         ) : (
-          <div
-            class="mx-auto mb-6 max-w-full overflow-hidden border border-line sm:rounded-xl lg:max-w-[900px]"
-            transition:name={`cover-${post.slug}`}
-          >
-            <PostCover post={post} class="h-40 w-full sm:h-48" />
+          <div class="mx-auto max-w-3xl px-4 sm:px-6">
+            <hr class="border-line" />
           </div>
         )
       }
@@ -116,9 +115,9 @@ const { post, url } = Astro.props;
         <slot />
       </div>
     </div>
-    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
+    <div class="mx-auto mt-8 flex max-w-3xl flex-col justify-between px-4 sm:flex-row sm:px-6">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
-      <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
+      <SocialShare url={url} text={post.title} class="mt-3 shrink-0 sm:mt-0 sm:self-start" />
     </div>
   </article>
 </section>

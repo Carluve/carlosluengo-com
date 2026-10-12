@@ -105,5 +105,3 @@ Trae.ai is a **powerful and disruptive** offering: it combines the strength of t
 In a world where access to advanced AI often comes at a premium, Trae.ai stands out as a truly **open and accessible tool** for developers at all levels.
 
 > If you’re looking for a serious AI pair programmer without the cost, **Trae.ai is one of the best free options available right now**.
-
----

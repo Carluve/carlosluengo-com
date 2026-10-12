@@ -107,6 +107,9 @@ const localStyle =
 // --- CDN images: emit an equivalent minimal style --------------------------
 // The native <Image /> emits responsive styles for its layout, but the raw
 // CDN <img> does not, so we mirror the layout intent with a small style.
+// An `aspect-*` utility on the image (a card crop, for instance) must win over
+// the intrinsic ratio, so the inline aspect-ratio is left out in that case.
+const hasAspectClass = /(^|\s)aspect-/.test(String(rest.class ?? ''));
 const cdnLayoutStyle = (): string => {
   const decls: string[] = [];
   switch (layout) {
@@ -116,7 +119,7 @@ const cdnLayoutStyle = (): string => {
       break;
     case 'full-width':
       decls.push('width:100%');
-      if (aspectRatio) decls.push(`aspect-ratio:${aspectRatio}`);
+      if (aspectRatio && !hasAspectClass) decls.push(`aspect-ratio:${aspectRatio}`);
       break;
     case 'cover':
       decls.push('width:100%', 'height:100%', 'object-fit:cover');
@@ -127,7 +130,7 @@ const cdnLayoutStyle = (): string => {
     default:
       decls.push('width:100%');
       if (w) decls.push(`max-width:${w}px`);
-      if (aspectRatio) decls.push(`aspect-ratio:${aspectRatio}`);
+      if (aspectRatio && !hasAspectClass) decls.push(`aspect-ratio:${aspectRatio}`);
       break;
   }
   return decls.join(';');

@@ -70,6 +70,6 @@ export const footerData = {
     { ariaLabel: 'ORCID iD', icon: 'orcid', href: orcidUrl },
   ],
   footNote: `
-    © ${new Date().getFullYear()} <a class="text-link hover:underline" href="https://carlosluengo.com">Carlos Luengo Vera</a> · Investigación · Docencia · Industria
+    © ${new Date().getFullYear()} <a class="text-link hover:underline" href="https://carlosluengo.com">Carlos Luengo Vera</a>
   `,
 };

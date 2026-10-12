@@ -68,8 +68,9 @@
   @apply btn;
 }
 
+/* Tertiary action: a plain text link (no box), optionally with an arrow icon. */
 @utility btn-tertiary {
-  @apply btn border-transparent bg-transparent text-muted shadow-none hover:border-transparent hover:bg-transparent hover:text-heading;
+  @apply inline-flex cursor-pointer items-center gap-1.5 rounded-sm font-medium text-link decoration-primary/40 underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 motion-reduce:transition-none;
 }
 
 @utility aw-eyebrow {
@@ -196,9 +197,46 @@ html {
   @apply prose prose-lg max-w-none text-default prose-headings:scroll-mt-24 prose-headings:font-heading prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-heading prose-p:leading-relaxed prose-li:text-default prose-a:font-medium prose-a:text-link prose-a:underline prose-a:decoration-primary/30 prose-a:underline-offset-4 hover:prose-a:decoration-primary prose-strong:text-heading dark:prose-invert;
 }
 
+/* Same serif, medium-weight headings as the rest of the site (the typography
+   plugin sets its own weights on each level, which beat prose-headings:*). */
+.aw-prose :where(h2, h3, h4):not(:where(.not-prose, .not-prose *)) {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--aw-color-text-heading);
+}
+
 .aw-prose :where(img) {
   border-radius: 0.75rem;
   border: 1px solid var(--aw-color-border);
+}
+
+/* Tall screenshots and diagrams should not take over the page. */
+.aw-prose :where(img):not(:where(.not-prose *)) {
+  display: block;
+  max-height: 520px;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.aw-prose :where(figure) {
+  text-align: center;
+}
+.aw-prose :where(figcaption) {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--aw-color-text-muted);
+  text-align: center;
+}
+
+/* Tables are wrapped in an overflow:auto div by a rehype plugin: keep a
+   minimum width so they scroll on phones instead of squashing columns. */
+.aw-prose :where(table) {
+  min-width: 560px;
+  font-size: 0.9375rem;
 }
 
 .aw-prose :where(video) {
@@ -212,19 +250,24 @@ html {
   margin-top: 0;
 }
 
-/* Blog prose: inline code without the typography plugin's backticks, and
-   code blocks that follow the light/dark theme (Shiki dual themes). */
-.prose :where(code):not(:where(pre *)) {
+/* Prose (.prose and .aw-prose, blog and legal pages): inline code without the
+   typography plugin's backticks, and code blocks that follow the light/dark
+   theme (Shiki dual themes). */
+.prose :where(code):not(:where(pre *)),
+.aw-prose :where(code):not(:where(pre *)) {
   background-color: color-mix(in oklab, var(--aw-color-text-default) 8%, transparent);
   border-radius: 0.25rem;
   padding: 0.125rem 0.375rem;
   font-weight: 500;
 }
 .prose :where(code):not(:where(pre *))::before,
-.prose :where(code):not(:where(pre *))::after {
+.prose :where(code):not(:where(pre *))::after,
+.aw-prose :where(code):not(:where(pre *))::before,
+.aw-prose :where(code):not(:where(pre *))::after {
   content: none;
 }
-.prose :where(pre.astro-code) {
+.prose :where(pre.astro-code),
+.aw-prose :where(pre.astro-code) {
   border: 1px solid color-mix(in oklab, var(--aw-color-text-default) 12%, transparent);
 }
 .dark .astro-code,

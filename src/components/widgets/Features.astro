@@ -23,7 +23,7 @@ const {
 const columnsClass = getColumnsClass(columns);
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
 
   {
@@ -41,8 +41,8 @@ const columnsClass = getColumnsClass(columns);
               <p class:list={[{ 'mt-2': itemTitle }, 'text-sm leading-relaxed text-muted']} set:html={description} />
             )}
             {callToAction && (
-              <div class:list={[{ 'mt-3': itemTitle || description }]}>
-                <Button variant="link" {...callToAction} />
+              <div class="mt-auto pt-5">
+                <Button variant="tertiary" icon="tabler:arrow-right" {...callToAction} />
               </div>
             )}
           </article>

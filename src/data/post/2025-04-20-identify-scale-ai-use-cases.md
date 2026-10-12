@@ -99,5 +99,3 @@ Great AI rollouts aren’t just technical—they’re cultural:
 This guide is gold for teams trying to make AI useful _today_. The "6 primitives" idea is so practical—it turns vague possibilities into tangible action. If you want to democratise AI inside your org, this is the playbook.
 
 📎 [Full Guide PDF](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf?utm_source=generativeaienterprise.ai&utm_medium=newsletter&utm_campaign=openai-s-best-practices-from-300-implementations)
-
----

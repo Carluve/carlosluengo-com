@@ -4095,5 +4095,256 @@
     "hash": "5aa2a1178b",
     "src": "files/npo-partyrock-workshop-5aa2a1178b.pdf",
     "contentType": "application/pdf"
+  },
+  "projects/browserquest.png": {
+    "type": "image",
+    "hash": "bd3119741b",
+    "width": 1280,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "projects/browserquest-bd3119741b-480.avif"
+        ],
+        [
+          960,
+          "projects/browserquest-bd3119741b-960.avif"
+        ],
+        [
+          1280,
+          "projects/browserquest-bd3119741b-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "projects/browserquest-bd3119741b-480.webp"
+        ],
+        [
+          960,
+          "projects/browserquest-bd3119741b-960.webp"
+        ],
+        [
+          1280,
+          "projects/browserquest-bd3119741b-1280.webp"
+        ]
+      ]
+    },
+    "og": "projects/browserquest-bd3119741b-og.jpg"
+  },
+  "projects/carlosluengo-com-github.png": {
+    "type": "image",
+    "hash": "aee986c99e",
+    "width": 1200,
+    "height": 600,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "projects/carlosluengo-com-github-aee986c99e-480.avif"
+        ],
+        [
+          960,
+          "projects/carlosluengo-com-github-aee986c99e-960.avif"
+        ],
+        [
+          1200,
+          "projects/carlosluengo-com-github-aee986c99e-1200.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "projects/carlosluengo-com-github-aee986c99e-480.webp"
+        ],
+        [
+          960,
+          "projects/carlosluengo-com-github-aee986c99e-960.webp"
+        ],
+        [
+          1200,
+          "projects/carlosluengo-com-github-aee986c99e-1200.webp"
+        ]
+      ]
+    },
+    "og": "projects/carlosluengo-com-github-aee986c99e-og.jpg"
+  },
+  "projects/cloudflare-en-espanol-github.png": {
+    "type": "image",
+    "hash": "b6a14d96fc",
+    "width": 1200,
+    "height": 600,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "projects/cloudflare-en-espanol-github-b6a14d96fc-480.avif"
+        ],
+        [
+          960,
+          "projects/cloudflare-en-espanol-github-b6a14d96fc-960.avif"
+        ],
+        [
+          1200,
+          "projects/cloudflare-en-espanol-github-b6a14d96fc-1200.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "projects/cloudflare-en-espanol-github-b6a14d96fc-480.webp"
+        ],
+        [
+          960,
+          "projects/cloudflare-en-espanol-github-b6a14d96fc-960.webp"
+        ],
+        [
+          1200,
+          "projects/cloudflare-en-espanol-github-b6a14d96fc-1200.webp"
+        ]
+      ]
+    },
+    "og": "projects/cloudflare-en-espanol-github-b6a14d96fc-og.jpg"
+  },
+  "projects/curso-aws-partyrock.png": {
+    "type": "image",
+    "hash": "b2790041d4",
+    "width": 960,
+    "height": 540,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "projects/curso-aws-partyrock-b2790041d4-480.avif"
+        ],
+        [
+          960,
+          "projects/curso-aws-partyrock-b2790041d4-960.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "projects/curso-aws-partyrock-b2790041d4-480.webp"
+        ],
+        [
+          960,
+          "projects/curso-aws-partyrock-b2790041d4-960.webp"
+        ]
+      ]
+    },
+    "og": "projects/curso-aws-partyrock-b2790041d4-og.jpg"
+  },
+  "projects/emdash.png": {
+    "type": "image",
+    "hash": "1bd50b5a2e",
+    "width": 1280,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "projects/emdash-1bd50b5a2e-480.avif"
+        ],
+        [
+          960,
+          "projects/emdash-1bd50b5a2e-960.avif"
+        ],
+        [
+          1280,
+          "projects/emdash-1bd50b5a2e-1280.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "projects/emdash-1bd50b5a2e-480.webp"
+        ],
+        [
+          960,
+          "projects/emdash-1bd50b5a2e-960.webp"
+        ],
+        [
+          1280,
+          "projects/emdash-1bd50b5a2e-1280.webp"
+        ]
+      ]
+    },
+    "og": "projects/emdash-1bd50b5a2e-og.jpg"
+  },
+  "projects/focairemover-github.png": {
+    "type": "image",
+    "hash": "e44912040b",
+    "width": 1200,
+    "height": 600,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "projects/focairemover-github-e44912040b-480.avif"
+        ],
+        [
+          960,
+          "projects/focairemover-github-e44912040b-960.avif"
+        ],
+        [
+          1200,
+          "projects/focairemover-github-e44912040b-1200.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "projects/focairemover-github-e44912040b-480.webp"
+        ],
+        [
+          960,
+          "projects/focairemover-github-e44912040b-960.webp"
+        ],
+        [
+          1200,
+          "projects/focairemover-github-e44912040b-1200.webp"
+        ]
+      ]
+    },
+    "og": "projects/focairemover-github-e44912040b-og.jpg"
+  },
+  "projects/vibe-coding-example-github.png": {
+    "type": "image",
+    "hash": "15abe3a992",
+    "width": 1200,
+    "height": 600,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "projects/vibe-coding-example-github-15abe3a992-480.avif"
+        ],
+        [
+          960,
+          "projects/vibe-coding-example-github-15abe3a992-960.avif"
+        ],
+        [
+          1200,
+          "projects/vibe-coding-example-github-15abe3a992-1200.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "projects/vibe-coding-example-github-15abe3a992-480.webp"
+        ],
+        [
+          960,
+          "projects/vibe-coding-example-github-15abe3a992-960.webp"
+        ],
+        [
+          1200,
+          "projects/vibe-coding-example-github-15abe3a992-1200.webp"
+        ]
+      ]
+    },
+    "og": "projects/vibe-coding-example-github-15abe3a992-og.jpg"
   }
 }

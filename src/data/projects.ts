@@ -26,6 +26,7 @@ export const projects: Project[] = [
       'Port del MMO en HTML5 de Mozilla a Cloudflare Workers: Durable Objects con SQLite, WebSockets con hibernación y el bucle de juego en Alarms.',
     year: 2026,
     tags: ['Workers', 'Durable Objects', 'WebSockets'],
+    image: 'media:projects/browserquest.png',
     demo: 'https://browserquest.carluve.workers.dev',
     repo: 'https://github.com/Carluve/BrowserQuest',
     basedOn: { name: 'mozilla/BrowserQuest', url: 'https://github.com/mozilla/BrowserQuest' },
@@ -62,7 +63,7 @@ export const projects: Project[] = [
     description: 'Despliegue del CMS EmDash sobre Workers con acceso protegido por Zero Trust, documentado en el blog.',
     year: 2026,
     tags: ['EmDash', 'Zero Trust'],
-    image: 'media:blog/catalogo-de-demos/emdash-blog.png',
+    image: 'media:projects/emdash.png',
     demo: 'https://emdash-blog.carluve.workers.dev',
     post: '/blog/emdash-y-zero-trust/',
     basedOn: { name: 'emdash-cms/emdash', url: 'https://github.com/emdash-cms/emdash' },
@@ -93,6 +94,7 @@ export const projects: Project[] = [
       'Índice comunitario de recursos de Cloudflare en español: repositorios oficiales, documentación y guías prácticas.',
     year: 2026,
     tags: ['Cloudflare', 'Comunidad'],
+    image: 'media:projects/cloudflare-en-espanol-github.png',
     repo: 'https://github.com/Carluve/vibe-coding-spanish',
   },
   {
@@ -133,7 +135,6 @@ export const projects: Project[] = [
     description: 'Adaptación a TypeScript de Duck Marines, un remake libre de ChuChu Rocket.',
     year: 2024,
     tags: ['TypeScript', 'Juegos'],
-    demo: 'https://duckmarines-worker.carluve.workers.dev',
     repo: 'https://github.com/Carluve/duckmarines_ts',
     basedOn: { name: 'SimonLarsen/duckmarines', url: 'https://github.com/SimonLarsen/duckmarines' },
   },
@@ -191,6 +192,7 @@ export const projects: Project[] = [
       'Pequeños proyectos web hechos con vibe coding: un tres en raya online, un Snake ochentero y otros ejercicios de interfaz.',
     year: 2025,
     tags: ['Vibe coding', 'Web'],
+    image: 'media:projects/vibe-coding-example-github.png',
     repo: 'https://github.com/Carluve/vibe-coding-example',
   },
   {
@@ -198,7 +200,9 @@ export const projects: Project[] = [
     title: 'Taller de PartyRock',
     description:
       'Curso para crear aplicaciones de IA generativa sin código con Amazon Bedrock y PartyRock, pensado para organizaciones sin ánimo de lucro.',
+    year: 2025,
     tags: ['IA generativa', 'Formación'],
+    image: 'media:projects/curso-aws-partyrock.png',
     pdf: 'media:files/npo-partyrock-workshop.pdf',
   },
   {
@@ -207,6 +211,7 @@ export const projects: Project[] = [
     description: 'Este sitio: Astro y Tailwind sobre Cloudflare Workers, con las imágenes optimizadas en R2.',
     year: 2026,
     tags: ['Astro', 'Workers', 'R2'],
+    image: 'media:projects/carlosluengo-com-github.png',
     repo: 'https://github.com/Carluve/carlosluengo-com',
   },
   {
@@ -216,6 +221,8 @@ export const projects: Project[] = [
       'Prototipo de investigación en Workers que detecta y retira marcas de procedencia de IA verificables, como Unicode invisible y metadatos.',
     year: 2026,
     tags: ['Workers', 'TypeScript', 'Investigación'],
+    image: 'media:projects/focairemover-github.png',
     repo: 'https://github.com/Carluve/FocAIRemover',
+    basedOn: { name: 'guillaumemeyer/watermarks-remover', url: 'https://github.com/guillaumemeyer/watermarks-remover' },
   },
 ];

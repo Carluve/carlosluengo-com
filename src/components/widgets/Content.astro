@@ -47,7 +47,7 @@ const aspectSize = {
 <WidgetWrapper
   id={id}
   isDark={isDark}
-  containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
+  containerClass={`${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
   bg={bg}
 >
   <Headline
@@ -55,15 +55,14 @@ const aspectSize = {
     subtitle={subtitle}
     tagline={tagline}
     classes={{
-      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-      title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
-      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+      container: 'max-w-3xl',
+      subtitle: 'text-xl text-muted',
       ...((classes?.headline as Record<string, string>) ?? {}),
     }}
   />
-  <div class="mx-auto max-w-7xl px-0 py-4 md:px-2">
+  <div class="py-4">
     <div class:list={['md:flex', image && isReversed && 'md:flex-row-reverse', image && 'md:gap-16']}>
-      <div class:list={[image ? 'md:basis-1/2' : 'w-full max-w-3xl mx-auto', 'self-center']}>
+      <div class:list={[image ? 'md:basis-1/2' : 'w-full max-w-3xl', 'self-center']}>
         {content && <div class="mb-8 text-lg leading-relaxed text-default" set:html={content} />}
 
         {
@@ -76,7 +75,7 @@ const aspectSize = {
 
         {
           items.length > 0 && (
-            <div class:list={['grid mx-auto gap-y-4 md:gap-y-8 gap-8', columnsClass]}>
+            <div class:list={['grid gap-y-4 md:gap-y-8 gap-8', columnsClass]}>
               {items.map(({ title: itemTitle, description, icon, callToAction }) => (
                 <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
                   <div class="flex flex-row max-w-none">

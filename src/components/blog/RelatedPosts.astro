@@ -12,7 +12,7 @@ export interface Props {
 
 const { post } = Astro.props;
 
-const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
+const relatedPosts = post.tags ? await getRelatedPosts(post, 3) : [];
 ---
 
 {
@@ -23,7 +23,7 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
           'pt-0 lg:pt-0 md:pt-0 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
       }}
       title="Entradas relacionadas"
-      linkText="Ver todas las entradas"
+      linkText="Ver el blog"
       linkUrl={getBlogPermalink()}
       postIds={relatedPosts.map((post) => post.id)}
     />
