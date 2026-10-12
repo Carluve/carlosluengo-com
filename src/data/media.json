@@ -612,6 +612,43 @@
     },
     "og": "blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae-4f4de41f29-og.jpg"
   },
+  "blog/ai-education-observatory/cover-manus-observatory.png": {
+    "type": "image",
+    "hash": "fac87ea18f",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/ai-education-observatory/cover-manus-observatory-fac87ea18f-480.avif"
+        ],
+        [
+          960,
+          "blog/ai-education-observatory/cover-manus-observatory-fac87ea18f-960.avif"
+        ],
+        [
+          1024,
+          "blog/ai-education-observatory/cover-manus-observatory-fac87ea18f-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/ai-education-observatory/cover-manus-observatory-fac87ea18f-480.webp"
+        ],
+        [
+          960,
+          "blog/ai-education-observatory/cover-manus-observatory-fac87ea18f-960.webp"
+        ],
+        [
+          1024,
+          "blog/ai-education-observatory/cover-manus-observatory-fac87ea18f-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/ai-education-observatory/cover-manus-observatory-fac87ea18f-og.jpg"
+  },
   "blog/ai-education-observatory/manus_v1.png": {
     "type": "image",
     "hash": "65f024f039",
@@ -2169,6 +2206,43 @@
     },
     "og": "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-og.jpg"
   },
+  "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare.jpg": {
+    "type": "image",
+    "hash": "1fdc3d4c5d",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare-1fdc3d4c5d-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare-1fdc3d4c5d-960.avif"
+        ],
+        [
+          1024,
+          "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare-1fdc3d4c5d-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare-1fdc3d4c5d-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare-1fdc3d4c5d-960.webp"
+        ],
+        [
+          1024,
+          "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare-1fdc3d4c5d-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-simpler-faster-safer-internet/cover-cloudflare-1fdc3d4c5d-og.jpg"
+  },
   "blog/cloudflare-warp-ipad/cloudflare_01.jpeg": {
     "type": "image",
     "hash": "ebe82fdb79",
@@ -2322,6 +2396,43 @@
     },
     "og": "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-og.jpg"
   },
+  "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config.png": {
+    "type": "image",
+    "hash": "1bdec3a28f",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config-1bdec3a28f-480.avif"
+        ],
+        [
+          960,
+          "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config-1bdec3a28f-960.avif"
+        ],
+        [
+          1024,
+          "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config-1bdec3a28f-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config-1bdec3a28f-480.webp"
+        ],
+        [
+          960,
+          "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config-1bdec3a28f-960.webp"
+        ],
+        [
+          1024,
+          "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config-1bdec3a28f-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config-1bdec3a28f-og.jpg"
+  },
   "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png": {
     "type": "image",
     "hash": "f8af903f5b",
@@ -2395,6 +2506,43 @@
       ]
     },
     "og": "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-og.jpg"
+  },
+  "blog/cursor-free-tier/cover-cursor-logo.png": {
+    "type": "image",
+    "hash": "6d77d7e0da",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cursor-free-tier/cover-cursor-logo-6d77d7e0da-480.avif"
+        ],
+        [
+          960,
+          "blog/cursor-free-tier/cover-cursor-logo-6d77d7e0da-960.avif"
+        ],
+        [
+          1024,
+          "blog/cursor-free-tier/cover-cursor-logo-6d77d7e0da-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cursor-free-tier/cover-cursor-logo-6d77d7e0da-480.webp"
+        ],
+        [
+          960,
+          "blog/cursor-free-tier/cover-cursor-logo-6d77d7e0da-960.webp"
+        ],
+        [
+          1024,
+          "blog/cursor-free-tier/cover-cursor-logo-6d77d7e0da-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/cursor-free-tier/cover-cursor-logo-6d77d7e0da-og.jpg"
   },
   "blog/deep-research-chatgpt-guide/202505_01deepresearch.png": {
     "type": "image",
@@ -2544,6 +2692,43 @@
     },
     "og": "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-og.jpg"
   },
+  "blog/deep-research-chatgpt-guide/cover-202505_deepresearch.png": {
+    "type": "image",
+    "hash": "7b783261a6",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/cover-202505_deepresearch-7b783261a6-480.avif"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/cover-202505_deepresearch-7b783261a6-960.avif"
+        ],
+        [
+          1024,
+          "blog/deep-research-chatgpt-guide/cover-202505_deepresearch-7b783261a6-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/cover-202505_deepresearch-7b783261a6-480.webp"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/cover-202505_deepresearch-7b783261a6-960.webp"
+        ],
+        [
+          1024,
+          "blog/deep-research-chatgpt-guide/cover-202505_deepresearch-7b783261a6-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/deep-research-chatgpt-guide/cover-202505_deepresearch-7b783261a6-og.jpg"
+  },
   "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png": {
     "type": "image",
     "hash": "aa9100f8e5",
@@ -2654,6 +2839,43 @@
       ]
     },
     "og": "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-og.jpg"
+  },
+  "blog/digeduclm-albacete/cover-digeduclm2025.jpg": {
+    "type": "image",
+    "hash": "1146a2add5",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/digeduclm-albacete/cover-digeduclm2025-1146a2add5-480.avif"
+        ],
+        [
+          960,
+          "blog/digeduclm-albacete/cover-digeduclm2025-1146a2add5-960.avif"
+        ],
+        [
+          1024,
+          "blog/digeduclm-albacete/cover-digeduclm2025-1146a2add5-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/digeduclm-albacete/cover-digeduclm2025-1146a2add5-480.webp"
+        ],
+        [
+          960,
+          "blog/digeduclm-albacete/cover-digeduclm2025-1146a2add5-960.webp"
+        ],
+        [
+          1024,
+          "blog/digeduclm-albacete/cover-digeduclm2025-1146a2add5-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/digeduclm-albacete/cover-digeduclm2025-1146a2add5-og.jpg"
   },
   "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN.png": {
     "type": "image",
@@ -3062,6 +3284,43 @@
     },
     "og": "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-og.jpg"
   },
+  "blog/fixing-123-math-with-jules/cover-202505_01jules.png": {
+    "type": "image",
+    "hash": "5242fe635e",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-480.avif"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-960.avif"
+        ],
+        [
+          1024,
+          "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-480.webp"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-960.webp"
+        ],
+        [
+          1024,
+          "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-og.jpg"
+  },
   "blog/migrating-playlists-with-comet/Comet_v1.png": {
     "type": "image",
     "hash": "286c776625",
@@ -3412,6 +3671,43 @@
     },
     "og": "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-og.jpg"
   },
+  "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq.png": {
+    "type": "image",
+    "hash": "6b629ffd8c",
+    "width": 1728,
+    "height": 1354,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq-6b629ffd8c-480.avif"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq-6b629ffd8c-960.avif"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq-6b629ffd8c-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq-6b629ffd8c-480.webp"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq-6b629ffd8c-960.webp"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq-6b629ffd8c-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/testing-amazon-q-developer-on-github/cover-202505_06amazonq-6b629ffd8c-og.jpg"
+  },
   "blog/the-paper-chase-lessons-from-academic-publishing/papers25.png": {
     "type": "image",
     "hash": "e41e5419d4",
@@ -3522,6 +3818,80 @@
       ]
     },
     "og": "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-og.jpg"
+  },
+  "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt.png": {
+    "type": "image",
+    "hash": "62410ee08c",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt-62410ee08c-480.avif"
+        ],
+        [
+          960,
+          "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt-62410ee08c-960.avif"
+        ],
+        [
+          1024,
+          "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt-62410ee08c-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt-62410ee08c-480.webp"
+        ],
+        [
+          960,
+          "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt-62410ee08c-960.webp"
+        ],
+        [
+          1024,
+          "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt-62410ee08c-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/uae-free-chatgpt-plus-for-all/cover-202505_07uaechatgpt-62410ee08c-og.jpg"
+  },
+  "blog/unlocking-generative-ai-with-databricks/cover-databricks01.jpg": {
+    "type": "image",
+    "hash": "6618a9d402",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/cover-databricks01-6618a9d402-480.avif"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/cover-databricks01-6618a9d402-960.avif"
+        ],
+        [
+          1024,
+          "blog/unlocking-generative-ai-with-databricks/cover-databricks01-6618a9d402-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/cover-databricks01-6618a9d402-480.webp"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/cover-databricks01-6618a9d402-960.webp"
+        ],
+        [
+          1024,
+          "blog/unlocking-generative-ai-with-databricks/cover-databricks01-6618a9d402-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/unlocking-generative-ai-with-databricks/cover-databricks01-6618a9d402-og.jpg"
   },
   "blog/unlocking-generative-ai-with-databricks/databricks01.png": {
     "type": "image",

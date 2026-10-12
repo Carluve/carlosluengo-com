@@ -6,14 +6,12 @@ image: 'media:blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia
 imageAlt: 'How to Identify and Scale High-Impact AI Use Cases'
 category: 'IA'
 tags:
-  - 'Generative AI'
-  - 'Workplace AI'
-  - 'Use Case Design'
-  - 'Productivity'
-  - 'AI Enablement'
+  - 'generative ai'
+  - 'workplace ai'
+  - 'use case design'
+  - 'productivity'
+  - 'ai enablement'
 ---
-
-What if the fastest way to create value with AI isn’t by chasing a single killer app—but by spotting dozens of everyday moments where AI can quietly make life easier?
 
 That’s the approach behind the OpenAI guide _"Identifying and Scaling AI Use Cases"_, based on insights from over 300 deployments and 2 million users. This post breaks down the most practical lessons, ready for teams who want to move from “playing with AI” to _delivering real impact_.
 

@@ -4,14 +4,12 @@ title: 'Generative AI, Productivity, and the Future of Happiness at Work'
 excerpt: 'What if the secret to workplace happiness wasn’t longer vacations or fancier coffee machines—but an AI?'
 category: 'Academia'
 tags:
-  - 'Workplace AI'
-  - 'Employee Well-being'
-  - 'Generative AI'
-  - 'Productivity'
-  - 'Awards'
+  - 'workplace ai'
+  - 'employee well-being'
+  - 'generative ai'
+  - 'productivity'
+  - 'awards'
 ---
-
-What if the secret to workplace happiness wasn’t longer vacations or fancier coffee machines—but an AI?
 
 That’s the provocative idea behind the paper _“Impact of Generative AI on Workplace Productivity and Employee Well-being”_ by researchers at the Universidad de Alcalá. This in-depth study explores how large-scale AI adoption is reshaping not only productivity but also emotional health and job satisfaction in organizations.
 

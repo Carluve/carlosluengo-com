@@ -6,15 +6,12 @@ image: 'media:blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt.png'
 imageAlt: 'How BBVA Scaled ChatGPT Enterprise: Lessons for Spanish Corporates'
 category: 'IA'
 tags:
-  - 'AI'
+  - 'ai'
   - 'enterprise'
   - 'productivity'
   - 'case-study'
-  - 'ChatGPT Enterprise'
-  - 'BBVA'
-  - 'AI Adoption'
-  - 'Hackathon'
-  - 'Digital Transformation'
+  - 'chatgpt enterprise'
+  - 'bbva'
 ---
 
 Spanish corporates are moving fast from pilots to industrial-scale use of ChatGPT Enterprise. BBVA's leap from 3,300 to 11,000 licences in a single year saved staff almost three hours a week on routine tasks and sparked an internal wave of innovation hackathons.  
@@ -29,8 +26,6 @@ This post distils the key decisions, governance steps and cultural moves that le
 - **Admin console with SSO, usage dashboards and domain controls** to manage thousands of seats.
 
 ![Three pillars of ChatGPT Enterprise: Security, Performance, Control](media:blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt.png)
-
-_Image: A clean infographic showing the three pillars of ChatGPT Enterprise—"Security", "Performance", "Control"—each with an icon (shield, rocket, dashboard) in BBVA blue tones._
 
 ---
 
@@ -48,8 +43,6 @@ _Image: A clean infographic showing the three pillars of ChatGPT Enterprise—"S
 3. Internal competitions – the DataRally and Bot Talent contests rewarded practical prototypes that now enter production pipelines.
 
 ![BBVA employees at a hackathon](media:blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney.png)
-
-_Image: Photo-realistic collage of BBVA employees at a hackathon—post-its, laptops, ChatGPT logo on a big screen, diverse gender and age._
 
 ---
 
@@ -90,8 +83,6 @@ _Image: Photo-realistic collage of BBVA employees at a hackathon—post-its, lap
 
 ![From Pilot to Scale: On-board, Enable, Measure](media:blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale.png)
 
-_Image: An arrow-shaped infographic titled "From Pilot to Scale" showing the four bullets above, with icons for each stage._
-
 ---
 
 ## 5. Designing a winning hackathon
@@ -106,8 +97,6 @@ _Image: An arrow-shaped infographic titled "From Pilot to Scale" showing the fou
 
 ![Judging panel scoring AI hackathon demos](media:blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon.png)
 
-_Image: Illustration of a judging panel scoring AI hackathon demos, with scorecards and a large timer on stage._
-
 ---
 
 ## 6. Embedding for the long run
@@ -118,8 +107,6 @@ _Image: Illustration of a judging panel scoring AI hackathon demos, with scoreca
 - **Innovation funnel** – move the best hackathon ideas into a formal project portfolio.
 
 ![LLM lifecycle: experiment → MVP → compliance review → production → performance monitoring](media:blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun.png)
-
-_Image: Flow diagram of an "LLM lifecycle": experiment → MVP → compliance review → production → performance monitoring._
 
 ---
 

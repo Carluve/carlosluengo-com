@@ -27,7 +27,7 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
   <HeroText
     tagline="Academia"
     title="Investigación y docencia"
-    subtitle="Doctorado en Inteligencia Artificial y Management en la Universidad de Alcalá. Docencia de posgrado y de formación ejecutiva. El listado bibliográfico completo está en Google Scholar."
+    subtitle="Doctorado en Inteligencia Artificial y Management en la Universidad de Alcalá, sobre el impacto económico y organizativo de los modelos de lenguaje. Docencia de posgrado y de formación ejecutiva."
     callToAction={{
       variant: 'primary',
       text: 'Google Scholar',
@@ -44,8 +44,8 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
   <Features2
     id="publicaciones"
     tagline="Publicaciones"
-    title="Trabajo disponible"
-    subtitle="Ocho fichas del registro de publicaciones. El enlace y el estado son los que trae cada ficha."
+    title="Publicaciones"
+    subtitle="Preprints, artículos y comunicaciones en congresos. El listado completo, con citas, está en Google Scholar."
     classes={{ headline: { container: 'max-w-3xl mb-5' } }}
     columns={2}
     items={[
@@ -117,7 +117,7 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
         eyebrow: '2025-09-21',
         title: 'Innovation and Circular Economy: New Findings on How Innovation Drives the Circular Economy',
         description:
-          'Reseña del artículo “Innovation and Circular Economy within the Sustainable …” (Elsevier, 2025) sobre cómo la innovación sostiene las prácticas de economía circular. La ficha no incluye un enlace ni una cita bibliográfica completa.',
+          'Reseña del artículo “Innovation and Circular Economy within the Sustainable …” (Elsevier, 2025) sobre cómo la innovación sostiene las prácticas de economía circular.',
         icon: 'tabler:file-text',
       },
       {
@@ -142,96 +142,43 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
         title:
           'Optimising AI in Medical Education: Cost-Benefit Analysis of Large Language Models in the MIR Examination',
         description:
-          'Carlos Luengo Vera, Antonio J. de Lucas López, Víctor Ramos Arroyo y M. Teresa de Val Núñez (2025). Comunicación en el 8th ISCBE (Tetovo, 08–09 May 2025). La ficha lo registra como manuscrito en revisión para las actas de Springer.',
+          'Carlos Luengo Vera, Antonio J. de Lucas López, Víctor Ramos Arroyo y M. Teresa de Val Núñez (2025). Comunicación en el 8th ISCBE (Tetovo, 08–09 May 2025). Manuscrito en revisión para las actas de Springer.',
         icon: 'tabler:file-text',
       },
       {
         eyebrow: '2024-11-22 · Congreso de la Felicidad, Málaga',
         title: 'Impact of Generative AI on Workplace Productivity and Employee Well-being',
         description:
-          'Carlos Luengo Vera, Antonio J. de Lucas López, Arturo Orea Rocha y María Teresa del Val Núñez (2024). Comunicación en el 8th International Academic and Professional Congress on Happiness (Málaga, 21–22 Nov 2024). La ficha lo registra como manuscrito en revisión.',
+          'Carlos Luengo Vera, Antonio J. de Lucas López, Arturo Orea Rocha y María Teresa del Val Núñez (2024). Comunicación en el 8th International Academic and Professional Congress on Happiness (Málaga, 21–22 Nov 2024), premio a la mejor presentación. Manuscrito en revisión.',
         icon: 'tabler:file-text',
-      },
-      {
-        title: 'Google Scholar',
-        description:
-          'Perfil público con el listado de publicaciones, citas y coautores. Es la referencia para consultar el conjunto de la producción, más allá de estas fichas.',
-        icon: 'tabler:school',
-        href: scholarUrl,
-      },
-    ]}
-  >
-    <div slot="after-headline" class="mb-8 md:mb-10">
-      <OrcidBadge />
-    </div>
-  </Features2>
-
-  <Features
-    id="en-preparacion"
-    tagline="Trabajo en curso"
-    title="Manuscritos en preparación"
-    subtitle="No se anticipan títulos ni resultados que aún no tengan preprint o identificador permanente."
-    columns={2}
-    items={[
-      {
-        title: 'Tesis doctoral',
-        description:
-          'Inteligencia Artificial y Management, Universidad de Alcalá. Línea de trabajo sobre el impacto económico y organizativo de los modelos de lenguaje.',
-        icon: 'tabler:writing',
-      },
-      {
-        title: 'Nuevas publicaciones',
-        description:
-          'Lo que todavía no está en las fichas anteriores no se anticipa aquí. Google Scholar sigue siendo el listado para el conjunto de la producción.',
-        icon: 'tabler:hourglass',
       },
     ]}
   />
 
   <Features
     id="docencia"
-    tagline="Docencia"
-    title="Enseñanza"
-    subtitle="La docencia traslada al aula la investigación y la práctica profesional, sin inventariar aquí asignaturas concretas."
-    columns={2}
-    items={[
-      {
-        title: 'Posgrado y formación ejecutiva',
-        description:
-          'Clases en programas de posgrado y de formación ejecutiva, en torno a la inteligencia artificial, el management y la tecnología aplicada.',
-        icon: 'tabler:chalkboard',
-      },
-      {
-        title: 'Universidad de Alcalá',
-        description:
-          'Adscripción doctoral en Inteligencia Artificial y Management. La universidad es el marco institucional de la investigación.',
-        icon: 'tabler:building',
-      },
-    ]}
-  />
-
-  <Features
-    id="actividad"
-    tagline="Criterios"
-    title="Cómo se presenta la actividad académica"
+    tagline="Docencia y divulgación"
+    title="En el aula y en congresos"
     columns={3}
     items={[
       {
-        title: 'Acceso abierto',
-        description: 'Preferencia por el depósito en arXiv y por un perfil público en Google Scholar.',
-        icon: 'tabler:lock-open',
+        title: 'Tesis doctoral',
+        description:
+          'Inteligencia Artificial y Management en la Universidad de Alcalá: cómo cambian la productividad y la organización del trabajo con los modelos de lenguaje.',
+        icon: 'tabler:writing',
       },
       {
-        title: 'Prudencia bibliográfica',
+        title: 'Posgrado y formación ejecutiva',
         description:
-          'Cada ficha conserva el enlace y el estado que trae el registro, incluida la fórmula de manuscrito en revisión.',
-        icon: 'tabler:scale',
+          'Clases sobre inteligencia artificial, management y tecnología aplicada en programas de posgrado y de formación ejecutiva.',
+        icon: 'tabler:chalkboard',
       },
       {
-        title: 'Industria y universidad',
+        title: 'Charlas',
         description:
-          'La práctica en la industria tecnológica informa la investigación y la docencia. No las sustituye.',
-        icon: 'tabler:arrows-exchange',
+          'Comunicaciones en congresos y jornadas, como el 8th ISCBE o DigEduCLM, con su crónica en el blog.',
+        icon: 'tabler:presentation',
+        callToAction: { text: 'Ver charlas', href: getPermalink('charlas', 'category') },
       },
     ]}
   />
@@ -240,20 +187,19 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
     actions={[
       {
         variant: 'primary',
-        text: 'Abrir Google Scholar',
-        href: scholarUrl,
-        target: '_blank',
+        text: 'Contactar',
+        href: getPermalink('/contact'),
       },
       {
-        text: 'Contacto',
-        href: getPermalink('/contact'),
+        text: 'Google Scholar',
+        href: scholarUrl,
+        target: '_blank',
       },
     ]}
   >
     <Fragment slot="title">Colaboración académica</Fragment>
     <Fragment slot="subtitle">
-      Para propuestas de investigación, docencia o transferencia entre universidad e industria, utilice la página de
-      contacto.
+      Propuestas de investigación, docencia o transferencia entre la universidad y la industria.
     </Fragment>
   </CallToAction>
 </Layout>

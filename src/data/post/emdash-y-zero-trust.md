@@ -10,8 +10,6 @@ tags:
   - 'infraestructura'
 ---
 
-![EmDash: A Practical Look at Cloudflare's "WordPress Successor" (with Zero Trust in Practice)](media:blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN.png)
-
 ## Introduction
 
 Cloudflare's EmDash represents more than just a WordPress alternative. After testing it with Cloudflare Zero Trust integration, it looks like a shift in how content platforms are designed, secured, and operated.

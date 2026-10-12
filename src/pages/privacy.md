@@ -4,7 +4,7 @@ title: 'Política de privacidad'
 description: 'Información sobre el tratamiento de datos en el sitio personal de Carlos Luengo Vera.'
 ---
 
-Titular del sitio: Carlos Luengo Vera. Dominio previsto: carlosluengo.com. El sitio se publica como páginas estáticas.
+Titular del sitio: Carlos Luengo Vera. Dominio: carlosluengo.com. El sitio se publica como páginas estáticas.
 
 ## Qué no hace este sitio
 

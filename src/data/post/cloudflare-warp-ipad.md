@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-08-02T00:00:00Z
 title: 'My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad'
-excerpt: "I've always cared about having a fast and private internet connection, especially when using public Wi-Fi or mobile networks. That's why I decided to try Cloudflare's 1.1.1.1 app with WARP. Below I'll share how the…"
+excerpt: "I've always cared about having a fast and private internet connection, especially when using public Wi-Fi or mobile networks. That's why I decided to try Cloudflare's 1.1.1.1 app with WARP. Below I'll share how the setup looks on iOS, what each option means, and why I personally keep it installed."
 image: 'media:blog/cloudflare-warp-ipad/cloudflare_01.jpeg'
 imageAlt: 'My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad'
 category: 'Cloudflare'
@@ -9,18 +9,10 @@ tags:
   - 'privacy'
   - 'security'
   - 'networking'
-  - 'iOS'
-  - 'Cloudflare'
-  - 'WARP'
-  - 'VPN'
-  - 'Privacy'
-  - 'Security'
-  - 'iPad'
+  - 'ios'
+  - 'cloudflare'
+  - 'warp'
 ---
-
-I've always cared about having a fast and private internet connection, especially when using public Wi-Fi or mobile networks. That's why I decided to try Cloudflare's 1.1.1.1 app with WARP. Below I'll share how the setup looks on iOS, what each option means, and why I personally keep it installed.
-
-![Cloudflare WARP app interface](media:blog/cloudflare-warp-ipad/cloudflare_01.jpeg)
 
 ## 1. What Is WARP?
 

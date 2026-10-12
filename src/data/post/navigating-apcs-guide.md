@@ -6,23 +6,17 @@ image: 'media:blog/navigating-apcs-guide/papersv2_2025.png'
 imageAlt: 'Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide'
 category: 'Academia'
 tags:
-  - 'Academia'
-  - 'PhD'
-  - 'Publishing'
-  - 'Open Access'
-  - 'APCs'
-  - 'Academic Publishing'
-  - 'UAH'
-  - 'Research'
+  - 'academia'
+  - 'phd'
+  - 'publishing'
+  - 'open access'
+  - 'apcs'
+  - 'academic publishing'
 ---
-
-_Diving into the world of Article Processing Charges (APCs), why publishing in high‑impact journals matters, how institutional deals can help — and what to watch out for._
 
 ## What Are APCs and Why Do They Matter?
 
 APCs (Article Processing Charges) are fees that authors — or their institutions or funders — pay to make research articles openly accessible, either in fully open access journals or hybrid ones. While they enable public access, these costs can be quite substantial, especially for high‑prestige journals, potentially ranging from under USD 100 to over USD 3,500 [Cargo APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
-
-![Research papers illustration](media:blog/navigating-apcs-guide/papersv2_2025.png)
 
 APCs are a common funding model in professional open access publishing, but they may pose financial pressure, especially on researchers in less well‑funded contexts [APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
 
@@ -38,9 +32,9 @@ However, these most prestigious venues often come with steeper APCs, making **in
 
 ## Institutional Agreements and Transformative Deals at UAH
 
-The University of Alcalá (UAH) has signed **transformative agreements** with publishers, covering APCs for its researchers — a significant financial relief and support for open access publication [oai_citation:2‡uah-es.libguides.com](https://uah-es.libguides.com/acceso_abierto/pagoapcs).
+The University of Alcalá (UAH) has signed **transformative agreements** with publishers, covering APCs for its researchers — a significant financial relief and support for open access publication [uah-es.libguides.com](https://uah-es.libguides.com/acceso_abierto/pagoapcs).
 
-UAH also adheres to **national and European open access mandates** (e.g., LCTI 14/2011, the Berlin Declaration), emphasising repository deposit within 6–12 months post-publication [oai_citation:3‡biblioteca.uah.es](https://biblioteca.uah.es/export/sites/biblioteca/.galleries/Galeria-Documentos-Biblioteca/Politica_institucional_acceso_abierto_UAH.pdf.
+UAH also adheres to **national and European open access mandates** (e.g., LCTI 14/2011, the Berlin Declaration), emphasising repository deposit within 6–12 months post-publication [biblioteca.uah.es](https://biblioteca.uah.es/export/sites/biblioteca/.galleries/Galeria-Documentos-Biblioteca/Politica_institucional_acceso_abierto_UAH.pdf.
 
 ### Key Benefits for UAH Researchers:
 

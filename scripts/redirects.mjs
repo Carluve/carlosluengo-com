@@ -5,8 +5,11 @@
  * Cloudflare parses each source with the URL parser (fragments are dropped,
  * spaces and accents are percent-encoded). `wrangler versions upload` then
  * rejects a repeated parsed path with code 100324. This script also treats
- * trailing slashes and letter case as the same path, keeps the first rule,
- * and checks the file against the Workers _redirects limits.
+ * letter case as the same path, keeps the first rule, and checks the file
+ * against the Workers _redirects limits.
+ *
+ * A trailing slash is a different path for Cloudflare: `/old` does not match a
+ * request for `/old/`, so old URLs are listed in both forms.
  */
 
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
@@ -39,7 +42,7 @@ export function cloudflarePathname(token, { shieldReserved = true } = {}) {
   return new URL(`//${path}`, 'relative://').pathname;
 }
 
-/** Comparison key: encoding, accents, trailing slash, and case fold together. */
+/** Comparison key: encoding, accents and case fold together; a trailing slash does not. */
 export function redirectKey(token) {
   const pathname = cloudflarePathname(token, { shieldReserved: true });
   let decoded;
@@ -49,13 +52,13 @@ export function redirectKey(token) {
     decoded = pathname;
   }
   decoded = decoded.normalize('NFC');
-  if (decoded.length > 1) decoded = decoded.replace(/\/+$/, '');
+  if (decoded.length > 1) decoded = decoded.replace(/\/{2,}$/, '/');
   return decoded.toLowerCase();
 }
 
 export function canonicalSource(token) {
   const pathname = cloudflarePathname(token, { shieldReserved: true });
-  if (pathname.length > 1 && pathname.endsWith('/')) return pathname.replace(/\/+$/, '');
+  if (pathname.length > 1) return pathname.replace(/\/{2,}$/, '/');
   return pathname;
 }
 

@@ -10,8 +10,6 @@ tags:
   - 'infraestructura'
 ---
 
-![Building TimerCF: A Practical Event Countdown on Cloudflare Workers](media:blog/timercf/01KND1JCANRGYJP34FD39WRM3P.png)
-
 ## Overview
 
 TimerCF is a web-based countdown timer deployed on Cloudflare Workers. The application features a three-step setup flow, bilingual support (Spanish/English), and a standby screen when the countdown completes.

@@ -1,22 +1,17 @@
 ---
 publishDate: 2025-08-29T00:00:00Z
 title: 'Configuring Cloudflare for Families on an ASUS Router'
-excerpt: 'In this post I’ll walk through how I configured Cloudflare for Families on my ASUS router, why I think it’s a good idea, and what each parameter really means. Setting this up is simple, but the benefits for security,…'
-image: 'media:blog/configuring-cloudflare-for-families-asus/cloudflare_asus.png'
+excerpt: 'In this post I’ll walk through how I configured Cloudflare for Families on my ASUS router, why I think it’s a good idea, and what each parameter really means. Setting this up is simple, but the benefits for security, privacy and peace of mind are surprisingly strong.'
+image: 'media:blog/configuring-cloudflare-for-families-asus/cover-cloudflare-asus-config.png'
 imageAlt: 'Configuring Cloudflare for Families on an ASUS Router'
 category: 'Cloudflare'
 tags:
-  - 'Networking'
-  - 'Security'
-  - 'Home Lab'
-  - 'Cloudflare'
-  - 'ASUS'
-  - 'DNS'
-  - 'Home Network'
----
-
-In this post I’ll walk through how I configured **Cloudflare for Families** on my ASUS router, why I think it’s a good idea, and what each parameter really means. Setting this up is simple, but the benefits for security, privacy and peace of mind are surprisingly strong.
-
+  - 'networking'
+  - 'security'
+  - 'home lab'
+  - 'cloudflare'
+  - 'asus'
+  - 'dns'
 ---
 
 ### Summary

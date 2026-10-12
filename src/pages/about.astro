@@ -8,6 +8,7 @@ import { Icon } from 'astro-icon/components';
 import OrcidBadge from '~/components/common/OrcidBadge.astro';
 import { xUrl } from '~/navigation';
 import { getPermalink } from '~/utils/permalinks';
+import portrait from '~/assets/images/carlos-luengo.jpg';
 
 const metadata = {
   title: 'Sobre mí',
@@ -37,6 +38,7 @@ const metadata = {
   </HeroText>
 
   <Content
+    image={{ src: portrait, alt: 'Retrato de Carlos Luengo Vera', aspect: '1/1' }}
     items={[
       {
         title: 'Industria',
@@ -51,12 +53,12 @@ const metadata = {
       {
         title: 'Docencia',
         description:
-          'Imparte clase en programas de posgrado y de formación ejecutiva, con la intención de consolidar una carrera académica en España.',
+          'Imparte clase en programas de posgrado y de formación ejecutiva sobre IA, cloud y transformación digital.',
       },
     ]}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Presentación</h2>
+      <h2 class="mb-3 font-heading text-3xl font-medium tracking-tight text-heading">Presentación</h2>
       <p>
         La actividad profesional se ha desarrollado en la dirección de cuentas y en el ecosistema tecnológico. La
         secuencia, de los inicios a la etapa actual, es Microsoft, Insight, Telefónica, Lenovo, Amazon Web Services y
@@ -64,21 +66,9 @@ const metadata = {
       </p>
       <br />
       <p>
-        Esa práctica informa la investigación doctoral y la docencia, sin sustituirlas. El objetivo académico es la
-        acreditación en el sistema universitario español y, a más largo plazo, una cátedra.
+        Esa experiencia con clientes que adoptan IA y cloud es la materia prima de su investigación doctoral y de sus
+        clases: cómo cambian las organizaciones cuando incorporan modelos de lenguaje.
       </p>
-      <div class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-        <OrcidBadge />
-        <a
-          class="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium text-heading transition duration-150 ease-in-out hover:border-primary/40 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-          href={xUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon name="tabler:brand-x" class="h-5 w-5 shrink-0" aria-hidden="true" />
-          @carluve
-        </a>
-      </div>
     </Fragment>
   </Content>
 
@@ -86,7 +76,7 @@ const metadata = {
     id="carrera"
     tagline="Industria"
     title="Experiencia profesional"
-    subtitle="Organizaciones en las que ha desempeñado funciones comerciales, de ecosistema o de dirección de cuentas, de la etapa actual a los inicios."
+    subtitle="De la etapa actual a los inicios."
     columns={3}
     items={[
       {
@@ -127,7 +117,7 @@ const metadata = {
     id="academia-path"
     tagline="Universidad"
     title="Proyección académica"
-    subtitle="Investigación y docencia orientadas a una carrera estable en la universidad española."
+    subtitle="Doctorado, publicaciones y docencia universitaria."
     columns={2}
     items={[
       {
@@ -138,8 +128,7 @@ const metadata = {
       },
       {
         title: 'Acreditación',
-        description:
-          'La trayectoria se orienta a la acreditación docente e investigadora y, en su momento, a una cátedra en España.',
+        description: 'Camino hacia la acreditación docente e investigadora en la universidad española.',
         icon: 'tabler:school',
       },
     ]}
@@ -158,9 +147,7 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">Publicaciones y correspondencia</Fragment>
-    <Fragment slot="subtitle">
-      La actividad investigadora y docente se detalla en Academia. Las consultas pueden dirigirse desde Contacto.
-    </Fragment>
+    <Fragment slot="title">Investigación y docencia</Fragment>
+    <Fragment slot="subtitle">Publicaciones, charlas y clases, reunidas en Academia.</Fragment>
   </CallToAction>
 </Layout>

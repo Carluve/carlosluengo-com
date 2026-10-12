@@ -2,14 +2,13 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { xUrl } from '~/navigation';
 
 const metadata = {
   title: 'Contacto',
   description:
-    'Contacto con Carlos Luengo Vera: LinkedIn para consultas académicas y profesionales, y los perfiles públicos de GitHub, Google Scholar y X (@carluve).',
+    'Contacto con Carlos Luengo Vera para colaboraciones académicas, charlas, docencia y proyectos con Cloudflare: LinkedIn, X, GitHub y Google Scholar.',
 };
 
 const linkedIn = 'https://www.linkedin.com/in/carlosluengo';
@@ -20,67 +19,47 @@ const scholar = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
 <Layout metadata={metadata}>
   <HeroText
     tagline="Contacto"
-    title="Correspondencia"
-    subtitle="Las consultas académicas, las colaboraciones docentes y los asuntos profesionales se atienden por LinkedIn."
+    title="Hablemos"
+    subtitle="Colaboraciones académicas, charlas, docencia o proyectos con Cloudflare. El mensaje directo por LinkedIn es la forma más rápida de llegar a mí."
+    callToAction={{
+      variant: 'primary',
+      text: 'Escribir por LinkedIn',
+      href: linkedIn,
+      target: '_blank',
+      icon: 'tabler:brand-linkedin',
+    }}
   />
 
   <Features2
-    title="Vías de contacto"
-    subtitle="LinkedIn es el canal principal. GitHub, Google Scholar y X (@carluve) son perfiles públicos."
+    title="Dónde encontrarme"
     columns={2}
     items={[
       {
         title: 'LinkedIn',
-        description: 'Canal preferente para un mensaje directo, ya sea de carácter académico, docente o profesional.',
+        description: 'Mensajes directos sobre universidad, docencia o asuntos profesionales.',
         icon: 'tabler:brand-linkedin',
-        href: linkedIn,
+        callToAction: { text: 'Enviar un mensaje', href: linkedIn, target: '_blank' },
       },
       {
         title: 'X',
-        description: 'Perfil público @carluve.',
+        description: 'Notas cortas sobre IA, Cloudflare y lo que estoy probando. @carluve.',
         icon: 'tabler:brand-x',
-        href: xUrl,
+        callToAction: { text: 'Seguir en X', href: xUrl, target: '_blank' },
       },
       {
         title: 'GitHub',
-        description: 'Repositorios públicos, bajo el usuario Carluve.',
+        description: 'El código de las demos y los proyectos de la sección de desarrollo.',
         icon: 'tabler:brand-github',
-        href: github,
+        callToAction: { text: 'Ver repositorios', href: github, target: '_blank' },
       },
       {
         title: 'Google Scholar',
         description: 'Publicaciones, citas y coautores.',
         icon: 'tabler:school',
-        href: scholar,
+        callToAction: { text: 'Ver publicaciones', href: scholar, target: '_blank' },
       },
     ]}
   />
-
-  <Content
-    items={[
-      {
-        title: 'Universidad',
-        description: 'Investigación doctoral, docencia de posgrado y posibles colaboraciones académicas.',
-      },
-      {
-        title: 'Industria',
-        description:
-          'Asuntos profesionales relacionados con Cloudflare, en el ámbito de empresas digitales nativas, startups e ISVs.',
-      },
-      {
-        title: 'Código',
-        description: 'Preguntas sobre los repositorios públicos enlazados en la sección de desarrollo.',
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ámbito de las consultas</h2>
-      <p>
-        Este sitio presenta una trayectoria personal. No sustituye a los canales institucionales de Cloudflare ni a los
-        de la Universidad de Alcalá.
-      </p>
-    </Fragment>
-  </Content>
 
   <CallToAction
     actions={[
@@ -91,17 +70,9 @@ const scholar = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
         target: '_blank',
         icon: 'tabler:brand-linkedin',
       },
-      {
-        text: 'X',
-        href: xUrl,
-        target: '_blank',
-        icon: 'tabler:brand-x',
-      },
     ]}
   >
-    <Fragment slot="title">LinkedIn</Fragment>
-    <Fragment slot="subtitle">
-      Es la vía adecuada para una respuesta directa. El perfil público en X es @carluve.
-    </Fragment>
+    <Fragment slot="title">¿Una charla o una colaboración?</Fragment>
+    <Fragment slot="subtitle">Cuéntame el contexto y la fecha, y te respondo.</Fragment>
   </CallToAction>
 </Layout>

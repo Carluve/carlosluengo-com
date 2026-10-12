@@ -2,14 +2,14 @@
 publishDate: 2025-05-17T00:00:00Z
 title: '1-2-3 Math: An Arithmetic Game for Young Learners'
 excerpt: 'An educational web game that helps children practise addition and subtraction through short, timed, visual challenges.'
-image: 'media:blog/123-math/1-2-3-math-promo.png'
-imageAlt: '1-2-3 Math promotional artwork'
+image: 'media:blog/123-math/202505_math.png'
+imageAlt: '1-2-3 Math start screen with name, difficulty and progress'
 category: 'Proyectos'
 tags:
   - 'education'
   - 'react'
   - 'game'
-  - '1-2-3 EDU'
+  - '1-2-3 edu'
 ---
 
 **Project type:** Educational web game
@@ -33,7 +33,7 @@ Children practise addition and subtraction in a timed environment and pick the c
 
 ## Screenshots
 
-![Start screen: choose a name and a difficulty level, and see your progress](media:blog/123-math/202505_math.png)
+![1-2-3 Math promotional artwork](media:blog/123-math/1-2-3-math-promo.png)
 
 ![A timed question with four answer options](media:blog/123-math/202505_01math.png)
 
@@ -46,6 +46,6 @@ Children practise addition and subtraction in a timed environment and pick the c
 
 ## Try it
 
-[Play at math.carluve.com](https://math.carluve.com)
+[Play at 1-2-3-math.vercel.app](https://1-2-3-math.vercel.app)
 
 1-2-3 Math is part of **1-2-3 EDU**, a set of small, accessible learning tools for children. See also [1-2-3 Logic](/blog/123-logic).
