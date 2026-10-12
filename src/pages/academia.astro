@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import OrcidBadge from '~/components/common/OrcidBadge.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -34,13 +35,18 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
       target: '_blank',
       icon: 'tabler:external-link',
     }}
-  />
+  >
+    <div slot="content" class="mt-6">
+      <OrcidBadge />
+    </div>
+  </HeroText>
 
   <Features2
     id="publicaciones"
     tagline="Publicaciones"
     title="Trabajo disponible"
     subtitle="Ocho fichas del registro de publicaciones. El enlace y el estado son los que trae cada ficha."
+    classes={{ headline: { container: 'max-w-3xl mb-5' } }}
     columns={2}
     items={[
       {
@@ -154,7 +160,11 @@ const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
         href: scholarUrl,
       },
     ]}
-  />
+  >
+    <div slot="after-headline" class="mb-8 md:mb-10">
+      <OrcidBadge />
+    </div>
+  </Features2>
 
   <Features
     id="en-preparacion"

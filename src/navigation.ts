@@ -1,5 +1,7 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
+export const orcidUrl = 'https://orcid.org/0009-0008-2591-1210';
+
 export const headerData = {
   links: [
     { text: 'Inicio', href: getPermalink('/') },
@@ -46,6 +48,7 @@ export const footerData = {
           text: 'Google Scholar',
           href: 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ',
         },
+        { text: 'ORCID', href: orcidUrl },
       ],
     },
   ],
@@ -61,6 +64,7 @@ export const footerData = {
       href: 'https://www.linkedin.com/in/carlosluengo',
     },
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/Carluve' },
+    { ariaLabel: 'ORCID iD', icon: 'orcid', href: orcidUrl },
   ],
   footNote: `
     © ${new Date().getFullYear()} <a class="text-link hover:underline" href="https://carlosluengo.com">Carlos Luengo Vera</a> · Investigación · Docencia · Industria

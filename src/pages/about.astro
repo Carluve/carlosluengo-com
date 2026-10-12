@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import OrcidBadge from '~/components/common/OrcidBadge.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -18,7 +19,11 @@ const metadata = {
     tagline="Sobre mí"
     title="Trayectoria profesional y académica"
     subtitle="Carlos Luengo Vera trabaja en la industria tecnológica y, en paralelo, en la investigación y la docencia universitarias."
-  />
+  >
+    <div slot="content" class="mt-6">
+      <OrcidBadge />
+    </div>
+  </HeroText>
 
   <Content
     items={[
@@ -51,6 +56,9 @@ const metadata = {
         Esa práctica informa la investigación doctoral y la docencia, sin sustituirlas. El objetivo académico es la
         acreditación en el sistema universitario español y, a más largo plazo, una cátedra.
       </p>
+      <div class="mt-6">
+        <OrcidBadge />
+      </div>
     </Fragment>
   </Content>
 
