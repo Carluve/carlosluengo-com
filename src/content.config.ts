@@ -55,6 +55,8 @@ const postCollection = defineCollection({
     draft: z.boolean().optional(),
 
     title: z.string(),
+    /** Language of the post body; the post page renders its interface in it. */
+    lang: z.enum(['es', 'en']).optional(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
     /** Alternative text for the cover image. Leave empty for decorative stock photos. */

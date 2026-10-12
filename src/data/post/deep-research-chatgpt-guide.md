@@ -12,6 +12,7 @@ tags:
   - 'guide'
   - 'deep research'
   - 'chatgpt'
+lang: 'en'
 ---
 
 Deep research is more than just skimming search results—it's a disciplined, multi-stage approach to finding, evaluating, and synthesising information. In an era where AI generates vast amounts of content and misinformation is rife, mastering deep research is essential for anyone who wants to make well-informed decisions, uncover real insights, and maintain intellectual integrity. This guide shows you how to use ChatGPT and OpenAI tools to bring depth and rigour to your research process.

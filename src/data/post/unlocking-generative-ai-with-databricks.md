@@ -12,6 +12,7 @@ tags:
   - 'databricks'
   - 'data lakehouse'
   - 'ai readiness'
+lang: 'en'
 ---
 
 But here’s the challenge: without a **solid data foundation**, it’s almost impossible to realise this promise. Generative AI models need high-quality, structured, and accessible data. If your information is scattered across silos, poorly cleaned, or hard to query, you’ll struggle to make AI work at scale.

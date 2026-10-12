@@ -12,6 +12,7 @@ tags:
   - 'internet'
   - 'security'
   - 'performance'
+lang: 'en'
 ---
 
 That mission—**help build a better Internet**—sounds big and aspirational, but when you start looking at the platform from the inside, it becomes very concrete. Cloudflare isn’t just adding more products; it’s removing layers of friction that used to slow down teams, complicate architectures, and expand attack surfaces.

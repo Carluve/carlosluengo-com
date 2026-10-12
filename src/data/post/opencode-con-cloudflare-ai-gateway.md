@@ -8,6 +8,7 @@ category: 'Cloudflare'
 tags:
   - 'cloudflare'
   - 'infraestructura'
+lang: 'en'
 ---
 
 ## Why this pairing works

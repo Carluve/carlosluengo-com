@@ -12,6 +12,7 @@ tags:
   - 'automation'
   - 'comet'
   - 'spotify'
+lang: 'en'
 ---
 
 ## What is Comet?

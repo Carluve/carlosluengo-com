@@ -10,6 +10,7 @@ tags:
   - 'react'
   - 'game'
   - '1-2-3 edu'
+lang: 'en'
 ---
 
 **Project type:** Educational web game

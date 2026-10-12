@@ -1,4 +1,5 @@
 ---
+import { getLang, useTranslations } from '~/i18n/utils';
 /**
  * Previous / next post at the end of an article. Cards use the same hover as
  * the rest of the site (uiarc.dev Card, MIT).
@@ -13,21 +14,23 @@ export interface Props {
 }
 
 const { prev, next } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
 const items = [
-  prev && { post: prev, label: 'Anterior', icon: 'tabler:arrow-left', align: 'text-left' },
-  next && { post: next, label: 'Siguiente', icon: 'tabler:arrow-right', align: 'sm:text-right' },
-].filter(Boolean) as Array<{ post: Post; label: string; icon: string; align: string }>;
+  prev && { post: prev, label: t('blog.prev'), side: 'prev', icon: 'tabler:arrow-left', align: 'text-left' },
+  next && { post: next, label: t('blog.next'), side: 'next', icon: 'tabler:arrow-right', align: 'sm:text-right' },
+].filter(Boolean) as Array<{ post: Post; label: string; icon: string; align: string; side: 'prev' | 'next' }>;
 ---
 
 {
   items.length > 0 && (
-    <nav class="mx-auto mt-12 max-w-3xl px-4 sm:px-6" aria-label="Más entradas">
+    <nav class="mx-auto mt-12 max-w-3xl px-4 sm:px-6" aria-label={t('blog.more')}>
       <ul class="grid gap-4 sm:grid-cols-2">
-        {items.map(({ post, label, icon, align }) => (
-          <li class:list={[label === 'Siguiente' && items.length === 1 && 'sm:col-start-2']}>
+        {items.map(({ post, label, icon, align, side }) => (
+          <li class:list={[side === 'next' && items.length === 1 && 'sm:col-start-2']}>
             <a
               href={getPermalink(post.permalink, 'post')}
-              rel={label === 'Anterior' ? 'prev' : 'next'}
+              rel={side}
               class:list={[
                 'aw-card aw-spotlight group flex h-full flex-col gap-1 p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
                 align,
@@ -36,14 +39,14 @@ const items = [
               <span
                 class:list={[
                   'inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.14em] text-link',
-                  label === 'Siguiente' && 'sm:justify-end',
+                  side === 'next' && 'sm:justify-end',
                 ]}
               >
-                {label === 'Anterior' && (
+                {side === 'prev' && (
                   <Icon name={icon} class="h-4 w-4 motion-safe:transition-transform group-hover:-translate-x-0.5" />
                 )}
                 {label}
-                {label === 'Siguiente' && (
+                {side === 'next' && (
                   <Icon name={icon} class="h-4 w-4 motion-safe:transition-transform group-hover:translate-x-0.5" />
                 )}
               </span>

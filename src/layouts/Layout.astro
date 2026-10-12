@@ -18,19 +18,40 @@ import Intersect from '~/components/common/Intersect.astro';
 import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
+import { alternatePath, getLang } from '~/i18n/utils';
 
 export interface Props {
   metadata?: MetaDataType;
 }
 
 const { metadata = {} } = Astro.props;
-const { language, textDirection } = I18N;
+const { textDirection } = I18N;
+const lang = getLang(Astro);
+
+// hreflang pairs for pages that exist in both languages.
+const alternate = alternatePath(Astro.url.pathname);
+const here = Astro.url.pathname.length > 1 ? Astro.url.pathname.replace(/\/+$/, '') : '/';
+const hreflang = alternate.translated
+  ? lang === 'es'
+    ? { es: here, en: alternate.href }
+    : { es: alternate.href, en: here }
+  : undefined;
+const absolute = (path: string) => new URL(path, Astro.site).toString();
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection}>
+<html lang={lang} dir={textDirection}>
   <head>
     <CommonMeta />
+    {
+      hreflang && (
+        <>
+          <link rel="alternate" hreflang="es" href={absolute(hreflang.es)} />
+          <link rel="alternate" hreflang="en" href={absolute(hreflang.en)} />
+          <link rel="alternate" hreflang="x-default" href={absolute(hreflang.es)} />
+        </>
+      )
+    }
     <Favicons />
     <Font cssVariable="--font-inter" preload />
     <Font cssVariable="--font-source-serif" preload />

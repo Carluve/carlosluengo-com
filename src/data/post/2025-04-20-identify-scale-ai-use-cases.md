@@ -11,6 +11,7 @@ tags:
   - 'use case design'
   - 'productivity'
   - 'ai enablement'
+lang: 'en'
 ---
 
 That’s the approach behind the OpenAI guide _"Identifying and Scaling AI Use Cases"_, based on insights from over 300 deployments and 2 million users. This post breaks down the most practical lessons, ready for teams who want to move from “playing with AI” to _delivering real impact_.

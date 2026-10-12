@@ -12,6 +12,7 @@ tags:
   - 'cursor'
   - 'ai tools'
   - 'productivity'
+lang: 'en'
 ---
 
 ### What is Cursor?

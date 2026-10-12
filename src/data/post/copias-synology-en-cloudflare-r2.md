@@ -8,6 +8,7 @@ category: 'Cloudflare'
 tags:
   - 'cloudflare'
   - 'infraestructura'
+lang: 'en'
 ---
 
 ## Why Cloudflare R2 is a strong target for Synology backups

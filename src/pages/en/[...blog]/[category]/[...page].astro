@@ -1,0 +1,59 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import { blogCategoryRobots, getStaticPathsBlogCategory } from '~/utils/blog';
+
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import BlogOverview from '~/components/blog/BlogOverview.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import { getPermalink as basePermalink, getBlogPermalink as baseBlogPermalink } from '~/utils/permalinks';
+import { getLang, localizePath, useTranslations, categoryLabel, categoryDescription } from '~/i18n/utils';
+
+export const prerender = true;
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return await getStaticPathsBlogCategory({ paginate });
+}) satisfies GetStaticPaths;
+
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+const getPermalink = (slug: string, type?: string) =>
+  localizePath(basePermalink(slug, type as Parameters<typeof basePermalink>[1]), lang);
+const getBlogPermalink = () => localizePath(baseBlogPermalink(), lang);
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths> & { category: Record<string, string> };
+
+const { page, category } = Astro.props as Props;
+
+const currentPage = page.currentPage ?? 1;
+const label = categoryLabel(category.slug, category.title, lang);
+
+const breadcrumbs = [
+  { text: t('nav.home'), href: getPermalink('/') },
+  { text: 'Blog', href: getBlogPermalink() },
+  ...(currentPage > 1
+    ? [{ text: label, href: getPermalink(category.slug, 'category') }, { text: `${t('blog.page')} ${currentPage}` }]
+    : [{ text: label }]),
+];
+
+const metadata = {
+  title: `${label}${currentPage > 1 ? ` — ${t('blog.page')} ${currentPage}` : ''}`,
+  description: categoryDescription(category.slug, `${label}`, lang),
+  robots: {
+    index: blogCategoryRobots?.index,
+    follow: blogCategoryRobots?.follow,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={breadcrumbs} />
+  <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+    <Headline>{label}</Headline>
+    <BlogOverview active={category.slug} />
+    <BlogList posts={page.data} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </section>
+</Layout>

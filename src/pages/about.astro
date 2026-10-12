@@ -1,4 +1,5 @@
 ---
+import CareerTimeline from '~/components/widgets/CareerTimeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -72,46 +73,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <Features
-    id="carrera"
-    tagline="Industria"
-    title="Experiencia profesional"
-    subtitle="De la etapa actual a los inicios."
-    columns={3}
-    items={[
-      {
-        title: 'Cloudflare',
-        description:
-          'Sr. Enterprise Account Executive. Cuentas de empresas digitales nativas, startups e ISVs. Etapa actual.',
-        icon: 'tabler:cloud',
-      },
-      {
-        title: 'Amazon Web Services',
-        description: 'Dirección de cuentas y soluciones cloud para clientes de empresa y del canal de partners.',
-        icon: 'tabler:brand-aws',
-      },
-      {
-        title: 'Lenovo',
-        description: 'Funciones comerciales y de ecosistema en infraestructura y dispositivos.',
-        icon: 'tabler:device-desktop',
-      },
-      {
-        title: 'Telefónica',
-        description: 'Relación con clientes en telecomunicaciones y servicios cloud.',
-        icon: 'tabler:antenna',
-      },
-      {
-        title: 'Insight',
-        description: 'Soluciones tecnológicas para empresas.',
-        icon: 'tabler:building',
-      },
-      {
-        title: 'Microsoft',
-        description: 'Inicios de la carrera, en evangelismo técnico del ecosistema Microsoft.',
-        icon: 'tabler:brand-windows',
-      },
-    ]}
-  />
+  <CareerTimeline />
 
   <Features
     id="academia-path"

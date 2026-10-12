@@ -1,0 +1,52 @@
+---
+/**
+ * Logos of the companies and the university in Carlos's career. Logos keep
+ * their own colours (the UAH identity rules forbid recolouring) and sit on
+ * white tiles, so they stay legible in dark mode. Hover shows the role.
+ */
+import { Image } from 'astro:assets';
+import { career, opticalHeight } from '~/data/career';
+import { getLang, useTranslations } from '~/i18n/utils';
+
+export interface Props {
+  id?: string;
+  compact?: boolean;
+}
+
+const { id = 'trayectoria', compact = false } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+---
+
+<section id={id} class="scroll-mt-24">
+  <div class:list={['mx-auto max-w-6xl px-4 sm:px-6', compact ? 'py-8' : 'py-14 md:py-16']}>
+    <p class="aw-eyebrow">{t('logos.eyebrow')}</p>
+    <h2 class="mt-2 font-heading text-2xl font-medium tracking-tight text-heading md:text-3xl">{t('logos.title')}</h2>
+    <ul class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+      {
+        career.map((entry) => (
+          <li>
+            <a
+              href={entry.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-tip={`${entry.name} · ${entry.role[lang]}`}
+              class="aw-logo-tile group flex h-20 items-center justify-center rounded-xl border border-line bg-white px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <Image
+                src={entry.logo}
+                alt={entry.name}
+                height={opticalHeight(entry.aspect, 26, entry.scale) * 2}
+                style={`height:${opticalHeight(entry.aspect, 26, entry.scale)}px;width:auto;max-width:100%`}
+                class="motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+              {entry.current && <span class="sr-only">{lang === 'en' ? '(current)' : '(actualidad)'}</span>}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

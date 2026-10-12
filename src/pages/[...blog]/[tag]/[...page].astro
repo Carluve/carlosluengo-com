@@ -7,13 +7,20 @@ import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
-import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
+import { getPermalink as basePermalink, getBlogPermalink as baseBlogPermalink } from '~/utils/permalinks';
+import { getLang, localizePath, useTranslations } from '~/i18n/utils';
 
 export const prerender = true;
 
 export const getStaticPaths = (async ({ paginate }) => {
   return await getStaticPathsBlogTag({ paginate });
 }) satisfies GetStaticPaths;
+
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+const getPermalink = (slug: string, type?: string) =>
+  localizePath(basePermalink(slug, type as Parameters<typeof basePermalink>[1]), lang);
+const getBlogPermalink = () => localizePath(baseBlogPermalink(), lang);
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
@@ -23,16 +30,16 @@ const tagTitle = tag.title.charAt(0).toUpperCase() + tag.title.slice(1);
 const currentPage = page.currentPage ?? 1;
 
 const breadcrumbs = [
-  { text: 'Inicio', href: getPermalink('/') },
+  { text: t('nav.home'), href: getPermalink('/') },
   { text: 'Blog', href: getBlogPermalink() },
   ...(currentPage > 1
-    ? [{ text: tagTitle, href: getPermalink(tag.slug, 'tag') }, { text: `Página ${currentPage}` }]
+    ? [{ text: tagTitle, href: getPermalink(tag.slug, 'tag') }, { text: `${t('blog.page')} ${currentPage}` }]
     : [{ text: tagTitle }]),
 ];
 
 const metadata = {
-  title: `${tagTitle}${currentPage > 1 ? ` — Página ${currentPage}` : ''}`,
-  description: `Textos etiquetados como ${tagTitle}.`,
+  title: `${tagTitle}${currentPage > 1 ? ` — ${t('blog.page')} ${currentPage}` : ''}`,
+  description: lang === 'en' ? `Posts tagged ${tagTitle}.` : `Textos etiquetados como ${tagTitle}.`,
   robots: {
     index: blogTagRobots?.index,
     follow: blogTagRobots?.follow,
@@ -43,7 +50,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <Breadcrumbs bar items={breadcrumbs} />
   <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-    <Headline>Etiqueta: {tagTitle}</Headline>
+    <Headline>{t('blog.tag')}: {tagTitle}</Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>

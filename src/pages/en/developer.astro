@@ -1,0 +1,55 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ProjectGallery from '~/components/widgets/ProjectGallery.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import GithubActivity from '~/components/widgets/GithubActivity.astro';
+import { getPermalink } from '~/utils/permalinks';
+import { projects } from '~/data/projects';
+
+const metadata = {
+  title: 'Projects and development',
+  description:
+    'Demos and public repositories by Carlos Luengo Vera: games and tools on Cloudflare Workers, educational apps and AI experiments.',
+};
+
+const githubProfile = 'https://github.com/Carluve';
+const live = projects.filter((p) => p.demo).length;
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Development"
+    title="Projects and experiments"
+    subtitle={`Live demos and open source: games, educational tools and prototypes on Cloudflare Workers. ${live} demos you can try right now.`}
+    callToAction={{
+      variant: 'primary',
+      text: 'GitHub profile',
+      href: githubProfile,
+      target: '_blank',
+      icon: 'tabler:brand-github',
+    }}
+  />
+
+  <ProjectGallery title="Projects" />
+
+  <GithubActivity />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in touch',
+        href: getPermalink('/en/contact'),
+      },
+      {
+        text: 'GitHub',
+        href: githubProfile,
+        target: '_blank',
+      },
+    ]}
+  >
+    <Fragment slot="title">Want to talk about a project?</Fragment>
+    <Fragment slot="subtitle">For collaborations, talks or questions about these demos.</Fragment>
+  </CallToAction>
+</Layout>

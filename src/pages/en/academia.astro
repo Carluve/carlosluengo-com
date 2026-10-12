@@ -1,0 +1,203 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import OrcidBadge from '~/components/common/OrcidBadge.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Academia',
+  description:
+    'Publications, teaching and doctoral research by Carlos Luengo Vera. Artificial intelligence, management and the evaluation of language models.',
+};
+
+const scholarUrl = 'https://scholar.google.es/citations?user=ikUrqYkAAAAJ';
+const paperUrl = 'https://arxiv.org/abs/2503.00025';
+const paperPdfUrl = 'https://arxiv.org/pdf/2503.00025';
+const paperTitle =
+  'Evaluating Large Language Models on the Spanish Medical Intern Resident (MIR) Examination 2024/2025: A Comparative Analysis of Clinical Reasoning and Knowledge Application';
+const paperAuthors =
+  'Carlos Luengo Vera, Ignacio Ferro Picón, M. Teresa del Val Nuñez, José Andrés Gómez Gandía, Antonio de Lucas Ancillo, Víctor Ramos Arroyo and Carlos Milán Figueredo.';
+const cardActionClass = 'text-sm py-2.5 px-5 md:px-6';
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Academia"
+    title="Research and teaching"
+    subtitle="PhD in Artificial Intelligence and Management at Universidad de Alcalá, on the economic and organisational impact of language models. Postgraduate and executive education teaching."
+    callToAction={{
+      variant: 'primary',
+      text: 'Google Scholar',
+      href: scholarUrl,
+      target: '_blank',
+      icon: 'tabler:external-link',
+    }}
+  >
+    <div slot="content" class="mt-6">
+      <OrcidBadge />
+    </div>
+  </HeroText>
+
+  <Features2
+    id="publicaciones"
+    tagline="Publications"
+    title="Publications"
+    subtitle="Preprints, articles and conference papers. The full list, with citations, is on Google Scholar."
+    classes={{ headline: { container: 'max-w-3xl mb-5' } }}
+    columns={2}
+    items={[
+      {
+        eyebrow: 'Preprint · 2025-03-16 · arXiv',
+        title: paperTitle,
+        description: `<span class="block text-page dark:text-slate-200">${paperAuthors}</span><span class="mt-2 block">Comparative analysis of 22 generative AI models in clinical reasoning and performance across the MIR 2024/2025 medical exams. DOI: 10.48550/arXiv.2503.00025.</span>`,
+        icon: 'tabler:file-text',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'PDF on arXiv',
+            href: paperPdfUrl,
+            target: '_blank',
+            icon: 'tabler:file-type-pdf',
+            class: cardActionClass,
+          },
+          {
+            text: 'Abstract on arXiv',
+            href: paperUrl,
+            target: '_blank',
+            icon: 'tabler:file-text',
+            class: cardActionClass,
+          },
+        ],
+      },
+      {
+        eyebrow: '2025-12-26 · Journal of Open Innovation',
+        title:
+          'Generative AI and the Algorithmic Workplace: A Bibliometric and Conceptual Analysis of Its Impact on Organisational Decision-Making and Work Design',
+        description:
+          'Carlos Luengo Vera, Alnoor Bhimani, José Andrés Gómez Gandía and Antonio de Lucas (2025). Journal of Open Innovation: Technology, Market, and Complexity, 100710. Elsevier.',
+        icon: 'tabler:file-text',
+      },
+      {
+        eyebrow: '2025-11-15 · Springer Proceedings in Business and Economics',
+        title:
+          'Economic Resilience and Sustainability—Vol. 1: 8th International Scientific Conference on Business and Economics (ISCBE), Tetovo, North Macedonia, May 2025',
+        description:
+          'Ramadani, V., Bexheti, A., Abazi-Alili, H., Theodoraki, C., Rexhepi, G. and Krasniqi, B. A. (Eds.) (2025). Springer Nature Switzerland AG. The volume includes the chapter on the cost-benefit analysis of language models in the MIR exam.',
+        icon: 'tabler:book',
+        actions: [
+          {
+            text: 'Springer',
+            href: 'https://link.springer.com/book/9783032042170',
+            target: '_blank',
+            icon: 'tabler:external-link',
+            class: cardActionClass,
+          },
+        ],
+      },
+      {
+        eyebrow: '2025-11-10 · International Journal of Environment, Workplace and Employment',
+        title: 'Geopolitical crises and the transformation of work models: a bibliometric analysis (2000-2025)',
+        description:
+          'Carlos Luengo Vera, José Andrés Gómez Gandía, Antonio Javier De Lucas López and Ma. Teresa de Val Núñez (2025). Vol. 9, No. 3, pp. 270-297.',
+        icon: 'tabler:file-text',
+        actions: [
+          {
+            text: 'Inderscience',
+            href: 'https://www.inderscienceonline.com/doi/abs/10.1504/IJEWE.2025.149704',
+            target: '_blank',
+            icon: 'tabler:external-link',
+            class: cardActionClass,
+          },
+        ],
+      },
+      {
+        eyebrow: '2025-09-21',
+        title: 'Innovation and Circular Economy: New Findings on How Innovation Drives the Circular Economy',
+        description:
+          'Review of the article “Innovation and Circular Economy within the Sustainable …” (Elsevier, 2025) on how innovation underpins circular economy practices.',
+        icon: 'tabler:file-text',
+      },
+      {
+        eyebrow: '2025-09-11 · JOINETECH',
+        title:
+          'The Synergy between Green Marketing, Innovation, and Sustainability-Enhancing Green Brand Equity and Corporate Social Responsibility',
+        description:
+          'José Andrés Gómez Gandía, Carlos Luengo Vera and Antonio Javier De Lucas López (2025). JOINETECH (International Journal of Economic and Technological Studies), Vol. 1, Issue 01, pp. 76-89.',
+        icon: 'tabler:file-text',
+        actions: [
+          {
+            text: 'Google Scholar',
+            href: 'https://scholar.google.es/citations?view_op=view_citation&hl=en&user=ikUrqYkAAAAJ&citation_for_view=ikUrqYkAAAAJ:IjCSPb-OGe4C',
+            target: '_blank',
+            icon: 'tabler:external-link',
+            class: cardActionClass,
+          },
+        ],
+      },
+      {
+        eyebrow: '2025-05-08 · 8th ISCBE, Tetovo',
+        title:
+          'Optimising AI in Medical Education: Cost-Benefit Analysis of Large Language Models in the MIR Examination',
+        description:
+          'Carlos Luengo Vera, Antonio J. de Lucas López, Víctor Ramos Arroyo and M. Teresa de Val Núñez (2025). Paper presented at the 8th ISCBE (Tetovo, 08–09 May 2025). Manuscript under review for the Springer proceedings.',
+        icon: 'tabler:file-text',
+      },
+      {
+        eyebrow: '2024-11-22 · Happiness Congress, Málaga',
+        title: 'Impact of Generative AI on Workplace Productivity and Employee Well-being',
+        description:
+          'Carlos Luengo Vera, Antonio J. de Lucas López, Arturo Orea Rocha and María Teresa del Val Núñez (2024). Paper presented at the 8th International Academic and Professional Congress on Happiness (Málaga, 21–22 Nov 2024), awarded best presentation. Manuscript under review.',
+        icon: 'tabler:file-text',
+      },
+    ]}
+  />
+
+  <Features
+    id="docencia"
+    tagline="Teaching and outreach"
+    title="In the classroom and at conferences"
+    columns={3}
+    items={[
+      {
+        title: 'Doctoral thesis',
+        description:
+          'Artificial Intelligence and Management at Universidad de Alcalá: how productivity and the organisation of work change with language models.',
+        icon: 'tabler:writing',
+      },
+      {
+        title: 'Postgraduate and executive education',
+        description:
+          'Classes on artificial intelligence, management and applied technology in postgraduate and executive education programmes.',
+        icon: 'tabler:chalkboard',
+      },
+      {
+        title: 'Talks',
+        description:
+          'Papers at conferences and events such as the 8th ISCBE and DigEduCLM, each written up on the blog.',
+        icon: 'tabler:presentation',
+        callToAction: { text: 'See talks', href: getPermalink('/en/category/charlas') },
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in touch',
+        href: getPermalink('/en/contact'),
+      },
+      {
+        text: 'Google Scholar',
+        href: scholarUrl,
+        target: '_blank',
+      },
+    ]}
+  >
+    <Fragment slot="title">Academic collaboration</Fragment>
+    <Fragment slot="subtitle">Proposals for research, teaching or transfer between university and industry.</Fragment>
+  </CallToAction>
+</Layout>

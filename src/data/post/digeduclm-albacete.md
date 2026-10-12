@@ -11,6 +11,7 @@ tags:
   - 'digital education'
   - 'spain'
   - 'edtech'
+lang: 'en'
 ---
 
 On May 10, 2025, I participated in the **Congreso de Digitalización Educativa de Castilla-La Mancha (DigEduCLM)** at the Campus de Albacete (UCLM). The event brought together educators, technologists, and innovators to explore the latest trends and best practices in educational digitalization across the region.

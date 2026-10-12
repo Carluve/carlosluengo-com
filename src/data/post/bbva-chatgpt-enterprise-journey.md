@@ -12,6 +12,7 @@ tags:
   - 'case-study'
   - 'chatgpt enterprise'
   - 'bbva'
+lang: 'en'
 ---
 
 Spanish corporates are moving fast from pilots to industrial-scale use of ChatGPT Enterprise. BBVA's leap from 3,300 to 11,000 licences in a single year saved staff almost three hours a week on routine tasks and sparked an internal wave of innovation hackathons.  

@@ -12,6 +12,7 @@ tags:
   - 'software engineering'
   - 'productivity'
   - 'startups'
+lang: 'en'
 ---
 
 What if writing code felt less like debugging and more like a jam session? A new wave in software development called **vibe coding** is making that a reality. Startups are reaching massive milestones with tiny teams, signalling a cultural shift in how software gets built. Vibe coding – a term popularised by AI luminary Andrej Karpathy – captures an emerging style of programming where developers work hand-in-hand with AI, riding a creative "flow" to build software faster and more enjoyably. This isn’t just a new tool, but a new mindset – one that’s already enabling record-breaking productivity and changing what it means to be a software developer.

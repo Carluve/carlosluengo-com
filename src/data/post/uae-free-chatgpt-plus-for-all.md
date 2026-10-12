@@ -12,6 +12,7 @@ tags:
   - 'technology'
   - 'chatgpt plus'
   - 'uae'
+lang: 'en'
 ---
 
 The United Arab Emirates (UAE) is set to become the first country to provide its entire population with free access to ChatGPT Plus, OpenAI's premium AI chatbot service. This initiative is part of a broader partnership between the UAE government and OpenAI, aiming to enhance digital literacy and innovation across the nation.

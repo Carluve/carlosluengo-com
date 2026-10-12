@@ -1,4 +1,5 @@
 ---
+import { getLang, localizePath, useTranslations } from '~/i18n/utils';
 import { APP_BLOG } from 'astrowind:config';
 
 import { getRelatedPosts } from '~/utils/blog';
@@ -11,6 +12,8 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
 
 const relatedPosts = post.tags ? await getRelatedPosts(post, 3) : [];
 ---
@@ -22,9 +25,9 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 3) : [];
         container:
           'pt-0 lg:pt-0 md:pt-0 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
       }}
-      title="Entradas relacionadas"
-      linkText="Ver el blog"
-      linkUrl={getBlogPermalink()}
+      title={t('blog.related')}
+      linkText={t('blog.seeBlog')}
+      linkUrl={localizePath(getBlogPermalink(), lang)}
       postIds={relatedPosts.map((post) => post.id)}
     />
   ) : null

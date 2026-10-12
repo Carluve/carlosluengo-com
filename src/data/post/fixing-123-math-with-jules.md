@@ -12,6 +12,7 @@ tags:
   - 'javascript'
   - 'jules'
   - 'ai coding'
+lang: 'en'
 ---
 
 In this post, I share how I used [Jules](https://jules.google), Google’s asynchronous coding assistant, to fix a broken educational game project I had abandoned. The app, [1-2-3 Math](/blog/123-math/), had various issues—broken buttons, language-switching bugs, and general logic problems. I decided to test Jules as a dev assistant and was positively surprised.

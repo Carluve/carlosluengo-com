@@ -12,6 +12,7 @@ tags:
   - 'chatgpt'
   - 'gpt-4o'
   - 'ai assistant'
+lang: 'en'
 ---
 
 ## Introduction

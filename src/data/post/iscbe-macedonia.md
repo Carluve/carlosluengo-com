@@ -9,6 +9,7 @@ tags:
   - 'education'
   - 'medical education'
   - 'large language models'
+lang: 'en'
 ---
 
 ### Track: Information Systems, Data Science and Artificial Intelligence

@@ -12,6 +12,7 @@ tags:
   - 'cloudflare'
   - 'asus'
   - 'dns'
+lang: 'en'
 ---
 
 ### Summary
