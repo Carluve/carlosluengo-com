@@ -3,7 +3,7 @@ publishDate: 2026-04-04T00:00:00Z
 title: 'EmDash: A Practical Look at Cloudflare''s "WordPress Successor" (with Zero Trust in Practice)'
 excerpt: "Testing Cloudflare's EmDash with Zero Trust integration — a shift in how content platforms are designed, secured, and operated."
 image: 'media:projects/emdash.png'
-imageAlt: 'Página de inicio de EmDash, el CMS para Astro'
+imageAlt: 'Home page of EmDash, the CMS for Astro'
 category: 'Cloudflare'
 tags:
   - 'cloudflare'

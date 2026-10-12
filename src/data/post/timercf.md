@@ -3,7 +3,7 @@ publishDate: 2026-02-25T00:00:00Z
 title: 'Building TimerCF: A Practical Event Countdown on Cloudflare Workers'
 excerpt: 'A web-based countdown timer deployed on Cloudflare Workers, with a three-step setup flow and bilingual support.'
 image: 'media:blog/timercf/01KND1JCANRGYJP34FD39WRM3P.png'
-imageAlt: 'Building TimerCF: A Practical Event Countdown on Cloudflare Workers'
+imageAlt: 'TimerCF setup screen asking for the event name, with the Cloudflare logo on a dark background'
 category: 'Cloudflare'
 tags:
   - 'cloudflare'

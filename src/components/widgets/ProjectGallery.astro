@@ -34,6 +34,9 @@ const tagsEn: Record<string, string> = {
 const tagLabel = (tag: string) => (lang === 'en' ? (tagsEn[tag] ?? tag) : tag);
 const name = (p: Project) => (lang === 'en' ? (p.titleEn ?? p.title) : p.title);
 
+// GitHub social cards are 2:1 with text near the edges: show them whole instead of cropping.
+const isSocialCard = (src: string) => src.includes('-github');
+
 const featured = projects.filter((p) => p.featured);
 const rest = projects.filter((p) => !p.featured).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
@@ -64,11 +67,19 @@ const links = (p: Project) =>
             <li id={p.slug} class="scroll-mt-24">
               <article class="aw-card aw-spotlight aw-reveal group flex h-full flex-col overflow-hidden">
                 {p.image ? (
-                  <div class="overflow-hidden border-b border-line bg-primary/5">
+                  <div
+                    class:list={[
+                      'overflow-hidden border-b border-line',
+                      isSocialCard(p.image) ? 'bg-white p-4 dark:bg-slate-100/90' : 'bg-primary/5',
+                    ]}
+                  >
                     <Image
                       src={p.image}
                       alt=""
-                      class="aspect-[16/10] w-full object-cover object-top motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.03]"
+                      class:list={[
+                        'aspect-[16/10] w-full motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-[1.03]',
+                        isSocialCard(p.image) ? 'object-contain dark:opacity-95' : 'object-cover object-top',
+                      ]}
                       widths={[400, 800]}
                       width={800}
                       height={500}
@@ -79,11 +90,17 @@ const links = (p: Project) =>
                   </div>
                 ) : (
                   <div
-                    class="aw-cover flex aspect-[16/10] items-center justify-center border-b border-line"
+                    class="aw-cover relative isolate aspect-[16/10] overflow-hidden border-b border-line"
                     style="--cover-x1:20%;--cover-y1:20%;--cover-x2:80%;--cover-y2:90%;--cover-hue:216"
                   >
-                    <span class="font-heading text-3xl font-medium tracking-tight text-primary/70 dark:text-sky-200/80">
-                      {name(p)}
+                    <span class="aw-cover-grid absolute inset-0" />
+                    <span class="absolute left-4 top-4 inline-flex items-center gap-2">
+                      <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/50 bg-white/60 text-primary backdrop-blur-sm dark:border-white/10 dark:bg-white/10 dark:text-sky-200">
+                        <Icon name={p.repo ? 'tabler:brand-github' : 'tabler:code'} class="h-5 w-5" />
+                      </span>
+                      <span class="text-xs font-medium uppercase tracking-wider text-primary/70 dark:text-sky-200/70">
+                        {name(p)}
+                      </span>
                     </span>
                   </div>
                 )}

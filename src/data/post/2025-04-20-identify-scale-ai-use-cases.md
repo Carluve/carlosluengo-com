@@ -2,8 +2,6 @@
 publishDate: 2025-04-20T00:00:00Z
 title: 'How to Identify and Scale High-Impact AI Use Cases'
 excerpt: 'What if the fastest way to create value with AI isn’t by chasing a single killer app—but by spotting dozens of everyday moments where AI can quietly make life easier?'
-image: 'media:blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia.png'
-imageAlt: 'How to Identify and Scale High-Impact AI Use Cases'
 category: 'IA'
 tags:
   - 'generative ai'
@@ -60,8 +58,6 @@ These are reusable patterns that work across most teams:
 - 📊 **Data analysis** – Trends, harmonisation, visuals
 - 💡 **Ideation & strategy** – Brainstorms, plans, feedback
 - 🤖 **Automation** – Scheduled reports, smart summaries, GPT flows
-
-![AI Use Case Infographic](media:blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia.png)
 
 ## Prioritising with Impact vs Effort
 

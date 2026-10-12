@@ -1167,6 +1167,43 @@
     "width": 1440,
     "height": 900
   },
+  "blog/catalogo-de-demos/cloudflare-demos-es-card.png": {
+    "type": "image",
+    "hash": "6fee5129d7",
+    "width": 1440,
+    "height": 813,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/cloudflare-demos-es-card-6fee5129d7-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/cloudflare-demos-es-card-6fee5129d7-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/cloudflare-demos-es-card-6fee5129d7-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/cloudflare-demos-es-card-6fee5129d7-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/cloudflare-demos-es-card-6fee5129d7-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/cloudflare-demos-es-card-6fee5129d7-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/cloudflare-demos-es-card-6fee5129d7-og.jpg"
+  },
   "blog/catalogo-de-demos/cloudflare-demos-es.png": {
     "type": "image",
     "hash": "9afa017d35",
@@ -1360,6 +1397,43 @@
     },
     "og": "blog/catalogo-de-demos/foca-web-095d3ffe49-og.jpg"
   },
+  "blog/catalogo-de-demos/form-event-card.png": {
+    "type": "image",
+    "hash": "13661874ce",
+    "width": 1440,
+    "height": 813,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/form-event-card-13661874ce-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/form-event-card-13661874ce-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/form-event-card-13661874ce-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/form-event-card-13661874ce-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/form-event-card-13661874ce-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/form-event-card-13661874ce-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/form-event-card-13661874ce-og.jpg"
+  },
   "blog/catalogo-de-demos/form-event.png": {
     "type": "image",
     "hash": "fd8f329a2e",
@@ -1531,6 +1605,43 @@
       ]
     },
     "og": "blog/catalogo-de-demos/millonario-a48d71edaa-og.jpg"
+  },
+  "blog/catalogo-de-demos/provincias-capitales-card.png": {
+    "type": "image",
+    "hash": "2010e312c6",
+    "width": 1440,
+    "height": 813,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/provincias-capitales-card-2010e312c6-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/provincias-capitales-card-2010e312c6-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/provincias-capitales-card-2010e312c6-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/provincias-capitales-card-2010e312c6-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/provincias-capitales-card-2010e312c6-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/provincias-capitales-card-2010e312c6-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/provincias-capitales-card-2010e312c6-og.jpg"
   },
   "blog/catalogo-de-demos/provincias-capitales.png": {
     "type": "image",
@@ -1827,6 +1938,43 @@
       ]
     },
     "og": "blog/catalogo-de-demos/startups-cloudflare-235d903a60-og.jpg"
+  },
+  "blog/catalogo-de-demos/timercf-card.png": {
+    "type": "image",
+    "hash": "70d18fdfcb",
+    "width": 1440,
+    "height": 813,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/timercf-card-70d18fdfcb-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/timercf-card-70d18fdfcb-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/timercf-card-70d18fdfcb-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/timercf-card-70d18fdfcb-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/timercf-card-70d18fdfcb-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/timercf-card-70d18fdfcb-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/timercf-card-70d18fdfcb-og.jpg"
   },
   "blog/catalogo-de-demos/timercf-clase.png": {
     "type": "image",

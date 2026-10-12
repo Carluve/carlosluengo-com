@@ -3,7 +3,7 @@ publishDate: 2025-05-03T00:00:00Z
 title: 'Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity'
 excerpt: 'Trae.ai is a free, AI-powered integrated development environment (IDE) created by ByteDance (the company behind TikTok). Its goal is to act as a real-time AI coding assistant built into the editor, helping developers…'
 image: 'media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png'
-imageAlt: 'Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity'
+imageAlt: 'Trae editor with a Markdown file open, the file explorer on the left and the Trae chat panel on the right'
 category: 'IA'
 tags:
   - 'ai development'
@@ -22,7 +22,7 @@ lang: 'en'
 - Available for **Windows and macOS** (Linux support not yet available).
 - Interface in English and Simplified Chinese.
 
-![Trae.AI](media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png) _[TRAE AI]_
+![Trae editor with a Markdown file open, the file explorer on the left and the Trae chat panel on the right](media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png)
 
 ## Why was it launched?
 
@@ -33,7 +33,7 @@ Trae.ai addresses two key problems:
 
 ByteDance launched Trae as a **completely free and unlimited tool**, aiming to democratize AI-assisted coding and compete in this fast-growing space.
 
-![Pricing](media:blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.png)
+![Price comparison: Cursor $20/month, Copilot $10/month, Trae free](media:blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.png)
 
 ---
 
@@ -49,7 +49,7 @@ ByteDance launched Trae as a **completely free and unlimited tool**, aiming to d
 
 Trae.ai takes _vibe coding_ to the next level by embedding the AI assistant directly into the coding workflow, with full contextual awareness and smart editing capabilities.
 
-![DiagramVibeCoding](media:blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.png)
+![Diagram contrasting vibe coding, with chat beside the editor, and Trae's assistant embedded in the editor](media:blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.png)
 
 ---
 
@@ -68,7 +68,7 @@ All of this is available **without API setup or extra costs**. The AI can:
 - Refactor functions or entire files.
 - Provide inline help and explanations.
 
-![DiagramVibeCoding](media:blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.png)
+![Trae model settings listing the built-in models: Claude 3.5 and 3.7 Sonnet, Gemini 2.5 Pro, GPT-4.1, GPT-4o and DeepSeek](media:blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.png)
 
 ---
 

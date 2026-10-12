@@ -2,7 +2,9 @@
 /**
  * Logos of the companies and the university in Carlos's career. Logos keep
  * their own colours (the UAH identity rules forbid recolouring) and sit on
- * white tiles, so they stay legible in dark mode. Hover shows the role.
+ * light tiles (slightly dimmed in dark mode to avoid glare). Hover shows the
+ * role. With an odd count the last tile spans two columns below lg, so no
+ * logo sits alone on the last row.
  */
 import { Image } from 'astro:assets';
 import { career, opticalHeight } from '~/data/career';
@@ -25,13 +27,13 @@ const t = useTranslations(lang);
     <ul class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
       {
         career.map((entry) => (
-          <li>
+          <li class="odd:last:col-span-2 lg:odd:last:col-span-1">
             <a
               href={entry.url}
               target="_blank"
               rel="noopener noreferrer"
               data-tip={`${entry.name} · ${entry.role[lang]}`}
-              class="aw-logo-tile group flex h-20 items-center justify-center rounded-xl border border-line bg-white px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              class="aw-logo-tile group flex h-20 items-center justify-center rounded-xl border border-line bg-white px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:border-white/10 dark:bg-slate-100"
             >
               <Image
                 src={entry.logo}

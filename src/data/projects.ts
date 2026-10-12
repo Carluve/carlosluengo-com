@@ -88,7 +88,7 @@ export const projects: Project[] = [
     descriptionEn: 'Countdown timer for events and classes, deployed on Workers, with a classroom variant.',
     year: 2024,
     tags: ['Workers', 'Eventos'],
-    image: 'media:blog/catalogo-de-demos/timercf.png',
+    image: 'media:blog/catalogo-de-demos/timercf-card.png',
     demo: 'https://timercf.carluve.workers.dev',
     post: '/blog/timercf/',
   },
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     descriptionEn: 'Spanish-language demos and examples that explain Cloudflare use cases.',
     year: 2025,
     tags: ['Cloudflare', 'Demos'],
-    image: 'media:blog/catalogo-de-demos/cloudflare-demos-es.png',
+    image: 'media:blog/catalogo-de-demos/cloudflare-demos-es-card.png',
     demo: 'https://cloudflare-demos-es.carluve.workers.dev',
   },
   {
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     descriptionEn: 'Educational game for practising the provinces and capitals of Spain.',
     year: 2024,
     tags: ['Educación', 'Juegos'],
-    image: 'media:blog/catalogo-de-demos/provincias-capitales.png',
+    image: 'media:blog/catalogo-de-demos/provincias-capitales-card.png',
     demo: 'https://provincias-capitales.carluve.workers.dev',
   },
   {
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     descriptionEn: 'Serverless event registration form on Workers.',
     year: 2024,
     tags: ['Workers', 'Formularios'],
-    image: 'media:blog/catalogo-de-demos/form-event.png',
+    image: 'media:blog/catalogo-de-demos/form-event-card.png',
     demo: 'https://form-event.carluve.workers.dev',
   },
   {

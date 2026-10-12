@@ -56,7 +56,10 @@ export const postMarkdown = async (post: Post) => {
       category: post.category ? categoryLabel(post.category.slug, post.category.title, 'en') : undefined,
       tags: post.tags?.map((tag) => tag.title).join(', '),
       canonical: abs(postUrl(post)),
-      image: post.image && post.image.startsWith('media:') ? resolveMediaUrl(post.image, { og: true }) : undefined,
+      image:
+        typeof post.image === 'string' && post.image.startsWith('media:')
+          ? resolveMediaUrl(post.image, { og: true })
+          : undefined,
     }) +
     `# ${post.title}\n\n` +
     (post.excerpt ? `> ${post.excerpt}\n\n` : '') +

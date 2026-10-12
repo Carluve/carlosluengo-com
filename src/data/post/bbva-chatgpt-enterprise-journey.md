@@ -1,9 +1,9 @@
 ---
 publishDate: 2025-05-23T00:00:00Z
 title: 'How BBVA Scaled ChatGPT Enterprise: Lessons for Spanish Corporates'
-excerpt: "Spanish corporates are moving fast from pilots to industrial-scale use of ChatGPT Enterprise. BBVA's leap from 3,300 to 11,000 licences in a single year saved staff almost three hours a week on routine tasks and…"
+excerpt: 'What BBVA did to grow from 3,300 to 11,000 ChatGPT Enterprise licences in a year, how other Spanish companies compare, and a practical roadmap for governance, training and hackathons.'
 image: 'media:blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt.png'
-imageAlt: 'How BBVA Scaled ChatGPT Enterprise: Lessons for Spanish Corporates'
+imageAlt: 'Three blue panels with icons for security (shield), performance (rocket) and control (dashboard)'
 category: 'IA'
 tags:
   - 'ai'
@@ -26,8 +26,6 @@ This post distils the key decisions, governance steps and cultural moves that le
 - **Unlimited, faster GPT-4 access and 128k context windows**—vital for lengthy legal or technical documents.
 - **Admin console with SSO, usage dashboards and domain controls** to manage thousands of seats.
 
-![Three pillars of ChatGPT Enterprise: Security, Performance, Control](media:blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt.png)
-
 ---
 
 ## 2. BBVA's journey in a nutshell
@@ -42,8 +40,6 @@ This post distils the key decisions, governance steps and cultural moves that le
 1. Top-down mandate + grassroots community – the Global AI Adoption team set guard-rails, while a Teams channel let employees share prompts and mini-GPTs.
 2. Structured learning – "Data University" modules on prompt engineering and LLM ethics are mandatory before a licence is issued.
 3. Internal competitions – the DataRally and Bot Talent contests rewarded practical prototypes that now enter production pipelines.
-
-![BBVA employees at a hackathon](media:blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney.png)
 
 ---
 
@@ -106,8 +102,6 @@ This post distils the key decisions, governance steps and cultural moves that le
 - **Compliance & audit** – log all prompts and outputs; keep data residency in EU regions if required.
 - **Continuous up-skilling** – quarterly refresher courses as models evolve (e.g., expected GPT-5 upgrade).
 - **Innovation funnel** – move the best hackathon ideas into a formal project portfolio.
-
-![LLM lifecycle: experiment → MVP → compliance review → production → performance monitoring](media:blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun.png)
 
 ---
 
