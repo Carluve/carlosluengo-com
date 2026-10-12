@@ -41,6 +41,7 @@ const { language, textDirection } = I18N;
     <Analytics />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://media.carlosluengo.com" />
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
@@ -53,5 +54,23 @@ const { language, textDirection } = I18N;
     <slot />
 
     <Intersect />
+
+    <script>
+      // Feed the pointer position to `.aw-spotlight` cards (see tailwind.css).
+      // One delegated listener survives client-side navigations.
+      if (matchMedia('(hover: hover)').matches) {
+        document.addEventListener(
+          'pointermove',
+          (event) => {
+            const card = (event.target as Element | null)?.closest?.<HTMLElement>('.aw-spotlight');
+            if (!card) return;
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--aw-mx', `${event.clientX - rect.left}px`);
+            card.style.setProperty('--aw-my', `${event.clientY - rect.top}px`);
+          },
+          { passive: true }
+        );
+      }
+    </script>
   </body>
 </html>

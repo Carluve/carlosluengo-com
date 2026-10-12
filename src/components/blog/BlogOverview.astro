@@ -1,0 +1,128 @@
+---
+/**
+ * Category filter and a small "posts per year" chart for the blog index.
+ * The bars follow EvilCharts (MIT): rounded tops, a vertical gradient, a
+ * dotted guide line, and the other bars dim while one is hovered.
+ * Static SVG and links only: no client JavaScript.
+ */
+import { fetchPosts } from '~/utils/blog';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+
+export interface Props {
+  /** Slug of the category being shown, if any. */
+  active?: string;
+}
+
+const { active } = Astro.props;
+const posts = await fetchPosts();
+
+const categories = new Map<string, { title: string; count: number }>();
+for (const post of posts) {
+  if (!post.category) continue;
+  const entry = categories.get(post.category.slug) ?? { title: post.category.title, count: 0 };
+  entry.count++;
+  categories.set(post.category.slug, entry);
+}
+const chips = [...categories.entries()].sort((a, b) => b[1].count - a[1].count);
+
+const perYear = new Map<number, number>();
+for (const post of posts)
+  perYear.set(post.publishDate.getFullYear(), (perYear.get(post.publishDate.getFullYear()) ?? 0) + 1);
+const years = [...perYear.entries()].sort((a, b) => a[0] - b[0]);
+const max = Math.max(...years.map(([, n]) => n));
+
+const W = 240;
+const H = 96;
+const PAD = 18;
+const bar = Math.min(34, (W - 8) / years.length - 10);
+const step = (W - 8) / years.length;
+const chipClass =
+  'inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary';
+---
+
+<div class="-mt-4 mb-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+  <nav aria-label="Categorías del blog">
+    <ul class="flex flex-wrap gap-2">
+      <li>
+        <a
+          href={getBlogPermalink()}
+          aria-current={!active ? 'page' : undefined}
+          class:list={[
+            chipClass,
+            !active
+              ? 'border-primary bg-primary text-white'
+              : 'border-line bg-surface text-default hover:border-primary/40 hover:text-link',
+          ]}
+        >
+          Todas <span class="tabular-nums opacity-70">{posts.length}</span>
+        </a>
+      </li>
+      {
+        chips.map(([slug, { title, count }]) => (
+          <li>
+            <a
+              href={getPermalink(slug, 'category')}
+              aria-current={active === slug ? 'page' : undefined}
+              class:list={[
+                chipClass,
+                active === slug
+                  ? 'border-primary bg-primary text-white'
+                  : 'border-line bg-surface text-default hover:border-primary/40 hover:text-link',
+              ]}
+            >
+              {title} <span class="tabular-nums opacity-70">{count}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <figure class="hidden sm:block">
+    <svg
+      viewBox={`0 0 ${W} ${H + PAD}`}
+      width={W}
+      height={H + PAD}
+      role="img"
+      aria-labelledby="blog-years-title"
+      class="aw-bars overflow-visible"
+    >
+      <title id="blog-years-title">
+        Publicaciones por año: {years.map(([y, n]) => `${y}, ${n}`).join('; ')}
+      </title>
+      <defs>
+        <linearGradient id="blog-years-bar" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--aw-color-primary)" stop-opacity="0.95"></stop>
+          <stop offset="100%" stop-color="var(--aw-color-primary)" stop-opacity="0.25"></stop>
+        </linearGradient>
+      </defs>
+      <line
+        x1="0"
+        x2={W}
+        y1={H}
+        y2={H}
+        stroke="currentColor"
+        class="text-line"
+        stroke-dasharray="2 4"
+        stroke-linecap="round"></line>
+      {
+        years.map(([year, count], i) => {
+          const h = Math.max(4, ((H - 16) * count) / max);
+          const x = 4 + i * step + (step - bar) / 2;
+          return (
+            <g class="aw-bar">
+              <rect x={x} y={H - h} width={bar} height={h} rx="5" fill="url(#blog-years-bar)" />
+              <text x={x + bar / 2} y={H - h - 5} text-anchor="middle" class="fill-heading text-[10px] tabular-nums">
+                {count}
+              </text>
+              <text x={x + bar / 2} y={H + 14} text-anchor="middle" class="fill-muted text-[10px] tabular-nums">
+                {year}
+              </text>
+            </g>
+          );
+        })
+      }
+    </svg>
+    <figcaption class="sr-only">Número de publicaciones por año</figcaption>
+  </figure>
+</div>

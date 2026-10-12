@@ -1,0 +1,62 @@
+---
+/**
+ * Generated cover for posts without an image: a soft mesh gradient in the
+ * site palette, a fine grid, the category icon and a short monogram.
+ * Deterministic per post, so a card always looks the same between builds.
+ * The masked grid follows affectUI Grid Background (MIT).
+ */
+import { Icon } from 'astro-icon/components';
+import type { Post } from '~/types';
+
+export interface Props {
+  post: Post;
+  class?: string;
+}
+
+const { post, class: className = '' } = Astro.props;
+
+const ICONS: Record<string, string> = {
+  ia: 'tabler:sparkles',
+  cloudflare: 'tabler:cloud',
+  proyectos: 'tabler:code',
+  academia: 'tabler:school',
+  herramientas: 'tabler:tool',
+  charlas: 'tabler:presentation',
+};
+const icon = ICONS[post.category?.slug ?? ''] ?? 'tabler:notes';
+
+// FNV-1a on the slug gives stable positions and hues.
+let hash = 2166136261;
+for (const char of post.slug) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619) >>> 0;
+const pick = (shift: number, min: number, max: number) => min + ((hash >>> shift) % (max - min + 1));
+
+const style = [
+  `--cover-x1:${pick(0, 5, 45)}%`,
+  `--cover-y1:${pick(4, 0, 40)}%`,
+  `--cover-x2:${pick(8, 55, 95)}%`,
+  `--cover-y2:${pick(12, 55, 100)}%`,
+  `--cover-hue:${pick(16, 205, 232)}`,
+].join(';');
+
+const monogram = post.title
+  .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+  .split(/\s+/)
+  .filter((word) => word.length > 2)
+  .slice(0, 2)
+  .map((word) => word[0].toUpperCase())
+  .join('');
+---
+
+<div class:list={['aw-cover relative isolate overflow-hidden', className]} style={style} aria-hidden="true">
+  <span class="aw-cover-grid absolute inset-0"></span>
+  <span
+    class="absolute left-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/50 bg-white/60 text-primary backdrop-blur-sm dark:border-white/10 dark:bg-white/10 dark:text-sky-200"
+  >
+    <Icon name={icon} class="h-5 w-5" />
+  </span>
+  <span
+    class="absolute bottom-2 right-4 font-heading text-6xl font-medium leading-none tracking-tight text-primary/15 dark:text-white/10"
+  >
+    {monogram}
+  </span>
+</div>

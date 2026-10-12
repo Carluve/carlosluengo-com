@@ -96,7 +96,7 @@ const Root = compact ? 'div' : 'section';
 ---
 
 <Root
-  class:list={[compact ? 'mt-8' : 'relative not-prose scroll-mt-[72px]']}
+  class:list={['gh-root', compact ? 'mt-8' : 'relative not-prose scroll-mt-[72px]']}
   {...compact ? {} : { id: 'github-activity' }}
 >
   <div class:list={[compact ? '' : 'mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16 lg:py-20']}>
@@ -133,7 +133,7 @@ const Root = compact ? 'div' : 'section';
       {
         activity ? (
           <svg
-            class="block text-muted"
+            class="gh-calendar block text-muted"
             width={width}
             height={height}
             viewBox={`0 0 ${width} ${height}`}
@@ -168,7 +168,8 @@ const Root = compact ? 'div' : 'section';
                       y={labelHeight + row * step}
                       width={cell}
                       height={cell}
-                      rx="2"
+                      rx={Math.round(cell * 0.28 * 10) / 10}
+                      style={`--wave:${Math.round(((column + row) * 420) / (weeks.length + 7))}ms`}
                     >
                       <title>{day.tip}</title>
                     </rect>
@@ -195,7 +196,11 @@ const Root = compact ? 'div' : 'section';
         <div class:list={['flex items-center gap-2 text-xs text-muted', compact ? 'mt-3' : 'mt-4']}>
           <span>Menos</span>
           {[0, 1, 2, 3, 4].map((level) => (
-            <span aria-hidden="true" class:list={['inline-block h-3 w-3 rounded-[2px]', `gh-${level}`]} />
+            <span
+              aria-hidden="true"
+              data-level={level}
+              class:list={['gh-swatch inline-block h-3 w-3 rounded-[3px]', `gh-${level}`]}
+            />
           ))}
           <span>Más</span>
         </div>
@@ -261,4 +266,61 @@ const Root = compact ? 'div' : 'section';
     fill: rgb(186 210 255);
     background-color: rgb(186 210 255);
   }
+
+  /* Activity heatmap interactions adapted from uiarc.dev (MIT). */
+  .gh-calendar rect {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity 200ms ease-out;
+  }
+  .gh-calendar rect:hover {
+    stroke: color-mix(in oklab, currentColor 45%, transparent);
+    stroke-width: 1.5;
+  }
+  .gh-swatch {
+    cursor: default;
+  }
+  .gh-root:has(.gh-swatch[data-level='0']:hover) .gh-calendar rect:not(.gh-0),
+  .gh-root:has(.gh-swatch[data-level='1']:hover) .gh-calendar rect:not(.gh-1),
+  .gh-root:has(.gh-swatch[data-level='2']:hover) .gh-calendar rect:not(.gh-2),
+  .gh-root:has(.gh-swatch[data-level='3']:hover) .gh-calendar rect:not(.gh-3),
+  .gh-root:has(.gh-swatch[data-level='4']:hover) .gh-calendar rect:not(.gh-4) {
+    opacity: 0.2;
+  }
+
+  /* Diagonal wave-in. The script only adds .gh-wave when it can also remove
+     it, so the calendar is never left hidden. */
+  @media (prefers-reduced-motion: no-preference) {
+    .gh-calendar.gh-wave rect {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    .gh-calendar.gh-wave.gh-in rect {
+      opacity: 1;
+      transform: none;
+      transition:
+        opacity 360ms cubic-bezier(0.16, 1, 0.3, 1) var(--wave),
+        transform 580ms cubic-bezier(0.22, 1, 0.36, 1) var(--wave);
+    }
+  }
 </style>
+
+<script>
+  const wave = () => {
+    if (!('IntersectionObserver' in window)) return;
+    for (const svg of document.querySelectorAll<SVGElement>('.gh-calendar:not(.gh-wave)')) {
+      if (svg.getBoundingClientRect().top < innerHeight) continue; // already visible: no animation
+      svg.classList.add('gh-wave');
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          svg.classList.add('gh-in');
+          observer.disconnect();
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(svg);
+    }
+  };
+  document.addEventListener('astro:page-load', wave);
+</script>
