@@ -1,0 +1,3729 @@
+{
+  "blog/123-logic/1-2-3-logic-promo.png": {
+    "type": "image",
+    "hash": "feec3e6621",
+    "width": 1024,
+    "height": 1536,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-logic/1-2-3-logic-promo-feec3e6621-480.avif"
+        ],
+        [
+          960,
+          "blog/123-logic/1-2-3-logic-promo-feec3e6621-960.avif"
+        ],
+        [
+          1024,
+          "blog/123-logic/1-2-3-logic-promo-feec3e6621-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-logic/1-2-3-logic-promo-feec3e6621-480.webp"
+        ],
+        [
+          960,
+          "blog/123-logic/1-2-3-logic-promo-feec3e6621-960.webp"
+        ],
+        [
+          1024,
+          "blog/123-logic/1-2-3-logic-promo-feec3e6621-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-logic/1-2-3-logic-promo-feec3e6621-og.jpg"
+  },
+  "blog/123-logic/123logic-logo.png": {
+    "type": "image",
+    "hash": "e5373cde87",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-logic/123logic-logo-e5373cde87-480.avif"
+        ],
+        [
+          960,
+          "blog/123-logic/123logic-logo-e5373cde87-960.avif"
+        ],
+        [
+          1024,
+          "blog/123-logic/123logic-logo-e5373cde87-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-logic/123logic-logo-e5373cde87-480.webp"
+        ],
+        [
+          960,
+          "blog/123-logic/123logic-logo-e5373cde87-960.webp"
+        ],
+        [
+          1024,
+          "blog/123-logic/123logic-logo-e5373cde87-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-logic/123logic-logo-e5373cde87-og.jpg"
+  },
+  "blog/123-logic/202505_01logic.png": {
+    "type": "image",
+    "hash": "b4828fed6e",
+    "width": 3232,
+    "height": 2054,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-logic/202505_01logic-b4828fed6e-480.avif"
+        ],
+        [
+          960,
+          "blog/123-logic/202505_01logic-b4828fed6e-960.avif"
+        ],
+        [
+          1600,
+          "blog/123-logic/202505_01logic-b4828fed6e-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-logic/202505_01logic-b4828fed6e-480.webp"
+        ],
+        [
+          960,
+          "blog/123-logic/202505_01logic-b4828fed6e-960.webp"
+        ],
+        [
+          1600,
+          "blog/123-logic/202505_01logic-b4828fed6e-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-logic/202505_01logic-b4828fed6e-og.jpg"
+  },
+  "blog/123-logic/202505_logic.png": {
+    "type": "image",
+    "hash": "b225f02a38",
+    "width": 3232,
+    "height": 2054,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-logic/202505_logic-b225f02a38-480.avif"
+        ],
+        [
+          960,
+          "blog/123-logic/202505_logic-b225f02a38-960.avif"
+        ],
+        [
+          1600,
+          "blog/123-logic/202505_logic-b225f02a38-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-logic/202505_logic-b225f02a38-480.webp"
+        ],
+        [
+          960,
+          "blog/123-logic/202505_logic-b225f02a38-960.webp"
+        ],
+        [
+          1600,
+          "blog/123-logic/202505_logic-b225f02a38-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-logic/202505_logic-b225f02a38-og.jpg"
+  },
+  "blog/123-math/1-2-3-math-promo.png": {
+    "type": "image",
+    "hash": "9eebc70b1c",
+    "width": 1024,
+    "height": 1536,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-math/1-2-3-math-promo-9eebc70b1c-480.avif"
+        ],
+        [
+          960,
+          "blog/123-math/1-2-3-math-promo-9eebc70b1c-960.avif"
+        ],
+        [
+          1024,
+          "blog/123-math/1-2-3-math-promo-9eebc70b1c-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-math/1-2-3-math-promo-9eebc70b1c-480.webp"
+        ],
+        [
+          960,
+          "blog/123-math/1-2-3-math-promo-9eebc70b1c-960.webp"
+        ],
+        [
+          1024,
+          "blog/123-math/1-2-3-math-promo-9eebc70b1c-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-math/1-2-3-math-promo-9eebc70b1c-og.jpg"
+  },
+  "blog/123-math/123math-logo.png": {
+    "type": "image",
+    "hash": "1704b039ce",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-math/123math-logo-1704b039ce-480.avif"
+        ],
+        [
+          960,
+          "blog/123-math/123math-logo-1704b039ce-960.avif"
+        ],
+        [
+          1024,
+          "blog/123-math/123math-logo-1704b039ce-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-math/123math-logo-1704b039ce-480.webp"
+        ],
+        [
+          960,
+          "blog/123-math/123math-logo-1704b039ce-960.webp"
+        ],
+        [
+          1024,
+          "blog/123-math/123math-logo-1704b039ce-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-math/123math-logo-1704b039ce-og.jpg"
+  },
+  "blog/123-math/202505_01math.png": {
+    "type": "image",
+    "hash": "bf54a98680",
+    "width": 3232,
+    "height": 2054,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-math/202505_01math-bf54a98680-480.avif"
+        ],
+        [
+          960,
+          "blog/123-math/202505_01math-bf54a98680-960.avif"
+        ],
+        [
+          1600,
+          "blog/123-math/202505_01math-bf54a98680-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-math/202505_01math-bf54a98680-480.webp"
+        ],
+        [
+          960,
+          "blog/123-math/202505_01math-bf54a98680-960.webp"
+        ],
+        [
+          1600,
+          "blog/123-math/202505_01math-bf54a98680-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-math/202505_01math-bf54a98680-og.jpg"
+  },
+  "blog/123-math/202505_math.png": {
+    "type": "image",
+    "hash": "a8bd0d5d4a",
+    "width": 3232,
+    "height": 2054,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/123-math/202505_math-a8bd0d5d4a-480.avif"
+        ],
+        [
+          960,
+          "blog/123-math/202505_math-a8bd0d5d4a-960.avif"
+        ],
+        [
+          1600,
+          "blog/123-math/202505_math-a8bd0d5d4a-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/123-math/202505_math-a8bd0d5d4a-480.webp"
+        ],
+        [
+          960,
+          "blog/123-math/202505_math-a8bd0d5d4a-960.webp"
+        ],
+        [
+          1600,
+          "blog/123-math/202505_math-a8bd0d5d4a-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/123-math/202505_math-a8bd0d5d4a-og.jpg"
+  },
+  "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia.png": {
+    "type": "image",
+    "hash": "e84720d1ce",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia-e84720d1ce-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia-e84720d1ce-960.avif"
+        ],
+        [
+          1024,
+          "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia-e84720d1ce-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia-e84720d1ce-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia-e84720d1ce-960.webp"
+        ],
+        [
+          1024,
+          "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia-e84720d1ce-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-04-20-identify-scale-ai-use-cases/202504_post_infografia-e84720d1ce-og.jpg"
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart.png": {
+    "type": "image",
+    "hash": "bfedce762e",
+    "width": 2400,
+    "height": 1400,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart-bfedce762e-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart-bfedce762e-960.avif"
+        ],
+        [
+          1600,
+          "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart-bfedce762e-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart-bfedce762e-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart-bfedce762e-960.webp"
+        ],
+        [
+          1600,
+          "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart-bfedce762e-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart-bfedce762e-og.jpg"
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles.png": {
+    "type": "image",
+    "hash": "abeba177de",
+    "width": 1536,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles-abeba177de-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles-abeba177de-960.avif"
+        ],
+        [
+          1536,
+          "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles-abeba177de-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles-abeba177de-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles-abeba177de-960.webp"
+        ],
+        [
+          1536,
+          "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles-abeba177de-1536.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-01-vibe-coding-culture-productivity/company-profiles-abeba177de-og.jpg"
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/team-structure.png": {
+    "type": "image",
+    "hash": "9bc6a4de83",
+    "width": 1024,
+    "height": 1536,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/team-structure-9bc6a4de83-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/team-structure-9bc6a4de83-960.avif"
+        ],
+        [
+          1024,
+          "blog/2025-05-01-vibe-coding-culture-productivity/team-structure-9bc6a4de83-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/team-structure-9bc6a4de83-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/team-structure-9bc6a4de83-960.webp"
+        ],
+        [
+          1024,
+          "blog/2025-05-01-vibe-coding-culture-productivity/team-structure-9bc6a4de83-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-01-vibe-coding-culture-productivity/team-structure-9bc6a4de83-og.jpg"
+  },
+  "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel.png": {
+    "type": "image",
+    "hash": "4cbb0c4ee2",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel-4cbb0c4ee2-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel-4cbb0c4ee2-960.avif"
+        ],
+        [
+          1024,
+          "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel-4cbb0c4ee2-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel-4cbb0c4ee2-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel-4cbb0c4ee2-960.webp"
+        ],
+        [
+          1024,
+          "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel-4cbb0c4ee2-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel-4cbb0c4ee2-og.jpg"
+  },
+  "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.png": {
+    "type": "image",
+    "hash": "2103ad584d",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae-2103ad584d-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae-2103ad584d-960.avif"
+        ],
+        [
+          1024,
+          "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae-2103ad584d-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae-2103ad584d-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae-2103ad584d-960.webp"
+        ],
+        [
+          1024,
+          "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae-2103ad584d-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae-2103ad584d-og.jpg"
+  },
+  "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.png": {
+    "type": "image",
+    "hash": "4ed945aa00",
+    "width": 1536,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding-4ed945aa00-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding-4ed945aa00-960.avif"
+        ],
+        [
+          1536,
+          "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding-4ed945aa00-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding-4ed945aa00-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding-4ed945aa00-960.webp"
+        ],
+        [
+          1536,
+          "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding-4ed945aa00-1536.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-03-trae-ai-free-ide/202505_vibecoding-4ed945aa00-og.jpg"
+  },
+  "blog/2025-05-03-trae-ai-free-ide/20250503-trae.png": {
+    "type": "image",
+    "hash": "165a58c7a4",
+    "width": 1742,
+    "height": 1269,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/2025-05-03-trae-ai-free-ide/20250503-trae-165a58c7a4-480.avif"
+        ],
+        [
+          960,
+          "blog/2025-05-03-trae-ai-free-ide/20250503-trae-165a58c7a4-960.avif"
+        ],
+        [
+          1600,
+          "blog/2025-05-03-trae-ai-free-ide/20250503-trae-165a58c7a4-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/2025-05-03-trae-ai-free-ide/20250503-trae-165a58c7a4-480.webp"
+        ],
+        [
+          960,
+          "blog/2025-05-03-trae-ai-free-ide/20250503-trae-165a58c7a4-960.webp"
+        ],
+        [
+          1600,
+          "blog/2025-05-03-trae-ai-free-ide/20250503-trae-165a58c7a4-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-03-trae-ai-free-ide/20250503-trae-165a58c7a4-og.jpg"
+  },
+  "blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.png": {
+    "type": "image",
+    "hash": "4f4de41f29",
+    "width": 473,
+    "height": 589,
+    "sources": {
+      "avif": [
+        [
+          473,
+          "blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae-4f4de41f29-473.avif"
+        ]
+      ],
+      "webp": [
+        [
+          473,
+          "blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae-4f4de41f29-473.webp"
+        ]
+      ]
+    },
+    "og": "blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae-4f4de41f29-og.jpg"
+  },
+  "blog/ai-education-observatory/manus_v1.png": {
+    "type": "image",
+    "hash": "65f024f039",
+    "width": 1661,
+    "height": 1497,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/ai-education-observatory/manus_v1-65f024f039-480.avif"
+        ],
+        [
+          960,
+          "blog/ai-education-observatory/manus_v1-65f024f039-960.avif"
+        ],
+        [
+          1600,
+          "blog/ai-education-observatory/manus_v1-65f024f039-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/ai-education-observatory/manus_v1-65f024f039-480.webp"
+        ],
+        [
+          960,
+          "blog/ai-education-observatory/manus_v1-65f024f039-960.webp"
+        ],
+        [
+          1600,
+          "blog/ai-education-observatory/manus_v1-65f024f039-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/ai-education-observatory/manus_v1-65f024f039-og.jpg"
+  },
+  "blog/ai-education-observatory/manus_v2.png": {
+    "type": "image",
+    "hash": "511f64e0e4",
+    "width": 1661,
+    "height": 1497,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/ai-education-observatory/manus_v2-511f64e0e4-480.avif"
+        ],
+        [
+          960,
+          "blog/ai-education-observatory/manus_v2-511f64e0e4-960.avif"
+        ],
+        [
+          1600,
+          "blog/ai-education-observatory/manus_v2-511f64e0e4-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/ai-education-observatory/manus_v2-511f64e0e4-480.webp"
+        ],
+        [
+          960,
+          "blog/ai-education-observatory/manus_v2-511f64e0e4-960.webp"
+        ],
+        [
+          1600,
+          "blog/ai-education-observatory/manus_v2-511f64e0e4-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/ai-education-observatory/manus_v2-511f64e0e4-og.jpg"
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney.png": {
+    "type": "image",
+    "hash": "3c54010a73",
+    "width": 1536,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney-3c54010a73-480.avif"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney-3c54010a73-960.avif"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney-3c54010a73-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney-3c54010a73-480.webp"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney-3c54010a73-960.webp"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney-3c54010a73-1536.webp"
+        ]
+      ]
+    },
+    "og": "blog/bbva-chatgpt-enterprise-journey/202505_BBVAsjourney-3c54010a73-og.jpg"
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale.png": {
+    "type": "image",
+    "hash": "706ca5e971",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale-706ca5e971-480.avif"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale-706ca5e971-960.avif"
+        ],
+        [
+          1024,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale-706ca5e971-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale-706ca5e971-480.webp"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale-706ca5e971-960.webp"
+        ],
+        [
+          1024,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale-706ca5e971-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/bbva-chatgpt-enterprise-journey/202505_Buildcapabilityatscale-706ca5e971-og.jpg"
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon.png": {
+    "type": "image",
+    "hash": "04b07255d8",
+    "width": 1536,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon-04b07255d8-480.avif"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon-04b07255d8-960.avif"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon-04b07255d8-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon-04b07255d8-480.webp"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon-04b07255d8-960.webp"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon-04b07255d8-1536.webp"
+        ]
+      ]
+    },
+    "og": "blog/bbva-chatgpt-enterprise-journey/202505_Designingawinninghackathon-04b07255d8-og.jpg"
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun.png": {
+    "type": "image",
+    "hash": "c536251f7c",
+    "width": 1536,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun-c536251f7c-480.avif"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun-c536251f7c-960.avif"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun-c536251f7c-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun-c536251f7c-480.webp"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun-c536251f7c-960.webp"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun-c536251f7c-1536.webp"
+        ]
+      ]
+    },
+    "og": "blog/bbva-chatgpt-enterprise-journey/202505_Embeddingforthelongrun-c536251f7c-og.jpg"
+  },
+  "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt.png": {
+    "type": "image",
+    "hash": "c0265bc408",
+    "width": 1536,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-480.avif"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-960.avif"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-1536.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-480.webp"
+        ],
+        [
+          960,
+          "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-960.webp"
+        ],
+        [
+          1536,
+          "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-1536.webp"
+        ]
+      ]
+    },
+    "og": "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-og.jpg"
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_01chatcom.png": {
+    "type": "image",
+    "hash": "656b56a1e4",
+    "width": 3148,
+    "height": 2014,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_01chatcom-656b56a1e4-480.avif"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_01chatcom-656b56a1e4-960.avif"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_01chatcom-656b56a1e4-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_01chatcom-656b56a1e4-480.webp"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_01chatcom-656b56a1e4-960.webp"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_01chatcom-656b56a1e4-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/build-your-own-gpt-chatgpt/202505_01chatcom-656b56a1e4-og.jpg"
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_02mygpt.png": {
+    "type": "image",
+    "hash": "cbbc11902c",
+    "width": 2780,
+    "height": 1980,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_02mygpt-cbbc11902c-480.avif"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_02mygpt-cbbc11902c-960.avif"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_02mygpt-cbbc11902c-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_02mygpt-cbbc11902c-480.webp"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_02mygpt-cbbc11902c-960.webp"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_02mygpt-cbbc11902c-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/build-your-own-gpt-chatgpt/202505_02mygpt-cbbc11902c-og.jpg"
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_03gpt.png": {
+    "type": "image",
+    "hash": "38fe1bef6b",
+    "width": 3198,
+    "height": 2072,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_03gpt-38fe1bef6b-480.avif"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_03gpt-38fe1bef6b-960.avif"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_03gpt-38fe1bef6b-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_03gpt-38fe1bef6b-480.webp"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_03gpt-38fe1bef6b-960.webp"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_03gpt-38fe1bef6b-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/build-your-own-gpt-chatgpt/202505_03gpt-38fe1bef6b-og.jpg"
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_04promptgpt.png": {
+    "type": "image",
+    "hash": "def263efdb",
+    "width": 3148,
+    "height": 2014,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_04promptgpt-def263efdb-480.avif"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_04promptgpt-def263efdb-960.avif"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_04promptgpt-def263efdb-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_04promptgpt-def263efdb-480.webp"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_04promptgpt-def263efdb-960.webp"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_04promptgpt-def263efdb-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/build-your-own-gpt-chatgpt/202505_04promptgpt-def263efdb-og.jpg"
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_06gpt.png": {
+    "type": "image",
+    "hash": "3877acce09",
+    "width": 3148,
+    "height": 2014,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_06gpt-3877acce09-480.avif"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_06gpt-3877acce09-960.avif"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_06gpt-3877acce09-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_06gpt-3877acce09-480.webp"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_06gpt-3877acce09-960.webp"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_06gpt-3877acce09-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/build-your-own-gpt-chatgpt/202505_06gpt-3877acce09-og.jpg"
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_07gpt.png": {
+    "type": "image",
+    "hash": "1430d6c2a2",
+    "width": 900,
+    "height": 996,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_07gpt-1430d6c2a2-480.avif"
+        ],
+        [
+          900,
+          "blog/build-your-own-gpt-chatgpt/202505_07gpt-1430d6c2a2-900.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_07gpt-1430d6c2a2-480.webp"
+        ],
+        [
+          900,
+          "blog/build-your-own-gpt-chatgpt/202505_07gpt-1430d6c2a2-900.webp"
+        ]
+      ]
+    },
+    "og": "blog/build-your-own-gpt-chatgpt/202505_07gpt-1430d6c2a2-og.jpg"
+  },
+  "blog/build-your-own-gpt-chatgpt/202505_8gpt.png": {
+    "type": "image",
+    "hash": "2254df8f56",
+    "width": 3148,
+    "height": 2014,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_8gpt-2254df8f56-480.avif"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_8gpt-2254df8f56-960.avif"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_8gpt-2254df8f56-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/build-your-own-gpt-chatgpt/202505_8gpt-2254df8f56-480.webp"
+        ],
+        [
+          960,
+          "blog/build-your-own-gpt-chatgpt/202505_8gpt-2254df8f56-960.webp"
+        ],
+        [
+          1600,
+          "blog/build-your-own-gpt-chatgpt/202505_8gpt-2254df8f56-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/build-your-own-gpt-chatgpt/202505_8gpt-2254df8f56-og.jpg"
+  },
+  "blog/catalogo-de-demos/aneca-v3-cf.svg": {
+    "type": "svg",
+    "hash": "d71fd65044",
+    "src": "blog/catalogo-de-demos/aneca-v3-cf-d71fd65044.svg",
+    "contentType": "image/svg+xml",
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/cloudflare-demos-es.png": {
+    "type": "image",
+    "hash": "9afa017d35",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/cloudflare-demos-es-9afa017d35-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/cloudflare-demos-es-9afa017d35-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/cloudflare-demos-es-9afa017d35-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/cloudflare-demos-es-9afa017d35-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/cloudflare-demos-es-9afa017d35-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/cloudflare-demos-es-9afa017d35-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/cloudflare-demos-es-9afa017d35-og.jpg"
+  },
+  "blog/catalogo-de-demos/cloudflare-rag.png": {
+    "type": "image",
+    "hash": "453955de4e",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/cloudflare-rag-453955de4e-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/cloudflare-rag-453955de4e-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/cloudflare-rag-453955de4e-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/cloudflare-rag-453955de4e-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/cloudflare-rag-453955de4e-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/cloudflare-rag-453955de4e-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/cloudflare-rag-453955de4e-og.jpg"
+  },
+  "blog/catalogo-de-demos/dns-discovery.png": {
+    "type": "image",
+    "hash": "94ce2a1c82",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/dns-discovery-94ce2a1c82-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/dns-discovery-94ce2a1c82-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/dns-discovery-94ce2a1c82-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/dns-discovery-94ce2a1c82-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/dns-discovery-94ce2a1c82-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/dns-discovery-94ce2a1c82-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/dns-discovery-94ce2a1c82-og.jpg"
+  },
+  "blog/catalogo-de-demos/duckmarines-worker.svg": {
+    "type": "svg",
+    "hash": "a59e47b2ef",
+    "src": "blog/catalogo-de-demos/duckmarines-worker-a59e47b2ef.svg",
+    "contentType": "image/svg+xml",
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/emdash-blog.png": {
+    "type": "image",
+    "hash": "679e8aeada",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/emdash-blog-679e8aeada-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/emdash-blog-679e8aeada-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/emdash-blog-679e8aeada-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/emdash-blog-679e8aeada-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/emdash-blog-679e8aeada-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/emdash-blog-679e8aeada-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/emdash-blog-679e8aeada-og.jpg"
+  },
+  "blog/catalogo-de-demos/foca-web.png": {
+    "type": "image",
+    "hash": "095d3ffe49",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/foca-web-095d3ffe49-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/foca-web-095d3ffe49-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/foca-web-095d3ffe49-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/foca-web-095d3ffe49-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/foca-web-095d3ffe49-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/foca-web-095d3ffe49-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/foca-web-095d3ffe49-og.jpg"
+  },
+  "blog/catalogo-de-demos/form-event.png": {
+    "type": "image",
+    "hash": "fd8f329a2e",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/form-event-fd8f329a2e-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/form-event-fd8f329a2e-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/form-event-fd8f329a2e-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/form-event-fd8f329a2e-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/form-event-fd8f329a2e-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/form-event-fd8f329a2e-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/form-event-fd8f329a2e-og.jpg"
+  },
+  "blog/catalogo-de-demos/frosty-boat-36a8-nlweb.svg": {
+    "type": "svg",
+    "hash": "b14890ecfe",
+    "src": "blog/catalogo-de-demos/frosty-boat-36a8-nlweb-b14890ecfe.svg",
+    "contentType": "image/svg+xml",
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/hr-agent-worker.svg": {
+    "type": "svg",
+    "hash": "9b0ff57edd",
+    "src": "blog/catalogo-de-demos/hr-agent-worker-9b0ff57edd.svg",
+    "contentType": "image/svg+xml",
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/idp-cloudflare.png": {
+    "type": "image",
+    "hash": "b949ea4ca8",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/idp-cloudflare-b949ea4ca8-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/idp-cloudflare-b949ea4ca8-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/idp-cloudflare-b949ea4ca8-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/idp-cloudflare-b949ea4ca8-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/idp-cloudflare-b949ea4ca8-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/idp-cloudflare-b949ea4ca8-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/idp-cloudflare-b949ea4ca8-og.jpg"
+  },
+  "blog/catalogo-de-demos/mcp-policies.svg": {
+    "type": "svg",
+    "hash": "e499a71925",
+    "src": "blog/catalogo-de-demos/mcp-policies-e499a71925.svg",
+    "contentType": "image/svg+xml",
+    "width": 1440,
+    "height": 900
+  },
+  "blog/catalogo-de-demos/memory-animales.png": {
+    "type": "image",
+    "hash": "96ba398fd7",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/memory-animales-96ba398fd7-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/memory-animales-96ba398fd7-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/memory-animales-96ba398fd7-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/memory-animales-96ba398fd7-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/memory-animales-96ba398fd7-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/memory-animales-96ba398fd7-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/memory-animales-96ba398fd7-og.jpg"
+  },
+  "blog/catalogo-de-demos/millonario.png": {
+    "type": "image",
+    "hash": "a48d71edaa",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/millonario-a48d71edaa-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/millonario-a48d71edaa-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/millonario-a48d71edaa-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/millonario-a48d71edaa-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/millonario-a48d71edaa-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/millonario-a48d71edaa-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/millonario-a48d71edaa-og.jpg"
+  },
+  "blog/catalogo-de-demos/provincias-capitales.png": {
+    "type": "image",
+    "hash": "a6ce6e69bf",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/provincias-capitales-a6ce6e69bf-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/provincias-capitales-a6ce6e69bf-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/provincias-capitales-a6ce6e69bf-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/provincias-capitales-a6ce6e69bf-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/provincias-capitales-a6ce6e69bf-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/provincias-capitales-a6ce6e69bf-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/provincias-capitales-a6ce6e69bf-og.jpg"
+  },
+  "blog/catalogo-de-demos/retroworkers-arkanoid.png": {
+    "type": "image",
+    "hash": "7d79002f9a",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-arkanoid-7d79002f9a-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-arkanoid-7d79002f9a-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-arkanoid-7d79002f9a-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-arkanoid-7d79002f9a-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-arkanoid-7d79002f9a-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-arkanoid-7d79002f9a-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/retroworkers-arkanoid-7d79002f9a-og.jpg"
+  },
+  "blog/catalogo-de-demos/retroworkers-home.png": {
+    "type": "image",
+    "hash": "adc9b70238",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-home-adc9b70238-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-home-adc9b70238-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-home-adc9b70238-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-home-adc9b70238-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-home-adc9b70238-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-home-adc9b70238-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/retroworkers-home-adc9b70238-og.jpg"
+  },
+  "blog/catalogo-de-demos/retroworkers-minesweeper.png": {
+    "type": "image",
+    "hash": "5e6b28da5e",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-minesweeper-5e6b28da5e-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-minesweeper-5e6b28da5e-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-minesweeper-5e6b28da5e-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-minesweeper-5e6b28da5e-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-minesweeper-5e6b28da5e-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-minesweeper-5e6b28da5e-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/retroworkers-minesweeper-5e6b28da5e-og.jpg"
+  },
+  "blog/catalogo-de-demos/retroworkers-snake.png": {
+    "type": "image",
+    "hash": "f3523eb1db",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-snake-f3523eb1db-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-snake-f3523eb1db-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-snake-f3523eb1db-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-snake-f3523eb1db-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-snake-f3523eb1db-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-snake-f3523eb1db-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/retroworkers-snake-f3523eb1db-og.jpg"
+  },
+  "blog/catalogo-de-demos/retroworkers-tetris.png": {
+    "type": "image",
+    "hash": "3260bd271a",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-tetris-3260bd271a-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-tetris-3260bd271a-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-tetris-3260bd271a-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/retroworkers-tetris-3260bd271a-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/retroworkers-tetris-3260bd271a-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/retroworkers-tetris-3260bd271a-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/retroworkers-tetris-3260bd271a-og.jpg"
+  },
+  "blog/catalogo-de-demos/space-shooter.png": {
+    "type": "image",
+    "hash": "a999f8457c",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/space-shooter-a999f8457c-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/space-shooter-a999f8457c-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/space-shooter-a999f8457c-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/space-shooter-a999f8457c-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/space-shooter-a999f8457c-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/space-shooter-a999f8457c-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/space-shooter-a999f8457c-og.jpg"
+  },
+  "blog/catalogo-de-demos/startups-cloudflare.png": {
+    "type": "image",
+    "hash": "235d903a60",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/startups-cloudflare-235d903a60-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/startups-cloudflare-235d903a60-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/startups-cloudflare-235d903a60-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/startups-cloudflare-235d903a60-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/startups-cloudflare-235d903a60-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/startups-cloudflare-235d903a60-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/startups-cloudflare-235d903a60-og.jpg"
+  },
+  "blog/catalogo-de-demos/timercf-clase.png": {
+    "type": "image",
+    "hash": "c641212d21",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/timercf-clase-c641212d21-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/timercf-clase-c641212d21-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/timercf-clase-c641212d21-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/timercf-clase-c641212d21-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/timercf-clase-c641212d21-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/timercf-clase-c641212d21-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/timercf-clase-c641212d21-og.jpg"
+  },
+  "blog/catalogo-de-demos/timercf.png": {
+    "type": "image",
+    "hash": "54841bc1bc",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/catalogo-de-demos/timercf-54841bc1bc-480.avif"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/timercf-54841bc1bc-960.avif"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/timercf-54841bc1bc-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/catalogo-de-demos/timercf-54841bc1bc-480.webp"
+        ],
+        [
+          960,
+          "blog/catalogo-de-demos/timercf-54841bc1bc-960.webp"
+        ],
+        [
+          1440,
+          "blog/catalogo-de-demos/timercf-54841bc1bc-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/catalogo-de-demos/timercf-54841bc1bc-og.jpg"
+  },
+  "blog/catalogo-de-demos/urbancart-agent-gateway.svg": {
+    "type": "svg",
+    "hash": "974ab4d1fc",
+    "src": "blog/catalogo-de-demos/urbancart-agent-gateway-974ab4d1fc.svg",
+    "contentType": "image/svg+xml",
+    "width": 1440,
+    "height": 900
+  },
+  "blog/chatgpt-gpt4o-overview/202505_chatgpt.png": {
+    "type": "image",
+    "hash": "7a617327b3",
+    "width": 3096,
+    "height": 1906,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/chatgpt-gpt4o-overview/202505_chatgpt-7a617327b3-480.avif"
+        ],
+        [
+          960,
+          "blog/chatgpt-gpt4o-overview/202505_chatgpt-7a617327b3-960.avif"
+        ],
+        [
+          1600,
+          "blog/chatgpt-gpt4o-overview/202505_chatgpt-7a617327b3-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/chatgpt-gpt4o-overview/202505_chatgpt-7a617327b3-480.webp"
+        ],
+        [
+          960,
+          "blog/chatgpt-gpt4o-overview/202505_chatgpt-7a617327b3-960.webp"
+        ],
+        [
+          1600,
+          "blog/chatgpt-gpt4o-overview/202505_chatgpt-7a617327b3-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/chatgpt-gpt4o-overview/202505_chatgpt-7a617327b3-og.jpg"
+  },
+  "blog/chatgpt-gpt4o-overview/202505_gpt.png": {
+    "type": "image",
+    "hash": "e791df25ab",
+    "width": 2780,
+    "height": 1980,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/chatgpt-gpt4o-overview/202505_gpt-e791df25ab-480.avif"
+        ],
+        [
+          960,
+          "blog/chatgpt-gpt4o-overview/202505_gpt-e791df25ab-960.avif"
+        ],
+        [
+          1600,
+          "blog/chatgpt-gpt4o-overview/202505_gpt-e791df25ab-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/chatgpt-gpt4o-overview/202505_gpt-e791df25ab-480.webp"
+        ],
+        [
+          960,
+          "blog/chatgpt-gpt4o-overview/202505_gpt-e791df25ab-960.webp"
+        ],
+        [
+          1600,
+          "blog/chatgpt-gpt4o-overview/202505_gpt-e791df25ab-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/chatgpt-gpt4o-overview/202505_gpt-e791df25ab-og.jpg"
+  },
+  "blog/chatgpt-gpt4o-overview/202505_personalization.png": {
+    "type": "image",
+    "hash": "7bd2309f5c",
+    "width": 1494,
+    "height": 1398,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-480.avif"
+        ],
+        [
+          960,
+          "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-960.avif"
+        ],
+        [
+          1494,
+          "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-1494.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-480.webp"
+        ],
+        [
+          960,
+          "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-960.webp"
+        ],
+        [
+          1494,
+          "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-1494.webp"
+        ]
+      ]
+    },
+    "og": "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-og.jpg"
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare1.png": {
+    "type": "image",
+    "hash": "a5d159f33b",
+    "width": 1281,
+    "height": 721,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare1-a5d159f33b-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare1-a5d159f33b-960.avif"
+        ],
+        [
+          1281,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare1-a5d159f33b-1281.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare1-a5d159f33b-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare1-a5d159f33b-960.webp"
+        ],
+        [
+          1281,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare1-a5d159f33b-1281.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-simpler-faster-safer-internet/cloudflare1-a5d159f33b-og.jpg"
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare2.png": {
+    "type": "image",
+    "hash": "3433f5bf23",
+    "width": 1281,
+    "height": 721,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare2-3433f5bf23-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare2-3433f5bf23-960.avif"
+        ],
+        [
+          1281,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare2-3433f5bf23-1281.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare2-3433f5bf23-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare2-3433f5bf23-960.webp"
+        ],
+        [
+          1281,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare2-3433f5bf23-1281.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-simpler-faster-safer-internet/cloudflare2-3433f5bf23-og.jpg"
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare3.png": {
+    "type": "image",
+    "hash": "2832192445",
+    "width": 1279,
+    "height": 722,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare3-2832192445-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare3-2832192445-960.avif"
+        ],
+        [
+          1279,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare3-2832192445-1279.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare3-2832192445-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare3-2832192445-960.webp"
+        ],
+        [
+          1279,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare3-2832192445-1279.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-simpler-faster-safer-internet/cloudflare3-2832192445-og.jpg"
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare4.png": {
+    "type": "image",
+    "hash": "a11312569a",
+    "width": 1287,
+    "height": 721,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare4-a11312569a-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare4-a11312569a-960.avif"
+        ],
+        [
+          1287,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare4-a11312569a-1287.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare4-a11312569a-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare4-a11312569a-960.webp"
+        ],
+        [
+          1287,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare4-a11312569a-1287.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-simpler-faster-safer-internet/cloudflare4-a11312569a-og.jpg"
+  },
+  "blog/cloudflare-simpler-faster-safer-internet/cloudflare5.png": {
+    "type": "image",
+    "hash": "352a793a07",
+    "width": 1287,
+    "height": 728,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-960.avif"
+        ],
+        [
+          1287,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-1287.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-960.webp"
+        ],
+        [
+          1287,
+          "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-1287.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-simpler-faster-safer-internet/cloudflare5-352a793a07-og.jpg"
+  },
+  "blog/cloudflare-warp-ipad/cloudflare_01.jpeg": {
+    "type": "image",
+    "hash": "ebe82fdb79",
+    "width": 516,
+    "height": 360,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare_01-ebe82fdb79-480.avif"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare_01-ebe82fdb79-516.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare_01-ebe82fdb79-480.webp"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare_01-ebe82fdb79-516.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-warp-ipad/cloudflare_01-ebe82fdb79-og.jpg"
+  },
+  "blog/cloudflare-warp-ipad/cloudflare_02.jpeg": {
+    "type": "image",
+    "hash": "f322d93013",
+    "width": 516,
+    "height": 360,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare_02-f322d93013-480.avif"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare_02-f322d93013-516.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare_02-f322d93013-480.webp"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare_02-f322d93013-516.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-warp-ipad/cloudflare_02-f322d93013-og.jpg"
+  },
+  "blog/cloudflare-warp-ipad/cloudflare_03.jpeg": {
+    "type": "image",
+    "hash": "0a0fd815db",
+    "width": 516,
+    "height": 360,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare_03-0a0fd815db-480.avif"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare_03-0a0fd815db-516.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare_03-0a0fd815db-480.webp"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare_03-0a0fd815db-516.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-warp-ipad/cloudflare_03-0a0fd815db-og.jpg"
+  },
+  "blog/cloudflare-warp-ipad/cloudflare-04.jpeg": {
+    "type": "image",
+    "hash": "2e671f63a9",
+    "width": 516,
+    "height": 360,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare-04-2e671f63a9-480.avif"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare-04-2e671f63a9-516.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-warp-ipad/cloudflare-04-2e671f63a9-480.webp"
+        ],
+        [
+          516,
+          "blog/cloudflare-warp-ipad/cloudflare-04-2e671f63a9-516.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-warp-ipad/cloudflare-04-2e671f63a9-og.jpg"
+  },
+  "blog/configuring-cloudflare-for-families-asus/cloudflare_asus.png": {
+    "type": "image",
+    "hash": "fbf55537ed",
+    "width": 1672,
+    "height": 1413,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-480.avif"
+        ],
+        [
+          960,
+          "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-960.avif"
+        ],
+        [
+          1600,
+          "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-480.webp"
+        ],
+        [
+          960,
+          "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-960.webp"
+        ],
+        [
+          1600,
+          "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/configuring-cloudflare-for-families-asus/cloudflare_asus-fbf55537ed-og.jpg"
+  },
+  "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png": {
+    "type": "image",
+    "hash": "f8af903f5b",
+    "width": 2956,
+    "height": 2204,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings-f8af903f5b-480.avif"
+        ],
+        [
+          960,
+          "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings-f8af903f5b-960.avif"
+        ],
+        [
+          1600,
+          "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings-f8af903f5b-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings-f8af903f5b-480.webp"
+        ],
+        [
+          960,
+          "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings-f8af903f5b-960.webp"
+        ],
+        [
+          1600,
+          "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings-f8af903f5b-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings-f8af903f5b-og.jpg"
+  },
+  "blog/cursor-free-tier/2025_05_15_cursor.png": {
+    "type": "image",
+    "hash": "b32b1961c4",
+    "width": 3148,
+    "height": 2014,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-480.avif"
+        ],
+        [
+          960,
+          "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-960.avif"
+        ],
+        [
+          1600,
+          "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-480.webp"
+        ],
+        [
+          960,
+          "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-960.webp"
+        ],
+        [
+          1600,
+          "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/cursor-free-tier/2025_05_15_cursor-b32b1961c4-og.jpg"
+  },
+  "blog/deep-research-chatgpt-guide/202505_01deepresearch.png": {
+    "type": "image",
+    "hash": "524aab3798",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_01deepresearch-524aab3798-480.avif"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_01deepresearch-524aab3798-960.avif"
+        ],
+        [
+          1024,
+          "blog/deep-research-chatgpt-guide/202505_01deepresearch-524aab3798-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_01deepresearch-524aab3798-480.webp"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_01deepresearch-524aab3798-960.webp"
+        ],
+        [
+          1024,
+          "blog/deep-research-chatgpt-guide/202505_01deepresearch-524aab3798-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/deep-research-chatgpt-guide/202505_01deepresearch-524aab3798-og.jpg"
+  },
+  "blog/deep-research-chatgpt-guide/202505_02deepreserach.png": {
+    "type": "image",
+    "hash": "d35b965b9e",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_02deepreserach-d35b965b9e-480.avif"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_02deepreserach-d35b965b9e-960.avif"
+        ],
+        [
+          1024,
+          "blog/deep-research-chatgpt-guide/202505_02deepreserach-d35b965b9e-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_02deepreserach-d35b965b9e-480.webp"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_02deepreserach-d35b965b9e-960.webp"
+        ],
+        [
+          1024,
+          "blog/deep-research-chatgpt-guide/202505_02deepreserach-d35b965b9e-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/deep-research-chatgpt-guide/202505_02deepreserach-d35b965b9e-og.jpg"
+  },
+  "blog/deep-research-chatgpt-guide/202505_03deepreseearch.png": {
+    "type": "image",
+    "hash": "86f18a4ba9",
+    "width": 3024,
+    "height": 1964,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_03deepreseearch-86f18a4ba9-480.avif"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_03deepreseearch-86f18a4ba9-960.avif"
+        ],
+        [
+          1600,
+          "blog/deep-research-chatgpt-guide/202505_03deepreseearch-86f18a4ba9-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_03deepreseearch-86f18a4ba9-480.webp"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_03deepreseearch-86f18a4ba9-960.webp"
+        ],
+        [
+          1600,
+          "blog/deep-research-chatgpt-guide/202505_03deepreseearch-86f18a4ba9-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/deep-research-chatgpt-guide/202505_03deepreseearch-86f18a4ba9-og.jpg"
+  },
+  "blog/deep-research-chatgpt-guide/202505_04deepresearch.png": {
+    "type": "image",
+    "hash": "86f18a4ba9",
+    "width": 3024,
+    "height": 1964,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-480.avif"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-960.avif"
+        ],
+        [
+          1600,
+          "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-480.webp"
+        ],
+        [
+          960,
+          "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-960.webp"
+        ],
+        [
+          1600,
+          "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/deep-research-chatgpt-guide/202505_04deepresearch-86f18a4ba9-og.jpg"
+  },
+  "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png": {
+    "type": "image",
+    "hash": "aa9100f8e5",
+    "width": 1703,
+    "height": 1253,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7-aa9100f8e5-480.avif"
+        ],
+        [
+          960,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7-aa9100f8e5-960.avif"
+        ],
+        [
+          1600,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7-aa9100f8e5-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7-aa9100f8e5-480.webp"
+        ],
+        [
+          960,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7-aa9100f8e5-960.webp"
+        ],
+        [
+          1600,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7-aa9100f8e5-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7-aa9100f8e5-og.jpg"
+  },
+  "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8.png": {
+    "type": "image",
+    "hash": "7ef933d5ca",
+    "width": 1661,
+    "height": 724,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8-7ef933d5ca-480.avif"
+        ],
+        [
+          960,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8-7ef933d5ca-960.avif"
+        ],
+        [
+          1600,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8-7ef933d5ca-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8-7ef933d5ca-480.webp"
+        ],
+        [
+          960,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8-7ef933d5ca-960.webp"
+        ],
+        [
+          1600,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8-7ef933d5ca-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8-7ef933d5ca-og.jpg"
+  },
+  "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9.png": {
+    "type": "image",
+    "hash": "28ff862ec4",
+    "width": 1692,
+    "height": 920,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-480.avif"
+        ],
+        [
+          960,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-960.avif"
+        ],
+        [
+          1600,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-480.webp"
+        ],
+        [
+          960,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-960.webp"
+        ],
+        [
+          1600,
+          "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9-28ff862ec4-og.jpg"
+  },
+  "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN.png": {
+    "type": "image",
+    "hash": "bad442393b",
+    "width": 2978,
+    "height": 2290,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN-bad442393b-480.avif"
+        ],
+        [
+          960,
+          "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN-bad442393b-960.avif"
+        ],
+        [
+          1600,
+          "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN-bad442393b-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN-bad442393b-480.webp"
+        ],
+        [
+          960,
+          "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN-bad442393b-960.webp"
+        ],
+        [
+          1600,
+          "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN-bad442393b-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/emdash-y-zero-trust/01KNCZZ33T9AM2HP18TT5X5PNN-bad442393b-og.jpg"
+  },
+  "blog/finanzsim/finanzsim2026_01.png": {
+    "type": "image",
+    "hash": "e7855a546b",
+    "width": 1564,
+    "height": 1134,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_01-e7855a546b-480.avif"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_01-e7855a546b-960.avif"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_01-e7855a546b-1564.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_01-e7855a546b-480.webp"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_01-e7855a546b-960.webp"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_01-e7855a546b-1564.webp"
+        ]
+      ]
+    },
+    "og": "blog/finanzsim/finanzsim2026_01-e7855a546b-og.jpg"
+  },
+  "blog/finanzsim/finanzsim2026_02.png": {
+    "type": "image",
+    "hash": "3d92479158",
+    "width": 1564,
+    "height": 1134,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_02-3d92479158-480.avif"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_02-3d92479158-960.avif"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_02-3d92479158-1564.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_02-3d92479158-480.webp"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_02-3d92479158-960.webp"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_02-3d92479158-1564.webp"
+        ]
+      ]
+    },
+    "og": "blog/finanzsim/finanzsim2026_02-3d92479158-og.jpg"
+  },
+  "blog/finanzsim/finanzsim2026_03.png": {
+    "type": "image",
+    "hash": "13cd864b23",
+    "width": 1564,
+    "height": 1134,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_03-13cd864b23-480.avif"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_03-13cd864b23-960.avif"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_03-13cd864b23-1564.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_03-13cd864b23-480.webp"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_03-13cd864b23-960.webp"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_03-13cd864b23-1564.webp"
+        ]
+      ]
+    },
+    "og": "blog/finanzsim/finanzsim2026_03-13cd864b23-og.jpg"
+  },
+  "blog/finanzsim/finanzsim2026_04.png": {
+    "type": "image",
+    "hash": "a4fa315664",
+    "width": 1564,
+    "height": 1134,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_04-a4fa315664-480.avif"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_04-a4fa315664-960.avif"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_04-a4fa315664-1564.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/finanzsim/finanzsim2026_04-a4fa315664-480.webp"
+        ],
+        [
+          960,
+          "blog/finanzsim/finanzsim2026_04-a4fa315664-960.webp"
+        ],
+        [
+          1564,
+          "blog/finanzsim/finanzsim2026_04-a4fa315664-1564.webp"
+        ]
+      ]
+    },
+    "og": "blog/finanzsim/finanzsim2026_04-a4fa315664-og.jpg"
+  },
+  "blog/first-look-at-kiro/kiro_v1.png": {
+    "type": "image",
+    "hash": "c6472398f0",
+    "width": 1661,
+    "height": 1268,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/first-look-at-kiro/kiro_v1-c6472398f0-480.avif"
+        ],
+        [
+          960,
+          "blog/first-look-at-kiro/kiro_v1-c6472398f0-960.avif"
+        ],
+        [
+          1600,
+          "blog/first-look-at-kiro/kiro_v1-c6472398f0-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/first-look-at-kiro/kiro_v1-c6472398f0-480.webp"
+        ],
+        [
+          960,
+          "blog/first-look-at-kiro/kiro_v1-c6472398f0-960.webp"
+        ],
+        [
+          1600,
+          "blog/first-look-at-kiro/kiro_v1-c6472398f0-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/first-look-at-kiro/kiro_v1-c6472398f0-og.jpg"
+  },
+  "blog/first-look-at-kiro/kiro_V2.png": {
+    "type": "image",
+    "hash": "002746238f",
+    "width": 1761,
+    "height": 1377,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/first-look-at-kiro/kiro_V2-002746238f-480.avif"
+        ],
+        [
+          960,
+          "blog/first-look-at-kiro/kiro_V2-002746238f-960.avif"
+        ],
+        [
+          1600,
+          "blog/first-look-at-kiro/kiro_V2-002746238f-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/first-look-at-kiro/kiro_V2-002746238f-480.webp"
+        ],
+        [
+          960,
+          "blog/first-look-at-kiro/kiro_V2-002746238f-960.webp"
+        ],
+        [
+          1600,
+          "blog/first-look-at-kiro/kiro_V2-002746238f-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/first-look-at-kiro/kiro_V2-002746238f-og.jpg"
+  },
+  "blog/first-look-at-kiro/kiro_v3.png": {
+    "type": "image",
+    "hash": "f6ea429979",
+    "width": 1761,
+    "height": 1377,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/first-look-at-kiro/kiro_v3-f6ea429979-480.avif"
+        ],
+        [
+          960,
+          "blog/first-look-at-kiro/kiro_v3-f6ea429979-960.avif"
+        ],
+        [
+          1600,
+          "blog/first-look-at-kiro/kiro_v3-f6ea429979-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/first-look-at-kiro/kiro_v3-f6ea429979-480.webp"
+        ],
+        [
+          960,
+          "blog/first-look-at-kiro/kiro_v3-f6ea429979-960.webp"
+        ],
+        [
+          1600,
+          "blog/first-look-at-kiro/kiro_v3-f6ea429979-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/first-look-at-kiro/kiro_v3-f6ea429979-og.jpg"
+  },
+  "blog/fixing-123-math-with-jules/202505_02jules.png": {
+    "type": "image",
+    "hash": "81b0c6277d",
+    "width": 1925,
+    "height": 1302,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/202505_02jules-81b0c6277d-480.avif"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/202505_02jules-81b0c6277d-960.avif"
+        ],
+        [
+          1600,
+          "blog/fixing-123-math-with-jules/202505_02jules-81b0c6277d-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/202505_02jules-81b0c6277d-480.webp"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/202505_02jules-81b0c6277d-960.webp"
+        ],
+        [
+          1600,
+          "blog/fixing-123-math-with-jules/202505_02jules-81b0c6277d-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/fixing-123-math-with-jules/202505_02jules-81b0c6277d-og.jpg"
+  },
+  "blog/fixing-123-math-with-jules/202505_03jules.png": {
+    "type": "image",
+    "hash": "513d113ec0",
+    "width": 1969,
+    "height": 1346,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/202505_03jules-513d113ec0-480.avif"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/202505_03jules-513d113ec0-960.avif"
+        ],
+        [
+          1600,
+          "blog/fixing-123-math-with-jules/202505_03jules-513d113ec0-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/202505_03jules-513d113ec0-480.webp"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/202505_03jules-513d113ec0-960.webp"
+        ],
+        [
+          1600,
+          "blog/fixing-123-math-with-jules/202505_03jules-513d113ec0-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/fixing-123-math-with-jules/202505_03jules-513d113ec0-og.jpg"
+  },
+  "blog/fixing-123-math-with-jules/202505_04jules.png": {
+    "type": "image",
+    "hash": "c64359cc04",
+    "width": 1969,
+    "height": 1346,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-480.avif"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-960.avif"
+        ],
+        [
+          1600,
+          "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-480.webp"
+        ],
+        [
+          960,
+          "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-960.webp"
+        ],
+        [
+          1600,
+          "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/fixing-123-math-with-jules/202505_04jules-c64359cc04-og.jpg"
+  },
+  "blog/migrating-playlists-with-comet/Comet_v1.png": {
+    "type": "image",
+    "hash": "286c776625",
+    "width": 1852,
+    "height": 1384,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/migrating-playlists-with-comet/Comet_v1-286c776625-480.avif"
+        ],
+        [
+          960,
+          "blog/migrating-playlists-with-comet/Comet_v1-286c776625-960.avif"
+        ],
+        [
+          1600,
+          "blog/migrating-playlists-with-comet/Comet_v1-286c776625-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/migrating-playlists-with-comet/Comet_v1-286c776625-480.webp"
+        ],
+        [
+          960,
+          "blog/migrating-playlists-with-comet/Comet_v1-286c776625-960.webp"
+        ],
+        [
+          1600,
+          "blog/migrating-playlists-with-comet/Comet_v1-286c776625-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/migrating-playlists-with-comet/Comet_v1-286c776625-og.jpg"
+  },
+  "blog/migrating-playlists-with-comet/Comet_v2.png": {
+    "type": "image",
+    "hash": "99a1ad0424",
+    "width": 1852,
+    "height": 1384,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/migrating-playlists-with-comet/Comet_v2-99a1ad0424-480.avif"
+        ],
+        [
+          960,
+          "blog/migrating-playlists-with-comet/Comet_v2-99a1ad0424-960.avif"
+        ],
+        [
+          1600,
+          "blog/migrating-playlists-with-comet/Comet_v2-99a1ad0424-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/migrating-playlists-with-comet/Comet_v2-99a1ad0424-480.webp"
+        ],
+        [
+          960,
+          "blog/migrating-playlists-with-comet/Comet_v2-99a1ad0424-960.webp"
+        ],
+        [
+          1600,
+          "blog/migrating-playlists-with-comet/Comet_v2-99a1ad0424-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/migrating-playlists-with-comet/Comet_v2-99a1ad0424-og.jpg"
+  },
+  "blog/migrating-playlists-with-comet/Comet_v3_poster.jpg": {
+    "type": "image",
+    "hash": "55c460264a",
+    "width": 640,
+    "height": 452,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/migrating-playlists-with-comet/Comet_v3_poster-55c460264a-480.avif"
+        ],
+        [
+          640,
+          "blog/migrating-playlists-with-comet/Comet_v3_poster-55c460264a-640.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/migrating-playlists-with-comet/Comet_v3_poster-55c460264a-480.webp"
+        ],
+        [
+          640,
+          "blog/migrating-playlists-with-comet/Comet_v3_poster-55c460264a-640.webp"
+        ]
+      ]
+    },
+    "og": "blog/migrating-playlists-with-comet/Comet_v3_poster-55c460264a-og.jpg"
+  },
+  "blog/migrating-playlists-with-comet/Comet_v3.mp4": {
+    "type": "file",
+    "hash": "318fed8bd0",
+    "src": "blog/migrating-playlists-with-comet/Comet_v3-318fed8bd0.mp4",
+    "contentType": "video/mp4"
+  },
+  "blog/migrating-playlists-with-comet/Comet_v3.webm": {
+    "type": "file",
+    "hash": "2cfbee5aca",
+    "src": "blog/migrating-playlists-with-comet/Comet_v3-2cfbee5aca.webm",
+    "contentType": "video/webm"
+  },
+  "blog/navigating-apcs-guide/papersv2_2025.png": {
+    "type": "image",
+    "hash": "2cbed2674e",
+    "width": 474,
+    "height": 291,
+    "sources": {
+      "avif": [
+        [
+          474,
+          "blog/navigating-apcs-guide/papersv2_2025-2cbed2674e-474.avif"
+        ]
+      ],
+      "webp": [
+        [
+          474,
+          "blog/navigating-apcs-guide/papersv2_2025-2cbed2674e-474.webp"
+        ]
+      ]
+    },
+    "og": "blog/navigating-apcs-guide/papersv2_2025-2cbed2674e-og.jpg"
+  },
+  "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png": {
+    "type": "image",
+    "hash": "d6cc1948ef",
+    "width": 2720,
+    "height": 2032,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-480.avif"
+        ],
+        [
+          960,
+          "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-960.avif"
+        ],
+        [
+          1600,
+          "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-480.webp"
+        ],
+        [
+          960,
+          "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-960.webp"
+        ],
+        [
+          1600,
+          "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-og.jpg"
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_01amazonq.png": {
+    "type": "image",
+    "hash": "24e8df82e7",
+    "width": 1856,
+    "height": 1466,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_01amazonq-24e8df82e7-480.avif"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_01amazonq-24e8df82e7-960.avif"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/202505_01amazonq-24e8df82e7-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_01amazonq-24e8df82e7-480.webp"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_01amazonq-24e8df82e7-960.webp"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/202505_01amazonq-24e8df82e7-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/testing-amazon-q-developer-on-github/202505_01amazonq-24e8df82e7-og.jpg"
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_02amazonq.png": {
+    "type": "image",
+    "hash": "94c2a3e2ab",
+    "width": 1856,
+    "height": 1466,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_02amazonq-94c2a3e2ab-480.avif"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_02amazonq-94c2a3e2ab-960.avif"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/202505_02amazonq-94c2a3e2ab-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_02amazonq-94c2a3e2ab-480.webp"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_02amazonq-94c2a3e2ab-960.webp"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/202505_02amazonq-94c2a3e2ab-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/testing-amazon-q-developer-on-github/202505_02amazonq-94c2a3e2ab-og.jpg"
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_03amazonq.png": {
+    "type": "image",
+    "hash": "1be32bd658",
+    "width": 948,
+    "height": 796,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_03amazonq-1be32bd658-480.avif"
+        ],
+        [
+          948,
+          "blog/testing-amazon-q-developer-on-github/202505_03amazonq-1be32bd658-948.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_03amazonq-1be32bd658-480.webp"
+        ],
+        [
+          948,
+          "blog/testing-amazon-q-developer-on-github/202505_03amazonq-1be32bd658-948.webp"
+        ]
+      ]
+    },
+    "og": "blog/testing-amazon-q-developer-on-github/202505_03amazonq-1be32bd658-og.jpg"
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_04amazonq.png": {
+    "type": "image",
+    "hash": "ec3c932732",
+    "width": 986,
+    "height": 682,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_04amazonq-ec3c932732-480.avif"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_04amazonq-ec3c932732-960.avif"
+        ],
+        [
+          986,
+          "blog/testing-amazon-q-developer-on-github/202505_04amazonq-ec3c932732-986.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_04amazonq-ec3c932732-480.webp"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_04amazonq-ec3c932732-960.webp"
+        ],
+        [
+          986,
+          "blog/testing-amazon-q-developer-on-github/202505_04amazonq-ec3c932732-986.webp"
+        ]
+      ]
+    },
+    "og": "blog/testing-amazon-q-developer-on-github/202505_04amazonq-ec3c932732-og.jpg"
+  },
+  "blog/testing-amazon-q-developer-on-github/202505_05amazonq.png": {
+    "type": "image",
+    "hash": "dd198244f9",
+    "width": 1742,
+    "height": 1566,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-480.avif"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-960.avif"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-480.webp"
+        ],
+        [
+          960,
+          "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-960.webp"
+        ],
+        [
+          1600,
+          "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/testing-amazon-q-developer-on-github/202505_05amazonq-dd198244f9-og.jpg"
+  },
+  "blog/the-paper-chase-lessons-from-academic-publishing/papers25.png": {
+    "type": "image",
+    "hash": "e41e5419d4",
+    "width": 1024,
+    "height": 1024,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/the-paper-chase-lessons-from-academic-publishing/papers25-e41e5419d4-480.avif"
+        ],
+        [
+          960,
+          "blog/the-paper-chase-lessons-from-academic-publishing/papers25-e41e5419d4-960.avif"
+        ],
+        [
+          1024,
+          "blog/the-paper-chase-lessons-from-academic-publishing/papers25-e41e5419d4-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/the-paper-chase-lessons-from-academic-publishing/papers25-e41e5419d4-480.webp"
+        ],
+        [
+          960,
+          "blog/the-paper-chase-lessons-from-academic-publishing/papers25-e41e5419d4-960.webp"
+        ],
+        [
+          1024,
+          "blog/the-paper-chase-lessons-from-academic-publishing/papers25-e41e5419d4-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/the-paper-chase-lessons-from-academic-publishing/papers25-e41e5419d4-og.jpg"
+  },
+  "blog/timercf/01KND1JCANRGYJP34FD39WRM3P.png": {
+    "type": "image",
+    "hash": "ce4b72b527",
+    "width": 2882,
+    "height": 1658,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/timercf/01KND1JCANRGYJP34FD39WRM3P-ce4b72b527-480.avif"
+        ],
+        [
+          960,
+          "blog/timercf/01KND1JCANRGYJP34FD39WRM3P-ce4b72b527-960.avif"
+        ],
+        [
+          1600,
+          "blog/timercf/01KND1JCANRGYJP34FD39WRM3P-ce4b72b527-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/timercf/01KND1JCANRGYJP34FD39WRM3P-ce4b72b527-480.webp"
+        ],
+        [
+          960,
+          "blog/timercf/01KND1JCANRGYJP34FD39WRM3P-ce4b72b527-960.webp"
+        ],
+        [
+          1600,
+          "blog/timercf/01KND1JCANRGYJP34FD39WRM3P-ce4b72b527-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/timercf/01KND1JCANRGYJP34FD39WRM3P-ce4b72b527-og.jpg"
+  },
+  "blog/uae-free-chatgpt-plus-for-all/202505_01uae.png": {
+    "type": "image",
+    "hash": "cc9808c7e5",
+    "width": 1024,
+    "height": 1536,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-480.avif"
+        ],
+        [
+          960,
+          "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-960.avif"
+        ],
+        [
+          1024,
+          "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-1024.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-480.webp"
+        ],
+        [
+          960,
+          "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-960.webp"
+        ],
+        [
+          1024,
+          "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-1024.webp"
+        ]
+      ]
+    },
+    "og": "blog/uae-free-chatgpt-plus-for-all/202505_01uae-cc9808c7e5-og.jpg"
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks01.png": {
+    "type": "image",
+    "hash": "56ff9b8c66",
+    "width": 1695,
+    "height": 1378,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks01-56ff9b8c66-480.avif"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks01-56ff9b8c66-960.avif"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks01-56ff9b8c66-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks01-56ff9b8c66-480.webp"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks01-56ff9b8c66-960.webp"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks01-56ff9b8c66-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/unlocking-generative-ai-with-databricks/databricks01-56ff9b8c66-og.jpg"
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks02.png": {
+    "type": "image",
+    "hash": "ec2ee22e90",
+    "width": 1870,
+    "height": 1381,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks02-ec2ee22e90-480.avif"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks02-ec2ee22e90-960.avif"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks02-ec2ee22e90-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks02-ec2ee22e90-480.webp"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks02-ec2ee22e90-960.webp"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks02-ec2ee22e90-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/unlocking-generative-ai-with-databricks/databricks02-ec2ee22e90-og.jpg"
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks03.png": {
+    "type": "image",
+    "hash": "203da83e3c",
+    "width": 1870,
+    "height": 1381,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks03-203da83e3c-480.avif"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks03-203da83e3c-960.avif"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks03-203da83e3c-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks03-203da83e3c-480.webp"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks03-203da83e3c-960.webp"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks03-203da83e3c-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/unlocking-generative-ai-with-databricks/databricks03-203da83e3c-og.jpg"
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks04.png": {
+    "type": "image",
+    "hash": "1ee9315192",
+    "width": 1870,
+    "height": 1381,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks04-1ee9315192-480.avif"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks04-1ee9315192-960.avif"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks04-1ee9315192-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks04-1ee9315192-480.webp"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks04-1ee9315192-960.webp"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks04-1ee9315192-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/unlocking-generative-ai-with-databricks/databricks04-1ee9315192-og.jpg"
+  },
+  "blog/unlocking-generative-ai-with-databricks/databricks05.png": {
+    "type": "image",
+    "hash": "7be9dc3c81",
+    "width": 2153,
+    "height": 1481,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks05-7be9dc3c81-480.avif"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks05-7be9dc3c81-960.avif"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks05-7be9dc3c81-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/unlocking-generative-ai-with-databricks/databricks05-7be9dc3c81-480.webp"
+        ],
+        [
+          960,
+          "blog/unlocking-generative-ai-with-databricks/databricks05-7be9dc3c81-960.webp"
+        ],
+        [
+          1600,
+          "blog/unlocking-generative-ai-with-databricks/databricks05-7be9dc3c81-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/unlocking-generative-ai-with-databricks/databricks05-7be9dc3c81-og.jpg"
+  },
+  "files/2024-12-happiness-malaga.pdf": {
+    "type": "file",
+    "hash": "e52ce65f17",
+    "src": "files/2024-12-happiness-malaga-e52ce65f17.pdf",
+    "contentType": "application/pdf"
+  },
+  "files/iscbe-2025-certificate.pdf": {
+    "type": "file",
+    "hash": "0e21b9b0c8",
+    "src": "files/iscbe-2025-certificate-0e21b9b0c8.pdf",
+    "contentType": "application/pdf"
+  },
+  "files/npo-partyrock-workshop.pdf": {
+    "type": "file",
+    "hash": "5aa2a1178b",
+    "src": "files/npo-partyrock-workshop-5aa2a1178b.pdf",
+    "contentType": "application/pdf"
+  }
+}

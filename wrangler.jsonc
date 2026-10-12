@@ -2,9 +2,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "carlosluengo-com",
+  // carluve @enterprise, which also holds the zone and the R2 bucket. Pinned so
+  // wrangler never prompts between the two accounts on this login.
+  "account_id": "39f8ea10b94ad38470fc3c20c260efdc",
   "compatibility_date": "2026-09-01",
+  // Post media is not deployed with the site: it lives in the R2 bucket
+  // `carlosluengo-media`, served at https://media.carlosluengo.com
+  // (see scripts/media.mjs and src/utils/media.ts).
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
-  }
+    "not_found_handling": "404-page",
+  },
 }

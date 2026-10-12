@@ -2,7 +2,7 @@
 publishDate: 2025-05-03T00:00:00Z
 title: "Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity"
 excerpt: "Trae.ai is a free, AI-powered integrated development environment (IDE) created by ByteDance (the company behind TikTok). Its goal is to act as a real-time AI coding assistant built into the editor, helping developers…"
-image: "~/assets/images/blog/2025-05-03-trae-ai-free-ide/20250503-trae.png"
+image: "media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png"
 imageAlt: "Trae.ai: Free AI-Powered IDE Revolutionizing Developer Productivity"
 category: "AI Development"
 tags:
@@ -22,7 +22,7 @@ tags:
 - Available for **Windows and macOS** (Linux support not yet available).
 - Interface in English and Simplified Chinese.
 
-![Trae.AI](../../assets/images/blog/2025-05-03-trae-ai-free-ide/20250503-trae.png) *[TRAE AI]*
+![Trae.AI](media:blog/2025-05-03-trae-ai-free-ide/20250503-trae.png) *[TRAE AI]*
 
 
 ## Why was it launched?
@@ -34,7 +34,7 @@ Trae.ai addresses two key problems:
 
 ByteDance launched Trae as a **completely free and unlimited tool**, aiming to democratize AI-assisted coding and compete in this fast-growing space.
 
-![Pricing](../../assets/images/blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.png)
+![Pricing](media:blog/2025-05-03-trae-ai-free-ide/202503_pricingtrae.png)
 ---
 
 ## Differences from *Vibe Coding*
@@ -49,7 +49,7 @@ ByteDance launched Trae as a **completely free and unlimited tool**, aiming to d
 
 Trae.ai takes *vibe coding* to the next level by embedding the AI assistant directly into the coding workflow, with full contextual awareness and smart editing capabilities.
 
-![DiagramVibeCoding](../../assets/images/blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.png)
+![DiagramVibeCoding](media:blog/2025-05-03-trae-ai-free-ide/202505_vibecoding.png)
 
 ---
 
@@ -69,7 +69,7 @@ All of this is available **without API setup or extra costs**. The AI can:
 - Provide inline help and explanations.
 
 
-![DiagramVibeCoding](../../assets/images/blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.png)
+![DiagramVibeCoding](media:blog/2025-05-03-trae-ai-free-ide/20250504-modelstrae.png)
 ---
 
 ## How is it free?

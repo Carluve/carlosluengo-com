@@ -2,7 +2,7 @@
 publishDate: 2025-05-24T00:00:00Z
 title: "Deep Research with ChatGPT: A Practical Guide"
 excerpt: "Deep research is more than just skimming search results—it's a disciplined, multi-stage approach to finding, evaluating, and synthesising information. In an era where AI generates vast amounts of content and…"
-image: "~/assets/images/blog/deep-research-chatgpt-guide/202505_01deepresearch.png"
+image: "media:blog/deep-research-chatgpt-guide/202505_01deepresearch.png"
 imageAlt: "Deep Research with ChatGPT: A Practical Guide"
 category: "AI"
 tags:
@@ -22,7 +22,7 @@ Deep research is more than just skimming search results—it's a disciplined, mu
 
 ---
 
-![A researcher standing before an enormous library of floating holographic books, symbolising the vastness of online information.](../../assets/images/blog/deep-research-chatgpt-guide/202505_01deepresearch.png)
+![A researcher standing before an enormous library of floating holographic books, symbolising the vastness of online information.](media:blog/deep-research-chatgpt-guide/202505_01deepresearch.png)
 
 ---
 
@@ -45,7 +45,7 @@ Deep research is more than just skimming search results—it's a disciplined, mu
 
 ---
 
-![Iceberg diagram showing the visible "surface search" tip above water and the larger "deep research" mass below.](../../assets/images/blog/deep-research-chatgpt-guide/202505_02deepreserach.png)
+![Iceberg diagram showing the visible "surface search" tip above water and the larger "deep research" mass below.](media:blog/deep-research-chatgpt-guide/202505_02deepreserach.png)
 
 ---
 
@@ -94,7 +94,7 @@ Alternate between **divergent searching** (broadening) and **convergent summaris
 
 ---
 
-![A circular flow diagram illustrating the iterate-search-evaluate-synthesise loop.](../../assets/images/blog/deep-research-chatgpt-guide/202505_03deepreseearch.png)
+![A circular flow diagram illustrating the iterate-search-evaluate-synthesise loop.](media:blog/deep-research-chatgpt-guide/202505_03deepreseearch.png)
 
 ---
 
@@ -126,7 +126,7 @@ Alternate between **divergent searching** (broadening) and **convergent summaris
 8. **Produce Final Artefacts**  
    Convert notes into reports, slide decks, or knowledge-base articles.
 
-![Screenshot of ChatGPT analysing two sources side-by-side and annotating discrepancies.](../../assets/images/blog/deep-research-chatgpt-guide/202505_04deepresearch.png)
+![Screenshot of ChatGPT analysing two sources side-by-side and annotating discrepancies.](media:blog/deep-research-chatgpt-guide/202505_04deepresearch.png)
 ---
 
 ## Advanced Techniques

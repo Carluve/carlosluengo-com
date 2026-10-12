@@ -27,8 +27,8 @@ In this talk, I analyzed the optimization of artificial intelligence in medical 
 
 #### Certificate of Participation
 
-<object data="/files/31 Certificates Carlos Luengo Vera (8th ISCBE) (1).pdf" type="application/pdf" width="100%" height="600px">
-  <p>Your browser does not support PDF viewing. You can download the certificate <a href="/files/31 Certificates Carlos Luengo Vera (8th ISCBE) (1).pdf">here</a>.</p>
+<object data="media:files/iscbe-2025-certificate.pdf" type="application/pdf" width="100%" height="600px">
+  <p>Your browser does not support PDF viewing. You can download the certificate <a href="media:files/iscbe-2025-certificate.pdf">here</a>.</p>
 </object>
 
 It was a great experience to share knowledge and connect with professionals passionate about the future of AI and education! 

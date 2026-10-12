@@ -1,6 +1,7 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import type { MetaDataOpenGraph } from '~/types';
+import { getMedia, isMediaRef, resolveMediaUrl } from '~/utils/media';
 
 // Lazy-loaded glob of local images. The glob runs once and is cached.
 let _localImages: Record<string, () => Promise<unknown>> | undefined;
@@ -57,6 +58,14 @@ export const adaptOpenGraphImages = async (
   const adaptedImages = await Promise.all(
     openGraph.images.map(async (image) => {
       if (!image?.url) return { url: '' };
+
+      // R2 media already has a 1200×626 JPG cut for social cards.
+      if (isMediaRef(image.url)) {
+        const media = getMedia(image.url);
+        if (media.type === 'image')
+          return { url: resolveMediaUrl(image.url, { og: true }), width: OG_WIDTH, height: OG_HEIGHT };
+        if (media.type === 'svg') return { url: '' };
+      }
 
       const resolved = await findImage(image.url);
       if (!resolved) return { url: '' };

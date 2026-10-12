@@ -2,7 +2,7 @@
 publishDate: 2025-05-27T00:00:00Z
 title: "UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
 excerpt: "🇦🇪 UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
-image: "~/assets/images/blog/uae-free-chatgpt-plus-for-all/202505_01uae.png"
+image: "media:blog/uae-free-chatgpt-plus-for-all/202505_01uae.png"
 imageAlt: "UAE's Bold Move: Free ChatGPT Plus for All — A Glimpse into the Future of National AI Access"
 category: "AI"
 tags:
@@ -26,7 +26,7 @@ The United Arab Emirates (UAE) is set to become the first country to provide its
 
 ChatGPT Plus is a subscription-based version of OpenAI's chatbot, offering users enhanced features such as faster response times, priority access during peak times, and early access to new features and improvements. Typically priced at $20 per month, this service leverages advanced AI models to assist users in tasks ranging from drafting emails to coding and learning new topics.
 
-![Key Benefits of ChatGPT Plus UAE-OpenAI Partnership](../../assets/images/blog/uae-free-chatgpt-plus-for-all/202505_01uae.png)
+![Key Benefits of ChatGPT Plus UAE-OpenAI Partnership](media:blog/uae-free-chatgpt-plus-for-all/202505_01uae.png)
 
 ---
 

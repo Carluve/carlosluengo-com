@@ -26,6 +26,7 @@ import type { ImageMetadata } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
 import { transformUrl, parseUrl } from 'unpic';
 import { findImage } from '~/utils/images';
+import { isMediaRef, pictureFor } from '~/utils/media';
 
 type Layout = 'constrained' | 'full-width' | 'fixed' | 'cover' | 'none';
 type Format = 'avif' | 'jpeg' | 'jpg' | 'png' | 'webp';
@@ -60,6 +61,19 @@ rest.decoding ??= 'async';
 
 // --- Resolve src (handles `~/assets/...` paths) ----------------------------
 const resolved = await findImage(src);
+
+// `media:` references are pre-optimised on R2 (see src/utils/media.ts).
+const media = isMediaRef(resolved) ? pictureFor(resolved) : undefined;
+if (media?.width && media.height) {
+  if (!w && !h) {
+    w = media.width;
+    h = media.height;
+  } else if (w && !h) {
+    h = Math.round((w * media.height) / media.width);
+  } else if (h && !w) {
+    w = Math.round((h * media.width) / media.height);
+  }
+}
 
 const isCdnUrl =
   typeof resolved === 'string' &&
@@ -118,7 +132,7 @@ const cdnLayoutStyle = (): string => {
   }
   return decls.join(';');
 };
-const cdnStyle = isCdnUrl ? [cdnLayoutStyle(), rest.style].filter(Boolean).join(';') || undefined : undefined;
+const cdnStyle = isCdnUrl || media ? [cdnLayoutStyle(), rest.style].filter(Boolean).join(';') || undefined : undefined;
 
 // --- CDN-side srcset -------------------------------------------------------
 const buildCdnUrl = (variantWidth?: number, variantHeight?: number): string | undefined =>
@@ -155,7 +169,14 @@ const cdnSrcSet =
 ---
 
 {
-  isCdnUrl ? (
+  media ? (
+    <picture style="display:contents">
+      {media.sources.map((source) => (
+        <source {...source} sizes={rest.sizes ?? (w ? `(min-width: ${w}px) ${w}px, 100vw` : '100vw')} />
+      ))}
+      <img src={media.src} width={w} height={h} alt={alt} {...rest} style={cdnStyle} />
+    </picture>
+  ) : isCdnUrl ? (
     <img
       src={cdnSrc}
       srcset={cdnSrcSet}

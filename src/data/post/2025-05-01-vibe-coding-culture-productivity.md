@@ -2,7 +2,7 @@
 publishDate: 2025-05-01T00:00:00Z
 title: "Vibe Coding: The New Software Culture Fueling Unprecedented Productivity"
 excerpt: "What if writing code felt less like debugging and more like a jam session? A new wave in software development called vibe coding is making that a reality. Startups are reaching massive milestones with tiny teams,…"
-image: "~/assets/images/blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart.png"
+image: "media:blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart.png"
 imageAlt: "Vibe Coding: The New Software Culture Fueling Unprecedented Productivity"
 category: "Vibe Coding"
 tags:
@@ -32,7 +32,7 @@ The vibe coding movement isn’t just a feel-good story; it’s yielding astonis
 *   **StackBlitz/Bolt:** ~$8M ARR in 2 months after Bolt launch
 *   **Replit:** ~100 employees, ~$50M ARR → ~$500k per employee
 
-![ARR Comparison Chart](../../assets/images/blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart.png) *[Chart comparing ARR/employee]*
+![ARR Comparison Chart](media:blog/2025-05-01-vibe-coding-culture-productivity/beautiful_arr_per_employee_chart.png) *[Chart comparing ARR/employee]*
 
 
 ## The Culture Shift Behind the Code
@@ -44,7 +44,7 @@ Crucially, vibe coding is as much about culture and workflow as it is about tool
 *   High velocity, constant experimentation
 *   Blurred roles – PMs, designers, and engineers co-creating with AI
 
-![Team Structure Comparison](../../assets/images/blog/2025-05-01-vibe-coding-culture-productivity/team-structure.png) *[ Diagram comparing team structures]*
+![Team Structure Comparison](media:blog/2025-05-01-vibe-coding-culture-productivity/team-structure.png) *[ Diagram comparing team structures]*
 
 
 ## Vibe Coding in Action: Case Studies
@@ -66,7 +66,7 @@ Crucially, vibe coding is as much about culture and workflow as it is about tool
 *   Builds full-stack apps from natural language prompts
 *   Democratises software creation beyond engineers
 
-![Company Profiles](../../assets/images/blog/2025-05-01-vibe-coding-culture-productivity/company-profiles.png) *[Company profile infographic]*
+![Company Profiles](media:blog/2025-05-01-vibe-coding-culture-productivity/company-profiles.png) *[Company profile infographic]*
 
 
 ## The Opportunity for Companies
@@ -78,7 +78,7 @@ Crucially, vibe coding is as much about culture and workflow as it is about tool
 *   **Breaking Silos:** PMs, designers, engineers co-create
 *   **New Revenue Streams:** AI internal tools → marketable products
 
-![Flywheel Model](../../assets/images/blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel.png) *[Flywheel model infographic]*
+![Flywheel Model](media:blog/2025-05-01-vibe-coding-culture-productivity/vibecoding-flywheel.png) *[Flywheel model infographic]*
 
 ## Conclusion: Embrace the Vibe
 

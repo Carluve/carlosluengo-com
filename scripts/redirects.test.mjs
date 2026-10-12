@@ -151,7 +151,7 @@ test('the Comet recording is video, not the GIF', () => {
   assert.equal(post.includes('Comet_v3_GIF.gif'), false);
   assert.match(
     post,
-    /<video autoplay muted loop playsinline poster="\/images\/blog\/migrating-playlists-with-comet\/Comet_v3_poster\.jpg"/
+    /<video autoplay muted loop playsinline poster="media:blog\/migrating-playlists-with-comet\/Comet_v3_poster\.jpg"/
   );
   assert.match(post, /Comet_v3\.webm/);
   assert.match(post, /Comet_v3\.mp4/);

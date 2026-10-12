@@ -26,3 +26,6 @@ pnpm-lock.yaml
 pnpm-workspace.yaml
 
 .astro
+
+# Post media originals: published to R2, see SETUP.md (Media on R2).
+media/

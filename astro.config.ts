@@ -15,7 +15,7 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
+import { mediaRehypePlugin, readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -130,7 +130,7 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [readingTimeRemarkPlugin],
-      rehypePlugins: [responsiveTablesRehypePlugin],
+      rehypePlugins: [mediaRehypePlugin, responsiveTablesRehypePlugin],
     }),
     shikiConfig: {
       // Code blocks follow the site theme; see the `.astro-code` rules in tailwind.css.

@@ -14,9 +14,7 @@ What if the secret to workplace happiness wasn’t longer vacations or fancier c
 
 That’s the provocative idea behind the paper *“Impact of Generative AI on Workplace Productivity and Employee Well-being”* by researchers at the Universidad de Alcalá. This in-depth study explores how large-scale AI adoption is reshaping not only productivity but also emotional health and job satisfaction in organizations.
 
-![Best Presentation Award](/files/202412_HappinessMalaga.pdf)
-
-<small>🏆 Best Presentation Award (2024, Málaga)</small>
+🏆 [Best Presentation Award certificate (PDF)](media:files/2024-12-happiness-malaga.pdf), 8th International Academic & Professional Congress on Happiness, Málaga, 2024.
 
 ## TL;DR – AI Can Boost Productivity *and* Happiness (But It’s Complicated)
 
@@ -48,7 +46,7 @@ What I loved about this study is how it connects tech to something as human as *
 
 Oh—and it won **Best Presentation** at a major academic event in Málaga. So it’s not just me who thought it rocked.
 
-📎 [Full Paper Download (PDF)](/files/Impact%20of%20Generative%20AI%20on%20Workplace%20Productivity%20and%20Employee%20Well-being_24_11_7_45%20Happiness.pdf)
+📎 The manuscript is under review. See the citation on the [Academia](/academia) page.
 
 ---
 

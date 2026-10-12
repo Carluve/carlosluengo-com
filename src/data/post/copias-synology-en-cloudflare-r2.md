@@ -2,7 +2,7 @@
 publishDate: 2026-02-22T00:00:00Z
 title: "Backing Up Synology to Cloudflare R2: A Practical Guide for Developers"
 excerpt: "Configuring Synology Hyper Backup against Cloudflare R2 for cheap, egress-free, testable backups."
-image: "~/assets/images/blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png"
+image: "media:blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png"
 imageAlt: "Backing Up Synology to Cloudflare R2: A Practical Guide for Developers"
 category: "Cloudflare"
 tags:
@@ -10,7 +10,7 @@ tags:
   - "infraestructura"
 ---
 
-![Backing Up Synology to Cloudflare R2: A Practical Guide for Developers](../../assets/images/blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png)
+![Backing Up Synology to Cloudflare R2: A Practical Guide for Developers](media:blog/copias-synology-en-cloudflare-r2/cloudflare-r2-bucket-settings.png)
 
 ## Why Cloudflare R2 is a strong target for Synology backups
 

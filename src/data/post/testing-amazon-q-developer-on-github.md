@@ -2,7 +2,7 @@
 publishDate: 2025-05-26T00:00:00Z
 title: "Testing Amazon Q Developer on GitHub"
 excerpt: "In this post, I share my hands-on experience using Amazon Q Developer on GitHub.com. I tested how Q can handle code generation, review, and transformation workflows directly within GitHub Issues and Pull Requests.…"
-image: "~/assets/images/blog/testing-amazon-q-developer-on-github/202505_01amazonq.png"
+image: "media:blog/testing-amazon-q-developer-on-github/202505_01amazonq.png"
 imageAlt: "Testing Amazon Q Developer on GitHub"
 category: "AI"
 tags:
@@ -52,31 +52,31 @@ I created a new issue on GitHub with the title "Security test" and the descripti
 > “Please check all errors in the code. This product is for kids.”
 
 #### 📸 GitHub issue being created and assigned to Amazon Q
-![GitHub issue being created and assigned to Amazon Q](../../assets/images/blog/testing-amazon-q-developer-on-github/202505_01amazonq.png)
+![GitHub issue being created and assigned to Amazon Q](media:blog/testing-amazon-q-developer-on-github/202505_01amazonq.png)
 
 ### Step 2: Assign the Issue to Amazon Q
 With one click on the "Assign to Amazon Q" button, the task is queued for processing. Q instantly comments to say it's working on generating the code.
 
 #### 📸 Q Developer's first response in the issue
-![Q Developer's first response in the issue](../../assets/images/blog/testing-amazon-q-developer-on-github/202505_02amazonq.png)
+![Q Developer's first response in the issue](media:blog/testing-amazon-q-developer-on-github/202505_02amazonq.png)
 
 ### Step 3: Code Review Automation
 Once a pull request is created, Q automatically runs a code review. It flags risky code patterns (like undefined access in JS), suggests improvements, and adds severity tags.
 
 #### 📸 Inline review with warning, severity level, and description
-![Inline review with warning, severity level, and description](../../assets/images/blog/testing-amazon-q-developer-on-github/202505_03amazonq.png)
+![Inline review with warning, severity level, and description](media:blog/testing-amazon-q-developer-on-github/202505_03amazonq.png)
 
 ### Step 4: Fix Suggestions & Pull Request Creation
 After the review, Q posts final comments and creates a PR with structured commits. You can review, merge or request improvements as usual.
 
 #### 📸 Summary of the pull request and deployment success
-![Summary of the pull request and deployment success](../../assets/images/blog/testing-amazon-q-developer-on-github/202505_04amazonq.png)
+![Summary of the pull request and deployment success](media:blog/testing-amazon-q-developer-on-github/202505_04amazonq.png)
 
 ### Bonus: JSON Error Handling Fix
 I tested how Q handles specific bugs. I logged a known issue in JSON parsing. Q created a custom utility for structured logging (`logJsonError`), documented its reasoning, and opened the PR.
 
 #### 📸 Full context of the JSON fix pull request
-![Full context of the JSON fix pull request](../../assets/images/blog/testing-amazon-q-developer-on-github/202505_05amazonq.png)
+![Full context of the JSON fix pull request](media:blog/testing-amazon-q-developer-on-github/202505_05amazonq.png)
 
 ---
 

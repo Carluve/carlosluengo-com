@@ -2,7 +2,7 @@
 publishDate: 2025-08-02T00:00:00Z
 title: "My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad"
 excerpt: "I've always cared about having a fast and private internet connection, especially when using public Wi-Fi or mobile networks. That's why I decided to try Cloudflare's 1.1.1.1 app with WARP. Below I'll share how the…"
-image: "~/assets/images/blog/cloudflare-warp-ipad/cloudflare_01.jpeg"
+image: "media:blog/cloudflare-warp-ipad/cloudflare_01.jpeg"
 imageAlt: "My Experience Installing Cloudflare 1.1.1.1 and WARP on iPad"
 category: "privacy"
 tags:
@@ -19,7 +19,7 @@ tags:
 ---
 I've always cared about having a fast and private internet connection, especially when using public Wi-Fi or mobile networks. That's why I decided to try Cloudflare's 1.1.1.1 app with WARP. Below I'll share how the setup looks on iOS, what each option means, and why I personally keep it installed.
 
-![Cloudflare WARP app interface](../../assets/images/blog/cloudflare-warp-ipad/cloudflare_01.jpeg)
+![Cloudflare WARP app interface](media:blog/cloudflare-warp-ipad/cloudflare_01.jpeg)
 
 ## 1. What Is WARP?
 
@@ -37,7 +37,7 @@ When you first open the app, it asks to install a VPN profile.
 
 This step is necessary so that the app can encrypt and route all your internet traffic.
 
-![VPN profile installation screen](../../assets/images/blog/cloudflare-warp-ipad/cloudflare_02.jpeg)
+![VPN profile installation screen](media:blog/cloudflare-warp-ipad/cloudflare_02.jpeg)
 
 iOS then asks for confirmation:
 
@@ -50,7 +50,7 @@ Once installed, the app shows a big switch.
 - **Off** → "Your connection is not private."
 - **On** → WARP protects your traffic.
 
-![WARP activation interface](../../assets/images/blog/cloudflare-warp-ipad/cloudflare_03.jpeg)
+![WARP activation interface](media:blog/cloudflare-warp-ipad/cloudflare_03.jpeg)
 
 👉 **This is what I love:** one tap, and I know my browsing is safer.
 
@@ -62,7 +62,7 @@ Inside Settings, you can choose between:
 2. **WARP** – Encrypt all traffic between your device and Cloudflare
 3. **WARP+** – Same as WARP, but even faster thanks to Cloudflare's Argo network
 
-![Cloudflare settings and options](../../assets/images/blog/cloudflare-warp-ipad/cloudflare-04.jpeg)
+![Cloudflare settings and options](media:blog/cloudflare-warp-ipad/cloudflare-04.jpeg)
 
 ## 5. Comparison of Options
 

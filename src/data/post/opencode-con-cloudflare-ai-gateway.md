@@ -2,7 +2,7 @@
 publishDate: 2026-02-22T00:00:00Z
 title: "OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers"
 excerpt: "Pairing OpenCode with Cloudflare AI Gateway for centralized policy, observability, and billing across model providers."
-image: "~/assets/images/blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png"
+image: "media:blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png"
 imageAlt: "OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers"
 category: "Cloudflare"
 tags:
@@ -10,7 +10,7 @@ tags:
   - "infraestructura"
 ---
 
-![OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers](../../assets/images/blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png)
+![OpenCode with Cloudflare Gateway and Unified Billing: A Practical Setup for Developers](media:blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker.png)
 
 ## Why this pairing works
 

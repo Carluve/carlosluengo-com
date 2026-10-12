@@ -2,7 +2,7 @@
 publishDate: 2025-11-26T00:00:00Z
 title: "Deploying a Tiny App at the Edge with Cloudflare Workers: My Take"
 excerpt: "I recently deployed a small demo app using Cloudflare Workers at 👉 https://cloudflare.carlosluengo.es and the experience reminded me why I enjoy building on this platform: it’s fast, global, minimalistic, and…"
-image: "~/assets/images/blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png"
+image: "media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png"
 imageAlt: "Deploying a Tiny App at the Edge with Cloudflare Workers: My Take"
 category: "Technology"
 tags:
@@ -33,7 +33,7 @@ Cloudflare Workers let you deploy serverless code that runs **directly on Cloudf
 
 Instead of provisioning containers or servers, you ship a tiny script and Cloudflare distributes it globally within seconds.
 
-![Cloudflare Workers Concept](../../assets/images/blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png)
+![Cloudflare Workers Concept](media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare7.png)
 
 In short:
 
@@ -83,7 +83,7 @@ Request → Worker → Response
 
 And it runs globally, everywhere, by default.
 
-![Worker Execution Model](../../assets/images/blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8.png)
+![Worker Execution Model](media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare8.png)
 
 ---
 
@@ -155,7 +155,7 @@ This is the exact workflow I used to deploy the demo:
 
 Within seconds, you get a global URL plus optional custom domain—in my case: `cloudflare.carlosluengo.es`
 
-![Wrangler Deployment](../../assets/images/blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9.png)
+![Wrangler Deployment](media:blog/deploying-tiny-app-edge-cloudflare-workers/cloudflare9.png)
 
 ---
 

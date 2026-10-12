@@ -2,7 +2,7 @@
 publishDate: 2025-08-20T00:00:00Z
 title: "Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide"
 excerpt: "_Diving into the world of Article Processing Charges (APCs), why publishing in high‑impact journals matters, how institutional deals can help — and what to watch out for._"
-image: "~/assets/images/blog/navigating-apcs-guide/papersv2_2025.png"
+image: "media:blog/navigating-apcs-guide/papersv2_2025.png"
 imageAlt: "Navigating APCs, Institutional Agreements, and Prestige Publishing: A Doctoral Student’s Guide"
 category: "Academia"
 tags:
@@ -21,7 +21,7 @@ _Diving into the world of Article Processing Charges (APCs), why publishing in h
 
 APCs (Article Processing Charges) are fees that authors — or their institutions or funders — pay to make research articles openly accessible, either in fully open access journals or hybrid ones. While they enable public access, these costs can be quite substantial, especially for high‑prestige journals, potentially ranging from under USD 100 to over USD 3,500  [Cargo APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
 
-![Research papers illustration](../../assets/images/blog/navigating-apcs-guide/papersv2_2025.png)
+![Research papers illustration](media:blog/navigating-apcs-guide/papersv2_2025.png)
 
 APCs are a common funding model in professional open access publishing, but they may pose financial pressure, especially on researchers in less well‑funded contexts  [APC](https://es.wikipedia.org/wiki/Cargo_por_procesamiento_de_art%C3%ADculos).
 
