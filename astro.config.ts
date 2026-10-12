@@ -47,13 +47,19 @@ export default defineConfig({
       fallbacks: ['sans-serif'],
     },
     {
-      provider: fontProviders.fontsource(),
-      name: 'Source Serif 4',
-      cssVariable: '--font-source-serif',
-      weights: [400, 500, 600, 700],
-      styles: ['normal', 'italic'],
-      subsets: ['latin'],
-      fallbacks: ['serif'],
+      // Ortica Linear by Collletttivo (SIL OFL 1.1, src/assets/fonts/ortica/LICENSE.txt),
+      // self-hosted for headings. Light for display sizes, Regular for the rest.
+      provider: fontProviders.local(),
+      name: 'Ortica',
+      cssVariable: '--font-ortica',
+      fallbacks: ['Georgia', 'serif'],
+      options: {
+        variants: [
+          { src: ['./src/assets/fonts/ortica/OrticaLinear-Light.woff2'], weight: 300, style: 'normal' },
+          { src: ['./src/assets/fonts/ortica/OrticaLinear-Regular.woff2'], weight: 400, style: 'normal' },
+          { src: ['./src/assets/fonts/ortica/OrticaLinear-Bold.woff2'], weight: 700, style: 'normal' },
+        ],
+      },
     },
   ],
 
