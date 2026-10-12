@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "node scripts/redirects.mjs generate && node --test scripts/redirects.test.mjs && node scripts/redirects.mjs check public/_redirects && astro build && node scripts/redirects.mjs check dist/_redirects",
+    "build": "node scripts/redirects.mjs generate && node --test scripts/redirects.test.mjs && node scripts/redirects.mjs check public/_redirects && astro build && node scripts/redirects.mjs check-dist dist",
     "check:redirects": "node scripts/redirects.mjs check public/_redirects",
     "preview": "astro preview",
     "astro": "astro",

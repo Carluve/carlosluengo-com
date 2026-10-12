@@ -193,6 +193,13 @@ html {
   border: 1px solid var(--aw-color-border);
 }
 
+.aw-prose :where(video) {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--aw-color-border);
+}
+
 .dd *:first-child {
   margin-top: 0;
 }

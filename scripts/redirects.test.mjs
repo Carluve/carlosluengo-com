@@ -1,11 +1,15 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import test from 'node:test';
 import {
+  MAX_ASSET_BYTES,
   MAX_DYNAMIC_REDIRECTS,
   MAX_STATIC_REDIRECTS,
   analyzeRedirects,
   canonicalSource,
+  checkDist,
   checkRedirects,
   cloudflarePathname,
   redirectKey,
@@ -116,4 +120,39 @@ test('the published redirects file has one rule per normalised path', () => {
   }
   assert.equal(uploaded.has('/Proyectos/GitHub/FOCA%20Visual%20C%23'), true);
   assert.equal(uploaded.has('/Proyectos/GitHub/FOCA%20Visual%20C'), false);
+});
+
+test('check-dist fails on a duplicate redirect and on a file over 20 MiB', () => {
+  assert.equal(MAX_ASSET_BYTES, 20 * 1024 * 1024);
+  const root = mkdtempSync(join(tmpdir(), 'redirects-'));
+  try {
+    writeFileSync(join(root, '_redirects'), '/old /blog/a 301\n/old/ /blog/a 301\n');
+    writeFileSync(join(root, 'big.bin'), Buffer.alloc(200));
+    const errors = checkDist(root, { maxAssetBytes: 100 });
+    assert.equal(
+      errors.some((message) => message.includes('Duplicate rule for path /old')),
+      true
+    );
+    assert.equal(
+      errors.some((message) => message.includes('big.bin') && message.startsWith('Asset too large:')),
+      true
+    );
+
+    writeFileSync(join(root, '_redirects'), '/old /blog/a 301\n');
+    writeFileSync(join(root, 'big.bin'), Buffer.alloc(100));
+    assert.deepEqual(checkDist(root, { maxAssetBytes: 100 }), []);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('the Comet recording is video, not the GIF', () => {
+  const post = readFileSync(new URL('../src/data/post/migrating-playlists-with-comet.md', import.meta.url), 'utf8');
+  assert.equal(post.includes('Comet_v3_GIF.gif'), false);
+  assert.match(
+    post,
+    /<video autoplay muted loop playsinline poster="\/images\/blog\/migrating-playlists-with-comet\/Comet_v3_poster\.jpg"/
+  );
+  assert.match(post, /Comet_v3\.webm/);
+  assert.match(post, /Comet_v3\.mp4/);
 });

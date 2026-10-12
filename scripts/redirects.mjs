@@ -9,12 +9,14 @@
  * and checks the file against the Workers _redirects limits.
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 export const MAX_STATIC_REDIRECTS = 2000;
 export const MAX_DYNAMIC_REDIRECTS = 100;
 export const MAX_LINE_LENGTH = 1000;
+export const MAX_ASSET_BYTES = 20 * 1024 * 1024;
 export const PERMITTED_STATUS_CODES = new Set([200, 301, 302, 303, 307, 308]);
 
 const SPLAT_REGEX = /\*/;
@@ -303,6 +305,44 @@ export function checkRedirects(input, options) {
   return analyzeRedirects(input, options).errors;
 }
 
+export function formatMiB(bytes) {
+  return (bytes / (1024 * 1024)).toFixed(1);
+}
+
+export function findOversizedFiles(root, maxBytes = MAX_ASSET_BYTES) {
+  const found = [];
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.isFile()) {
+        const size = statSync(full).size;
+        if (size > maxBytes) found.push({ path: full, size });
+      }
+    }
+  };
+  walk(root);
+  return found;
+}
+
+/** Fail when dist has a duplicate redirect or any file larger than 20 MiB. */
+export function checkDist(root, options = {}) {
+  const maxBytes = options.maxAssetBytes ?? MAX_ASSET_BYTES;
+  const errors = [];
+  const redirectsPath = join(root, '_redirects');
+  if (!existsSync(redirectsPath)) {
+    errors.push(`Missing ${redirectsPath}.`);
+  } else {
+    for (const error of checkRedirects(readFileSync(redirectsPath, 'utf8'), options)) {
+      errors.push(error.message);
+    }
+  }
+  for (const file of findOversizedFiles(root, maxBytes)) {
+    errors.push(`Asset too large: ${file.path} is ${formatMiB(file.size)} MiB (maximum ${formatMiB(maxBytes)} MiB).`);
+  }
+  return errors;
+}
+
 function printErrors(errors) {
   for (const error of errors) {
     console.error(error.message);
@@ -311,9 +351,20 @@ function printErrors(errors) {
 
 function run(argv) {
   const [command = 'check', file = DEFAULT_PATH] = argv;
-  if (command !== 'check' && command !== 'generate') {
-    console.error('Usage: node scripts/redirects.mjs <check|generate> [file]');
+  if (command !== 'check' && command !== 'generate' && command !== 'check-dist') {
+    console.error('Usage: node scripts/redirects.mjs <check|generate|check-dist> [file]');
     process.exit(2);
+  }
+
+  if (command === 'check-dist') {
+    const root = file === DEFAULT_PATH ? 'dist' : file;
+    const errors = checkDist(root);
+    if (errors.length > 0) {
+      for (const message of errors) console.error(message);
+      process.exit(1);
+    }
+    console.log(`dist: no duplicate redirects and no file over ${formatMiB(MAX_ASSET_BYTES)} MiB`);
+    return;
   }
 
   const input = readFileSync(file, 'utf8');
