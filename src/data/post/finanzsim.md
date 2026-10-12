@@ -1,64 +1,153 @@
 ---
 publishDate: 2026-01-01T00:00:00Z
 title: "Meet FinanzSim: An Educational Financial Management Simulator"
-excerpt: "An interactive financial management simulator for first-year business students, with AI-generated feedback after each simulated year."
+excerpt: "An AI-powered web app built to help business students master financial concepts through hands-on simulation."
 image: "~/assets/images/blog/finanzsim/finanzsim2026_01.png"
 imageAlt: "Meet FinanzSim: An Educational Financial Management Simulator"
-category: "Educación"
+category: "AI"
 tags:
-  - "educación"
-  - "investigación"
+  - "AI"
+  - "education"
+  - "finance"
+  - "project"
+  - "FinanzSim"
+  - "Simulation"
+  - "EdTech"
+  - "Finance"
+---
+Meet FinanzSim: My Educational Financial Management Simulator
+
+*An AI-powered web app I built to help business students master financial concepts through hands-on simulation.*
+
 ---
 
-![Meet FinanzSim: An Educational Financial Management Simulator](../../assets/images/blog/finanzsim/finanzsim2026_01.png)
+## What Is FinanzSim?
 
-## Overview
+**FinanzSim** is an interactive web-based simulator designed specifically for first-year Business Studies students. The application allows learners to experience the complexities of managing a company's finances across multiple years, making strategic decisions and observing their real-time impact on key financial indicators.
 
-FinanzSim is an interactive web-based financial management simulator designed for first-year business students. It functions as a sandbox where students can safely experiment with financial strategies, learn from their mistakes, and receive instant AI-generated feedback.
+Think of it as a sandbox where students can safely experiment with financial strategies, learn from their mistakes, and receive instant AI-generated feedback without any real-world consequences.
 
-## Core Objectives
+![Pantalla inicial de FinanzSim](../../assets/images/blog/finanzsim/finanzsim2026_01.png)
 
-The project aims to achieve five primary goals:
+---
 
-1. Connect theoretical knowledge with practical application through hands-on exploration
-2. Build strategic thinking by demonstrating how business decisions interconnect across financial systems
-3. Deliver personalized, real-time AI analysis after each simulation year
-4. Make complex financial metrics (ROA, ROE, liquidity ratios) more accessible and understandable
-5. Create a consequence-free learning environment encouraging experimentation
+## Objectives
 
-## How It Operates
+I built FinanzSim with several clear goals in mind:
 
-**Setup Phase:**
+1. **Bridge Theory and Practice** — Transform abstract financial formulas into tangible, interactive experiences that students can explore hands-on.
+2. **Develop Strategic Thinking** — Help students understand how decisions about pricing, costs, investments, and financing ripple through the entire financial structure of a business.
+3. **Provide Instant Feedback** — Leverage AI to deliver personalised, real-time analysis after each simulated year, as if they had a virtual professor by their side.
+4. **Demystify Financial Ratios** — Make complex metrics like ROA, ROE, liquidity ratios, and leverage accessible through visual dashboards and clear explanations.
+5. **Encourage Experimentation** — Create a risk-free environment where making mistakes is part of the learning journey.
 
-- Students select simulation duration (1-12 years)
-- Companies begin with €100,000 in initial capital
+---
 
-**Annual Decisions:**
+## How It Works
 
-Students manage eight key variables annually: units sold, unit pricing, variable costs, fixed costs, new investments, loan financing, equity injections, and payment timing metrics.
+### Getting Started
 
-**Analysis Delivered:**
+1. **Choose Your Timeframe** — Select how many years you want to simulate (from 1 to 12 years).
+2. **Start with Initial Capital** — Your company begins with a treasury of **100,000 €**.
 
-The platform generates comprehensive financial statements, break-even analyses, key performance ratios, cash flow projections, and working capital cycle calculations after each year.
+![Selección de años y capital inicial](../../assets/images/blog/finanzsim/finanzsim2026_02.png)
 
-**AI Enhancement:**
+### Year-by-Year Management
 
-An AI professor component provides performance commentary, risk identification, improvement suggestions, and benchmark comparisons. A final executive report includes NPV calculations and strategic recommendations.
+For each simulated year, you'll make key business decisions:
 
-## Technical Architecture
+| Decision | Description |
+|----------|-------------|
+| **Units Sold** | How many units of product you expect to sell |
+| **Unit Price** | Your selling price per unit |
+| **Variable Costs** | Cost per unit produced |
+| **Fixed Costs** | Overheads that don't change with production volume |
+| **New Investment** | Capital expenditure on assets |
+| **New Loans** | Additional debt financing |
+| **New Equity** | Fresh capital injection |
+| **Collection Days** | How long customers take to pay you |
+| **Payment Days** | How long you take to pay suppliers |
 
-**Frontend:** React 19, TypeScript, Recharts visualization, and Vite build tool
+![Panel de decisiones anuales](../../assets/images/blog/finanzsim/finanzsim2026_03.png)
 
-**Backend & AI:** Cloudflare Workers for serverless computing, Cloudflare Pages for deployment, and Google Gemini API for financial analysis generation
+### Real-Time Financial Analysis
 
-## Background
+After submitting your decisions for each year, FinanzSim calculates and displays:
 
-FinanzSim emerged as a collaborative research project with Spain's University of Alcalá Faculty of Economics, Business and Tourism, exploring how AI-enhanced simulations can improve financial literacy among university students.
+- **Income Statement** — Revenue, EBIT, EBT, Net Income
+- **Balance Sheet** — Assets, Liabilities, Equity
+- **Break-Even Analysis** — How many units you need to sell to cover costs
+- **Key Ratios** — ROA, ROE, Leverage, Liquidity, Solvency
+- **Cash Flow** — For NPV calculations
+- **Working Capital Cycle (PMM)** — Storage, manufacturing, sales, and collection periods
 
-**Disclaimer:** The application is educational and non-commercial; AI-generated analyses are informational only and don't constitute professional financial advice.
+![Análisis financiero en tiempo real](../../assets/images/blog/finanzsim/finanzsim2026_04.png)
 
+### AI-Powered Professor Feedback
 
-## También te puede interesar
+Here's where it gets interesting! After each year, an **AI professor** analyses your results and provides:
 
-- [Building a Global AI-in-Education Observatory with Manus](/blog/ai-education-observatory)
-- [Can AI Pass Spain's Toughest Medical Exam?](/blog/2025-04-19-can-ai-pass-spain-medical-exam)
+- Commentary on your financial performance
+- Identification of potential risks
+- Suggestions for improvement
+- Comparison to typical business benchmarks
+
+---
+
+### Final Executive Report
+
+Once you complete all simulation years, you can generate a **comprehensive executive report** that includes:
+
+- Full performance analysis across all periods
+- Net Present Value (NPV) of your company
+- AI-generated strategic summary and recommendations
+- Visual charts showing business evolution
+
+---
+
+## Tech Stack
+
+I built FinanzSim using a modern, performant tech stack:
+
+### Frontend
+| Technology | Purpose |
+|------------|---------|
+| **React 19** | UI component library with hooks for state management |
+| **TypeScript** | Type-safe development with enhanced IDE support |
+| **Recharts** | Beautiful, responsive charts for data visualisation |
+| **Vite** | Lightning-fast development server and build tool |
+
+### Backend & AI
+| Technology | Purpose |
+|------------|---------|
+| **Cloudflare Workers** | Serverless edge computing for the API |
+| **Cloudflare Pages** | Global CDN deployment |
+| **Google Gemini API** | AI-powered financial analysis and feedback generation |
+
+### Deployment
+| Technology | Purpose |
+|------------|---------|
+| **Wrangler** | Cloudflare's CLI for managing Workers and Pages |
+| **Git** | Version control |
+
+---
+
+## About the Project
+
+FinanzSim is a **research pet project** developed in collaboration with the *Faculty of Economics, Business and Tourism* at the **University of Alcalá (UAH)** in Spain.
+
+The aim is to explore how AI-enhanced interactive simulations can improve financial literacy amongst university students, making complex concepts more approachable and engaging.
+
+---
+
+## Disclaimer
+
+This application is an **educational simulator with no commercial purposes**. The AI-generated analyses are orientative and do not constitute professional financial advice. I am not responsible for misuse of the information, errors in AI responses, or service availability.
+
+---
+
+## Final Thoughts
+
+Building FinanzSim has been an incredibly rewarding experience. Combining my passion for education technology with practical financial concepts has created something that I genuinely believe helps students learn.
+
+If you're a student, educator, or just curious about business finances, I'd love to hear your feedback!
