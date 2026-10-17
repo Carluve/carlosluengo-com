@@ -5,6 +5,7 @@ import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
 import LanguageSwitch from '~/components/common/LanguageSwitch.astro';
+import Search from '~/components/common/Search.astro';
 import { getLang, localizePath } from '~/i18n/utils';
 
 import { getHomePermalink } from '~/utils/permalinks';
@@ -92,7 +93,9 @@ const persistKey = `header-${Array.from(
           'xl:flex xl:justify-between': position !== 'center',
         },
         {
-          'xl:grid xl:grid-cols-3 xl:items-center': position === 'center',
+          // The menu takes its own width and the sides share the rest, so the
+          // actions on the right can never run into the last menu item.
+          'xl:grid xl:grid-cols-[1fr_auto_1fr] xl:items-center': position === 'center',
         },
         {
           'max-w-6xl': !isFullWidth,
@@ -104,6 +107,7 @@ const persistKey = `header-${Array.from(
           <Logo />
         </a>
         <div class="flex items-center xl:hidden">
+          <Search />
           <ToggleMenu controls="header-nav" />
         </div>
       </div>
@@ -173,6 +177,7 @@ const persistKey = `header-${Array.from(
         <div class="items-center flex justify-between w-full xl:w-auto">
           <div class="flex items-center gap-1">
             <span class="mr-1"><LanguageSwitch /></span>
+            <span class="hidden xl:inline-flex"><Search /></span>
             {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 xl:w-5 xl:h-5 xl:inline-block" />}
             {
               showRssFeed && (
@@ -201,6 +206,7 @@ const persistKey = `header-${Array.from(
       </div>
     </div>
   </header>
+  <Search variant="dialog" />
 </aw-header>
 
 <style>

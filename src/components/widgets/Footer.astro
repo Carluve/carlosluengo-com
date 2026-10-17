@@ -46,7 +46,7 @@ const t = useTranslations(lang);
               <>
                 {index !== 0 ? ' · ' : ''}
                 <a
-                  class="text-muted hover:text-link hover:underline transition duration-150 ease-in-out"
+                  class="inline-block py-1.5 md:py-0 text-muted hover:text-link hover:underline transition duration-150 ease-in-out"
                   href={href}
                   set:html={text}
                 />
@@ -62,9 +62,9 @@ const t = useTranslations(lang);
             {links && Array.isArray(links) && links.length > 0 && (
               <ul class="text-sm">
                 {links.map(({ text, href, ariaLabel }) => (
-                  <li class="mb-2">
+                  <li class="md:mb-2">
                     <a
-                      class="text-muted hover:text-link hover:underline transition duration-150 ease-in-out"
+                      class="inline-block py-1.5 md:py-0 text-muted hover:text-link hover:underline transition duration-150 ease-in-out"
                       href={href}
                       aria-label={ariaLabel}
                     >

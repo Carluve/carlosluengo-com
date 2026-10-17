@@ -14,3 +14,8 @@
 /llms-full.txt
   Content-Type: text/plain; charset=utf-8
   X-Robots-Tag: noindex, follow
+
+# Index for the site search (src/pages/search.json.ts), fetched on first open.
+/search.json
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: noindex

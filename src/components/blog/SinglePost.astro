@@ -180,4 +180,97 @@ const t = useTranslations(lang);
     }
   };
   document.addEventListener('astro:page-load', addCopyButtons);
+
+  // "#" link next to each section heading: it copies the URL of the section
+  // and puts the hash in the address bar without jumping.
+  const addHeadingAnchors = () => {
+    const en = document.documentElement.lang === 'en';
+    const label = en ? 'Copy the link to this section' : 'Copiar el enlace a esta sección';
+    const done = en ? 'Link copied' : 'Enlace copiado';
+    for (const heading of document.querySelectorAll<HTMLElement>('.aw-prose :is(h2, h3)[id]:not([data-anchor])')) {
+      heading.dataset.anchor = '';
+      const link = document.createElement('a');
+      link.className = 'aw-anchor';
+      link.href = `#${heading.id}`;
+      link.setAttribute('aria-label', label);
+      link.dataset.done = done;
+      link.textContent = '#';
+      link.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const url = `${location.origin}${location.pathname}#${heading.id}`;
+        history.replaceState(history.state, '', `#${heading.id}`);
+        heading.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        try {
+          await navigator.clipboard.writeText(url);
+          link.dataset.copied = '';
+          link.setAttribute('aria-label', done);
+          setTimeout(() => {
+            delete link.dataset.copied;
+            link.setAttribute('aria-label', label);
+          }, 1600);
+        } catch {
+          // Clipboard unavailable: the hash in the address bar is enough.
+        }
+      });
+      heading.append(link);
+    }
+  };
+  document.addEventListener('astro:page-load', addHeadingAnchors);
+
+  // Click to enlarge images that the column shows smaller than they are
+  // (wide screenshots, tall captures capped at 520px), in a native <dialog>.
+  const largestSource = (img: HTMLImageElement) => {
+    const candidates = (img.getAttribute('srcset') ?? '')
+      .split(',')
+      .map((part) => part.trim().split(/\s+/))
+      .filter(([url]) => url)
+      .map(([url, size]) => ({ url, w: parseInt(size ?? '', 10) || 0 }))
+      .sort((a, b) => b.w - a.w);
+    return candidates[0]?.url ?? img.currentSrc ?? img.src;
+  };
+
+  let viewer: HTMLDialogElement | undefined;
+  const openViewer = (img: HTMLImageElement) => {
+    if (!viewer || !viewer.isConnected) {
+      viewer = document.createElement('dialog');
+      viewer.className = 'aw-zoom-viewer';
+      viewer.innerHTML = '<img alt="" /><p></p>';
+      // Any click or key closes it: there is nothing else to do in the viewer.
+      viewer.addEventListener('click', () => viewer!.close());
+      viewer.addEventListener('close', () => document.documentElement.classList.remove('aw-modal-open'));
+      document.body.append(viewer);
+    }
+    const big = viewer.querySelector('img')!;
+    big.src = largestSource(img);
+    big.alt = img.alt;
+    viewer.querySelector('p')!.textContent = img.alt;
+    viewer.setAttribute('aria-label', img.alt || (document.documentElement.lang === 'en' ? 'Image' : 'Imagen'));
+    viewer.showModal();
+    document.documentElement.classList.add('aw-modal-open');
+  };
+
+  const addZoom = () => {
+    const label = document.documentElement.lang === 'en' ? 'Enlarge image' : 'Ampliar la imagen';
+    const check = (img: HTMLImageElement) => {
+      if (img.dataset.zoom !== undefined || img.closest('a, button, .not-prose')) return;
+      const shrunk = img.naturalWidth > img.clientWidth * 1.15 || img.naturalHeight > img.clientHeight * 1.15;
+      if (!shrunk || !img.clientWidth) return;
+      img.dataset.zoom = '';
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', img.alt ? `${label}: ${img.alt}` : label);
+      img.addEventListener('click', () => openViewer(img));
+      img.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openViewer(img);
+        }
+      });
+    };
+    for (const img of document.querySelectorAll<HTMLImageElement>('.aw-prose img')) {
+      if (img.complete) check(img);
+      else img.addEventListener('load', () => check(img), { once: true });
+    }
+  };
+  document.addEventListener('astro:page-load', addZoom);
 </script>

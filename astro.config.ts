@@ -67,8 +67,9 @@ export default defineConfig({
     sitemap({
       // Spanish at /, English under /en: each URL lists its translation (xhtml:link).
       i18n: { defaultLocale: 'es', locales: { es: 'es-ES', en: 'en-GB' } },
-      // Markdown and llms.txt twins are for answer engines, not for the sitemap.
-      filter: (page) => !/\.(md|txt)$/.test(page) && !/\/404\/?$/.test(page),
+      // Markdown and llms.txt twins are for answer engines, and search.json for
+      // the site search: none of them belong in the sitemap.
+      filter: (page) => !/\.(md|txt|json)$/.test(page) && !/\/404\/?$/.test(page),
     }),
     mdx(),
     icon({

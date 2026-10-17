@@ -54,6 +54,12 @@ const metadata = {
     <Headline subtitle={categoryDescription(category.slug, label, lang)}>{label}</Headline>
     <BlogOverview active={category.slug} />
     <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    <Pagination
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+      currentUrl={page.url.current}
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+    />
   </section>
 </Layout>
