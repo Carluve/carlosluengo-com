@@ -8,32 +8,75 @@ export interface Props {
   nextUrl?: string;
   prevText?: string;
   nextText?: string;
+  /** Current page URL and position, for the numbered links in between. */
+  currentUrl?: string;
+  currentPage?: number;
+  lastPage?: number;
 }
 
 // `prevUrl`/`nextUrl` come from Astro's `page.url` and already include `base`
 // and honour `trailingSlash`, so they must not go through `getPermalink()`
 // (that would prefix `base` a second time, see #629).
-const { prevUrl, nextUrl, prevText, nextText } = Astro.props;
+const { prevUrl, nextUrl, prevText, nextText, currentUrl, currentPage = 1, lastPage = 1 } = Astro.props;
 const lang = getLang(Astro);
 const t = useTranslations(lang);
 const prevLabel = prevText ?? t('blog.newer');
 const nextLabel = nextText ?? t('blog.older');
+
+// Page 1 is the bare list URL and page n is `<list>/n` (trailingSlash 'never').
+const listUrl = currentUrl && currentPage > 1 ? currentUrl.replace(/\/\d+$/, '') : currentUrl;
+const pageUrl = (n: number) => (n === 1 ? listUrl : `${listUrl}/${n}`);
+// First, last and the neighbours of the current page; gaps become an ellipsis.
+const numbers = listUrl
+  ? Array.from({ length: lastPage }, (_, i) => i + 1).filter(
+      (n) => n === 1 || n === lastPage || Math.abs(n - currentPage) <= 1
+    )
+  : [];
 ---
 
 {
   (prevUrl || nextUrl) && (
-    <div class="container flex">
-      <div class="flex flex-row mx-auto container justify-between">
-        <Button variant="tertiary" class={`mr-2 ${!prevUrl ? 'invisible' : ''}`} href={prevUrl}>
-          <Icon name="tabler:chevron-left" class="w-6 h-6" />
-          <p class="ml-2">{prevLabel}</p>
-        </Button>
+    <nav class="mt-10 flex items-center justify-between gap-2" aria-label={t('blog.pagination')}>
+      <Button variant="tertiary" class={`${!prevUrl ? 'invisible' : ''}`} href={prevUrl}>
+        <Icon name="tabler:chevron-left" class="w-5 h-5" aria-hidden="true" />
+        <span class="hidden sm:inline">{prevLabel}</span>
+        <span class="sr-only sm:hidden">{prevLabel}</span>
+      </Button>
 
-        <Button variant="tertiary" class={`${!nextUrl ? 'invisible' : ''}`} href={nextUrl}>
-          <span class="mr-2">{nextLabel}</span>
-          <Icon name="tabler:chevron-right" class="w-6 h-6" />
-        </Button>
-      </div>
-    </div>
+      {numbers.length > 1 && (
+        <ol class="flex items-center gap-1">
+          {numbers.map((n, i) => (
+            <>
+              {i > 0 && n - numbers[i - 1] > 1 && (
+                <li class="px-1 text-muted" aria-hidden="true">
+                  …
+                </li>
+              )}
+              <li>
+                <a
+                  href={pageUrl(n)}
+                  aria-current={n === currentPage ? 'page' : undefined}
+                  aria-label={`${t('blog.page')} ${n}`}
+                  class:list={[
+                    'inline-flex h-10 min-w-10 items-center justify-center rounded-lg px-3 text-sm font-medium tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none',
+                    n === currentPage
+                      ? 'bg-primary text-white'
+                      : 'border border-line bg-surface text-default hover:border-primary/40 hover:text-link',
+                  ]}
+                >
+                  {n}
+                </a>
+              </li>
+            </>
+          ))}
+        </ol>
+      )}
+
+      <Button variant="tertiary" class={`${!nextUrl ? 'invisible' : ''}`} href={nextUrl}>
+        <span class="hidden sm:inline">{nextLabel}</span>
+        <span class="sr-only sm:hidden">{nextLabel}</span>
+        <Icon name="tabler:chevron-right" class="w-5 h-5" aria-hidden="true" />
+      </Button>
+    </nav>
   )
 }

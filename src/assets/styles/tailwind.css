@@ -572,3 +572,166 @@ h1.font-heading {
   font-weight: 300;
   letter-spacing: -0.015em;
 }
+
+/* "#" link after each post heading: hidden until the heading is hovered or the
+   link focused, always faintly visible on touch screens. */
+.aw-anchor {
+  position: relative;
+  margin-left: 0.4em;
+  padding: 0 0.15em;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  color: var(--aw-color-text-muted) !important;
+  text-decoration: none !important;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+.aw-prose :is(h2, h3):hover .aw-anchor,
+.aw-anchor:focus-visible,
+.aw-anchor[data-copied] {
+  opacity: 1;
+}
+.aw-anchor:hover {
+  color: var(--aw-color-primary) !important;
+}
+.aw-anchor:focus-visible {
+  outline: 2px solid var(--aw-color-primary);
+  outline-offset: 2px;
+}
+.aw-anchor[data-copied]::after {
+  content: attr(data-done);
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  top: 50%;
+  translate: 0 -50%;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  background: var(--aw-color-text-heading);
+  padding: 0.125rem 0.5rem;
+  font-family: var(--aw-font-sans, ui-sans-serif), system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: normal;
+  color: var(--aw-color-bg-page);
+}
+@media (hover: none) {
+  .aw-anchor {
+    opacity: 0.45;
+  }
+}
+
+/* Images shown smaller than they are open in a viewer (SinglePost.astro). */
+.aw-prose img[data-zoom] {
+  cursor: zoom-in;
+  transition: box-shadow 150ms ease-out;
+}
+.aw-prose img[data-zoom]:hover {
+  box-shadow: 0 8px 24px -8px rgb(15 23 42 / 0.25);
+}
+.aw-prose img[data-zoom]:focus-visible {
+  outline: 2px solid var(--aw-color-primary);
+  outline-offset: 3px;
+}
+.aw-zoom-viewer {
+  max-width: none;
+  max-height: none;
+  width: 100vw;
+  height: 100dvh;
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  background: transparent;
+  cursor: zoom-out;
+}
+.aw-zoom-viewer[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  animation: aw-fade-in 160ms ease-out;
+}
+.aw-zoom-viewer::backdrop {
+  background: rgb(2 6 23 / 0.85);
+  backdrop-filter: blur(4px);
+}
+.aw-zoom-viewer img {
+  max-width: min(100%, 1600px);
+  max-height: calc(100dvh - 5rem);
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 24px 64px rgb(0 0 0 / 0.4);
+}
+.aw-zoom-viewer p {
+  max-width: 48rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(226 232 240);
+}
+.aw-zoom-viewer p:empty {
+  display: none;
+}
+@keyframes aw-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aw-zoom-viewer[open] {
+    animation: none;
+  }
+}
+
+html.aw-modal-open {
+  overflow: hidden;
+}
+
+/* Back to top (BackToTop.astro): appears after a couple of screens. */
+.aw-to-top {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--aw-color-border);
+  background: color-mix(in srgb, var(--aw-color-surface) 88%, transparent);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px -6px rgb(15 23 42 / 0.25);
+  color: var(--aw-color-text-heading);
+  opacity: 0;
+  translate: 0 0.5rem;
+  pointer-events: none;
+  transition:
+    opacity 200ms ease-out,
+    translate 200ms ease-out,
+    border-color 150ms ease-out;
+}
+.aw-to-top[data-show] {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+.aw-to-top:hover {
+  border-color: color-mix(in oklab, var(--aw-color-primary) 45%, transparent);
+  color: var(--aw-color-primary);
+}
+.aw-to-top:focus-visible {
+  outline: 2px solid var(--aw-color-primary);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .aw-to-top {
+    transition: opacity 120ms linear;
+    translate: none;
+  }
+}
+@media print {
+  .aw-to-top,
+  .aw-anchor {
+    display: none;
+  }
+}

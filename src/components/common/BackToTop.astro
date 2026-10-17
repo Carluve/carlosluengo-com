@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getLang, useTranslations } from '~/i18n/utils';
+
+const t = useTranslations(getLang(Astro));
+---
+
+<button type="button" class="aw-to-top" aria-label={t('top.label')} data-aw-to-top>
+  <Icon name="tabler:arrow-up" class="h-5 w-5" aria-hidden="true" />
+</button>
+
+<script>
+  // Shown once the visitor is a couple of screens down and scrolling back up,
+  // so it never covers content while reading forward. One listener for the
+  // whole session: the button is looked up again after each navigation.
+  let lastY = window.scrollY;
+  let ticking = false;
+  const update = () => {
+    const button = document.querySelector<HTMLElement>('[data-aw-to-top]');
+    const y = window.scrollY;
+    const far = y > window.innerHeight * 2;
+    const nearEnd = y + window.innerHeight >= document.documentElement.scrollHeight - 80;
+    if (button) button.toggleAttribute('data-show', far && (y < lastY || nearEnd));
+    lastY = y;
+    ticking = false;
+  };
+  document.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+  document.addEventListener('click', (event) => {
+    if (!(event.target as Element | null)?.closest?.('[data-aw-to-top]')) return;
+    const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+    // Hand keyboard focus back to the start of the content.
+    document.querySelector<HTMLElement>('#contenido')?.focus({ preventScroll: true });
+  });
+  document.addEventListener('astro:page-load', () => {
+    lastY = window.scrollY;
+    update();
+  });
+</script>

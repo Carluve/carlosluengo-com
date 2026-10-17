@@ -1,0 +1,494 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getLang, useTranslations } from '~/i18n/utils';
+
+export interface Props {
+  /** `button` opens the search; `dialog` is the dialog itself (once, in the header). */
+  variant?: 'button' | 'dialog';
+}
+
+const { variant = 'button' } = Astro.props;
+const lang = getLang(Astro);
+const t = useTranslations(lang);
+const strings = {
+  pages: t('search.pages'),
+  posts: t('search.posts'),
+  recent: t('search.recent'),
+  empty: t('search.empty'),
+  results: t('search.results'),
+  error: t('search.error'),
+};
+---
+
+{
+  variant === 'button' ? (
+    <button
+      type="button"
+      class="inline-flex items-center rounded-lg p-2.5 text-muted hover:bg-primary/5 hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      aria-label={t('search.label')}
+      aria-haspopup="dialog"
+      aria-keyshortcuts="Control+K Meta+K /"
+      title={`${t('search.label')} (/)`}
+      data-aw-search-open
+    >
+      <Icon name="tabler:search" class="h-6 w-6 xl:h-5 xl:w-5" aria-hidden="true" />
+    </button>
+  ) : (
+    <aw-search data-lang={lang} data-strings={JSON.stringify(strings)}>
+      <dialog class="aw-search" aria-label={t('search.label')}>
+        <div class="aw-search-panel">
+          <div class="aw-search-bar">
+            <Icon name="tabler:search" class="h-5 w-5 shrink-0 text-muted" aria-hidden="true" />
+            <input
+              type="search"
+              role="combobox"
+              aria-expanded="true"
+              aria-controls="aw-search-list"
+              aria-autocomplete="list"
+              aria-label={t('search.label')}
+              placeholder={t('search.placeholder')}
+              autocomplete="off"
+              spellcheck="false"
+              enterkeyhint="go"
+            />
+            <form method="dialog">
+              <button type="submit" class="aw-kbd aw-search-esc" aria-label={t('search.close')}>
+                <span class="aw-on-hover">Esc</span>
+                <span class="aw-on-touch">{t('search.close')}</span>
+              </button>
+            </form>
+          </div>
+          <div id="aw-search-list" class="aw-search-list" role="listbox" aria-label={t('search.label')} />
+          <p class="aw-search-foot" aria-hidden="true">
+            <span>
+              <kbd class="aw-kbd">↑</kbd> <kbd class="aw-kbd">↓</kbd> {t('search.hint')}
+            </span>
+            <span>
+              <kbd class="aw-kbd">↵</kbd> {t('search.select')}
+            </span>
+          </p>
+          <p class="sr-only" aria-live="polite" data-aw-search-status />
+        </div>
+      </dialog>
+    </aw-search>
+  )
+}
+
+<script>
+  interface Entry {
+    type: 'page' | 'post';
+    lang: 'es' | 'en';
+    title: string;
+    excerpt: string;
+    url: string;
+    date?: string;
+    category?: { es: string; en: string };
+    tags?: string[];
+    headings?: string[];
+  }
+
+  // Lower case without accents, so "inteligencia artifical" finds "Inteligencia Artificial"
+  // and "tecnologia" finds "tecnología".
+  const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+  const escape = (s: string) =>
+    s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+
+  // Terms of one or two letters ("ia", "ai") only match at the start of a word,
+  // or "ia" would find "docencia" and "financial".
+  const isWordStart = (text: string, i: number) => i === 0 || !/[a-z0-9]/.test(text[i - 1]);
+  const positions = (text: string, term: string) => {
+    const found: number[] = [];
+    for (let i = text.indexOf(term); i !== -1; i = text.indexOf(term, i + term.length)) {
+      if (term.length > 2 || isWordStart(text, i)) found.push(i);
+    }
+    return found;
+  };
+  const has = (text: string, term: string) => positions(text, term).length > 0;
+
+  // Wrap the query terms in <mark>. Folding keeps string length for Latin text,
+  // so indexes in the folded copy map back onto the original.
+  const highlight = (text: string, terms: string[]) => {
+    if (!terms.length) return escape(text);
+    const folded = fold(text);
+    const ranges: Array<[number, number]> = [];
+    for (const term of terms) {
+      for (const i of positions(folded, term)) ranges.push([i, i + term.length]);
+    }
+    if (!ranges.length || folded.length !== text.length) return escape(text);
+    ranges.sort((a, b) => a[0] - b[0]);
+    let out = '';
+    let pos = 0;
+    for (const [start, end] of ranges) {
+      if (start < pos) continue;
+      out += escape(text.slice(pos, start)) + '<mark>' + escape(text.slice(start, end)) + '</mark>';
+      pos = end;
+    }
+    return out + escape(text.slice(pos));
+  };
+
+  class AwSearch extends HTMLElement {
+    private dialog!: HTMLDialogElement;
+    private input!: HTMLInputElement;
+    private list!: HTMLElement;
+    private status!: HTMLElement;
+    private index?: Promise<Entry[]>;
+    private active = -1;
+    private lastFocus: HTMLElement | null = null;
+
+    connectedCallback() {
+      this.dialog = this.querySelector('dialog')!;
+      this.input = this.querySelector('input')!;
+      this.list = this.querySelector('[role="listbox"]')!;
+      this.status = this.querySelector('[data-aw-search-status]')!;
+
+      this.input.addEventListener('input', () => this.render());
+      this.input.addEventListener('keydown', (e) => this.onKey(e));
+      // Click on the backdrop (outside the panel) closes the dialog.
+      this.dialog.addEventListener('click', (e) => {
+        if (e.target === this.dialog) this.dialog.close();
+      });
+      this.dialog.addEventListener('close', () => {
+        document.documentElement.classList.remove('aw-modal-open');
+        this.lastFocus?.focus?.();
+      });
+      this.list.addEventListener('click', (e) => {
+        if ((e.target as Element).closest('a')) this.dialog.close();
+      });
+      this.list.addEventListener('pointermove', (e) => {
+        const option = (e.target as Element).closest<HTMLElement>('[role="option"]');
+        if (option) this.setActive(Number(option.dataset.index));
+      });
+    }
+
+    get lang() {
+      return (document.documentElement.lang === 'en' ? 'en' : 'es') as 'es' | 'en';
+    }
+
+    get strings(): Record<string, string> {
+      return JSON.parse(this.dataset.strings ?? '{}');
+    }
+
+    open() {
+      if (this.dialog.open) return;
+      this.lastFocus = document.activeElement as HTMLElement | null;
+      this.index ??= fetch('/search.json')
+        .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+        .then((data: { pages: Entry[]; posts: Entry[] }) => [...data.pages, ...data.posts]);
+      this.dialog.showModal();
+      document.documentElement.classList.add('aw-modal-open');
+      this.input.select();
+      this.render();
+    }
+
+    private async render() {
+      let entries: Entry[];
+      try {
+        entries = await this.index!;
+      } catch {
+        this.list.innerHTML = `<p class="aw-search-empty">${escape(this.strings.error)}</p>`;
+        return;
+      }
+      const lang = this.lang;
+      const query = fold(this.input.value.trim());
+      const terms = query.split(/\s+/).filter(Boolean);
+
+      let pages: Entry[];
+      let posts: Entry[];
+      if (!terms.length) {
+        pages = [];
+        posts = entries.filter((e) => e.type === 'post').slice(0, 6);
+      } else {
+        const scored = entries
+          .filter((e) => e.type === 'post' || e.lang === lang)
+          .map((e) => ({ e, score: this.score(e, terms, lang) }))
+          .filter((r) => r.score > 0)
+          .sort((a, b) => b.score - a.score);
+        pages = scored.filter((r) => r.e.type === 'page').map((r) => r.e);
+        posts = scored
+          .filter((r) => r.e.type === 'post')
+          .map((r) => r.e)
+          .slice(0, 12);
+      }
+
+      const s = this.strings;
+      let i = 0;
+      const option = (e: Entry) => {
+        const meta = [e.category?.[lang], e.date].filter(Boolean).join(' · ');
+        const html = `<a role="option" id="aw-search-opt-${i}" data-index="${i}" href="${escape(e.url)}" class="aw-search-item" aria-selected="false"${e.lang !== lang ? ` lang="${e.lang}"` : ''}>
+          <span class="aw-search-title">${highlight(e.title, terms)}</span>
+          ${e.excerpt ? `<span class="aw-search-excerpt">${highlight(e.excerpt, terms)}</span>` : ''}
+          ${meta ? `<span class="aw-search-meta">${escape(meta)}</span>` : ''}
+        </a>`;
+        i++;
+        return html;
+      };
+      const group = (label: string, items: Entry[]) =>
+        items.length
+          ? `<div role="group" aria-label="${escape(label)}"><p class="aw-search-group" aria-hidden="true">${escape(label)}</p>${items.map(option).join('')}</div>`
+          : '';
+
+      if (terms.length && !pages.length && !posts.length) {
+        this.list.innerHTML = `<p class="aw-search-empty">${escape(s.empty)} “${escape(this.input.value.trim())}”</p>`;
+        this.status.textContent = `${s.empty} ${this.input.value.trim()}`;
+        this.setActive(-1);
+        return;
+      }
+      this.list.innerHTML = group(s.pages, pages) + group(terms.length ? s.posts : s.recent, posts);
+      this.list.scrollTop = 0;
+      this.status.textContent = terms.length ? `${pages.length + posts.length} ${s.results}` : '';
+      this.setActive(terms.length ? 0 : -1);
+    }
+
+    // Title hits weigh most, then category and tags, then the excerpt and headings.
+    // Every term has to appear somewhere.
+    private score(e: Entry, terms: string[], lang: 'es' | 'en') {
+      const title = fold(e.title);
+      const meta = fold([e.category?.[lang] ?? '', ...(e.tags ?? [])].join(' '));
+      const body = fold([e.excerpt, ...(e.headings ?? [])].join(' '));
+      let score = 0;
+      for (const term of terms) {
+        const inTitle = positions(title, term);
+        const s =
+          (inTitle.length ? 10 + (inTitle.some((i) => isWordStart(title, i)) ? 5 : 0) : 0) +
+          (has(meta, term) ? 4 : 0) +
+          (has(body, term) ? 2 : 0);
+        if (!s) return 0;
+        score += s;
+      }
+      return score + (e.type === 'page' ? 3 : 0);
+    }
+
+    private options() {
+      return [...this.list.querySelectorAll<HTMLAnchorElement>('[role="option"]')];
+    }
+
+    private setActive(index: number) {
+      const options = this.options();
+      this.active = options.length ? Math.max(-1, Math.min(index, options.length - 1)) : -1;
+      options.forEach((o, i) => o.setAttribute('aria-selected', String(i === this.active)));
+      const current = options[this.active];
+      if (current) {
+        this.input.setAttribute('aria-activedescendant', current.id);
+        current.scrollIntoView({ block: 'nearest' });
+      } else {
+        this.input.removeAttribute('aria-activedescendant');
+      }
+    }
+
+    private onKey(e: KeyboardEvent) {
+      const count = this.options().length;
+      if (e.key === 'Escape') {
+        // A search input spends the first Escape clearing itself; close at once.
+        e.preventDefault();
+        this.dialog.close();
+      } else if (e.key === 'ArrowDown' && count) {
+        e.preventDefault();
+        this.setActive((this.active + 1) % count);
+      } else if (e.key === 'ArrowUp' && count) {
+        e.preventDefault();
+        this.setActive(this.active <= 0 ? count - 1 : this.active - 1);
+      } else if (e.key === 'Enter') {
+        const option = this.options()[Math.max(this.active, 0)];
+        if (!option) return;
+        e.preventDefault();
+        // A real click keeps client-side navigation (view transitions) and
+        // lets Ctrl/Cmd+Enter open the result in a new tab.
+        option.dispatchEvent(
+          new MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: e.ctrlKey, metaKey: e.metaKey })
+        );
+      }
+    }
+  }
+
+  if (!customElements.get('aw-search')) {
+    customElements.define('aw-search', AwSearch);
+
+    const search = () => document.querySelector<AwSearch>('aw-search');
+    const typing = (el: EventTarget | null) =>
+      el instanceof HTMLElement && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
+
+    document.addEventListener('click', (e) => {
+      if ((e.target as Element | null)?.closest?.('[data-aw-search-open]')) search()?.open();
+    });
+    // Ctrl/⌘ K anywhere, and "/" when not typing, open the search.
+    document.addEventListener('keydown', (e) => {
+      if ((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey) && !e.altKey) {
+        e.preventDefault();
+        search()?.open();
+      } else if (e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !typing(e.target)) {
+        e.preventDefault();
+        search()?.open();
+      }
+    });
+    document.addEventListener('astro:before-swap', () => search()?.querySelector('dialog')?.close());
+  }
+</script>
+
+<style is:global>
+  .aw-kbd {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--aw-color-border);
+    border-radius: 0.375rem;
+    background: var(--aw-color-bg-page);
+    padding: 0.0625rem 0.375rem;
+    font-family: var(--aw-font-sans, ui-sans-serif), system-ui, sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: var(--aw-color-text-muted);
+    white-space: nowrap;
+  }
+
+  .aw-search {
+    width: min(40rem, calc(100vw - 2rem));
+    max-width: none;
+    max-height: min(36rem, calc(100dvh - 6rem));
+    margin: 12vh auto auto;
+    padding: 0;
+    border: 1px solid var(--aw-color-border);
+    border-radius: 0.875rem;
+    background: var(--aw-color-surface);
+    color: var(--aw-color-text-default);
+    box-shadow:
+      0 24px 64px -16px rgb(15 23 42 / 0.35),
+      0 2px 8px rgb(15 23 42 / 0.08);
+    overflow: hidden;
+  }
+  .aw-search[open] {
+    display: flex;
+    animation: aw-search-in 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .aw-search::backdrop {
+    background: rgb(15 23 42 / 0.45);
+    backdrop-filter: blur(3px);
+  }
+  @keyframes aw-search-in {
+    from {
+      opacity: 0;
+      transform: translateY(-6px) scale(0.99);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .aw-search[open] {
+      animation: none;
+    }
+  }
+  @media (max-width: 639px) {
+    .aw-search {
+      margin-top: 0.75rem;
+      max-height: calc(100dvh - 1.5rem);
+    }
+  }
+  .aw-search-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+  }
+  .aw-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--aw-color-border);
+  }
+  .aw-search-bar input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-size: 1rem;
+    color: var(--aw-color-text-heading);
+    outline: none;
+    box-shadow: none;
+  }
+  .aw-search-bar input::-webkit-search-cancel-button {
+    display: none;
+  }
+  .aw-search-esc {
+    cursor: pointer;
+    min-height: 1.75rem;
+  }
+  .aw-on-touch {
+    display: none;
+  }
+  @media (hover: none) {
+    .aw-on-hover {
+      display: none;
+    }
+    .aw-on-touch {
+      display: inline;
+    }
+  }
+  .aw-search-list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.5rem;
+  }
+  .aw-search-group {
+    padding: 0.625rem 0.75rem 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--aw-color-text-muted);
+  }
+  .aw-search-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.75rem;
+    text-decoration: none;
+    scroll-margin: 0.5rem;
+  }
+  .aw-search-item[aria-selected='true'] {
+    background: color-mix(in oklab, var(--aw-color-primary) 9%, transparent);
+    box-shadow: inset 2px 0 0 var(--aw-color-primary);
+  }
+  .aw-search-title {
+    font-weight: 500;
+    color: var(--aw-color-text-heading);
+  }
+  .aw-search-excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--aw-color-text-muted);
+  }
+  .aw-search-meta {
+    font-size: 0.75rem;
+    color: var(--aw-color-text-muted);
+  }
+  .aw-search-item mark {
+    border-radius: 0.125rem;
+    background: color-mix(in oklab, var(--aw-color-primary) 18%, transparent);
+    color: inherit;
+  }
+  .aw-search-empty {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--aw-color-text-muted);
+  }
+  .aw-search-foot {
+    display: flex;
+    gap: 1rem;
+    padding: 0.625rem 1rem;
+    border-top: 1px solid var(--aw-color-border);
+    font-size: 0.75rem;
+    color: var(--aw-color-text-muted);
+  }
+  @media (hover: none) {
+    .aw-search-foot {
+      display: none;
+    }
+  }
+</style>

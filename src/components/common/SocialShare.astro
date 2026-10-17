@@ -55,6 +55,32 @@ const t = useTranslations(lang);
     data-aw-text={text}
     ><Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
   </button>
+  <button
+    type="button"
+    class="aw-share-copy rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
+    title={t('blog.copyLink')}
+    aria-label={t('blog.copyLink')}
+    data-aw-copy-link={url}
+    data-label={t('blog.copyLink')}
+    data-done={t('blog.linkCopied')}
+    ><Icon name="tabler:link" class="h-5 w-5" aria-hidden="true" /><Icon
+      name="tabler:check"
+      class="h-5 w-5"
+      aria-hidden="true"
+    />
+  </button>
+  <button
+    type="button"
+    class="rounded-md p-1.5 text-muted transition-colors hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
+    title={t('blog.nativeShare')}
+    aria-label={t('blog.nativeShare')}
+    data-aw-native-share
+    data-aw-url={url}
+    data-aw-text={text}
+    hidden
+    ><Icon name="tabler:share-2" class="h-5 w-5" aria-hidden="true" />
+  </button>
+  <span class="sr-only" aria-live="polite" data-aw-share-status></span>
 </aw-social-share>
 
 <script>
@@ -82,6 +108,35 @@ const t = useTranslations(lang);
           link.click();
         });
       });
+
+      const status = this.querySelector<HTMLElement>('[data-aw-share-status]');
+      const copy = this.querySelector<HTMLElement>('[data-aw-copy-link]');
+      copy?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(copy.dataset.awCopyLink ?? location.href);
+        } catch {
+          return;
+        }
+        copy.dataset.copied = '';
+        copy.setAttribute('aria-label', copy.dataset.done ?? '');
+        if (status) status.textContent = copy.dataset.done ?? '';
+        setTimeout(() => {
+          delete copy.dataset.copied;
+          copy.setAttribute('aria-label', copy.dataset.label ?? '');
+          if (status) status.textContent = '';
+        }, 1800);
+      });
+
+      // The system share sheet, where there is one (phones, Safari, Edge).
+      const native = this.querySelector<HTMLElement>('[data-aw-native-share]');
+      if (native && 'share' in navigator) {
+        native.hidden = false;
+        native.addEventListener('click', () => {
+          navigator.share({ title: native.dataset.awText, url: native.dataset.awUrl }).catch(() => {
+            // Dismissed by the visitor.
+          });
+        });
+      }
     }
   }
 
@@ -95,5 +150,13 @@ const t = useTranslations(lang);
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
+  }
+  .aw-share-copy > :global(svg:last-child),
+  .aw-share-copy[data-copied] > :global(svg:first-child) {
+    display: none;
+  }
+  .aw-share-copy[data-copied] > :global(svg:last-child) {
+    display: block;
+    color: var(--aw-color-primary);
   }
 </style>
