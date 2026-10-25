@@ -34,6 +34,7 @@ export const projects: Project[] = [
     image: 'media:projects/browserquest.png',
     demo: 'https://browserquest.carluve.workers.dev',
     repo: 'https://github.com/Carluve/BrowserQuest',
+    post: '/blog/browserquest-en-workers/',
     basedOn: { name: 'mozilla/BrowserQuest', url: 'https://github.com/mozilla/BrowserQuest' },
     featured: true,
   },
