@@ -29,6 +29,18 @@ export const preferredLang = (header: string | null): Lang | undefined => {
   return ranked.find((entry) => entry.base === 'es' || entry.base === 'en')?.base as Lang | undefined;
 };
 
+/**
+ * Agent discovery on the home page (RFC 8288 + RFC 9727 §3): the API catalog,
+ * the OpenAPI of the read-only content endpoints, llms.txt and the Markdown
+ * twin. /en gets the same from public/_headers.
+ */
+export const HOME_LINK = [
+  '</.well-known/api-catalog>; rel="api-catalog"',
+  '</openapi.json>; rel="service-desc"; type="application/openapi+json"',
+  '</llms.txt>; rel="service-doc"; type="text/plain"',
+  '</index.md>; rel="describedby"; type="text/markdown"',
+].join(', ');
+
 const cookieLang = (header: string | null): Lang | undefined => {
   const match = header?.match(/(?:^|;\s*)lang=(es|en)\b/);
   return match?.[1] as Lang | undefined;
@@ -47,12 +59,14 @@ export default {
             Location: `/en${url.search}`,
             'Cache-Control': 'private, no-store',
             Vary: 'Accept-Language, Cookie',
+            Link: HOME_LINK,
           },
         });
       }
       const response = await env.ASSETS.fetch(request);
       const headers = new Headers(response.headers);
       headers.append('Vary', 'Accept-Language, Cookie');
+      headers.set('Link', HOME_LINK);
       return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
     }
     return env.ASSETS.fetch(request);

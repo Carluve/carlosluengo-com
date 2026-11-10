@@ -32,6 +32,14 @@ test('the lang cookie wins over the browser', async () => {
   assert.equal(chosenEn.headers.get('Location'), '/en');
 });
 
+test('the home advertises the API catalog in a Link header', async () => {
+  for (const res of [await get(), await get({ 'Accept-Language': 'en-GB' })]) {
+    const link = res.headers.get('Link') ?? '';
+    assert.match(link, /<\/\.well-known\/api-catalog>; rel="api-catalog"/);
+    assert.match(link, /rel="service-desc"/);
+  }
+});
+
 test('other paths are untouched', async () => {
   const blog = await get({ 'Accept-Language': 'en-US' }, '/blog');
   assert.equal(blog.status, 200);

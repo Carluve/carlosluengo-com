@@ -14,3 +14,17 @@
 /llms-full.txt
   Content-Type: text/plain; charset=utf-8
   X-Robots-Tag: noindex, follow
+
+# Agent discovery (RFC 9727): API catalog -> OpenAPI of the read-only
+# content endpoints above. The home `/` gets the same Link header from
+# worker/index.ts, since it runs worker-first.
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+  Access-Control-Allow-Origin: *
+
+/openapi.json
+  Content-Type: application/openapi+json
+  Access-Control-Allow-Origin: *
+
+/en
+  Link: </.well-known/api-catalog>; rel="api-catalog", </openapi.json>; rel="service-desc"; type="application/openapi+json", </llms.txt>; rel="service-doc"; type="text/plain", </en/index.md>; rel="describedby"; type="text/markdown"

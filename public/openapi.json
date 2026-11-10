@@ -1,0 +1,100 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "carlosluengo.com content",
+    "version": "1.0.0",
+    "summary": "Read-only, unauthenticated access to the site's pages and posts as Markdown, plus llms.txt and RSS.",
+    "description": "Every page and post on carlosluengo.com has a Markdown twin, the same text an answer engine reads. No authentication, no rate plans, GET only. Spanish is the default; English pages live under /en.",
+    "contact": { "name": "Carlos Luengo Vera", "url": "https://carlosluengo.com/contact" }
+  },
+  "servers": [{ "url": "https://carlosluengo.com" }],
+  "paths": {
+    "/{page}.md": {
+      "get": {
+        "operationId": "getPageMarkdown",
+        "summary": "A main page as Markdown (Spanish)",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "enum": ["index", "about", "academia", "developer", "contact"] }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The page as Markdown",
+            "content": { "text/markdown": { "schema": { "type": "string" } } }
+          },
+          "404": { "description": "No such page" }
+        }
+      }
+    },
+    "/en/{page}.md": {
+      "get": {
+        "operationId": "getPageMarkdownEn",
+        "summary": "A main page as Markdown (English)",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "enum": ["index", "about", "academia", "developer", "contact"] }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The page as Markdown",
+            "content": { "text/markdown": { "schema": { "type": "string" } } }
+          },
+          "404": { "description": "No such page" }
+        }
+      }
+    },
+    "/blog/{slug}.md": {
+      "get": {
+        "operationId": "getPostMarkdown",
+        "summary": "A blog post as Markdown",
+        "description": "Slugs are listed in /llms.txt and /rss.xml.",
+        "parameters": [{ "name": "slug", "in": "path", "required": true, "schema": { "type": "string" } }],
+        "responses": {
+          "200": {
+            "description": "The post as Markdown",
+            "content": { "text/markdown": { "schema": { "type": "string" } } }
+          },
+          "404": { "description": "No such post" }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "operationId": "getLlmsTxt",
+        "summary": "Site summary and index of Markdown links for language models",
+        "responses": {
+          "200": { "description": "llms.txt", "content": { "text/plain": { "schema": { "type": "string" } } } }
+        }
+      }
+    },
+    "/llms-full.txt": {
+      "get": {
+        "operationId": "getLlmsFullTxt",
+        "summary": "The full text of the site in one file",
+        "responses": {
+          "200": { "description": "llms-full.txt", "content": { "text/plain": { "schema": { "type": "string" } } } }
+        }
+      }
+    },
+    "/rss.xml": {
+      "get": {
+        "operationId": "getRss",
+        "summary": "RSS feed of blog posts",
+        "responses": {
+          "200": {
+            "description": "RSS 2.0 feed",
+            "content": { "application/rss+xml": { "schema": { "type": "string" } } }
+          }
+        }
+      }
+    }
+  }
+}
