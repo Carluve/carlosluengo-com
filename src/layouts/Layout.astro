@@ -14,6 +14,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import Intersect from '~/components/common/Intersect.astro';
+import ModeToggle from '~/components/common/ModeToggle.astro';
 
 // Comment the line below to disable View Transitions
 import { ClientRouter } from 'astro:transitions';
@@ -53,6 +54,15 @@ const absolute = (path: string) => new URL(path, Astro.site).toString().replace(
 <!doctype html>
 <html lang={lang} dir={textDirection}>
   <head>
+    <script is:inline>
+      // Human/Machine view (ModeToggle.astro): set before first paint so the
+      // machine view doesn't flash on load.
+      try {
+        if (localStorage.getItem('mode') === 'machine') document.documentElement.dataset.mode = 'machine';
+      } catch {
+        /* default: human */
+      }
+    </script>
     <CommonMeta />
     <meta name="author" content="Carlos Luengo Vera" />
     <SiteSchema />
@@ -90,6 +100,8 @@ const absolute = (path: string) => new URL(path, Astro.site).toString().replace(
     <slot />
 
     <Intersect />
+
+    {markdownHref && <ModeToggle markdownHref={markdownHref} lang={lang} />}
 
     <script>
       // Feed the pointer position to `.aw-spotlight` cards (see tailwind.css).

@@ -1,0 +1,309 @@
+---
+// Human / Machine view switch, pinned to the bottom centre of the viewport
+// (after the one on cloudflare.com/connect). "Machine" swaps the page for its
+// Markdown twin (the `<link rel="alternate" type="text/markdown">` that
+// Layout.astro already emits), i.e. what an answer engine reads.
+//
+// State: `data-mode="human|machine"` on <html>, remembered in
+// localStorage['mode']. The inline head script in Layout.astro sets it before
+// first paint; this component re-applies it after every ClientRouter swap.
+
+export interface Props {
+  markdownHref: string;
+  lang: 'es' | 'en';
+}
+
+const { markdownHref, lang } = Astro.props;
+
+const t =
+  lang === 'en'
+    ? {
+        group: 'View mode',
+        machineTitle: 'Agent-readable view (Markdown)',
+        humanTitle: 'Regular view',
+        heading: 'What an agent reads',
+        raw: 'Open .md',
+        copy: 'Copy',
+        copied: 'Copied',
+        loading: 'Loading…',
+        error: 'Could not load the Markdown version.',
+      }
+    : {
+        group: 'Modo de vista',
+        machineTitle: 'Vista para agentes (Markdown)',
+        humanTitle: 'Vista normal',
+        heading: 'Lo que lee un agente',
+        raw: 'Abrir .md',
+        copy: 'Copiar',
+        copied: 'Copiado',
+        loading: 'Cargando…',
+        error: 'No se pudo cargar la versión en Markdown.',
+      };
+---
+
+<section class="cl-machine" data-machine-only aria-label={t.machineTitle} data-src={markdownHref}>
+  <div class="cl-machine__wrap">
+    <header class="cl-machine__bar">
+      <span class="cl-machine__label"><span class="cl-machine__dot" aria-hidden="true"></span>{t.heading}</span>
+      <span class="cl-machine__actions">
+        <button type="button" class="cl-machine__btn" data-copy data-label={t.copy} data-done={t.copied}
+          >{t.copy}</button
+        >
+        <a class="cl-machine__btn" href={markdownHref} target="_blank" rel="noopener">{t.raw}</a>
+      </span>
+    </header>
+    <pre class="cl-machine__pre" data-loading={t.loading} data-error={t.error}>{t.loading}</pre>
+  </div>
+</section>
+
+<div class="cl-mode-toggle" role="radiogroup" aria-label={t.group}>
+  <button type="button" role="radio" class="cl-mode-toggle__btn" data-mode-set="human" title={t.humanTitle}>
+    <span class="cl-mode-toggle__dot" aria-hidden="true"></span>Human
+  </button>
+  <button type="button" role="radio" class="cl-mode-toggle__btn" data-mode-set="machine" title={t.machineTitle}>
+    <span class="cl-mode-toggle__dot" aria-hidden="true"></span>Machine
+  </button>
+</div>
+
+<style is:global>
+  /* ── Switching ─────────────────────────────────────────────── */
+  .cl-machine {
+    display: none;
+  }
+  /* Only on pages that have a Markdown twin; elsewhere machine mode is inert. */
+  html[data-mode='machine'] body:has(> .cl-machine) > :not(.cl-machine):not(.cl-mode-toggle):not(script):not(style) {
+    display: none !important;
+  }
+  html[data-mode='machine'] .cl-machine {
+    display: block;
+  }
+
+  /* ── The pill ──────────────────────────────────────────────── */
+  .cl-mode-toggle {
+    position: fixed;
+    left: 50%;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    transition: bottom 0.3s ease;
+  }
+  .cl-mode-toggle__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 26px;
+    padding: 0 12px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.55);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+  .cl-mode-toggle__btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .cl-mode-toggle__btn:focus-visible {
+    outline: 2px solid #ff5e1f;
+    outline-offset: 1px;
+  }
+  .cl-mode-toggle__btn[aria-checked='true'] {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+  .cl-mode-toggle__dot,
+  .cl-machine__dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.25);
+    transition: background 0.15s ease;
+  }
+  .cl-mode-toggle__btn[aria-checked='true'] .cl-mode-toggle__dot,
+  .cl-machine__dot {
+    background: #ff5e1f;
+  }
+  /* Mobile: lift the pill above the sticky CTA bar while it is showing. */
+  @media (max-width: 767px) {
+    html:has(aw-sticky-cta:not([hidden]):not(.translate-y-full)) .cl-mode-toggle {
+      bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+  @media print {
+    .cl-mode-toggle {
+      display: none;
+    }
+  }
+
+  /* ── Machine view ──────────────────────────────────────────── */
+  .cl-machine {
+    min-height: 100vh;
+    background: #0b0b0b;
+    color: #d6d6d6;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  html:not(.dark) .cl-machine {
+    background: #fafafa;
+    color: #1f1f1f;
+  }
+  .cl-machine__wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 16px 120px;
+  }
+  .cl-machine__bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px dashed currentColor;
+    border-color: rgba(127, 127, 127, 0.35);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+  .cl-machine__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .cl-machine__actions {
+    display: inline-flex;
+    gap: 8px;
+  }
+  .cl-machine__btn {
+    padding: 6px 12px;
+    border: 1px solid rgba(127, 127, 127, 0.4);
+    border-radius: 9999px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .cl-machine__btn:hover {
+    border-color: #ff5e1f;
+    color: #ff5e1f;
+  }
+  .cl-machine__pre {
+    margin: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font: inherit;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+</style>
+
+<script>
+  const KEY = 'mode';
+  type Mode = 'human' | 'machine';
+  const cache = new Map<string, string>();
+
+  const current = (): Mode => (document.documentElement.dataset.mode === 'machine' ? 'machine' : 'human');
+
+  async function loadMarkdown() {
+    const section = document.querySelector<HTMLElement>('.cl-machine');
+    const pre = section?.querySelector<HTMLPreElement>('.cl-machine__pre');
+    const src = section?.dataset.src;
+    if (!section || !pre || !src || section.dataset.loaded === src) return;
+    try {
+      let text = cache.get(src);
+      if (text === undefined) {
+        const res = await fetch(src, { headers: { Accept: 'text/markdown' } });
+        if (!res.ok) throw new Error(String(res.status));
+        text = await res.text();
+        cache.set(src, text);
+      }
+      pre.textContent = text;
+      section.dataset.loaded = src;
+    } catch {
+      pre.textContent = pre.dataset.error ?? '';
+    }
+  }
+
+  function render(mode: Mode) {
+    document.documentElement.dataset.mode = mode;
+    document.querySelectorAll<HTMLButtonElement>('[data-mode-set]').forEach((btn) => {
+      const on = btn.dataset.modeSet === mode;
+      btn.setAttribute('aria-checked', String(on));
+      btn.tabIndex = on ? 0 : -1;
+    });
+    if (mode === 'machine') void loadMarkdown();
+  }
+
+  function setMode(mode: Mode) {
+    try {
+      localStorage.setItem(KEY, mode);
+    } catch {
+      /* private mode: still switch for this page */
+    }
+    render(mode);
+    window.scrollTo({ top: 0 });
+  }
+
+  // Delegated listeners on `document` survive ClientRouter swaps.
+  document.addEventListener('click', (event) => {
+    const target = event.target as Element | null;
+    const btn = target?.closest<HTMLButtonElement>('[data-mode-set]');
+    if (btn) return setMode(btn.dataset.modeSet as Mode);
+
+    const copy = target?.closest<HTMLButtonElement>('.cl-machine [data-copy]');
+    if (copy) {
+      const text = document.querySelector('.cl-machine__pre')?.textContent ?? '';
+      navigator.clipboard?.writeText(text).then(() => {
+        copy.textContent = copy.dataset.done ?? '';
+        setTimeout(() => (copy.textContent = copy.dataset.label ?? ''), 1500);
+      });
+    }
+  });
+
+  // Arrow keys move between the two radios, as a radiogroup should.
+  document.addEventListener('keydown', (event) => {
+    const btn = (event.target as Element | null)?.closest?.('[data-mode-set]');
+    if (!btn || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
+    event.preventDefault();
+    const next: Mode = current() === 'human' ? 'machine' : 'human';
+    setMode(next);
+    document.querySelector<HTMLButtonElement>(`[data-mode-set="${next}"]`)?.focus();
+  });
+
+  // Keep tabs in sync.
+  window.addEventListener('storage', (event) => {
+    if (event.key === KEY && (event.newValue === 'human' || event.newValue === 'machine')) render(event.newValue);
+  });
+
+  // ClientRouter replaces <html> attributes on swap: put the mode back first,
+  // then sync the buttons and content of the new page.
+  document.addEventListener('astro:after-swap', () => {
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(KEY);
+    } catch {
+      /* ignore */
+    }
+    document.documentElement.dataset.mode = saved === 'machine' ? 'machine' : 'human';
+  });
+  document.addEventListener('astro:page-load', () => render(current()));
+</script>
