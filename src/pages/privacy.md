@@ -16,11 +16,12 @@ La correspondencia se atiende por [LinkedIn](https://www.linkedin.com/in/carlosl
 
 Este sitio no usa cookies de analítica, publicidad ni seguimiento, por eso no muestra un aviso de consentimiento. Solo guarda en tu navegador lo imprescindible para que funcione y lo que tú eliges:
 
-| Nombre    | Tipo                  | Quién la pone                       | Para qué                                        | Duración            |
-| --------- | --------------------- | ----------------------------------- | ----------------------------------------------- | ------------------- |
-| `__cf_bm` | Cookie técnica        | Cloudflare                          | Distinguir personas de bots y proteger el sitio | 30 minutos          |
-| `lang`    | Cookie de preferencia | Este sitio, solo si pulsas ES/EN    | Recordar el idioma que has elegido              | 1 año               |
-| `theme`   | `localStorage`        | Este sitio, solo si cambias el tema | Recordar el tema claro u oscuro                 | Hasta que la borres |
+| Nombre    | Tipo                  | Quién la pone                            | Para qué                                                  | Duración            |
+| --------- | --------------------- | ---------------------------------------- | --------------------------------------------------------- | ------------------- |
+| `__cf_bm` | Cookie técnica        | Cloudflare                               | Distinguir personas de bots y proteger el sitio           | 30 minutos          |
+| `lang`    | Cookie de preferencia | Este sitio, solo si pulsas ES/EN         | Recordar el idioma que has elegido                        | 1 año               |
+| `theme`   | `localStorage`        | Este sitio, solo si cambias el tema      | Recordar el tema claro u oscuro                           | Hasta que la borres |
+| `mode`    | `localStorage`        | Este sitio, solo si pulsas Human/Machine | Recordar si ves la página normal o su versión en Markdown | Hasta que la borres |
 
 Son cookies técnicas o de preferencias solicitadas por ti, exentas de consentimiento según el artículo 22.2 de la LSSI. Ninguna se usa para identificarte ni se comparte con terceros, y puedes borrarlas en cualquier momento desde la configuración de tu navegador.
 
