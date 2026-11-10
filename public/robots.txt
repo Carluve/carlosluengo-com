@@ -1,5 +1,8 @@
 # Search engines and AI answer engines are welcome to read and cite this site.
+# Content Signals (https://contentsignals.org): search, AI answers and AI
+# training are all allowed.
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 # AI crawlers, listed explicitly so blanket AI blocks elsewhere don't apply here.
@@ -15,6 +18,9 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: Bingbot
 User-agent: CCBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 # Markdown summary for language models: https://carlosluengo.com/llms.txt
+# Machine-readable index of the read-only content endpoints (RFC 9727):
+# https://carlosluengo.com/.well-known/api-catalog

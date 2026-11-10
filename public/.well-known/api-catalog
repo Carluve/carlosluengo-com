@@ -1,0 +1,28 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://carlosluengo.com/",
+      "service-desc": [
+        {
+          "href": "https://carlosluengo.com/openapi.json",
+          "type": "application/openapi+json",
+          "title": "Read-only content endpoints of carlosluengo.com (OpenAPI 3.1)"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://carlosluengo.com/llms.txt",
+          "type": "text/plain",
+          "title": "llms.txt: what this site is and where its Markdown lives"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://carlosluengo.com/index.md",
+          "type": "text/markdown",
+          "title": "Home page as Markdown"
+        }
+      ]
+    }
+  ]
+}
