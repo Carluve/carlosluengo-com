@@ -101,7 +101,7 @@ const absolute = (path: string) => new URL(path, Astro.site).toString().replace(
 
     <Intersect />
 
-    {markdownHref && <ModeToggle markdownHref={markdownHref} lang={lang} />}
+    <ModeToggle markdownHref={markdownHref} lang={lang} />
 
     <script>
       // Feed the pointer position to `.aw-spotlight` cards (see tailwind.css).
