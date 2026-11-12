@@ -1,19 +1,24 @@
 ---
 // Human / Machine view switch, pinned to the bottom centre of the viewport
-// (after the one on cloudflare.com/connect). "Machine" swaps the page for its
-// Markdown twin (the `<link rel="alternate" type="text/markdown">` that
-// Layout.astro already emits), i.e. what an answer engine reads.
+// (after the one on cloudflare.com/connect). "Machine" swaps the page for what
+// an answer engine reads: its curated Markdown twin when there is one (the
+// `<link rel="alternate" type="text/markdown">` from Layout.astro), otherwise
+// the same URL requested with `Accept: text/markdown`, which Cloudflare's
+// Markdown for Agents converts at the edge. So it works on every page.
 //
 // State: `data-mode="human|machine"` on <html>, remembered in
 // localStorage['mode']. The inline head script in Layout.astro sets it before
 // first paint; this component re-applies it after every ClientRouter swap.
 
 export interface Props {
-  markdownHref: string;
+  /** Curated Markdown twin, if the page has one. */
+  markdownHref?: string;
   lang: 'es' | 'en';
 }
 
 const { markdownHref, lang } = Astro.props;
+// Without a twin, fetch this same page and let the edge negotiate Markdown.
+const src = markdownHref ?? Astro.url.pathname;
 
 const t =
   lang === 'en'
@@ -41,7 +46,13 @@ const t =
       };
 ---
 
-<section class="cl-machine" data-machine-only aria-label={t.machineTitle} data-src={markdownHref}>
+<section
+  class="cl-machine"
+  data-machine-only
+  aria-label={t.machineTitle}
+  data-src={src}
+  data-negotiate={markdownHref ? undefined : ''}
+>
   <div class="cl-machine__wrap">
     <header class="cl-machine__bar">
       <span class="cl-machine__label"><span class="cl-machine__dot" aria-hidden="true"></span>{t.heading}</span>
@@ -49,7 +60,13 @@ const t =
         <button type="button" class="cl-machine__btn" data-copy data-label={t.copy} data-done={t.copied}
           >{t.copy}</button
         >
-        <a class="cl-machine__btn" href={markdownHref} target="_blank" rel="noopener">{t.raw}</a>
+        {
+          markdownHref && (
+            <a class="cl-machine__btn" href={markdownHref} target="_blank" rel="noopener">
+              {t.raw}
+            </a>
+          )
+        }
       </span>
     </header>
     <pre class="cl-machine__pre" data-loading={t.loading} data-error={t.error}>{t.loading}</pre>
@@ -70,7 +87,6 @@ const t =
   .cl-machine {
     display: none;
   }
-  /* Only on pages that have a Markdown twin; elsewhere machine mode is inert. */
   html[data-mode='machine'] body:has(> .cl-machine) > :not(.cl-machine):not(.cl-mode-toggle):not(script):not(style) {
     display: none !important;
   }
@@ -79,6 +95,9 @@ const t =
   }
 
   /* ── The pill ──────────────────────────────────────────────── */
+  :root {
+    --cl-blue: var(--aw-color-primary, rgb(1 97 239));
+  }
   .cl-mode-toggle {
     position: fixed;
     left: 50%;
@@ -120,11 +139,11 @@ const t =
     color: rgba(255, 255, 255, 0.9);
   }
   .cl-mode-toggle__btn:focus-visible {
-    outline: 2px solid #ff5e1f;
+    outline: 2px solid rgb(147 186 255);
     outline-offset: 1px;
   }
   .cl-mode-toggle__btn[aria-checked='true'] {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--cl-blue);
     color: #fff;
   }
   .cl-mode-toggle__dot,
@@ -133,12 +152,11 @@ const t =
     width: 6px;
     height: 6px;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--cl-blue);
     transition: background 0.15s ease;
   }
-  .cl-mode-toggle__btn[aria-checked='true'] .cl-mode-toggle__dot,
-  .cl-machine__dot {
-    background: #ff5e1f;
+  .cl-mode-toggle__btn[aria-checked='true'] .cl-mode-toggle__dot {
+    background: #fff;
   }
   /* Mobile: lift the pill above the sticky CTA bar while it is showing. */
   @media (max-width: 767px) {
@@ -203,8 +221,12 @@ const t =
     cursor: pointer;
   }
   .cl-machine__btn:hover {
-    border-color: #ff5e1f;
-    color: #ff5e1f;
+    border-color: var(--cl-blue);
+    color: var(--cl-blue);
+  }
+  html.dark .cl-machine__btn:hover {
+    border-color: rgb(147 186 255);
+    color: rgb(147 186 255);
   }
   .cl-machine__pre {
     margin: 0;
@@ -231,8 +253,13 @@ const t =
     try {
       let text = cache.get(src);
       if (text === undefined) {
-        const res = await fetch(src, { headers: { Accept: 'text/markdown' } });
+        // `no-store`: the HTML of this same URL may sit in the HTTP cache.
+        const res = await fetch(src, { headers: { Accept: 'text/markdown' }, cache: 'no-store' });
         if (!res.ok) throw new Error(String(res.status));
+        // Negotiated pages: refuse an HTML fallback (e.g. local preview).
+        if ('negotiate' in section.dataset && !res.headers.get('Content-Type')?.includes('markdown')) {
+          throw new Error('no markdown');
+        }
         text = await res.text();
         cache.set(src, text);
       }
