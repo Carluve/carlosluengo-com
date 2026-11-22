@@ -1,6 +1,6 @@
 ---
-publishDate: 2026-11-26T09:00:00Z
-draft: true
+publishDate: 2026-11-22T19:00:00Z
+draft: false
 image: 'media:blog/cloudflare-cdn-cache-guia/portada.png'
 title: 'CDN y caché en Cloudflare: Cache Rules, Tiered Cache y purgas'
 excerpt: 'Serie Cloudflare, parte 4. Qué cachea Cloudflare sin que hagas nada (y por qué tu HTML no), cómo leer cf-cache-status, cómo escribir una Cache Rule, qué aporta Tiered Cache y cómo purgar sin tumbar tu origen.'
