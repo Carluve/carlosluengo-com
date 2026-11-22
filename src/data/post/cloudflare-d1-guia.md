@@ -136,6 +136,7 @@ export default {
     }
 
     const autor = url.searchParams.get("autor");
+    if (!autor) return new Response("Falta el parámetro autor", { status: 400 });
     const { results } = await env.DB
       .prepare("SELECT id, texto, creada FROM notas WHERE autor = ?1 ORDER BY id DESC LIMIT 20")
       .bind(autor)
@@ -169,7 +170,10 @@ La replicación se activa por base en **Settings › Enable Read Replication**, 
 Activarla no basta. **Sin la Sessions API, todo sigue yendo a la primaria.**
 
 ```js
-const bookmark = request.headers.get("x-d1-bookmark") ?? "first-unconstrained";
+// El bookmark lo emitió tu propio Worker en una respuesta anterior; si falta o no
+// tiene una longitud razonable, se empieza sin él. D1 rechaza los que no reconoce.
+const recibido = request.headers.get("x-d1-bookmark");
+const bookmark = recibido && recibido.length <= 128 ? recibido : "first-unconstrained";
 const session = env.DB.withSession(bookmark);
 
 const { results } = await session

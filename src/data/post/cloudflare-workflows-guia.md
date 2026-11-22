@@ -122,7 +122,8 @@ export class PedidoWorkflow extends WorkflowEntrypoint<Env, Pedido> {
         type: "aprobacion",
         timeout: "2 days",
       });
-      const { aprobado } = evento.payload as { aprobado: boolean };
+      // El evento viene de fuera: solo un true booleano aprueba el pedido.
+      const aprobado = (evento.payload as { aprobado?: unknown } | undefined)?.aprobado === true;
       if (!aprobado) return { estado: "rechazado" };
     }
 
@@ -162,7 +163,15 @@ export default {
     const url = new URL(req.url);
 
     if (url.pathname === "/pedido" && req.method === "POST") {
-      const pedido = await req.json<Pedido>();
+      let pedido: Pedido;
+      try {
+        pedido = await req.json<Pedido>();
+      } catch {
+        return new Response("JSON no válido", { status: 400 });
+      }
+      if (typeof pedido?.pedidoId !== "string") {
+        return new Response("Falta pedidoId", { status: 400 });
+      }
       const instancia = await env.PEDIDO.create({ id: pedido.pedidoId, params: pedido });
       return Response.json({ id: instancia.id, estado: await instancia.status() });
     }
