@@ -4,7 +4,8 @@ import { getLang, localizePath, useTranslations, categoryLabel } from '~/i18n/ut
  * Category filter and a small "posts per year" chart for the blog index.
  * Static SVG and links only: no client JavaScript.
  */
-import { fetchPosts } from '~/utils/blog';
+import { fetchPosts, fetchMainListPosts } from '~/utils/blog';
+import { seriePublicadas, SERIE_PATH } from '~/data/serie-cloudflare';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 export interface Props {
@@ -16,6 +17,9 @@ const { active } = Astro.props;
 const lang = getLang(Astro);
 const t = useTranslations(lang);
 const posts = await fetchPosts();
+// "Todas" counts what the main list shows: the Serie Cloudflare parts have
+// their own chip and index page. Category counts include every post.
+const mainCount = (await fetchMainListPosts()).length;
 
 const categories = new Map<string, { title: string; count: number }>();
 for (const post of posts) {
@@ -56,7 +60,15 @@ const chipClass =
             )
           }
           {t('blog.all')}
-          <span class="tabular-nums opacity-70">{posts.length}</span>
+          <span class="tabular-nums opacity-70">{mainCount}</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href={localizePath(getPermalink(SERIE_PATH), lang)}
+          class:list={[chipClass, 'border-line bg-surface text-default hover:border-primary/40 hover:text-link']}
+        >
+          Serie Cloudflare <span class="tabular-nums opacity-70">{seriePublicadas.length}</span>
         </a>
       </li>
       {

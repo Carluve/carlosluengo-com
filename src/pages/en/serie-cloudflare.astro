@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import SerieIndex from '~/components/blog/SerieIndex.astro';
+import { SITE_URL } from '~/data/identity';
+import { seriePublicadas, SERIE_TOTAL } from '~/data/serie-cloudflare';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Serie Cloudflare',
+  description: `The ${SERIE_TOTAL} parts of the Serie Cloudflare (in Spanish): one post per service, same structure, step-by-step screenshots. ${seriePublicadas.length} published so far.`,
+};
+
+const breadcrumbs = [
+  { text: 'Home', href: getPermalink('/en') },
+  { text: 'Blog', href: getPermalink('/en/blog') },
+  { text: 'Serie Cloudflare' },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData
+    slot="head"
+    schema={{
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      url: `${SITE_URL}/en/serie-cloudflare`,
+      inLanguage: 'en',
+      name: 'Serie Cloudflare',
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: seriePublicadas.length,
+        itemListElement: seriePublicadas.map((p) => ({
+          '@type': 'ListItem',
+          position: p.part,
+          url: `${SITE_URL}/blog/${p.slug}`,
+          name: p.title,
+        })),
+      },
+    }}
+  />
+  <Breadcrumbs bar items={breadcrumbs} />
+  <SerieIndex lang="en" />
+</Layout>
