@@ -113,7 +113,7 @@ Más abajo, en la misma página:
 ![Ajustes de borde: Always Use HTTPS desactivado con aviso de bucles de redirección, botón Enable HSTS, Minimum TLS Version en TLS 1.0 (default) y Opportunistic Encryption activado](media:blog/cloudflare-ssl-tls-guia/04-ajustes.png)
 
 - **Always Use HTTPS**: redirige todo el HTTP a HTTPS en el borde. Actívalo y **quita la redirección del servidor** si la tenías, o tendrás bucles (`ERR_TOO_MANY_REDIRECTS`).
-- **Minimum TLS Version**: viene en **TLS 1.0**. Súbelo a **TLS 1.2**, lo que pide PCI DSS. TLS 1.3 es el que más tráfico lleva ya (en la captura del resumen, 7.040 peticiones frente a 2 de TLS 1.2).
+- **Minimum TLS Version**: viene en **TLS 1.0**. Súbelo a **TLS 1.2**, lo que pide PCI DSS. TLS 1.3 es el que más tráfico lleva ya (en la captura del resumen, 6.330 peticiones frente a 2 de TLS 1.2).
 - **HSTS**: dice al navegador que use siempre HTTPS. Empieza con 6 meses de `max-age` y sube a 12 cuando esté estable. Es difícil de deshacer: si un día quitas HTTPS o sacas el dominio de Cloudflare, la web será inaccesible hasta que caduque el `max-age`. *Preload* exige 12 meses y enviarlo a mano a la lista de los navegadores.
 - **Opportunistic Encryption** y **Automatic HTTPS Rewrites**: ayudan con navegadores y enlaces `http://` antiguos, pero no sustituyen a HTTPS.
 

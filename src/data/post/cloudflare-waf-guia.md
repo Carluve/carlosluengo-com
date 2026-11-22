@@ -79,9 +79,9 @@ Lo que dice la captura de una zona Free:
 or (http.request.uri.path contains "/xmlrpc.php")
 ```
 
-Antes de desplegar, el panel calcula **cuántas peticiones de los últimos 30 días habrían coincidido**. En esta zona fueron **670**, el 0,4 % de todo el tráfico. Ninguna era legítima: aquí no hay WordPress.
+Antes de desplegar, el panel calcula **cuántas peticiones de los últimos 30 días habrían coincidido**. En esta zona fueron **550**, el 0,3 % de todo el tráfico. Ninguna era legítima: aquí no hay WordPress.
 
-![Formulario New custom rule: nombre «Bloquear sondeos de WordPress», la expresión con wp-login.php y xmlrpc.php, 670 peticiones coincidentes en 30 días (0,4 % del tráfico) y el desplegable de acciones: Managed Challenge, Block, Non-Interactive Challenge, Skip e Interactive Challenge](media:blog/cloudflare-waf-guia/02-regla-personalizada.png)
+![Formulario New custom rule: la expresión con wp-login.php y xmlrpc.php, 550 peticiones coincidentes en 30 días (0,3 % del tráfico) y el desplegable de acciones: Managed Challenge, Block, Non-Interactive Challenge, Skip e Interactive Challenge](media:blog/cloudflare-waf-guia/02-regla-personalizada.png)
 
 Algunas pautas:
 
@@ -158,9 +158,9 @@ curl -s -o /dev/null -w "%{http_code}\n" https://www.example.com/wp-login.php
 
 En el panel, **Security › Analytics** muestra cuánto tráfico mitiga Cloudflare, cuánto sirve desde caché y cuánto llega al origen. La pestaña **Events** lista cada evento con la regla que lo disparó.
 
-![Security › Analytics de las últimas 24 horas: 6.620 peticiones, 80 mitigadas por Cloudflare, 2.220 servidas por Cloudflare y 4.320 por el origen](media:blog/cloudflare-waf-guia/04-analitica.png)
+![Security › Analytics de las últimas 24 horas: 6.530 peticiones, 80 mitigadas por Cloudflare, 2.230 servidas por Cloudflare y 4.220 por el origen](media:blog/cloudflare-waf-guia/04-analitica.png)
 
-En las últimas 24 horas, esta zona Free recibió 6.620 peticiones y Cloudflare mitigó 80 sin ninguna regla propia: lo hicieron las reglas gestionadas y la protección por defecto. En Free, los eventos son una **muestra**; usa ventanas de tiempo cortas para ver más detalle. Los datos se guardan 31 días.
+En las últimas 24 horas, esta zona Free recibió 6.530 peticiones y Cloudflare mitigó 80 sin ninguna regla propia: lo hicieron las reglas gestionadas y la protección por defecto. En Free, los eventos son una **muestra**; usa ventanas de tiempo cortas para ver más detalle. Los datos se guardan 31 días.
 
 ## Límites y precios
 
