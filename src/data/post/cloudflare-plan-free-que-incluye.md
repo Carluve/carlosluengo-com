@@ -29,7 +29,9 @@ En Cloudflare no hay un único plan gratuito, sino tres que funcionan de forma i
 
 Puedes tener un dominio en Free y Workers en pago, o al revés. Cada uno se cambia por separado.
 
-<!-- CAPTURA 01: Overview de una zona con el plan Free visible -->
+![Overview de una zona en el plan Free: la etiqueta «free» junto al nombre del dominio, con visitantes, peticiones y caché de las últimas 24 horas](media:blog/cloudflare-plan-free-que-incluye/01-zona-free.png)
+
+Así se ve una zona en Free: la etiqueta **free** aparece junto al dominio. En la misma cuenta conviven zonas Free y Enterprise.
 
 ## El plan Free de zona: tu web, protegida y rápida
 
@@ -101,7 +103,9 @@ Dos matices importantes:
 - **10 ms de CPU** dan para la mayoría de APIs y redirecciones (la media de un Worker son unos 2,2 ms), pero se quedan cortos para renderizado en servidor (SSR) pesado. Ese es el motivo más habitual para pasar a Workers Paid.
 - Desde julio de 2026, algunos modelos grandes de Workers AI (como Kimi K2.6 o GLM-5.2) solo están en Workers Paid. Muchos otros siguen disponibles en Free.
 
-<!-- CAPTURA 02: Workers & Pages, uso del plan Free -->
+![Página Workers plans del panel: comparativa Free (0 $), Paid (5 $ al mes más uso) y Enterprise, con 100.000 peticiones al día y 10 ms de CPU en Free](media:blog/cloudflare-plan-free-que-incluye/02-workers-planes.png)
+
+La comparativa está en el propio panel, en **Compute › Workers plans**.
 
 ## Zero Trust Free: seguridad para un equipo pequeño
 
