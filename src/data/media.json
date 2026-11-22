@@ -3873,6 +3873,43 @@
     },
     "og": "blog/fixing-123-math-with-jules/cover-202505_01jules-5242fe635e-og.jpg"
   },
+  "blog/innovation-knowledge-management-firm-centric-to-societal/portada.png": {
+    "type": "image",
+    "hash": "aad0e60bc8",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/innovation-knowledge-management-firm-centric-to-societal/portada-aad0e60bc8-480.avif"
+        ],
+        [
+          960,
+          "blog/innovation-knowledge-management-firm-centric-to-societal/portada-aad0e60bc8-960.avif"
+        ],
+        [
+          1440,
+          "blog/innovation-knowledge-management-firm-centric-to-societal/portada-aad0e60bc8-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/innovation-knowledge-management-firm-centric-to-societal/portada-aad0e60bc8-480.webp"
+        ],
+        [
+          960,
+          "blog/innovation-knowledge-management-firm-centric-to-societal/portada-aad0e60bc8-960.webp"
+        ],
+        [
+          1440,
+          "blog/innovation-knowledge-management-firm-centric-to-societal/portada-aad0e60bc8-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/innovation-knowledge-management-firm-centric-to-societal/portada-aad0e60bc8-og.jpg"
+  },
   "blog/migrating-playlists-with-comet/Comet_v1.png": {
     "type": "image",
     "hash": "286c776625",

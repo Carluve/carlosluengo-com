@@ -1,5 +1,6 @@
 ---
 publishDate: 2026-11-22T00:00:00Z
+image: 'media:blog/innovation-knowledge-management-firm-centric-to-societal/portada.png'
 title: 'From Firm-Centric to Societal: How Innovation and Knowledge Management Research Changed in 20 Years'
 excerpt: 'Our new article in the European Journal of Innovation Management maps 345 papers published between 2003 and 2025. The field still revolves around knowledge and innovation, but sustainability and societal impact have moved from the margins to the centre.'
 category: 'Academia'
