@@ -2332,24 +2332,24 @@
   },
   "blog/cloudflare-dns-dnssec-guia/05-ds.png": {
     "type": "image",
-    "hash": "c04bf6e92c",
+    "hash": "df124d4bca",
     "width": 352,
     "height": 718,
     "sources": {
       "avif": [
         [
           352,
-          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.avif"
+          "blog/cloudflare-dns-dnssec-guia/05-ds-df124d4bca-352.avif"
         ]
       ],
       "webp": [
         [
           352,
-          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.webp"
+          "blog/cloudflare-dns-dnssec-guia/05-ds-df124d4bca-352.webp"
         ]
       ]
     },
-    "og": "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-og.jpg"
+    "og": "blog/cloudflare-dns-dnssec-guia/05-ds-df124d4bca-og.jpg"
   },
   "blog/cloudflare-dns-dnssec-guia/06-analitica.png": {
     "type": "image",
