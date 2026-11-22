@@ -1,0 +1,101 @@
+---
+import { Icon } from 'astro-icon/components';
+import Button from '~/components/ui/Button.astro';
+import { person, publications, publicationHref } from '~/data/identity';
+import { getPermalink } from '~/utils/permalinks';
+
+interface Props {
+  lang: 'es' | 'en';
+  count?: number;
+}
+
+const { lang, count = 3 } = Astro.props;
+const t = (es: string, en: string) => (lang === 'en' ? en : es);
+const latest = publications.filter((p) => p.kind === 'article' || p.kind === 'chapter').slice(0, count);
+const shortVenue = (v: string) => v.split(' (')[0].split(',')[0];
+const authorsHtml = (a: string) =>
+  a
+    .split(', ')
+    .map((n) => (n === person.name ? `<strong class="font-semibold text-heading">${n}</strong>` : n))
+    .join(', ');
+---
+
+<section id="publicacion" class="relative not-prose scroll-mt-[72px]">
+  <div class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16 lg:py-20">
+    <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="aw-eyebrow">{t('Investigación', 'Research')}</p>
+        <h2 class="mt-2 max-w-3xl font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">
+          {t('Últimas publicaciones', 'Latest publications')}
+        </h2>
+        <p class="mt-3 max-w-2xl text-lg leading-relaxed text-muted">
+          {
+            t(
+              'IA generativa, trabajo, innovación y economía circular, en revistas revisadas por pares.',
+              'Generative AI, work, innovation and the circular economy, in peer-reviewed journals.'
+            )
+          }
+        </p>
+      </div>
+      <a
+        class="inline-flex items-center gap-1 font-medium text-link hover:underline"
+        href={getPermalink(lang === 'en' ? '/en/academia' : '/academia') + '#publicaciones'}
+      >
+        {t(`Ver las ${publications.length} publicaciones`, `See all ${publications.length} publications`)}
+        <Icon name="tabler:arrow-right" class="h-4 w-4" aria-hidden="true" />
+      </a>
+    </div>
+    <div class="mt-8 grid gap-5 md:grid-cols-3">
+      {
+        latest.map((p) => {
+          const href = publicationHref(p);
+          return (
+            <article class="aw-card flex flex-col p-6">
+              <p class="text-xs font-medium uppercase tracking-wider text-primary">{p.year}</p>
+              <p class="mt-1 text-xs font-medium uppercase leading-snug tracking-wider text-muted">
+                {shortVenue(p.venue)}
+              </p>
+              <h3 class="mt-3 font-heading text-xl font-medium leading-snug text-heading">
+                <a
+                  class="hover:text-link hover:underline underline-offset-4"
+                  href={href}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {p.title}
+                </a>
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-muted" set:html={authorsHtml(p.authors)} />
+              <div class="mt-auto flex flex-wrap items-center gap-2 pt-5">
+                {p.thesis && (
+                  <span class="rounded bg-emerald-500/10 px-2 py-0.5 text-xs font-medium uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                    {t('Tesis doctoral', 'PhD thesis')}
+                  </span>
+                )}
+                {p.doi && (
+                  <a class="text-sm text-link hover:underline" href={href} target="_blank" rel="noopener">
+                    DOI
+                  </a>
+                )}
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <Button
+        variant="primary"
+        text={t('Investigación y docencia', 'Research and teaching')}
+        href={getPermalink(lang === 'en' ? '/en/academia' : '/academia')}
+        icon="tabler:arrow-right"
+      />
+      <Button
+        text={t('Preprint MIR 2024/2025 en arXiv', 'MIR 2024/2025 preprint on arXiv')}
+        href="https://arxiv.org/abs/2503.00025"
+        target="_blank"
+        icon="tabler:file-text"
+      />
+    </div>
+  </div>
+</section>

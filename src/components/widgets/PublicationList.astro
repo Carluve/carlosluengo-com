@@ -1,0 +1,270 @@
+---
+import { Icon } from 'astro-icon/components';
+import OrcidBadge from '~/components/common/OrcidBadge.astro';
+import { person, publications, publicationHref, type Publication } from '~/data/identity';
+
+interface Props {
+  lang: 'es' | 'en';
+  id?: string;
+}
+
+const { lang, id = 'publicaciones' } = Astro.props;
+const t = (es: string, en: string) => (lang === 'en' ? en : es);
+
+const kindLabel: Record<Publication['kind'], string> = {
+  article: t('Artículo en revista', 'Journal article'),
+  chapter: t('Capítulo de libro', 'Book chapter'),
+  conference: t('Congreso', 'Conference paper'),
+  preprint: 'Preprint',
+  book: t('Libro', 'Book'),
+  review: t('Reseña', 'Review'),
+};
+// Filter groups: conference papers and preprints share one chip.
+const group = (p: Publication) => (p.kind === 'conference' || p.kind === 'preprint' ? 'other' : p.kind);
+
+const filters = [
+  { key: 'all', label: t('Todas', 'All'), n: publications.length },
+  { key: 'article', label: t('Revistas', 'Journals'), n: publications.filter((p) => group(p) === 'article').length },
+  { key: 'chapter', label: t('Capítulos', 'Chapters'), n: publications.filter((p) => group(p) === 'chapter').length },
+  {
+    key: 'other',
+    label: t('Congresos y preprints', 'Conferences & preprints'),
+    n: publications.filter((p) => group(p) === 'other').length,
+  },
+  { key: 'thesis', label: t('Tesis doctoral', 'PhD thesis'), n: publications.filter((p) => p.thesis).length },
+];
+
+const years = [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a);
+const articles = publications.filter((p) => p.kind === 'article').length;
+const latestYear = years[0];
+const latestCount = publications.filter((p) => p.year === latestYear).length;
+
+// Highlight the site owner in each author list.
+const authorsHtml = (a: string) =>
+  a
+    .split(', ')
+    .map((n) => (n === person.name ? `<strong class="font-semibold text-heading">${n}</strong>` : n))
+    .join(', ');
+
+// Short APA-style citation for the copy button.
+const citation = (p: Publication) =>
+  `${p.authors} (${p.year}). ${p.title}. ${p.venue}.${p.doi ? ` https://doi.org/${p.doi}` : p.url ? ` ${p.url}` : ''}`;
+---
+
+<section id={id} class="relative not-prose scroll-mt-[72px]">
+  <div class="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
+    <p class="aw-eyebrow">{t('Publicaciones', 'Publications')}</p>
+    <h2 class="mt-2 font-heading text-3xl font-medium tracking-tight text-heading md:text-4xl">
+      {t('Publicaciones', 'Publications')}
+    </h2>
+    <p class="mt-3 max-w-3xl text-lg leading-relaxed text-muted">
+      {
+        t(
+          'Artículos, capítulos y comunicaciones, de la más reciente a la más antigua. Cada título enlaza a la versión publicada.',
+          'Articles, chapters and conference papers, newest first. Every title links to the published version.'
+        )
+      }
+    </p>
+
+    <dl class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div class="aw-card p-4">
+        <dt class="text-sm text-muted">{t('Publicaciones', 'Publications')}</dt>
+        <dd class="mt-1 font-heading text-3xl text-heading">{publications.length}</dd>
+      </div>
+      <div class="aw-card p-4">
+        <dt class="text-sm text-muted">{t('Artículos en revista', 'Journal articles')}</dt>
+        <dd class="mt-1 font-heading text-3xl text-heading">{articles}</dd>
+      </div>
+      <div class="aw-card p-4">
+        <dt class="text-sm text-muted">{t(`Publicadas en ${latestYear}`, `Published in ${latestYear}`)}</dt>
+        <dd class="mt-1 font-heading text-3xl text-heading">{latestCount}</dd>
+      </div>
+      <div class="aw-card p-4">
+        <dt class="text-sm text-muted">{t('Forman la tesis doctoral', 'Make up the PhD thesis')}</dt>
+        <dd class="mt-1 font-heading text-3xl text-heading">{filters[4].n}</dd>
+      </div>
+    </dl>
+
+    <div class="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div
+        class="flex flex-wrap gap-2"
+        role="group"
+        aria-label={t('Filtrar publicaciones', 'Filter publications')}
+        data-pub-filters
+      >
+        {
+          filters.map((f, i) => (
+            <button
+              type="button"
+              data-filter={f.key}
+              aria-pressed={i === 0 ? 'true' : 'false'}
+              class="pub-chip inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm text-heading transition hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              {f.label}
+              <span class="rounded-full bg-primary/10 px-1.5 text-xs text-primary">{f.n}</span>
+            </button>
+          ))
+        }
+      </div>
+      <OrcidBadge />
+    </div>
+
+    <div class="mt-8 space-y-10" data-pub-list>
+      {
+        years.map((y) => (
+          <div data-pub-year>
+            <h3 class="pub-year sticky top-[64px] z-10 -mx-1 border-b border-line px-1 py-2 font-heading text-2xl text-heading backdrop-blur">
+              {y}
+            </h3>
+            <ol class="mt-4 space-y-4">
+              {publications
+                .filter((p) => p.year === y)
+                .map((p) => {
+                  const href = publicationHref(p);
+                  const note = lang === 'es' ? (p.noteEs ?? p.note) : p.note;
+                  return (
+                    <li
+                      class="aw-card p-5 md:p-6"
+                      data-pub
+                      data-group={group(p)}
+                      data-thesis={p.thesis ? 'true' : 'false'}
+                    >
+                      <div class="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wider">
+                        <span class="rounded bg-primary/10 px-2 py-0.5 text-primary">{kindLabel[p.kind]}</span>
+                        {p.thesis && (
+                          <span class="rounded bg-emerald-500/10 px-2 py-0.5 text-emerald-700 dark:text-emerald-400">
+                            {t('Tesis doctoral', 'PhD thesis')}
+                          </span>
+                        )}
+                        <time class="text-muted" datetime={p.date}>
+                          {new Date(p.date + 'T12:00:00Z').toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', {
+                            month: 'short',
+                            year: 'numeric',
+                          })}
+                        </time>
+                      </div>
+                      <h4 class="mt-3 font-heading text-xl font-medium leading-snug text-heading md:text-[1.35rem]">
+                        {href ? (
+                          <a
+                            class="hover:text-link hover:underline underline-offset-4"
+                            href={href}
+                            target="_blank"
+                            rel="noopener"
+                          >
+                            {p.title}
+                          </a>
+                        ) : (
+                          p.title
+                        )}
+                      </h4>
+                      <p class="mt-2 text-sm leading-relaxed text-muted" set:html={authorsHtml(p.authors)} />
+                      <p class="mt-1 text-sm italic leading-relaxed text-muted">{p.venue}</p>
+                      {note && <p class="mt-2 text-sm leading-relaxed text-muted">{note}</p>}
+                      <div class="mt-4 flex flex-wrap gap-2">
+                        {href && (
+                          <a
+                            class="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+                            href={href}
+                            target="_blank"
+                            rel="noopener"
+                          >
+                            <Icon name="tabler:external-link" class="h-4 w-4" aria-hidden="true" />
+                            {p.doi ? `DOI ${p.doi}` : t('Ver', 'View')}
+                          </a>
+                        )}
+                        {p.kind === 'preprint' && p.url && (
+                          <a
+                            class="inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 text-sm text-heading hover:border-primary/50"
+                            href={p.url.replace('/abs/', '/pdf/')}
+                            target="_blank"
+                            rel="noopener"
+                          >
+                            <Icon name="tabler:file-type-pdf" class="h-4 w-4" aria-hidden="true" />
+                            PDF
+                          </a>
+                        )}
+                        <button
+                          type="button"
+                          data-cite={citation(p)}
+                          class="inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 text-sm text-heading hover:border-primary/50"
+                        >
+                          <Icon name="tabler:copy" class="h-4 w-4" aria-hidden="true" />
+                          <span data-cite-label>{t('Copiar cita', 'Copy citation')}</span>
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
+            </ol>
+          </div>
+        ))
+      }
+    </div>
+    <p class="mt-8 text-sm text-muted">
+      {
+        t(
+          'Fuente: ORCID y Crossref, noviembre de 2026. Citas y lista completa en',
+          'Source: ORCID and Crossref, November 2026. Citations and the full list on'
+        )
+      }{' '}
+      <a
+        class="text-link hover:underline"
+        href="https://scholar.google.es/citations?user=ikUrqYkAAAAJ"
+        target="_blank"
+        rel="noopener">Google Scholar</a
+      >.
+    </p>
+  </div>
+</section>
+
+<style>
+  .pub-year {
+    background: color-mix(in oklab, var(--aw-color-bg-page) 90%, transparent);
+  }
+  .pub-chip[aria-pressed='true'] {
+    background: var(--aw-color-primary);
+    border-color: var(--aw-color-primary);
+    color: #fff;
+  }
+  .pub-chip[aria-pressed='true'] span {
+    background: rgb(255 255 255 / 0.2);
+    color: #fff;
+  }
+</style>
+
+<script is:inline data-lang={lang}>
+  (() => {
+    const run = () => {
+      const root = document.querySelector('[data-pub-filters]');
+      if (!root || root.dataset.ready) return;
+      root.dataset.ready = '1';
+      const chips = [...root.querySelectorAll('button[data-filter]')];
+      const apply = (key) => {
+        chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === key)));
+        document.querySelectorAll('[data-pub]').forEach((li) => {
+          const show = key === 'all' || (key === 'thesis' ? li.dataset.thesis === 'true' : li.dataset.group === key);
+          li.hidden = !show;
+        });
+        document.querySelectorAll('[data-pub-year]').forEach((y) => {
+          y.hidden = ![...y.querySelectorAll('[data-pub]')].some((li) => !li.hidden);
+        });
+      };
+      chips.forEach((c) => c.addEventListener('click', () => apply(c.dataset.filter)));
+      document.querySelectorAll('button[data-cite]').forEach((b) =>
+        b.addEventListener('click', async () => {
+          const label = b.querySelector('[data-cite-label]');
+          const old = label.textContent;
+          try {
+            await navigator.clipboard.writeText(b.dataset.cite);
+            label.textContent = document.documentElement.lang.startsWith('es') ? 'Copiada' : 'Copied';
+          } catch {
+            label.textContent = document.documentElement.lang.startsWith('es') ? 'No se pudo copiar' : 'Could not copy';
+          }
+          setTimeout(() => (label.textContent = old), 1800);
+        })
+      );
+    };
+    run();
+    document.addEventListener('astro:page-load', run);
+  })();
+</script>
