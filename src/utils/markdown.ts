@@ -79,10 +79,11 @@ const publicationsSection = (lang: Lang) =>
   publications
     .map(
       (p) =>
-        `- ${p.authors} (${p.date.slice(0, 4)}). **${p.title}**. ${p.venue}.` +
+        `- ${p.authors} (${p.year}). **${p.title}**. ${p.venue}.` +
         (p.doi ? ` DOI: ${p.doi}.` : '') +
-        (p.url ? ` ${p.url}` : '') +
-        (p.note ? ` ${p.note}` : '')
+        (p.url && !p.doi ? ` ${p.url}` : '') +
+        (p.thesis ? t(lang, ' Parte de la tesis doctoral.', ' Part of the doctoral thesis.') : '') +
+        ((lang === 'es' ? (p.noteEs ?? p.note) : p.note) ? ` ${lang === 'es' ? (p.noteEs ?? p.note) : p.note}` : '')
     )
     .join('\n') +
   `\n\n${t(lang, 'Listado completo', 'Full list')}: ${person.sameAs.find((u) => u.includes('scholar'))}\n`;
@@ -175,7 +176,7 @@ The site is bilingual: Spanish at ${SITE_URL} and English at ${SITE_URL}/en. Eve
 
 ${page('index', 'Home', 'who he is, career, publications and latest posts')}
 ${page('about', 'About', 'career at Cloudflare, AWS, Lenovo, Telefónica, Insight and Microsoft; PhD at Universidad de Alcalá')}
-${page('academia', 'Research', 'publications, including the MIR 2024/2025 LLM evaluation (arXiv:2503.00025)')}
+${page('academia', 'Research', 'publications, including the 2026 articles in EJIM, IEMJ and JOItmC and the MIR 2024/2025 LLM evaluation (arXiv:2503.00025)')}
 ${page('developer', 'Projects', 'demos and open-source projects on Cloudflare Workers')}
 ${page('contact', 'Contact', 'LinkedIn, X, GitHub, Google Scholar and ORCID')}
 
