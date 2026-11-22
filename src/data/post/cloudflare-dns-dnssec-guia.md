@@ -1,6 +1,7 @@
 ---
 publishDate: 2026-11-22T09:00:00Z
 draft: false
+image: 'media:blog/cloudflare-dns-dnssec-guia/portada.png'
 title: 'DNS y DNSSEC en Cloudflare: el primer paso para cualquier dominio'
 excerpt: 'Serie Cloudflare, parte 1. Qué es el DNS de Cloudflare, cuándo poner un registro con proxy y cuándo no, cómo viaja la petición y cómo configurarlo paso a paso en el panel, con Terraform y con la API, incluido DNSSEC.'
 category: 'Cloudflare'
@@ -91,9 +92,9 @@ Ve a **DNS › Settings** y, en la tarjeta **DNSSEC**, pulsa **Enable DNSSEC**. 
 
 ![Tarjeta DNSSEC en DNS › Settings con el botón Enable DNSSEC](media:blog/cloudflare-dns-dnssec-guia/04-dnssec.png)
 
-![Ventana DS Record: registro DS completo, digest SHA-256, algoritmo 13, clave pública, key tag y flags 257 (KSK)](media:blog/cloudflare-dns-dnssec-guia/05-ds.png)
+![Ventana DS Record con los valores tapados: registro DS, digest SHA-256, algoritmo 13, clave pública, key tag y flags 257 (KSK)](media:blog/cloudflare-dns-dnssec-guia/05-ds.png)
 
-Mientras el DS no esté en el registrador, la tarjeta muestra el estado pendiente y el botón **DS Record** abre estos valores para copiarlos. Son datos públicos: acabarán publicados en la zona padre (`.com`).
+Mientras el DS no esté en el registrador, la tarjeta muestra el estado pendiente y el botón **DS Record** abre estos valores para copiarlos. En la captura están tapados el registro, el digest, la clave pública y el key tag.
 
 Después añade ese registro DS en tu registrador. Algunos lo hacen solos: Cloudflare publica registros `CDS` y `CDNSKEY`, y los registradores compatibles con la RFC 8078 los recogen automáticamente. En Cloudflare Registrar es un clic, y el DS puede tardar uno o dos días en aparecer.
 

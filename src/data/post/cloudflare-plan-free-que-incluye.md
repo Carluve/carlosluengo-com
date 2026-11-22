@@ -1,6 +1,7 @@
 ---
 publishDate: 2026-11-22T12:00:00Z
 draft: false
+image: 'media:blog/cloudflare-plan-free-que-incluye/portada.png'
 title: 'El plan Free de Cloudflare: qué incluye de verdad y dónde están los límites'
 excerpt: 'Repaso, límite a límite, de lo que trae gratis una cuenta de Cloudflare: DNS, CDN, certificados, DDoS, WAF, reglas, Workers, almacenamiento, IA y Zero Trust. Con los números de la documentación oficial y cuándo merece la pena pasar a un plan de pago.'
 category: 'Cloudflare'

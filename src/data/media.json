@@ -2332,24 +2332,24 @@
   },
   "blog/cloudflare-dns-dnssec-guia/05-ds.png": {
     "type": "image",
-    "hash": "c04bf6e92c",
+    "hash": "df124d4bca",
     "width": 352,
     "height": 718,
     "sources": {
       "avif": [
         [
           352,
-          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.avif"
+          "blog/cloudflare-dns-dnssec-guia/05-ds-df124d4bca-352.avif"
         ]
       ],
       "webp": [
         [
           352,
-          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.webp"
+          "blog/cloudflare-dns-dnssec-guia/05-ds-df124d4bca-352.webp"
         ]
       ]
     },
-    "og": "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-og.jpg"
+    "og": "blog/cloudflare-dns-dnssec-guia/05-ds-df124d4bca-og.jpg"
   },
   "blog/cloudflare-dns-dnssec-guia/06-analitica.png": {
     "type": "image",
@@ -2425,6 +2425,43 @@
     },
     "og": "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-og.jpg"
   },
+  "blog/cloudflare-dns-dnssec-guia/portada.png": {
+    "type": "image",
+    "hash": "53d95ab88d",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/portada-53d95ab88d-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/portada-53d95ab88d-960.avif"
+        ],
+        [
+          1440,
+          "blog/cloudflare-dns-dnssec-guia/portada-53d95ab88d-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/portada-53d95ab88d-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/portada-53d95ab88d-960.webp"
+        ],
+        [
+          1440,
+          "blog/cloudflare-dns-dnssec-guia/portada-53d95ab88d-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/portada-53d95ab88d-og.jpg"
+  },
   "blog/cloudflare-plan-free-que-incluye/01-zona-free.png": {
     "type": "image",
     "hash": "d6bbbc019b",
@@ -2498,6 +2535,43 @@
       ]
     },
     "og": "blog/cloudflare-plan-free-que-incluye/02-workers-planes-cd4c3ccd93-og.jpg"
+  },
+  "blog/cloudflare-plan-free-que-incluye/portada.png": {
+    "type": "image",
+    "hash": "ff164b420b",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-plan-free-que-incluye/portada-ff164b420b-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-plan-free-que-incluye/portada-ff164b420b-960.avif"
+        ],
+        [
+          1440,
+          "blog/cloudflare-plan-free-que-incluye/portada-ff164b420b-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-plan-free-que-incluye/portada-ff164b420b-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-plan-free-que-incluye/portada-ff164b420b-960.webp"
+        ],
+        [
+          1440,
+          "blog/cloudflare-plan-free-que-incluye/portada-ff164b420b-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-plan-free-que-incluye/portada-ff164b420b-og.jpg"
   },
   "blog/cloudflare-simpler-faster-safer-internet/cloudflare1.png": {
     "type": "image",
