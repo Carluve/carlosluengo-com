@@ -1,6 +1,6 @@
 ---
-publishDate: 2026-11-24T00:00:00Z
-draft: true
+publishDate: 2026-11-22T09:00:00Z
+draft: false
 title: 'DNS y DNSSEC en Cloudflare: el primer paso para cualquier dominio'
 excerpt: 'Serie Cloudflare, parte 1. Qué es el DNS de Cloudflare, cuándo poner un registro con proxy y cuándo no, cómo viaja la petición y cómo configurarlo paso a paso en el panel, con Terraform y con la API, incluido DNSSEC.'
 category: 'Cloudflare'
