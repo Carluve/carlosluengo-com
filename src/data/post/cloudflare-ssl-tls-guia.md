@@ -1,6 +1,6 @@
 ---
-publishDate: 2026-11-24T09:00:00Z
-draft: true
+publishDate: 2026-11-22T18:00:00Z
+draft: false
 image: 'media:blog/cloudflare-ssl-tls-guia/portada.png'
 title: 'SSL/TLS en Cloudflare: certificados de borde, Origin CA y modos de cifrado'
 excerpt: 'Serie Cloudflare, parte 3. Las dos conexiones TLS que hay en cada petición, qué modo de cifrado elegir (y por qué Flexible casi nunca), qué certificado te da Cloudflare gratis, cómo poner un certificado de Origin CA y pasar a Full (strict), y cómo comprobarlo.'
