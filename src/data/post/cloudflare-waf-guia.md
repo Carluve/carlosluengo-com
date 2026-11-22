@@ -1,6 +1,6 @@
 ---
-publishDate: 2026-11-24T09:00:00Z
-draft: true
+publishDate: 2026-02-03T09:00:00Z
+draft: false
 image: 'media:blog/cloudflare-waf-guia/portada.png'
 title: 'WAF de Cloudflare: reglas gestionadas y reglas personalizadas'
 excerpt: 'Serie Cloudflare, parte 5. Qué hace el WAF de Cloudflare, en qué orden se evalúan las reglas, qué te da el plan Free (y qué no), cómo escribir una regla propia contra los sondeos de WordPress, cómo activar las reglas gestionadas y cómo ver qué se está bloqueando.'
@@ -193,7 +193,7 @@ En las últimas 24 horas, esta zona Free recibió 6.620 peticiones y Cloudflare 
 - [Security Analytics](https://developers.cloudflare.com/waf/analytics/security-analytics/) y [Security Events](https://developers.cloudflare.com/waf/analytics/security-events/)
 - [Changelog del WAF](https://developers.cloudflare.com/waf/change-log/changelog/) y [reglas de emergencia del 21-oct-2026 en el ruleset Free](https://developers.cloudflare.com/changelog/post/2026-10-21-emergency-waf-release-free/)
 
-Documentación consultada el 22 de noviembre de 2026.
+Última revisión con la documentación oficial: 22 de noviembre de 2026.
 
 **Siguiente en la serie:** Turnstile, el CAPTCHA sin CAPTCHA, del widget a la verificación en el servidor.
 

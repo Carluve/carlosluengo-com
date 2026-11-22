@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-11-22T18:00:00Z
+publishDate: 2026-01-20T09:00:00Z
 draft: false
 image: 'media:blog/cloudflare-ssl-tls-guia/portada.png'
 title: 'SSL/TLS en Cloudflare: certificados de borde, Origin CA y modos de cifrado'
@@ -205,7 +205,7 @@ Desde fuera, [SSL Labs](https://www.ssllabs.com/ssltest/) analiza el certificado
 - [Intercambio de claves automático con el origen (changelog, 21-jul-2026)](https://developers.cloudflare.com/changelog/post/2026-07-21-automatic-origin-key-exchange/)
 - Errores [525](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-525/), [526](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-526/) y [demasiadas redirecciones](https://developers.cloudflare.com/ssl/troubleshooting/too-many-redirects/)
 
-Documentación consultada el 22 de noviembre de 2026.
+Última revisión con la documentación oficial: 22 de noviembre de 2026.
 
 **Siguiente en la serie:** CDN y caché, con Cache Rules y Tiered Cache.
 

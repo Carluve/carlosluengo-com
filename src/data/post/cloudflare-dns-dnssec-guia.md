@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-11-22T09:00:00Z
+publishDate: 2026-01-06T09:00:00Z
 draft: false
 image: 'media:blog/cloudflare-dns-dnssec-guia/portada.png'
 title: 'DNS y DNSSEC en Cloudflare: el primer paso para cualquier dominio'
@@ -159,7 +159,7 @@ También puedes revisar la cadena de confianza con [DNSViz](https://dnsviz.net).
 - [DNSSEC](https://developers.cloudflare.com/dns/dnssec/), [estados de DNSSEC](https://developers.cloudflare.com/dns/dnssec/dnssec-states/) y [activar DNSSEC con Cloudflare Registrar](https://developers.cloudflare.com/registrar/get-started/enable-dnssec/)
 - [Zona atascada en Pending Nameserver Update](https://developers.cloudflare.com/dns/zone-setups/troubleshooting/pending-nameservers/)
 
-Documentación consultada el 22 de noviembre de 2026.
+Última revisión con la documentación oficial: 22 de noviembre de 2026.
 
 **Siguiente en la serie:** SSL/TLS, certificados de edge, Origin CA y modos de cifrado.
 

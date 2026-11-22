@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-11-22T12:00:00Z
+publishDate: 2026-01-13T09:00:00Z
 draft: false
 image: 'media:blog/cloudflare-plan-free-que-incluye/portada.png'
 title: 'El plan Free de Cloudflare: qué incluye de verdad y dónde están los límites'
