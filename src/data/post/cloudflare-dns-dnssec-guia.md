@@ -49,13 +49,13 @@ El recorrido de un visitante que abre `www.example.com`:
 
 ## Implementación paso a paso
 
-Las capturas son de una zona real. Los ID de cuenta, las IP y los correos están difuminados.
+Las capturas son de la zona real de este blog. Los subdominios internos y los destinos de los registros están difuminados.
 
 ### 1. Añade el dominio y revisa los registros
 
 En el panel, añade tu dominio y elige un plan. Cloudflare escanea los registros que encuentra. Ve a **DNS › Records** y comprueba que está todo: el dominio raíz (`@`), `www`, los registros de correo y los de verificación. El escaneo no garantiza encontrar todos los registros.
 
-<!-- CAPTURA 01: DNS › Records, lista de registros -->
+![DNS › Records en el panel de Cloudflare: lista de registros con su tipo, contenido y estado del proxy. Los subdominios y destinos están difuminados.](media:blog/cloudflare-dns-dnssec-guia/01-registros.png)
 
 ### 2. Crea un registro
 
@@ -67,7 +67,7 @@ Pulsa **Add record**, elige el tipo, el nombre y el contenido, y decide el estad
 
 `192.0.2.10` es una dirección reservada para documentación; usa la tuya. Los registros con proxy siempre tienen TTL **Auto** (300 segundos). En los de solo DNS puedes elegir entre 60 segundos (30 en Enterprise) y un día.
 
-<!-- CAPTURA 02: formulario Add record relleno (sin guardar) -->
+![Formulario Add record con un registro A demo que apunta a 192.0.2.10, con proxy y TTL Auto](media:blog/cloudflare-dns-dnssec-guia/02-anadir-registro.png)
 
 ### 3. Decide qué va con proxy
 
@@ -75,19 +75,21 @@ Pon con proxy todos los registros `A`, `AAAA` y `CNAME` que sirven tráfico web.
 
 Un detalle que pilla a mucha gente: si varios registros `A`/`AAAA` comparten nombre y **uno** de ellos va con proxy, Cloudflare los trata todos como con proxy.
 
-<!-- CAPTURA 03: interruptor de proxy en un registro -->
+![El mismo registro con el interruptor en DNS only: el TTL deja de estar fijado en Auto y se puede elegir](media:blog/cloudflare-dns-dnssec-guia/03-proxy-solo-dns.png)
+
+Fíjate en la diferencia con la captura anterior: al pasar a **DNS only**, el campo TTL se puede cambiar.
 
 ### 4. Apunta los nameservers a Cloudflare
 
-En la página **Overview** de la zona, Cloudflare te muestra los dos nameservers que te ha asignado. Sustituye los actuales en tu registrador. Si el proveedor anterior tenía DNSSEC activo, **borra primero el registro DS antiguo en el registrador**: un DS obsoleto rompe la cadena de confianza y deja la zona en *Pending*. Los dominios de Cloudflare Registrar ya usan los nameservers de Cloudflare.
+En **DNS › Settings**, en la tarjeta **Cloudflare Nameservers**, ves los dos nameservers que te ha asignado Cloudflare (también aparecen al añadir la zona). Sustituye los actuales en tu registrador. Si el proveedor anterior tenía DNSSEC activo, **borra primero el registro DS antiguo en el registrador**: un DS obsoleto rompe la cadena de confianza y deja la zona en *Pending*. Los dominios de Cloudflare Registrar ya usan los nameservers de Cloudflare.
 
-<!-- CAPTURA 07: Overview con los nameservers asignados -->
+![DNS › Settings: tarjeta Cloudflare Nameservers con los dos nameservers asignados a la zona](media:blog/cloudflare-dns-dnssec-guia/07-nameservers.png)
 
 ### 5. Activa DNSSEC
 
 Ve a **DNS › Settings** y, en la tarjeta **DNSSEC**, pulsa **Enable DNSSEC**. Cloudflare firma la zona y te muestra los valores del registro **DS**: key tag, algoritmo 13 (ECDSA Curve P-256 con SHA-256), tipo de digest y digest.
 
-<!-- CAPTURA 04: DNS › Settings, tarjeta DNSSEC -->
+![Tarjeta DNSSEC en DNS › Settings con el botón Enable DNSSEC](media:blog/cloudflare-dns-dnssec-guia/04-dnssec.png)
 <!-- CAPTURA 05: detalles del registro DS -->
 
 Después añade ese registro DS en tu registrador. Algunos lo hacen solos: Cloudflare publica registros `CDS` y `CDNSKEY`, y los registradores compatibles con la RFC 8078 los recogen automáticamente. En Cloudflare Registrar es un clic, y el DS puede tardar uno o dos días en aparecer.
@@ -136,7 +138,7 @@ dig +dnssec example.com A
 
 También puedes revisar la cadena de confianza con [DNSViz](https://dnsviz.net). En el panel, **DNS › Analytics** muestra las consultas por registro, tipo y código de respuesta.
 
-<!-- CAPTURA 06: DNS › Analytics -->
+![DNS › Analytics: consultas de las últimas 24 horas por nombre, con la gráfica cada 15 minutos](media:blog/cloudflare-dns-dnssec-guia/06-analitica.png)
 
 ## Límites y precios
 

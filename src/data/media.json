@@ -2169,6 +2169,241 @@
     },
     "og": "blog/chatgpt-gpt4o-overview/202505_personalization-7bd2309f5c-og.jpg"
   },
+  "blog/cloudflare-dns-dnssec-guia/00-arquitectura.png": {
+    "type": "image",
+    "hash": "de8e9fd6bd",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/00-arquitectura-de8e9fd6bd-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/00-arquitectura-de8e9fd6bd-960.avif"
+        ],
+        [
+          1600,
+          "blog/cloudflare-dns-dnssec-guia/00-arquitectura-de8e9fd6bd-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/00-arquitectura-de8e9fd6bd-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/00-arquitectura-de8e9fd6bd-960.webp"
+        ],
+        [
+          1600,
+          "blog/cloudflare-dns-dnssec-guia/00-arquitectura-de8e9fd6bd-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/00-arquitectura-de8e9fd6bd-og.jpg"
+  },
+  "blog/cloudflare-dns-dnssec-guia/01-registros.png": {
+    "type": "image",
+    "hash": "16a77e5018",
+    "width": 1451,
+    "height": 840,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/01-registros-16a77e5018-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/01-registros-16a77e5018-960.avif"
+        ],
+        [
+          1451,
+          "blog/cloudflare-dns-dnssec-guia/01-registros-16a77e5018-1451.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/01-registros-16a77e5018-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/01-registros-16a77e5018-960.webp"
+        ],
+        [
+          1451,
+          "blog/cloudflare-dns-dnssec-guia/01-registros-16a77e5018-1451.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/01-registros-16a77e5018-og.jpg"
+  },
+  "blog/cloudflare-dns-dnssec-guia/02-anadir-registro.png": {
+    "type": "image",
+    "hash": "dbb03684ea",
+    "width": 690,
+    "height": 395,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/02-anadir-registro-dbb03684ea-480.avif"
+        ],
+        [
+          690,
+          "blog/cloudflare-dns-dnssec-guia/02-anadir-registro-dbb03684ea-690.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/02-anadir-registro-dbb03684ea-480.webp"
+        ],
+        [
+          690,
+          "blog/cloudflare-dns-dnssec-guia/02-anadir-registro-dbb03684ea-690.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/02-anadir-registro-dbb03684ea-og.jpg"
+  },
+  "blog/cloudflare-dns-dnssec-guia/03-proxy-solo-dns.png": {
+    "type": "image",
+    "hash": "9e48d57eb1",
+    "width": 690,
+    "height": 395,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/03-proxy-solo-dns-9e48d57eb1-480.avif"
+        ],
+        [
+          690,
+          "blog/cloudflare-dns-dnssec-guia/03-proxy-solo-dns-9e48d57eb1-690.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/03-proxy-solo-dns-9e48d57eb1-480.webp"
+        ],
+        [
+          690,
+          "blog/cloudflare-dns-dnssec-guia/03-proxy-solo-dns-9e48d57eb1-690.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/03-proxy-solo-dns-9e48d57eb1-og.jpg"
+  },
+  "blog/cloudflare-dns-dnssec-guia/04-dnssec.png": {
+    "type": "image",
+    "hash": "6a14155a58",
+    "width": 730,
+    "height": 150,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/04-dnssec-6a14155a58-480.avif"
+        ],
+        [
+          730,
+          "blog/cloudflare-dns-dnssec-guia/04-dnssec-6a14155a58-730.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/04-dnssec-6a14155a58-480.webp"
+        ],
+        [
+          730,
+          "blog/cloudflare-dns-dnssec-guia/04-dnssec-6a14155a58-730.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/04-dnssec-6a14155a58-og.jpg"
+  },
+  "blog/cloudflare-dns-dnssec-guia/06-analitica.png": {
+    "type": "image",
+    "hash": "1bd9221fbc",
+    "width": 1451,
+    "height": 840,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/06-analitica-1bd9221fbc-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/06-analitica-1bd9221fbc-960.avif"
+        ],
+        [
+          1451,
+          "blog/cloudflare-dns-dnssec-guia/06-analitica-1bd9221fbc-1451.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/06-analitica-1bd9221fbc-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/06-analitica-1bd9221fbc-960.webp"
+        ],
+        [
+          1451,
+          "blog/cloudflare-dns-dnssec-guia/06-analitica-1bd9221fbc-1451.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/06-analitica-1bd9221fbc-og.jpg"
+  },
+  "blog/cloudflare-dns-dnssec-guia/07-nameservers.png": {
+    "type": "image",
+    "hash": "002f31d4e5",
+    "width": 1231,
+    "height": 410,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-960.avif"
+        ],
+        [
+          1231,
+          "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-1231.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-960.webp"
+        ],
+        [
+          1231,
+          "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-1231.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/07-nameservers-002f31d4e5-og.jpg"
+  },
   "blog/cloudflare-simpler-faster-safer-internet/cloudflare1.png": {
     "type": "image",
     "hash": "a5d159f33b",
