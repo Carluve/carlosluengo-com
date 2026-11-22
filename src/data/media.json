@@ -2330,6 +2330,27 @@
     },
     "og": "blog/cloudflare-dns-dnssec-guia/04-dnssec-6a14155a58-og.jpg"
   },
+  "blog/cloudflare-dns-dnssec-guia/05-ds.png": {
+    "type": "image",
+    "hash": "c04bf6e92c",
+    "width": 352,
+    "height": 718,
+    "sources": {
+      "avif": [
+        [
+          352,
+          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.avif"
+        ]
+      ],
+      "webp": [
+        [
+          352,
+          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-og.jpg"
+  },
   "blog/cloudflare-dns-dnssec-guia/06-analitica.png": {
     "type": "image",
     "hash": "456370cc9d",
@@ -4803,26 +4824,5 @@
       ]
     },
     "og": "projects/vibe-coding-example-github-15abe3a992-og.jpg"
-  },
-  "blog/cloudflare-dns-dnssec-guia/05-ds.png": {
-    "type": "image",
-    "hash": "c04bf6e92c",
-    "width": 352,
-    "height": 718,
-    "sources": {
-      "avif": [
-        [
-          352,
-          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.avif"
-        ]
-      ],
-      "webp": [
-        [
-          352,
-          "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-352.webp"
-        ]
-      ]
-    },
-    "og": "blog/cloudflare-dns-dnssec-guia/05-ds-c04bf6e92c-og.jpg"
   }
 }
