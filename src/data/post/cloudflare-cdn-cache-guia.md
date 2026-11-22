@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-11-22T19:00:00Z
+publishDate: 2026-01-27T09:00:00Z
 draft: false
 image: 'media:blog/cloudflare-cdn-cache-guia/portada.png'
 title: 'CDN y caché en Cloudflare: Cache Rules, Tiered Cache y purgas'
@@ -199,7 +199,7 @@ En Free te queda la analítica general de la zona (peticiones servidas por Cloud
 - [Cache Analytics](https://developers.cloudflare.com/cache/performance-review/cache-analytics/)
 - [Changelog de Cache](https://developers.cloudflare.com/cache/changelog/)
 
-Documentación consultada el 22 de noviembre de 2026.
+Última revisión con la documentación oficial: 22 de noviembre de 2026.
 
 **Siguiente en la serie:** WAF, con reglas gestionadas y reglas personalizadas.
 
