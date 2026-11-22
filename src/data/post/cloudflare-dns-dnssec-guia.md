@@ -90,7 +90,10 @@ En **DNS › Settings**, en la tarjeta **Cloudflare Nameservers**, ves los dos n
 Ve a **DNS › Settings** y, en la tarjeta **DNSSEC**, pulsa **Enable DNSSEC**. Cloudflare firma la zona y te muestra los valores del registro **DS**: key tag, algoritmo 13 (ECDSA Curve P-256 con SHA-256), tipo de digest y digest.
 
 ![Tarjeta DNSSEC en DNS › Settings con el botón Enable DNSSEC](media:blog/cloudflare-dns-dnssec-guia/04-dnssec.png)
-<!-- CAPTURA 05: detalles del registro DS -->
+
+![Ventana DS Record: registro DS completo, digest SHA-256, algoritmo 13, clave pública, key tag y flags 257 (KSK)](media:blog/cloudflare-dns-dnssec-guia/05-ds.png)
+
+Mientras el DS no esté en el registrador, la tarjeta muestra el estado pendiente y el botón **DS Record** abre estos valores para copiarlos. Son datos públicos: acabarán publicados en la zona padre (`.com`).
 
 Después añade ese registro DS en tu registrador. Algunos lo hacen solos: Cloudflare publica registros `CDS` y `CDNSKEY`, y los registradores compatibles con la RFC 8078 los recogen automáticamente. En Cloudflare Registrar es un clic, y el DS puede tardar uno o dos días en aparecer.
 
