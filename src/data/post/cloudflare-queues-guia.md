@@ -96,7 +96,16 @@ El productor encola y responde sin esperar al proveedor de correo:
 ```ts
 export default {
   async fetch(req, env): Promise<Response> {
-    const { email, nombre } = await req.json<{ email: string; nombre: string }>();
+    let datos: { email?: unknown; nombre?: unknown };
+    try {
+      datos = await req.json();
+    } catch {
+      return new Response("JSON no válido", { status: 400 });
+    }
+    const { email, nombre } = datos;
+    if (typeof email !== "string" || typeof nombre !== "string") {
+      return new Response("Faltan email o nombre", { status: 400 });
+    }
     await env.CORREOS.send({ tipo: "bienvenida", email, nombre });
     return new Response("Recibido", { status: 202 });
   },
