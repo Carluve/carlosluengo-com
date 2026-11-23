@@ -1,7 +1,17 @@
 import { defaultLang, ui, type Lang, type UiKey } from './ui';
 
 /** Pages that exist in both languages: Spanish path -> English path. */
-export const translatedPaths = ['/', '/about', '/academia', '/developer', '/contact', '/privacy', '/terms', '/blog'];
+export const translatedPaths = [
+  '/',
+  '/about',
+  '/academia',
+  '/developer',
+  '/contact',
+  '/privacy',
+  '/terms',
+  '/blog',
+  '/serie-cloudflare',
+];
 
 const strip = (path: string) => (path.length > 1 ? path.replace(/\/+$/, '') : path);
 

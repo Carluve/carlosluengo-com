@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post, Taxonomy } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import { isSeriePost } from '~/data/serie-cloudflare';
 
 const generatePermalink = async ({
   id,
@@ -142,6 +143,13 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
   return _posts;
 };
 
+/** Posts of the main blog list: everything except the Serie Cloudflare parts. */
+export const fetchMainListPosts = async (): Promise<Array<Post>> =>
+  (await fetchPosts()).filter((post) => !isSeriePost(post));
+
+/** Published Serie Cloudflare posts, newest first. */
+export const fetchSeriePosts = async (): Promise<Array<Post>> => (await fetchPosts()).filter(isSeriePost);
+
 /** */
 export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
   if (!Array.isArray(slugs)) return [];
@@ -181,7 +189,10 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  // The Serie Cloudflare parts would flood the main list: they get a summary
+  // card on its first page and their own index at /serie-cloudflare, and stay
+  // in the category, tag, RSS and post-navigation listings.
+  return paginate(await fetchMainListPosts(), {
     params: { blog: BLOG_BASE || undefined },
     pageSize: blogPostsPerPage,
   });

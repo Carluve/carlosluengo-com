@@ -1,0 +1,170 @@
+---
+/**
+ * Index of the Serie Cloudflare: progress and the 50 parts grouped by block.
+ * Published parts link to their post with a small cover; the rest are greyed
+ * out as "Próximamente". Titles stay in Spanish (the posts are in Spanish);
+ * only the surrounding interface follows `lang`.
+ */
+import type { ImageMetadata } from 'astro';
+import Image from '~/components/common/Image.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { fetchSeriePosts } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
+import { getFormattedDate } from '~/utils/utils';
+import { seriePartes, seriePublicadas, serieBlocks, SERIE_TOTAL } from '~/data/serie-cloudflare';
+import type { Lang } from '~/i18n/ui';
+
+export interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const en = lang === 'en';
+
+const posts = await fetchSeriePosts();
+const bySlug = new Map(posts.map((post) => [post.slug, post]));
+
+const published = seriePublicadas.length;
+const percent = Math.round((published / SERIE_TOTAL) * 100);
+
+const blocks = await Promise.all(
+  serieBlocks.map(async (block) => {
+    const parts = await Promise.all(
+      seriePartes
+        .filter((p) => p.block === block.id)
+        .sort((a, b) => a.part - b.part)
+        .map(async (p) => {
+          const post = p.slug ? bySlug.get(p.slug) : undefined;
+          const image = post ? ((await findImage(post.image)) as ImageMetadata | string | undefined) : undefined;
+          return { ...p, post, image };
+        })
+    );
+    return { ...block, parts, published: parts.filter((p) => p.post).length };
+  })
+);
+
+const txt = en
+  ? {
+      intro:
+        'One post per Cloudflare service, always with the same structure: what it is, use cases, architecture, step-by-step setup with screenshots, how to check it, limits and the official docs. A new part every Tuesday; the posts are in Spanish.',
+      progress: `${published} of ${SERIE_TOTAL} published`,
+      ofBlock: (n: number, total: number) => `${n} of ${total} published`,
+      part: 'Part',
+      soon: 'Coming soon',
+    }
+  : {
+      intro:
+        'Un post por cada servicio de Cloudflare, siempre con la misma estructura: qué es, casos de uso, arquitectura, implementación paso a paso con capturas, cómo comprobarlo, límites y la documentación oficial. Sale una parte nueva cada martes.',
+      progress: `${published} de ${SERIE_TOTAL} publicados`,
+      ofBlock: (n: number, total: number) => `${n} de ${total} publicados`,
+      part: 'Parte',
+      soon: 'Próximamente',
+    };
+---
+
+<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+  <Headline subtitle={txt.intro}>Serie Cloudflare</Headline>
+
+  <div class="-mt-2 mb-12 max-w-3xl">
+    <p class="flex items-baseline justify-between text-sm font-medium text-heading" id="serie-progress-label">
+      <span>{txt.progress}</span>
+      <span class="tabular-nums text-muted">{percent}%</span>
+    </p>
+    <div
+      class="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-primary/10 dark:bg-white/10"
+      role="progressbar"
+      aria-labelledby="serie-progress-label"
+      aria-valuemin="0"
+      aria-valuemax={SERIE_TOTAL}
+      aria-valuenow={published}
+    >
+      <div class="h-full rounded-full bg-primary" style={`width:${percent}%`}></div>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-14">
+    {
+      blocks.map((block) => (
+        <section aria-labelledby={`bloque-${block.id}`}>
+          <div class="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-line pb-3">
+            <h2 id={`bloque-${block.id}`} class="font-heading text-2xl font-medium tracking-tight text-heading">
+              {en ? block.titleEn : block.title}
+            </h2>
+            <p class="text-sm tabular-nums text-muted">{txt.ofBlock(block.published, block.parts.length)}</p>
+          </div>
+          <ol class="grid list-none gap-3 sm:grid-cols-2">
+            {block.parts.map((p) =>
+              p.post ? (
+                <li value={p.part}>
+                  <a
+                    href={getPermalink(p.post.permalink, 'post')}
+                    lang={en ? 'es' : undefined}
+                    class="aw-card group flex h-full items-center gap-4 p-3 transition-colors duration-200 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary motion-reduce:transition-none"
+                  >
+                    <span class="relative block h-14 w-24 shrink-0 overflow-hidden rounded-md border border-line bg-primary/5">
+                      {p.image && (
+                        <Image
+                          src={p.image}
+                          class="h-full w-full object-cover"
+                          widths={[192]}
+                          width={192}
+                          height={112}
+                          sizes="96px"
+                          alt=""
+                          format="webp"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )}
+                      <span class="absolute bottom-1 left-1 rounded bg-primary px-1.5 py-px text-xs font-semibold tabular-nums text-white">
+                        {p.part}
+                      </span>
+                    </span>
+                    <span class="min-w-0">
+                      <span class="block text-xs text-muted">
+                        <span lang={en ? 'en' : undefined}>
+                          {txt.part} {p.part}
+                        </span>
+                        <span aria-hidden="true"> · </span>
+                        <time datetime={p.post.publishDate.toISOString()} lang={en ? 'en' : undefined}>
+                          {getFormattedDate(p.post.publishDate, lang)}
+                        </time>
+                      </span>
+                      <span class="mt-0.5 block font-medium leading-snug text-heading group-hover:text-link">
+                        {p.title}
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ) : (
+                <li
+                  value={p.part}
+                  class="flex h-full items-center gap-4 rounded-xl border border-dashed border-line p-3"
+                >
+                  <span
+                    class="flex h-14 w-24 shrink-0 items-center justify-center rounded-md border border-dashed border-line text-lg font-semibold tabular-nums text-muted"
+                    aria-hidden="true"
+                  >
+                    {p.part}
+                  </span>
+                  <span class="min-w-0">
+                    <span class="block text-xs text-muted">
+                      <span class="sr-only">
+                        {txt.part} {p.part} ·{' '}
+                      </span>
+                      {txt.soon}
+                    </span>
+                    <span class="mt-0.5 block leading-snug text-muted" lang={en ? 'es' : undefined}>
+                      {p.title}
+                    </span>
+                  </span>
+                </li>
+              )
+            )}
+          </ol>
+        </section>
+      ))
+    }
+  </div>
+</section>

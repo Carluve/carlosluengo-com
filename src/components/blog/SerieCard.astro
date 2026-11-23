@@ -1,0 +1,104 @@
+---
+/**
+ * Summary card of the Serie Cloudflare for the top of the blog list. The
+ * series parts are left out of the main list, so this card stands in for
+ * them: progress, a link to the index and the three latest parts.
+ */
+import { Icon } from 'astro-icon/components';
+import { getPermalink } from '~/utils/permalinks';
+import { localizePath } from '~/i18n/utils';
+import { seriePublicadas, SERIE_PATH, SERIE_TOTAL } from '~/data/serie-cloudflare';
+import type { Lang } from '~/i18n/ui';
+
+export interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const en = lang === 'en';
+const published = seriePublicadas.length;
+const percent = Math.round((published / SERIE_TOTAL) * 100);
+const latest = [...seriePublicadas].sort((a, b) => b.part - a.part).slice(0, 3);
+const indexHref = localizePath(getPermalink(SERIE_PATH), lang);
+
+const txt = en
+  ? {
+      count: `${published} of ${SERIE_TOTAL} parts published`,
+      description:
+        'One post per Cloudflare service, from DNS to Workers and AI, always with the same structure and step-by-step screenshots. In Spanish, a new part every Tuesday.',
+      cta: 'See all parts',
+      latest: 'Latest parts',
+      part: 'Part',
+    }
+  : {
+      count: `${published} de ${SERIE_TOTAL} capítulos publicados`,
+      description:
+        'Un post por cada servicio de Cloudflare, del DNS a Workers y la IA, siempre con la misma estructura y capturas paso a paso. Sale una parte nueva cada martes.',
+      cta: 'Ver todos los capítulos',
+      latest: 'Últimas partes',
+      part: 'Parte',
+    };
+---
+
+<section
+  aria-labelledby="serie-card-title"
+  class="aw-card mb-8 overflow-hidden border-primary/30 bg-gradient-to-br from-primary/[0.07] to-transparent dark:border-primary/40 dark:from-primary/15"
+>
+  <div class="grid gap-6 p-5 sm:p-6 md:grid-cols-[1fr_18rem] md:gap-8">
+    <div>
+      <p class="aw-eyebrow inline-flex items-center gap-1.5">
+        <Icon name="tabler:cloud" class="h-4 w-4" aria-hidden="true" />
+        {en ? 'Series' : 'Serie'}
+      </p>
+      <h2 id="serie-card-title" class="mt-2 font-heading text-2xl font-medium leading-snug tracking-tight text-heading">
+        <a
+          href={indexHref}
+          class="hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          Serie Cloudflare<span class="text-muted">{' — '}</span>{txt.count}
+        </a>
+      </h2>
+      <p class="mt-2 max-w-2xl text-pretty leading-relaxed text-muted">{txt.description}</p>
+      <div
+        class="mt-4 h-2 w-full max-w-md overflow-hidden rounded-full bg-primary/10 dark:bg-white/10"
+        role="progressbar"
+        aria-label={txt.count}
+        aria-valuemin="0"
+        aria-valuemax={SERIE_TOTAL}
+        aria-valuenow={published}
+      >
+        <div class="h-full rounded-full bg-primary" style={`width:${percent}%`}></div>
+      </div>
+      <a href={indexHref} class="btn-tertiary mt-4">
+        {txt.cta}
+        <Icon name="tabler:arrow-right" class="h-4 w-4" aria-hidden="true" />
+      </a>
+    </div>
+    <div class="border-t border-line pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+      <h3 class="text-xs font-semibold uppercase tracking-wider text-muted">{txt.latest}</h3>
+      <ul class="mt-3 flex flex-col gap-3">
+        {
+          latest.map((p) => (
+            <li>
+              <a
+                href={getPermalink(p.slug as string, 'post')}
+                class="group flex items-start gap-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                <span class="inline-flex h-7 min-w-7 shrink-0 items-center justify-center rounded-md bg-primary px-1.5 text-xs font-semibold tabular-nums text-white">
+                  <span class="sr-only">{txt.part} </span>
+                  {p.part}
+                </span>
+                <span
+                  class="leading-snug text-default group-hover:text-link group-hover:underline"
+                  lang={en ? 'es' : undefined}
+                >
+                  {p.title}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
