@@ -165,3 +165,29 @@ export const serieParte = (part: number): SeriePart | undefined => seriePartes.f
 /** True when a post (by its tag slugs) belongs to the series. */
 export const isSeriePost = (post: { tags?: Array<{ slug: string }> }): boolean =>
   Array.isArray(post.tags) && post.tags.some((tag) => tag.slug === SERIE_TAG);
+
+/** The series as a whole, for the shared series components (see ~/data/series). */
+export const serieCloudflare = {
+  id: 'cloudflare',
+  name: 'Serie Cloudflare',
+  tag: SERIE_TAG,
+  path: SERIE_PATH,
+  total: SERIE_TOTAL,
+  icon: 'tabler:cloud',
+  blocks: serieBlocks as Array<{ id: string; title: string; titleEn: string }>,
+  partes: seriePartes as Array<{ part: number; title: string; block: string; slug: string | null }>,
+  text: {
+    es: {
+      card: 'Un post por cada servicio de Cloudflare, del DNS a Workers y la IA, siempre con la misma estructura y capturas paso a paso. Sale una parte nueva cada martes.',
+      intro:
+        'Un post por cada servicio de Cloudflare, siempre con la misma estructura: qué es, casos de uso, arquitectura, implementación paso a paso con capturas, cómo comprobarlo, límites y la documentación oficial. Sale una parte nueva cada martes.',
+      meta: `Los ${SERIE_TOTAL} capítulos de la Serie Cloudflare: un post por servicio, con la misma estructura y capturas paso a paso.`,
+    },
+    en: {
+      card: 'One post per Cloudflare service, from DNS to Workers and AI, always with the same structure and step-by-step screenshots. In Spanish, a new part every Tuesday.',
+      intro:
+        'One post per Cloudflare service, always with the same structure: what it is, use cases, architecture, step-by-step setup with screenshots, how to check it, limits and the official docs. A new part every Tuesday; the posts are in Spanish.',
+      meta: `All ${SERIE_TOTAL} parts of the Serie Cloudflare (in Spanish): one post per service, same structure, step-by-step screenshots.`,
+    },
+  },
+};

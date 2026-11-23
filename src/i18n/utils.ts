@@ -11,6 +11,7 @@ export const translatedPaths = [
   '/terms',
   '/blog',
   '/serie-cloudflare',
+  '/serie-producto',
 ];
 
 const strip = (path: string) => (path.length > 1 ? path.replace(/\/+$/, '') : path);

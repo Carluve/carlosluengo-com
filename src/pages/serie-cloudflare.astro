@@ -4,7 +4,7 @@ import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import StructuredData from '~/components/common/StructuredData.astro';
 import SerieIndex from '~/components/blog/SerieIndex.astro';
 import { SITE_URL } from '~/data/identity';
-import { seriePublicadas, SERIE_TOTAL } from '~/data/serie-cloudflare';
+import { seriePublicadas, SERIE_TOTAL, serieCloudflare } from '~/data/serie-cloudflare';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -41,5 +41,5 @@ const breadcrumbs = [
     }}
   />
   <Breadcrumbs bar items={breadcrumbs} />
-  <SerieIndex lang="es" />
+  <SerieIndex lang="es" serie={serieCloudflare} />
 </Layout>

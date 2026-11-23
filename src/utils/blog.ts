@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post, Taxonomy } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
-import { isSeriePost } from '~/data/serie-cloudflare';
+import { isAnySeriePost, type Serie } from '~/data/series';
 
 const generatePermalink = async ({
   id,
@@ -143,12 +143,13 @@ export const fetchPosts = async (): Promise<Array<Post>> => {
   return _posts;
 };
 
-/** Posts of the main blog list: everything except the Serie Cloudflare parts. */
+/** Posts of the main blog list: everything except the parts of a series. */
 export const fetchMainListPosts = async (): Promise<Array<Post>> =>
-  (await fetchPosts()).filter((post) => !isSeriePost(post));
+  (await fetchPosts()).filter((post) => !isAnySeriePost(post));
 
-/** Published Serie Cloudflare posts, newest first. */
-export const fetchSeriePosts = async (): Promise<Array<Post>> => (await fetchPosts()).filter(isSeriePost);
+/** Published posts of one series, newest first. */
+export const fetchSeriePosts = async (serie: Serie): Promise<Array<Post>> =>
+  (await fetchPosts()).filter((post) => Array.isArray(post.tags) && post.tags.some((t) => t.slug === serie.tag));
 
 /** */
 export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
@@ -189,8 +190,8 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  // The Serie Cloudflare parts would flood the main list: they get a summary
-  // card on its first page and their own index at /serie-cloudflare, and stay
+  // Series parts would flood the main list: they get a summary
+  // card on its first page and their own index page (/serie-cloudflare, /serie-producto), and stay
   // in the category, tag, RSS and post-navigation listings.
   return paginate(await fetchMainListPosts(), {
     params: { blog: BLOG_BASE || undefined },

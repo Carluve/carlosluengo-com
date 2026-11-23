@@ -6,7 +6,7 @@ import Grid from '~/components/blog/Grid.astro';
 
 import { getBlogPermalink } from '~/utils/permalinks';
 import { fetchPosts } from '~/utils/blog';
-import { isSeriePost } from '~/data/serie-cloudflare';
+import { serieDePost } from '~/data/series';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 import Button from '~/components/ui/Button.astro';
@@ -40,11 +40,19 @@ const {
 const lang = getLang(Astro);
 const t = useTranslations(lang);
 
-let serieShown = 0;
+// At most `maxSerie` parts of each series, so one series doesn't fill the block.
+const serieShown = new Map<string, number>();
+const keep = (post: { tags?: Array<{ slug: string }> }) => {
+  const s = serieDePost(post);
+  if (!s) return true;
+  const n = serieShown.get(s.id) ?? 0;
+  serieShown.set(s.id, n + 1);
+  return n < maxSerie;
+};
 const posts = APP_BLOG.isEnabled
   ? (await fetchPosts())
       .filter((post) => !excludeCategory || post.category?.slug !== excludeCategory)
-      .filter((post) => !isSeriePost(post) || serieShown++ < maxSerie)
+      .filter(keep)
       .slice(0, count)
   : [];
 ---
