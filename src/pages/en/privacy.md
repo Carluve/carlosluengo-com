@@ -10,13 +10,17 @@ Site owner: Carlos Luengo Vera. Domain: carlosluengo.com. The site is published 
 
 ## What this site does not do
 
-There is no contact form, newsletter or user area. No analytics tools or tracking pixels are installed. Personal data is not sold or passed on to third parties for commercial purposes.
+There is no contact form, newsletter or user area. There is no Google Analytics, no advertising pixels and no cross-site tracking. Personal data is not sold or passed on to third parties for commercial purposes.
 
 Correspondence is handled via [LinkedIn](https://www.linkedin.com/in/carlosluengo), outside this site.
 
+## Visit statistics
+
+To know which pages get read, the site uses [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/). A small script (`static.cloudflareinsights.com`) measures each visit in aggregate: page viewed, referring site, country, browser and device type, and load times. It uses no cookies or local storage, does not fingerprint the browser and does not follow anyone across sites. The data is only seen in aggregate, never per person. If your browser blocks the script, the site works just the same.
+
 ## Cookies and local storage
 
-This site uses no analytics, advertising or tracking cookies, which is why it shows no consent banner. It only stores in your browser what it needs to work and what you choose:
+This site uses no analytics, advertising or tracking cookies (visit statistics work without cookies), which is why it shows no consent banner. It only stores in your browser what it needs to work and what you choose:
 
 | Name      | Type              | Set by                                     | Purpose                                          | Lifetime           |
 | --------- | ----------------- | ------------------------------------------ | ------------------------------------------------ | ------------------ |
@@ -39,4 +43,4 @@ LinkedIn, GitHub, Google Scholar, arXiv and the other linked sites apply their o
 
 This site does not keep a file of personal data about its visitors. For any question about this page, the channel is the LinkedIn profile given above.
 
-Last reviewed: September 2026.
+Last reviewed: November 2026.

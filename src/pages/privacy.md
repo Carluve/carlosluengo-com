@@ -8,13 +8,17 @@ Titular del sitio: Carlos Luengo Vera. Dominio: carlosluengo.com. El sitio se pu
 
 ## Qué no hace este sitio
 
-No hay formulario de contacto, boletín ni área de usuario. No se instalan herramientas de analítica ni píxeles de seguimiento. No se venden datos personales ni se ceden a terceros con fines comerciales.
+No hay formulario de contacto, boletín ni área de usuario. No hay Google Analytics, píxeles de publicidad ni seguimiento entre sitios. No se venden datos personales ni se ceden a terceros con fines comerciales.
 
 La correspondencia se atiende por [LinkedIn](https://www.linkedin.com/in/carlosluengo), fuera de este sitio.
 
+## Estadísticas de visitas
+
+Para saber qué páginas se leen, el sitio usa [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/). Un pequeño script (`static.cloudflareinsights.com`) mide cada visita de forma agregada: página vista, sitio de procedencia, país, tipo de navegador y dispositivo, y tiempos de carga. No usa cookies ni almacenamiento local, no crea huellas del navegador y no sigue a nadie entre sitios. Los datos solo se ven en conjunto, nunca por persona. Si tu navegador bloquea el script, la web funciona igual.
+
 ## Cookies y almacenamiento local
 
-Este sitio no usa cookies de analítica, publicidad ni seguimiento, por eso no muestra un aviso de consentimiento. Solo guarda en tu navegador lo imprescindible para que funcione y lo que tú eliges:
+Este sitio no usa cookies de analítica, publicidad ni seguimiento (las estadísticas de visitas funcionan sin cookies), por eso no muestra un aviso de consentimiento. Solo guarda en tu navegador lo imprescindible para que funcione y lo que tú eliges:
 
 | Nombre    | Tipo                  | Quién la pone                            | Para qué                                                  | Duración            |
 | --------- | --------------------- | ---------------------------------------- | --------------------------------------------------------- | ------------------- |
@@ -37,4 +41,4 @@ LinkedIn, GitHub, Google Scholar, arXiv y el resto de sitios enlazados aplican s
 
 No se conserva en este sitio un fichero de datos personales de quienes lo visitan. Para una cuestión relativa a esta página, el canal es el perfil de LinkedIn indicado arriba.
 
-Última revisión: septiembre de 2026.
+Última revisión: noviembre de 2026.
