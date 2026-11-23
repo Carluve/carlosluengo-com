@@ -5,7 +5,7 @@ import { getLang, localizePath, useTranslations, categoryLabel } from '~/i18n/ut
  * Static SVG and links only: no client JavaScript.
  */
 import { fetchPosts, fetchMainListPosts } from '~/utils/blog';
-import { seriePublicadas, SERIE_PATH } from '~/data/serie-cloudflare';
+import { series, publicadas } from '~/data/series';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 export interface Props {
@@ -17,7 +17,7 @@ const { active } = Astro.props;
 const lang = getLang(Astro);
 const t = useTranslations(lang);
 const posts = await fetchPosts();
-// "Todas" counts what the main list shows: the Serie Cloudflare parts have
+// "Todas" counts what the main list shows: series parts have
 // their own chip and index page. Category counts include every post.
 const mainCount = (await fetchMainListPosts()).length;
 
@@ -63,14 +63,18 @@ const chipClass =
           <span class="tabular-nums opacity-70">{mainCount}</span>
         </a>
       </li>
-      <li>
-        <a
-          href={localizePath(getPermalink(SERIE_PATH), lang)}
-          class:list={[chipClass, 'border-line bg-surface text-default hover:border-primary/40 hover:text-link']}
-        >
-          Serie Cloudflare <span class="tabular-nums opacity-70">{seriePublicadas.length}</span>
-        </a>
-      </li>
+      {
+        series.map((s) => (
+          <li>
+            <a
+              href={localizePath(getPermalink(s.path), lang)}
+              class:list={[chipClass, 'border-line bg-surface text-default hover:border-primary/40 hover:text-link']}
+            >
+              {s.name} <span class="tabular-nums opacity-70">{publicadas(s).length}</span>
+            </a>
+          </li>
+        ))
+      }
       {
         chips.map(([slug, { title, count }]) => (
           <li>

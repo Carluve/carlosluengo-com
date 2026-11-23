@@ -1,6 +1,6 @@
 ---
 /**
- * Index of the Serie Cloudflare: progress and the 50 parts grouped by block.
+ * Index of a series: progress and all its parts grouped by block.
  * Published parts link to their post with a small cover; the rest are greyed
  * out as "Próximamente". Titles stay in Spanish (the posts are in Spanish);
  * only the surrounding interface follows `lang`.
@@ -12,17 +12,22 @@ import { fetchSeriePosts } from '~/utils/blog';
 import { getPermalink } from '~/utils/permalinks';
 import { findImage } from '~/utils/images';
 import { getFormattedDate } from '~/utils/utils';
-import { seriePartes, seriePublicadas, serieBlocks, SERIE_TOTAL } from '~/data/serie-cloudflare';
+import { publicadas, type Serie } from '~/data/series';
 import type { Lang } from '~/i18n/ui';
 
 export interface Props {
   lang: Lang;
+  serie: Serie;
 }
 
-const { lang } = Astro.props;
+const { lang, serie } = Astro.props;
+const seriePartes = serie.partes;
+const seriePublicadas = publicadas(serie);
+const serieBlocks = serie.blocks;
+const SERIE_TOTAL = serie.total;
 const en = lang === 'en';
 
-const posts = await fetchSeriePosts();
+const posts = await fetchSeriePosts(serie);
 const bySlug = new Map(posts.map((post) => [post.slug, post]));
 
 const published = seriePublicadas.length;
@@ -46,16 +51,14 @@ const blocks = await Promise.all(
 
 const txt = en
   ? {
-      intro:
-        'One post per Cloudflare service, always with the same structure: what it is, use cases, architecture, step-by-step setup with screenshots, how to check it, limits and the official docs. A new part every Tuesday; the posts are in Spanish.',
+      intro: serie.text.en.intro,
       progress: `${published} of ${SERIE_TOTAL} published`,
       ofBlock: (n: number, total: number) => `${n} of ${total} published`,
       part: 'Part',
       soon: 'Coming soon',
     }
   : {
-      intro:
-        'Un post por cada servicio de Cloudflare, siempre con la misma estructura: qué es, casos de uso, arquitectura, implementación paso a paso con capturas, cómo comprobarlo, límites y la documentación oficial. Sale una parte nueva cada martes.',
+      intro: serie.text.es.intro,
       progress: `${published} de ${SERIE_TOTAL} publicados`,
       ofBlock: (n: number, total: number) => `${n} de ${total} publicados`,
       part: 'Parte',
@@ -64,7 +67,7 @@ const txt = en
 ---
 
 <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-  <Headline subtitle={txt.intro}>Serie Cloudflare</Headline>
+  <Headline subtitle={txt.intro}>{serie.name}</Headline>
 
   <div class="-mt-2 mb-12 max-w-3xl">
     <p class="flex items-baseline justify-between text-sm font-medium text-heading" id="serie-progress-label">

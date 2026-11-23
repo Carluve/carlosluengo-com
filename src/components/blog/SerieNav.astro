@@ -1,12 +1,12 @@
 ---
 /**
- * Compact navigation box for the posts of the Serie Cloudflare: which part
- * this is, a link to the index and the previous and next parts by number.
- * Renders nothing for posts that are not in src/data/serie-cloudflare.ts.
+ * Compact navigation box for the posts of a series: which part this is, a
+ * link to the index and the previous and next parts by number.
+ * Renders nothing for posts that are not in any series (src/data/series.ts).
  */
 import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
-import { serieParteDe, serieParte, SERIE_PATH, SERIE_TOTAL } from '~/data/serie-cloudflare';
+import { parteDeSlug } from '~/data/series';
 
 export interface Props {
   slug: string;
@@ -16,7 +16,10 @@ export interface Props {
 }
 
 const { slug, position = 'top', class: className = '' } = Astro.props;
-const current = serieParteDe(slug);
+const found = parteDeSlug(slug);
+const serie = found?.serie;
+const current = found?.parte;
+const serieParte = (n: number) => serie?.partes.find((p) => p.part === n);
 const prev = current ? serieParte(current.part - 1) : undefined;
 const next = current ? serieParte(current.part + 1) : undefined;
 const link = (s: string) => getPermalink(s, 'post');
@@ -25,20 +28,20 @@ const link = (s: string) => getPermalink(s, 'post');
 {
   current && (
     <nav
-      aria-label={`Serie Cloudflare, ${position === 'top' ? 'inicio' : 'final'} del artículo`}
+      aria-label={`${serie!.name}, ${position === 'top' ? 'inicio' : 'final'} del artículo`}
       class:list={['mx-auto max-w-3xl px-4 sm:px-6', className]}
     >
       <div class="rounded-xl border border-primary/25 bg-primary/5 p-4 text-sm dark:border-primary/35 dark:bg-primary/10">
         <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
           <p class="font-medium text-heading">
-            <span class="aw-eyebrow mr-1">Serie Cloudflare</span>
+            <span class="aw-eyebrow mr-1">{serie!.name}</span>
             <span class="text-muted" aria-hidden="true">
               ·
             </span>{' '}
-            parte {current.part} de {SERIE_TOTAL}
+            parte {current.part} de {serie!.total}
           </p>
           <a
-            href={getPermalink(SERIE_PATH)}
+            href={getPermalink(serie!.path)}
             class="inline-flex items-center gap-1 font-medium text-link underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             Ver todos los capítulos

@@ -1,39 +1,41 @@
 ---
 /**
- * Summary card of the Serie Cloudflare for the top of the blog list. The
- * series parts are left out of the main list, so this card stands in for
- * them: progress, a link to the index and the three latest parts.
+ * Summary card of a series for the top of the blog list. Series parts are
+ * left out of the main list, so this card stands in for them: progress, a
+ * link to the index and the three latest parts.
  */
 import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 import { localizePath } from '~/i18n/utils';
-import { seriePublicadas, SERIE_PATH, SERIE_TOTAL } from '~/data/serie-cloudflare';
+import { publicadas, type Serie } from '~/data/series';
 import type { Lang } from '~/i18n/ui';
 
 export interface Props {
   lang: Lang;
+  serie: Serie;
 }
 
-const { lang } = Astro.props;
+const { lang, serie } = Astro.props;
+const seriePublicadas = publicadas(serie);
+const SERIE_TOTAL = serie.total;
+const cardId = `serie-card-${serie.id}`;
 const en = lang === 'en';
 const published = seriePublicadas.length;
 const percent = Math.round((published / SERIE_TOTAL) * 100);
 const latest = [...seriePublicadas].sort((a, b) => b.part - a.part).slice(0, 3);
-const indexHref = localizePath(getPermalink(SERIE_PATH), lang);
+const indexHref = localizePath(getPermalink(serie.path), lang);
 
 const txt = en
   ? {
       count: `${published} of ${SERIE_TOTAL} parts published`,
-      description:
-        'One post per Cloudflare service, from DNS to Workers and AI, always with the same structure and step-by-step screenshots. In Spanish, a new part every Tuesday.',
+      description: serie.text.en.card,
       cta: 'See all parts',
       latest: 'Latest parts',
       part: 'Part',
     }
   : {
       count: `${published} de ${SERIE_TOTAL} capítulos publicados`,
-      description:
-        'Un post por cada servicio de Cloudflare, del DNS a Workers y la IA, siempre con la misma estructura y capturas paso a paso. Sale una parte nueva cada martes.',
+      description: serie.text.es.card,
       cta: 'Ver todos los capítulos',
       latest: 'Últimas partes',
       part: 'Parte',
@@ -41,21 +43,21 @@ const txt = en
 ---
 
 <section
-  aria-labelledby="serie-card-title"
+  aria-labelledby={cardId}
   class="aw-card mb-8 overflow-hidden border-primary/30 bg-gradient-to-br from-primary/[0.07] to-transparent dark:border-primary/40 dark:from-primary/15"
 >
   <div class="grid gap-6 p-5 sm:p-6 md:grid-cols-[1fr_18rem] md:gap-8">
     <div>
       <p class="aw-eyebrow inline-flex items-center gap-1.5">
-        <Icon name="tabler:cloud" class="h-4 w-4" aria-hidden="true" />
+        <Icon name={serie.icon} class="h-4 w-4" aria-hidden="true" />
         {en ? 'Series' : 'Serie'}
       </p>
-      <h2 id="serie-card-title" class="mt-2 font-heading text-2xl font-medium leading-snug tracking-tight text-heading">
+      <h2 id={cardId} class="mt-2 font-heading text-2xl font-medium leading-snug tracking-tight text-heading">
         <a
           href={indexHref}
           class="hover:text-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
-          Serie Cloudflare<span class="text-muted">{' — '}</span>{txt.count}
+          {serie.name}<span class="text-muted">{' — '}</span>{txt.count}
         </a>
       </h2>
       <p class="mt-2 max-w-2xl text-pretty leading-relaxed text-muted">{txt.description}</p>

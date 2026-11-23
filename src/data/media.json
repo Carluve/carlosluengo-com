@@ -9770,6 +9770,450 @@
     },
     "og": "blog/opencode-con-cloudflare-ai-gateway/opencode-cloudflare-provider-picker-d6cc1948ef-og.jpg"
   },
+  "blog/producto-claridad-extrema/01-metodologia.png": {
+    "type": "image",
+    "hash": "3695747d8a",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-claridad-extrema/01-metodologia-3695747d8a-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/01-metodologia-3695747d8a-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-claridad-extrema/01-metodologia-3695747d8a-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-claridad-extrema/01-metodologia-3695747d8a-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/01-metodologia-3695747d8a-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-claridad-extrema/01-metodologia-3695747d8a-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-claridad-extrema/01-metodologia-3695747d8a-og.jpg"
+  },
+  "blog/producto-claridad-extrema/02-empresas.png": {
+    "type": "image",
+    "hash": "4cc14ae946",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-claridad-extrema/02-empresas-4cc14ae946-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/02-empresas-4cc14ae946-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-claridad-extrema/02-empresas-4cc14ae946-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-claridad-extrema/02-empresas-4cc14ae946-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/02-empresas-4cc14ae946-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-claridad-extrema/02-empresas-4cc14ae946-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-claridad-extrema/02-empresas-4cc14ae946-og.jpg"
+  },
+  "blog/producto-claridad-extrema/03-plantilla.png": {
+    "type": "image",
+    "hash": "5140ce81a9",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-claridad-extrema/03-plantilla-5140ce81a9-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/03-plantilla-5140ce81a9-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-claridad-extrema/03-plantilla-5140ce81a9-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-claridad-extrema/03-plantilla-5140ce81a9-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/03-plantilla-5140ce81a9-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-claridad-extrema/03-plantilla-5140ce81a9-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-claridad-extrema/03-plantilla-5140ce81a9-og.jpg"
+  },
+  "blog/producto-claridad-extrema/portada.png": {
+    "type": "image",
+    "hash": "06c6ee2207",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-claridad-extrema/portada-06c6ee2207-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/portada-06c6ee2207-960.avif"
+        ],
+        [
+          1440,
+          "blog/producto-claridad-extrema/portada-06c6ee2207-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-claridad-extrema/portada-06c6ee2207-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-claridad-extrema/portada-06c6ee2207-960.webp"
+        ],
+        [
+          1440,
+          "blog/producto-claridad-extrema/portada-06c6ee2207-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-claridad-extrema/portada-06c6ee2207-og.jpg"
+  },
+  "blog/producto-documento-de-referencia-unico/01-metodologia.png": {
+    "type": "image",
+    "hash": "6326be1820",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/01-metodologia-6326be1820-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/01-metodologia-6326be1820-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-documento-de-referencia-unico/01-metodologia-6326be1820-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/01-metodologia-6326be1820-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/01-metodologia-6326be1820-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-documento-de-referencia-unico/01-metodologia-6326be1820-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-documento-de-referencia-unico/01-metodologia-6326be1820-og.jpg"
+  },
+  "blog/producto-documento-de-referencia-unico/02-empresas.png": {
+    "type": "image",
+    "hash": "7e048648e1",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/02-empresas-7e048648e1-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/02-empresas-7e048648e1-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-documento-de-referencia-unico/02-empresas-7e048648e1-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/02-empresas-7e048648e1-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/02-empresas-7e048648e1-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-documento-de-referencia-unico/02-empresas-7e048648e1-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-documento-de-referencia-unico/02-empresas-7e048648e1-og.jpg"
+  },
+  "blog/producto-documento-de-referencia-unico/03-anatomia.png": {
+    "type": "image",
+    "hash": "c9fa50afa8",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/03-anatomia-c9fa50afa8-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/03-anatomia-c9fa50afa8-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-documento-de-referencia-unico/03-anatomia-c9fa50afa8-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/03-anatomia-c9fa50afa8-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/03-anatomia-c9fa50afa8-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-documento-de-referencia-unico/03-anatomia-c9fa50afa8-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-documento-de-referencia-unico/03-anatomia-c9fa50afa8-og.jpg"
+  },
+  "blog/producto-documento-de-referencia-unico/portada.png": {
+    "type": "image",
+    "hash": "b349010fd3",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/portada-b349010fd3-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/portada-b349010fd3-960.avif"
+        ],
+        [
+          1440,
+          "blog/producto-documento-de-referencia-unico/portada-b349010fd3-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-documento-de-referencia-unico/portada-b349010fd3-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-documento-de-referencia-unico/portada-b349010fd3-960.webp"
+        ],
+        [
+          1440,
+          "blog/producto-documento-de-referencia-unico/portada-b349010fd3-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-documento-de-referencia-unico/portada-b349010fd3-og.jpg"
+  },
+  "blog/producto-que-hace-un-product-manager/01-metodologia.png": {
+    "type": "image",
+    "hash": "2c4d894bae",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/01-metodologia-2c4d894bae-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/01-metodologia-2c4d894bae-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-que-hace-un-product-manager/01-metodologia-2c4d894bae-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/01-metodologia-2c4d894bae-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/01-metodologia-2c4d894bae-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-que-hace-un-product-manager/01-metodologia-2c4d894bae-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-que-hace-un-product-manager/01-metodologia-2c4d894bae-og.jpg"
+  },
+  "blog/producto-que-hace-un-product-manager/02-empresas.png": {
+    "type": "image",
+    "hash": "6e79214496",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/02-empresas-6e79214496-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/02-empresas-6e79214496-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-que-hace-un-product-manager/02-empresas-6e79214496-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/02-empresas-6e79214496-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/02-empresas-6e79214496-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-que-hace-un-product-manager/02-empresas-6e79214496-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-que-hace-un-product-manager/02-empresas-6e79214496-og.jpg"
+  },
+  "blog/producto-que-hace-un-product-manager/03-venn-riesgos.png": {
+    "type": "image",
+    "hash": "4d673be54a",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/03-venn-riesgos-4d673be54a-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/03-venn-riesgos-4d673be54a-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-que-hace-un-product-manager/03-venn-riesgos-4d673be54a-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/03-venn-riesgos-4d673be54a-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/03-venn-riesgos-4d673be54a-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-que-hace-un-product-manager/03-venn-riesgos-4d673be54a-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-que-hace-un-product-manager/03-venn-riesgos-4d673be54a-og.jpg"
+  },
+  "blog/producto-que-hace-un-product-manager/portada.png": {
+    "type": "image",
+    "hash": "44b2f73c83",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/portada-44b2f73c83-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/portada-44b2f73c83-960.avif"
+        ],
+        [
+          1440,
+          "blog/producto-que-hace-un-product-manager/portada-44b2f73c83-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-que-hace-un-product-manager/portada-44b2f73c83-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-que-hace-un-product-manager/portada-44b2f73c83-960.webp"
+        ],
+        [
+          1440,
+          "blog/producto-que-hace-un-product-manager/portada-44b2f73c83-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-que-hace-un-product-manager/portada-44b2f73c83-og.jpg"
+  },
   "blog/testing-amazon-q-developer-on-github/202505_01amazonq.png": {
     "type": "image",
     "hash": "24e8df82e7",
