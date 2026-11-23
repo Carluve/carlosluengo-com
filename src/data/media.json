@@ -3936,6 +3936,117 @@
     },
     "og": "blog/cloudflare-credenciales-filtradas-guia/portada-1bf32a7647-og.jpg"
   },
+  "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos.png": {
+    "type": "image",
+    "hash": "8d9353a6d6",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos-8d9353a6d6-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos-8d9353a6d6-960.avif"
+        ],
+        [
+          1600,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos-8d9353a6d6-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos-8d9353a6d6-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos-8d9353a6d6-960.webp"
+        ],
+        [
+          1600,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos-8d9353a6d6-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-cuarto-acto-pagos-publicidad/01-cuatro-actos-8d9353a6d6-og.jpg"
+  },
+  "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago.png": {
+    "type": "image",
+    "hash": "270bfa40d6",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago-270bfa40d6-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago-270bfa40d6-960.avif"
+        ],
+        [
+          1600,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago-270bfa40d6-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago-270bfa40d6-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago-270bfa40d6-960.webp"
+        ],
+        [
+          1600,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago-270bfa40d6-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-cuarto-acto-pagos-publicidad/02-flujo-pago-270bfa40d6-og.jpg"
+  },
+  "blog/cloudflare-cuarto-acto-pagos-publicidad/portada.png": {
+    "type": "image",
+    "hash": "142ae7a341",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/portada-142ae7a341-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/portada-142ae7a341-960.avif"
+        ],
+        [
+          1440,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/portada-142ae7a341-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/portada-142ae7a341-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/portada-142ae7a341-960.webp"
+        ],
+        [
+          1440,
+          "blog/cloudflare-cuarto-acto-pagos-publicidad/portada-142ae7a341-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-cuarto-acto-pagos-publicidad/portada-142ae7a341-og.jpg"
+  },
   "blog/cloudflare-d1-guia/00-arquitectura.png": {
     "type": "image",
     "hash": "b3e6fd1bc7",
@@ -5657,6 +5768,117 @@
       ]
     },
     "og": "blog/cloudflare-plan-free-que-incluye/portada-d18525457a-og.jpg"
+  },
+  "blog/cloudflare-plano-de-control-agente/01-plano-de-control.png": {
+    "type": "image",
+    "hash": "7d0cb810f6",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-plano-de-control-agente/01-plano-de-control-7d0cb810f6-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-plano-de-control-agente/01-plano-de-control-7d0cb810f6-960.avif"
+        ],
+        [
+          1600,
+          "blog/cloudflare-plano-de-control-agente/01-plano-de-control-7d0cb810f6-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-plano-de-control-agente/01-plano-de-control-7d0cb810f6-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-plano-de-control-agente/01-plano-de-control-7d0cb810f6-960.webp"
+        ],
+        [
+          1600,
+          "blog/cloudflare-plano-de-control-agente/01-plano-de-control-7d0cb810f6-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-plano-de-control-agente/01-plano-de-control-7d0cb810f6-og.jpg"
+  },
+  "blog/cloudflare-plano-de-control-agente/02-recorrido.png": {
+    "type": "image",
+    "hash": "5c91505398",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-plano-de-control-agente/02-recorrido-5c91505398-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-plano-de-control-agente/02-recorrido-5c91505398-960.avif"
+        ],
+        [
+          1600,
+          "blog/cloudflare-plano-de-control-agente/02-recorrido-5c91505398-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-plano-de-control-agente/02-recorrido-5c91505398-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-plano-de-control-agente/02-recorrido-5c91505398-960.webp"
+        ],
+        [
+          1600,
+          "blog/cloudflare-plano-de-control-agente/02-recorrido-5c91505398-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-plano-de-control-agente/02-recorrido-5c91505398-og.jpg"
+  },
+  "blog/cloudflare-plano-de-control-agente/portada.png": {
+    "type": "image",
+    "hash": "45a9b5b439",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/cloudflare-plano-de-control-agente/portada-45a9b5b439-480.avif"
+        ],
+        [
+          960,
+          "blog/cloudflare-plano-de-control-agente/portada-45a9b5b439-960.avif"
+        ],
+        [
+          1440,
+          "blog/cloudflare-plano-de-control-agente/portada-45a9b5b439-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/cloudflare-plano-de-control-agente/portada-45a9b5b439-480.webp"
+        ],
+        [
+          960,
+          "blog/cloudflare-plano-de-control-agente/portada-45a9b5b439-960.webp"
+        ],
+        [
+          1440,
+          "blog/cloudflare-plano-de-control-agente/portada-45a9b5b439-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/cloudflare-plano-de-control-agente/portada-45a9b5b439-og.jpg"
   },
   "blog/cloudflare-queues-guia/00-arquitectura.png": {
     "type": "image",
