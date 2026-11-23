@@ -1,21 +1,156 @@
 ---
 import { ANALYTICS } from 'astrowind:config';
 
+// Google Analytics 4 with Consent Mode v2.
+// - Everything is denied by default; gtag.js only loads after the visitor accepts.
+// - The choice is stored in localStorage ('consent' = 'granted' | 'denied').
+// - With View Transitions (ClientRouter) the page does not reload, so page_view
+//   is sent by hand on every astro:page-load instead of by gtag('config').
+// - Any element with [data-consent-open] reopens the banner (privacy page).
 const id = ANALYTICS?.vendors?.googleAnalytics?.id ? String(ANALYTICS.vendors.googleAnalytics.id) : '';
-const partytown = !!ANALYTICS?.vendors?.googleAnalytics?.partytown;
-const scriptType = partytown ? 'text/partytown' : undefined;
 ---
 
-{id && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} type={scriptType} />}
+{
+  id && (
+    <>
+      <script is:inline data-ga-id={id}>
+        (function () {
+          if (window.__gaInit) return;
+          window.__gaInit = true;
+          var id = document.currentScript.dataset.gaId;
+          var stored = null;
+          try {
+            stored = localStorage.getItem('consent');
+          } catch (e) {}
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
+            dataLayer.push(arguments);
+          };
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: stored === 'granted' ? 'granted' : 'denied',
+            wait_for_update: 500,
+          });
+          gtag('set', 'ads_data_redaction', true);
+          gtag('js', new Date());
+          gtag('config', id, { send_page_view: false });
 
-<script is:inline id="ga-init" data-id={id} type={id ? scriptType : undefined}>
-  if (document.getElementById('ga-init').dataset.id) {
-    var d = document.getElementById('ga-init').dataset.id;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      dataLayer.push(arguments);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', d);
-  }
-</script>
+          // Basic consent mode: gtag.js is not even downloaded until the visitor accepts.
+          function loadGtag() {
+            if (window.__gaLoaded) return;
+            window.__gaLoaded = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+            document.head.appendChild(s);
+          }
+          if (stored === 'granted') loadGtag();
+
+          var TEXT = {
+            es: {
+              msg: 'Uso Google Analytics para saber qué artículos se leen. Solo pone cookies si aceptas.',
+              more: 'Más información',
+              href: '/privacy',
+              yes: 'Aceptar',
+              no: 'Rechazar',
+            },
+            en: {
+              msg: 'I use Google Analytics to see which articles get read. It only sets cookies if you accept.',
+              more: 'Learn more',
+              href: '/en/privacy',
+              yes: 'Accept',
+              no: 'Reject',
+            },
+          };
+
+          function choose(value) {
+            try {
+              localStorage.setItem('consent', value);
+            } catch (e) {}
+            gtag('consent', 'update', { analytics_storage: value });
+            if (value === 'granted') loadGtag();
+            if (value === 'denied') {
+              // Withdrawing consent: remove any GA cookies already set.
+              var host = location.hostname;
+              var domains = ['', host, '.' + host, '.' + host.split('.').slice(-2).join('.')];
+              document.cookie.split('; ').forEach(function (c) {
+                var name = c.split('=')[0];
+                if (name === '_ga' || name.indexOf('_ga_') === 0) {
+                  domains.forEach(function (d) {
+                    document.cookie =
+                      name + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+                  });
+                }
+              });
+            }
+            var b = document.getElementById('consent-banner');
+            if (b) b.remove();
+          }
+
+          function showBanner() {
+            if (document.getElementById('consent-banner')) return;
+            var t = (document.documentElement.lang || 'es').indexOf('en') === 0 ? TEXT.en : TEXT.es;
+            var b = document.createElement('div');
+            b.id = 'consent-banner';
+            b.setAttribute('role', 'dialog');
+            b.setAttribute('aria-live', 'polite');
+            b.setAttribute('aria-label', 'Cookies');
+            b.className =
+              'fixed bottom-16 left-4 right-4 z-50 mx-auto max-w-2xl rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-default shadow-lg p-4 flex flex-col sm:flex-row sm:items-center gap-3 text-sm';
+            var p = document.createElement('p');
+            p.className = 'flex-1';
+            p.textContent = t.msg + ' ';
+            var a = document.createElement('a');
+            a.href = t.href;
+            a.className = 'underline';
+            a.textContent = t.more;
+            p.appendChild(a);
+            var btns = document.createElement('div');
+            btns.className = 'flex gap-2 shrink-0';
+            [
+              [t.no, 'denied'],
+              [t.yes, 'granted'],
+            ].forEach(function (x) {
+              var btn = document.createElement('button');
+              btn.type = 'button';
+              btn.textContent = x[0];
+              btn.className =
+                'px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 font-medium hover:bg-gray-100 dark:hover:bg-slate-800';
+              btn.addEventListener('click', function () {
+                choose(x[1]);
+              });
+              btns.appendChild(btn);
+            });
+            b.appendChild(p);
+            b.appendChild(btns);
+            document.body.appendChild(b);
+          }
+
+          function onPage() {
+            gtag('event', 'page_view', {
+              page_location: location.href,
+              page_title: document.title,
+            });
+            var current = null;
+            try {
+              current = localStorage.getItem('consent');
+            } catch (e) {}
+            if (current !== 'granted' && current !== 'denied') showBanner();
+            document.querySelectorAll('[data-consent-open]').forEach(function (el) {
+              el.addEventListener('click', function () {
+                try {
+                  localStorage.removeItem('consent');
+                } catch (e) {}
+                showBanner();
+              });
+            });
+          }
+
+          document.addEventListener('astro:page-load', onPage);
+        })();
+      </script>
+    </>
+  )
+}
