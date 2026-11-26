@@ -22,4 +22,13 @@
     // to it, instead of the default 307 from /blog/post to /blog/post/.
     "html_handling": "drop-trailing-slash",
   },
+  // Workers Logs on (26 Nov 2026). Keep in sync with the dashboard: a deploy
+  // overwrites whatever is set there.
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+    },
+  },
 }
