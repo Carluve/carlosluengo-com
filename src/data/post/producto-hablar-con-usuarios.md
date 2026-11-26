@@ -239,7 +239,7 @@ Una guía de entrevista de 30 minutos y un resumen de una página para después.
 
 Última revisión: 24 de noviembre de 2026.
 
-Siguiente en la serie: Escribir una spec o PRD que se lea (próximamente).
+Siguiente en la serie: [Escribir una spec o PRD que se lea](/blog/producto-escribir-una-spec).
 
 ## También te puede interesar
 
