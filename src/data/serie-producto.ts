@@ -47,10 +47,20 @@ export const serieProducto = {
       slug: 'producto-metricas-que-importan',
     },
     { part: 6, title: 'Hablar con usuarios sin sesgarles', block: 'descubrir', slug: 'producto-hablar-con-usuarios' },
-    { part: 7, title: 'Escribir una spec o PRD que se lea', block: 'construir', slug: null },
-    { part: 8, title: 'Ser diferente: estrategia y posicionamiento', block: 'descubrir', slug: null },
-    { part: 9, title: 'Lanzar: del beta al go-to-market', block: 'construir', slug: null },
-    { part: 10, title: 'Tus primeros 90 días: el memo de entrada', block: 'construir', slug: null },
+    { part: 7, title: 'Escribir una spec o PRD que se lea', block: 'construir', slug: 'producto-escribir-una-spec' },
+    {
+      part: 8,
+      title: 'Ser diferente: estrategia y posicionamiento',
+      block: 'descubrir',
+      slug: 'producto-estrategia-y-posicionamiento',
+    },
+    { part: 9, title: 'Lanzar: del beta al go-to-market', block: 'construir', slug: 'producto-lanzar' },
+    {
+      part: 10,
+      title: 'Tus primeros 90 días: el memo de entrada',
+      block: 'construir',
+      slug: 'producto-primeros-90-dias',
+    },
   ] as Array<{ part: number; title: string; block: string; slug: string | null }>,
   text: {
     es: {
