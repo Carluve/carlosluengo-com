@@ -1,0 +1,135 @@
+---
+/**
+ * Hero extras for the home page:
+ *  - «Ahora mismo»: three live items built from the content at build time
+ *    (latest paper, Serie Producto progress, latest essay), so it never goes stale.
+ *  - A visible door to the Machine view: same switch as the floating
+ *    Human/Machine toggle (ModeToggle.astro listens to any [data-mode-set]).
+ */
+import { Icon } from 'astro-icon/components';
+import { fetchMainListPosts } from '~/utils/blog';
+import { publications, publicationHref } from '~/data/identity';
+import { serieProducto } from '~/data/serie-producto';
+import { publicadas } from '~/data/series';
+import { getPermalink } from '~/utils/permalinks';
+import { localizePath } from '~/i18n/utils';
+
+export interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const en = lang === 'en';
+
+const now = new Date();
+const latestPost = (await fetchMainListPosts())
+  .filter((p) => p.publishDate <= now && (en ? p.lang === 'en' || !p.lang : p.lang !== 'en'))
+  .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())[0];
+
+const paper = publications[0];
+const serieDone = publicadas(serieProducto).length;
+const serieHref = localizePath(getPermalink(serieProducto.path), lang);
+
+const t = en
+  ? {
+      now: 'Right now',
+      paper: 'Latest paper',
+      serie: `${serieProducto.name}: ${serieDone} of ${serieProducto.total} parts`,
+      serieLabel: serieDone === serieProducto.total ? 'Just finished' : 'Writing',
+      post: 'On the blog',
+      machineTitle: 'This site has two readings',
+      machineText: 'One for people and one for AI agents. See exactly what an agent reads.',
+      machineCta: 'Machine view',
+    }
+  : {
+      now: 'Ahora mismo',
+      paper: 'Último artículo',
+      serie: `${serieProducto.name}: ${serieDone} de ${serieProducto.total} capítulos`,
+      serieLabel: serieDone === serieProducto.total ? 'Recién terminada' : 'Escribiendo',
+      post: 'En el blog',
+      machineTitle: 'Esta web tiene dos lecturas',
+      machineText: 'Una para personas y otra para agentes de IA. Mira exactamente lo que lee un agente.',
+      machineCta: 'Vista máquina',
+    };
+
+const items = [
+  {
+    icon: 'tabler:file-certificate',
+    label: t.paper,
+    text: `${paper.venue.split(' (')[0]} · ${paper.year}`,
+    href: publicationHref(paper),
+    external: true,
+  },
+  { icon: 'tabler:writing', label: t.serieLabel, text: t.serie, href: serieHref, external: false },
+  ...(latestPost
+    ? [{ icon: 'tabler:article', label: t.post, text: latestPost.title, href: latestPost.permalink, external: false }]
+    : []),
+];
+---
+
+<div class="cl-now mt-10 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-stretch">
+  <div class="rounded-2xl border border-line bg-surface/60 p-4">
+    <p class="aw-eyebrow flex items-center gap-2">
+      <span class="cl-now__pulse" aria-hidden="true"></span>{t.now}
+    </p>
+    <ul class="mt-3 grid gap-2.5 text-sm">
+      {
+        items.map((it) => (
+          <li>
+            <a
+              href={it.href}
+              target={it.external ? '_blank' : undefined}
+              rel={it.external ? 'noopener' : undefined}
+              class="cl-now__item group flex items-start gap-2.5 text-default focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <Icon name={it.icon} class="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+              <span class="min-w-0">
+                <span class="text-muted">{it.label} · </span>
+                <span class="cl-link text-heading">{it.text}</span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div
+    class="cl-door flex flex-col justify-between rounded-2xl border border-dashed border-primary/40 p-4 lg:max-w-[15rem]"
+  >
+    <div>
+      <p class="font-mono text-xs uppercase tracking-wider text-primary">&lt;/&gt; {t.machineTitle}</p>
+      <p class="mt-2 text-sm leading-relaxed text-muted">{t.machineText}</p>
+    </div>
+    <button
+      type="button"
+      data-mode-set="machine"
+      class="cl-door__btn mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-3 py-2 font-mono text-sm text-white transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+    >
+      <span class="h-2 w-2 rounded-full bg-white" aria-hidden="true"></span>
+      {t.machineCta}
+      <Icon name="tabler:arrow-right" class="h-4 w-4" aria-hidden="true" />
+    </button>
+  </div>
+</div>
+
+<style>
+  .cl-now__pulse {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: rgb(34 197 94);
+    box-shadow: 0 0 0 0 rgb(34 197 94 / 0.6);
+    animation: cl-pulse 2.2s ease-out infinite;
+  }
+  @keyframes cl-pulse {
+    to {
+      box-shadow: 0 0 0 0.5rem rgb(34 197 94 / 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cl-now__pulse {
+      animation: none;
+    }
+  }
+</style>

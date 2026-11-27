@@ -48,6 +48,35 @@ const link = (s: string) => getPermalink(s, 'post');
             <Icon name="tabler:list-numbers" class="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
+        {position === 'top' && (
+          <ol class="cl-serie-steps mt-3 flex gap-1" aria-label={`${serie!.name}: capítulos`}>
+            {serie!.partes.map((p) => {
+              const state = p.part === current.part ? 'current' : p.part < current.part ? 'done' : 'todo';
+              const cls = [
+                'block h-1.5 rounded-full transition-all duration-200',
+                state === 'current' ? 'bg-primary' : state === 'done' ? 'bg-primary/55' : 'bg-primary/15',
+                p.slug && state !== 'current' ? 'hover:h-2.5 hover:bg-primary/80' : '',
+              ].join(' ');
+              return (
+                <li class="flex-1">
+                  {p.slug && state !== 'current' ? (
+                    <a href={link(p.slug)} title={`Parte ${p.part}: ${p.title}`} class={cls}>
+                      <span class="sr-only">{`Parte ${p.part}: ${p.title}`}</span>
+                    </a>
+                  ) : (
+                    <span
+                      class={cls}
+                      title={`Parte ${p.part}: ${p.title}`}
+                      aria-current={state === 'current' ? 'step' : undefined}
+                    >
+                      <span class="sr-only">{`Parte ${p.part}: ${p.title}`}</span>
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        )}
         {(prev || next) && (
           <div class="mt-3 grid gap-2 border-t border-primary/15 pt-3 sm:grid-cols-2">
             <div>

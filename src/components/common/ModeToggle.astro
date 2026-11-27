@@ -272,7 +272,8 @@ const t =
 
   function render(mode: Mode) {
     document.documentElement.dataset.mode = mode;
-    document.querySelectorAll<HTMLButtonElement>('[data-mode-set]').forEach((btn) => {
+    // Only the radio pair of the floating toggle; other [data-mode-set] doors (home hero) stay plain buttons.
+    document.querySelectorAll<HTMLButtonElement>('[data-mode-set][role="radio"]').forEach((btn) => {
       const on = btn.dataset.modeSet === mode;
       btn.setAttribute('aria-checked', String(on));
       btn.tabIndex = on ? 0 : -1;
@@ -308,12 +309,12 @@ const t =
 
   // Arrow keys move between the two radios, as a radiogroup should.
   document.addEventListener('keydown', (event) => {
-    const btn = (event.target as Element | null)?.closest?.('[data-mode-set]');
+    const btn = (event.target as Element | null)?.closest?.('[data-mode-set][role="radio"]');
     if (!btn || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
     event.preventDefault();
     const next: Mode = current() === 'human' ? 'machine' : 'human';
     setMode(next);
-    document.querySelector<HTMLButtonElement>(`[data-mode-set="${next}"]`)?.focus();
+    document.querySelector<HTMLButtonElement>(`[data-mode-set="${next}"][role="radio"]`)?.focus();
   });
 
   // Keep tabs in sync.

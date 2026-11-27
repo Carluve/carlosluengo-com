@@ -572,3 +572,32 @@ h1.font-heading {
   font-weight: 300;
   letter-spacing: -0.015em;
 }
+
+/* Animated underline for inline links (home «Ahora mismo», cards). */
+.cl-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.25s ease;
+}
+a:hover .cl-link,
+a:focus-visible .cl-link {
+  background-size: 100% 1px;
+}
+
+/* Cards lift a little on hover. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  a.aw-card,
+  .aw-card:has(a) {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+  a.aw-card:hover,
+  .aw-card:has(a):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgb(15 23 42 / 0.12);
+  }
+}
