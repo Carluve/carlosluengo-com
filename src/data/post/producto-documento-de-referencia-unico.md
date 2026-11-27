@@ -281,7 +281,7 @@ Cópiala en tu herramienta de documentos. Borra lo que no uses, pero no borres l
 
 Última revisión: 23 de noviembre de 2026.
 
-Siguiente en la serie: Del problema a la apuesta: priorizar (próximamente).
+Siguiente en la serie: [Del problema a la apuesta: cómo priorizar](/blog/producto-como-priorizar).
 
 ## También te puede interesar
 

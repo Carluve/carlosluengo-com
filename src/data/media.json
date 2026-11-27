@@ -10140,6 +10140,154 @@
     },
     "og": "blog/producto-claridad-extrema/portada-06c6ee2207-og.jpg"
   },
+  "blog/producto-como-priorizar/01-metodologia.png": {
+    "type": "image",
+    "hash": "2065e74973",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-como-priorizar/01-metodologia-2065e74973-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/01-metodologia-2065e74973-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-como-priorizar/01-metodologia-2065e74973-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-como-priorizar/01-metodologia-2065e74973-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/01-metodologia-2065e74973-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-como-priorizar/01-metodologia-2065e74973-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-como-priorizar/01-metodologia-2065e74973-og.jpg"
+  },
+  "blog/producto-como-priorizar/02-empresas.png": {
+    "type": "image",
+    "hash": "9a47a14116",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-como-priorizar/02-empresas-9a47a14116-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/02-empresas-9a47a14116-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-como-priorizar/02-empresas-9a47a14116-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-como-priorizar/02-empresas-9a47a14116-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/02-empresas-9a47a14116-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-como-priorizar/02-empresas-9a47a14116-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-como-priorizar/02-empresas-9a47a14116-og.jpg"
+  },
+  "blog/producto-como-priorizar/03-plantilla.png": {
+    "type": "image",
+    "hash": "9082f83d60",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-como-priorizar/03-plantilla-9082f83d60-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/03-plantilla-9082f83d60-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-como-priorizar/03-plantilla-9082f83d60-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-como-priorizar/03-plantilla-9082f83d60-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/03-plantilla-9082f83d60-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-como-priorizar/03-plantilla-9082f83d60-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-como-priorizar/03-plantilla-9082f83d60-og.jpg"
+  },
+  "blog/producto-como-priorizar/portada.png": {
+    "type": "image",
+    "hash": "2f5311557f",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-como-priorizar/portada-2f5311557f-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/portada-2f5311557f-960.avif"
+        ],
+        [
+          1440,
+          "blog/producto-como-priorizar/portada-2f5311557f-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-como-priorizar/portada-2f5311557f-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-como-priorizar/portada-2f5311557f-960.webp"
+        ],
+        [
+          1440,
+          "blog/producto-como-priorizar/portada-2f5311557f-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-como-priorizar/portada-2f5311557f-og.jpg"
+  },
   "blog/producto-documento-de-referencia-unico/01-metodologia.png": {
     "type": "image",
     "hash": "6326be1820",
@@ -10287,6 +10435,376 @@
       ]
     },
     "og": "blog/producto-documento-de-referencia-unico/portada-b349010fd3-og.jpg"
+  },
+  "blog/producto-hablar-con-usuarios/01-metodologia.png": {
+    "type": "image",
+    "hash": "aa28ed3d49",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/01-metodologia-aa28ed3d49-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/01-metodologia-aa28ed3d49-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/01-metodologia-aa28ed3d49-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/01-metodologia-aa28ed3d49-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/01-metodologia-aa28ed3d49-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/01-metodologia-aa28ed3d49-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-hablar-con-usuarios/01-metodologia-aa28ed3d49-og.jpg"
+  },
+  "blog/producto-hablar-con-usuarios/02-preguntas.png": {
+    "type": "image",
+    "hash": "918de42488",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/02-preguntas-918de42488-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/02-preguntas-918de42488-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/02-preguntas-918de42488-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/02-preguntas-918de42488-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/02-preguntas-918de42488-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/02-preguntas-918de42488-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-hablar-con-usuarios/02-preguntas-918de42488-og.jpg"
+  },
+  "blog/producto-hablar-con-usuarios/03-empresas.png": {
+    "type": "image",
+    "hash": "728aa23a3d",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/03-empresas-728aa23a3d-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/03-empresas-728aa23a3d-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/03-empresas-728aa23a3d-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/03-empresas-728aa23a3d-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/03-empresas-728aa23a3d-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/03-empresas-728aa23a3d-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-hablar-con-usuarios/03-empresas-728aa23a3d-og.jpg"
+  },
+  "blog/producto-hablar-con-usuarios/04-plantilla.png": {
+    "type": "image",
+    "hash": "50e8cb41ac",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/04-plantilla-50e8cb41ac-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/04-plantilla-50e8cb41ac-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/04-plantilla-50e8cb41ac-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/04-plantilla-50e8cb41ac-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/04-plantilla-50e8cb41ac-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-hablar-con-usuarios/04-plantilla-50e8cb41ac-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-hablar-con-usuarios/04-plantilla-50e8cb41ac-og.jpg"
+  },
+  "blog/producto-hablar-con-usuarios/portada.png": {
+    "type": "image",
+    "hash": "e7af34b380",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/portada-e7af34b380-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/portada-e7af34b380-960.avif"
+        ],
+        [
+          1440,
+          "blog/producto-hablar-con-usuarios/portada-e7af34b380-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-hablar-con-usuarios/portada-e7af34b380-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-hablar-con-usuarios/portada-e7af34b380-960.webp"
+        ],
+        [
+          1440,
+          "blog/producto-hablar-con-usuarios/portada-e7af34b380-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-hablar-con-usuarios/portada-e7af34b380-og.jpg"
+  },
+  "blog/producto-metricas-que-importan/01-metodologia.png": {
+    "type": "image",
+    "hash": "0fa5cc7523",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/01-metodologia-0fa5cc7523-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/01-metodologia-0fa5cc7523-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/01-metodologia-0fa5cc7523-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/01-metodologia-0fa5cc7523-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/01-metodologia-0fa5cc7523-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/01-metodologia-0fa5cc7523-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-metricas-que-importan/01-metodologia-0fa5cc7523-og.jpg"
+  },
+  "blog/producto-metricas-que-importan/02-empresas.png": {
+    "type": "image",
+    "hash": "9b56f653f8",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/02-empresas-9b56f653f8-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/02-empresas-9b56f653f8-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/02-empresas-9b56f653f8-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/02-empresas-9b56f653f8-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/02-empresas-9b56f653f8-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/02-empresas-9b56f653f8-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-metricas-que-importan/02-empresas-9b56f653f8-og.jpg"
+  },
+  "blog/producto-metricas-que-importan/03-retencion.png": {
+    "type": "image",
+    "hash": "7e7ddb4ad1",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/03-retencion-7e7ddb4ad1-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/03-retencion-7e7ddb4ad1-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/03-retencion-7e7ddb4ad1-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/03-retencion-7e7ddb4ad1-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/03-retencion-7e7ddb4ad1-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/03-retencion-7e7ddb4ad1-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-metricas-que-importan/03-retencion-7e7ddb4ad1-og.jpg"
+  },
+  "blog/producto-metricas-que-importan/04-plantilla.png": {
+    "type": "image",
+    "hash": "b8f942f703",
+    "width": 1600,
+    "height": 800,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/04-plantilla-b8f942f703-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/04-plantilla-b8f942f703-960.avif"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/04-plantilla-b8f942f703-1600.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/04-plantilla-b8f942f703-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/04-plantilla-b8f942f703-960.webp"
+        ],
+        [
+          1600,
+          "blog/producto-metricas-que-importan/04-plantilla-b8f942f703-1600.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-metricas-que-importan/04-plantilla-b8f942f703-og.jpg"
+  },
+  "blog/producto-metricas-que-importan/portada.png": {
+    "type": "image",
+    "hash": "7235fbb6d4",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/portada-7235fbb6d4-480.avif"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/portada-7235fbb6d4-960.avif"
+        ],
+        [
+          1440,
+          "blog/producto-metricas-que-importan/portada-7235fbb6d4-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/producto-metricas-que-importan/portada-7235fbb6d4-480.webp"
+        ],
+        [
+          960,
+          "blog/producto-metricas-que-importan/portada-7235fbb6d4-960.webp"
+        ],
+        [
+          1440,
+          "blog/producto-metricas-que-importan/portada-7235fbb6d4-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/producto-metricas-que-importan/portada-7235fbb6d4-og.jpg"
   },
   "blog/producto-que-hace-un-product-manager/01-metodologia.png": {
     "type": "image",
