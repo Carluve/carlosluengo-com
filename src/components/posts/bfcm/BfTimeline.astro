@@ -1,5 +1,5 @@
 ---
-/** Clickable timeline from Muse's launch to Black Friday. */
+/** Vertical timeline from Muse's launch to Black Friday; each milestone opens its detail and source. */
 import './bfcm.css';
 import { timeline } from '~/data/bfcm-2026';
 
@@ -9,163 +9,142 @@ const last = timeline.length - 1;
 <bf-timeline class="bf not-prose block">
   <p class="bf__eyebrow">De septiembre al Black Friday</p>
   <p class="bf__title">Once semanas que cambiaron quién hace la compra</p>
-  <div class="bf-tl__track" role="tablist" aria-label="Hitos">
+  <ol class="bf-tl">
     {
       timeline.map((e, i) => (
-        <button
-          type="button"
-          role="tab"
-          class="bf-tl__dot"
-          aria-selected={i === last ? 'true' : 'false'}
-          aria-controls={`bf-tl-${i}`}
-          data-i={i}
-        >
-          <span class="bf-tl__date">{e.date}</span>
-          <span class="bf-tl__pin" />
-          <span class="bf-tl__label">{e.label}</span>
-        </button>
+        <li class="bf-tl__item" data-open={i === last ? '' : undefined}>
+          <button type="button" class="bf-tl__head" aria-expanded={i === last ? 'true' : 'false'}>
+            <span class="bf-tl__pin" aria-hidden="true" />
+            <span class="bf-tl__date">{e.date}</span>
+            <span class="bf-tl__label">{e.label}</span>
+            <span class="bf-tl__chev" aria-hidden="true">
+              ›
+            </span>
+          </button>
+          <div class="bf-tl__body">
+            <p>{e.detail}</p>
+            <a href={e.href} target="_blank" rel="noopener">
+              Fuente: {e.source} ↗
+            </a>
+          </div>
+        </li>
       ))
     }
-  </div>
-  {
-    timeline.map((e, i) => (
-      <div class="bf-tl__panel" role="tabpanel" id={`bf-tl-${i}`} hidden={i !== last}>
-        <p class="bf-tl__ptitle">
-          {e.date} · {e.label}
-        </p>
-        <p class="bf-tl__pdetail">{e.detail}</p>
-        <a class="bf-tl__plink" href={e.href} target="_blank" rel="noopener">
-          Fuente: {e.source} ↗
-        </a>
-      </div>
-    ))
-  }
-  <p class="bf__source">Pulsa cada hito. Usa las flechas del teclado para moverte.</p>
+  </ol>
+  <p class="bf__source">Pulsa cada hito para ver el detalle y la fuente.</p>
 </bf-timeline>
 
 <style>
-  .bf-tl__track {
+  .bf-tl {
     position: relative;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(6.2rem, 1fr);
-    gap: 0.25rem;
     margin-top: 1rem;
-    overflow-x: auto;
-    padding-bottom: 0.4rem;
-    scrollbar-width: thin;
+    display: grid;
+    gap: 0.15rem;
   }
-  .bf-tl__track::before {
+  .bf-tl::before {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 2.05rem;
-    height: 2px;
+    left: 0.95rem;
+    top: 0.9rem;
+    bottom: 0.9rem;
+    width: 2px;
     background: var(--aw-color-border);
   }
-  .bf-tl__dot {
+  .bf-tl__head {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.9rem 4.2rem minmax(0, 1fr) 1rem;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.2rem 0.25rem 0.4rem;
+    width: 100%;
+    text-align: left;
+    padding: 0.45rem 0.4rem 0.45rem 0;
     border-radius: 0.6rem;
     cursor: pointer;
-    text-align: center;
   }
-  .bf-tl__dot:hover {
+  .bf-tl__head:hover {
     background: var(--bf-track);
   }
+  .bf-tl__pin {
+    justify-self: center;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 999px;
+    background: var(--aw-color-surface);
+    border: 2px solid var(--bf-muted-bar);
+    transition:
+      background 0.2s,
+      border-color 0.2s,
+      transform 0.2s;
+  }
   .bf-tl__date {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--aw-color-text-muted);
   }
-  .bf-tl__pin {
-    width: 0.85rem;
-    height: 0.85rem;
-    border-radius: 999px;
-    background: var(--aw-color-surface);
-    border: 2px solid var(--bf-muted-bar);
-    transition:
-      transform 0.2s,
-      background 0.2s,
-      border-color 0.2s;
-  }
   .bf-tl__label {
-    font-size: 0.72rem;
-    line-height: 1.25;
-    color: var(--aw-color-text-default);
-  }
-  .bf-tl__dot[aria-selected='true'] .bf-tl__pin {
-    background: var(--bf-muse);
-    border-color: var(--bf-muse);
-    transform: scale(1.35);
-    box-shadow: 0 0 0 4px rgb(1 97 239 / 18%);
-  }
-  .bf-tl__dot[aria-selected='true'] .bf-tl__date,
-  .bf-tl__dot[aria-selected='true'] .bf-tl__label {
+    font-size: 0.92rem;
+    font-weight: 600;
     color: var(--aw-color-text-heading);
-    font-weight: 650;
   }
-  .bf-tl__panel {
-    margin-top: 0.75rem;
-    border-radius: 0.8rem;
+  .bf-tl__chev {
+    color: var(--aw-color-text-muted);
+    transition: transform 0.2s;
+  }
+  .bf-tl__body {
+    display: none;
+    margin: 0.1rem 0 0.5rem 6.1rem;
+    border-radius: 0.7rem;
     background: var(--bf-track);
-    padding: 0.85rem 1rem;
-    animation: bf-fade 0.25s ease both;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.88rem;
   }
-  @keyframes bf-fade {
-    from {
-      opacity: 0;
-      transform: translateY(4px);
-    }
-  }
-  .bf-tl__ptitle {
-    font-weight: 650;
-    color: var(--aw-color-text-heading);
-  }
-  .bf-tl__pdetail {
-    margin-top: 0.25rem;
-    font-size: 0.9rem;
-  }
-  .bf-tl__plink {
+  .bf-tl__body a {
     display: inline-block;
-    margin-top: 0.4rem;
+    margin-top: 0.35rem;
     font-size: 0.78rem;
     color: var(--aw-color-link);
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+  .bf-tl__item[data-open] .bf-tl__body {
+    display: block;
+    animation: bf-fade 0.25s ease both;
+  }
+  .bf-tl__item[data-open] .bf-tl__pin {
+    background: var(--bf-muse);
+    border-color: var(--bf-muse);
+    transform: scale(1.25);
+  }
+  .bf-tl__item[data-open] .bf-tl__chev {
+    transform: rotate(90deg);
+  }
+  @media (max-width: 520px) {
+    .bf-tl__head {
+      grid-template-columns: 1.9rem 3.6rem minmax(0, 1fr) 1rem;
+    }
+    .bf-tl__body {
+      margin-left: 1.9rem;
+    }
+  }
+  @keyframes bf-fade {
+    from {
+      opacity: 0;
+      transform: translateY(-3px);
+    }
   }
 </style>
 
 <script>
   class BfTimeline extends HTMLElement {
     connectedCallback() {
-      const tabs = [...this.querySelectorAll<HTMLButtonElement>('.bf-tl__dot')];
-      const panels = [...this.querySelectorAll<HTMLElement>('.bf-tl__panel')];
-      const select = (i: number, focus = false) => {
-        tabs.forEach((t, j) => {
-          t.setAttribute('aria-selected', String(i === j));
-          t.tabIndex = i === j ? 0 : -1;
-        });
-        panels.forEach((p, j) => (p.hidden = i !== j));
-        if (focus) tabs[i].focus();
-        const t = tabs[i];
-        track.scrollTo({ left: t.offsetLeft - track.clientWidth / 2 + t.clientWidth / 2, behavior: 'smooth' });
-      };
-      const track = this.querySelector<HTMLElement>('.bf-tl__track')!;
-      track.scrollLeft = track.scrollWidth;
-      tabs.forEach((t, i) => {
-        t.tabIndex = t.getAttribute('aria-selected') === 'true' ? 0 : -1;
-        t.addEventListener('click', () => select(i));
-        t.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowRight') select(Math.min(i + 1, tabs.length - 1), true);
-          if (e.key === 'ArrowLeft') select(Math.max(i - 1, 0), true);
+      this.querySelectorAll<HTMLElement>('.bf-tl__item').forEach((item) => {
+        const head = item.querySelector<HTMLButtonElement>('.bf-tl__head')!;
+        head.addEventListener('click', () => {
+          const open = item.hasAttribute('data-open');
+          item.toggleAttribute('data-open', !open);
+          head.setAttribute('aria-expanded', String(!open));
         });
       });
     }

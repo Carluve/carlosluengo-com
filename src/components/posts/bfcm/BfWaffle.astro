@@ -9,7 +9,7 @@ const now = Math.round(share.now * 100);
 
 <bf-waffle class="bf not-prose block" data-base={base} data-now={now}>
   <p class="bf__eyebrow">Para no exagerar</p>
-  <p class="bf__title">De cada 10.000 peticiones que ve Cloudflare, ¿cuántas son de un agente que compra?</p>
+  <p class="bf__title">De cada 10.000 peticiones que ve Cloudflare, ¿cuántas vienen de un agente personal?</p>
   <div class="bf__seg" role="group" aria-label="Periodo">
     <button type="button" data-k="base" aria-pressed="false">1–7 de octubre</button>
     <button type="button" data-k="now" aria-pressed="true">Semana del Black Friday</button>
@@ -23,8 +23,9 @@ const now = Math.round(share.now * 100);
     <p class="bf-waffle__count"><span data-count>{now}</span> <small>de 10.000</small></p>
   </div>
   <p class="bf__sub">
-    Cada punto es una petición. El crecimiento es enorme en porcentaje (+{share.change} %), pero sobre una base mínima: hoy
-    es <strong>1 de cada 2.000</strong> peticiones. La tendencia es lo que importa.
+    Cada punto gris es una petición; los azules, las de agentes personales. El crecimiento es enorme en porcentaje (+{
+      share.change
+    } %), pero sobre una base mínima: hoy es <strong>1 de cada 2.000</strong> peticiones. La tendencia es lo que importa.
   </p>
   <p class="bf__source">
     Fuente: <a href={RADAR_URL} target="_blank" rel="noopener">Cloudflare Radar</a> (cuota de peticiones de agentes personales
@@ -74,14 +75,14 @@ const now = Math.round(share.now * 100);
       const base = Number(this.dataset.base);
       const now = Number(this.dataset.now);
       // Fixed, spread-out positions so the agent dots are scattered, not clustered.
-      const picks = [3410, 7311, 4642, 9077, 2988];
+      const picks = [2235, 6378, 4111, 8590, 3462];
       let current = now;
       let pulse = 0;
       const draw = () => {
         const dpr = window.devicePixelRatio || 1;
         const w = canvas.clientWidth || 600;
-        const cols = 125;
-        const rows = 80; // 10,000 cells
+        const cols = 200;
+        const rows = 50; // 10,000 cells
         const cell = w / cols;
         const h = cell * rows;
         canvas.width = Math.round(w * dpr);
@@ -91,9 +92,9 @@ const now = Math.round(share.now * 100);
         const css = getComputedStyle(this);
         const dot = css.getPropertyValue('--bf-muted-bar').trim() || '#b8c4d6';
         const primary = css.getPropertyValue('--bf-muse').trim() || '#0161ef';
-        ctx.globalAlpha = 0.45;
+        ctx.globalAlpha = 0.9;
         ctx.fillStyle = dot;
-        const r = Math.max(0.6, cell * 0.28);
+        const r = Math.max(0.9, cell * 0.36);
         for (let i = 0; i < cols * rows; i++) {
           const x = (i % cols) * cell + cell / 2;
           const y = Math.floor(i / cols) * cell + cell / 2;
@@ -109,12 +110,12 @@ const now = Math.round(share.now * 100);
           ctx.lineWidth = 2;
           ctx.globalAlpha = 0.25 + 0.25 * Math.abs(Math.sin(pulse));
           ctx.beginPath();
-          ctx.arc(x, y, cell * 3.2, 0, Math.PI * 2);
+          ctx.arc(x, y, cell * 4.2, 0, Math.PI * 2);
           ctx.stroke();
           ctx.globalAlpha = 1;
           ctx.fillStyle = primary;
           ctx.beginPath();
-          ctx.arc(x, y, Math.max(2.5, cell * 0.9), 0, Math.PI * 2);
+          ctx.arc(x, y, Math.max(3.5, cell * 1.6), 0, Math.PI * 2);
           ctx.fill();
         });
       };

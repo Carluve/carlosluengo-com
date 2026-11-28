@@ -4,6 +4,8 @@
   --bf-gemini: #f47230;
   --bf-dots: #00b894;
   --bf-other: #94a3b8;
+  --bf-grok: #6a4ce2;
+  --bf-chatgpt: #334155;
   --bf-all: var(--aw-color-text-heading);
   --bf-track: rgb(15 23 42 / 6%);
   --bf-muted-bar: #b8c4d6;
@@ -20,6 +22,8 @@
   --bf-gemini: #e76624;
   --bf-dots: #00a888;
   --bf-other: #64748b;
+  --bf-grok: #9887ef;
+  --bf-chatgpt: #94a3b8;
   --bf-track: rgb(255 255 255 / 7%);
   --bf-muted-bar: #475569;
 }
