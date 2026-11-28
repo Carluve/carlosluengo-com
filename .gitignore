@@ -29,3 +29,4 @@ pnpm-workspace.yaml
 
 # Post media originals: published to R2, see SETUP.md (Media on R2).
 media/
+.wrangler/

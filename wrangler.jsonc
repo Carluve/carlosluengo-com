@@ -5,7 +5,7 @@
   // carluve @enterprise, which also holds the zone and the R2 bucket. Pinned so
   // wrangler never prompts between the two accounts on this login.
   "account_id": "39f8ea10b94ad38470fc3c20c260efdc",
-  "compatibility_date": "2026-09-01",
+  "compatibility_date": "2026-11-27",
   // Only runs for / to pick Spanish or English (worker/index.ts); every other
   // request is served from the static assets without invoking it.
   "main": "worker/index.ts",
