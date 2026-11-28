@@ -26,11 +26,13 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
 
-  // Prefetch links as they enter the viewport for snappier navigations
-  // (works together with <ClientRouter />, which enables prefetch by default).
+  // Prefetch a link when the pointer rests on it (or on focus / touchstart),
+  // not every link that scrolls into view: /blog lists ~100 posts and the
+  // viewport strategy made phones download pages nobody opened. Works with
+  // <ClientRouter />, so the click still feels instant.
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'viewport',
+    defaultStrategy: 'hover',
   },
 
   // Native Fonts API: self-hosts + subsets + preloads Inter and generates
@@ -68,7 +70,9 @@ export default defineConfig({
       // Spanish at /, English under /en: each URL lists its translation (xhtml:link).
       i18n: { defaultLocale: 'es', locales: { es: 'es-ES', en: 'en-GB' } },
       // Markdown and llms.txt twins are for answer engines, not for the sitemap.
-      filter: (page) => !/\.(md|txt)$/.test(page) && !/\/404\/?$/.test(page),
+      // Tag pages are noindex (src/config.yaml), so listing them would only
+      // earn "Submitted URL marked noindex" warnings in Search Console.
+      filter: (page) => !/\.(md|txt)$/.test(page) && !/\/404\/?$/.test(page) && !/\/tag\//.test(page),
     }),
     mdx(),
     icon({
@@ -151,6 +155,12 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      // Emit every page script as its own hashed file under /_astro (cached a
+      // year, immutable) instead of inlining the small ones into each HTML
+      // page, where they were downloaded again on every visit (~15 KB/page).
+      assetsInlineLimit: 0,
+    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),

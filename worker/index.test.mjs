@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import worker, { preferredLang } from './index.ts';
+import worker from './index.ts';
+import { preferredLang } from './lang.ts';
 
 const assets = { fetch: async () => new Response('home', { status: 200 }) };
 const get = (headers = {}, path = '/') =>
