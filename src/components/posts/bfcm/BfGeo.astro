@@ -3,7 +3,11 @@
 import './bfcm.css';
 import { RADAR_URL, countries, usByAgent, agents } from '~/data/bfcm-2026';
 
-const max = Math.max(...countries.map((c) => c.pct));
+const us = countries[0];
+const rest = countries.slice(1);
+// The US (75 %) would flatten every other bar, so it gets its own figure and
+// the rest are drawn on their own scale (Japan = full width).
+const max = Math.max(...rest.map((c) => c.pct));
 const pct = (n: number) => `${n.toLocaleString('es-ES', { maximumFractionDigits: 2 })} %`;
 const color: Record<string, string> = {
   muse: 'var(--bf-muse)',
@@ -16,13 +20,21 @@ const color: Record<string, string> = {
 <bf-geo class="bf not-prose block">
   <p class="bf__eyebrow">Origen de las peticiones de agentes personales</p>
   <p class="bf__title">Es un fenómeno de EE. UU. por ahora: tres de cada cuatro peticiones salen de allí</p>
+  <div class="bf-geo__hero">
+    <div class="bf-geo__us">
+      <span class="bf-geo__usnum">{pct(us.pct)}</span>
+      <span class="bf-geo__uslabel">sale de Estados Unidos</span>
+    </div>
+    <div class="bf-geo__usbar" aria-hidden="true"><span style={`width:${us.pct}%`}></span></div>
+    <p class="bf__sub">El 24,6 % restante se reparte entre el resto del mundo. Así queda, sin EE. UU.:</p>
+  </div>
   <ul class="bf-geo__rows">
     {
-      countries.map((c, i) => (
+      rest.map((c, i) => (
         <>
-          {i > 0 && c.rank - countries[i - 1].rank > 1 && (
+          {i > 0 && c.rank - rest[i - 1].rank > 1 && (
             <li class="bf-geo__gap" aria-hidden="true">
-              ⋯ puestos {countries[i - 1].rank + 1} a {c.rank - 1}
+              ⋯ puestos {rest[i - 1].rank + 1} a {c.rank - 1}
             </li>
           )}
           <li
@@ -94,8 +106,43 @@ const color: Record<string, string> = {
 </bf-geo>
 
 <style>
-  .bf-geo__rows {
+  .bf-geo__hero {
     margin-top: 1rem;
+  }
+  .bf-geo__us {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .bf-geo__usnum {
+    font-size: 2.2rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: var(--aw-color-primary);
+    font-variant-numeric: tabular-nums;
+  }
+  :global(:root.dark) .bf-geo__usnum {
+    color: var(--aw-color-accent);
+  }
+  .bf-geo__uslabel {
+    font-weight: 600;
+    color: var(--aw-color-text-heading);
+  }
+  .bf-geo__usbar {
+    margin-top: 0.4rem;
+    height: 0.75rem;
+    border-radius: 999px;
+    background: var(--bf-track);
+    overflow: hidden;
+  }
+  .bf-geo__usbar span {
+    display: block;
+    height: 100%;
+    background: var(--bf-muse);
+    border-radius: 999px;
+  }
+  .bf-geo__rows {
+    margin-top: 0.75rem;
     display: grid;
     gap: 0.35rem;
   }
