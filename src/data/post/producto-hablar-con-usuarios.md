@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-12-14T09:00:00Z
+publishDate: 2026-11-26T10:00:00Z
 draft: false
 image: 'media:blog/producto-hablar-con-usuarios/portada.png'
 title: 'Hablar con usuarios sin sesgarles'

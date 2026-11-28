@@ -1,0 +1,208 @@
+---
+/** Growth by personal agent (traffic vs purchase requests), with a toggle and per-bar tooltips. */
+import './bfcm.css';
+import { RADAR_URL, agents, growth } from '~/data/bfcm-2026';
+
+const color: Record<string, string> = {
+  all: 'var(--bf-all)',
+  muse: 'var(--bf-muse)',
+  gemini: 'var(--bf-gemini)',
+  dots: 'var(--bf-dots)',
+  other: 'var(--bf-other)',
+};
+const rows = growth.map((g) => ({
+  ...g,
+  name: g.key === 'all' ? 'Todos' : agents[g.key].name,
+  owner: g.key === 'all' ? '' : agents[g.key].owner,
+  color: color[g.key] ?? 'transparent',
+}));
+const fmt = (n: number) => `+${n.toLocaleString('es-ES')} %`;
+---
+
+<bf-growth class="bf not-prose block">
+  <p class="bf__eyebrow">Crecimiento por agente · últimos 7 días frente al 1–7 de octubre</p>
+  <p class="bf__title">Muse y Gemini Tasks tiran del carro; las compras crecen casi el triple que el tráfico</p>
+  <div class="bf__seg" role="group" aria-label="Métrica">
+    <button type="button" data-m="traffic" aria-pressed="true">Tráfico total</button>
+    <button type="button" data-m="purchases" aria-pressed="false">Peticiones de compra</button>
+  </div>
+  <ul class="bf-growth__rows">
+    {
+      rows.map((r) => (
+        <li
+          class="bf-growth__row"
+          data-traffic={r.traffic ?? ''}
+          data-purchases={r.purchases ?? ''}
+          data-name={r.name}
+          data-owner={r.owner}
+          tabindex="0"
+        >
+          <span class="bf-growth__name">
+            {r.name}
+            {r.traffic === null && <sup>*</sup>}
+          </span>
+          <span class="bf-growth__track">
+            {r.traffic === null ? (
+              <span class="bf-growth__unsigned bf__hatch">
+                <span>sin medir: no firma sus peticiones</span>
+              </span>
+            ) : (
+              <span class="bf-growth__bar" style={`background:${r.color}`} />
+            )}
+          </span>
+          <span class="bf-growth__val">{r.traffic === null ? '—' : fmt(r.traffic)}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="bf__tip" role="status"></div>
+  <p class="bf__sub">
+    * Radar no puede atribuir el tráfico de Claude Duet ni de Instinct porque <strong
+      >no identifican sus peticiones de forma segura</strong
+    >. Que salgan a cero es un límite de la medición, no una ausencia de tráfico.
+  </p>
+  <details class="bf__data">
+    <summary>Ver los datos en tabla</summary>
+    <table>
+      <thead><tr><th>Agente</th><th class="num">Tráfico total</th><th class="num">Peticiones de compra</th></tr></thead>
+      <tbody>
+        {
+          rows.map((r) => (
+            <tr>
+              <td>{r.name}</td>
+              <td class="num">{r.traffic === null ? 'sin medir' : fmt(r.traffic)}</td>
+              <td class="num">{r.purchases === null ? 'sin medir' : fmt(r.purchases)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </details>
+  <p class="bf__source">
+    Fuente: <a href={RADAR_URL} target="_blank" rel="noopener">Cloudflare Radar</a>. «Otros» agrupa Cloudsurf,
+    DuckAssistbot y ZipchatBot. Compras = peticiones a páginas de carrito, pago y compra.
+  </p>
+</bf-growth>
+
+<style>
+  .bf-growth__rows {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.45rem;
+  }
+  .bf-growth__row {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr) 4.5rem;
+    align-items: center;
+    gap: 0.6rem;
+    border-radius: 0.5rem;
+    padding: 0.15rem 0.25rem;
+    outline: none;
+  }
+  .bf-growth__row:hover,
+  .bf-growth__row:focus-visible {
+    background: var(--bf-track);
+  }
+  @media (max-width: 520px) {
+    .bf-growth__row {
+      grid-template-columns: 6.5rem minmax(0, 1fr) 4rem;
+    }
+  }
+  .bf-growth__name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--aw-color-text-heading);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bf-growth__track {
+    position: relative;
+    height: 1.35rem;
+    display: flex;
+    align-items: center;
+  }
+  .bf-growth__bar {
+    display: block;
+    height: 0.9rem;
+    width: 0;
+    border-radius: 0 4px 4px 0;
+    transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .bf-growth__unsigned {
+    display: flex;
+    align-items: center;
+    height: 1.1rem;
+    width: 100%;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--aw-color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .bf-growth__unsigned span {
+    background: var(--aw-color-surface);
+    padding: 0 0.35rem;
+    border-radius: 3px;
+  }
+  .bf-growth__val {
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 650;
+    color: var(--aw-color-text-heading);
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+
+<script>
+  class BfGrowth extends HTMLElement {
+    connectedCallback() {
+      const rows = [...this.querySelectorAll<HTMLElement>('.bf-growth__row')];
+      const tip = this.querySelector<HTMLElement>('.bf__tip')!;
+      const fmt = (v: string) => (v === '' ? 'sin medir' : `+${Number(v).toLocaleString('es-ES')} %`);
+      let metric: 'traffic' | 'purchases' = 'traffic';
+      const apply = () => {
+        const max = Math.max(...rows.map((r) => Number(r.dataset[metric] || 0)));
+        rows.forEach((r) => {
+          const v = r.dataset[metric] ?? '';
+          const bar = r.querySelector<HTMLElement>('.bf-growth__bar');
+          if (bar) bar.style.width = `${(Number(v) / max) * 100}%`;
+          r.querySelector('.bf-growth__val')!.textContent = v === '' ? '—' : fmt(v);
+        });
+      };
+      this.querySelectorAll<HTMLButtonElement>('[data-m]').forEach((b) =>
+        b.addEventListener('click', () => {
+          metric = b.dataset.m as typeof metric;
+          this.querySelectorAll('[data-m]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+          apply();
+        })
+      );
+      const show = (r: HTMLElement) => {
+        const owner = r.dataset.owner ? ` <span style="opacity:.7">(${r.dataset.owner})</span>` : '';
+        tip.innerHTML = `<b>${r.dataset.name}</b>${owner}<br>Tráfico total: <b>${fmt(r.dataset.traffic ?? '')}</b><br>Peticiones de compra: <b>${fmt(r.dataset.purchases ?? '')}</b>`;
+        const box = this.getBoundingClientRect();
+        const rb = r.getBoundingClientRect();
+        tip.style.left = `${Math.min(rb.left - box.left + 140, box.width - 260)}px`;
+        tip.style.top = `${rb.bottom - box.top + 6}px`;
+        tip.dataset.show = '';
+      };
+      const hide = () => delete tip.dataset.show;
+      rows.forEach((r) => {
+        r.addEventListener('pointerenter', () => show(r));
+        r.addEventListener('focus', () => show(r));
+        r.addEventListener('pointerleave', hide);
+        r.addEventListener('blur', hide);
+      });
+      // Grow the bars when the chart scrolls into view.
+      const io = new IntersectionObserver((e) => {
+        if (e[0].isIntersecting) {
+          apply();
+          io.disconnect();
+        }
+      });
+      io.observe(this);
+    }
+  }
+  if (!customElements.get('bf-growth')) customElements.define('bf-growth', BfGrowth);
+</script>

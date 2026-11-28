@@ -1,5 +1,5 @@
 ---
-publishDate: 2027-01-11T09:00:00Z
+publishDate: 2026-11-28T09:00:00Z
 draft: false
 image: 'media:blog/producto-primeros-90-dias/portada.png'
 title: 'Tus primeros 90 días: el memo de entrada'

@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-12-01T09:00:00Z
+publishDate: 2026-11-25T09:00:00Z
 draft: false
 image: 'media:blog/cloudflare-basin-guia/portada.png'
 title: 'Basin: Pipelines, Catalog y SQL para analítica sobre R2'

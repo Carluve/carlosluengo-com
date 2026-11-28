@@ -1,0 +1,213 @@
+---
+/** Where personal-agent requests come from (Spain highlighted) and, within the US, which agent sends them. */
+import './bfcm.css';
+import { RADAR_URL, countries, usByAgent, agents } from '~/data/bfcm-2026';
+
+const max = Math.max(...countries.map((c) => c.pct));
+const pct = (n: number) => `${n.toLocaleString('es-ES', { maximumFractionDigits: 2 })} %`;
+const color: Record<string, string> = {
+  muse: 'var(--bf-muse)',
+  gemini: 'var(--bf-gemini)',
+  dots: 'var(--bf-dots)',
+  other: 'var(--bf-other)',
+};
+---
+
+<bf-geo class="bf not-prose block">
+  <p class="bf__eyebrow">Origen de las peticiones de agentes personales</p>
+  <p class="bf__title">Es un fenómeno de EE. UU. por ahora: tres de cada cuatro peticiones salen de allí</p>
+  <ul class="bf-geo__rows">
+    {
+      countries.map((c, i) => (
+        <>
+          {i > 0 && c.rank - countries[i - 1].rank > 1 && (
+            <li class="bf-geo__gap" aria-hidden="true">
+              ⋯ puestos {countries[i - 1].rank + 1} a {c.rank - 1}
+            </li>
+          )}
+          <li
+            class:list={['bf-geo__row', { 'is-es': c.name === 'España' }]}
+            tabindex="0"
+            data-tip={`<b>${c.name}</b> · puesto ${c.rank}<br>${pct(c.pct)} de las peticiones de agentes personales`}
+          >
+            <span class="bf-geo__name">
+              <span class="bf-geo__rank">{c.rank}</span>
+              {c.name}
+            </span>
+            <span class="bf-geo__track">
+              <span class="bf-geo__bar" style={`--w:${Math.max((c.pct / max) * 100, 0.6)}%`} />
+            </span>
+            <span class="bf-geo__val">{pct(c.pct)}</span>
+          </li>
+        </>
+      ))
+    }
+  </ul>
+
+  <p class="bf__title" style="margin-top:1.5rem;font-size:1rem">Dentro de EE. UU., ¿qué agente hace las peticiones?</p>
+  <div class="bf-geo__stack" role="img" aria-label="Reparto por agente en EE. UU.">
+    {
+      usByAgent.map((a) => (
+        <span
+          class="bf-geo__seg"
+          style={`flex:${a.pct};background:${color[a.key]}`}
+          tabindex="0"
+          data-tip={`<b>${agents[a.key].name}</b> (${agents[a.key].owner})<br>${pct(a.pct)} de las peticiones de agentes desde EE. UU.`}
+        >
+          {a.pct > 15 && <span class="bf-geo__seglabel">{`${agents[a.key].name} ${pct(a.pct)}`}</span>}
+        </span>
+      ))
+    }
+  </div>
+  <div class="bf__legend">
+    {
+      usByAgent.map((a) => (
+        <span>
+          <span class="bf__swatch" style={`background:${color[a.key]}`} />
+          {agents[a.key].name} {pct(a.pct)}
+        </span>
+      ))
+    }
+  </div>
+  <div class="bf__tip" role="status"></div>
+  <details class="bf__data">
+    <summary>Ver los datos en tabla</summary>
+    <table>
+      <thead><tr><th>País</th><th class="num">Puesto</th><th class="num">% del total</th></tr></thead>
+      <tbody>
+        {
+          countries.map((c) => (
+            <tr>
+              <td>{c.name}</td>
+              <td class="num">{c.rank}</td>
+              <td class="num">{pct(c.pct)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </details>
+  <p class="bf__source">
+    Fuente: <a href={RADAR_URL} target="_blank" rel="noopener">Cloudflare Radar</a>, consultado el 28 de noviembre de
+    2026.
+  </p>
+</bf-geo>
+
+<style>
+  .bf-geo__rows {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.35rem;
+  }
+  .bf-geo__row {
+    display: grid;
+    grid-template-columns: 9.5rem minmax(0, 1fr) 4.2rem;
+    gap: 0.6rem;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.25rem;
+    outline: none;
+  }
+  .bf-geo__row:hover,
+  .bf-geo__row:focus-visible {
+    background: var(--bf-track);
+  }
+  .bf-geo__name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--aw-color-text-heading);
+    white-space: nowrap;
+  }
+  .bf-geo__rank {
+    display: inline-block;
+    width: 1.4rem;
+    color: var(--aw-color-text-muted);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .bf-geo__track {
+    height: 1.1rem;
+    display: flex;
+    align-items: center;
+  }
+  .bf-geo__bar {
+    display: block;
+    height: 0.75rem;
+    width: var(--w);
+    border-radius: 0 4px 4px 0;
+    background: var(--bf-muted-bar);
+  }
+  .is-es .bf-geo__bar {
+    background: var(--bf-muse);
+  }
+  .is-es .bf-geo__name,
+  .is-es .bf-geo__val {
+    color: var(--aw-color-primary);
+  }
+  :global(:root.dark) .is-es .bf-geo__name,
+  :global(:root.dark) .is-es .bf-geo__val {
+    color: var(--aw-color-accent);
+  }
+  .bf-geo__val {
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+    color: var(--aw-color-text-heading);
+  }
+  .bf-geo__gap {
+    padding-left: 1.65rem;
+    font-size: 0.75rem;
+    color: var(--aw-color-text-muted);
+  }
+  .bf-geo__stack {
+    display: flex;
+    gap: 2px;
+    margin-top: 0.6rem;
+    height: 2.2rem;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .bf-geo__seg {
+    display: flex;
+    align-items: center;
+    padding-left: 0.6rem;
+    min-width: 4px;
+    outline: none;
+    transition: filter 0.15s;
+  }
+  .bf-geo__seg:hover,
+  .bf-geo__seg:focus-visible {
+    filter: brightness(1.12);
+  }
+  .bf-geo__seglabel {
+    font-size: 0.78rem;
+    font-weight: 650;
+    color: #fff;
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  class BfGeo extends HTMLElement {
+    connectedCallback() {
+      const tip = this.querySelector<HTMLElement>('.bf__tip')!;
+      this.querySelectorAll<HTMLElement>('[data-tip]').forEach((el) => {
+        const show = () => {
+          tip.innerHTML = el.dataset.tip!;
+          const box = this.getBoundingClientRect();
+          const r = el.getBoundingClientRect();
+          tip.style.left = `${Math.max(8, Math.min(r.left - box.left + r.width / 2 - 100, box.width - 230))}px`;
+          tip.style.top = `${r.bottom - box.top + 6}px`;
+          tip.dataset.show = '';
+        };
+        const hide = () => delete tip.dataset.show;
+        el.addEventListener('pointerenter', show);
+        el.addEventListener('focus', show);
+        el.addEventListener('pointerleave', hide);
+        el.addEventListener('blur', hide);
+      });
+    }
+  }
+  if (!customElements.get('bf-geo')) customElements.define('bf-geo', BfGeo);
+</script>

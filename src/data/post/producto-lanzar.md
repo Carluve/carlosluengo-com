@@ -1,5 +1,5 @@
 ---
-publishDate: 2027-01-04T09:00:00Z
+publishDate: 2026-11-28T08:00:00Z
 draft: false
 image: 'media:blog/producto-lanzar/portada.png'
 title: 'Lanzar: del beta al go-to-market'

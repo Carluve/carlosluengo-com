@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-11-30T09:00:00Z
+publishDate: 2026-11-24T09:00:00Z
 draft: false
 image: 'media:blog/producto-como-priorizar/portada.png'
 title: 'Del problema a la apuesta: cómo priorizar'

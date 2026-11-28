@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-12-08T09:00:00Z
+publishDate: 2026-11-26T09:00:00Z
 draft: false
 image: 'media:blog/cloudflare-registrar-guia/portada.png'
 title: 'Cloudflare Registrar: dominios a precio de coste'

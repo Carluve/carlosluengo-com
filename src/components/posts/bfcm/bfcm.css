@@ -1,0 +1,160 @@
+/* Shared styles for the BFCM 2026 post charts (src/components/posts/bfcm/*). */
+.bf {
+  --bf-muse: rgb(1 97 239);
+  --bf-gemini: #f47230;
+  --bf-dots: #00b894;
+  --bf-other: #94a3b8;
+  --bf-all: var(--aw-color-text-heading);
+  --bf-track: rgb(15 23 42 / 6%);
+  --bf-muted-bar: #b8c4d6;
+  margin: 2.25rem 0;
+  border: 1px solid var(--aw-color-border);
+  border-radius: 1rem;
+  background: var(--aw-color-surface);
+  padding: 1.25rem 1.25rem 1rem;
+  color: var(--aw-color-text-default);
+  font-family: var(--aw-font-sans);
+  position: relative;
+}
+:root.dark .bf {
+  --bf-gemini: #e76624;
+  --bf-dots: #00a888;
+  --bf-other: #64748b;
+  --bf-track: rgb(255 255 255 / 7%);
+  --bf-muted-bar: #475569;
+}
+.bf__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--aw-color-primary);
+}
+:root.dark .bf__eyebrow {
+  color: var(--aw-color-accent);
+}
+.bf__title {
+  margin-top: 0.25rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 650;
+  color: var(--aw-color-text-heading);
+}
+.bf__sub {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--aw-color-text-muted);
+}
+.bf__source {
+  margin-top: 0.9rem;
+  font-size: 0.75rem;
+  color: var(--aw-color-text-muted);
+}
+.bf__source a {
+  color: var(--aw-color-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.bf__seg {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  border: 1px solid var(--aw-color-border);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+.bf__seg button {
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--aw-color-text-muted);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.bf__seg button[aria-pressed='true'] {
+  background: var(--aw-color-primary);
+  color: #fff;
+}
+.bf__seg button:focus-visible,
+.bf button:focus-visible,
+.bf summary:focus-visible {
+  outline: 2px solid var(--aw-color-primary);
+  outline-offset: 2px;
+}
+.bf__data {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+.bf__data summary {
+  cursor: pointer;
+  color: var(--aw-color-text-muted);
+  width: max-content;
+}
+.bf__data table {
+  margin-top: 0.5rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+.bf__data th,
+.bf__data td {
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid var(--aw-color-border);
+}
+.bf__data td.num,
+.bf__data th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.bf__tip {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  max-width: 16rem;
+  border: 1px solid var(--aw-color-border);
+  border-radius: 0.6rem;
+  background: var(--aw-color-surface);
+  box-shadow: 0 8px 24px rgb(15 23 42 / 14%);
+  padding: 0.5rem 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.12s,
+    transform 0.12s;
+}
+.bf__tip[data-show] {
+  opacity: 1;
+  transform: none;
+}
+.bf__tip b {
+  color: var(--aw-color-text-heading);
+}
+.bf__swatch {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 3px;
+  margin-right: 0.35rem;
+  vertical-align: -0.05rem;
+}
+.bf__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+.bf__hatch {
+  background-image: repeating-linear-gradient(135deg, var(--bf-muted-bar) 0 2px, transparent 2px 7px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bf * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

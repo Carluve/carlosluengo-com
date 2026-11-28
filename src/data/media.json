@@ -908,6 +908,43 @@
     },
     "og": "blog/bbva-chatgpt-enterprise-journey/202505_whychatgpt-c0265bc408-og.jpg"
   },
+  "blog/black-friday-2026-agentes-ia/portada.png": {
+    "type": "image",
+    "hash": "8feb5020e7",
+    "width": 1440,
+    "height": 900,
+    "sources": {
+      "avif": [
+        [
+          480,
+          "blog/black-friday-2026-agentes-ia/portada-8feb5020e7-480.avif"
+        ],
+        [
+          960,
+          "blog/black-friday-2026-agentes-ia/portada-8feb5020e7-960.avif"
+        ],
+        [
+          1440,
+          "blog/black-friday-2026-agentes-ia/portada-8feb5020e7-1440.avif"
+        ]
+      ],
+      "webp": [
+        [
+          480,
+          "blog/black-friday-2026-agentes-ia/portada-8feb5020e7-480.webp"
+        ],
+        [
+          960,
+          "blog/black-friday-2026-agentes-ia/portada-8feb5020e7-960.webp"
+        ],
+        [
+          1440,
+          "blog/black-friday-2026-agentes-ia/portada-8feb5020e7-1440.webp"
+        ]
+      ]
+    },
+    "og": "blog/black-friday-2026-agentes-ia/portada-8feb5020e7-og.jpg"
+  },
   "blog/build-your-own-gpt-chatgpt/202505_01chatcom.png": {
     "type": "image",
     "hash": "656b56a1e4",
