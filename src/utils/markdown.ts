@@ -40,11 +40,22 @@ const frontMatter = (fields: Record<string, string | undefined>) =>
 
 const t = (lang: Lang, es: string, en: string) => (lang === 'en' ? en : es);
 
+/**
+ * MDX posts: drop the ESM imports and turn each self-closing component
+ * (`<BfStats />`) into a one-line pointer, so the twin stays plain Markdown.
+ * The figures those components chart are also stated in the post text.
+ */
+const stripMdx = (body: string) =>
+  body
+    .replace(/^import\s.+?from\s+['"][^'"]+['"];?[ \t]*$/gm, '')
+    .replace(/^<([A-Z][A-Za-z0-9]*)\b[^>]*\/>[ \t]*$/gm, '*[Gráfico interactivo en la versión web]*')
+    .replace(/\n{3,}/g, '\n\n');
+
 /** Markdown of one post, with its metadata and absolute image URLs. */
 export const postMarkdown = async (post: Post) => {
   const entries = await getCollection('post');
   const entry = entries.find((e) => e.id === post.id);
-  const body = resolveMedia(entry?.body ?? '').trim();
+  const body = stripMdx(resolveMedia(entry?.body ?? '')).trim();
   return (
     frontMatter({
       title: post.title,

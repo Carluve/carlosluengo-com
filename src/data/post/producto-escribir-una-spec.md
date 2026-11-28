@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-12-21T09:00:00Z
+publishDate: 2026-11-27T10:00:00Z
 draft: false
 image: 'media:blog/producto-escribir-una-spec/portada.png'
 title: 'Escribir una spec o PRD que se lea'

@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-12-15T09:00:00Z
+publishDate: 2026-11-27T09:00:00Z
 draft: false
 image: 'media:blog/cloudflare-zaraz-web-analytics-guia/portada.png'
 title: 'Zaraz y Web Analytics en Cloudflare: analítica sin cookies y etiquetas de terceros en el borde'

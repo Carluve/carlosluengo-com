@@ -1,0 +1,183 @@
+---
+/** Interactive checklist for retailers; progress is remembered in this browser only. */
+import './bfcm.css';
+
+const items = [
+  {
+    title: 'Mide qué agentes te visitan',
+    text: 'Separa el tráfico de agentes personales del de rastreadores y del humano. Sin este dato, cualquier decisión es a ciegas.',
+  },
+  {
+    title: 'Decide a quién dejas pasar, agente por agente',
+    text: 'Deja entrar a los agentes personales verificados (Cloudflare recomienda Allow para ellos) y bloquea a quien se hace pasar por uno.',
+  },
+  {
+    title: 'Exige identidad: agentes que firmen sus peticiones',
+    text: 'Web Bot Auth permite comprobar criptográficamente quién llama. Es la diferencia entre un agente de un cliente y un bot de reventa.',
+  },
+  {
+    title: 'Publica como texto lo que el agente necesita',
+    text: 'Precio, stock, plazo de entrega y política de devoluciones, en la página y en datos estructurados (Schema.org en JSON-LD). Lo que va en una imagen o tras un clic no existe para un agente.',
+  },
+  {
+    title: 'Pon límites que protejan al cliente',
+    text: 'Límite de gasto, aprobación de cada compra e historial de lo que hizo el agente, como en el Agent Profile de Walmart.',
+  },
+  {
+    title: 'Mantén el mismo precio y la misma devolución',
+    text: 'Walmart garantiza los mismos precios y su política de devoluciones aunque compre un agente. Es lo que da confianza.',
+  },
+  {
+    title: 'Prueba tu tienda con un agente antes que tus clientes',
+    text: 'Haz una compra completa con un agente: búsqueda, carrito y pago. Mira dónde se atasca.',
+  },
+  {
+    title: 'Vigila el abuso de cuentas y el fraude',
+    text: 'Más automatización en el pago significa más intentos de abuso. Separa el agente legítimo del que prueba tarjetas o acapara stock.',
+  },
+];
+---
+
+<bf-checklist class="bf not-prose block">
+  <p class="bf__eyebrow">Para el retail · lista de comprobación</p>
+  <p class="bf__title">¿Está tu tienda lista para clientes que no son personas?</p>
+  <div class="bf-ck__progress" aria-hidden="true"><span class="bf-ck__fill"></span></div>
+  <p class="bf__sub"><span data-done>0</span> de {items.length} hechos</p>
+  <ol class="bf-ck__list">
+    {
+      items.map((it, i) => (
+        <li>
+          <label class="bf-ck__item">
+            <input type="checkbox" data-i={i} />
+            <span class="bf-ck__box" aria-hidden="true">
+              ✓
+            </span>
+            <span>
+              <span class="bf-ck__title">
+                {i + 1}. {it.title}
+              </span>
+              <span class="bf-ck__text">{it.text}</span>
+            </span>
+          </label>
+        </li>
+      ))
+    }
+  </ol>
+  <p class="bf__source">
+    Basada en la guía de Cloudflare <a
+      href="https://developers.cloudflare.com/use-cases/solutions/prepare-storefront-for-ai-agents/"
+      target="_blank"
+      rel="noopener">«Get your storefront ready for AI shopping agents»</a
+    > y en las condiciones que Walmart ha puesto a Muse. Tus marcas se guardan solo en este navegador.
+  </p>
+</bf-checklist>
+
+<style>
+  .bf-ck__progress {
+    margin-top: 0.9rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--bf-track);
+    overflow: hidden;
+  }
+  .bf-ck__fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--bf-muse);
+    border-radius: 999px;
+    transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .bf-ck__list {
+    margin-top: 0.75rem;
+    display: grid;
+    gap: 0.4rem;
+  }
+  .bf-ck__item {
+    display: grid;
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    gap: 0.6rem;
+    border-radius: 0.7rem;
+    padding: 0.6rem 0.6rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .bf-ck__item:hover {
+    background: var(--bf-track);
+  }
+  .bf-ck__item input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .bf-ck__box {
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 0.4rem;
+    border: 2px solid var(--bf-muted-bar);
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: transparent;
+    transition: all 0.15s;
+    margin-top: 0.05rem;
+  }
+  .bf-ck__item input:checked + .bf-ck__box {
+    background: var(--bf-muse);
+    border-color: var(--bf-muse);
+    color: #fff;
+  }
+  .bf-ck__item input:focus-visible + .bf-ck__box {
+    outline: 2px solid var(--aw-color-primary);
+    outline-offset: 2px;
+  }
+  .bf-ck__title {
+    display: block;
+    font-weight: 650;
+    color: var(--aw-color-text-heading);
+    font-size: 0.95rem;
+  }
+  .bf-ck__text {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.85rem;
+    color: var(--aw-color-text-muted);
+    line-height: 1.45;
+  }
+  .bf-ck__item:has(input:checked) .bf-ck__title {
+    text-decoration: line-through;
+    text-decoration-color: var(--bf-muse);
+  }
+</style>
+
+<script>
+  class BfChecklist extends HTMLElement {
+    connectedCallback() {
+      const KEY = 'bfcm2026-checklist';
+      const boxes = [...this.querySelectorAll<HTMLInputElement>('input[type=checkbox]')];
+      const fill = this.querySelector<HTMLElement>('.bf-ck__fill')!;
+      const done = this.querySelector<HTMLElement>('[data-done]')!;
+      let saved: number[] = [];
+      try {
+        saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+      } catch {
+        saved = [];
+      }
+      boxes.forEach((b) => (b.checked = saved.includes(Number(b.dataset.i))));
+      const update = () => {
+        const on = boxes.filter((b) => b.checked);
+        done.textContent = String(on.length);
+        fill.style.width = `${(on.length / boxes.length) * 100}%`;
+        try {
+          localStorage.setItem(KEY, JSON.stringify(on.map((b) => Number(b.dataset.i))));
+        } catch {
+          /* storage unavailable: progress just isn't remembered */
+        }
+      };
+      boxes.forEach((b) => b.addEventListener('change', update));
+      update();
+    }
+  }
+  if (!customElements.get('bf-checklist')) customElements.define('bf-checklist', BfChecklist);
+</script>

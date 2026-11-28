@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-12-28T09:00:00Z
+publishDate: 2026-11-28T07:00:00Z
 draft: false
 image: 'media:blog/producto-estrategia-y-posicionamiento/portada.png'
 title: 'Ser diferente: estrategia y posicionamiento'

@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-12-07T09:00:00Z
+publishDate: 2026-11-25T10:00:00Z
 draft: false
 image: 'media:blog/producto-metricas-que-importan/portada.png'
 title: 'Métricas que importan: activación, retención y métrica norte'

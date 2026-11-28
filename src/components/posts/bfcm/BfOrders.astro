@@ -1,0 +1,103 @@
+---
+/** Share of agentic orders by agent (Forter Intelligence via CNBC), as a segmented bar. */
+import './bfcm.css';
+import { ORDERS_URL, orders } from '~/data/bfcm-2026';
+
+const colors = ['var(--bf-muse)', 'var(--bf-gemini)', 'var(--bf-dots)', 'var(--bf-other)'];
+---
+
+<bf-orders class="bf not-prose block">
+  <p class="bf__eyebrow">Pedidos hechos por agentes · semana que terminó el 22 de noviembre</p>
+  <p class="bf__title">Muse se lleva uno de cada dos pedidos agénticos</p>
+  <div class="bf-orders__stack" role="img" aria-label="Reparto de pedidos agénticos por agente">
+    {
+      orders.map((o, i) => (
+        <span
+          class="bf-orders__seg"
+          style={`--f:${o.pct};background:${colors[i]}`}
+          tabindex="0"
+          data-tip={`<b>${o.name}</b><br>${o.pct} % de los pedidos hechos por agentes`}
+        >
+          {o.pct >= 15 && <span>{o.pct} %</span>}
+        </span>
+      ))
+    }
+  </div>
+  <div class="bf__legend">
+    {
+      orders.map((o, i) => (
+        <span>
+          <span class="bf__swatch" style={`background:${colors[i]}`} />
+          {o.name} {o.pct} %
+        </span>
+      ))
+    }
+  </div>
+  <div class="bf__tip" role="status"></div>
+  <p class="bf__sub">
+    Ojo: aquí se cuentan <strong>pedidos</strong>, no peticiones como en Radar. Son métricas distintas que apuntan en la
+    misma dirección.
+  </p>
+  <p class="bf__source">
+    Fuente: Forter Intelligence, según <a href={ORDERS_URL} target="_blank" rel="noopener"
+      >CNBC (24 de noviembre de 2026)</a
+    >.
+  </p>
+</bf-orders>
+
+<style>
+  .bf-orders__stack {
+    display: flex;
+    gap: 2px;
+    margin-top: 1rem;
+    height: 2.6rem;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .bf-orders__seg {
+    flex: var(--f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    outline: none;
+    transform-origin: left;
+    animation: bf-grow 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .bf-orders__seg:hover,
+  .bf-orders__seg:focus-visible {
+    filter: brightness(1.12);
+  }
+  @keyframes bf-grow {
+    from {
+      transform: scaleX(0);
+    }
+  }
+</style>
+
+<script>
+  class BfOrders extends HTMLElement {
+    connectedCallback() {
+      const tip = this.querySelector<HTMLElement>('.bf__tip')!;
+      this.querySelectorAll<HTMLElement>('[data-tip]').forEach((el) => {
+        const show = () => {
+          tip.innerHTML = el.dataset.tip!;
+          const box = this.getBoundingClientRect();
+          const r = el.getBoundingClientRect();
+          tip.style.left = `${Math.max(8, Math.min(r.left - box.left + r.width / 2 - 90, box.width - 210))}px`;
+          tip.style.top = `${r.bottom - box.top + 6}px`;
+          tip.dataset.show = '';
+        };
+        const hide = () => delete tip.dataset.show;
+        el.addEventListener('pointerenter', show);
+        el.addEventListener('focus', show);
+        el.addEventListener('pointerleave', hide);
+        el.addEventListener('blur', hide);
+      });
+    }
+  }
+  if (!customElements.get('bf-orders')) customElements.define('bf-orders', BfOrders);
+</script>

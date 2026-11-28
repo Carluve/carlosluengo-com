@@ -1,0 +1,117 @@
+---
+publishDate: 2026-11-28T11:00:00Z
+draft: false
+image: 'media:blog/black-friday-2026-agentes-ia/portada.png'
+title: 'Black Friday 2026: el primer fin de semana de los agentes que compran'
+excerpt: 'Primeros datos de Cloudflare Radar y lo que ha hecho Meta con Muse y Walmart: las peticiones de agentes personales a páginas de carrito y pago crecen un 544 %, aunque todavía son 1 de cada 2.000. Qué ha pasado, cómo leer las cifras sin exagerar y qué tiene que hacer el retail ya.'
+category: 'IA'
+tags:
+  - 'ia'
+  - 'agentes'
+  - 'retail'
+  - 'ecommerce'
+  - 'cloudflare'
+  - 'black friday'
+lang: 'es'
+---
+
+import BfStats from '~/components/posts/bfcm/BfStats.astro';
+import BfWaffle from '~/components/posts/bfcm/BfWaffle.astro';
+import BfGrowth from '~/components/posts/bfcm/BfGrowth.astro';
+import BfGeo from '~/components/posts/bfcm/BfGeo.astro';
+import BfOrders from '~/components/posts/bfcm/BfOrders.astro';
+import BfTimeline from '~/components/posts/bfcm/BfTimeline.astro';
+import BfChecklist from '~/components/posts/bfcm/BfChecklist.astro';
+
+> **Previa con datos a 28 de noviembre de 2026.** Las cifras de Cloudflare Radar salen de un panel en vivo que compara los últimos siete días con la primera semana de octubre y se actualiza cada hora. Las leí el sábado 28 hacia las 11:00 UTC, antes de que el Black Friday completo y el Cyber Monday entren en la ventana. Actualizaré el post con las cifras cerradas.
+
+Este Black Friday ha sido el primero en el que una parte medible de las compras no la ha hecho una persona delante de una web, sino un agente de IA que actúa en su nombre: busca, compara, llena el carrito y paga. Dos hechos lo resumen. Cloudflare ha publicado la primera medición abierta de esos agentes en su red, y Walmart ha dejado que Muse, el agente de Meta, compre sus ofertas.
+
+## Qué ha medido Cloudflare
+
+El 25 de noviembre, Cloudflare Radar publicó un panel especial sobre el Black Friday y el Cyber Monday centrado en los **agentes personales**. Son los agentes que navegan y compran por encargo de una persona concreta, no los rastreadores que leen la web para entrenar modelos o alimentar buscadores.
+
+<BfStats />
+
+Cuatro lecturas:
+
+- **La cuota crece un 170 %:** pasa del 0,02 % al 0,05 % de todas las peticiones que ve Cloudflare, humanas y de bots.
+- **El tráfico total de esos agentes crece un 189 %,** y **las peticiones a páginas de carrito, pago y compra, un 544 %.** Los agentes no solo miran más: compran más, y más rápido de lo que crece su tráfico.
+- **El 98,37 % de sus peticiones pasa** sin bloqueo ni desafío. Las webs, en general, les están abriendo la puerta. Radar avisa de que el 1,63 % bloqueado o con desafío no implica mala intención.
+- **Todo esto es todavía pequeño.** Conviene decirlo antes que nada.
+
+<BfWaffle />
+
+Un +170 % sobre el 0,02 % sigue siendo una porción mínima del tráfico: **una petición de cada 2.000**. Lo relevante no es el tamaño, sino la pendiente. Y la pendiente se concentra en dos nombres.
+
+<BfGrowth />
+
+**Muse**, de Meta, multiplica su tráfico por seis (+502 %) y sus peticiones de compra por diez (+947 %). **Gemini Tasks**, de Google, le sigue de cerca (+437 % y +745 %). El tercer dato es casi más interesante que los dos primeros: Radar no puede contar a **Claude Duet** ni a **Instinct** porque no identifican sus peticiones de forma segura. No es que no compren; es que, para la red, no se distinguen del resto del tráfico. Volveré sobre esto, porque es el centro del problema.
+
+<BfGeo />
+
+Por ahora es un fenómeno estadounidense: el **75,4 %** de las peticiones de agentes personales sale de EE. UU. y, allí, Muse genera el **68,9 %**. España aparece en el puesto 21 con el **0,26 %**. Meta no ha anunciado Muse en España, así que es lógico que el dato sea bajo. Que la ola llegue tarde no quiere decir que no vaya a llegar.
+
+## Qué ha hecho Meta con Muse
+
+Meta lanzó Muse el 8 de septiembre y en una semana fue la app gratuita número 1 de la App Store en EE. UU., [según GeekWire](https://www.geekwire.com/2026/amazon-blocks-metas-muse-ai-assistant-in-new-standoff-over-agentic-shopping/). Desde entonces todo ha ido muy deprisa.
+
+<BfTimeline />
+
+El movimiento clave es el de **Walmart**. Desde el 24 de noviembre, [según su nota oficial](https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse), los clientes pueden comprar las ofertas del Black Friday directamente desde Muse a través del **Walmart Agent Gateway**. El diseño merece atención, porque es una plantilla para cualquier tienda:
+
+- **El agente no navega la web como si fuera una persona.** Muse pasa la lista de la compra al Gateway y, en palabras de Walmart, «Walmart then does the shopping».
+- **El cliente pone los límites.** La primera vez que el agente añade algo al carrito se crea un **Agent Profile** con límite de gasto. Desde ahí se aprueban las compras y se consulta qué compró el agente.
+- **Mismas reglas que en la web.** Se paga con una tarjeta guardada en la cuenta de Walmart, a los mismos precios de Walmart.com, y se aplica la misma política de devoluciones.
+- **Los datos se quedan en casa.** El agente encuentra productos sin compartir el historial de compras del cliente.
+
+El contraste es **Amazon**, que bloquea a Muse desde el 20 de septiembre. Sus motivos, según GeekWire: nadie le avisó, Muse no se identifica cuando navega y parece capturar y guardar credenciales. Walmart y Amazon representan las dos respuestas posibles a la misma pregunta: ¿abrimos la puerta a los agentes o la cerramos?
+
+Los primeros datos de pedidos apuntan a quién va ganando:
+
+<BfOrders />
+
+## El problema de fondo: saber quién compra
+
+Las cifras de Cloudflare y la pelea entre Amazon y Meta cuentan la misma historia. **Un agente que no se identifica es indistinguible de un bot de reventa, de un robo de cuentas o de alguien que prueba tarjetas robadas.** Por eso Amazon lo bloquea y por eso Radar no puede contarlo.
+
+La respuesta técnica que está tomando forma es que el agente **firme criptográficamente sus peticiones**. Cloudflare llama a [Web Bot Auth](https://blog.cloudflare.com/trusted-agent-delegation/) el «preferred method» para hacerlo. El 5 de noviembre presentó además la coalición **Trusted Agent Delegation**, que llevará al IETF el problema de cómo una persona delega en un agente de forma verificable. Un día antes había lanzado la categoría [agentes personales](https://blog.cloudflare.com/personal-agents-visibility-control/) en su analítica, con políticas por agente: dejar pasar, bloquear solo en páginas con anuncios o bloquear.
+
+Para una tienda, la consecuencia es práctica. Si el agente firma, puedes dejarle pasar con confianza y medir lo que hace. Si no firma, solo te queda adivinar.
+
+## Qué tiene que hacer el retail
+
+No hace falta esperar a que el 0,05 % sea el 5 %. Cloudflare ha publicado una [guía para preparar la tienda](https://developers.cloudflare.com/use-cases/solutions/prepare-storefront-for-ai-agents/) y Walmart ha enseñado qué condiciones dan confianza. Con las dos cosas, esta es la lista. Puedes ir marcándola:
+
+<BfChecklist />
+
+Tres ideas para quien decide:
+
+1. **El agente es un canal, no una amenaza ni una moda.** Walmart lo trata como un canal más, con sus reglas, y por eso puede abrirlo en plena campaña.
+2. **La identidad va antes que la conversión.** Primero saber quién entra; luego optimizar lo que compra. Bloquear a todos es tan ciego como dejar pasar a todos.
+3. **Tu web tiene un segundo lector.** Precio, stock, entrega y devoluciones tienen que estar en texto y en datos estructurados, no en una imagen ni detrás de un clic. Lo que el agente no lee no existe para él.
+
+## Cómo leer estas cifras
+
+- **Son métricas distintas.** Cloudflare mide **peticiones HTTP**, Forter mide **pedidos** y Adobe mide **visitas y gasto**. Que todas apunten a que Muse lidera es una coincidencia de dirección, no la misma medida.
+- **Radar es un panel en vivo.** Las cifras cambian cada hora con una ventana móvil de siete días frente al 1–7 de octubre. Aquí uso la lectura del 28 de noviembre hacia las 11:00 UTC.
+- **El contexto del gasto llega después.** Adobe preveía para EE. UU. [12.900 millones de dólares online en el Black Friday (+9,2 %) y 15.100 millones en el Cyber Monday (+6,2 %)](https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record). También preveía que el tráfico que llega a las tiendas desde servicios de IA creciera un 130 % en la temporada: un 159 % en Acción de Gracias y un 95 % en el Black Friday. Son previsiones de septiembre; las cifras finales aún no están publicadas.
+- **Las cifras de Forter llegan a través de CNBC.** No las he podido contrastar en la web de Forter.
+
+## Fuentes
+
+- [Cloudflare Radar: Black Friday / Cyber Monday 2026](https://radar.cloudflare.com/bfcm/2026), consultado el 28 de noviembre de 2026.
+- [See the agents, set the terms: New visibility and control for personal agents](https://blog.cloudflare.com/personal-agents-visibility-control/), blog de Cloudflare, 4 de noviembre de 2026.
+- [Agents aren't humans (but they kinda are)](https://blog.cloudflare.com/trusted-agent-delegation/), blog de Cloudflare, 5 de noviembre de 2026.
+- [Get your storefront ready for AI shopping agents](https://developers.cloudflare.com/use-cases/solutions/prepare-storefront-for-ai-agents/), documentación de Cloudflare.
+- [Walmart's Black Friday Deals Continue. Meta's Muse Can Now Shop Them, Too.](https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse), Walmart, 24 de noviembre de 2026.
+- [Introducing Muse in the UK](https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/), Meta, 23 de noviembre de 2026.
+- [Walmart teams up with Meta to bring Black Friday deals to AI agent Muse](https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/), TechCrunch, 24 de noviembre de 2026.
+- [Amazon blocks Meta's Muse AI assistant](https://www.geekwire.com/2026/amazon-blocks-metas-muse-ai-assistant-in-new-standoff-over-agentic-shopping/), GeekWire, 20 de septiembre de 2026.
+- [Datos de Forter Intelligence sobre pedidos agénticos](https://www.cnbc.com/2026/11/24/meta-instagram-muse-ad-revenue.html), CNBC, 24 de noviembre de 2026.
+- [Adobe: U.S. Holiday Shopping Season to Hit Record $275.1 Billion Online](https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record), Adobe, 28 de septiembre de 2026.
+
+## También te puede interesar
+
+- [El plano de control del agente](/blog/cloudflare-plano-de-control-agente)
+- [Agents SDK de Cloudflare](/blog/cloudflare-agents-sdk-guia)
